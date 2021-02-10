@@ -1,0 +1,22 @@
+
+{{ define "main" }}
+    <div class="slds-text-align_center slds-m-top_xx-large">
+        <h1 class="slds-text-heading_large">{{.Title}}</h1>
+        <h2 class="slds-text-heading_medium">{{ .Params.subtitle }}</h2>
+        {{.Content}}
+    </div>
+    <div class="slds-container_x-large slds-container_center">
+        <div class="slds-grid slds-wrap slds-m-vertical_xx-large">
+            
+            {{ range .Site.Menus.main }}
+                {{ with .Page }}
+                    <div class="slds-col slds-order_2 slds-size_1-of-2 slds-m-top_xx-large">
+                        {{ .Render "summary"}} 
+                    </div>
+                {{ end }}
+            {{ end }}
+        </div>
+
+    </div>
+{{ end }}
+

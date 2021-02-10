@@ -1,0 +1,44 @@
+{{/*
+
+Copyright 2020 Adobe
+All Rights Reserved.
+
+NOTICE: Adobe permits you to use, modify, and distribute this file in
+accordance with the terms of the Adobe license agreement accompanying
+it. If you have received this file from a source other than Adobe,
+then your use, modification, or distribution of it requires the prior
+written permission of Adobe.
+
+*/}}
+{{ $htmlTable := .Inner | markdownify }}
+{{ $class := .Get 0 }}
+
+{{ $old := "<table>" }}
+{{ $new := "<table is=\"coral-table coral-Table--bordered\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $old := "<thead>" }}
+{{ $new := "<thead is=\"coral-table-head\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}    
+
+{{ $old := "<tbody>" }}
+{{ $new := "<tbody is=\"coral-table-body\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $old := "<tr>" }}
+{{ $new := "<tr is=\"coral-table-row\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $old := "<th>" }}
+{{ $new := "<th is=\"coral-table-headercell\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $old := "<td>" }}
+{{ $new := "<td is=\"coral-table-cell\">" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $old := "<td rowspan" }}
+{{ $new := "<td is=\"coral-table-cell\" rowspan" }}
+{{ $htmlTable := replace $htmlTable $old $new }}
+
+{{ $htmlTable | safeHTML }}

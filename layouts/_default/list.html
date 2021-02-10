@@ -1,0 +1,11 @@
+
+{{ define "main" }}
+<div class="slds-m-top_large">
+  
+  <h1 class="slds-page-header__title slds-truncate slds-m-bottom_medium">{{ .Title }}</h1>
+  {{ with .Params.description }}<div class="slds-text-body_regular">{{ . | markdownify }}</div>{{ end }}
+  {{ .Content }}
+  {{ partial "section-index.html" . }}
+  <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
+{{ end }}

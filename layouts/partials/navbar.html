@@ -1,0 +1,46 @@
+
+<!-- menu items starts -->
+<div class="slds-context-bar slds-p-vertical_xx-small  slds-p-right_large">
+	<div class="slds-context-bar__primary">
+		<div class="slds-context-bar__icon-action slds-context-bar__app-name">
+		   <a href="{{ .Site.BaseURL }}"><img src="{{ .Site.BaseURL }}{{ .Site.Params.logo }}" alt="{{ .Site.Title }}" class="logo">{{ .Site.Title }}</a>		 
+		</div>
+	</div>
+	<nav class="slds-context-bar__secondary" role="navigation">
+	  <ul class="slds-grid">
+		
+
+		{{ $p := . }}
+			{{ range .Site.Menus.main }}
+
+			{{ $active := or ($p.IsMenuCurrent "main" .) ($p.HasMenuCurrent "main" .) }}
+			{{ with .Page }}
+				{{ $active = or $active ( $.IsDescendant .)  }}
+			{{ end }}
+			{{ $url := urls.Parse .URL }}
+			{{ $baseurl := urls.Parse $.Site.Params.Baseurl }}
+				
+				 <li class="slds-context-bar__item  {{if $active }}slds-is-active{{end}}">
+					<a href="{{ with .Page }}{{ .RelPermalink }}{{ else }}{{ .URL | relLangURL }}{{ end }}" class="slds-context-bar__label-action"  {{ if ne $url.Host $baseurl.Host }}target="_blank" {{ end }} title="{{ .Name }}">
+					  <span class="slds-truncate" title="Menu Item">{{ .Name }}</span>
+					</a>
+				  </li>
+			{{ end }}
+
+	  </ul>
+	</nav>
+
+	<div class="slds-context-bar__tertiary slds-m-top_xx-small">
+		<div class="slds-form-element">
+			
+			<div class="slds-form-element__control slds-input-has-icon slds-input-has-icon_left">
+			  <svg class="slds-icon slds-input__icon slds-input__icon_left slds-icon-text-default" aria-hidden="true">
+				<use xlink:href="{{ .Site.BaseURL }}/icons/utility-sprite/svg/symbols.svg#search"></use>
+			  </svg>
+			  <input type="text" id="text-input-id-1" placeholder="Search" class="slds-input" />
+			</div>
+		  </div>
+	</div>
+
+
+  </div>

@@ -1,0 +1,12 @@
+
+<span>&nbsp;</span>
+{{ if not $.Params.hide_title }}
+<h1 id="page-title" class="slds-text-heading_large  ">{{ .Title }}</h1>
+{{ end }}
+
+{{ with .Params.description }}<div class="coral-Well">{{ . | markdownify }}</div>{{ end }}
+
+
+{{ $content := replace .Content "<a href" "<a class='' href" }}
+{{ $content := replaceRE "(?sm).+\\[\\]\\(TOC\\).+\\[\\]\\(TOC\\)" "" $content }}
+<div id="content" class="slds-m-top_x-large">{{ $content | safeHTML }}</div>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}" class="no-js">
+<head>
+  {{ partial "head.html" . }}
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
+</head>
+
+<body class="">
+  {{ if not .Site.Params.ui.navbar_disable }}
+    <header>  
+      {{ partial "navbar.html" . }}  
+    </header>
+  {{ end }}
+<main class="container flex slds-m-vertical_small">
+  <!-- Left menu Content -->
+  <aside class="page-menu ">
+    
+  </aside>
+  <div class="page-content slds-container--large slds-container--center">
+    <div class="page-header">
+      <!-- Mobile layout header -->
+     
+    </div>
+    <!-- Page Content -->
+    <article>
+      {{ template "main" . }}
+    </article>
+  </div>
+</main>
+</body>
+</html>
+
+<!-- 
+<div class="">
+  <div class="slds-grid slds-wrap slds-m-vertical_xx-large"> -->
+
+
+
+
