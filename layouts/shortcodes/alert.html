@@ -1,18 +1,19 @@
-{{/*
 
-Copyright 2020 Adobe
-All Rights Reserved.
-
-NOTICE: Adobe permits you to use, modify, and distribute this file in
-accordance with the terms of the Adobe license agreement accompanying
-it. If you have received this file from a source other than Adobe,
-then your use, modification, or distribution of it requires the prior
-written permission of Adobe.
-
-*/}}
 {{ $_hugo_config := `{ "version": 1 }` }}
 {{ $variant := .Get "variant" | default "info" }}
-<coral-alert variant="{{ $variant }}">
-    {{ with .Get "title" }}<coral-alert-header>{{ . | safeHTML }}</coral-alert-header>{{ end }}
-    <coral-alert-content>{{ .Inner | markdownify }}</coral-alert-content>
-</coral-alert>
+
+
+
+<div class="slds-notify slds-notify_alert slds-alert_{{ $variant }} slds-text-align_left" role="alert">
+    {{ with .Get "title" }} <span class="">{{ . | safeHTML }}: </span> {{ end }}
+    
+    {{ .Inner | markdownify }}
+    <div class="slds-notify__close">
+      <button class="slds-button slds-button_icon slds-button_icon-small slds-button_icon-inverse" title="Close">
+        <svg class="slds-button__icon" aria-hidden="true">
+          <use xlink:href="/icons/utility-sprite/svg/symbols.svg#close"></use>
+        </svg>
+        <span class="slds-assistive-text">Close</span>
+      </button>
+    </div>
+</div>

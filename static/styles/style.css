@@ -19,3 +19,35 @@ h2 {
 .slds-context-bar{
     height: auto;
 }
+article #content p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.slds-notify.slds-notify_alert{
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+.slds-alert_help, .slds-alert_info{
+    background-color: #378ef0;
+    color: #fff;
+}
+.slds-alert_success{
+    background-color: #33ab84;
+    color: #fff;
+}
+
+pre {
+    line-height: 1.2;
+    font-size: 14px;
+    word-wrap: normal;
+    padding: 0.5rem;
+    display: block;
+    overflow-x: auto;
+    border-radius: 3px;
+    border: 1px solid rgba(193, 193, 193, 0.639);
+    position: relative;
+}
+.taglist{
+    justify-content: flex-end;
+}

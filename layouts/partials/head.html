@@ -11,8 +11,5 @@
 {{ end -}}
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 {{ partialCached "head-css.html" . "asdf" }}
-<script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico">

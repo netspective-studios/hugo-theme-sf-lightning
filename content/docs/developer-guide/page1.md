@@ -150,9 +150,17 @@ Here is an example:
 
 
 {{< unsafe-html >}}
-<coral-switch checked="">Checked</coral-switch>
-<coral-wait></coral-wait>
-<button is="coral-button" icon="add">Button</button>
+<div class="slds-form-element">
+  <label class="slds-checkbox_toggle slds-grid">
+    <span class="slds-form-element__label slds-m-bottom_none">Toggle Label</span>
+    <input type="checkbox" name="checkbox-toggle-16" value="checkbox-toggle-16" aria-describedby="checkbox-toggle-16" />
+    <span id="checkbox-toggle-16" class="slds-checkbox_faux_container" aria-live="assertive">
+      <span class="slds-checkbox_faux"></span>
+      <span class="slds-checkbox_on">Enabled</span>
+      <span class="slds-checkbox_off">Disabled</span>
+    </span>
+  </label>
+</div>
 {{</ unsafe-html >}}
 
-See more Coral exampeles at https://opensource.adobe.com/coral-spectrum/examples/#detail
+See more Coral exampeles at https://www.lightningdesignsystem.com/components/checkbox-toggle/
