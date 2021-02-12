@@ -22,44 +22,24 @@ print "Hello vivek2"
 {{< /tabs >}}
 
 
-
-
-
-
 ## JSON, XML
-{{< multi-highlight >}}
+{{< tabs JSON XML >}}
 
-  {{< highlight-item title="JSON" syntax="json" >}}
+  {{< codetab >}}
 
     { "name": "Alex", items: 23}
+  {{< /codetab >}}
 
-  {{</ highlight-item >}}
-
-    {{< highlight-item title="XML" syntax="xml" >}}
+  {{< codetab >}}
       
       <node>
         <name>Alex</name>
         <items>3</items>
       </node>
 
-    {{</ highlight-item >}}
+    {{< /codetab >}}
 
-{{</multi-highlight>}}
+{{< /tabs >}}
 
 
-
-## YAML, Toml
-{{< multi-highlight >}}
-
-  {{< highlight-item title="Yaml" syntax="yaml" >}}
-  build:
-    useResourceCacheWhen: fallback
-  {{</ highlight-item >}}
-
-    {{< highlight-item title="Toml" syntax="toml" >}}
-    [build]
-      useResourceCacheWhen = "fallback"
-    {{</ highlight-item >}}
-
-{{</multi-highlight>}}
 

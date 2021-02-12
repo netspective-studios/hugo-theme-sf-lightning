@@ -1,6 +1,6 @@
 
     /*SLDS Tabs JS*/
-  $('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
+  $('.slds-tabs--default__link , .slds-tabs--scoped__link').click(function(){
     $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('aria-selected','false');
     $(this).attr('aria-selected','true');
     $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('tabindex','-1');
