@@ -18,8 +18,9 @@
 {{- $tabid := printf "%s-%s-tab" $guid $entry | anchorize -}}
 {{- $entryid := printf "%s-%s" $guid $entry | anchorize -}}
 
-<div class="slds-tabs--default__content {{ if eq $index 0 }} slds-show {{ end }}" id="{{ $tabid }}" role="tabpanel" aria-labelledby="{{ $tabid }}__item">
+<div class="slds-tabs--default__content {{ if eq $index 0 }} slds-show {{else }} slds-hide {{ end }}" id="{{ $tabid }}" role="tabpanel" aria-labelledby="{{ $tabid }}__item">
      {{- highlight $code $lang $hloptions -}}
 </div>
+
 
 

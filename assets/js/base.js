@@ -10,3 +10,4 @@
     $(this).parent().parent().parent().find('#'+$(this).attr('aria-controls')).removeClass('slds-hide').addClass('slds-show');
   }); 
   /*SLDS Tabs JS*/
+

@@ -51,3 +51,21 @@ pre {
 .taglist{
     justify-content: flex-end;
 }
+
+.slds-tabs--default__content{
+    background-color: rgba(80,80,80,.02);
+    border: 1px solid  rgba(50,50,50,.05);
+    border-radius: 4px;
+    padding: 16px !important;
+    margin: 16px  !important;
+}
+
+.slds-tabs--default__item.slds-text-heading--label.slds-active::after{
+    background-color: #007add;
+    height: 2px;
+}
+
+.page-toc {
+    flex: 0 0 16rem;
+    font-size: .85rem;
+}

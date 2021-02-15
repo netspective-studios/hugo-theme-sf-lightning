@@ -1,0 +1,14 @@
+
+<div id="content" class="slds-is-fixed">
+{{ if and (not .Params.notoc) (gt (len .TableOfContents) 32)  }}
+  {{ with .TableOfContents }}
+    {{ if ge (len .) 2 }}
+      {{ $tocContent := replace . "a href" "a class='slds-text-link' href" }}
+      
+      {{ $tocContent | safeHTML }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+
+</div>

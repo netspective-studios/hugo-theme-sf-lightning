@@ -1,0 +1,81 @@
+
+<div class="slds-tree_container">
+    <ul aria-labelledby="treeheading" class="slds-tree slds-text-align_left" role="tree">
+      {{ template "section-tree-nav-section" (dict "page" . "section" .FirstSection)  }}
+
+    </ul>
+</div>
+
+{{ define "section-tree-nav-section" }}
+{{ $s := .section }}
+{{ $p := .page }}
+{{ $active := eq $p.CurrentSection $s }}
+{{ $activePage := eq . $p }}
+{{ $show := or (and (not $p.Site.Params.ui.sidebar_menu_compact) ($p.IsAncestor $s)) ($p.IsDescendant $s) }}
+
+    {{ $pages := where (union $s.Pages $s.Sections).ByWeight ".Params.toc_hide" "!=" true }}
+    {{ $pages := $pages | first 50 }}
+
+    {{ if $s.Parent }}
+      {{ if not (eq $s.Parent.File.Dir "/") }}
+         <!-- <h4 class="slds-tree__group-header" id="treeheading">{{ $s.LinkTitle }}</h4>
+         -->
+
+
+
+            <ul aria-labelledby="treeheading" class="slds-tree slds-text-align_left" role="tree">
+  
+              <li aria-expanded="false" aria-label="Tree Branch" aria-level="1" role="treeitem" class="slds-tree__branch">
+                <div class="slds-tree__item">
+                  <button class="slds-button slds-button_icon slds-m-right_x-small" aria-hidden="true" tabindex="-1" title="Expand Tree Branch">
+                    <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
+                      <use xlink:href="{{.Site.BaseURL}}/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+                    </svg>
+                    <span class="slds-assistive-text">Expand Tree Branch</span>
+                  </button>
+                  <span class="slds-has-flexi-truncate">
+                    <span class="slds-tree__item-label slds-truncate" title="Tree Branch">{{ $s.LinkTitle }}</span>
+                  </span>
+                </div>
+                <ul role="group">
+                  
+        <!-- <coral-sidenav-level> -->
+      {{ end }}
+    {{ end }}
+    
+    {{ range $pages }}
+    {{ if .IsPage }}
+    {{ $active := eq .Path $p.Path }}
+        <!-- <a is="coral-sidenav-item" {{ if $active }} selected{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -->
+        <li aria-level="2" role="treeitem"  {{ if $active }} aria-selected="true"{{ end }} >
+          <div class="slds-tree__item">
+            <button class="slds-button slds-button_icon slds-m-right_x-small slds-hidden" aria-hidden="true" tabindex="-1" title="Expand Tree Item">
+              <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
+                <use xlink:href="{{.Site.BaseURL}}/icons/utility-sprite/svg/symbols.svg#chevronright"></use>
+              </svg>
+              <span class="slds-assistive-text">Expand Tree Item</span>
+            </button>
+            <span class="slds-has-flexi-truncate">
+              <span class="slds-tree__item-label slds-truncate" title="{{ .LinkTitle }}">
+
+
+                <a   href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>
+              </span>
+            </span>
+          </div>
+        </li>
+
+    {{ else }}
+    {{ template "section-tree-nav-section" (dict "page" $p "section" .) }}
+    {{ end }}
+    {{ end }}
+    {{ if $s.Parent }}
+      {{ if not (eq $s.Parent.File.Dir "/") }}
+    <!-- </coral-sidenav-level> -->
+      </ul>
+    </li>
+    </ul>
+      {{ end }}
+    {{ end }}
+{{ end }}
+

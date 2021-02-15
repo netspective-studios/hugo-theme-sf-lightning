@@ -4,6 +4,7 @@ tags:
   - highlight
 ---
 
+## C, Python
 
 {{< tabs C Python >}}
 {{< codetab >}}
