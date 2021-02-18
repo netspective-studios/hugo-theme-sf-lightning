@@ -1,0 +1,28 @@
+
+{{ define "leftPanel" }}&nbsp;{{ end }}
+{{ define "rightPanel" }}&nbsp;{{ end }}
+{{ define "main" }}
+<div class="">
+  <h1 class="slds-text-heading_large">  
+    <span class="slds-icon_container" title="Description of icon when needed">
+      <svg class="slds-icon slds-icon-text-default slds-icon_small" aria-hidden="true">
+        <use xlink:href="{{.Site.BaseURL}}/icons/utility-sprite/svg/symbols.svg#quote"></use>
+      </svg>
+      <span class="slds-assistive-text">Description of icon when needed</span>
+    </span> <strong>  {{ .Title }}</strong>
+  </h1>
+  
+  {{ with .Params.description }}<div class="">{{ . | markdownify }}</div>{{ end }}
+  {{ .Content }}
+  {{ $parent := .Page }}
+  {{ $tags := (where .Site.Pages "Section" "tags").ByWeight }}
+    {{ range $tags }}
+      {{ if eq .Parent $parent }}
+        <h3 class="slds-text-heading_small slds-m-top_small">
+          <a class="slds-text-link_reset slds-text-link" href="{{ .RelPermalink }}">{{ .Title }} ({{ len .Pages }}) </a>
+        </h3>
+      {{ end }}
+    {{ end }}
+  <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
+</div>
+{{ end }}

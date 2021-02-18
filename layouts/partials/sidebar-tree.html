@@ -22,8 +22,6 @@
          -->
 
 
-
-            <ul aria-labelledby="treeheading" class="slds-tree slds-text-align_left" role="tree">
   
               <li aria-expanded="false" aria-label="Tree Branch" aria-level="1" role="treeitem" class="slds-tree__branch">
                 <div class="slds-tree__item">
@@ -47,7 +45,7 @@
     {{ if .IsPage }}
     {{ $active := eq .Path $p.Path }}
         <!-- <a is="coral-sidenav-item" {{ if $active }} selected{{ end }} href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> -->
-        <li aria-level="2" role="treeitem"  {{ if $active }} aria-selected="true"{{ end }} >
+        <li aria-level="2" role="treeitem"  {{ if $active }} aria-selected="true" class="is-selected" {{end }} >
           <div class="slds-tree__item">
             <button class="slds-button slds-button_icon slds-m-right_x-small slds-hidden" aria-hidden="true" tabindex="-1" title="Expand Tree Item">
               <svg class="slds-button__icon slds-button__icon_small" aria-hidden="true">
@@ -72,7 +70,7 @@
     {{ if $s.Parent }}
       {{ if not (eq $s.Parent.File.Dir "/") }}
     <!-- </coral-sidenav-level> -->
-      </ul>
+     
     </li>
     </ul>
       {{ end }}
