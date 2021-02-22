@@ -1,0 +1,655 @@
+{
+	"PATH_DELIMITER": "/",
+	"codeSystem": "LOINC",
+	"name": "Institutional Profile",
+	"type": "LOINC",
+	"template": "table",
+	"items": [{
+		"question": "You are ",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-01",
+		"localQuestionCode": "002-01-01",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "CNE",
+		"answers": [{
+			"text": "Vendor",
+			"code": "002-01-01-01"
+		}, {
+			"text": "Buyer",
+			"code": "002-01-01-02"
+		}],
+		"displayControl": {
+			"answerLayout": {
+				"type": "COMBO_BOX",
+				"columns": "0"
+			}
+		},
+		"linkId": "/002-01-01"
+	}, {
+		"question": "Your Job Title",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-02",
+		"localQuestionCode": "002-01-02",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "CWE",
+		"answers": [{
+			"text": "Accounting",
+			"code": "002-01-02-01"
+		}, {
+			"text": "Human Resources",
+			"code": "002-01-02-02"
+		}, {
+			"text": "Finance",
+			"code": "002-01-02-03"
+		}, {
+			"text": "Information Technology(IT) and Digital Media",
+			"code": "002-01-02-04"
+		}, {
+			"text": "Insurance Job Title",
+			"code": "002-01-02-05"
+		}],
+		"displayControl": {
+			"answerLayout": {
+				"type": "COMBO_BOX",
+				"columns": "0"
+			}
+		},
+		"linkId": "/002-01-02"
+	}, {
+		"question": "Company Name",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-04",
+		"localQuestionCode": "002-01-04",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-01-04"
+	}, {
+		"question": "Date of Incorporation",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-05",
+		"localQuestionCode": "002-01-05",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "DT",
+		"linkId": "/002-01-05"
+	}, {
+		"question": "Company Type",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-06",
+		"localQuestionCode": "002-01-06",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "CNE",
+		"answers": [{
+			"text": "Royal Chartered Companies",
+			"code": "002-01-06-01"
+		}, {
+			"text": "Statutory Companies",
+			"code": "002-01-06-02"
+		}, {
+			"text": "Registered or Incorporated Companies",
+			"code": "002-01-06-02"
+		}, {
+			"text": "Companies Limited By Shares",
+			"code": "002-01-06-03"
+		}, {
+			"text": "Companies Limited By Guarantee",
+			"code": "002-01-06-04"
+		}, {
+			"text": "Unlimited Companies",
+			"code": "002-01-06-05"
+		}, {
+			"text": "Public Company (or Public Limited Company)",
+			"code": "002-01-06-06"
+		}, {
+			"text": "Private Company (or Private Limited Company)",
+			"code": "002-01-06-07"
+		}, {
+			"text": "One Person Company",
+			"code": "002-01-06-08"
+		}],
+		"displayControl": {
+			"answerLayout": {
+				"type": "COMBO_BOX",
+				"columns": "0"
+			}
+		},
+		"linkId": "/002-01-06"
+	}, {
+		"question": "Registration Number",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-07",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-01-07"
+	}, {
+		"question": "Industry",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-08",
+		"localQuestionCode": "002-01-08",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-01-08"
+	}, {
+		"question": "Currency",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-09",
+		"localQuestionCode": "002-01-09",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-01-09"
+	}, {
+		"question": "Net Worth",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-10",
+		"localQuestionCode": "002-01-10",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-01-10"
+	}, {
+		"question": "Company Size",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-01-12",
+		"localQuestionCode": "002-01-12",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "CWE",
+		"answers": [{
+			"text": "0-50",
+			"code": "002-01-12-01"
+		}, {
+			"text": "51-200",
+			"code": "002-01-12-02"
+		}, {
+			"text": "201-500",
+			"code": "002-01-12-03"
+		}, {
+			"text": "501-2000",
+			"code": "002-01-12-04"
+		}, {
+			"text": "&lt;2000",
+			"code": "002-01-12-04"
+		}],
+		"displayControl": {
+			"answerLayout": {
+				"type": "COMBO_BOX",
+				"columns": "0"
+			}
+		},
+		"linkId": "/002-01-12"
+	}, {
+		"question": "Contact Details",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-00",
+		"localQuestionCode": "002-02-00",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": true,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "SECTION",
+		"displayControl": {
+			"questionLayout": "vertical"
+		},
+		"linkId": "/002-02-00"
+	}, {
+		"question": "Website",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-01",
+		"localQuestionCode": "002-02-01",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-02-01"
+	}, {
+		"question": "Work Email",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-02",
+		"localQuestionCode": "002-02-02",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "EMAIL",
+		"linkId": "/002-02-02"
+	}, {
+		"question": "Work Phone",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-03",
+		"localQuestionCode": "002-02-03",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-02-03"
+	}, {
+		"question": "Another Phone",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-04",
+		"localQuestionCode": "002-02-04",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-02-04"
+	}, {
+		"question": "Company Address",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-05",
+		"localQuestionCode": "002-02-05",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": true,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "SECTION",
+		"items": [{
+			"question": "House/Building",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-02-06",
+			"localQuestionCode": "002-02-06",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-06"
+		}, {
+			"question": "Town/City",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-02-07",
+			"localQuestionCode": "002-02-07",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-07"
+		}, {
+			"question": "State/Province",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-02-08",
+			"localQuestionCode": "002-02-08",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-08"
+		}, {
+			"question": "ZIP/Postal Code",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-02-09",
+			"localQuestionCode": "002-02-09",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-09"
+		}, {
+			"question": "Country/Region",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-02-10",
+			"localQuestionCode": "002-02-10",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-10"
+		}],
+		"displayControl": {
+			"questionLayout": "vertical"
+		},
+		"linkId": "/002-02-05"
+	}, {
+		"question": "Source of Invitation",
+		"hideUnits": true,
+		"questionCode": "Q002-02-11",
+		"localQuestionCode": "Q002-02-11",
+		"units": null,
+		"dataType": "CNE",
+		"externallyDefined": "https://proxy.ontology.attest.cloud/api/v1/sourceofinvitation/search",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"codingInstructions": "",
+		"copyrightNotice": null
+	}, {
+		"question": "CRM Identifier",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-02-12",
+		"localQuestionCode": "002-02-12",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": false,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "ST",
+		"linkId": "/002-02-12"
+	}, {
+		"question": "Github Details",
+		"questionCodeSystem": "Custom",
+		"questionCode": "002-03-00",
+		"localQuestionCode": "002-03-00",
+		"questionCardinality": {
+			"min": "1",
+			"max": "1"
+		},
+		"header": true,
+		"editable": "1",
+		"answerCardinality": {
+			"min": "0",
+			"max": "1"
+		},
+		"dataType": "SECTION",
+		"items": [{
+			"question": "Github UserName",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-01",
+			"localQuestionCode": "002-03-01",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-06"
+		}, {
+			"question": "Github Password",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-02",
+			"localQuestionCode": "002-03-02",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-02-05/002-02-07"
+		}, {
+			"question": "Github Client ID",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-03",
+			"localQuestionCode": "002-03-03",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-03-03"
+		}, {
+			"question": "Github Client Secret",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-04",
+			"localQuestionCode": "002-03-04",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-03-04"
+		}, {
+			"question": "Github Owner",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-05",
+			"localQuestionCode": "002-03-05",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-03-05"
+		}, {
+			"question": "Github Repo",
+			"questionCodeSystem": "Custom",
+			"questionCode": "002-03-06",
+			"localQuestionCode": "002-03-06",
+			"questionCardinality": {
+				"min": "1",
+				"max": "1"
+			},
+			"header": false,
+			"editable": "1",
+			"answerCardinality": {
+				"min": "0",
+				"max": "1"
+			},
+			"dataType": "ST",
+			"linkId": "/002-03-06"
+		}],
+		"displayControl": {
+			"questionLayout": "vertical"
+		},
+		"linkId": "/002-03-00"
+	}],
+	"templateOptions": {
+		"showQuestionCode": false,
+		"showCodingInstruction": false,
+		"tabOnInputFieldsOnly": false,
+		"hideFormControls": true,
+		"showFormOptionPanel": false,
+		"showFormOptionPanelButton": false,
+		"showItemOptionPanelButton": false,
+		"hideUnits": true,
+		"allowMultipleEmptyRepeatingItems": false,
+		"allowHTMLInInstructions": true,
+		"useAnimation": true,
+		"displayControl": {
+			"questionLayout": "vertical"
+		},
+		"viewMode": "auto",
+		"showFormHeader": false,
+		"showColumnHeaders": false,
+		"defaultAnswerLayout": {
+			"answerLayout": {
+				"type": "COMBO_BOX",
+				"columns": "0"
+			}
+		},
+		"useTreeLineStyle": true,
+		"columnHeaders": [{
+			"name": "Name"
+		}, {
+			"name": "Value"
+		}, {
+			"name": "Units"
+		}],
+		"obrHeader": false,
+		"hideHeader": true
+	}
+}

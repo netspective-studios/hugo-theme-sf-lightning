@@ -1,0 +1,46 @@
+<div class="col-md-4">
+	<div class="categorylisting">
+		<a href="{{ .href }}">
+			<div class="header">
+				<span class="post-icon"> <i class={{ .classIcon }}></i></span> {{ .headText }} <i
+					class="fas fa-chevron-right"></i>
+			</div>
+		</a>
+		<div class="contentpart">
+			<ul>
+				{{ range first 4 (where .context.Site.RegularPages ".Params.contentcategories" "==" .contentcategories ) }}
+				<li>
+					<a href="{{.Permalink}}">
+						{{ if ne  .Params.contentcategories "pandemic-actionablecontent" }}
+						<div class="imgleft">
+							{{ if .Params.featuredimage.href }}
+							{{ $fpath:=  .File.Dir }}
+							{{ $fileDir := replace $fpath "\\" "/"}}
+							<a><img src="/{{$fileDir}}{{ .Params.featuredimage.href }}" alt="{{ .Title }}"
+									onerror="this.onerror=null; this.src='{{ $.context.Scratch.Get "default-image" }}'"></a>
+
+							{{ else if  .Params.featuredimage }}
+							{{ $fpath:=  .File.Dir }}
+							{{ $fileDir := replace $fpath "\\" "/"}}
+							<a><img src="/{{$fileDir}}{{ .Params.featuredimage  }}" alt="{{ .Title }}"
+									onerror="this.onerror=null; this.src='{{ $.context.Scratch.Get "default-image" }}'"></a>
+							{{ else }}
+							<a><img src="{{ $.context.Scratch.Get "default-image" }}" alt="{{ .Title }}"></a>
+							{{ end }}
+						</div>
+						<div class="imgcontent">
+							<p>{{.Title}}</p>
+						</div>
+						{{ else }}
+						<div class="contentOnly">
+							<p>{{.Title}}</p>
+						</div>
+						{{ end }}
+
+					</a>
+				</li>
+				{{ end }}
+			</ul>
+		</div>
+	</div>
+</div>

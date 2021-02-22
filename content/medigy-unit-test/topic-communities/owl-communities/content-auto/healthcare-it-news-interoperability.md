@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Interoperability" 
+ classname:  "OWLClass_c0b80baa_9546_462c_a46c_5c4c82528ec1" 
+ label: "Interoperability" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Medigy: Interoperability Common Technology and IP','Medigy: Interoperability standard implementation','Medigy: Interoperability Industry/Community Partnership','Symplur: -hash-FHIR','Medigy: Interoperability Product Engineering','Healthcare IT Today: Interoperability','HIMSS: Interoperability','Medigy: Interoperability Product Testing'] 
+ collections: ['Healthcare IT News: Interoperability']
+ aliases:  "/topic/healthcare-it-news-interoperability"  
+ searchCategory: "topic" 
+---
+SW50ZXJvcGVyYWJpbGl0eSBpcyB0aGUgY2FwYWJpbGl0eSBvZiBkaWZmZXJlbnQgc3lzdGVtcywgaW5jbHVkaW5nIGRldmljZXMsIGFwcGxpY2F0aW9ucywgYW5kIHByb2R1Y3RzLCB0byBjb25uZWN0LCBjb21tdW5pY2F0ZSwgYW5kIGV4Y2hhbmdlIGluZm9ybWF0aW9uIHdpdGhvdXQgYW55IHVzZXIgaW50ZXJmZXJlbmNlLiBJbnRlcm9wZXJhYmlsaXR5IGFtb25nIHN5c3RlbXMgaGFzIHZhcmlvdXMgZnVuY3Rpb25zIHN1Y2ggYXMgZGF0YSBhY2Nlc3MsIGRhdGEgdHJhbnNtaXNzaW9uLCBhbmQgY3Jvc3Mtb3JnYW5pemF0aW9uYWwgY29sbGFib3JhdGlvbiBpcnJlc3BlY3RpdmUgb2YgdGhlaXIgb3JpZ2luLiBJbnRlcm9wZXJhYmlsaXR5IGluIGhlYWx0aGNhcmUgYWxsb3dzIHRoZSBleGNoYW5nZSBvZiBoZWFsdGggaW5mb3JtYXRpb24gYW1vbmcgZGlmZmVyZW50IGhlYWx0aGNhcmUgcHJvZmVzc2lvbmFscywgb3JnYW5pemF0aW9ucywgYW5kIHBhdGllbnRzLCByZWdhcmRsZXNzIG9mIHRoZSBhcHBsaWNhdGlvbnMgdXNlZC4gRGF0YSBpbnRlcm9wZXJhYmlsaXR5IGVuYWJsZXMgZGlmZmVyZW50IHN5c3RlbXMgdG8gZXhjaGFuZ2UgdGhlaXIgZGF0YSBvciByZXNvdXJjZXMgdGhyb3VnaCBsb2NhbCBhcmVhIG5ldHdvcmtzIChMQU5zKSBvciB3aWRlIGFyZWEgbmV0d29ya3MgKFdBTnMpLg==

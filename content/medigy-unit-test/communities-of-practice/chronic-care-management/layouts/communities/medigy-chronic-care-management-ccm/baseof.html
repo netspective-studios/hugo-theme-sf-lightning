@@ -1,0 +1,63 @@
+{{ partial "communities-ccm-themeConfig.html" . }}
+{{ $siteData := $.Site.Data.communities }}
+{{ range $siteData }}
+  {{ $.Scratch.Set "logoTitle" .mastHead }}
+{{ end }}
+<!DOCTYPE html> 
+<html   class=""   lang="{{ .Site.LanguageCode }}"   prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" >
+{{ partial (print ($.Scratch.Get "head_community") ) . }}  
+  <body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns" >
+    <!-- Google Tag Manager (noscript) -->
+    <div id="g-tag-body">
+      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+      </div>
+    <!-- End Google Tag Manager (noscript) -->
+  {{ partial (print ($.Scratch.Get "nav-bar") ) . }}
+  <section class="about-wrapper">
+    <div id="content" class="femtech">
+      <div class="container">   
+          {{ $context := . }}
+        {{ $pagePartial := ($.Scratch.Get "ccm-bread-crumb") }}        
+        {{ partial $pagePartial (dict  "pageStatus" "" "topicTitle" "" "type" "" "topicUrl" "" "context"  $context)  }}  
+     </div>
+    {{- block "main" . }}{{ end }}</div>
+  </section>
+  {{ partialCached (print ($.Scratch.Get "footer") ) . }}
+  </body>
+</html>
+<script>
+  $(document).ready(function () {
+    $("#ccm-postform").on("click", function () {
+      $("#myTab > li > a").removeClass("active");
+        $('.main-tab.tab-pane fade').removeClass("active show");
+        $('#offering').removeClass("active show");
+        $("#news-tab").addClass("active");
+        $("#news").addClass("active show");
+      var query = '';
+      if( $(this).data('query') != undefined){ 
+        query = $(this).data('query');
+      }
+      if (getCookie('personid') !== null) {
+
+        window.location.href = "/add-suggest/"+query;
+
+      }
+
+      else {
+      setCookie('prevPage','/add-suggest');  
+      window.location.href = "/login/";
+
+      }
+
+
+    });
+    $("#postform").attr('data-query','?community=ccm');
+    $("#ccm-postform").attr('data-query','?community=ccm');
+    $("#myTab > li > a").removeClass("active");
+        $('.main-tab.tab-pane fade').removeClass("active show");
+        $('#offering').removeClass("active show");
+        $("#news-tab").addClass("active");
+        $("#news").addClass("active show");
+  });
+</script>

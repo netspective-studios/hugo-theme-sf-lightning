@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Quality Management" 
+ classname:  "Quality_Management" 
+ label: "Quality Management" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Quality Management']
+ aliases:  "/topic/klas-quality-management"  
+ searchCategory: "topic" 
+---
+UXVhbGl0eSBtYW5hZ2VtZW50IHNvZnR3YXJlIChRTVMpIGVuc3VyZXMgdG8gaW1wcm92ZSBoZWFsdGhjYXJlIHF1YWxpdHkgYnkgZW5oYW5jaW5nIHRoZSBhY2NvdW50YWJpbGl0eSBvZiBoZWFsdGggcHJhY3RpdGlvbmVycyBhbmQgbWFuYWdlcnMsIGluY3JlYXNpbmcgcmVzb3VyY2UgZWZmaWNpZW5jeSwgYW5hbHl6aW5nLCBhbmQgcmVkdWNpbmcgbWVkaWNhbCBlcnJvcnMsIGluY3JlYXNpbmcgdGhlIHVzZSBvZiBlZmZlY3RpdmUgY2FyZSBhbmQgaW1wcm92aW5nIG91dGNvbWVzLiBRTVMgc29mdHdhcmUgcHJvZHVjdHMgYXJlIGhlbHBmdWwgaW4gZnVsZmlsbGluZyB2YXJpb3VzIG5lZWRzIGZvciBxdWFsaXR5IG1hbmFnZW1lbnQgbGlrZSByZXBvcnRpbmcgb24gc29tZSBiYXNpYyBtZWFzdXJlcywgbW9uaXRvcmluZyBhbmQgcmVwb3J0aW5nIG9uIGFkdmVyc2UgZXZlbnRzLCBwcm92aWRpbmcgZXh0ZXJuYWwgYmVuY2htYXJraW5nIGluZm9ybWF0aW9uIG9uIHF1YWxpdHkgbWV0cmljcyBldGMu

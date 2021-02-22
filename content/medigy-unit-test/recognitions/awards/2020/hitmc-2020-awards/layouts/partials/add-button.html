@@ -1,0 +1,33 @@
+<a href="/add-suggest" class="new-ofer-btn-1 pull-right" id="{{ .btnId }}" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPersonid':getCookie('userEmail')})"><i class="fas fa-plus-circle"></i>&nbsp;{{ .label }}</a>
+<div class="clearfix"></div>
+<script>
+$(document).ready(function () {
+   $('#{{ .btnId }}').on("click", function (e) {
+    localStorage.removeItem("activeaddTab");
+    setCookie('suggestNewsEventPage', "{{ .value }}");
+    setCookie('suggestNewsEvent', "{{ .value }}");
+    if (getCookie('personid') == null) {
+      
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+    }
+    });
+     if (getCookie('personid') !== null) {
+
+    if (getCookie('suggestNewsEvent') == '{{ .value }}') {
+      setCookie('suggestNewsEventPage', "");
+      setCookie('suggestNewsEvent', "");
+      var data = $("#myTab > li > a").attr("class");
+      $("#myTab > li > a").removeClass("active");
+      $('.tab-pane').removeClass("active show");
+      $("#{{ .tabId }}").addClass("active");
+      $("#{{ .tab }}").addClass("active show");
+      localStorage.setItem('activeaddTab','#{{ .tab }}');
+
+    }
+     }  
+});   
+// 18-12-19
+    </script>

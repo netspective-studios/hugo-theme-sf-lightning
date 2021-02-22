@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Data-Driven Improvements" 
+ classname:  "Data-Driven_Improvements" 
+ label: "Data-Driven Improvements" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Data-Driven Improvements']
+ aliases:  "/topic/healthcare-it-news-data-driven-improvements"  
+ searchCategory: "topic" 
+---
+QSBkYXRhLWRyaXZlbiBhcHByb2FjaCBpbnZvbHZlcyBjcmVhdGluZyBzdHJhdGVnaWMgZGVjaXNpb25zIGJhc2VkIG9uIGRhdGEgYW5hbHlzaXMgYW5kIGludGVycHJldGF0aW9uLiBJdCB1dGlsaXplcyBkYXRhIHRvIGluZm9ybSBvciBlbmhhbmNlIHByb2Nlc3NlcyBsaWtlIGRlY2lzaW9uIG1ha2luZyBhbmQgZXZlbiB0aGUgcmV2ZW51ZSBtb2RlbC4gRGF0YS1kcml2ZW4gcHJvY2VzcyByZWZlcnMgdG8gYW4gYWN0aXZpdHkgdGhhdCBpcyBpbmNpdGVkIG9uIGJ5IGRhdGEuIERhdGEtZHJpdmVuIGltcHJvdmVtZW50IGlzIHVzZWQgYnkgb3JnYW5pemF0aW9ucyB0byBoZWxwIHBlb3BsZSBtYWtlIGJldHRlciBkZWNpc2lvbnMgYW5kIHByb3Bvc2FscyBmb3IgY29udGludW91cyBpbXByb3ZlbWVudC4gVGhlIHRlcm0g4oCcZGF0YS1kcml2ZW7igJ0gaXMgdXNlZCBpbiBtYW55IGZpZWxkcywgc3BlY2lmaWNhbGx5IGluIHRoZSB0ZWNobm9sb2d5IGFuZCBidXNpbmVzcywgd2hlcmUgaXQgZW5hYmxlcyBjb21wYW5pZXMgdG8gZXhhbWluZSBhbmQgb3JnYW5pemUgdGhlaXIgZGF0YSB3aXRoIHRoZSBnb2FsIG9mIGJldHRlciBzZXJ2aW5nIHRoZWlyIGN1c3RvbWVycyBhbmQgY29uc3VtZXJzLg==

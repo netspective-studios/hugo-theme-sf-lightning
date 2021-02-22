@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Care Coordination" 
+ classname:  "OWLClass_836fb625_0899_4b6f_a74a_fa8f193b58f6" 
+ label: "Care Coordination" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Care Coordination']
+ aliases:  "/topic/healthcare-it-news-care-coordination"  
+ searchCategory: "topic" 
+---
+Q2FyZSBjb29yZGluYXRpb24gaW50ZWdyYXRlcyB0aGUgZGVsaXZlcnkgb2YgYSBwYXRpZW504oCZcyBoZWFsdGggY2FyZSBmcm9tIG11bHRpcGxlIGhlYWx0aGNhcmUgcHJvdmlkZXJzIGFuZCBzcGVjaWFsaXN0cy4gT25lIG9mIHRoZSBtYWluIGdvYWxzIG9mIHBhdGllbnQgY2FyZSBjb29yZGluYXRpb24gaXMgdG8gaW1wcm92ZSBwYXRpZW50IGhlYWx0aCBieSBlbnN1cmluZyB0aGF0IGNhcmUgZnJvbSBkaWZmZXJlbnQgcHJvdmlkZXJzIGlzIG5vdCBkZWxpdmVyZWQgaW4gc2lsb3MuIEl0IGFpbXMgYXQgcmVkdWNpbmcgaGVhbHRoIGNhcmUgY29zdHMgYnkgZWxpbWluYXRpbmcgdW5uZWNlc3NhcnkgbWVkaWNhbCB0ZXN0cyBhbmQgcHJvY2VkdXJlcy4KQ2FyZSBjb29yZGluYXRpb24gc2VydmljZXMgYXJlIGVzc2VudGlhbCBpbiBoZWFsdGhjYXJlIGFzIHRoZXkgbWVldCB0aGUgbmVlZHMgYW5kIHByZWZlcmVuY2VzIG9mIHBhdGllbnRzIGFuZCBoZWxwIGluIGRlbGl2ZXJpbmcgaGlnaCBxdWFsaXR5IGFuZCBoaWdoIHZhbHVlLWJhc2VkIGhlYWx0aCBjYXJlLg==

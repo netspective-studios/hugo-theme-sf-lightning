@@ -1,0 +1,142 @@
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;font-weight: bold;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
+
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "dashboard-key"}}
+
+
+<body class="single-body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "dashborad-key"}}
+    
+  <section class="about-wrapper">
+  <main class="container">
+      <div class="col-lg-12 content side-text-padding container single-blog-card">
+      <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }} min-height-auto">
+        <header class="post-header">
+          <h1 class="post-title">Medigy Listing Status</h1>
+        </header>
+
+          <h3 id="tokenMessage"></h3>
+        <div class="entry-content entry-content-2 page-content">
+          <div class="table-responsive">
+            
+
+                           <table class="dashboard table">
+  <thead>
+    <tr>
+    <th class="tg-cly1">product Name</th>
+    <th class="tg-cly1">product status</th>
+    <th class="tg-cly1">Approve Status</th>
+    <th class="tg-cly1">Institution Name</th>
+    <th class="tg-cly1">Created Date</th>
+    <th class="tg-cly1">Updated Date</th>
+    <th class="tg-cly1">Expiry Date</th>
+  
+  </tr>
+</thead>
+<tbody>
+  <tr><td colspan=7> <p>Contents are collecting. Please wait...</p> </td></tr>
+
+</tbody>
+</table>
+
+  
+<script type="text/javascript">
+var sessionId = getCookie('sessionId');
+ 
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "{{ $.Site.Params.GraphQLUrl }}",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": "query{\n  getProductOfferingDetails(authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    productId\n    productName\n    createdOn\n    updatedOn\n    expiryOn\n    productAssessmentStatus\n    productApproveStatus\n    institutionName\n    institutionId\n  }\n}"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+   console.log(response);
+    var html = "";
+   for (key in response.data.getProductOfferingDetails) {
+    //console.log(response.data.getProductOfferingDetails[key].productName);
+
+     // Created Date
+    var ts= response.data.getProductOfferingDetails[key].createdOn; 
+    var createdOndt = new Date(ts * 1000);
+    var createdOndate =  createdOndt.toLocaleString();
+    var arr = createdOndate.split(',');
+    var split_createdOndate = arr[0];
+    // End expiry date
+
+    // Updated Date
+    var ts= response.data.getProductOfferingDetails[key].updatedOn; 
+    var updatedOndt = new Date(ts * 1000);
+    var updatedOndate =  updatedOndt.toLocaleString();
+    var arr = updatedOndate.split(',');
+    var split_updatedOndate = arr[0];
+    // End Updated Date
+    
+    // Expiry On
+    var ts= response.data.getProductOfferingDetails[key].expiryOn; 
+    var expddt = new Date(ts * 1000);
+    var expdate =  expddt.toLocaleString();
+    var arr = expdate.split(',');
+    var split_expdate = arr[0];
+    // End expiry date
+
+   html +=  '<tr>';
+   html +=  '  <td class="tg-cly1"> '+response.data.getProductOfferingDetails[key].productName+' </td>';
+   html += ' <td class="tg-cly1"> '+response.data.getProductOfferingDetails[key].productAssessmentStatus+'  </td>';
+   html += ' <td class="tg-cly1"> '+response.data.getProductOfferingDetails[key].productApproveStatus+'  </td>';
+   html += '  <td class="tg-cly1"> '+response.data.getProductOfferingDetails[key].institutionName+' </td>';
+   html += '  <td class="tg-cly1"> '+split_createdOndate+' </td>';
+   html += '  <td class="tg-cly1"> '+split_updatedOndate+' </td>';
+   html += '  <td class="tg-cly1"> '+split_expdate+' </td>';  
+
+   html += '</tr>';
+ 
+   }
+   $('.dashboard tbody').html(html);
+});
+  </script>
+
+              <div class="alert alert-success claim-message" style="display:none;"></div>
+
+               
+
+          
+        </div>
+
+
+
+
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </main>
+  </section>
+{{ partialCached "footer.html" . }}
+</body>
+
+</html>

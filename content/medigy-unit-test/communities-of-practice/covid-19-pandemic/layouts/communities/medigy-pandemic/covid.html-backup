@@ -1,0 +1,340 @@
+
+
+{{ define "main" }}	
+
+<script type="text/javascript" src="/modules/innovation-lifecycle-management/config.js"></script>
+<script>
+
+    var sessionId = getCookie('sessionId');
+
+    if (sessionId != null) { 
+
+
+    var userSession = sessionId;
+    var publicCheck = 0;
+    
+
+
+      //window.location.href = "/";
+    }
+    else
+    {
+
+    var userSession = '';
+    var publicCheck = 1;
+     
+
+    }
+	
+     var origin  = window.location.origin;
+     
+		 var ilmslug = getUrlVars()["ilm"];
+
+		 var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": ilmGraphql,
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        "data": {    
+          "query": "query{\n  getProjectDetails(authorization:{\n    sessionID:\""+userSession+"\"\n    \n  }\n    \n    projectSlug:\"" + ilmslug + "\"\n  ){\n    projectId\n   projectName\n  projectDescription\n    analytics{\n      offeringTotalCount\n      newsTotalCount\n  eventsTotalCount\n      offeringProductCount\n offeringSolutionCount\n      offeringServiceCount\n    }\n    offerings{\n      id\n      name\n      createdBy\n      ownerCheck\n      description\n      createdOn\n      expiryOn\n      offeringType\n      permaLink\n      facebook\n      twitter\n      link\n      linkedIn\n  relationComments\n     caption\n      category {\n        name\n        key\n      }\n    }\n news{\n      dataType\n      source\n      title\n   postedDate\n  imageURL\n  uniqueIdentifier\n  description\n       relationComments\n    token\n  sourceURL\n    }\n   events{\n      dataType\n  description\      source\n  token\n  sourceURL\n   startDate\n  endDate\n   title\n imageURL\n  uniqueIdentifier\n     relationComments\n    }\n subscription{\n type \n keyword } }\n}"
+        }
+ 
+      }
+
+	  $.ajax(settings).done(function (response) {
+
+      
+      var analytics = response.data.getProjectDetails.analytics;
+
+      var totalOfferingsCount = parseInt(analytics.offeringTotalCount);
+      var totalNewsCount = parseInt(analytics.newsTotalCount);
+      var totalEventsCount = parseInt(analytics.eventsTotalCount);
+      //  console.log(analytics,totalOfferingsCount,totalNewsCount,totalEventsCount);
+      var totalcount = (totalOfferingsCount + totalNewsCount +  totalEventsCount); 
+
+      if(totalcount==0){
+
+        $( "#noArticles" ).show();
+        
+      }
+
+		console.log(response);
+
+		  var projectname = '<h2>' + response.data.getProjectDetails.projectName + ' </h2>  <p>' + response.data.getProjectDetails.projectDescription+ '<p>';
+
+		  //console.log('my name',projectname);
+
+		  $('#communityILM').html(projectname);
+		  var offeringhtml = "";
+          var projectid = response.data.getProjectDetails.projectId;
+		  projectId = projectid;
+
+		  for (key in response.data.getProjectDetails.offerings) {
+  
+  //console.log(jsonEndPoint);
+
+  
+
+  
+
+  var offerningtype = response.data.getProjectDetails.offerings[key].offeringType;
+
+
+  var Originaloffering = response.data.getProjectDetails.offerings[key].description;
+  var strippedOffering =   $(Originaloffering).text();
+   
+  //var strippedOffering = Originaloffering.replace(/(<([^>]+)>)/ig,"");
+  var ilmofferingfb = response.data.getProjectDetails.offerings[key].facebook; 
+  var create_date = response.data.getProjectDetails.offerings[key].createdOn; 
+  var createdOndt = new Date(create_date * 1000);
+  var createdOndate =  createdOndt.toLocaleString();
+  var arr = createdOndate.split(',');
+  var split_createdOndate = arr[0];
+  const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  let formatted_date =  months[createdOndt.getMonth()]  + " " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+  //console.log(response.data.getProjectDetails.offerings[key].description);
+  var editIlmProjectID = response.data.getProjectDetails.offerings[key].id;
+
+  $('#ilmProjectID').val(response.data.getProjectDetails.offerings[key].id);
+  var offeringID = response.data.getProjectDetails.offerings[key].id;
+  
+	 
+
+  if(typeof offeringhtml[offerningtype] == 'undefined'){
+	offeringhtml[offerningtype] = '';
+  }
+   
+  imagepathJSON ='';
+  offeringhtml  += `<div class="col-md-6"><div class="eventslist newlisting "> <h3><a target = "blank" href="/offering/` + response.data.getProjectDetails.offerings[key].permaLink + `"> 
+   `+response.data.getProjectDetails.offerings[key].name+`</a></h3><div class="infolisting"><i class="fas fa-calendar"></i> <span>`+formatted_date+`</span></div><a target = "blank" href="/offering/` + response.data.getProjectDetails.offerings[key].permaLink + `"><div class="eventimg "><img src="/communities/pandemic/curated-news/images/-detecting-covid19-in-x-ray-images-with-keras-tensorflow-and-deep-learning-featuredImage.jpeg" alt="Detecting COVID19 in X-ray images with Keras, TensorFlow, and Deep Learning -" onerror="this.onerror=null; this.src='\/communities\/pandemic\/images\/featured-default.png'"></div><div class="eventcontent ch-limit-community"> `+ strippedOffering +` </div></a></div></div>`;
+														
+  
+
+}
+$('#communityoffering').html(offeringhtml);
+
+
+var newshtml = "";
+
+for (key in response.data.getProjectDetails.news) {
+
+  var newsImagePath =  response.data.getProjectDetails.news[key].imageURL;
+  console.log('comon path',newsImagePath);
+
+           if(newsImagePath == '')
+           {
+
+           var imageNewsPath =  '/events/default.png';
+
+           }
+
+           else
+           {
+            
+           var imageNewsPath = ('/news/'+newsImagePath);
+
+           }
+
+	var token_news = response.data.getProjectDetails.news[key].token;
+          var create_date = response.data.getProjectDetails.news[key].postedDate; 
+          var createdOndt = new Date(create_date * 1000);
+          var createdOndate =  createdOndt.toLocaleString();
+          var arr = createdOndate.split(',');
+          var split_createdOndate = arr[0];
+          const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+          let formatted_date =  months[createdOndt.getMonth()]  + " " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+
+	newshtml  += `<div class="col-md-6"><div class="eventslist newlisting "> <h3><a target = "blank" href="`+response.data.getProjectDetails.news[key].uniqueIdentifier +`"> 
+			`+response.data.getProjectDetails.news[key].title+`</a></h3><div class="infolisting"><i class="fas fa-calendar"></i> <span>`+formatted_date+`</span></div><a target = "blank" href="`+response.data.getProjectDetails.news[key].uniqueIdentifier + `"><div class="eventimg "><img src="`+origin+``+imageNewsPath+`" alt="Detecting COVID19 in X-ray images with Keras, TensorFlow, and Deep Learning -" onerror="this.onerror=null; this.src='\/communities\/pandemic\/images\/featured-default.png'"></div><div class="eventcontent ch-limit-community"> `+response.data.getProjectDetails.news[key].description+`</div></a></div></div>`;
+
+
+}
+
+$('#communityoffering').append(newshtml);
+
+var eventshtml = "";
+
+for (key in response.data.getProjectDetails.events) {
+
+var eventsImagePath =  response.data.getProjectDetails.events[key].imageURL;
+
+
+ if(eventsImagePath == '')
+{
+
+var imageEventsPath =  '/events/default.png';
+
+}
+
+else
+{
+ 
+var imageEventsPath = ('/events/'+eventsImagePath);
+
+}
+//var imageEventsPath = ('/events/'+eventsImagePath);
+
+//var imageEventsPath =  '/events/default.png';
+
+var token_events = response.data.getProjectDetails.events[key].token;  
+var create_date = response.data.getProjectDetails.events[key].startDate; 
+var createdOndt = new Date(create_date * 1000);
+var createdOndate =  createdOndt.toLocaleString();
+var arr = createdOndate.split(',');
+var split_createdOndate = arr[0];
+const months = ["January", "February", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const day = ["Sunday", "Monday", "Tuesday","Wednesday", "Thursday", "Friday", "Saturday"];
+
+let formatted_date =  months[createdOndt.getMonth()]  + ", " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+var dayDate = day[createdOndt.getDay()];
+
+var startMonth = formatted_date.split(",")
+var monthonly = startMonth[0] ;
+var dateOnly = startMonth[1].trim();
+var slugyear = startMonth[2].trim();
+var eventDate = parseInt(dateOnly);
+var eventSlugDate = '';
+
+if(eventDate < '10') 
+{
+
+ eventSlugDate = ('0'+eventDate);
+
+}
+
+else
+{
+ eventSlugDate = eventDate;
+}
+
+
+
+
+//console.log(arr);
+
+
+var end_date = response.data.getProjectDetails.events[key].endDate; 
+var createdOndt = new Date(end_date * 1000);
+var createdOndate =  createdOndt.toLocaleString();
+var arr = createdOndate.split(',');
+var split_createdOndate = arr[0];
+const emonths = ["January", "February", "March","April", "May", "June", "July", "August", "September", "October", "November", "December"];
+let final_date =  emonths[createdOndt.getMonth()]  + " " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+var finalMonth = final_date.split(",")
+var finalMonthOnly = finalMonth[0] ;
+var finalYearOnly = finalMonth[1] ;
+
+var slugmonth = createdOndate.split("/");
+var slugMonthEvent = '';
+var slugMonthOnly = parseInt(slugmonth[0].trim());
+if(slugMonthOnly < '10') 
+{
+
+ slugMonthEvent = ('0'+slugMonthOnly);
+
+}
+
+else
+{
+
+ slugMonthEvent = slugMonthOnly;
+
+}
+
+  
+
+eventshtml  += `<div class="col-md-6"><div class="eventslist newlisting "> <h3><a target = "blank" href="/event/`+slugyear+`/`+slugMonthEvent+`/`+eventSlugDate+`/` + response.data.getProjectDetails.events[key].uniqueIdentifier + `"> 
+			`+response.data.getProjectDetails.events[key].title+`</a></h3><div class="infolisting"><i class="fas fa-calendar"></i> <span>`+monthonly+` `+dateOnly+` to `+finalMonthOnly+`, `+finalYearOnly+`</span></div><a target = "blank" href="/event/`+slugyear+`/`+slugMonthEvent+`/`+eventSlugDate+`/` + response.data.getProjectDetails.events[key].uniqueIdentifier + `"><div class="eventimg "><img src="`+origin+``+imageEventsPath+`" alt="Detecting COVID19 in X-ray images with Keras, TensorFlow, and Deep Learning -" onerror="this.onerror=null; this.src='\/communities\/pandemic\/images\/featured-default.png'"></div><div class="eventcontent ch-limit-community"> </div></a></div></div>`;
+
+
+
+}
+
+$('#communityoffering').append(eventshtml);	
+
+	  });
+		 
+  
+
+  
+   </script>
+<section class="container">
+		<article class="top-banner communitybnr" style="background: url({{.Params.image}})">
+			<div class="bannerlft">
+					<h1> </h1>
+					<h3> </h3>
+				</div>
+				
+				<div id = "communityILM" class="bannerrigt {{if eq .Params.herocolor "blue"}} bluebg {{ end}} ">
+					 
+				</div>
+		</article>
+		</section>
+
+	 
+	<section id="main">
+		
+		<div class="container">
+			<div class="row">
+        <div class="col-md-12 tableline">
+		 
+				<div class="tab-content">
+							
+				
+				
+						
+							
+						<div id="latest" class=" tab-pane   active ">			
+              
+                <div id = "noArticles" class = "alert alert-success text-center" style="display: none;">
+
+                    Currently not added any articles to this ILM project.
+
+                </div> 
+							
+							
+							
+								<div id = "communityoffering" class="row mt-3">
+
+									
+                  <div class="col-md-6"><div class="ph-load-default"></div></div>
+                  <div class="col-md-6"><div class="ph-load-default"></div></div>
+                  
+										
+											
+								 
+										
+											
+									
+									
+								</div>
+							
+							
+						</div>
+				
+					
+						<div id="popular" class=" tab-pane  ">									
+							
+							
+							
+							
+						</div>
+				
+			
+		
+		
+			  </div>
+                 </div>
+        	</div>
+        <!-- Tab panes Close-->  		
+			</div>
+    </section>
+	
+{{end}}

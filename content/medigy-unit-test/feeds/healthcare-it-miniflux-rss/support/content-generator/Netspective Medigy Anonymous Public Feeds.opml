@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <opml version="2.0">
+        <body>
+            <outline text="Essential News">
+                <outline title="An Ounce of Evidence" text="An Ounce of Evidence" xmlUrl="https://blogs.sph.harvard.edu/ashish-jha/feed" htmlUrl="https://blogs.sph.harvard.edu/ashish-jha"></outline>
+                <outline title="Healthcare Innovation Analytics/AI" text="Healthcare Innovation Analytics/AI" xmlUrl="http://www.hcinnovationgroup.com/feeds/analytics-ai" htmlUrl="http://hcinnovationgroup.com/analytics-ai"></outline>
+                <outline title="Healthcare Innovation Clinical IT" text="Healthcare Innovation Clinical IT" xmlUrl="http://www.hcinnovationgroup.com/feeds/clinical-it" htmlUrl="http://hcinnovationgroup.com/clinical-it"></outline>
+                <outline title="Healthcare Innovation Cybersecurity" text="Healthcare Innovation Cybersecurity" xmlUrl="http://www.hcinnovationgroup.com/feeds/cybersecurity" htmlUrl="http://hcinnovationgroup.com/cybersecurity"></outline>
+                <outline title="Healthcare Innovation Health IT Market" text="Healthcare Innovation Health IT Market" xmlUrl="http://www.hcinnovationgroup.com/feeds/finance-revenue-cycle/health-it-market" htmlUrl="http://hcinnovationgroup.com/finance-revenue-cycle/health-it-market"></outline>
+                <outline title="Healthcare Innovation Imaging" text="Healthcare Innovation Imaging" xmlUrl="http://www.hcinnovationgroup.com/feeds/imaging" htmlUrl="http://hcinnovationgroup.com/imaging"></outline>
+                <outline title="Healthcare Innovation Interoperability &amp; HIE" text="Healthcare Innovation Interoperability &amp; HIE" xmlUrl="http://www.hcinnovationgroup.com/feeds/interoperability-hie" htmlUrl="http://hcinnovationgroup.com/interoperability-hie"></outline>
+                <outline title="Healthcare Innovation Leadership &amp; Professional Development" text="Healthcare Innovation Leadership &amp; Professional Development" xmlUrl="http://www.hcinnovationgroup.com/feeds/leadership-professional-development" htmlUrl="http://hcinnovationgroup.com/leadership-professional-development"></outline>
+                <outline title="Healthcare Innovation Policy &amp; Value-Based Care" text="Healthcare Innovation Policy &amp; Value-Based Care" xmlUrl="http://www.hcinnovationgroup.com/feeds/policy-value-based-care" htmlUrl="http://hcinnovationgroup.com/policy-value-based-care"></outline>
+                <outline title="Healthcare Innovation Mobile Health (mHealth)" text="Healthcare Innovation Mobile Health (mHealth)" xmlUrl="http://www.hcinnovationgroup.com/feeds/population-health-management/mobile-health-mhealth" htmlUrl="http://hcinnovationgroup.com/population-health-management/mobile-health-mhealth"></outline>
+                <outline title="Healthcare Innovation Population Health Management" text="Healthcare Innovation Population Health Management" xmlUrl="http://www.hcinnovationgroup.com/feeds/population-health-management" htmlUrl="http://hcinnovationgroup.com/population-health-management"></outline>
+                <outline title="MedTech" text="MedTech" xmlUrl="http://www.alltooflat.com/geeky/medtech/atom.xml" htmlUrl="http://alltooflat.com/geeky/medtech"></outline>
+                <outline title="33 Charts" text="33 Charts" xmlUrl="https://33charts.com/blog/feed/" htmlUrl="https://33charts.com"></outline>
+                <outline title="American Hospital Association (AHA) News" text="American Hospital Association (AHA) News" xmlUrl="https://www.aha.org/aha-news-rss-feed" htmlUrl="https://www.aha.org/achi-webinar-archives"></outline>
+                <outline title="AMIA In The News" text="AMIA In The News" xmlUrl="https://www.amia.org/news-and-publications/amia-in-the-news/feed" htmlUrl="https://www.amia.org/news-and-publications/news-releases"></outline>
+                <outline title="AMIA News Releases" text="AMIA News Releases" xmlUrl="https://www.amia.org/news-and-publications/news-releases/feed" htmlUrl="https://www.amia.org/news-and-publications/news-releases"></outline>
+                <outline title="Better Health" text="Better Health" xmlUrl="https://getbetterhealth.com/feed/" htmlUrl="https://getbetterhealth.com"></outline>
+                <outline title="CDC Safe Healthcare Blog" text="CDC Safe Healthcare Blog" xmlUrl="https://blogs.cdc.gov/safehealthcare/feed/" htmlUrl="https://blogs.cdc.gov/safehealthcare"></outline>
+                <outline title="Change Healthcare" text="Change Healthcare" xmlUrl="https://www.changehealthcare.com/blog/feed" htmlUrl="https://www.changehealthcare.com/blog"></outline>
+                <outline title="Chilmark Research" text="Chilmark Research" xmlUrl="https://www.chilmarkresearch.com/feed/" htmlUrl="https://www.chilmarkresearch.com"></outline>
+                <outline title="Cisco Healthcare" text="Cisco Healthcare" xmlUrl="https://blogs.cisco.com/healthcare/feed" htmlUrl="https://blogs.cisco.com"></outline>
+                <outline title="Clinical Informatics R&amp;D" text="Clinical Informatics R&amp;D" xmlUrl="http://partnerscird.blogspot.com/feeds/posts/default" htmlUrl="http://partnerscird.blogspot.com/"></outline>
+                <outline title="Council of Accountable Physician Practices" text="Council of Accountable Physician Practices" xmlUrl="http://accountablecaredoctors.org/feed/" htmlUrl="http://accountablecaredoctors.org"></outline>
+                <outline title="Digital Health News" text="Digital Health News" xmlUrl="https://www.digitalhealth.net/news/feed/" htmlUrl="https://www.digitalhealth.net"></outline>
+                <outline title="DXC Healthcare" text="DXC Healthcare" xmlUrl="https://blogs.dxc.technology/category/healthcare/feed/" htmlUrl="https://blogs.dxc.technology"></outline>
+                <outline title="GomerBlog" text="GomerBlog" xmlUrl="https://gomerblog.com/feed/" htmlUrl="https://gomerblog.com"></outline>
+                <outline title="Health Business Blog" text="Health Business Blog" xmlUrl="http://feeds.feedburner.com/HealthBusinessBlog" htmlUrl="https://www.healthbusinessgroup.com"></outline>
+                <outline title="HealthCare Executive Group" text="HealthCare Executive Group" xmlUrl="https://hceg.org/feed/" htmlUrl="https://hceg.org"></outline>
+                <outline title="Healthcare Finance" text="Healthcare Finance" xmlUrl="https://www.healthcarefinancenews.com/content-feed/all" htmlUrl="https://www.healthcarefinancenews.com/content-feed/news"></outline>
+                <outline title="Healthcare IT: How good is your strategy?" text="Healthcare IT: How good is your strategy?" xmlUrl="https://healthcareitstrategy.com/feed/" htmlUrl="https://healthcareitstrategy.com"></outline>
+                <outline title="Healthcare IT News" text="Healthcare IT News" xmlUrl="https://www.healthcareitnews.com/blog/feed" htmlUrl="https://www.healthcareitnews.com/"></outline>
+                <outline title="Healthcare IT News Latest" text="Healthcare IT News Latest" xmlUrl="https://www.healthcareitnews.com/home/feed" htmlUrl="https://www.healthcareitnews.com/"></outline>
+                <outline title="Healthcare IT News Resources" text="Healthcare IT News Resources" xmlUrl="https://www.healthcareitnews.com/resource/feed" htmlUrl="https://www.healthcareitnews.com/"></outline>
+                <outline title="Healthcare IT Today" text="Healthcare IT Today" xmlUrl="https://www.healthcareittoday.com/feed/" htmlUrl="https://www.healthcareittoday.com"></outline>
+                <outline title="Healthcare Standards" text="Healthcare Standards" xmlUrl="http://feeds.feedburner.com/MotorcycleGuy" htmlUrl="http://motorcycleguy.blogspot.com/"></outline>
+                <outline title="Health Information Technology" text="Health Information Technology" xmlUrl="https://www.reddit.com/r/healthIT/.rss?format=xml" htmlUrl="https://www.reddit.com/r/healthIT/?format=xml"></outline>
+                <outline title="Health IT Buzz" text="Health IT Buzz" xmlUrl="http://feeds.feedburner.com/healthitbuzzblog" htmlUrl="https://www.healthit.gov/buzz-blog"></outline>
+                <outline title="Health IT Security" text="Health IT Security" xmlUrl="https://healthitsecurity.com/feed.rss" htmlUrl="https://healthitsecurity.com/"></outline>
+                <outline title="HealthSystemCIO.com" text="HealthSystemCIO.com" xmlUrl="https://healthsystemcio.com/feed/" htmlUrl="http://healthsystemcio.com"></outline>
+                <outline title="HHS Blog Posts" text="HHS Blog Posts" xmlUrl="https://www.hhs.gov/rss/blog.xml?language=es" htmlUrl="https://www.hhs.gov/blog/index.html?language=es"></outline>
+                <outline title="HIStalk Practice" text="HIStalk Practice" xmlUrl="https://www.histalkpractice.com/feed/atom/" htmlUrl="http://www.histalkpractice.com"></outline>
+                <outline title="HIT Consultant" text="HIT Consultant" xmlUrl="https://hitconsultant.net/feed/" htmlUrl="https://hitconsultant.net"></outline>
+                <outline title="iMedicalApps" text="iMedicalApps" xmlUrl="https://www.imedicalapps.com/feed/" htmlUrl="https://www.imedicalapps.com"></outline>
+                <outline title="Innovation Excellence" text="Innovation Excellence" xmlUrl="https://feeds2.feedburner.com/business-strategy-innovation" htmlUrl="https://www.innovationexcellence.com"></outline>
+                <outline title="Inovo" text="Inovo" xmlUrl="https://www.theinovogroup.com/feed/" htmlUrl="https://www.theinovogroup.com"></outline>
+                <outline title="Journal of Healthcare Contracting" text="Journal of Healthcare Contracting" xmlUrl="http://www.jhconline.com/feed" htmlUrl="http://www.jhconline.com"></outline>
+                <outline title="KevinMD.com" text="KevinMD.com" xmlUrl="https://feeds.feedburner.com/KevinMd-MedicalWeblog" htmlUrl="https://www.kevinmd.com/blog"></outline>
+                <outline title="Manage My Practice.com" text="Manage My Practice.com" xmlUrl="http://feeds.feedburner.com/ManageMyPracticecom" htmlUrl="https://managemypractice.com"></outline>
+                <outline title="MedCity News" text="MedCity News" xmlUrl="https://medcitynews.com/feed/" htmlUrl="https://medcitynews.com"></outline>
+                <outline title="Medgadget" text="Medgadget" xmlUrl="https://www.medgadget.com/feed" htmlUrl="https://www.medgadget.com"></outline>
+                <outline title="Medical Connectivity" text="Medical Connectivity" xmlUrl="http://medicalconnectivity.com/feed/" htmlUrl="https://medicalconnectivity.com"></outline>
+                <outline title="Med-Tech Innovation" text="Med-Tech Innovation" xmlUrl="https://www.med-technews.com/api/rss/content.rss" htmlUrl="https://www.med-technews.com/api/rss/content.rss"></outline>
+                <outline title="MedTech Intelligence" text="MedTech Intelligence" xmlUrl="https://www.medtechintelligence.com/feed/" htmlUrl="https://www.medtechintelligence.com"></outline>
+                <outline title="MobiHealthNews" text="MobiHealthNews" xmlUrl="https://www.mobihealthnews.com/feed" htmlUrl="https://www.mobihealthnews.com/"></outline>
+                <outline title="Modern Healthcare Legislation &amp; Regulations" text="Modern Healthcare Legislation &amp; Regulations" xmlUrl="https://www.modernhealthcare.com/section/rss/news?days=15&amp;categories=76926_77106" htmlUrl="https://www.modernhealthcare.com/section/rss/news"></outline>
+                <outline title="Modern Healthcare News" text="Modern Healthcare News" xmlUrl="https://www.modernhealthcare.com/section/rss/news?days=7&amp;topics=81631" htmlUrl="https://www.modernhealthcare.com/section/rss/news"></outline>
+                <outline title="Neil Versel&#39;s Healthcare IT Blog" text="Neil Versel&#39;s Healthcare IT Blog" xmlUrl="http://feeds.feedburner.com/NeilVerselsHealthcareItBlog" htmlUrl="https://www.meaningfulhitnews.com"></outline>
+                <outline title="ONC Site Feed" text="ONC Site Feed" xmlUrl="https://www.healthit.gov/rss.xml" htmlUrl="https://www.healthit.gov/rss.xml"></outline>
+                <outline title="Physicians Practice" text="Physicians Practice" xmlUrl="https://www.physicianspractice.com/rss.xml" htmlUrl="https://www.physicianspractice.com/"></outline>
+                <outline title="RealWire Healthcare Technology" text="RealWire Healthcare Technology" xmlUrl="https://www.realwire.com/rss/?id=91&amp;row=&amp;view=Synopsis" htmlUrl="http://www.realwire.com/"></outline>
+                <outline title="Rock Health" text="Rock Health" xmlUrl="https://rockhealth.com/feed/" htmlUrl="https://rockhealth.com"></outline>
+                <outline title="The Healthcare Blog" text="The Healthcare Blog" xmlUrl="https://thehealthcareblog.com/feed/" htmlUrl="http://thehealthcareblog.com"></outline>
+            </outline>
+            <outline text="Events">
+                <outline title="Healthcare Innovation Summits" text="Healthcare Innovation Summits" xmlUrl="http://www.hcinnovationgroup.com/feeds/summits" htmlUrl="http://hcinnovationgroup.com/summits"></outline>
+            </outline>
+            <outline text="Feeds Without Updates Since 2017">
+                <outline title="AHA Hospitals &amp; Health Networks for CIOs" text="AHA Hospitals &amp; Health Networks for CIOs" xmlUrl="https://www.hhnmag.com/rss/topic/197-cio" htmlUrl="https://www.hhnmag.com/rss"></outline>
+                <outline title="Anticlue" text="Anticlue" xmlUrl="http://www.anticlue.net/index.rdf" htmlUrl="http://www.anticlue.net/"></outline>
+                <outline title="Archetypical" text="Archetypical" xmlUrl="https://omowizard.wordpress.com/feed/" htmlUrl="https://omowizard.wordpress.com"></outline>
+                <outline title="Consumer Health Informatics News" text="Consumer Health Informatics News" xmlUrl="http://phrnews.blogspot.it/atom.xml" htmlUrl="http://phrnews.blogspot.com/"></outline>
+                <outline title="Harmonious Health IT" text="Harmonious Health IT" xmlUrl="http://harmonious-healthit.blogspot.com/feeds/posts/default" htmlUrl="http://harmonious-healthit.blogspot.com/"></outline>
+                <outline title="Health Interoperability &amp; Intelligence Exposed" text="Health Interoperability &amp; Intelligence Exposed" xmlUrl="https://healthinteropexposed.typepad.com/dr_d_tells_all/rss.xml" htmlUrl="https://healthinteropexposed.typepad.com/dr_d_tells_all/"></outline>
+                <outline title="HealthNex" text="HealthNex" xmlUrl="https://healthnex.typepad.com/web_log/index.rdf" htmlUrl="https://healthnex.typepad.com/web_log/"></outline>
+                <outline title="Medsync" text="Medsync" xmlUrl="https://www.medsync.net/rss#_=_" htmlUrl="https://www.medsync.net/"></outline>
+                <outline title="Softheon Blog" text="Softheon Blog" xmlUrl="https://blog.softheon.com/wordpress/feed/" htmlUrl="https://blog.softheon.com/wordpress"></outline>
+            </outline>
+            <outline text="Google Alerts">
+                <outline title="Google Alert - &#34;ATT&amp;CK&#34; or &#34;OpenC2&#34;" text="Google Alert - &#34;ATT&amp;CK&#34; or &#34;OpenC2&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/1623588181237355406" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;Cybersecurity Maturity Model Certification&#34; or CMMC" text="Google Alert - &#34;Cybersecurity Maturity Model Certification&#34; or CMMC" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/17358597834498687347" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - Data at the Point of Care (DPC)" text="Google Alert - Data at the Point of Care (DPC)" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/13127757952012879614" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;digital front door&#34;" text="Google Alert - &#34;digital front door&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/3388464466845132273" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;digital health conference&#34;" text="Google Alert - &#34;digital health conference&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/16062633581702849062" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;Digital Transformation&#34;" text="Google Alert - &#34;Digital Transformation&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/18271543737008798263" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - FHIR" text="Google Alert - FHIR" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/10596839736288075317" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;Information Blocking&#34;" text="Google Alert - &#34;Information Blocking&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/10176742166530256607" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;innovation ecosystem&#34;" text="Google Alert - &#34;innovation ecosystem&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/10897918603901837005" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - “INNOVATION THEATER”" text="Google Alert - “INNOVATION THEATER”" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/6606891502422365163" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - Manufacturer Disclosure Statement for Medical Device Security (MDS2)" text="Google Alert - Manufacturer Disclosure Statement for Medical Device Security (MDS2)" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/1925287903054700044" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - National Center for Advancing Translational Sciences" text="Google Alert - National Center for Advancing Translational Sciences" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/12534262421792732927" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - PDGM" text="Google Alert - PDGM" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/7482028931308011739" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;real world evidence&#34; or &#34;real world data&#34;" text="Google Alert - &#34;real world evidence&#34; or &#34;real world data&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/17145199115520581681" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - return on digital investment (RODI)" text="Google Alert - return on digital investment (RODI)" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/6659141552385628522" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;software as a medical device&#34; (SaMD)" text="Google Alert - &#34;software as a medical device&#34; (SaMD)" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/12925976839974585839" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+                <outline title="Google Alert - &#34;WHO Digital Health Technical Advisory Group&#34;" text="Google Alert - &#34;WHO Digital Health Technical Advisory Group&#34;" xmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/4118654761199131370" htmlUrl="https://www.google.com/alerts/feeds/05311150212044319526/"></outline>
+            </outline>
+            <outline text="Podcasts">
+                <outline title="Digital Health Today" text="Digital Health Today" xmlUrl="https://feeds.megaphone.fm/DHT7550289169" htmlUrl="https://digitalhealthtoday.com/podcasts/"></outline>
+                <outline title="Healthcare IT Today" text="Healthcare IT Today" xmlUrl="https://www.healthcareittoday.com/feed/podcast/" htmlUrl="https://www.healthcareittoday.com"></outline>
+                <outline title="The #HCBiz Show!" text="The #HCBiz Show!" xmlUrl="http://hcbiz.libsyn.com/rss" htmlUrl="http://TheHCBiz.com"></outline>
+            </outline>
+            <outline text="Resources">
+                <outline title="Healthcare Innovation Whitepapers" text="Healthcare Innovation Whitepapers" xmlUrl="http://www.hcinnovationgroup.com/feeds/whitepapers" htmlUrl="http://hcinnovationgroup.com/whitepapers"></outline>
+            </outline>
+            <outline text="Supplier Recognition">
+                <outline title="Healthcare Innovation Top 100 Vendors of 2018" text="Healthcare Innovation Top 100 Vendors of 2018" xmlUrl="http://www.hcinnovationgroup.com/feeds/top-100-vendors/2018" htmlUrl="http://hcinnovationgroup.com/top-100-vendors/2018"></outline>
+            </outline>
+            <outline text="Videos">
+                <outline title="Healthcare IT News" text="Healthcare IT News" xmlUrl="https://www.youtube.com/feeds/videos.xml?channel_id=UCawXRmwFRv9QqtVYnnP2IOA" htmlUrl="https://www.youtube.com/channel/UCawXRmwFRv9QqtVYnnP2IOA"></outline>
+            </outline>
+            <outline text="Webinars">
+                <outline title="Healthcare Innovation Webinars" text="Healthcare Innovation Webinars" xmlUrl="http://www.hcinnovationgroup.com/feeds/webinars" htmlUrl="http://hcinnovationgroup.com/webinars"></outline>
+            </outline>
+        </body>
+    </opml>

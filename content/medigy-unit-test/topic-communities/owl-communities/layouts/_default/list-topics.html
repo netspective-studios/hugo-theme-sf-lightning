@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "topics-list-key"}}
+  <link rel="stylesheet" href="/topic/style.css" />
+  <body class="list-body">
+    <!-- Google Tag Manager (noscript) -->
+    <div id="g-tag-body">
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    </div>
+    <!-- End Google Tag Manager (noscript) -->
+    {{ partialCached "nav-bar.html" . "topics-list-key"}}
+    <section class="commun-wrapper community_page">
+      <article class="new-ofering-row-3 commun-content-row-3">
+        <div class="container">
+          {{ partialCached "bread-crumb.html" . "topics-landing"}}
+          {{ $btnId := "AddTopic_Top" }}
+          {{ $label := "Add Topic" }}
+          {{ $value := "Topics" }}
+          {{ $tabId := "topics-tab" }}
+          {{ $tab := "topics" }}         
+          {{ partialCached "add-button.html" (dict  "btnId"  $btnId  "label" $label "value" $value "tab" $tab "tabId" $tabId) $label }}            
+          {{ $posts := where $.Site.Pages "Params.searchcategory" "=" "topic" }}
+          {{ $categories := slice }}  
+          {{ range $posts }} 
+            {{ $categories = $categories | append .Params.parentclasslabel }}              
+          {{ end }}
+          {{ $collections := $categories | uniq  }}
+          <main class="list">
+            {{range ( $collections) }}  
+              {{ $.Scratch.Set "collectionName" . }}
+              {{ $collectionName:= $.Scratch.Get "collectionName" }}
+              {{ $collectionposts := where $.Site.Pages "Params.maincollection" "=" true }}   
+              {{ range $collectionposts }}
+                {{ $collectionName:= $.Scratch.Get "collectionName" }}
+                {{ if eq $collectionName .Params.parentclsname }}              
+                    {{ $hrefLink := .Params.hrefLink }}
+                    {{ $externalLink := .Params.externalLink }}                           
+                    {{ $.Scratch.Set "tagCounter" 0 }}   
+                    {{ range $posts }}         
+                      {{ if eq $collectionName .Params.parentclasslabel }}              
+                          {{ $.Scratch.Add "tagCounter" 1 }}                 
+                      {{ end }}                                                     
+                    {{ end }}    
+                    {{ $totalCount := $.Scratch.Get "tagCounter" }}
+                    <section class="article-list">
+                      <div class="row">
+                        <div class="description col-md-8 ">
+                          <h2 class="card-title"><a href="{{ $hrefLink }}" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': $('.nav-link.menu-selected').text(),'gtmTitle': '{{ .Title }}', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">{{ .Params.parentclsname }}{{ if eq .Params.trademarkSymbol "TM" }}<sup class="sm-sup">TM</sup>{{ end}}{{ if eq .Params.trademarkSymbol "SM" }}<sup class="sm-sup">SM</sup>{{ else }}{{ if eq .Params.trademarkSymbol "R" }}<sup class="">&reg;</sup>{{ end }}{{ end }} </a>
+                          {{ if $externalLink }}  
+                            <a href = "{{ $externalLink }}" target="_blank"><span class="m-topic-ico-2">
+                              <i class="fas fa-external-link-alt"></i></span>
+                            </a>
+                          {{ end }}                   
+                          </h2> 
+                          <span>
+                            <p>                               
+                              {{ .Summary | safeHTML | truncate 200 }}
+                              <span><a href="{{ $hrefLink }}">Read More</a></span>
+                            </p>
+                          </span>
+                        </div>
+                        <div class="col-md-4">	
+                          {{ if .Params.featuredimage }}					
+                          <picture class="post-figure m-b-15">
+                            <a href="{{ $hrefLink }}">
+                            <img src="{{ .Params.featuredimage }}" alt="{{ .Params.title }}" class="img-responsive">
+                            </a>
+                          </picture>
+                          {{ end }}
+                        </div>
+                      <div class="col-md-12">
+                        <div>	<span class="total-count-1">Total Topics: <strong>{{ $totalCount }} </strong> </span></div>
+                      </div>
+                    </div>
+                    </section>          
+                  {{ end }}
+              {{ end }}
+            {{ end }}             
+            </main>
+          </div>
+        </div>
+      </article>  
+    </section>
+    {{ partialCached "scripts.html" . }}    
+    <div id="formContainer"></div>
+    {{ partialCached "script-social-share.html" . }}
+    {{ partialCached "footer.html" . }}      
+  </body>
+</html>

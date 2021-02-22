@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "edit-lim-project-key"}}
+ <script>
+
+function setCookie(key, value) {
+    var expires = new Date();
+    if (key == 'cookie-agree')
+      expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000));
+    else
+      expires.setTime(expires.getTime() + (5 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+  }
+
+  function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+  }
+  
+  var personid = getCookie('personid');
+  //var tenantId = getCookie('tenantId');
+  if (personid == null) {
+    setCookie('prevPage','/create-ilm-project/');
+      window.location.href = '/login';
+  }
+</script>
+<link rel="stylesheet" href="/css/select2.min.css" />
+<script type="text/javascript" src="/js/select2.min.js"></script>
+<script type="text/javascript" src="/js/tenant.js"></script>
+ 
+
+<body class="single-body">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "edit-ilm-project-key"}}
+
+  <script type="text/javascript">
+
+    function base64EncodeUnicode(str) {
+    // First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+    // then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+    utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    });
+
+    return btoa(utf8Bytes);
+  }
+
+
+ $(document).ready(function () {
+
+     //$("#editproject .form-control").on("keypress", function(e) {
+      //if (e.which === 32 && !this.value.length)
+        //e.preventDefault();
+     //});
+
+
+     $("#cleareditproject").click(function(){
+      
+         //$(".select2-selection__rendered").prop('selectedIndex',0);
+         location.reload(); 
+         
+     }); 
+
+     
+      $('.select2').click(function() {
+
+        //alert('1');
+         
+       });
+
+     
+ 
+
+   setTimeout(function(){ 
+    var splittedTopics = $('#editTempTopics').val().split(',');
+    $('#editTopics').val(splittedTopics);
+    $('#editTopics').trigger('change');
+
+  },2000);
+
+            
+     $('#editTopics').select2(); 
+     var personid = getCookie('personid');
+     if (personid == null) {
+    window.location.href = "/";
+     }
+ 
+     var sessionId = getCookie('sessionId');
+     var ilmslug = getUrlVars()["ilm"];
+
+
+
+    var tagArray = '';
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "{{ $.Site.Params.OWLApiUrl }}?query={getClassHierarchy%28rootClassName:%22Collection%22,searchParam:%22%22%29{parentclassname%20parentclasslabel%20%20classname%20%20%20%20label%20%20%20%20%20subclassname%20%20%20%20%20subclasslabel}}",
+      "method": "GET",
+      "headers": {
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Host": "{{ $.Site.Params.OWLApiUrl }}",
+        "accept-encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+
+        //console.log(response);
+        let myArray = response.data.getClassHierarchy;
+        var catOption = '';
+        for (let i = 0; i < myArray.length; i++) {
+          if (myArray[i].subclassname) {
+            var label = myArray[i].parentclasslabel + ": " + myArray[i].subclasslabel;
+            var key = myArray[i].subclassname;
+          }
+          else if (myArray[i].classname) {
+            var label = myArray[i].parentclasslabel + ": " + myArray[i].label;
+            var key = myArray[i].classname;
+          }
+          else {
+            var label = myArray[i].parentclasslabel;
+            var key = '';//myArray[i].parentclassname;
+          }
+
+          catOption += '<option value="' + label + '$" >' + label + '</option>';
+
+        }
+        $('#editTopics').html(catOption);
+
+      });
+
+      $('#editTopics').select2(); 
+
+
+      console.log("query{\n  getProjectDetails(authorization:{\n    sessionID:\"" + sessionId + "\"\n    \n  }\n    \n    projectSlug:\"" + ilmslug + "\"\n  ){\n    projectId\n   projectName\n   projectDescription\n community\n searchKeyWord\n isPublic\n topics{key}\n personalIlm}\n}");//return false;
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "{{ $.Site.Params.GraphQLUrl }}",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Connection": "keep-alive",
+          "cache-control": "no-cache"
+        },
+        "data": {    
+          "query": "query{\n  getProjectDetails(authorization:{\n    sessionID:\"" + sessionId + "\"\n    \n  }\n    \n    projectSlug:\"" + ilmslug + "\"\n  ){\n    projectId\n   projectName\n   projectDescription\n community\n searchKeyWord\n isPublic\n topics{key}\n personalIlm}\n}"
+        }
+ 
+      }
+      
+
+
+      $.ajax(settings).done(function (response) {
+        
+        console.log(response.data.getProjectDetails);
+
+         for (key in response.data.getProjectDetails) {
+
+        var ilmProjectTitle    = response.data.getProjectDetails.projectName;
+        var ilmProjectDesc    = response.data.getProjectDetails.projectDescription;
+        var ilmProjectID    = response.data.getProjectDetails.projectId;
+        var keywordsearch = response.data.getProjectDetails.searchKeyWord; 
+        var community = response.data.getProjectDetails.community;
+        var acesscontrol = response.data.getProjectDetails.isPublic;
+        var personalIlmCheck = response.data.getProjectDetails.personalIlm;
+        console.log('My personal ILM check',personalIlmCheck);
+        
+        if(acesscontrol == false)
+        {
+           
+          $('#publicTrue').removeAttr('checked');  
+          $("#privateFalse").attr('checked',true);
+        }
+
+        if(personalIlmCheck == false)
+        {
+          
+          $("#communitySelection").show();
+          $("#accessibilitySelection").show();
+          setCookie('ilmPersonal', response.data.getProjectDetails.personalIlm);
+          
+        }
+
+        else
+        {
+
+          $("#projectPersonal").show();
+          $("#personalILM").attr('checked',true);
+          $("#personalILM").attr('disabled','disabled');
+          setCookie('ilmPersonal', response.data.getProjectDetails.personalIlm);
+
+         
+           
+
+        }
+        
+         
+         
+        if(community == 'Pandemic Diseases')
+        {
+          $("#communityOffering").val("Pandemic Diseases");
+          $('#communityOffering').attr("disabled", true);
+          $('#selectedCommunity').html("Pandemic Diseases");
+
+          
+
+        }
+        else if(community == 'FemTech')
+        {
+          
+          $("#communityOffering").val("FemTech");
+          $('#communityOffering').attr("disabled", true);
+          $('#selectedCommunity').html("FemTech");
+
+        }
+
+        else if(community == 'Risk and Compliance')
+        {
+          
+          $("#communityOffering").val("Risk and Compliance");
+          $('#communityOffering').attr("disabled", true);
+          $('#selectedCommunity').html("Risk and Compliance");
+          
+
+        }
+
+        else if(community == 'Security')
+        {
+          
+          $("#communityOffering").val("Security");
+          $('#communityOffering').attr("disabled", true);
+          $('#selectedCommunity').html("Security");
+
+        }
+        else
+        {
+          $("#communityOffering").val("Select Any Community");
+          $('#communityOffering').attr("disabled", true);
+          $('#selectedCommunity').html("Medigy");
+          
+        }
+
+        
+        $("#editSearchKeyword").val(keywordsearch); 
+        $("#editTitle").val(ilmProjectTitle);
+        $("#editDesc").val(ilmProjectDesc);
+        $("#editProjectID").val(ilmProjectID);
+        }
+
+         // Project subscription fetching starts here
+          //var searchWord = '';
+          var search_es = '';
+          var search_topics='';
+
+          var topics = [];
+          var i = 0; j = 0;
+         /*  for (key in response.data.getProjectDetails.topics) {
+
+            if(response.data.getProjectDetails.subscription[key].type == 'search')
+            {
+              searchWord += response.data.getProjectDetails.subscription[key].keyword+',';
+              search_es += response.data.getProjectDetails.subscription[key].keyword+' ';
+
+
+            }
+            else if(response.data.getProjectDetails.subscription[key].type == 'topic')
+            {
+              topics[j] = response.data.getProjectDetails.subscription[key].keyword;
+              //$('#editTopics').val(topics[j]);
+              search_topics +=response.data.getProjectDetails.subscription[key].keyword+' ';
+
+              j++;
+            }
+
+          } */
+
+          for (topickey in response.data.getProjectDetails.topics) {
+
+            topics[j]  = response.data.getProjectDetails.topics[topickey].key +'$,';
+
+            j++;
+
+
+          }
+           
+          
+         
+
+
+
+          // console.log('-------------------------************************---------------------------');
+          // console.log(topics);
+          // console.log(searchWord);
+
+          $('#editTempTopics').val(topics);
+         // $("#editTopics").select2().trigger('change');
+         // $('#editTopics').select2();
+       
+/*           $('#editTopics').val(["Medigy: Interoperability Product Testing$,", "HIMSS: Telecommunications$,", "PHS iHub: Care coordination$,"]);
+          setTimeout(function(){
+            $('#editTopics').trigger('change');
+          },100); */
+          
+          // Project subscription fetching ends here
+
+
+
+
+      });
+
+   
+
+
+      //Edit Project mutation starts  
+
+      $(".Form_update_Button").click(function (e) {
+ 
+
+       
+        var checkpersonalIlm = getCookie('ilmPersonal');
+
+         
+    
+        var editIlmSession = getCookie('sessionId');
+        var editIlmProjectName = $('#editTitle').val();
+        var editIlmProjectID =   $('#editProjectID').val();
+        var ProjectDescr = base64EncodeUnicode($('#editDesc').val());
+        //editDescr = editIlmProjectDesc.replace(/%/g, "percentage");
+        //ProjectDescr = base64EncodeUnicode(editDescr);
+
+        if(checkpersonalIlm == "true"){
+
+          
+
+
+         var projDisplay = 0;
+
+         var personalIlmProject =  "isPersonal:true\n";
+         var offeringCommunity = '';
+         var tenantId = "";
+         var projDisplay = "";
+
+        }
+
+        else{
+
+           
+
+
+        var projDisplayAccess = $('input[name="optradio"]:checked').val();
+
+        var projDisplay =  "isPublic:"+projDisplayAccess+"\n";
+       
+
+        var offeringCommunityValue  = $('#communityOffering').val();
+
+        var offeringCommunity =  "ilmNature:\""+offeringCommunityValue+"\"\n";    
+
+        var personalIlmProject =  "";
+
+        var communityTenant = $( "#communityOffering" ).val();
+               //alert(communityTenant);
+               //return false;
+                
+               if(communityTenant == 'FemTech' )
+               {
+                 
+                tenantId =  "tenantId:\""+femTechTenantID+"\"\n";
+ 
+
+               }
+               else if(communityTenant == 'Risk and Compliance')
+               {
+                tenantId =  "tenantId:\""+riskandComplianceTenantID+"\"\n";
+                 
+               }
+
+               else if(communityTenant == 'Security')
+               {
+                tenantId =  "tenantId:\""+securityTenantID+"\"\n";
+                
+               }
+
+               else if(communityTenant == 'Pandemic Diseases')
+               {
+
+                tenantId =  "tenantId:\""+pandemicDiseasesTenantID+"\"\n";
+                 
+                 
+                setCookie('pandemictenent',tenantId); 
+               }
+               else
+               {
+                tenantId =  "tenantId:\""+defaultTenent+"\"\n";
+                
+                
+               }
+        }
+         
+
+
+        // Subscription edit starts here
+        var categoryArray = $('#editTopics').val();
+          //var catCount = categoryArray.length;
+          if(categoryArray !== null){ 
+          var category = '';
+
+          for (i = 0; i < categoryArray.length; i++) {
+            var splittedCategory = categoryArray[i].split('$,');
+            category += '\n { type:"topic"\n keyword:"' + splittedCategory[0] + '"}\n ';
+          }
+          }
+
+        searchKeywordArray = $('#editSearchKeyword').val().split(',');
+
+          var keyCount = searchKeywordArray.length;
+          var searchKey = '';
+
+          for (i = 0; i < keyCount; i++) {
+            if(searchKeywordArray[i] != '')
+            searchKey += '\n { type:"search"\n keyword:"' + searchKeywordArray[i] + '"}\n ';
+          }
+      var subscription = 'subscription:['+searchKey+category+'] \n';
+      // Subscription edit ends here
+
+      console.log("mutation{\n  updateProjectDetails(\n    projectName:\""+editIlmProjectName+"\"\n    projectDescription:\""+ProjectDescr+"\"\n    projectId:\""+editIlmProjectID+"\"\n  "+subscription+"  "+tenantId+"  "+offeringCommunity+"  "+projDisplay+"  "+personalIlmProject+"  authorization:{\n   sessionID:\""+editIlmSession+"\"\n    }\n  ){\n    status\n    message\n details{\n id\n   slug\n}  }\n}"); //return false;
+
+
+
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate",
+            "Connection": "keep-alive",
+            "cache-control": "no-cache"
+          },
+         "data": {
+          "query": "mutation{\n  updateProjectDetails(\n    projectName:\""+editIlmProjectName+"\"\n    projectDescription:\""+ProjectDescr+"\"\n    projectId:\""+editIlmProjectID+"\"\n  "+subscription+"  "+tenantId+"  "+offeringCommunity+"  "+projDisplay+"  "+personalIlmProject+"  authorization:{\n   sessionID:\""+editIlmSession+"\"\n    }\n  ){\n    status\n    message\n details{\n id\n   slug\n}  }\n}"
+  }
+}
+          if($('#editTitle')[0].reportValidity() && $('#editDesc')[0].reportValidity() && $('#editTopics')[0].reportValidity()  ){
+             $(this).val("Please wait");
+             $(this).attr('disabled',true);
+               $.ajax(settings).done(function (response) {
+
+                 
+
+                responseStatus = response.data.updateProjectDetails.status;
+                responseMessage = response.data.updateProjectDetails.message; 
+                 
+               if(responseStatus=="SUCCESS") { 
+                {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                        {{ range .items }}
+                            {{ if eq .questionCode "ILM_msgs"}}
+                                {{ range .answers }}
+                                    {{ if eq .code "update_ILM_msg"}}
+                                        var displayProjectUpdate = {{ .text }}
+                                    {{ end }}  
+                                                                              
+                                {{ end }}  
+                            {{ end }}
+                        {{ end }}
+             {{ end }}
+               updatedSlug = response.data.updateProjectDetails.details.slug;   
+               $(".Form_Login_Button").attr('disabled',true);
+               $("#canccel").attr('disabled',true);
+               var notifyMessage = displayProjectUpdate;
+               $('#projectEditMessage').html(notifyMessage);
+               $('#projectEditMessage').addClass('pull-right alert alert-success pt-2 pb-2 m-0');
+               $(".Form_Login_Button").val("SAVE");
+               $('#projectEditMessage').fadeOut(8300);
+               window.setTimeout(function(){$('#editProjectILM .close').click();},9300)
+               window.setTimeout(function(){window.location.href = "/modules/innovation-lifecycle-management/project/?ilm="+updatedSlug+""},3900);
+                }
+                else if(responseMessage == "Project with this name already exists"){
+                   
+                var notifyMessage = "Project already exists";
+                $('#projectEditMessage').html(notifyMessage);
+                $('#projectEditMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+                $(".Form_Login_Button").val("SAVE");
+                $('#projectEditMessage').fadeOut(8300);
+
+
+                }
+
+                else if(responseMessage == "Project does not exist"){
+                   
+                   var notifyMessage = "Project does not exist, contact system administrator";
+                   $('#projectEditMessage').html(notifyMessage);
+                   $('#projectEditMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+                   $(".Form_Login_Button").val("SAVE");
+                   $('#projectEditMessage').fadeOut(8300);
+   
+   
+                   }
+                  
+                else
+                {
+
+                  {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                        {{ range .items }}
+                            {{ if eq .questionCode "ILM_msgs"}}
+                                {{ range .answers }}
+                                    {{ if eq .code "no_permission_to_edit_ilm_message"}}
+                                        var editProjectPermission = {{ .text }}
+                                    {{ end }}  
+                                                                              
+                                {{ end }}  
+                            {{ end }}
+                        {{ end }}
+               {{ end }}
+
+                  var notifyMessage = editProjectPermission;
+                  $('#projectEditMessage').html(notifyMessage);
+                  $('#projectEditMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+                  $(".Form_Login_Button").val("SAVE");
+                  $('#projectEditMessage').fadeOut(8300);
+                }
+             
+            //window.setTimeout(function(){location.reload()},3000)
+          });
+          }
+
+        });
+
+ 
+     
+});
+     
+
+  </script>
+   
+
+  <section class="about-wrapper">
+    <main class="container search-results-row pt-2">
+      <div id="breadcrumbs" class="new-ofer-breadcrumbs">
+        <nav aria-label="breadcrumb mx-auto" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item"><a href="/modules/innovation-lifecycle-management/">Innovation Lifecycle Management (ILM) Project</a></li>
+            <li class="breadcrumb-item"><a href="/edit-ilm-project">Edit Innovation Lifecycle Management (ILM) Project</a></li>
+          </ol>
+        </nav>
+      </div>
+      
+ 
+ 
+    <div class="top-10-most-row">
+      
+        <div class="tab-content">
+   
+
+          <div class="tab-pane fade active show" id="awards" role="tabpanel" aria-labelledby="awards-tab">
+            <header class="post-header">
+         <h2 class="post-title">Edit Innovation Lifecycle Management (ILM) Project </h2>
+  
+            </header>
+            <div>
+              <div id="sendMessage4" class="alert alert-success" style="display:none"></div>
+              
+             <input type="hidden" id="editTempTopics" >
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Project Name</span>  
+                  <span class="label-required">(required)</span>                 
+                  </label>
+                  <div class="col-md-9">
+                       <input name="editTitle" id="editTitle" type="text" class="form-control" placeholder="Enter Project Name" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description</span>   
+                  <span class="label-required">(required)</span>                 
+                  </label>
+                  <div class="col-md-9">
+                   <textarea value = "" name = "editDesc" id = "editDesc" class="form-control" required></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Topics</span> <a href="javascript:void(0);" data-toggle="tooltip" title="Please select the best suited topics for your project">
+                      <i class="fas fa-question-circle"></i></a> 
+                      <span class="label-required">(required)</span>                  
+              </label>
+                  <div class="col-md-9">
+                       <select required class="form-control" name="editTopics" id="editTopics" multiple title="Please select the best suited topics for your project">
+                              </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Search Keyword</span>                   
+                  </label>
+                  <div class="col-md-9">
+                  <input name="searchKeyword" id="editSearchKeyword" type="text" class="form-control" title="Enter each search keyword with comma(,) seperation"
+                                placeholder="Enter Search Keyword with comma(,) seperated" required>
+                  </div>
+                </div>
+                <div class="form-group row" id = "projectPersonal" style="display:none;">
+                  <label class="col-md-3">
+                  <span>Do you want to make it personal ILM?</span>                   
+                  </label>
+                  <div class="col-md-9">
+
+                    <label class="radio-holder-col"><input id = "personalILM" name = "personalILM" type="checkbox" value="personalILM" disabled="disabled"> Personal</label>
+
+                     
+
+                 </div>
+                </div>
+                <div class="form-group row" id = "communitySelection" style="display: none;">
+                    <label class="col-md-3">
+                    <span>Select Community</span>                   
+                    </label>
+                    <div class="col-md-9">
+                      <select class="form-control" name="communityOffering" id="communityOffering" title="Please select the best suited topics for your offering">
+                        <option>Select Any Community</option>
+                        {{ range first 1 .Site.Data.community_data_lhc_form.items }}
+                        
+                          {{ range .items }}
+                           
+                             
+                              <option value="{{.question }}">{{ .question }}</option>
+                             
+                          {{ end }}
+                        {{ end }}
+                      </select> 
+                      <div id="" class="alert alert-danger pt-1  pb-1 mt-2"  > 
+                        <span class="ilm-pr-modal-message-title">Selected Community is "<span id = "selectedCommunity"></span>". Community of an ILM project is a non-editable field.</span>
+                        </div>
+                    </div>
+                    
+                  
+                  </div>
+                  
+ 
+                <div class="form-group row" id = "accessibilitySelection" style="display: none;">
+                    <label class="col-md-3">
+                    <span>Accessibility</span>                   
+                    </label>
+                    <div class="col-md-9">
+  
+                    <label class="radio-holder-col"><input id ="publicTrue" type="radio" name="optradio" checked="" value="1"> Public</label>
+                    <label class="radio-holder-col"><input id ="privateFalse" type="radio" name="optradio" value="0"> Private</label>
+  
+                   </div>
+                  </div>
+                <input type="hidden" value="" name="editProjectID" id="editProjectID">
+                <input type="hidden" name="formentry" id="formentry" value="true">
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                   <input type="submit" value="Update" class="btn btn-primary add-new-bt Form_update_Button">
+                   <input id = "cleareditproject" type="reset" value="Cancel" class="btn btn-primary add-new-bt grey-bg-bt">
+                    <span id = "projectEditMessage"  class="text-center green" role="alert"></span>
+                  </div>
+                </div>
+
+               
+            </div>
+
+
+          </div>
+           
+          
+        
+           
+        </div>
+      </div>
+                    
+  
+         
+          
+         
+
+
+
+
+    </main>
+  </section>
+  {{ partialCached "footer.html" . }}
+</body>
+
+</html>

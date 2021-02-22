@@ -1,0 +1,213 @@
+{
+  "shortName": "Data Friction",
+  "name": "Data Friction",
+  "status": "draft",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCode": "Persistence",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have a very efficient medical records release process?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "data_friction_release_process",
+          "prefix": "far fa-id-card",
+          "localQuestionCode": "release_process",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have a very efficient medical records release process",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have a very efficient medical records release process",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Are you HIPAA Compliant in terms of releasing the medical records?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "data_friction_hippa_compliant",
+          "prefix": "far fa-file-alt",
+          "localQuestionCode": "hippa_compliant",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We are HIPAA Compliant in terms of releasing the medical records",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We are not HIPAA Compliant in terms of releasing the medical records",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Are you able to track and rectify delays, bottlenecks and possible variations that arise as part of patient medical record request process?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "data_friction_track_rectify",
+          "prefix": "fas fa-book-reader",
+          "localQuestionCode": "track_rectify",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We are able to track and rectify delays, bottlenecks and possible variations that arise as part of patient medical record request process",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We are not able to track and rectify delays, bottlenecks and possible variations that arise as part of patient medical record request process",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you comply with the Information Blocking Rule?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "data_friction_Information_blocking_rule",
+          "prefix": "fas fa-id-card",
+          "localQuestionCode": "Information_blocking_rule",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We comply with the Information Blocking Rule",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not comply with the Information Blocking Rule",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCode": "interaction",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "Policy messages",
+          "questionCodeSystem": "Custom",
+          "questionCode": "policy_messages",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "The healthcare industry will continue to connect patients with their own health data with the least amount of friction. Now more than ever, healthcare organizations must work to revamp their customer experience. To achieve this, it is imperative leaders leverage the right solutions to identify and eliminate friction from what should be the simplest aspects of the care experience: buying a health plan and scheduling an appointment. Eliminating the friction in these interactions can build the foundation for the convenient care experience  patients deserve.",
+              "code": "hdo_data_friction",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Disruption" 
+ classname:  "Disruption" 
+ label: "Disruption" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Disruption']
+ aliases:  "/topic/healthcare-it-news-disruption"  
+ searchCategory: "topic" 
+---
+RGlzcnVwdGl2ZSB0ZWNobm9sb2d5IGludm9sdmVzIGRpZmZlcmVudCB0ZWNobm9sb2dpY2FsIHByb2NlZHVyZXMgdGhhdCBoZWxwIGluIHVuZGVyc3RhbmRpbmcgaG93IG1hcmtldHMgb3IgdHJhZGVzIHNob3VsZCBmdW5jdGlvbi4gSXQgbWF5IGhlbHAgYnVzaW5lc3NlcyBpbiBhZG9wdGluZyBuZXcgdGVjaG5vbG9naWVzIHRoYXQgd2lsbCBvcGVuIGF2ZW51ZXMgZm9yIG5ldyBpbm5vdmF0aXZlIG1hcmtldHMgYW5kIGVjb25vbWljIGJvb3N0aW5nLgpEaXNydXB0aXZlIHRlY2hub2xvZ2llcyBzZXQgbG9uZyB0ZXJtIGdvYWxzIGFuZCBhY2hpZXZlbWVudHMsIGkuZS4sIGluIGluaXRpYWwgc3RhZ2VzLCB0aGV5IG1pZ2h0IG5vdCBzZWVtIHRvbyBhZHZhbnRhZ2VvdXMsIGJ1dCBpbiB0aGUgbG9uZyBydW4sIHRoZXkgY2FuIGJlIHByb2R1Y3RpdmUuIERpc3J1cHRpdmUgbWVkaWNhbCB0ZWNobm9sb2d5IGNhbiBicmluZyByZXZvbHV0aW9uIGJ5IGltcGxlbWVudGluZyB0ZWNobmlxdWVzIHN1Y2ggYXMgQXJ0aWZpY2lhbCBJbnRlbGxpZ2VuY2UgKEFJKSwgM0QgcHJpbnRpbmcgYW5kIFJvYm90aWNzLCBldGMuIGluIHRoZSBoZWFsdGhjYXJlIGluZHVzdHJ5Lg==

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Drug Diversion" 
+ classname:  "Drug_Diversion" 
+ label: "Drug Diversion" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['KLAS: Drug Diversion Monitoring','Centers for Medicare & Medicaid Services (CMS): Prescription drugs'] 
+ collections: ['Healthcare IT News: Drug Diversion']
+ aliases:  "/topic/healthcare-it-news-drug-diversion"  
+ searchCategory: "topic" 
+---
+RHJ1ZyBkaXZlcnNpb24gaXMgYSBzdGVhbHRoeSBhbmQgaWxsaWNpdCBhY3Rpdml0eSB0aGF0IGludm9sdmVzIHRoZSBtaXN1c2Ugb2YgcHJlc2NyaXB0aW9uIG1lZGljYXRpb25zIHdpdGhvdXQgbGVnYWwgYXV0aG9yaXphdGlvbi4gVGhlIHByb2Nlc3Mgb2YgZHJ1ZyBkaXZlcnNpb24gaW5jbHVkZXMgdHJhbnNmZXJyaW5nIGRydWdzIHRvIHBlb3BsZSB3aG8gd2VyZSBub3QgcHJlc2NyaWJlZCBhbnkgbWVkaWNpbmUuIEl0IGlzIGFsc28gY2FsbGVkIG1lZGljYXRpb24sIHByZXNjcmlwdGlvbiwgYW5kIG9waW9pZCBkaXZlcnNpb24gYW5kIGhhcyBzaWduaWZpY2FudCBoZWFsdGgsIGxlZ2FsIGFuZCBzb2NpYWwgaW1wbGljYXRpb25zLiBUaGUgZHJ1Z3MgY29tbW9ubHkgdXNlZCBmb3IgZHJ1ZyBkaXZlcnNpb24gaW5jbHVkZSBhbmFsZ2VzaWNzLCBtYWlubHkgb3Bpb2lkcywgYW5kIHBzeWNob2FjdGl2ZSBkcnVncywgbW9zdGx5IGJlbnpvZGlhemVwaW5lcy4gRHJ1ZyBkaXZlcnNpb24gaW4gaGVhbHRoY2FyZSAoZW1wbG95ZWVzIHN0ZWFsaW5nIGRydWdzIGZvciB0aGVpciB1c2UpIG1heSBoYXZlIHNldmVyZSBlZmZlY3RzIG9uIHRoZSBoZWFsdGggb2YgcGF0aWVudHMu

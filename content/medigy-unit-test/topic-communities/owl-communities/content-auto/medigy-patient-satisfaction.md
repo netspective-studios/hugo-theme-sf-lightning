@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Patient Satisfaction" 
+ classname:  "OWLClass_b6d23412_1ed9_47db_989f_9efe82e92c0d" 
+ label: "Patient Satisfaction" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: Patient Satisfaction']
+ aliases:  "/topic/medigy-patient-satisfaction"  
+ searchCategory: "topic" 
+---
+UGF0aWVudCBTYXRpc2ZhY3Rpb24gcmVmZXJzIHRvIGEgc2lnbmlmaWNhbnQgcGFyYW1ldGVyIHRoYXQgaW5kaWNhdGVzIHRoZSBxdWFsaXR5IG9mIGhlYWx0aGNhcmUgYW4gaW5kaXZpZHVhbCByZWNlaXZlcy4gSXQgaXMgYSBtZWFzdXJlIG9mIHdoZXRoZXIgdGhlIHBhdGllbnQgaXMgc2F0aXNmaWVkIG9yIG5vdCB3aXRoIHRoZSBjYXJlIHByb3ZpZGVkIGJ5IHRoZSBoZWFsdGhjYXJlIGZhY2lsaXR5LiBFZmZlY3RpdmUgdXNlIG9mIHRlY2hub2xvZ3kgaXMgYSBuZWNlc3NpdHkgdG8gaW1wcm92ZSBwYXRpZW50IHNhdGlzZmFjdGlvbi4gSW50ZXJhY3RpdmUgZGlnaXRhbCBjb21tdW5pY2F0aW9uIHdpdGggdGhlIGhlYWx0aGNhcmUgcHJvdmlkZXIsIGEgZGlnaXRhbCBzdXBwb3J0IHN5c3RlbSB0aGF0IGlzIGF2YWlsYWJsZSB0aW1lIGFuZCB3aGVuIG5lZWRlZCwgaXMgaG93IGRpZ2l0YWwgdG9vbHMgd291bGQgaGVscCBtYWludGFpbiBwYXRpZW50IHNhdGlzZmFjdGlvbi4=

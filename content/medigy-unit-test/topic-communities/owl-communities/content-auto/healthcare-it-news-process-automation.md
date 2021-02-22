@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Process Automation" 
+ classname:  "Process_automation" 
+ label: "Process Automation" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Process Automation']
+ aliases:  "/topic/healthcare-it-news-process-automation"  
+ searchCategory: "topic" 
+---
+UHJvY2VzcyBhdXRvbWF0aW9uIGlzIGEgZ2VuZXJhbCB0ZXJtIHVzZWQgZm9yIHByb2Nlc3NlcyB0aGF0IGF1dG9tYXRlIHRocm91Z2ggdGhlIHVzZSBvZiBkaWdpdGFsIHRlY2hub2xvZ3kuIFRoZSBhdXRvbWF0ZWQgcHJvY2Vzc2VzIGFyZSByYXBpZGx5IGRlbGl2ZXJlZCBhbmQgZG8gbm90IHJlcXVpcmUgbXVjaCBodW1hbiBpbnRlcnZlbnRpb24uIFJvYm90aWMgcHJvY2VzcyBhdXRvbWF0aW9uIChSUEEpIGlzIG9uZSBvZiB0aGUgZXhhbXBsZXMgb2YgcHJvY2VzcyBhdXRvbWF0aW9uLiBJdCBpcyBhIHRlY2hub2xvZ3kgdGhhdCBpbnZvbHZlcyB0aGUgdXNlIG9mIHNvZnR3YXJlIHJvYm90cyB0byBhdXRvbWF0ZSBsYWJvci1pbnRlbnNpdmUgcHJvY2Vzc2VzLgpSUEEgaW4gaGVhbHRoY2FyZSBjYW4gaGVscCBoZWFsdGhjYXJlIG9yZ2FuaXphdGlvbnMgaW5jcmVhc2Ugb3BlcmF0aW9uYWwgZWZmaWNpZW5jeSwgbG93ZXIgY29zdHMgYW5kIGxpbWl0IHRoZSBwb3NzaWJpbGl0eSBvZiBodW1hbiBlcnJvciB3aGlsZSBwcm9jZXNzaW5nIGluZm9ybWF0aW9uLg==

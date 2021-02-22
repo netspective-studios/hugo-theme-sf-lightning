@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . .Title}}
+<script type="text/javascript" src="/js/hdo-auth-policies-service-actions.js"></script>
+ 
+<link href="/css/bootstrap-slider.css" media="screen" rel="stylesheet" />
+<style>
+  .lf-form-body .ng-scope .lf-form-table>div:first-child {
+    display: none !important;
+  }
+</style>
+
+<body class="single-body">
+<!-- Google Tag Manager (noscript) -->
+<div id="g-tag-body">
+<noscript>
+  <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+</div>
+<!-- End Google Tag Manager (noscript) -->
+
+{{ partialCached "nav-bar.html" .  .Title }}
+
+<script>
+  $(document).ready(function () {
+    // Show the div after 5s
+    $("#tabbed-nav").delay(70).fadeIn(100);    
+    loadComment();
+
+    $('table .sentence-case th').each(function() {
+    $(this).text($(this).text().toLowerCase());
+    }); 
+    $('#rateViewClick').on("click", function () {
+      if ($(this).html().search('View rating details') != -1)
+      {
+        $(this).html('<a> Hide rating details</a>');
+        $('#rateDetlArea').show();
+      }
+      else
+      {
+        $(this).html('<a> View rating details</a>');
+        $('#rateDetlArea').hide();        
+      }       
+    });
+
+    // Likert show/hide uncheck
+    $(".eodbRadio").prop("checked", false);
+    $(".inno-rad").prop("checked", false);
+
+    // coming soon modal poup starts here
+    $('#claimOffering').click(function(e){
+      e.preventDefault(); 
+      //$('#exampleModalCenter').modal('toggle');          
+                
+          if (getCookie('personid') != null ) {           
+            var institutionName = {{ .Title }};
+            var sessionId = getCookie('sessionId');
+            var email = getCookie('userEmail');           
+            var name = getCookie('firstname');            
+            var serviceData = { "url": "{{ $.Site.Params.GraphQLUrl }}", "method": "POST", "query": `mutation{
+                  sendInstitutionClaimInvite(
+                    email:{
+                        displayName:"`+name+`"
+                        email:"` + email + `"
+                    },
+		                institutionName:"` + institutionName + `"                                       
+                    authorization:{
+                      sessionID:"`+sessionId+`"
+                    }
+                    ){
+                      status
+                      message
+                      errorCode
+                    }
+                  }`
+       };
+         console.log(serviceData);
+            ajaxPageServiceCall.serviceCall(serviceData).then(response => {
+              $('#claimProductMessage').html("");
+              if (response.data.sendInstitutionClaimInvite.status != "SUCCESS") {
+                $('#claimOfferingButton').prop("disabled", false);
+                $('#claimProductMessage').html(response.data.sendInstitutionClaimInvite.message);
+                $('#claimProductMessage').addClass('alert-danger');
+                $('#claimProductMessage').show();                
+
+              }
+              else {
+                $('#claimOfferingButton').prop("disabled", true);
+                $('#claimProductMessage').html("Claim has been registered successfully for moderation. Medigy will send an email to the company email address with the claim verification link once the claim is approved.");
+                $('#claimProductMessage').addClass('alert-success');
+                $('#claimProductMessage').show();                
+              }
+            })
+                .catch(error => {
+                    console.log(error);
+                });
+
+          } 
+          else{
+            $('#loginModalCenter').modal('toggle'); 
+          }         
+    });
+
+    // coming soon modal poup ends here       
+    // Verify the userLogin and enable edit button starts here
+    var personid = getCookie('personid');
+    // Verify the userLogin and enable edit button ends here
+    //21-11-19 inviteProcess start here
+    $(".inviteProcess").on("click", function () {              
+      if (getCookie('personid') != null) {
+        $('#inviteMessage').hide();
+        $('#inviteModalCenter').modal('toggle');
+        $('#facetName').val($(this).attr('facetName'));
+        $('#productName').val($(this).attr('productName'));
+        $('#facetsSlug').val($(this).attr('data-app'));
+      }
+      else {
+        $('#loginModalCenter').modal('toggle');
+      }
+    });
+
+    $('#inviteform').on('submit', function (e) {
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      }
+      else {
+        e.preventDefault();
+        $('#inviteButton').prop("disabled", true);
+        var session = getCookie('sessionId');
+        var inviteeEmail = $('#inviteEmail').val();
+        var fullUrl = window.location.href;
+        var splitedUrl = fullUrl.split('?');
+        if (typeof (splitedUrl) == 'undefined')
+          var url = window.location.href + '?invite=' + getCookie('activeTab') + '&facets=' + $('#facetsSlug').val();
+        else
+          var url = splitedUrl[0] + '?invite=' + getCookie('activeTab') + '&facets=' + $('#facetsSlug').val();
+        var fromName = getCookie('firstname');
+        var inviteeName = $('#inviteFirstName').val() + ' ' + $('#inviteLastName').val();
+        var facetName = $('#facetName').val();
+        var institutionName = $('#productName').val();
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+            "query": `mutation{
+                sendInstitutionInviteEmail(
+                  email:{
+                      displayName:"`+inviteeName+`"
+                      email:"` + inviteeEmail + `"
+                  },
+                  url:"` + url + `",
+                  fromName:"` + fromName + `",
+                  toName:"` + inviteeName + `",
+                  institutionName:"` + institutionName + `"
+                  authorization:{
+                    sessionID:"`+session+`"
+                  }
+                  ){
+                    status
+                    message
+                  }
+                }`
+          }
+        }
+      
+        $.ajax(settings).done(function (response) {
+          $('#inviteButton').prop("disabled", false);
+          $('#inviteMessage').html("");
+          if (response.data.sendInstitutionInviteEmail.status != "SUCCESS") {
+
+            $('#inviteMessage').html(response.data.sendInstitutionInviteEmail.message);
+            $('#inviteMessage').addClass('alert-danger');
+            $('#inviteMessage').show();
+          }
+          else {
+            $('#inviteMessage').html(response.data.sendInstitutionInviteEmail.message);
+            $('#inviteMessage').addClass('alert-success');
+            $('#inviteMessage').show();
+            $('#inviteform')[0].reset();
+          }
+        });
+      }
+    });
+    //inviteProcess ends here
+  });
+</script>
+
+<section class="detail-wrapper offering-page">
+  <article class="new-ofering-row-1">
+    <div class="container">
+        {{ partialCached "bread-crumb.html" . .Title }}  
+        {{ partialCached "likert-fetch-functions.html" . .Title}}          
+      <div class="new-ofer-header row">
+        <div class="col-lg-6 pl-5">
+          <div class="row new-ofer-header-left">
+            {{ if ( .Params.logo) }} {{ if ( .Params.bgcolor)}} {{ $imagDivWidth := 8}} {{ $backgroundColor := .Params.bgcolor}}
+            <div class="col-md-3 col-sm-4" style="background-color:{{ $backgroundColor }}">
+              <img src="{{ .Params.logo }}" alt="{{ .Title }}">
+            </div>
+            <div class="col-md-9 col-sm-{{ $imagDivWidth }}">
+              {{ else }} {{ $backgroundColor := "#fff" }} {{ $imagDivWidth := 8}}
+              <div class="col-md-3 col-sm-4" style="background-color:{{ $backgroundColor }}">
+                <img src="{{ .Params.logo }}" alt="{{ .Title }}">
+              </div>
+              <div class="col-md-9 col-sm-{{ $imagDivWidth }}">
+                {{ end }} {{ else }} {{ $imagDivWidth := 12}}
+                <div class="">
+                  {{ end }}
+
+                  <h2>{{ .Title }} {{ if (eq .Params.claimStatus true)}}
+                    <div class="new-ofer-ico-1 green" >
+                      <span title="This HDO profile is claimed">
+                        <i class="fas fa-check"></i>
+                      </span>
+                    </div>
+                    {{ end }} 
+                  </h2>
+                  {{ if .Params.caption}}
+                  <p>{{ .Params.caption }}</p>
+                  {{ end }}
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="new-ofer-header-right">
+                <div class="new-ofer-header-right-col-1"></div>
+                <div class="new-ofer-header-right-col-2 row">                    
+                  <div class="col-lg-6">
+                    <div id="tenantIdForClaimDiv">
+                      <div id="claimProductMessage" class="alert alert-success" style="display: none;"></div>
+                      <form name="claimimgForm" id="claimimgForm" style="display:none;">
+                        <div class="form-group row">
+                          <label for="email" class="col-sm-12">Organization</label>
+                          <div class="col-sm-12">
+                            <select class="form-control" name="tenantIdForClaim" id="tenantIdForClaim">
+                            </select>
+                          </div>
+                        </div>
+                        <div class="text-left">
+                          <input type="submit" value="Claim Offering" id="claimOfferingButton" class="btn btn-primary" productName="{{ .Title }}" productId="{{ .Params.facilityId  }}">
+                          <input type="button" value="Cancel" id="claimOfferingCancel" class="btn btn-primary">
+                        </div>
+                      </form>
+                    </div>
+                    {{ $productId:= .Params.facilityId }}
+                    {{ $productName:=  .Title  }}
+
+                    {{ range first 1 .Site.Data.hdo_data_lhc_form.items }}
+                      {{ range first 1 .items }}
+                        {{ range .items }}
+                          {{ $outermostDivId:= .questionCode }}
+                          {{ $anchorTagClass:= .prefix }}  
+                          {{ $title := .question }}
+                          {{ $anchorTagId:= .questionCode }}                         
+                          {{ range .answers }}
+                            {{ $.Scratch.Set "subtitle"  .text }}
+                            {{ $.Scratch.Set "innerDivId"  .code }}
+                            {{ $.Scratch.Set "innerDivClass"  .label }}
+                          {{ end }}
+                          {{ $subtitle := $.Scratch.Get "subtitle" }}
+                          {{ $innerDivId := $.Scratch.Get "innerDivId" }}
+                          {{ $innerDivClass := $.Scratch.Get "innerDivClass" }}
+                          {{ partialCached "hdo-claim-invite-widget" (dict  "title"  $title  "subtitle" $subtitle  "outermostDivId" $outermostDivId  "anchorTagClass" $anchorTagClass  "anchorTagId" $anchorTagId  "productId" $productId "productName" $productName "innerDivId" $innerDivId "innerDivClass" $innerDivClass  ) $productId $productName $title}}                            
+                          {{ end }}
+                        
+                      {{ end }}
+
+                    {{ end }}
+
+                    
+                  </div>
+                  <div class="col-lg-6" id="inviteHospitalArea">
+                    {{ $.Scratch.Set "inviteCounter"  0 }}
+                    {{ range first 1 .Site.Data.hdo_data_lhc_form.items }}
+                      {{ range first 2 .items }}
+                        {{ $inviteCounter := $.Scratch.Get "inviteCounter" }}
+                        {{ if  eq $inviteCounter 1}}
+                          {{ range .items }}
+                            {{ $outermostDivId:= .questionCode }}
+                            {{ $anchorTagClass:= .prefix }}  
+                            {{ $title := .question }}
+                            {{ $anchorTagId:= .questionCode }}                         
+                            {{ range .answers }}
+                              {{ $.Scratch.Set "subtitle"  .text }}
+                              {{ $.Scratch.Set "innerDivId"  .code }}
+                              {{ $.Scratch.Set "innerDivClass"  .label }}
+                            {{ end }}
+                            {{ $subtitle := $.Scratch.Get "subtitle" }}
+                            {{ $innerDivId := $.Scratch.Get "innerDivId" }}
+                            {{ $innerDivClass := $.Scratch.Get "innerDivClass" }}
+                            {{ partialCached "hdo-claim-invite-widget" (dict  "title"  $title  "subtitle" $subtitle  "outermostDivId" $outermostDivId  "anchorTagClass" $anchorTagClass  "anchorTagId" $anchorTagId  "productId" $productId "productName" $productName "innerDivId" $innerDivId "innerDivClass" $innerDivClass  ) $productId $productName $title}}                                                        
+                           {{ end }}
+                         {{ end }}
+                         {{ $.Scratch.Add "inviteCounter" 1 }}
+                       {{ end }}
+                     {{ end }}
+
+
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+  <article class="new-ofering-row-2">
+    <div class="container">
+      <div class="new-ofering-row-2-cell">   
+        {{ $productId := .Params.facilityId }}          
+        {{ $productName := .Title }}
+        {{ $countInFrontmatter := 0 }}
+        {{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+        {{ range first 1 .Site.Data.hdo_data_lhc_form.items }}
+          {{ range last 1 .items }}
+            {{ range .items}}
+              {{ $label := .question }}
+              {{ $outerDivClass := .prefix.outerDivClass }}
+              {{ $anchorTagId := .questionCode }}
+              {{ $anchorTagClass := .prefix.anchorTagClass }}
+              {{ $spanId := .prefix.spanId }}
+              {{ $countDivId := .prefix.countDivId }}
+              {{ $countSpanId := .prefix.countSpanId }}
+              {{ $MetricName := .localQuestionCode }}
+              {{ $globalStatusVar := .prefix.globalStatusVar }}
+              {{ $metricKeyId := .prefix.metricKeyId }}
+              {{ $tooltip := .prefix.tooltip }}
+              {{ $metricKeyName := .prefix.metricKeyName }}
+              {{ $type := .prefix.type }}
+              {{ partialCached "cadds-common" (dict  "label"  $label  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $productId "productName" $productName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $MetricName $tooltip $productId }}  
+            {{ end }}
+
+          {{ end }}
+        {{ end }}
+
+
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </article>
+  <article class="new-offering-row-1 insti-section">
+    <div class="insti-menu-wrapper border-0 mb-3">
+      <div class="container">
+        <div class="insti-row-1">           
+          <div class="zotab" id="page">
+            <div id="tabbed-nav" style = "display:none;">
+              <ul>
+                <li>
+                  <a id="overviewTab" onclick="setActiveTab(this)";>
+                  {{ $toolTipText := "Over All View Section of Hospital Compare" }}
+                  {{ $extraClass := "" }}
+                  {{ $favIcon := ""}}
+                  {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}                              
+                  <span class="tab-ico-ttl"><!-- <i class="fas fa-hospital tab-icon"></i> --> Overview</span>
+                  </a>
+                </li>
+                <li>
+                  <a id="innovationProgramsTab" onclick="setActiveTab(this)";>
+                  {{ $toolTipText := "Innovation Programs Section of Hospital Compare" }}
+                  {{ $extraClass := "" }}
+                  {{ $favIcon := ""}}
+                  {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}} 
+                   <span class="tab-ico-ttl"><!-- <i class="fas fa-award tab-icon"></i> --> Innovation Programs</span>                                                       
+                  </a>
+                </li>
+                <li>
+                  <a id="timelyTab" onclick="setActiveTab(this)";>
+                  {{ $extraClass := "" }}
+                  {{ $favIcon := ""}}
+                  {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}                              
+                  <span class="tab-ico-ttl"><!-- <i class="fas fa-user-clock tab-icon"></i> --> Timely & Effective Care</span>
+                  </a>
+                </li>
+                <li>
+                  <a id="complicationDeathTab" onclick="setActiveTab(this)";>
+                    {{ $extraClass := "" }}
+                    {{ $favIcon := ""}}
+                    {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}} 
+                    <span class="tab-ico-ttl"><!-- <i class="fas fa-file-medical tab-icon"></i> --> Complications & Deaths</span>                                                
+                  </a>
+                </li>
+                <li>
+                  <a id="unplannedHospitalVisitsTab" onclick="setActiveTab(this)";>
+                      {{ $toolTipText := "Returning to the hospital for unplanned care disrupts patients’ lives, increases their risk of harmful events like healthcare-associated infections, and costs more money. Hospitals that give high quality care can keep patients from returning to the hospital and reduce their stay if they have to come back" }}
+                      {{ $extraClass := "" }}
+                      {{ $favIcon := ""}}
+                      {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}  
+                      <span class="tab-ico-ttl"><!-- <i class="fas fa-briefcase-medical tab-icon"></i>  --> Unplanned Hospital Visits</span>                                                    
+                  </a>
+                </li>
+                <li> 
+                  <a id="PaymentAndValueOfCareTab" onclick="setActiveTab(this)";>
+                      {{ $toolTipText := "Returning to the hospital for unplanned care disrupts patients’ lives, increases their risk of harmful events like healthcare-associated infections, and costs more money. Hospitals that give high quality care can keep patients from returning to the hospital and reduce their stay if they have to come back" }}
+                      {{ $extraClass := "" }}
+                      {{ $favIcon := ""}}
+                      {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}  
+                      <span class="tab-ico-ttl"><!-- <i class="fas fa-file-invoice-dollar tab-icon"></i> --> Payment & Value of Care</span>                                                        
+                  </a>
+                </li>
+                <li> 
+                  <a id="PatientAccessDataFrictionTab" onclick="setActiveTab(this)";>
+                      {{ $toolTipText := "Returning to the hospital for unplanned care disrupts patients’ lives, increases their risk of harmful events like healthcare-associated infections, and costs more money. Hospitals that give high quality care can keep patients from returning to the hospital and reduce their stay if they have to come back" }}
+                      {{ $extraClass := "" }}
+                      {{ $favIcon := ""}}
+                      {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}                                                        
+                      <span class="tab-ico-ttl"><!-- <i class="fas fa-folder-open tab-icon"></i> --> Patient Access & Data Friction</span>
+                  </a>
+                </li>
+                <li> 
+                  <a id="PatientSurvey" onclick="setActiveTab(this)";>
+                      {{ $toolTipText := "Returning to the hospital for unplanned care disrupts patients’ lives, increases their risk of harmful events like healthcare-associated infections, and costs more money. Hospitals that give high quality care can keep patients from returning to the hospital and reduce their stay if they have to come back" }}
+                      {{ $extraClass := "" }}
+                      {{ $favIcon := ""}}
+                      {{ partialCached "hdo-tab-with-dynamic-icon.html" (dict   "extraClass"  $extraClass "favIcon"  $favIcon) $productId $productName}}                                                        
+                      <span class="tab-ico-ttl"><!-- <i class="fas fa-folder-open tab-icon"></i> --> Survey of patients' experiences</span>
+                  </a>
+                </li>
+              </ul>
+            <div>
+            <div class="insti-tab-col border-0">                   
+              <div class="row insti-over-titles white-bg">
+                <div class="col-md-6 tab-leftcontent-border">
+                  <div class="form-group row">
+                    <div class="col-lg-4 col-md-5"><label>Address:</label></div>
+                    <div class="col-lg-8 col-md-7">{{ if (ne .Params.usDhhsCmsHospitalCompareModel.address "Nil") }}{{ .Params.usDhhsCmsHospitalCompareModel.address }}{{if (ne .Params.usDhhsCmsHospitalCompareModel.city "Nil")}}, {{.Params.usDhhsCmsHospitalCompareModel.city}}{{ end }}{{if (ne .Params.usDhhsCmsHospitalCompareModel.countyName "Nil")}}, {{.Params.usDhhsCmsHospitalCompareModel.countyName}}{{ end }}{{if (ne .Params.usDhhsCmsHospitalCompareModel.state.name "Nil")}}, {{ $link := (replace (.Params.usDhhsCmsHospitalCompareModel.state.name | lower) " " "-") }} <a href="/geographystates/{{ $link }}">{{.Params.usDhhsCmsHospitalCompareModel.state.name}}</a>     {{ end }}{{if (ne .Params.usDhhsCmsHospitalCompareModel.zipCode "Nil")}}, <a href="/geographyzipcodes/{{.Params.usDhhsCmsHospitalCompareModel.zipCode}}">{{.Params.usDhhsCmsHospitalCompareModel.zipCode}}</a>{{ end }}
+                        {{ end }}
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <div class="col-lg-4 col-md-5"><label>Phone:</label></div>
+                    <div class="col-lg-8 col-md-7">{{ range first 1 (.Params.usDhhsCmsHospitalCompareModel.unplannedHospitalVisits) }} {{ if (ne .phoneNumber "Nil") }}{{ .phoneNumber}}{{else}}Not Available{{ end }}{{ end }}
+                    </div>
+                  </div>                          
+                  <div class="form-group row">
+                    <div class="col-lg-4 col-md-5"><label>Rating:</label></div>
+                    <div class="col-lg-8 col-md-7">
+                        {{ if lt (len (string .Params.facilityId)) 6 }}
+                        {{ $facilityId := print "0" .Params.facilityId }}
+                        {{ $.Scratch.Set "facilityId"  $facilityId }}
+                        {{ else }}
+                        {{ $.Scratch.Set "facilityId" .Params.facilityId }}
+                        {{ end }}
+
+                        <span class="compare-image"><a title="Rating courtesy of Medicare.gov | Hospital Compare" href="https://www.medicare.gov/hospitalcompare/profile.html#profTab=0&ID={{ $.Scratch.Get "facilityId" }}" target="_blank"><img src="/img/hospital_compare.jpg" alt="Hospital Compare Image"/></a></span>
+                    {{ if (ne  .Params.usDhhsCmsHospitalCompareModel.hospitalOverallRating   "Not Available") }}
+                      {{ $rating := int .Params.usDhhsCmsHospitalCompareModel.hospitalOverallRating }}
+                      {{ $totalStar := 5}}
+                      {{ partialCached "star-rating.html" (dict  "rating"  $rating  "totalStar" $totalStar) $productId $productName}}
+                                                  
+                      <p id="rateViewClick" class="cursorLink"><a> View rating details</a></p>
+
+                    {{ else }}
+                      {{ .Params.usDhhsCmsHospitalCompareModel.hospitalOverallRating }}
+                    {{ end }}
+                    </div>  
+                  </div> 
+                  <article id="rateDetlArea" class="rat-det-row-1" style="display: none;" >
+                    <div class="row rat-det-col no-border">
+                      <div class="col-md-4 head">Category</div>
+                      <div class="col-md-8 head">National Average Comparison</div>
+                    </div>
+                    
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Mortality</div>
+                      <div class="col-md-8">                                  {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.mortalityNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                      
+                      {{ .Params.usDhhsCmsHospitalCompareModel.mortalityNationalComparison.result }}
+                      </div>
+                    </div>
+                    
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Safety of Care</div>
+                      <div class="col-md-8">
+                        {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.safetyOfCareNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                      {{ .Params.usDhhsCmsHospitalCompareModel.safetyOfCareNationalComparison.result }}                              
+                      </div>
+                    </div>
+                    
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Readmission</div>
+                      <div class="col-md-8">
+                        {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.readmissionNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                      
+                      {{ .Params.usDhhsCmsHospitalCompareModel.readmissionNationalComparison.result }}                                
+                      </div>
+                    </div>
+                    
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Patient Experience</div>
+                      <div class="col-md-8">
+                        {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.patientExperienceNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                      
+                      {{ .Params.usDhhsCmsHospitalCompareModel.patientExperienceNationalComparison.result }}                                
+                      </div>
+                    </div>
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Timeliness Of Care</div>
+                      <div class="col-md-8">
+                        {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.timelinessOfCareNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                        {{ .Params.usDhhsCmsHospitalCompareModel.timelinessOfCareNationalComparison.result }}                                
+                      </div>
+                    </div>                            
+                    <div class="row rat-det-col">
+                      <div class="col-md-4 bold">Efficient Use Of Medical Imaging</div>
+                      <div class="col-md-8">
+                        {{ $faIconValue := .Params.usDhhsCmsHospitalCompareModel.efficientUseOfMedicalImagingNationalComparison.id }}
+                        {{ partialCached "icon-for-hospital-compare.html" (dict  "faIconValue"  $faIconValue ) $productId $productName}}        
+                      
+                        {{ .Params.usDhhsCmsHospitalCompareModel.efficientUseOfMedicalImagingNationalComparison.result }}                                
+                      </div>
+                    </div>           
+                  </article>
+                  <hr>
+                  <h4>General information</h4>
+                  <ul class="ul-list-style-1">
+                    <li>Hospital type
+                        {{ $toolTipText := "Shows if the hospital provides emergency services like acute medical care or trauma care." }}
+                        {{ partialCached "tooltip-with-information-icon.html" (dict  "toolTipText"  $toolTipText ) $productId $productName}}                              
+                      :  
+                      {{ if (ne .Params.usDhhsCmsHospitalCompareModel.hospitalType.type "Nil") }}
+                      {{ $label := .Params.usDhhsCmsHospitalCompareModel.hospitalType.type }}
+                      {{ range .Params.hdoTypes }}
+                      {{ $link := (replace ( . | lower) " " "-") }} 
+                      <a href="/hdotypes/{{ $link }}">{{.}}</a>
+                      {{ end }}
+                      {{ end }}
+                    </li>
+                    <li>Provides emergency services 
+
+                      :{{ .Params.usDhhsCmsHospitalCompareModel.emergencyServices }} </li>
+                    <li> Hospital Ownership: {{ .Params.usDhhsCmsHospitalCompareModel.hospitalOwnership.structure }}</li>
+                    <li>Institution type:
+                        {{ range .Params.institutionTypes }}
+                        {{ $link := (replace (replace (replace ( . | lower) " " "-") "(" "" ) ")" "")}}  
+                        <a href="/institutiontypes/{{ $link }}">{{ . }}</a>
+                        {{ end }}                            
+                    </li>
+                    <li>
+                        Geography Census Division: 
+                        {{ range .Params.geographyCensusDivisions }}
+                        {{ $link := (replace ( . | lower) " " "-") }}
+                              <a href="/geographycensusdivisions/{{ $link }}">{{ . }}</a>
+                        {{ end }}                              
+                    </li>
+                    <li>
+                        Geography Census Region: 
+                        {{ range .Params.geographycensusRegions }}
+                        {{ $link := (replace (. | lower) " " "-") }}
+                              <a href="/geographycensusregions/{{ $link }}">{{ . }}</a>
+                        {{ end }}                              
+                    </li>
+                    <!-- 
+                    <li>Able to receive lab results electronically Select for Context: Not Available</li>
+                    <li>Able to track patients’ lab results, tests, and referrals electronically between visits : Not Available</li>
+                    <li>Uses outpatient : Not Available</li>  
+                    <li>Uses inpatient : Not Available</li> -->
+                  </ul>
+                </div>                                                                  
+                <div class="col-md-6">
+                  {{ partialCached "hospitalmap.html" . $productId $productName}} 
+                </div> 
+              </div>
+            </div>
+
+            <div class="insti-tab-col border-0 third-tab">
+              <div class="top-10-most-row">
+                <div class="top-10-most-row-tab-ttl">
+                  <ul class="nav nav-tabs text-center" id="" role="tablist">
+                      {{ $aboutYourInnovationData:= .Site.Data.about_your_innovation_lhc_form }}
+                      <li class="nav-item">
+                        <a class="nav-link active" id="about-your-innovation-tab" onclick="setActiveInnerTabInnovation(this)";  data-toggle="tab" href="#about-your-innovation" role="tab" aria-controls="about-your-innovation" aria-selected="true">
+                          <i class="{{ $aboutYourInnovationData.version }}"></i> {{ $aboutYourInnovationData.name }}
+                        </a>
+                      </li>
+                      {{ $easeDoingBusinessData:= .Site.Data.hdo_eodb_likert_lhc_form }}
+
+                      <li class="nav-item">
+                          <a class="nav-link" id="eodbusiness-tab" onclick="setActiveInnerTabInnovation(this)"; data-toggle="tab" href="#eodbusiness" role="tab" aria-controls="eodbusiness" aria-selected="false"><i class="{{ $easeDoingBusinessData.version}}"></i> {{ $easeDoingBusinessData.name}} <span class="user_total badge badge-success caddsInnovation"></span> <span class="weight_total badge badge-success caddsInnovation"></span> </a>
+                      </li>
+                  </ul>
+                </div>
+                <div class="tab-content" id="myTabContent2">
+                  <div class="tab-pane fade active show insti-over-titles" id="about-your-innovation" role="tabpanel" aria-labelledby="about-your-innovation-tab">                                                                           
+                    <div class="mb-4 aboutYourInnovationTabContent">
+                        <input type="hidden" id="answerStatus" />
+                        <input type="hidden" id="answerBillingStatus" />
+                        <input type="hidden" id="answerPatientAccessStatus" />
+                        <input type="hidden" id="answerDataFrictionStatus" />
+                        {{ $InstitutionName := .Title}}
+                          {{ range last 1 .Site.Data.about_your_innovation_lhc_form.items }}    
+                            {{ range .items }}
+                                {{ range .answers }}
+                                  <div class="{{ .code }}" style="display:none;">
+                                    <article class=""> 
+                                        <div class="alert alert-warning text-center f-16">{{ replace  .text "<HDO Name>" $InstitutionName }}</div>
+                                    </article>
+                                  </div>
+                                {{ end }}
+                            {{ end }}
+                        
+                          {{ end }}
+                
+                    
+                    {{ $.Scratch.Set "instId" .Params.facilityId  }}        
+                    {{ $.Scratch.Set "instName" .Title  }}        
+                    {{ $.Scratch.Set "claimStatus" .Params.claimStatus  }}        
+                    {{ $.Scratch.Set "vendorid" .Params.vendorid  }}
+
+
+                    {{ partialCached "about-your-innovation-cadd" . $productId $productName}}
+                    
+                    
+
+                    </div>  
+                  </div>                    
+                  <div class="tab-pane fade insti-over-titles" id="eodbusiness" role="tabpanel" aria-labelledby="eodbusiness-tab"> 
+                      {{ range last 1 .Site.Data.hdo_eodb_likert_lhc_form.items }}    
+                        {{ range .items }}
+                          {{ range .answers }}
+                            <div class="cadd-content-left {{ .code }}" style="display: none;">
+                                <article class="">
+                                    <div class="alert alert-warning text-center f-16">{{ replace  .text "<HDO Name>" $InstitutionName }} </div>
+                                </article>
+                            </div>   
+                          {{ end }}
+                        {{ end }}
+                      {{ end }}                                        
+                      
+                    <div class="cadd-content-left privateEaseOfDoingBusiness">
+                      {{ partialCached "cadds-likert" . $productId $productName}}
+                      
+                      {{ if lt (len (string .Params.facilityId)) 6 }}
+                      {{ $facilityId := print "0" .Params.facilityId }}
+                      {{ $.Scratch.Set "facilityId"  $facilityId }}
+                      {{ else }}
+                      {{ $.Scratch.Set "facilityId" .Params.facilityId }}
+                      {{ end }}                                                         
+                    </div>   
+                    
+                  </div>                   
+                </div>
+              </div>          
+            </div> 
+
+            <div>
+              <div class="description-row-1">
+                {{ range last 1 .Site.Data.timely_and_effectively_care_lhc_form.items }} 
+                  {{ range .items }}
+                    {{ range .answers}}
+                      {{ .text }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}                 
+                <p class="cursorLink">
+                    <span class="compare-image">
+                        {{$tooltipWithImage := .Site.Data.timely_and_effectively_care_lhc_form.subjectType }} 
+                        {{ $toolTipText := $tooltipWithImage.toolTipText }}
+                        {{ $extraClass := $tooltipWithImage.extraClass }}
+                        {{ $imagePath := $tooltipWithImage.imagePath }}
+                        {{ $faciltyId := $.Scratch.Get "facilityId" }}
+                        {{ $link := print $tooltipWithImage.referenceLink $faciltyId }}
+                        {{ partialCached "tooltip-with-dynamic-image.html" (dict  "toolTipText"  $toolTipText "extraClass"  $extraClass "imagePath"  $imagePath "link" $link) $productId $productName}}                              
+                    
+                    </span>
+                </p>
+              </div>
+              <div class="insti-tab-col border-0">                   
+                <div class="row insti-over-titles">
+                    <div class="col-md-12">
+                        {{ $facilityName := .Params.usDhhsCmsHospitalCompareModel.facilityName }}
+                        {{ $state := .Params.usDhhsCmsHospitalCompareModel.state.name }}
+                        {{ $timelyAndEffectiveCareObject := .Params.usDhhsCmsHospitalCompareModel.timelyAndEffectiveCare }}
+                      {{ range first 1 .Site.Data.timely_and_effectively_care_lhc_form.items }}
+                        {{ range .items}} 
+                          {{ $accordianTitle :=  .question }}
+                          {{ $variableId := .questionCode }}
+                          {{ $category := .prefix.category }}
+                          {{ $favIcon := .prefix.iconClass }}
+                          {{ $valueFormat := .prefix.valueFormat }}
+                          {{ partialCached "timely-effective-care.html" (dict  "accordianTitle"  $accordianTitle  "variableId" $variableId "facilityName" $facilityName "state" $state "category" $category "timelyAndEffectiveCareObject" $timelyAndEffectiveCareObject "valueFormat" $valueFormat "favIcon" $favIcon ) $productId $productName $accordianTitle}}
+                        {{ end }}
+                      {{ end }}
+                    </div> 
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="description-row-1">
+                  {{ range last 1 .Site.Data.complications_and_deaths_lhc_form.items }} 
+                  {{ range .items }}
+                    {{ range .answers}}
+                      {{ .text }}
+                    {{ end }}
+                  {{ end }}
+                {{ end }}
+                <p class="cursorLink">
+                  <span class="compare-image">
+                      {{$tooltipWithImage := .Site.Data.complications_and_deaths_lhc_form.subjectType }} 
+                      {{ $toolTipText := $tooltipWithImage.toolTipText }}
+                      {{ $extraClass := $tooltipWithImage.extraClass }}
+                      {{ $imagePath := $tooltipWithImage.imagePath }}
+                      {{ $faciltyId := $.Scratch.Get "facilityId" }}
+                      {{ $link := print $tooltipWithImage.referenceLink $faciltyId }}
+                      {{ partialCached "tooltip-with-dynamic-image.html" (dict  "toolTipText"  $toolTipText "extraClass"  $extraClass "imagePath"  $imagePath "link" $link) $productId $productName}}                              
+                  
+                  </span>
+                </p>
+              </div>                
+              <div class="insti-tab-col border-0">
+                <div class="row insti-over-titles">
+                  <div class="col-md-12">
+                    {{ $complicationAndDeathObject := .Params.usDhhsCmsHospitalCompareModel.complicationsAndDeaths }}
+
+                    {{ range first 1 .Site.Data.complications_and_deaths_lhc_form.items }}
+                      {{ range .items}} 
+                        {{ $accordianTitle :=  .question }}
+                        {{ $variableId := .questionCode }}
+                        {{ $category := .prefix.category }}
+                        {{ $favIcon := .prefix.iconClass }}
+                        {{ $valueFormat := .prefix.valueFormat }}
+
+                        {{ partialCached "complication-death-compare.html" (dict  "accordianTitle"  $accordianTitle  "variableId" $variableId "facilityName" $facilityName "state" $state "category" $category "complicationAndDeathObject" $complicationAndDeathObject "valueFormat" $valueFormat "favIcon" $favIcon ) $productId $productName $accordianTitle}}
+                      {{ end }}
+                    {{ end }}
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div>
+            <div class="description-row-1">
+                  {{ range last 1 .Site.Data.unplanned_hospital_visits_lhc_form.items }} 
+                  {{ range .items }}
+                    {{ range .answers}}
+                      {{ .text }}
+                    {{ end }}
+                  {{ end }}
+                  {{ end }}
+                  <p class="cursorLink">
+                      <span class="compare-image">
+                        {{$tooltipWithImage := .Site.Data.unplanned_hospital_visits_lhc_form.subjectType }} 
+                        {{ $toolTipText := $tooltipWithImage.toolTipText }}
+                        {{ $extraClass := $tooltipWithImage.extraClass }}
+                        {{ $imagePath := $tooltipWithImage.imagePath }}
+                        {{ $faciltyId := $.Scratch.Get "facilityId" }}
+                        {{ $link := print $tooltipWithImage.referenceLink $faciltyId }}
+                        {{ partialCached "tooltip-with-dynamic-image.html" (dict  "toolTipText"  $toolTipText "extraClass"  $extraClass "imagePath"  $imagePath "link" $link) $productId $productName}}                                                                              
+                      </span>
+                  </p>
+            </div> 
+            <div class="insti-tab-col border-0">
+              <div class="row insti-over-titles">
+                  {{ $unplannedHospitalVisitsObject := .Params.usDhhsCmsHospitalCompareModel.unplannedHospitalVisits }}
+                  {{ range first 1 .Site.Data.unplanned_hospital_visits_lhc_form.items }}
+                    {{ range .items}} 
+                    <div class="col-md-12">
+
+                      {{ $accordianTitle :=  .question }}
+                      {{ $variableId := .questionCode }}
+                      {{ $category := .prefix.category }}
+                      {{ $favIcon := .prefix.iconClass }}
+                      {{ $valueFormat := .prefix.valueFormat }}
+                      {{ partialCached "unplanned-hospital-visits.html" (dict  "accordianTitle"  $accordianTitle  "variableId" $variableId "facilityName" $facilityName "state" $state "category" $category "unplannedHospitalVisitsObject" $unplannedHospitalVisitsObject "valueFormat" $valueFormat "favIcon" $favIcon ) $productId $productName $accordianTitle}}
+                    </div>                            
+                    {{ end }}  
+                  {{ end }}                      
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="insti-tab-col border-0 third-tab">                 
+              <div class="top-10-most-row">
+                <div class="top-10-most-row-tab-ttl">
+                    <ul class="nav nav-tabs  text-center" id="" role="tablist">
+                        {{ $paymentValueCareData:= .Site.Data.payment_and_value_of_care_lhc_form }}
+                        <li class="nav-item">
+                          <a class="nav-link show active" id="payment-tab" onclick="setActiveInnerTabPayValCare(this)"; data-toggle="tab" href="#payment" role="tab" aria-controls="offering" aria-selected="true"><i class="far fa-calendar-alt{{ $paymentValueCareData.version }}"></i> {{ $paymentValueCareData.name }}</a>
+                        </li>
+                        {{ $billingEvaluationData:= .Site.Data.medical_billing_quality_measures_lhc_form }}
+                        <li class="nav-item">
+                          <a class="nav-link show" id="billing-tab" onclick="setActiveInnerTabPayValCare(this)"; data-toggle="tab" href="#billing" role="tab" aria-controls="news" aria-selected="false"><i class="{{ $billingEvaluationData.version }}"></i> {{ $billingEvaluationData.name }}</a>
+                        </li>              
+                    </ul>
+                  </div>
+                  <div class="tab-content" id="myTabContent-pay">
+                      <div class="tab-pane fade active show" id="payment" role="tabpanel" aria-labelledby="payment-tab">  
+                        <div class="description-row-1">
+                          {{ range last 1 .Site.Data.payment_and_value_of_care_lhc_form.items }} 
+                          {{ range .items }}
+                            {{ range .answers}}
+                              {{ .text | safeHTML }}
+                            {{ end }}
+                          {{ end }}
+                          {{ end }}
+                          <p class="cursorLink">
+                              <span class="compare-image">
+                                  {{$tooltipWithImage := .Site.Data.payment_and_value_of_care_lhc_form.subjectType }} 
+                                  {{ $toolTipText := $tooltipWithImage.toolTipText }}
+                                  {{ $extraClass := $tooltipWithImage.extraClass }}
+                                  {{ $imagePath := $tooltipWithImage.imagePath }}
+                                  {{ $faciltyId := $.Scratch.Get "facilityId" }}
+                                  {{ $link := print $tooltipWithImage.referenceLink $faciltyId }}
+                                  {{ partialCached "tooltip-with-dynamic-image.html" (dict  "toolTipText"  $toolTipText "extraClass"  $extraClass "imagePath"  $imagePath "link" $link) $productId $productName}}                              
+                              
+                              </span>
+                          </p>
+                        </div>
+                        <!-- payment-value-care section starts --> 
+                          <div class="insti-tab-col border-0">
+                            <div class="row insti-over-titles">
+                              {{ $paymentAndValueOfCareHospitalObject := .Params.usDhhsCmsHospitalCompareModel.paymentAndValueOfCareHospital }}
+                              {{ range first 1 .Site.Data.payment_and_value_of_care_lhc_form.items }}
+                                  {{ range .items}} 
+                                <div class="col-md-12">
+                                  {{ $accordianTitle :=  .question }}
+                                  {{ $variableId := .questionCode }}
+                                  {{ $category := .prefix.category }}
+                                  {{ $favIcon := .prefix.iconClass }}
+                                  {{ $valueFormat := .prefix.valueFormat }}
+                                {{ partialCached "payment-value-care.html" (dict  "accordianTitle"  $accordianTitle  "variableId" $variableId "facilityName" $facilityName "state" $state "category" $category "paymentAndValueOfCareHospitalObject" $paymentAndValueOfCareHospitalObject "valueFormat" $valueFormat "favIcon" $favIcon ) $productId $productName $accordianTitle}}
+                                </div>
+                                {{ end }}
+                              {{ end }}
+                            </div>
+                          </div>
+                        <!-- payment-value-care section ends -->                                                   
+                      </div>                
+                      <div class="tab-pane fade insti-over-titles" id="billing" role="tabpanel" aria-labelledby="billing-tab">            
+                        <div class="description-row-1 no-margin">   
+                          {{ range last 1 .Site.Data.medical_billing_quality_measures_lhc_form.items }} 
+                          {{ range .items }}
+                            {{ range .answers}}
+                              {{ .text | safeHTML }}
+                            {{ end }}
+                          {{ end }}
+                        {{ end }}
+                        </div> 
+                        {{ $.Scratch.Set "instId" .Params.facilityId  }}        
+                        {{ $.Scratch.Set "instName" .Title  }}        
+                        {{ $.Scratch.Set "claimStatus" .Params.claimStatus  }}        
+                        {{ $.Scratch.Set "vendorid" .Params.vendorid  }}
+                        {{ partialCached "payment-about-your-innovation-cadd" . $productId $productName}}                                                           
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div class="insti-tab-col border-0 third-tab">                 
+                  <div class="top-10-most-row">
+                    <div class="top-10-most-row-tab-ttl">
+                      <ul class="nav nav-tabs  text-center" id="" role="tablist">
+                        {{ $PatientAccessDataFriction:= .Site.Data.hdo_patient_access_lhc_form }}
+                        <li class="nav-item">
+                          <a class="nav-link show active" onclick="setActiveInnerTabPatientAccess(this)"; id="patientAccess-tab" data-toggle="tab" href="#patient-access" role="tab" aria-controls="offering" aria-selected="true">
+                            <i class="far fa-calendar-alt{{ $PatientAccessDataFriction.version }}"></i> {{ $PatientAccessDataFriction.name }}
+                          </a>
+                        </li>
+                        {{ $dataFrictionData:= .Site.Data.hdo_data_friction_lhc_form }}
+                        <li class="nav-item">
+                          <a class="nav-link show" id="data-friction-tab" onclick="setActiveInnerTabPatientAccess(this)"; data-toggle="tab" href="#data-friction" role="tab" aria-controls="data-friction" aria-selected="false">
+                            <i class="fas fa-history{{ $dataFrictionData.version }}"></i> {{ $dataFrictionData.name }}
+                          </a>
+                        </li>              
+                      </ul>
+                    </div>
+                    <div class="tab-content" id="content-patientAccess">
+                      <div class="tab-pane fade active show" id="patient-access" role="tabpanel" aria-labelledby="patient-access-tab">                        
+                        <div class="description-row-1">   
+                          {{ range last 1 .Site.Data.hdo_patient_access_lhc_form.items }} 
+                            {{ range .items }}
+                              {{ range .answers}}
+                                {{ .text | safeHTML }}
+                              {{ end }}
+                            {{ end }}
+                          {{ end }}
+                        </div>
+                        
+                        <div class="insti-tab-col border-0">
+                          <div class="insti-over-titles">
+                            {{ $.Scratch.Set "instId" .Params.facilityId  }}        
+                            {{ $.Scratch.Set "instName" .Title  }}        
+                            {{ $.Scratch.Set "claimStatus" .Params.claimStatus  }}        
+                            {{ $.Scratch.Set "vendorid" .Params.vendorid  }}
+                            {{ partialCached "hdo-patient-access-cadd" . $productId $productName}}  
+                          </div>
+                        </div>                                                 
+                      </div>                    
+                      <div class="tab-pane fade" id="data-friction" role="tabpanel" aria-labelledby="data-friction-tab">            
+                        <div class="description-row-1">   
+                          {{ range last 1 .Site.Data.hdo_data_friction_lhc_form.items }} 
+                            {{ range .items }}
+                              {{ range .answers}}
+                                {{ .text | safeHTML }}
+                              {{ end }}
+                            {{ end }}
+                          {{ end }}
+                        </div>                       
+                        <div class="insti-tab-col border-0">
+                          <div class="insti-over-titles">
+                            {{ $.Scratch.Set "instId" .Params.facilityId  }}        
+                            {{ $.Scratch.Set "instName" .Title  }}        
+                            {{ $.Scratch.Set "claimStatus" .Params.claimStatus  }}        
+                            {{ $.Scratch.Set "vendorid" .Params.vendorid  }}
+                            {{ partialCached "hdo-data-friction-cadd" . $productId $productName}}  
+                          </div>
+                        </div>                                                           
+                      </div> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <div>
+            <div class="description-row-1">
+                  {{ range last 1 .Site.Data.hdo_patient_survey_lhc_form.items }} 
+                  {{ range .items }}
+                    {{ range .answers}}
+                      {{ .text }}
+                    {{ end }}
+                  {{ end }}
+                  {{ end }}
+                  <p class="cursorLink">
+                      <span class="compare-image">
+                        {{$tooltipWithImage := .Site.Data.hdo_patient_survey_lhc_form.subjectType }} 
+                        {{ $toolTipText := $tooltipWithImage.toolTipText }}
+                        {{ $extraClass := $tooltipWithImage.extraClass }}
+                        {{ $imagePath := $tooltipWithImage.imagePath }}
+                        {{ $faciltyId := $.Scratch.Get "facilityId" }}
+                        {{ $link := print $tooltipWithImage.referenceLink $faciltyId }}
+                        {{ partialCached "tooltip-with-dynamic-image.html" (dict  "toolTipText"  $toolTipText "extraClass"  $extraClass "imagePath"  $imagePath "link" $link) $productId $productName}}                                                                              
+                      </span>
+                  </p>
+            </div> 
+            <div class="insti-tab-col border-0">
+              <div class="row insti-over-titles">
+                  {{ $patientSurveyObject := .Params.usDhhsCmsHospitalCompareModel.hcahpsHospital }}
+                  {{ range first 1 .Site.Data.hdo_patient_survey_lhc_form.items }}                   
+                    <div class="col-md-12">
+                      {{ $accordianTitle :=  .question }}
+                      {{ $variableId := .questionCode }}
+                      {{ $category := .prefix.category }}
+                      {{ $favIcon := .prefix.iconClass }}
+                      {{ $valueFormat := .prefix.valueFormat }}
+                      {{ partialCached "survey-of-patients.html" (dict  "accordianTitle"  $accordianTitle  "variableId" $variableId "facilityName" $facilityName "state" $state "category" $category "patientSurveyObject" $patientSurveyObject "valueFormat" $valueFormat "favIcon" $favIcon ) $productId $productName}}
+                    </div>                                              
+                  {{ end }}                      
+              </div>
+            </div>
+          </div>
+            </div>          
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="insti-row-1">
+          <div class="tab-content" >
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="isso-comment pb-3">
+      <section id="isso-thread" data-title = "medigy-comment"  data-isso-id="projects"></section>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article> 
+</section>
+
+
+
+<script type="text/javascript" src="/js/bootstrap-slider.js"></script> 
+{{ partialCached "footer.html" . }}
+ {{ $.Scratch.Set "uniqueCommentKey"  .Title }} 
+    {{ partialCached "isso.html" . .Title  }}
+</body>
+</html>
+
+        
+<link rel="stylesheet" href="/css/zozo.tabs.min.css" />
+
+
+
+
+<script type="text/javascript" src="/js/zozo.tabs.min.js"></script> 
+<script type="text/javascript">
+ 
+
+    /* jQuery activation and setting options for first tabs, enabling multiline*/
+           $("#tabbed-nav").zozoTabs({
+                theme: "silver",
+                orientation: "horizontal",
+                position: "top-left",
+                size: "medium",
+                animation: {
+                    easing: "easeInOutExpo",
+                    duration: 400,
+                    effects: "slideH"
+                },
+                defaultTab: "tab1"
+            });
+
+    /* jQuery activation and setting options for second tabs, enabling multiline*/
+             
+
+
+    function setActiveTab(lastActiveTab){
+      setCookie('HdoactiveTab', lastActiveTab.id);
+    }
+    if(getCookie('HdoactiveTab')) {
+      setTimeout(function(){
+        document.getElementById(getCookie('HdoactiveTab')).click();
+      }, 800);  
+    }
+    function setActiveInnerTabInnovation(lastActiveTab){
+      setCookie('HdoactiveInnerTabInnovation', lastActiveTab.id);
+    }
+    if(getCookie('HdoactiveInnerTabInnovation')) {
+      //alert(getCookie('HdoactiveInnerTabInnovation'));
+      setTimeout(function(){
+        document.getElementById(getCookie('HdoactiveInnerTabInnovation')).click();
+      }, 1000);  
+    }
+    function setActiveInnerTabPayValCare(lastActiveTab){
+      setCookie('HdoactiveInnerTabPayValCare', lastActiveTab.id);
+    }
+    if(getCookie('HdoactiveInnerTabPayValCare')) {
+      setTimeout(function(){
+        document.getElementById(getCookie('HdoactiveInnerTabPayValCare')).click();
+      }, 800);  
+    }
+     
+    function setActiveInnerTabPatientAccess(lastActiveTab){
+      setCookie('HdoactiveInnerTabPatientAccess', lastActiveTab.id);
+    }
+    if(getCookie('HdoactiveInnerTabPatientAccess')) {
+      setTimeout(function(){
+        document.getElementById(getCookie('HdoactiveInnerTabPatientAccess')).click();
+      }, 800);  
+    }
+     
+    function drawChart(catgId) {
+        // Define the chart to be drawn.
+        //title = ['Likert Scale','Strongly disagree','Disagree','Neither agree or disagree','Agree','Strongly agree'];
+        {{ range first 1 .Site.Data.hdo_eodb_likert_lhc_form.items }} 
+        {{ range .items }}
+        {{ $.Scratch.Set "likertTitle"  "Likert Scale," }}
+        {{ range first 1 .items }}
+          {{ range first 1 .items }}
+            {{ range .answers }}
+              {{ $tempTitle :=  $.Scratch.Get "likertTitle" }}
+              {{ $setTitle := print $tempTitle .text "," }} 
+              {{ $.Scratch.Set "likertTitle"  $setTitle }}
+            {{ end }}
+          {{ end }}
+
+        {{ end }}
+        var titleString = "{{ $.Scratch.Get "likertTitle" }}";
+        var title = titleString.split(",");
+        title.pop();
+        //console.log(title);
+        var identifier = '{{ .localQuestionCode }}'
+        if(identifier == catgId) {
+        graphDatas = [];
+        
+        graphDatas.push(title);                           
+        
+        var labelId;
+        var optionId; 
+                        
+        {{ range .items }}
+          {{ range .items }}
+              totalCountList = []; 
+              labelId = '{{ .localQuestionCode }}'  
+              totalCountList.push('{{.question}}');
+            {{ range .answers }}
+                optionId = '{{ .code }}' 
+                var totalCount = $("#"+labelId+"_"+optionId).html();
+                totalCountList.push(parseInt(totalCount));
+            {{end}}
+            graphDatas.push(totalCountList);
+            {{ end }}
+            
+        
+        var data = google.visualization.arrayToDataTable(graphDatas);
+      
+        var options = {
+        title: '',
+        isStacked:'percent',
+        tooltip : {trigger: 'none'},
+        width:'100%',
+        height:"200",
+        colors: ['#e22f22','#f26522','#ffcb05','#cfe92b','#66af32','#837f8a','#6d5d75'],
+        chartArea:{left:50,top:5,width:"50%",height:"150"} 
+        };  
+
+        // Instantiate and draw the chart.
+        var chart = new google.visualization.BarChart(document.getElementById('container-'+catgId));
+        chart.draw(data, options);
+        }
+        {{end}}
+        {{end}}
+        {{ end }}
+    }
+    setTimeout(function(){
+      {{ range first 1 .Site.Data.hdo_eodb_likert_lhc_form.items }}
+      {{ range .items }}
+        google.charts.setOnLoadCallback(drawChart('{{ .localQuestionCode }}')); 
+        {{ end }}
+      {{ end }}
+      }, 1000);
+
+    //data layer variable
+    function gtmAddproduct(product_Name,userEmail,tabid){
+        window.dataLayer = window.dataLayer || [];
+            window.dataLayer.push({
+          'gtmTitle':product_Name,
+          'gtmTab':tabid,
+          'gtmPersonid': userEmail       
+          
+          });
+    }
+ 
+    $(document).ready(function(){  
+      var answerStatus = $('#answerStatus').val();
+      var claimStatus = "{{ .Params.claimStatus }}";
+      var vendorId = "{{ .Params.vendorId }}";
+      var session = {"personId":getCookie('personid'),"sessionId":getCookie('sessionId'),"sessionUser":getCookie('firstname')};
+     medigyAuthServiceActions.makeVisibleIfActiveUserCanPublicAboutYourInnovation(medigyAuthServicePolicies, session, visible=[".publicEaseOfDoingBusiness",".innovator-question"{{ if (eq .Params.claimStatus true)}},".publicAboutYourInnovation-notAnswer" {{ else }},".publicAboutYourInnovation"{{ end }}], hidden=[".nnovator-answer"]);
+     medigyAuthServiceActions.makeVisibleIfActiveUserCanPrivateClaimedInnovatorEODB(medigyAuthServicePolicies, claimStatus, vendorId, session, visible=[".innovatorHdoProfile",".showOtherSubmission"], hidden=[".nnovator-answer",".firstTableSubmitt"], disableData=["input[type=radio].eodbRadio",".showhide"], addClassData=[".toggle-label",".submitAnswer"], updateClassData=["togHideMenu","toghidetab"]);
+     medigyAuthServiceActions.makeVisibleIfActiveUserCanPrivateClaimedNotinnovatorEODB(medigyAuthServicePolicies, claimStatus, vendorId, session, visible=[".innovatorHdoAuthenticatedMembers"]);
+     medigyAuthServiceActions.makeVisibleIfActiveUserCanPrivateNotClaimedEODB(medigyAuthServicePolicies, claimStatus, session, visible=[".innovatorHdoAuthenticatedMembers"]); 
+    });
+    
+</script>

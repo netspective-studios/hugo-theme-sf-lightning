@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Physical Therapist Assistants" 
+ classname:  "Physical_Therapist_Assistants" 
+ label: "Physical Therapist Assistants" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Physical Therapist Assistants']
+ aliases:  "/topic/standard-occupational-classification-soc-physical-therapist-assistants"  
+ searchCategory: "topic" 
+---
+J1BoeXNpY2FsIHRoZXJhcHkgYXNzaXN0YW50cyAoUFRBcykgaGVscCBwYXRpZW50cyB0byByZWdhaW4gdGhlaXIgbW92ZW1lbnQgJiBtYW5hZ2UgcGFpbiBjYXVzZWQgZHVlIHRvIHZhcmlvdXMgcGh5c2ljYWwgaWxsbmVzc2VzICYgaW5qdXJpZXMuIFRoZXksIGFsb25nIHdpdGggcGh5c2ljYWwgdGhlcmFwaXN0cywgZW5zdXJlIHRoYXQgdGhlIHBhdGllbnRzIGxpdmUgYSBoZWFsdGh5IGFuZCBhY3RpdmUgbGlmZS4gUFRBcyBwcm92aWRlIGRpZmZlcmVudCBwaHlzaWNhbCB0aGVyYXB5IHNlcnZpY2VzIHRvIHBhdGllbnRzIHVuZGVyIHRoZSBzdXBlcnZpc2lvbiBvZiBjZXJ0aWZpZWQgYW5kIHRyYWluZWQgcGh5c2ljYWwgdGhlcmFwaXN0cy4gVGhleSBhc3Npc3QgaW5kaXZpZHVhbHMgb2YgYWxsIGFnZSBncm91cHMgYnkgaW1wbGVtZW50aW5nIHZhcmlvdXMgY2FyZSBjb21wb25lbnRzICYgbW9kaWZ5aW5nIHRoZSBjYXJlIGFzIG11Y2ggYXMgcG9zc2libGUuCgon

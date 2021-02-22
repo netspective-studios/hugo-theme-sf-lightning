@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Medical Records Specialists" 
+ classname:  "OWLClass_3ef9a1da_9c60_4423_a848_636f7ec093ea" 
+ label: "Medical Records Specialists" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Medical Records Specialists']
+ aliases:  "/topic/standard-occupational-classification-soc-medical-records-specialists"  
+ searchCategory: "topic" 
+---
+TWVkaWNhbCByZWNvcmQgc3BlY2lhbGlzdHMgYXJlIHJlc3BvbnNpYmxlIGZvciBrZWVwaW5nICYgbWFpbnRhaW5pbmcgdGhlIG1lZGljYWwgcmVjb3JkcyBvZiBwYXRpZW50cy4gVGhleSBhcmUgcmVzcG9uc2libGUgZm9yIHRyYW5zZmVycmluZyBtZWRpY2FsIGRhdGEgZnJvbSBwYXBlciBmb3JtYXRzIGludG8gY29tcHV0ZXIgZmlsZXMgb3IgZGF0YWJhc2Ugc3lzdGVtcy4gTWVkaWNhbCByZWNvcmQgc3BlY2lhbGlzdHMgc2hvdWxkIGJlIGhpZ2hseSB0cmFpbmVkIGluIHRoZWlyIGZpZWxkICYgc2hvdWxkIGJlIGNhcGFibGUgb2YgcmV0cmlldmluZyBwYXRpZW50cycgaGVhbHRoY2FyZSBkYXRhIGZyb20gdGhlIGRhdGFiYXNlIG9yIGVsZWN0cm9uaWMgZmlsZXMgd2hlbmV2ZXIgcmVxdWlyZWQuIFRoZXkgc2hvdWxkIGNvbGxlY3QsIGNvbGxhdGUsIHNvcnQsIGFuZCBjb2RlIG1vc3Qgb2YgdGhlIG1lZGljYWwgZGF0YSBhbmQgbWFpbnRhaW4gaXQgYXMgYSByZWNvcmQgb2YgdXNlZnVsIGluZm9ybWF0aW9uLiBTdWNoIGhlbHBmdWwgaW5mb3JtYXRpb24gaXMgZXNzZW50aWFsIGZvciBtZWRpY2FsIHByb2Zlc3Npb25hbHMgdG8gcmVseSB1cG9uLCBhcyBpdCBoZWxwcyB0aGVtIHRvIG1ha2UgaW5mb3JtZWQgaGVhbHRoIGNhcmUgZGVjaXNpb25zIHRvIHRyZWF0IHBhdGllbnRzLg==

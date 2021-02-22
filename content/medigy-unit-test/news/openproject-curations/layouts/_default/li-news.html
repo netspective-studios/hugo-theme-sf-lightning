@@ -1,0 +1,92 @@
+<div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)"
+  class="card blog-card card-height" rel="bookmark">
+  <div class="card-img-container">
+    <a href="{{ .Permalink }}"><img src="{{ print .Params.basePath .Params.featuredimage.href }}" alt="{{ .Params.title }}" class="card-img"
+      onerror="this.onerror=null; this.src='/img/featured/default.png'" /></a> 
+  </div>
+  <article class="card-body">
+    <h2 class="card-title"><a class="gtm-tab" href="{{ .Permalink }}"
+        onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': $('.nav-link.menu-selected').text(),'gtmTitle': '{{ .Title }}', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">{{ .Title }}</a>
+    </h2>
+    <p class="card-text">{{ .Summary | safeHTML | truncate 200 }}<span><a href="{{ .Permalink }}"></a></span></p>
+    <div class="metrix row count-bt-area">
+      <div class="col-lg-3 count-col-1">
+      </div>
+      <div class="col-lg-5 count-col-2"></div>
+        <div class="col-lg-4 count-col-3">
+            <div class="social-share social-count-display">
+              {{ $permaLink := .Permalink | safeURL}} 
+              {{ $safeUrl := $.Site.Params.siteUrl }}
+              {{ $href := print "https://www.facebook.com/sharer/sharer.php?u="  $safeUrl .RelPermalink }}
+              {{ $class := "fb-share-push fb-share" }}
+              {{ $dataApp := .Params.id }}
+              {{ $dataSlug := .Permalink }}
+              {{ $dataName := .Title }}
+              {{ $tooltip := "Facebook" }}
+              {{ $icon := "fab fa-facebook-square cl-f" }}
+              {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+  
+              {{ $permaLink := .Permalink | safeURL}}
+              {{ $safeUrl := $.Site.Params.siteUrl }}
+              {{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl .RelPermalink }}
+              {{ $class := "twitter-share-push fb-share" }}
+              {{ $dataApp := .Params.id }}
+              {{ $dataSlug := .Permalink }}
+              {{ $dataName := .Title }}
+              {{ $tooltip := "Twitter" }}
+              {{ $icon := "fab fa-twitter-square cl-t" }}
+              {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+  
+              {{$permaLink := .Permalink | safeURL}}
+              {{ $safeUrl := $.Site.Params.siteUrl }}
+              {{ $href := print "http://www.linkedin.com/shareArticle?url="  $safeUrl .RelPermalink }}
+              {{ $class := "linkedin-share-push fb-share" }}
+              {{ $dataApp := .Params.id }}
+              {{ $dataSlug := .Permalink }}
+              {{ $dataName := .Title }}
+              {{ $tooltip := "Linkedin" }}
+              {{ $icon := "fab fa-linkedin cl-in" }}
+              {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+  
+              {{$permaLink := .Permalink | safeURL}}
+              {{ $safeUrl := $.Site.Params.siteUrl }}
+              {{ $href := print "mailto:?subject=Check out the post, '" .Params.title "' in medigy.com!&body=" .Params.title "\n" $safeUrl $permaLink}}
+              {{ $class := "email-share-push"}}
+              {{ $dataApp := .Params.id }}
+              {{ $dataSlug := .Permalink }}
+              {{ $dataName := .Title }}
+              {{ $tooltip := "Email" }}
+              {{ $icon := "fas fa-envelope cl-m" }}
+              {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+              <div class="clearfix"></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+    </div>
+
+    <div class="card-subtext muted-text post-tags">
+        {{ $.Scratch.Set "siteTitle" .Params.title }}
+        <span><b>Posted <time
+              datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></b></span>
+        
+              {{ $source := .Params.source }}
+              {{ $taxo := "categories" }}
+              {{ range .Param $taxo }}
+                {{ $name := . }}
+                {{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+                    {{ $.Scratch.Set "permalink" .Permalink }}
+                {{ end }}
+                {{ $name := replace $name "-hash-" "#" }}
+                {{ if eq $source "dropmark-curations"}}
+                <span class="tag-style-1 gtm-tab-cat">{{  $name }}</span>
+                {{ else }}
+                <span class="tag-style-1"><a data-title="{{$.Scratch.Get "siteTitle"}}" class="gtm-tab-cat"
+                  href="{{ $.Scratch.Get "permalink" }}"
+                  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': $('.nav-link.menu-selected').text(),'gtmTitle': '{{$.Scratch.Get "siteTitle"}}', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail'),'gtmCategory':'{{  $name }}'})">{{  $name }}</a>
+                </span>            
+                {{ end }}
+              {{ end }}
+  
+      </div>
+  </article>
+</div>

@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Oncology Treatment Planning" 
+ classname:  "Oncology_Treatment_Planning" 
+ label: "Oncology Treatment Planning" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Oncology Treatment Planning']
+ aliases:  "/topic/klas-oncology-treatment-planning"  
+ searchCategory: "topic" 
+---
+T25jb2xvZ3kgVHJlYXRtZW50IFBsYW5uaW5nIGlzIGEgcGF0aWVudCBjZW50ZXJlZCBwcm9jZXNzIGRlc2lnbmVkIGZvciBlbmdhZ2luZyBwYXRpZW50cyBhbmQgdGhlaXIgZmFtaWxpZXMgaW4gbWVhbmluZ2Z1bCBhbmQgdGhvcm91Z2ggaW50ZXJhY3Rpb25zIHdpdGggdGhlaXIgaGVhbHRoIGNhcmUgcHJvdmlkZXJzIHNvIHRoYXQgdGhlIGFwcHJvcHJpYXRlIGNhbmNlciBwbGFuIGNhbiBiZSBkaXNjdXNzZWQuIEl0IGlzIGFsc28gbWVhbnQgdG8gcGxhbiB0aGUgYXBwcm9wcmlhdGUgZXh0ZXJuYWwgYmVhbSByYWRpb3RoZXJhcHkgdG8gYmUgZGVsaXZlcmVkIHRvIHRoZSBjYW5jZXIgcGF0aWVudHMgd2hvIGFyZSB1bmRlcmdvaW5nIGNhbmNlciB0cmVhdG1lbnQuIEFuIG9uY29sb2d5IHRyZWF0bWVudCBwbGFuIGlzIG9mdGVuIHNoYXJlZCBhbW9uZyB0aGUgcGF0aWVudHMsIHRoZWlyIGZhbWlsaWVzLCBhbmQgY2FyZSB0ZWFtIHNvIGFzIHRvIGZhY2lsaXRhdGUgY2FyZSBjb29yZGluYXRpb24gd2hpY2ggaW4gdHVybiBwcm92aWRlcyBhIHJvYWRtYXAgdG8gaGVscCBwYXRpZW50cyBmb2xsb3cgdGhlIHBhdGggb2YgY2FuY2VyIHRyZWF0bWVudC4=

@@ -1,0 +1,14 @@
+--- 
+ title: "U.S. Food and Drug Administration (FDA): Cosmetics" 
+ classname:  "OWLClass_76558f91_a52d_44a1_bde5_95a3f8b0539f" 
+ label: "Cosmetics" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "U.S._Food_and_Drug_Administration" 
+ parentclasslabel: "U.S. Food and Drug Administration (FDA)" 
+ equalentCollections: [] 
+ collections: ['U.S. Food and Drug Administration (FDA): Cosmetics']
+ aliases:  "/topic/u.s.food-and-drug-administration-fda-cosmetics"  
+ searchCategory: "topic" 
+---
+Q29zbWV0aWNzICBvciBwZXJzb25hbCBjYXJlIHByb2R1Y3RzIGFyZSBwcm9kdWN0cyBzdWNoIGFzIGZhY2UgY3JlYW1zLCBuYWlsIHByb2R1Y3RzLCBtYWtldXAsIGhhaXIgcHJvZHVjdHMsIGV0Yy4gaW50ZW5kZWQgZm9yIGFwcGxpY2F0aW9uIG9uIHRoZSBodW1hbiBib2R5IGZvciB0aGUgcHVycG9zZSBvZiBjbGVhbnNpbmcsIHByb21vdGluZyBhdHRyYWN0aXZlbmVzcywgYmVhdXRpZnlpbmcsIG9yIGFsdGVyaW5nIHRoZSBhcHBlYXJhbmNlLiBJdCBpcyB0aGUgbGVnYWwgcmVzcG9uc2liaWxpdHkgb2YgdGhlIGNvbXBhbmllcyBhbmQgaW5kaXZpZHVhbHMgbWFya2V0aW5nIGNvc21ldGljcyBhbmQgY29zbWV0aWMgaW5ncmVkaWVudHMgdG8gZW5zdXJlIHRoZSBzYWZldHkgb2YgdGhlaXIgcHJvZHVjdHMu

@@ -1,0 +1,142 @@
+<div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)"
+  class="card blog-card card-height" rel="bookmark">
+
+  {{ if .Params.featuredimage}}
+  <div class="card-img-container">
+    {{ if ne .Params.featuredimage "Nil" }}
+    <a href="{{ .Permalink }}"><img src="{{.Params.featuredimage }}" alt="{{ .Params.alt }}" class="card-img"
+        onerror="this.onerror=null; this.src='/img/featured/default.png'" /></a>
+    {{else}}
+    <a href="{{ .Permalink }}"><img src="/img/featured/default.png" alt="{{ .Params.alt }}" class="card-img" /></a>
+    {{end}}
+  </div>
+  {{ else }}
+  <a href="{{ .Permalink }}"><img src="/img/content/post/no-image-article.jpg" alt="{{ .Params.alt }}" class="card-img" /></a>
+  {{ end }}
+  <article class="card-body">
+    <!--<div class="subscribe" data-app="{{.Params.id}}">
+                <a href="#."  title="Watcher" ><div class="small-bt-row"><span class="col a"><i class="far fa-eye"></i></span><span class="col b">Watch</span></div></a>
+        </div>-->
+    <h2 class="card-title"><a class="gtm-tab" href="{{ .Permalink }}"
+        onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTitle': '{{ .Title }}', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">{{ .Title }}</a>
+    </h2>
+
+    <p class="card-text">{{ .Summary | safeHTML | truncate 230 }}<span><a href="{{ .Permalink }}"></a></span></p>
+    <!-- social-count-area -->
+    <div class="metrix row count-bt-area">
+      <div class="col-lg-3 count-col-1">
+        {{ partialCached "upvote.html" . .Params.id .Title}}
+      </div>
+
+
+
+      <div class="col-lg-5 count-col-2">
+        {{ if ne .Params.githubUrl "Nil"  }}
+        <div class="github-row fab fa-github">
+          <a href="{{.Params.githubUrl}}" target="_blank">
+            <div class="github-count">
+              <span><i class="fas fa-eye"></i></span><span class="hunt-comm-count"
+                id="gitWatcher_{{.Params.id}}">{{.Params.watchers }}</span>
+            </div>
+          </a>
+          <a href="{{.Params.githubUrl}}" target="_blank">
+            <div class="github-count">
+              <span><i class="fas fa-star"></i></span><span class="hunt-comm-count"
+                id="gitStars_{{.Params.id}}">{{.Params.stars }}</span>
+            </div>
+          </a>
+          <a href="{{.Params.githubUrl}}" target="_blank">
+            <div class="github-count">
+              <span><i class="fas fa-code-branch"></i></span><span class="hunt-comm-count"
+                id="gitForks_{{.Params.id}}">{{.Params.forks }}</span>
+            </div>
+          </a>
+          <div class="clearfix"></div>
+        </div>
+        {{ if ne .Params.displayinlist false   }}
+        <abbr class="trendValue" title="GitHub popularity increase in the past two weeks">{{ .Params.weight }}</abbr>
+        {{end}}
+        {{end}}
+      </div>
+
+      <div class="col-lg-4 count-col-3">
+        <div class="social-share social-count-display">
+          {{$permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "https://www.facebook.com/sharer/sharer.php?u=" $safeUrl .RelPermalink }}
+          {{ $class := "fb-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Facebook" }}
+          {{ $icon := "fab fa-facebook-square cl-f" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip}}
+
+          {{ $permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl .RelPermalink }}
+          {{ $class := "twitter-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Twitter" }}
+          {{ $icon := "fab fa-twitter-square cl-t" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip}}
+
+          {{$permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "http://www.linkedin.com/shareArticle?url=" $safeUrl .RelPermalink }}
+          {{ $class := "linkedin-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Linkedin" }}
+          {{ $icon := "fab fa-linkedin cl-in" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip}}
+
+          {{$permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "mailto:?subject=Check out the post, '" .Params.title "' in medigy.com!&body=" .Params.title "\n" $safeUrl $permaLink}}
+          {{ $class := "email-share-push "}}
+          {{ $dataApp := .Params.id }} 
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Email" }}
+          {{ $icon := "fas fa-envelope cl-m" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip}}
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+    <!-- social-count-area ends -->
+    <div class="card-subtext muted-text post-tags">
+      <span><b>Posted <time
+            datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time></b></span>
+      {{ range $key, $value := .Params.categories }}
+      {{if ne $value "null"}}
+      {{ $valueLink := $value | urlize }}
+      {{ $textValue := replace $value "-hash-" "#"  }}
+      {{ $valueLink := replace $valueLink  "#" "hash-"  }}
+      <span class="tag-style-1"><a data-title="{{$.Scratch.Get "siteTitle"}}" class="gtm-tab-cat"
+          href="/topic/{{ $valueLink  }}"
+          onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTitle': '{{$.Scratch.Get "siteTitle"}}', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail'),'gtmCategory':'{{ $textValue }}'})">{{ $textValue }}</a></span>
+      {{end}}
+      {{ end }}
+    </div>
+    <div class="row pt-1">
+      <div class="card-subtext muted-text post-tags col-md-6">
+        {{ if and ( .Params.updatedon ) (ne .Params.updatedOn "null") (ne .Params.updatedOn "undefined")}}
+        {{ $timeUpdated :=substr .Params.updatedOn 0 10 }}
+        {{ $time := time (int $timeUpdated) }}
+        {{ $lastUpdatedDate :=  dateFormat "Jan 2, 2006" $time }}
+        <span style="display:none"><b>Last Updated <time
+              datetime="{{ $lastUpdatedDate }}">{{ $lastUpdatedDate }}</time></b></span>
+        {{ end }}
+      </div>
+      {{ if and ( .Params.updatedon ) (ne .Params.updatedOn "null") (ne .Params.updatedOn "undefined")}}
+      <div class="text-right day-ago updatedDate col-md-6" data-lastUpdateDate="{{ .Params.updatedOn }}">Updated a day
+        ago</div>
+      {{ end }}
+    </div>
+  </article>
+</div>

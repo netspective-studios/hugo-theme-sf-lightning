@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Post Hospital Discharge" 
+ classname:  "Post_Hospital_Discharge" 
+ label: "Post Hospital Discharge" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: Post Hospital Discharge']
+ aliases:  "/topic/medigy-post-hospital-discharge"  
+ searchCategory: "topic" 
+---
+UG9zdC1ob3NwaXRhbCBjYXJlIGluY2x1ZGVzIGEgZnVsbCByZWNvdmVyeSBwZXJpb2QgYWZ0ZXIgZ2V0dGluZyBkaXNjaGFyZ2VkIGZyb20gYSBoZWFsdGhjYXJlIGZhY2lsaXR5LiBUaGlzIGtpbmQgb2YgY2FyZSBwcm92aWRlZCB0byB0aGUgcGF0aWVudHMgc2hvdWxkIGJlIGhpZ2hseSBlZmZpY2llbnQgaW4gcXVhbGl0eSBhbmQgc3VwcG9ydCB0byBwcmV2ZW50IGhvc3BpdGFsIHJlYWRtaXNzaW9ucy4gQ2FyZSByZWNlaXZlZCBieSBwYXRpZW50cyBwb3N0LWhvc3BpdGFsaXphdGlvbiBzaG91bGQgZW5zdXJlIGEgZmFzdCByZWNvdmVyeSBmb3IgcGF0aWVudHMgYW5kIHBlYWNlIG9mIG1pbmQgdG8gdGhlIGZhbWlseSBtZW1iZXJzLCBjYXJlZ2l2ZXJzLCBhbmQgbG92ZWQgb25lcy4gUG9zdC1ob3NwaXRhbCBjYXJlIGlzIGEgZGlmZmljdWx0IHRyYW5zaXRpb24gaG9tZSBhbmQsIHRoZXJlZm9yZSwgc2hvdWxkIGluY2x1ZGUgdGhlIGJlc3QgY2FyZSBmYWNpbGl0aWVzIHBvc3NpYmxlLCBpbmNsdWRpbmcgcGFpbiBtYW5hZ2VtZW50LCBtZWRpY2F0aW9uIG1hbmFnZW1lbnQsIHN1cmdpY2FsIHNpdGUgY2FyZSwgZGFpbHkgbW9uaXRvcmluZywgY2FzZSBtYW5hZ2VtZW50LCBldGMu

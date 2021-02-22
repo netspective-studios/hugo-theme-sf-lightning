@@ -1,0 +1,83 @@
+{{ $pageurl := .Permalink }}
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; float:right; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+position: relative;
+text-align: left; 
+height: 36px; 
+width: 32px; 
+float: left; 
+text-align: center;
+border: 1px solid #d1d1d1;
+margin-left:4px;
+}
+#share-buttons > div > svg {height: 16px; fill: #6c6c6c; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #333;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px; fill: #256b97}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px; fill:#15cff0}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px; fill: #256b97}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+<div class="col-md-12">
+	<div class="social-share social-count-display">  
+		{{ $permaLink := .Permalink | safeURL}}
+		{{ $safeUrl := $.Site.Params.siteUrl }}       
+		{{ $href := print "https://www.facebook.com/sharer/sharer.php?u="  $safeUrl .RelPermalink }}
+		{{ $class := "fb-share-push fb-share" }}
+		{{ $dataApp := .Params.id }}
+		{{ $dataSlug := .Permalink }}
+		{{ $dataName := .Title }}
+		{{ $tooltip := "Facebook" }}
+		{{ $icon := "fab fa-facebook-square cl-f" }}
+		{{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+		 
+		{{ $permaLink := .Permalink | safeURL}}
+		{{ $safeUrl := $.Site.Params.siteUrl }}       
+		{{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl .RelPermalink }}
+		{{ $class := "twitter-share-push fb-share" }}
+		{{ $dataApp := .Params.id }}
+		{{ $dataSlug := .Permalink }}
+		{{ $dataName := .Title }}
+		{{ $tooltip := "Twitter" }}
+		{{ $icon := "fab fa-twitter-square cl-t" }}
+		{{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+  
+		{{ $permaLink := .Permalink | safeURL}}
+		{{ $safeUrl := $.Site.Params.siteUrl }}       
+		{{ $href := print "http://www.linkedin.com/shareArticle?url="  $safeUrl .RelPermalink }}
+		{{ $class := "linkedin-share-push fb-share" }}
+		{{ $dataApp := .Params.id }}
+		{{ $dataSlug := .Permalink }}
+		{{ $dataName := .Title }}
+		{{ $tooltip := "Linkedin" }}
+		{{ $icon := "fab fa-linkedin cl-in" }}
+		{{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+  
+		{{$permaLink := .Permalink | safeURL}}
+		{{ $safeUrl := $.Site.Params.siteUrl }}       
+		{{ $href := print "mailto:?subject=Check out the post, '" .Params.title "' in medigy.com!&body=" .Params.title "\n" $safeUrl $permaLink}}
+		{{ $class := "email-share-push"}}
+		{{ $dataApp := .Params.id }}
+		{{ $dataSlug := .Permalink }}
+		{{ $dataName := .Title }}
+		{{ $tooltip := "Email" }}
+		{{ $icon := "fas fa-envelope cl-m" }}
+		{{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+		<div class="clearfix"></div>                 
+	   <div class="clearfix"></div>                
+	   </div>
+	
+</div>
+
+

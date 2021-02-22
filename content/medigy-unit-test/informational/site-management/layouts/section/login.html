@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "login-key" }}
+  <script>
+    $(document).ready(function(){
+        var personid = getCookie('personid');
+        if (personid != null) {
+            window.location.href = '/';
+        }
+    })
+  
+  </script>
+<body class="single-body">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+      
+{{ partialCached "nav-bar.html" . "login-key"}}
+<section class="about-wrapper">
+    <div class="container">
+        <main class="">
+            <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+                <header class="post-header">
+                    {{ partialCached "bread-crumb.html" . "login-key"}}        
+                </header>
+                <div class="log-reg-box row">
+                    <div class="col-md-6">
+                        <article class="post-login log-select">
+                            <form name="loginPageform" id="loginPageform">
+                                <h2>Please Login</h2>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12">Username</label>
+                                    <div class="col-sm-12">
+                                        <input class="form-control" name="usernameLoginPage" id="usernameLoginPage" type="email" placeholder="Email" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="pwd" class="col-sm-12">Password</label>
+                                    <div class="col-sm-12">
+                                        <input type="password" class="form-control" id="passwordLoginPage" name="passwordLoginPage" placeholder="Password" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <a href="/reset-password/" class="btn btn-link">Forgot Your Password?</a>
+                                </div>
+                                <input type="hidden" name="formentry" id="formentry" value="">
+                                <div class="text-left">
+                                    <input type="submit" value="LOGIN" id="loginPageButton" class="btn btn-primary Form_Login_Button">
+                                </div>
+                            </form>
+                            <span id="errorLoginPagecode"> </span>
+                        </article>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="signupUserMessage" style="display:none" class="alert alert-success"></div>        
+                        <article class="post-login">
+                            <form name="userSignupPageForm" id="userSignupPageForm" action="#">
+                                <h2>Sign Up</h2>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12">First Name</label>
+                                    <div class="col-sm-12">
+                                        <input class="form-control" name="register-firstnameLoginPage" id="register-firstnameLoginPage" placeholder="First name" required="" maxlength="44">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12">Last Name</label>
+                                    <div class="col-sm-12">
+                                        <input class="form-control" id="register-lastnameLoginPage" name="register-lastnameLoginPage" placeholder="Last name" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12">Email</label>
+                                    <div class="col-sm-12">
+                                        <input type="email" class="form-control" id="register-emailLoginPage" name="register-emailLoginPage" placeholder="Email" required="">
+                                    </div>
+                                    <span class="signup-note">A confirmation email will be sent to you from the address <a href='mailto:no-reply@mail.medigy.com' target='blank'>no-reply@mail.medigy.com</a> to complete the sign up process. Please make sure you allow us through Spam.</span>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-sm-12"> </label>
+                                    <div class="col-sm-12">
+                                        <div id="recaptchaSignUpLoginPage">
+                                        </div>
+                                    </div>
+                                    <span class="captcha-message">Please verify the Captcha</span>
+                                </div>
+                                <div class="text-left">
+                                    <input type="submit" value="Sign Up" id="signupButtonLoginPage" name="signupButtonLoginPage" class="btn btn-primary">
+                                </div>
+                            </form>
+                            <span id="errorSignupPagecode"> </span>
+                        </article>
+                    </div>
+                </div>       
+            </article>   
+        </main>
+    </div>
+</section>
+{{ partialCached "footer.html" . }}  
+
+<script>
+    var recaptchaSignUpLoginPage;
+    var onloadCallback = function () {
+        //Render the recaptcha1 on the element with ID "recaptchaSignUp"
+        recaptchaSignUpLoginPage = grecaptcha.render('recaptchaSignUpLoginPage', {
+        'sitekey': '{{ $.Site.Params.GoogleCaptchaSite }}' //Replace this with your Site key
+        });
+    };
+
+    $(document).ready(function () {
+        $('#loginPageform').on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                alert('form is not valid');
+            }
+            else {
+                {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                    {{ range .items }}
+                        {{ if eq .questionCode "UserLogin_msgs"}}
+                            {{ range .answers }}
+                                {{ if eq .code "authentication"}}
+                                    var displayAuthMessage = {{ .text }}
+                                {{ end }}  
+                                {{ if eq .code "login_with_invalid_credentials"}}
+                                    var displayInvaliMessage = {{ .text }}
+                                {{ end }}                                          
+                            {{ end }}  
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+
+                    $('#loginPageButton').prop("disabled", true);
+                    e.preventDefault();
+                    $('#errorLoginPagecode').html('');
+                    $('#errorLoginPagecode').html('<span class="text-primary">' + displayAuthMessage + '</span>');
+                    var username = document.loginPageform.usernameLoginPage.value;
+                    username = username.trim();
+                    var password = document.loginPageform.passwordLoginPage.value;
+                    console.log("mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      profileImageUrl\n      memberOrganization{\n        tenantId\n        name\n        default\n             }\n    }\n    status\n  }\n}");
+                    var settings = {
+                        "async": true,
+                        "crossDomain": true,
+                        "url": "{{ $.Site.Params.GraphQLUrl }}",
+                        "method": "POST",
+                        "headers": {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                            "cache-control": "no-cache"
+                        },
+                        "data": {
+                            "query": "mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      profileImageUrl\n      memberOrganization{\n        tenantId\n        name\n        default\n         }\n    }\n    status\n  }\n}"
+                        }
+                    }
+
+  
+                    if (getCookie('cookie-agree') != 'false') {
+                    var serviceData = { "url": "{{ $.Site.Params.GraphQLUrl }}", "method": "POST", "query": " mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      profileImageUrl\n      memberOrganization{\n        tenantId\n        name\n        default\n              }\n    }\n    status\n  }\n}" };
+                    ajaxPageServiceCall.serviceCall(serviceData).then(resultData => {
+                        if (resultData.data.establishSession.userDetails != null) {
+                                var firstname = resultData.data.establishSession.userDetails.firstName;
+                                var lastname = resultData.data.establishSession.userDetails.lastName;
+                                var personid = resultData.data.establishSession.userDetails.personId;
+                                var sessionId = resultData.data.establishSession.sessionID;
+                                var memberOrganizationDetails = resultData.data.establishSession.userDetails.memberOrganization
+                                var profileImage = resultData.data.establishSession.userDetails.profileImageUrl;
+                                var tenantId = '';
+                                var status = 0; // Checking for default teanant details...
+                                var memberOrganization = resultData.data.establishSession.userDetails.memberOrganization
+                                for (i = 0; i < memberOrganizationDetails.length; i++) {
+                                    if (memberOrganizationDetails[i].default == true) {
+                                        tenantId = memberOrganizationDetails[i].tenantId;
+                                        status = 1;
+                                        break;
+                                    }
+                                }
+                                // Set for fist tenant details ad default teanant if there is no default tenant Id...
+                                if (status == 0 && memberOrganizationDetails.length > 0 ){
+                                     tenantId = memberOrganizationDetails[0].tenantId;
+                                }
+
+                                var tenantArray= [];
+                                for (i = 0; i < memberOrganization.length; i++) {
+                                    tenantArray[i] =memberOrganization[i].tenantId;
+                                }
+                                setCookie('tenantArray', tenantArray);
+                                setCookie('profileImage', profileImage);
+                                setCookie('firstname', firstname);
+                                setCookie('lastname', lastname);
+                                setCookie('personid', personid);
+                                setCookie('sessionId', sessionId);
+                                setCookie('userEmail', username);
+                                setCookie('tenantId', tenantId);
+                                setCookie('cookie-agree', 'true');
+                                setCookie('ilmLoginCheck', 'true');
+                                /* tracking login activity of user in GA */
+                                var dimensionValue = username;
+                                if (dimensionValue.length > 150) {
+                                    dimensionValue = firstname;
+                                }
+                                //gtag('set', {'user_id': dimensionValue}); // Set the user ID using signed-in user_id.
+
+                                //gtag('set', {'dimension1': dimensionValue});
+                                // gtag('config', 'UA-93818-14', {  'custom_map': {'dimension1': dimensionValue}});
+                                //ga('set', 'dimension1', dimensionValue);
+                                //var dimensionValue = 'Yes';
+                                //gtag('event', 'Login', { 'dimension2': dimensionValue });
+
+                                var status = "Success";
+                                gtmSignIn(status, username);
+
+                                // ga('set', 'dimension2', dimensionValue);
+                                /* tracking login activity of user in GA */
+
+                                setTimeout(function () {
+                                    var addtoILM = getCookie('addtoilmbutton');
+                                    if (addtoILM == 'true') {
+                                        setCookie('addtoilmbutton', 'reload');
+                                    }
+                                    // window.location.href = "/add-suggest/";                                    
+                                    var addSugestNews = getCookie('suggestNewsEventPage');
+                                    if (addSugestNews != '' && addSugestNews != null) {
+                                        setCookie('suggestNewsEventPage', "");
+                                        window.location.href = "/add-suggest/";
+                                    } else {
+                                        // window.location.href = "/add-suggest/";
+                                        //location.reload();
+                                        if(getCookie('prevPage')!= '')
+                                        {                                           
+                                            if(getCookie('prevPage')== null){
+                                                window.location.href = "/";
+                                            }
+                                            else if(getCookie('prevPage')== "/welcome/"){
+                                                window.location.href = "/";
+                                            }
+                                            else{
+                                                //return false;
+                                                window.location.href = getCookie('prevPage');
+                                            }                                           
+                                        }
+                                        else{                                       
+                                        window.location.href = "/";
+                                        }
+                                    }
+                                }, 5);
+
+                            }
+                            else {
+                                $('#errorLoginPagecode').html('');
+                                $('#errorLoginPagecode').append('<span class="text-danger">' + displayInvaliMessage + '</span>');
+                                $('#loginPageButton').prop("disabled", false);
+                                var status = displayInvaliMessage;
+                                gtmSignIn(status, username);
+                            }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    });
+
+                }               }
+
+            });
+
+
+    /// Signup mutation starts here
+
+    $('#userSignupPageForm').on('submit', function (e) {
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      } else {
+        e.preventDefault();
+        //$('#signupButton').attr('disabled','disabled');
+        $('#signupButtonLoginPage').prop('disabled', true);
+        $('.captcha-message').hide();
+        //console.log("mutation{\n  signupUser(userDetails:{\n    firstName:\""+registerFirstname+"\"\n    lastName:\""+registerLastname+"\"\n    displayName:\""+registerFirstname+"\"\n    email:\""+registerEmail+"\"\n    tenantId:\"cb39d53a-1ef0-11e9-9d28-bb451ba91f54\"    \n    tenantName:\"Netspective\"\n  }){\n    status\n    message\n    errorCode\n  }\n}");
+        var registerFirstname = $('#register-firstnameLoginPage').val();
+        var registerLastname = $('#register-lastnameLoginPage').val();
+        var registerEmail = $('#register-emailLoginPage').val().trim();
+        var displayName = registerFirstname + registerLastname;
+        var domain ="{{ $.Site.Params.siteUrl }}"
+        var response = grecaptcha.getResponse();
+        console.log(response);
+       if (response.length == 0) {
+          //reCaptcha not verified
+          $('.captcha-message').show();
+          $('#signupButtonLoginPage').prop('disabled', false);
+          return false;
+        } 
+         else {  
+          $('.captcha-message').hide();
+          $('#signupButtonLoginPage').prop('disabled', false);
+         }      //reCaptch verified
+   
+        console.log("mutation{\n  signupUser(userDetails:{\n    firstName:\"" + registerFirstname + "\"\n    lastName:\"" + registerLastname + "\"\n    displayName:\"" + displayName + "\"\n    email:\"" + registerEmail + "\"\n  } domain:\"" + domain + "\"\n){\n    status\n    message\n    errorCode\n  }\n}");
+       // return false;
+
+        var serviceData = { "url": "{{ $.Site.Params.GraphQLUrl }}", "method": "POST", "query": "mutation{\n  signupUser(userDetails:{\n    firstName:\"" + registerFirstname + "\"\n    lastName:\"" + registerLastname + "\"\n    displayName:\"" + displayName + "\"\n    email:\"" + registerEmail + "\"\n  } domain:\"" + domain + "\"\n){\n    status\n    message\n    errorCode\n  }\n}" };
+        if($('#register-firstnameLoginPage')[0].reportValidity() && $('#register-lastnameLoginPage')[0].reportValidity() && $('#register-emailLoginPage')[0].reportValidity() ){
+            $('#signupButtonLoginPage').val("Please wait");
+             $('#signupButtonLoginPage').attr('disabled',true);    
+        ajaxPageServiceCall.serviceCall(serviceData).then(resultData => {
+         // if (resultData.data.checkAuthentication.valid != true && getCookie('userEmail') != null)
+         // $("#userSignupPageForm")[0].reset();
+          if (resultData.data.signupUser.status != "ERROR") {
+            {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                {{ range .items }}
+                    {{ if eq .questionCode "UserSignup_msgs"}}
+                        {{ range .answers }}  
+                            {{ if eq .code "success_msg_on_user_creation"}}
+                                var displaySuccessMessage = {{ .text }}
+                            {{ end }}                                          
+                        {{ end }}  
+                    {{ end }}
+                {{ end }}
+            {{ end }}  
+            $('#signupUserMessage').html(displaySuccessMessage);
+            $("#userSignupPageForm")[0].reset();
+            $('#signupButtonLoginPage').val("Sign Up");
+            $('#signupButton').prop('disabled', false);
+            gtmSignUp("Success", registerEmail);
+          }
+          else {
+            $('#signupUserMessage').html(resultData.data.signupUser.message);
+            $('#signupUserMessage').addClass('alert-danger');
+            $('#signupButtonLoginPage').val("Sign Up");
+            gtmSignUp("Failed:{ " + resultData + " }", registerEmail);
+          }
+          $('#signupUserMessage').show();
+          $('#signupButtonLoginPage').prop('disabled', false);
+        })
+          .catch(error => {
+            console.log(error);
+          });
+ 
+        }
+
+      }
+
+    });
+    //// Signup mutation ends here
+});
+        
+</script>
+</body>
+</html>

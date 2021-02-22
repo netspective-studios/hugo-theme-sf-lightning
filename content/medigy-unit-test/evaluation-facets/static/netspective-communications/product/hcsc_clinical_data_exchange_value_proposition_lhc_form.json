@@ -1,0 +1,814 @@
+{
+            "name": "ADT Value Proposition",
+            "items": [{},
+{
+                    "question": "What is the value proposition of your offering?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "VPS",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Administrative Management",
+                            "code": "VPS01"
+                        },
+                        {
+                            "text": "Financial Management",
+                            "code": "VPS02"
+                        },
+                        {
+                            "text": "Medical Management",
+                            "code": "VPS03"
+                        },
+                        {
+                            "text": "Network Management",
+                            "code": "VPS04"
+                        }
+                    ]
+                },
+                {
+                    "question": "Who does this Offering Benefit?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "OB",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Health Plans",
+                            "code": "OB1"
+
+
+                        },
+                        {
+                            "text": "Providers",
+                            "code": "OB2"
+
+
+                        },
+                        {
+                            "text": "Patients",
+                            "code": "OB3"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ANY",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS01"
+                                }
+                            },
+                            {
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS02"
+                                }
+                            },
+                            {
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS03"
+                                }
+                            },
+                            {
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS04"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Administrative Management Value Proposition for Health Plans?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "AMHP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Admission",
+                            "code": "AMHP1"
+
+
+                        },
+                        {
+                            "text": "Authorization Process Improvement",
+                            "code": "AMHP2"
+
+
+                        },
+                        {
+                            "text": "Automate and Centralize Medical Records, Requests, and Documentation",
+                            "code": "AMHP3"
+
+
+                        },
+                        {
+                            "text": "Improve Data Accuracy and Collection",
+                            "code": "AMHP4"
+
+
+                        },
+                        {
+                            "text": "Streamline Claims processing with accurate info at claim submission",
+                            "code": "AMHP5"
+
+
+                        },
+                        {
+                            "text": "Automated Census Management",
+                            "code": "AMHP6"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS01"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB1"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Administrative Management Value Proposition for Providers?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "AMVP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Admission",
+                            "code": "AMVP1"
+
+
+                        },
+                        {
+                            "text": "Automated Census Management",
+                            "code": "AMVP2"
+
+
+                        },
+                        {
+                            "text": "Authorization Process Improvement",
+                            "code": "AMVP3"
+
+
+                        },
+                        {
+                            "text": "Streamline Claims processing with accurate info at claim submission",
+                            "code": "AMVP4"
+
+
+                        },
+                        {
+                            "text": "Automate and centralize Medical Records Requests and Documentation",
+                            "code": "AMVP5"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS01"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Administrative Management Value Proposition for Patients?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "AMPT",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Submission",
+                            "code": "AMPT1"
+
+
+                        },
+                        {
+                            "text": "Improve Data Accuracy and Collection",
+                            "code": "AMPT2"
+
+
+                        },
+                        {
+                            "text": "Push Real Time Information to Patient",
+                            "code": "AMPT3"
+
+
+                        },
+                        {
+                            "text": "Streamline Claims Processing with Accurate Info at claim submission",
+                            "code": "AMPT4"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS01"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Financial Management Value Proposition for Health Plans?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "FMHP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Ad Hoc Analysis Capabilities",
+                            "code": "FMHP1"
+
+
+                        },
+                        {
+                            "text": "Improve Prompt Pay Requirement Performance",
+                            "code": "FMHP2"
+
+
+                        },
+                        {
+                            "text": "Revenue Optimization",
+                            "code": "FMHP3"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "FMHP4"
+
+
+                        },
+                        {
+                            "text": "Push Real-time information to Providers",
+                            "code": "FMHP5"
+
+
+                        },
+                        {
+                            "text": "Identify Responsibility of Other Insurers and Reduce HCSC Liability",
+                            "code": "FMHP6"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS02"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB1"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Financial Management Value Proposition for Providers?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "FMVP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Improve Revenue Cycle",
+                            "code": "FMVP1"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "FMVP2"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS02"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Financial Management Value Proposition for Patients?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "FMPT",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Improve Coordination of Benefits",
+                            "code": "FMPT1"
+
+
+                        },
+                        {
+                            "text": "Push Real-time information to Patients",
+                            "code": "FMPT2"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS02"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Medical Management Value Proposition for Health Plans?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "MMHP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Improve Care Coordination by integrating Data into Care/Disease/Utilization Management",
+                            "code": "MMHP1"
+
+
+                        },
+                        {
+                            "text": "Automated Census Management",
+                            "code": "MMHP2"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "MMHP3"
+
+
+                        },
+                        {
+                            "text": "Improve Data Accuracy and Collection",
+                            "code": "MMHP4"
+
+
+                        },
+                        {
+                            "text": "Push Real-Time Information to Providers",
+                            "code": "MMHP5"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS03"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB1"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Medical Management Value Proposition for Providers?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "MMVP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Admission",
+                            "code": "MMVP1"
+
+
+                        },
+                        {
+                            "text": "Automated Notice of Discharge",
+                            "code": "MMVP2"
+
+
+                        },
+                        {
+                            "text": "Push Real-Time Information to Providers",
+                            "code": "MMVP3"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "MMVP4"
+
+
+                        },
+                        {
+                            "text": "Automate and Centralize Medical Records Requests and Documentation",
+                            "code": "MMVP5"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS03"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Medical Value Proposition for Patients?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "MVPT",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Admission",
+                            "code": "MVPT1"
+
+
+                        },
+                        {
+                            "text": "Automated Notice of Discharge",
+                            "code": "MVPT2"
+
+
+                        },
+                        {
+                            "text": "Push Real-Time Information to Providers",
+                            "code": "MVPT3"
+
+
+                        },
+                        {
+                            "text": "Increased Care Team Collaboration",
+                            "code": "MVPT4"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS03"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB3"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Network Management Value Proposition for Health Plans?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "NVHP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Real-Time Data Analysis",
+                            "code": "NVHP1"
+
+
+                        },
+                        {
+                            "text": "Improve Data Accuracy & Collection",
+                            "code": "NVHP2"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "NVHP3"
+
+
+                        },
+                        {
+                            "text": "Push Real-Time Information to Providers",
+                            "code": "NVHP4"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS04"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB1"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Network Management Value Proposition for Providers?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "NMVP",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Automated Notice of Discharge",
+                            "code": "NMVP1"
+
+
+                        },
+                        {
+                            "text": "Improve Data Accuracy & Collection",
+                            "code": "NMVP2"
+
+
+                        },
+                        {
+                            "text": "Real-Time Data Analysis",
+                            "code": "NMVP3"
+
+
+                        },
+                        {
+                            "text": "Accreditation",
+                            "code": "NMVP4"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS04"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB2"
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "question": "What is the Network Management Value Proposition for Patients?",
+                    "questionCodeSystem": "Custom",
+                    "questionCode": "NMPT",
+                    "questionCardinality": {
+                        "min": "1",
+                        "max": "1"
+                    },
+                    "header": false,
+                    "editable": "1",
+                    "answerCardinality": {
+                        "min": "0",
+                        "max": "*"
+                    },
+                    "dataType": "CNE",
+                    "answers": [{
+                            "text": "Increased Care Team Collaboration",
+                            "code": "NMPT1"
+
+
+                        },
+                        {
+                            "text": "Push Real-Time Information to Patients",
+                            "code": "NMPT2"
+
+
+                        }
+                    ],
+                    "skipLogic": {
+                        "action": "show",
+                        "logic": "ALL",
+                        "conditions": [{
+                                "source": "VPS",
+                                "trigger": {
+                                    "code": "VPS04"
+                                }
+                            },
+                            {
+                                "source": "OB",
+                                "trigger": {
+                                    "code": "OB3"
+                                }
+                            }
+                        ]
+                    }
+                }
+            ],
+            "templateOptions": {
+                "obrHeader": false,
+                "hideUnits": true,
+                "hideHeader": true,
+                "allowHTMLInInstructions":true,
+                "allowMultipleEmptyRepeatingItems": false,
+                "showFormHeader": false,
+                "showColumnHeaders": false,
+                "hideFormControls": true
+            }
+        }

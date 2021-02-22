@@ -1,0 +1,24 @@
+<div class="post-list">	
+	<div class="header">
+		<span class="post-icon"> <img src="/pandemic/images/latest-news.png" alt="latest"></span> 	Latest News <a href="{{.Site.BaseURL}}/communities/pandemic/news/"><i class="fas fa-chevron-circle-right"></i></a>
+	</div>	
+	<div class="subContent">
+		<ul class="posts-list">
+			{{ range first 4 (where .Site.RegularPages ".Params.contentcategories" "==" "news") }}
+				<li>
+					<a href="{{.Permalink}}" >
+						{{ $fpath:=  .File.Dir }}
+								{{ $fileDir := replace $fpath "\\" "/"}}
+								<img src="/{{$fileDir}}img/{{ .Params.image  }}"  alt="{{ .Title }}">	
+					</a>
+					<div class="subContent">
+						<a href="{{.Permalink}}">
+							{{.Title}}
+						</a>
+					</div>
+				</li>
+			{{ end }}
+			
+		</ul>
+	</div>
+</div>

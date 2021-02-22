@@ -1,0 +1,26 @@
+{{ define "main" }}		
+{{ partial (print ($.Scratch.Get "top-banner") ) . }}  
+	<section id="main">
+		<!-- <div class="container ">
+			<div class="row">
+				<div class="col-md-3">
+					{{ partial (print ($.Scratch.Get "latest-news") ) . }}  
+					
+								
+				</div>
+				<div class="col-md-6">
+					{{ partial (print ($.Scratch.Get "upcoming") ) . }}  
+					
+				</div>
+				<div class="col-md-3">
+					{{ partial (print ($.Scratch.Get "members") ) . }}  
+					
+									
+				</div>
+			</div>
+		</div> -->
+		{{ partial (print ($.Scratch.Get "categories-home") ) . }}  
+		
+    </section>
+	
+{{end}}

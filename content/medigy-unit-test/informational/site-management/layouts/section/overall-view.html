@@ -1,0 +1,116 @@
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;font-weight: bold;}
+.tg .tg-cly1{text-align:left;vertical-align:middle}
+</style>
+
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "overall-view-key"}}
+
+
+<body class="single-body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "overall-view-key"}}
+    
+         
+  <section class="container">
+  <main>
+      <div class="col-lg-12 content side-text-padding container single-blog-card">
+      <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }} min-height-auto">
+        <header class="post-header">
+          <h1 class="post-title">Medigy Offering Analytics</h1>
+        </header>
+
+          <h3 id="tokenMessage"></h3>
+        <div class="entry-content entry-content-2 page-content">
+          <div class="table-responsive">
+            
+<table class="dashboard table">
+
+
+
+  <thead>
+    <tr>
+    <th class="tg-cly1">Institution Name</th>
+    <th class="tg-cly1">Assessments Total Count</th>
+    <th class="tg-cly1">Approved Assessments</th>
+    <th class="tg-cly1">Not Approved (Rejected)</th>
+   
+  </tr>
+</thead>
+<tbody>
+  <tr><td colspan=4> <p>Loading content...</p> </td></tr>
+
+</tbody>
+</table>
+ 
+  
+<script type="text/javascript">
+var sessionId = getCookie('sessionId');
+// var sessionId = 'AQIC5wM2LY4SfcyjqANYh_dxpY-nr2SLMbhGfgudx2Efr-s.*AAJTSQACMDEAAlNLABQtNDMyMDc0NTkzNjkxMDk0NTU1NgACUzEAAA..*';
+console.log(sessionId);
+ 
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "{{ $.Site.Params.GraphQLUrl }}",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": "query{\n  getProductOfferingStat(authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    institution{\n      institutionName\n      institutionId\n      approvedAssessmentsCount\n      notApprovedAssessmentsCount\n      rejectedAssessmentsCount\n      assessmentsCount\n    }\n    totalInstitutionCount\n    totalApprovedAssessmentsCount\n    totalNotApprovedAssessmentsCount\n    totalRejectedAssessmentsCount\n    totalAssessmentsCount\n  }\n}"
+  }
+}
+
+$.ajax(settings).done(function (response) {
+   console.log(response);
+    var html = "";
+   for (key in response.data.getProductOfferingStat.institution) {
+    //console.log(response.data.getProductOfferingDetails[key].productName);
+ 
+   html +=  '<tr>';
+   html +=  '  <td class="tg-cly1"> '+response.data.getProductOfferingStat.institution[key].institutionName+' </td>';
+   html += ' <td class="tg-cly1"> '+response.data.getProductOfferingStat.institution[key].assessmentsCount+'  </td>';
+   html += ' <td class="tg-cly1"> '+response.data.getProductOfferingStat.institution[key].approvedAssessmentsCount+'  </td>';
+   html += '  <td class="tg-cly1"> '+response.data.getProductOfferingStat.institution[key].notApprovedAssessmentsCount+' ('+response.data.getProductOfferingStat.institution[key].rejectedAssessmentsCount+') </td>';
+   html += '</tr>';
+ 
+   }
+   $('.dashboard tbody').html(html);
+});
+  </script>
+
+               
+
+               
+
+          
+        </div>
+
+
+
+
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </main>
+  </section>
+{{ partialCached "footer.html" . }}
+</body>
+
+</html>

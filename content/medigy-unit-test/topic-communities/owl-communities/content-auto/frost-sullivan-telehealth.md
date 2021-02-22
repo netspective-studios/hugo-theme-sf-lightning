@@ -1,0 +1,14 @@
+--- 
+ title: "Frost & Sullivan: TeleHealth" 
+ classname:  "TeleHealth" 
+ label: "TeleHealth" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Frost_&_Sullivan" 
+ parentclasslabel: "Frost & Sullivan" 
+ equalentCollections: ['Medigy: Ambulatory Live Video Telehealth','Medigy: Specialty Live Video Telehealth','Healthcare IT News: Telemedicine','Medigy: Telemedicine','Medigy: Health System Live Video Telehealth'] 
+ collections: ['Frost & Sullivan: TeleHealth']
+ aliases:  "/topic/frost-sullivan-telehealth"  
+ searchCategory: "topic" 
+---
+VGVsZWhlYWx0aCBpcyB0aGUgZmllbGQgb2YgaGVhbHRoY2FyZSB0aGF0IHByb3ZpZGVzIHJlbW90ZSBoZWFsdGhjYXJlIHNlcnZpY2VzIHRvIHBhdGllbnRzIHRocm91Z2ggSW5mb3JtYXRpb24gYW5kIGNvbW11bmljYXRpb24gdGVjaG5vbG9neSAoSUNUKS4gVGVsZW1lZGljaW5lIGlzIG9uZSBvZiB0aGUgZXhhbXBsZXMgb2YgdGVsZWhlYWx0aCwgd2hpY2ggcHJvdmlkZXMgaGVhbHRoY2FyZSBzZXJ2aWNlcyB0byBwYXRpZW50cyByZW1vdGVseSB2aWEgaW5mb3JtYXRpb24gdGVjaG5vbG9naWVzIGFuZCBlbGVjdHJvbmljIGNvbW11bmljYXRpb25zLiBEaWZmZXJlbnQgc291cmNlcyBhcmUgYXZhaWxhYmxlIGZvciBkZWxpdmVyaW5nIHRlbGVoZWFsdGggc2VydmljZXMsIGFuZCB0aGVzZSBpbmNsdWRlIHZpZGVvY29uZmVyZW5jaW5nLCB0aGUgaW50ZXJuZXQsIHN0b3JlLWFuZC1mb3J3YXJkIGltYWdpbmcsIHN0cmVhbWluZyBtZWRpYSwgYW5kIHRlcnJlc3RyaWFsICYgd2lyZWxlc3MgY29ubmVjdGlvbnMuIFBhdGllbnRzIHVzZSBhbGwgdGhlc2UgdGVjaG5vbG9naWVzIHRvIGF2YWlsIGhlYWx0aGNhcmUgc2VydmljZXMgYXQgaG9tZS4gRG9jdG9ycyBhbHNvIHVzZSB0aGVzZSBzZXJ2aWNlcyB0byBpbXByb3ZlIG9yIHN1cHBvcnQgaGVhbHRoIGNhcmUgc2VydmljZXMuIFRlbGVoZWFsdGggdGVjaG5vbG9neSBpbnZvbHZlcyBhIHdpZGUgcmFuZ2Ugb2Ygc2VydmljZXMgZGVzaWduZWQgdG8gZW5oYW5jZSBjYXJlIGFuZCBlZHVjYXRpb24gZGVsaXZlcnku

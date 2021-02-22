@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Medication Augmentation" 
+ classname:  "Medication_Augmentation" 
+ label: "Medication Augmentation" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: Medication Augmentation']
+ aliases:  "/topic/medigy-medication-augmentation"  
+ searchCategory: "topic" 
+---
+TWVkaWNhdGlvbiBhdWdtZW50YXRpb24gaW52b2x2ZXMgYSBjb21iaW5hdGlvbiBvZiB0d28gb3IgbW9yZSBkcnVncyBmb3IgYWNoaWV2aW5nIGJldHRlciBoZWFsdGggb3V0Y29tZXMuIE1lZGljYXRpb24gYXVnbWVuYXR0aW9uIG9yIGF1Z21lbnRhdGlvbiBtZWRpY2F0aW9uIGhhcyBtYW55IGFkdmFudGFnZXMsIGluY2x1ZGluZyByZWR1Y2luZyB0aGUgc2V2ZXJpdHkgYW5kIG51bWJlciBvZiBkaXNlYXNlIHN5bXB0b21zLCBkZWNyZWFzaW5nIHRoZSBudW1iZXIgb2Ygc2lkZSBlZmZlY3RzLCBhbmQgbm8gYWR2ZXJzZSBldmVudHMuIEluIHRlcm1zIG9mIHBoYXJtYWNvbG9neSwgYXVnbWVudGF0aW9uIHJlZmVycyB0byBpbmNyZWFzaW5nIHRoZSBxdWFudGl0eSBvZiBjZXJ0YWluIHN1YnN0YW5jZXMgaW4gdGhlIGJvZHkgd2hlbiB0aGUgYm9keSBpcyBkZWZpY2llbnQgKGhvcm1vbmVzLCBlbnp5bWVzLCBvdGhlciBzdWJzdGFuY2VzLCBldGMuKS4=

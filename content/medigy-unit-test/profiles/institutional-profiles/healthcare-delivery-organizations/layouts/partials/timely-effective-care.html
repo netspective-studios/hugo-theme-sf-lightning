@@ -1,0 +1,68 @@
+                          <div class="accordion" id="accordion{{ .variableId }}">
+                            <div class="card card-table">
+                              <div class="card-header" id="heading{{ .variableId }}">
+                                <h2 class="mb-0">
+                                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapse{{ .variableId }}"
+                                    aria-expanded="false" aria-controls="collapseOne"><i class="fas {{ .favIcon }} left-icon"></i>
+                                    {{ .accordianTitle | safeHTMLAttr }}
+                                    <i class="fa fa-chevron-up right-icon"></i>
+                                  </button>
+                                </h2>
+                              </div>
+                              <div id="collapse{{ .variableId | safeHTMLAttr }}" class="collapse" aria-labelledby="heading{{ .variableId | safeHTMLAttr }}" data-parent="#accordion{{ .variableId | safeHTMLAttr }}">
+                                <div class="card-body">
+                                  <div class="table-responsive">
+                                    <table class="table">
+                                      <thead class="border-top sentence-case">
+                                        <tr>
+                                          <th  width="55%">Measure Description </th>
+                                          <th  width="15%">{{ .facilityName }}</th>
+                                          <th  width="15%">{{ .state }} AVERAGE</th>
+                                          <th  width="15%">NATIONAL AVERAGE</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {{ $category := .category}}
+                                        {{ $valueFormat := .valueFormat }}
+                                        {{ range .timelyAndEffectiveCareObject}}  {{ if eq .condition.condition $category }}
+                                        {{ $hospitalMeasureId := .measureDetails.id }}
+                                        <tr >
+                                          <td >
+                                              {{ if eq .measureDetails.id 1 }}
+                                                {{ .measureName }}
+                                              {{ else }}
+                                              {{ range .timelyAndEffectiveCareNational}}
+                                                {{ if ne .measure.id $hospitalMeasureId }}{{ .measureName }}{{ else }} {{ .timelyAndEffectiveCareState.measureName }} {{ end }}
+                                              {{ end }}
+                                              {{ end }}
+                                          </td>
+                                          {{ if eq .measureDetails.id 1 }}
+                                          <td class="text-center">{{ .score }} </td>
+                                          <td class="text-center text-fade"> Not Available</td>
+                                          <td class="text-center text-fade"> Not Available</td>
+                                          {{ else }}  
+                                          <td {{ if (ne .score "Not Available") }} {{ "class='text-right'"  | safeHTMLAttr }} {{ else }} {{ "class='text-center text-fade'" | safeHTMLAttr }} {{ end }}>{{ if (ne .score "Not Available") }} {{ .score }}{{ $valueFormat }} {{ else }} {{ .score }} {{ end }}</td>                        
+                                          {{ range .timelyAndEffectiveCareNational}}
+                                            {{ if eq .timelyAndEffectiveCareState.measure $hospitalMeasureId }}
+                                            <td {{ if (ne .timelyAndEffectiveCareState.score "Not Available") }} {{ "class='text-right'" | safeHTMLAttr }} {{ else }} {{ "class='text-center text-fade'" | safeHTMLAttr }} {{ end }}>{{ if and (ne .timelyAndEffectiveCareState.score "Not Available") (ne .timelyAndEffectiveCareState.score "very high")}} {{ .timelyAndEffectiveCareState.score }}{{ $valueFormat }} {{ else }} {{ .timelyAndEffectiveCareState.score }} {{ end }}</td>
+                                            {{ else }}
+                                            <td class="text-center text-fade"> Not Available</td>
+                                            {{ end }}
+                                            {{ if eq .measure.id $hospitalMeasureId }}
+                                          <td {{ if (ne .score "Not Available") }} {{ "class='text-right'" | safeHTMLAttr }} {{ else }} {{ "class='text-center text-fade'" | safeHTMLAttr }} {{ end }}>{{ if and (ne .score "Not Available") (ne .score "very high")}}{{ .score }}{{ $valueFormat }} {{ else }} {{ .score }} {{ end }}</td>
+                                            {{ else }}
+                                            <td class="text-center text-fade"> Not Available</td>
+                                            {{ end }}                                            
+
+                                          {{ end }}
+                                          {{ end }}
+                          
+                                        </tr>
+                                        {{ end }} {{ end }}
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>

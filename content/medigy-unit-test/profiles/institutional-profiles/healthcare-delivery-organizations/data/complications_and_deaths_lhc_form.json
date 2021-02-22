@@ -1,0 +1,141 @@
+{
+  "shortName": "complications-and-deaths",
+  "name": "Complications & Deaths",
+  "status": "draft",
+  "version": "fa-file-medical",
+  "deriveFrom": [
+    ""
+  ],
+  "subjectType": {
+    "extraClass": "tooltip-hdo-descr",
+    "imagePath": "/img/hospital_compare.jpg",
+    "referenceLink": "https://www.medicare.gov/hospitalcompare/profile.html#profTab=3&ID=",
+    "toolTipText": "Description courtesy of Medicare.gov | Hospital Compare"
+  },
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Surgical Complications",
+          "questionCodeSystem": "Custom",
+          "questionCode": "SurgicalComplications",
+          "prefix": {
+            "category": "SurgicalComplications",
+            "iconClass": "fa-bed",
+            "valueFormat": ""
+          },
+          "localQuestionCode": "complicationsAndDeaths",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "30-days Death Rates",
+          "questionCodeSystem": "Custom",
+          "questionCode": "30daysDeathRates",
+          "prefix": {
+            "category": "30daysDeathRates",
+            "iconClass": "fa-percentage",
+            "valueFormat": ""
+          },
+          "localQuestionCode": "complicationsAndDeaths",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Infections",
+          "questionCodeSystem": "Custom",
+          "questionCode": "Infections",
+          "prefix": {
+            "category": "Infections",
+            "iconClass": "fa-diagnoses",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "complicationsAndDeaths",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "General Description",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "These measures show how often or how quickly hospitals provide care that research shows gets the best results for patients with certain conditions. This information can help you compare which hospitals give recommended care most often as part of the overall care they provide to patients.",
+              "code": "",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

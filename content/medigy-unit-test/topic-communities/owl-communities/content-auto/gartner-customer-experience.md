@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Customer Experience" 
+ classname:  "Customer_Experience" 
+ label: "Customer Experience" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: ['Healthcare IT News: Consumer Technology','Healthcare IT News: Connected Health','Medigy: Consumer Health Information'] 
+ collections: ['Gartner: Customer Experience']
+ aliases:  "/topic/gartner-customer-experience"  
+ searchCategory: "topic" 
+---
+Q3VzdG9tZXIgZXhwZXJpZW5jZSBpbiBoZWFsdGhjYXJlIGluY2x1ZGVzIHRoZSByYW5nZSBvZiBpbnRlcmFjdGlvbnMgcGF0aWVudHMgaGF2ZSB3aXRoIGhlYWx0aGNhcmUgc3lzdGVtcywgZG9jdG9ycywgcGh5c2ljaWFucywgaGVhbHRoY2FyZSBwcm9mZXNzaW9uYWxzLCBob3NwaXRhbCBzdGFmZiBwaHlzaWNpYW4gcHJhY3RpY2VzLCBhbmQgb3RoZXIgaGVhbHRoY2FyZSBmYWNpbGl0aWVzLiBDdXN0b21lciBleHBlcmllbmNlIG9yIHBhdGllbnQgZXhwZXJpZW5jZSBpbiBoZWFsdGhjYXJlIGlzIGFuIGludGVncmFsIGNvbXBvbmVudCBvZiBvdmVyYWxsIGhlYWx0aGNhcmUgcXVhbGl0eS4gSXQgaW5jbHVkZXMgZGlmZmVyZW50IGFzcGVjdHMgb2YgY2FyZSBkZWxpdmVyeSB0aGF0IHBhdGllbnRzIGhpZ2hseSB2YWx1ZSB3aGlsZSByZWNlaXZpbmcgYW5kIHNlZWtpbmcgY2FyZS4gU3VjaCBhc3BlY3RzIG1heSBpbnZvbHZlIGVhc3kgYWNjZXNzIHRvIGhlYWx0aCBpbmZvcm1hdGlvbiwgdGltZWx5IGFwcG9pbnRtZW50cywgZWFzeSBpbnRlcmFjdGlvbnMgd2l0aCBoZWFsdGhjYXJlIHByb3ZpZGVycywgZXRjLg==

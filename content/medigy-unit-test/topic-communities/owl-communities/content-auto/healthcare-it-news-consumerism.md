@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Consumerism" 
+ classname:  "Consumerism" 
+ label: "Consumerism" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Medigy: Consumer Health Information'] 
+ collections: ['Healthcare IT News: Consumerism']
+ aliases:  "/topic/healthcare-it-news-consumerism"  
+ searchCategory: "topic" 
+---
+Q29uc3VtZXJpc20gcmVwcmVzZW50cyB0aGUgaWRlYSB0aGF0IGluY3JlYXNpbmcgdGhlIGNvbnN1bXB0aW9uIG9mIGdvb2RzIGFuZCBzZXJ2aWNlcyBpcyBhZHZhbnRhZ2VvdXMgdG8gdGhlIGVjb25vbXkuIEVjb25vbWlzdHMgYmVsaWV2ZSB0aGF0IGNvbnN1bWVyaXNtIG5vdCBvbmx5IGJlbmVmaXRzIHRoZSBjdXN0b21lcnMgd2hvIGFyZSBwdXJjaGFzaW5nIHRoZSBwcm9kdWN0cyBidXQgYWxzbyBidXNpbmVzcyBvcmdhbml6YXRpb25zLCBlbnRlcnByaXNlcywgYW5kIGNvbXBhbmllcyBkdWUgdG8gaW5jcmVhc2VkIHNhbGVzLCByZXZlbnVlLCBhbmQgcHJvZml0LgpDb25zdW1lcmlzbSBpbiBoZWFsdGhjYXJlIGVuYWJsZXMgcGF0aWVudHMgdG8gZ2V0IGludm9sdmVkIGluIHRoZWlyIGhlYWx0aGNhcmUgZGVjaXNpb25zIGNvbXBsZXRlbHkuIEhlYWx0aGNhcmUgY29uc3VtZXJpc20gaGVscHMgaW4gaW1wcm92aW5nIHRoZSBxdWFsaXR5IG9mIGNhcmUuIEl0IGVuc3VyZXMgdGhhdCB0aGUgcGF0aWVudHMgaW50ZXJhY3Qgd2l0aCB0aGUgaGVhbHRoIGluZHVzdHJ5IGFzIGNvbnN1bWVycyByYXRoZXIgdGhhbiBwYXNzaXZlIHBhdGllbnRzLg==

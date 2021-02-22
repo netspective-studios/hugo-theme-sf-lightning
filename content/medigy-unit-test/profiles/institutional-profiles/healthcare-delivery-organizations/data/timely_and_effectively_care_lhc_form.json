@@ -1,0 +1,275 @@
+{
+  "shortName": "timely-and-effectively-care",
+  "name": "Timely & Effective Care",
+  "status": "draft",
+  "version": "fa-user-clock",
+  "deriveFrom": [
+    ""
+  ],
+  "subjectType": {
+    "extraClass": "tooltip-hdo-descr",
+    "imagePath": "/img/hospital_compare.jpg",
+    "referenceLink": "https://www.medicare.gov/hospitalcompare/profile.html#profTab=2&ID=",
+    "toolTipText": "Description courtesy of Medicare.gov | Hospital Compare"
+  },
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Emergency Department Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "EmergencyDepartmentCare",
+          "prefix": {
+            "category": "Emergency Department",
+            "iconClass": "fa-first-aid",
+            "valueFormat": ""
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Sepsis Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "SepsisCare",
+          "prefix": {
+            "category": "Sepsis Care",
+            "iconClass": "fa-procedures",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Preventive Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "PreventiveCare",
+          "prefix": {
+            "category": "Preventive Care",
+            "iconClass": "fa-user-md",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Heart Attack or Chest Pain Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "HeartAttackorChestPainCare",
+          "prefix": {
+            "category": "Heart Attack or Chest Pain",
+            "iconClass": "fa-heartbeat",
+            "valueFormat": " Minutes"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Colonoscopy Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "ColonoscopyCare",
+          "prefix": {
+            "category": "Colonoscopy care",
+            "iconClass": "fa-bed",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Cataract Surgery Outcome Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "CataractSurgeryOutcomeCare",
+          "prefix": {
+            "category": "Cataract surgery outcome",
+            "iconClass": "fa-eye",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Cancer Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "CancerCare",
+          "prefix": {
+            "category": "Cancer care",
+            "iconClass": "fa-diagnoses",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Pregnancy and Delivery Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "PregnancyandDeliveryCare",
+          "prefix": {
+            "category": "Pregnancy and Delivery Care",
+            "iconClass": "fa-child",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Title of our Innovation Center is"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Blood Clot Prevention and Treatment Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "BloodClotPreventionandTreatmentCare",
+          "prefix": {
+            "category": "Blood Clot Prevention and Treatment",
+            "iconClass": "fa-tint",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "timelyAndEffectiveCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Website of our Innovation Center is"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Policy Based Message",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "These measures show how often or how quickly hospitals provide care that research shows gets the best results for patients with certain conditions. This information can help you compare which hospitals give recommended care most often as part of the overall care they provide to patients.",
+              "code": "",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

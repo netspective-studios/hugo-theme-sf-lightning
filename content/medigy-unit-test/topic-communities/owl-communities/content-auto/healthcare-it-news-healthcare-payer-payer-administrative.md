@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Healthcare Payer - Payer Administrative" 
+ classname:  "Payer_Administrative" 
+ label: "Healthcare Payer - Payer Administrative" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Healthcare Payer - Payer Administrative']
+ aliases:  "/topic/healthcare-it-news-healthcare-payer-payer-administrative"  
+ searchCategory: "topic" 
+---
+QSBoZWFsdGhjYXJlIHBheWVyIHJlcHJlc2VudHMgYSBoZWFsdGggbWFpbnRlbmFuY2Ugb3JnYW5pemF0aW9uLCBpbnN1cmFuY2UgY29tcGFueSwgbWFuYWdlbWVudCBzZXJ2aWNlcyBvcmdhbml6YXRpb24sIG9yIGFueSBvdGhlciBlbnRpdHkgdGhhdCBwYXlzIGZvciBhbiBhZG1pbmlzdGVyZWQgaGVhbHRoIHNlcnZpY2UuIEFuIGluc3VyYW5jZSBjb21wYW55IGlzIHRoZSBtb3N0IGNvbW1vbiBleGFtcGxlIG9mIGEgcGF5ZXIuClBheWVycyBhcmUgcmVzcG9uc2libGUgZm9yIHByb2Nlc3NpbmcgeW91ciBkaWZmZXJlbnQgaGVhbHRoY2FyZSByZXF1aXJlbWVudHMsIHN1Y2ggYXMgcGF0aWVudCBlbGlnaWJpbGl0eSwgZW5yb2xsbWVudCwgY2xhaW1zLCBhbmQgcGF5bWVudC4gUGF5ZXJzIGNhbiBiZSBlaXRoZXIgcHJpdmF0ZSAoaW5zdXJhbmNlIGNvbXBhbmllcyksIG9yIHRoZXkgY2FuIGJlIHB1YmxpYyBzdWNoIGFzIGZlZGVyYWwgb3Igc3RhdGUgZ292ZXJubWVudHMuIEltcHJvdmluZyBwYXllciBzb2x1dGlvbnMgd2l0aCBhbiBleHBsaWNpdCBmb2N1cyBvbiBjcmVhdGluZyB2YWx1ZSBpcyBjcml0aWNhbCBmb3IgZHJpdmluZyBzdXN0YWluYWJsZSBncm93dGgu

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Data Science" 
+ classname:  "Data_science" 
+ label: "Data Science" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['HIMSS: Data Science','Centers for Medicare & Medicaid Services (CMS): Data'] 
+ collections: ['Healthcare IT News: Data Science']
+ aliases:  "/topic/healthcare-it-news-data-science"  
+ searchCategory: "topic" 
+---
+RGF0YSBzY2llbmNlIGlzIHRoZSBkZXJpdmF0aW9uIG9mIGFjdGlvbmFibGUgaW5zaWdodHMgZnJvbSB1bnN0cnVjdHVyZWQgZGF0YSBwcmVzZW50IGluIGFuIG9yZ2FuaXphdGlvbuKAmXMgcmVwb3NpdG9yeS4gSXQgaXMgcmVsYXRlZCB0byBkYXRhIG1pbmluZyBhbmQgYmlnIGRhdGEgYW5kIGludm9sdmVzIG9idGFpbmluZyBtZWFuaW5nZnVsIGluc2lnaHRzIGZyb20gcmF3IGRhdGEgYnkgdXRpbGl6aW5nIGRpZmZlcmVudCBhbmFseXRpY2FsLCBwcm9ncmFtbWluZywgYW5kIGJ1c2luZXNzIHNraWxscy4gV2l0aCB0aGUgaGVscCBvZiBhcnRpZmljaWFsIGludGVsbGlnZW5jZSwgZGF0YSBzY2llbmNlIHVzZXMgZm9yIG1ha2luZyBtb2RlbHMgYW5kIHByZWRpY3Rpb25zIHZpYSBhbGdvcml0aG1zIGFuZCBvdGhlciB0ZWNobmlxdWVzLgpEYXRhIHNjaWVuY2UgaW4gaGVhbHRoY2FyZSBvciBoZWFsdGggZGF0YSBzY2llbmNlIGlzIGFuIGVzc2VudGlhbCBwYXJ0IG9mIHRoZSBoZWFsdGhjYXJlIGluZHVzdHJ5IHdoZXJlIGl0IGhlbHBzIGluIG9idGFpbmluZyBhY2N1cmF0ZSBkaWFnbm9zdGljIG1lYXN1cmVzLiBJdCBjYW4gYmUgaW1wbGVtZW50ZWQgaW4gc2V2ZXJhbCBmaWVsZHMgb2YgaGVhbHRoY2FyZSwgaW5jbHVkaW5nIG1lZGljYWwgaW1hZ2luZywgZHJ1ZyBkaXNjb3ZlcnksIGdlbmV0aWNzLCBwcmVkaWN0aXZlIGRpYWdub3NpcywgZXRjLg==

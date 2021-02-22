@@ -1,0 +1,120 @@
+{
+    "name": "Netspective Support and Feedback",
+    "templateOptions": {
+        "obrHeader": false,
+        "hideUnits": true,
+        "hideHeader": true,
+        "allowHTMLInInstructions":true,
+        "allowMultipleEmptyRepeatingItems": false,
+        "showFormHeader": false,
+        "showColumnHeaders": false,
+        "hideFormControls": true
+  
+      },
+    "items": [
+     
+      {
+        "question": "Name",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q1-002",
+        "prefix": "Q1-002",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "question": "Email",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q1-003",
+        "prefix": "Q1-003",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "EMAIL"
+      },
+      {
+        "question": "Subject",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q1-004",
+        "prefix": "Q1-004",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "question": "Description",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q1-005",
+        "prefix": "Q1-005",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "TX"
+      },
+      {
+        "question": "Attachment",
+        "hideUnits": true,
+        "questionCode": "Q1-006",
+        "localQuestionCode": "Q1-006",
+        "units": null,
+        "dataType": "CNE",
+        "answers": null,
+        "questionCardinality": {
+            "min": "1",
+            "max": "1"
+        },
+        "codingInstructions": "To attach a file to this question, select a file from the list of files shown in the drop down menu. To add a new document/file use Attach Files feature",
+        "copyrightNotice": null,
+        "FILEUPLOAD":true
+      },
+      {
+        "question": "Telemetry",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q1-007",
+        "prefix": "Q1-007",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "TX"
+      }
+    ]
+  }
+  
+  

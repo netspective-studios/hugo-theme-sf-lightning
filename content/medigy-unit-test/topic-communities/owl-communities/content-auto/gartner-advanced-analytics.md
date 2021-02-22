@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Advanced Analytics" 
+ classname:  "Advanced_Analytics" 
+ label: "Advanced Analytics" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Advanced Analytics']
+ aliases:  "/topic/gartner-advanced-analytics"  
+ searchCategory: "topic" 
+---
+QWR2YW5jZWQgQW5hbHl0aWNzIGlzIGEgYnJvYWRlciB0ZXJtIGZvciBhIGNvbGxlY3Rpb24gb2YgaGlnaC1sZXZlbCB0b29scyBhbmQgdGVjaG5pcXVlcyBmb3IgYW5hbHlzaXMgb2YgZGF0YSB0aGF0IGhlbHBzIGluIGdhaW5pbmcgYmV0dGVyIGtub3dsZWRnZSwgbWFraW5nIHByZWRpY3Rpb25zLCBvciBnZW5lcmF0ZSByZWNvbW1lbmRhdGlvbnMuIFNvbWUgZXhhbXBsZXMgb2YgYWR2YW5jZWQgYW5hbHl0aWMgdGVjaG5pcXVlcyBpbmNsdWRlIHZpc3VhbGl6YXRpb24sIGZvcmVjYXN0aW5nLCBtYWNoaW5lIGxlYXJuaW5nLCBkYXRhIG1pbmluZywgYW5hbHlzaXMgb2YgZ3JhcGhzLCBwYXR0ZXJuIG1hdGNoaW5nLCBzZW50aW1lbnQgYW5hbHlzaXMsIG5ldXJhbCBuZXR3b3JrcywgY29tcGxleCBldmVudCBwcm9jZXNzaW5nLg==

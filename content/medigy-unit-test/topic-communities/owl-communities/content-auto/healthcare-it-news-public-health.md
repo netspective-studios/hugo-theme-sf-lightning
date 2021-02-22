@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Public Health" 
+ classname:  "OWLClass_1c72b7cf_5b68_4713_b834_c0f01ada3e70" 
+ label: "Public Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Public Health']
+ aliases:  "/topic/healthcare-it-news-public-health"  
+ searchCategory: "topic" 
+---
+UHVibGljIGhlYWx0aCBpcyB0aGUgb3ZlcmFsbCBoZWFsdGggb2YgYSBjb21tdW5pdHkgb3IgcG9wdWxhdGlvbiB3aXRoaW4gYSBzcGVjaWZpYyByZWdpb24uIFRoZXJlIGFyZSBtYW55IHB1YmxpYyBoZWFsdGggaXNzdWVzIHdpdGhpbiBhIHBhcnRpY3VsYXIgc29jaWV0eSBvciBjb21tdW5pdHkuIFRoZXNlIHBvcHVsYXRpb25zIGNhbiBiZSBlaXRoZXIgc21hbGwgbGlrZSBhIGxvY2FsIG5laWdoYm9yaG9vZCwgb3Igc3Vic3RhbnRpYWwgbGlrZSBhbiBlbnRpcmUgY291bnRyeSBvciByZWdpb24gb2YgdGhlIHdvcmxkLiBBIHB1YmxpYyBoZWFsdGggc2VydmljZSByZWZlcnMgdG8gcHJvdGVjdGluZyBhbmQgaW1wcm92aW5nIHRoZSBoZWFsdGggb2YgcGVvcGxlIGxpdmluZyB3aXRoaW4gYSBzcGVjaWZpYyBjb21tdW5pdHksIHdoaWNoIGlzIHBvc3NpYmxlIGJ5IGVuc3VyaW5nIGhlYWx0aHkgbGlmZXN0eWxlcywgcHJldmVudGlvbiBvZiBkaXNlYXNlcywgaW5qdXJ5IHByZXZlbnRpb24sIGFuZCB0cmVhdG1lbnQgb2YgaW5mZWN0aW91cyBhbmQgY29udGFnaW91cyBkaXNlYXNlcy4=

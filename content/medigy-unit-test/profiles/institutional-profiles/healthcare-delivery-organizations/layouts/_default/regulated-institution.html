@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "hospital-list-key"}}
+  <body class="list-body">
+
+<!-- Google Tag Manager (noscript) -->
+<div id="g-tag-body">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</div>
+  <!-- End Google Tag Manager (noscript) -->
+
+{{ partialCached "nav-bar.html" . "hospital-list-key"}}
+
+{{ $currentTag := index (last 1 (split (delimit (split .Permalink  "/") "," "") ",")) 0 }}
+    <section class="commun-wrapper">
+             <article class="new-ofering-row-3 commun-content-row-3">
+          <div class="container">
+            {{ partialCached "bread-crumb.html" . "hospital-list-key"}}
+            
+            <div class="row">
+                <div class="col-lg-12">
+
+                  <div class="category-what-new-row min-height">                    
+                                  
+                  <div class="top-10-most-row">
+                    <div class="top-10-most-row-tab-ttl">
+                      Institutions:
+                      <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+                          <li class="nav-item">
+                            <a class="nav-link show active" id="followed-tab" data-toggle="tab" href="/profile/regulated/institution/us-dhhs-cms/hospital/" role="tab" aria-controls="followed" aria-selected="true" title="Heathcare Delivery Organization"><i class="far fa-hospital"></i> Heathcare Delivery Organizations</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link show " id="favorite-tab" data-toggle="tab" href="/profile/offeror/institution/" role="tab" aria-controls="favorite" aria-selected="false"><i class="fas fa-history"></i> Innovators</a>
+                          </li>                         
+                      </ul>
+
+                    </div>
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade active show" id="followed" role="tabpanel" aria-labelledby="followed-tab">
+                        <div class="top-10-most-list">
+                          <div class="fhir-list-row">
+                            {{ $postCount := len (.Pages.ByDate) }}
+                            {{ $paginator :=  .Paginate .Pages.ByDate  }}                
+                            {{ range $paginator.Pages}}                     
+                               {{ .Render "li-regular-institution" }}
+                             {{ end }}    
+                              <div class="custom-pagination-block"> {{ $postCount }} items
+                                  {{ template "_internal/pagination.html" . }}
+                              </div> 
+
+                       </div>
+                        </div>    
+                       <!-- product listings ends -->
+                                               
+                      </div>
+          
+                    </div>
+                  </div> 
+                </div><!-- category-what-new-row ends -->
+             
+
+
+              </div>
+            </div>
+          </div>
+        </article>  
+    </section>
+
+
+
+  
+    {{ partialCached "scripts.html" . }}
+     
+    <div id="formContainer">
+      </div>
+    <!--<script src="https://clin-table-search.lhc.nlm.nih.gov/lforms-versions/13.1.0/lforms.min.js"></script>-->
+
+ {{ partialCached "script-social-share.html" . }}
+ {{ partialCached "footer.html" . }}  
+ <script>
+ $('ul.nav-tabs > .nav-item > .nav-link').click(function(e){
+  e.preventDefault();
+  window.location.href = $(this).attr('href');
+});
+ </script>    
+  </body>
+</html>

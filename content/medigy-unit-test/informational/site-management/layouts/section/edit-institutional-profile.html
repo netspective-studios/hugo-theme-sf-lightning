@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "edit-institutional-profile-key"}}
+
+{{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}
+        {{ range .items }}
+          {{ if eq .questionCode "MyInstitutions_message"}}
+            {{ range .answers }}
+              {{ if eq .code "edit_institution_updated_success_message"}}
+                  {{ $.Scratch.Set "editDetailSucessMessage" .text }}
+              {{ end }}                 
+              {{ if eq .code "invalid_work_phone_message"}}
+                  {{ $.Scratch.Set "InvalidPhoneMessage" .text }}
+              {{ end }}                                  
+            {{ end }}
+          {{ end }}
+        {{ end }}
+{{ end }}
+{{ $successMessage := $.Scratch.Get "editDetailSucessMessage" }}
+{{ $InvalidPhoneMessage := $.Scratch.Get "InvalidPhoneMessagee" }}
+<script>
+function is_url(str) {
+     regexp = /^(?:(?:https?):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+      if (regexp.test(str)) {
+          return true;
+      }
+      else
+         return false;
+
+    }
+
+     //  UTF-8 encoding of the characters
+      function base64EncodeUnicode(str) {
+      	      // First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+                                                        // then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+          utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+          return String.fromCharCode('0x' + p1);
+          });
+
+         return btoa(utf8Bytes);
+       }
+                                                  
+
+
+
+      $("#logo_media").change(function () {
+          var reader = new FileReader();
+          reader.readAsDataURL(this.files[0]);
+          reader.onload = function (e) {
+            var content = e.target.result;
+            const base64 = content.split('base64,').pop();
+            $("#logo_img").val(base64);
+          }
+        });
+        //media upload
+        // function mediaUpload(imgtype){
+        const convertToBase64 = function (path) {
+          return new Promise((resolve, reject) => {
+            var reader = new FileReader();
+            reader.readAsDataURL(path);
+            reader.onload = function (e) {
+              resolve(e.target.result)
+            }
+          });
+        }
+
+         const getInstituteProject = function (instituteId) {
+         	 gitlab_url = {{ $.Site.Params.gitlabUrl }}
+             var sessionId = getCookie('sessionId');
+           //const uploadApi = gitlab_url + '/projects/' + projectdataId + '/repository/files/' + encodeURIComponent(filePath) + '?ref=draft&access_token=' + sessionId;
+         	const institutionAssetsApi =
+        gitlab_url +
+        '/groups/' +
+        instituteId +
+
+        '/projects?search=institution-assets&access_token=' +  sessionId;
+         return new Promise((resolveData, reject) => {
+        
+         getDataFromGit(institutionAssetsApi)
+          .then((assetResponse) => {
+            console.log(assetResponse);
+            if (assetResponse.length > 0) {
+              const assets = assetResponse.filter(
+                (key) => key.path === 'institution-assets'
+              );
+              var projectId;
+              if (assets.length > 0) {
+                projectId = assets[0].id;
+                var projectDetails = {
+                  id: assets[0].id,
+                  title: assets[0].name,
+                };
+                resolveData({
+                  data: projectDetails,
+                });
+              }
+            } else {
+              resolveData({
+                data: 0,
+              });
+            }
+          });
+      });
+
+
+
+
+
+
+         }
+
+        const mediaUpload = function (imgName, content,projectdataId) {
+
+          return new Promise((resolve, reject) => {
+            gitlab_url = {{ $.Site.Params.gitlabUrl }}
+           
+       
+          const base64 = content;
+          console.log("content image added",base64);
+          // const base64 = content.split('base64,').pop();
+          var sessionId = getCookie('sessionId');
+          //var projectdataId = $("#responseId").val();
+          const filePath = 'uploads/' + imgName;
+
+          const uploadApi = gitlab_url + '/projects/' + projectdataId + '/repository/files/' + encodeURIComponent(filePath) + '?ref=draft&access_token=' + sessionId;
+          getDataFromGit(uploadApi).then(function (imageResponse) {
+            //$("#productFacets")[0].reset();
+            let method = 'create';
+            const userEmail = getCookie('userEmail');
+            const userFullName = getCookie('firstname');
+
+            if (typeof imageResponse.message != 'string') {
+              method = 'update';
+            }
+            const postData = {
+              id: projectdataId,
+              branch: 'draft',
+              author_email: userEmail,
+              author_name: userFullName,
+              file_name: imgName,
+              commit_message: 'attachment added',
+              actions: [
+                {
+                  action: method,
+                  file_path: filePath,
+                  content: base64,
+                  encoding: 'base64',
+                },
+              ],
+            };
+            const commitUrl = gitlab_url + '/projects/' + projectdataId + '/repository/commits';
+            console.log("----------------commiturl--------------",commitUrl);
+            postToGit(postData, commitUrl, 'POST').then((res) => {
+              resolve(res);
+
+            });
+          });
+        });
+   }
+
+        const getDataFromGit = function (apiUrl) {
+          return new Promise((resolve, reject) => {
+            fetch(apiUrl, {
+              method: 'GET',
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+              },
+            })
+              .then((res) => res.json())
+              .then((response) => {
+                resolve(response);
+              })
+              .catch((error) => {
+                resolve(null);
+              });
+          });
+        }
+
+        const postToGit = (postData, url, method) => {
+          return new Promise((resolve, reject) => {
+            const aceessToken = getCookie('sessionId');
+            fetch(url, {
+              method: method,
+              headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + aceessToken,
+              },
+              body: JSON.stringify(postData),
+            })
+              .then((res) => res.json())
+              .then((response) => {
+                resolve(response);
+              })
+              .catch((error) => {
+                resolve(null);
+              });
+          });
+        }
+
+  $(document).ready(function () {
+
+
+$("#workPhone").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+       {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+        {{ range .items }}
+          {{ if eq .questionCode "MyInstitutions_message"}}
+            {{ range .answers }}  
+              {{ if eq .code "invalid_work_phone_message"}}
+                  var invalid_mobile_field_in_institution_message = {{ .text }}
+              {{ end }}                                          
+              {{ end }}  
+            {{ end }}
+        {{ end }}
+      {{ end }}
+        //display error message
+        $("#errmsg").html(invalid_mobile_field_in_institution_message).show();
+               return false;
+      }
+
+      else
+      {
+        $("#errmsg").hide();
+      }
+     });
+
+
+$("#alternatePhone").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+       {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+        {{ range .items }}
+          {{ if eq .questionCode "MyInstitutions_message"}}
+            {{ range .answers }}  
+              {{ if eq .code "invalid_work_phone_message"}}
+                  var invalid_mobile_field_in_institution_message = {{ .text }}
+              {{ end }}                                          
+              {{ end }}  
+            {{ end }}
+        {{ end }}
+      {{ end }}
+        //display error message
+        $("#errmsgAnother").html(invalid_mobile_field_in_institution_message).show();
+               return false;
+      }
+
+      else
+      {
+        $("#errmsgAnother").hide();
+      }
+     });
+
+      $('#website').on('focusout', function (e) {
+      {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+        {{ range .items }}
+          {{ if eq .questionCode "MyInstitutions_message"}}
+            {{ range .answers }}  
+              {{ if eq .code "enter_website_link"}}
+                  var invalid_website_field_in_institution_message = {{ .text }}
+              {{ end }}                                          
+              {{ end }}  
+            {{ end }}
+        {{ end }}
+      {{ end }}
+      if (is_url($('#website').val())) {        
+        $('.validLink').hide();        
+      }
+      else {
+        //$('.validLink').show();
+         $(".validLink").html(invalid_website_field_in_institution_message).show();
+      }
+    });
+
+
+
+
+    $('#tenantDetails').show();
+    var personid = getCookie('personid');
+
+    if (personid == null) {
+      window.location.href = "/";
+    }
+    /*$("#updateInstitution").on("click", function(){
+   
+       event.preventDefault();
+       $('#secondform').show(); 
+       $("#firstform").hide(); 
+       
+    
+     
+     }); */
+    var sessionId = getCookie('sessionId');
+    var companyId = getCookie('tenantId');
+    var instId = getCookie('instId');    
+    if (sessionId != null && companyId != null) {
+
+
+      console.log("query{\n  getAllInstitutions(authorization:{\n    sessionID:\""+sessionId+"\"\n  },tenantId: "+companyId+"\n ){\n    id\n    institutionSupportId\n    name\n    email\n    contactPhone\n    ownerType\n    ownerJobTitle\n    companyLogo\n    companyName\n companyDescription\n    incorporationDate\n    companySize\n    companyType\n    registrationNumber\n    industry\n    currency\n    netWorth\n    website\n    workEmail\n    workPhone\n    addressHouseBuilding\n    addressTownCity\n    addressStateProvince\n  addressZipPostalCode\n    addressCountryRegion\n    githubDetails{\n    githubUsername\n    githubPassword\n    githubClientId\n    githubClientSecret\n    githubOwner\n    githubRepo\n}\n}\n}");
+
+
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "{{ $.Site.Params.GraphQLUrl }}",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache"
+        },
+        "data": {
+          "query": "query{\n  getAllInstitutions(authorization:{\n    sessionID:\""+sessionId+"\"\n  },tenantId: "+companyId+"\n ){\n    id\n    institutionSupportId\n    name\n    email\n    contactPhone\n    ownerType\n    ownerJobTitle\n    companyLogo\n    companyName\n companyDescription\n    incorporationDate\n    companySize\n    companyType\n    registrationNumber\n    industry\n    currency\n    netWorth\n    website\n    workEmail\n    workPhone\n    addressHouseBuilding\n    addressTownCity\n    addressStateProvince\n  addressZipPostalCode\n    addressCountryRegion\n    githubDetails{\n    githubUsername\n    githubPassword\n    githubClientId\n    githubClientSecret\n    githubOwner\n    githubRepo\n}\n}\n}"
+        }
+
+
+
+      }
+           
+      $.ajax(settings).done(function (response) {       
+        console.log(response);
+        $('#vendorType').val(response.data.getAllInstitutions[0].ownerType);
+        $('#job').val(response.data.getAllInstitutions[0].ownerJobTitle);
+        $('#companyName').val(response.data.getAllInstitutions[0].companyName);
+        $('#companyDesc').val(response.data.getAllInstitutions[0].companyDescription);
+        if (response.data.getAllInstitutions[0].incorporationDate != null) {
+          var splitedincorporationDate = response.data.getAllInstitutions[0].incorporationDate.split('T');
+          var splitedDate = splitedincorporationDate[0].split('-');
+          $('#dateOfIncorpration').val(splitedDate[0] + '-' + splitedDate[1] + '-' + splitedDate[2]);
+        }
+        if (response.data.getAllInstitutions[0].companyType != null)
+          $('#companyType').val(response.data.getAllInstitutions[0].companyType);
+        $('#registrationNumber').val(response.data.getAllInstitutions[0].registrationNumber);
+        $('#industry').val(response.data.getAllInstitutions[0].industry);
+        $('#currency').val(response.data.getAllInstitutions[0].currency);
+        $('#netWorth').val(response.data.getAllInstitutions[0].netWorth);
+        if (response.data.getAllInstitutions[0].companySize != null)
+          $('#companySize').val(response.data.getAllInstitutions[0].companySize);
+
+        $('#website').val(response.data.getAllInstitutions[0].website);
+        $('#workEmail').val(response.data.getAllInstitutions[0].workEmail);
+        if (response.data.getAllInstitutions[0].workEmail == null)
+          $('#tenantCreateStatus').val('Add');
+        $('#workPhone').val(response.data.getAllInstitutions[0].workPhone);
+        $('#alternatePhone').val(response.data.getAllInstitutions[0].anotherPhone);
+
+        $('#houseBuilding').val(response.data.getAllInstitutions[0].addressHouseBuilding);
+        $('#townCity').val(response.data.getAllInstitutions[0].addressTownCity);
+        $('#state').val(response.data.getAllInstitutions[0].addressStateProvince);
+        $('#zip').val(response.data.getAllInstitutions[0].addressZipPostalCode);
+        $('#country').val(response.data.getAllInstitutions[0].addressCountryRegion);
+
+      });
+    }
+
+    $('#institutionalFormEdit').on('submit', function (e) {
+      e.preventDefault();
+      var sessionId = getCookie('sessionId');
+      var personid = getCookie('personid');
+      console.log(personid);
+
+      if (personid != null) {
+
+        $('#updateInstitution').prop("disabled", true);
+        var vendorType = $('#vendorType').val();
+        var job = $('#job').val();
+        var companyName = $('#companyName').val();
+        var dateOfIncorpration = $('#dateOfIncorpration').val() + 'T00:00:00+00:00';
+        var companyType = $('#companyType').val();
+        var registrationNumber = $('#registrationNumber').val();
+        var industry = $('#industry').val();
+        var currency = $('#currency').val();
+        var netWorth = $('#netWorth').val();
+        var companySize = $('#companySize').val();
+        var website = $('#website').val();
+        var workEmail = $('#workEmail').val();
+        var workPhone = $('#workPhone').val();
+        var alternatePhone = $('#alternatePhone').val();
+        var houseBuilding = $('#houseBuilding').val();
+        var townCity = $('#townCity').val();
+        var state = $('#state').val();
+        var zip = $('#zip').val();
+        var country = $('#country').val();
+        var userEmail = getCookie('userEmail');
+        var companyId = getCookie('tenantId');
+        var tenantCreateStatus = $('#tenantCreateStatus').val();
+
+        if (companyId != null && tenantCreateStatus != 'Add') {
+          var instStatus = "update";
+          var companyDetails = 'companyId:\"' + companyId + '\"\n';
+        }
+        if (companyId != null && tenantCreateStatus == 'Add') {
+          var instStatus = "add";
+          var companyDetails = 'companyId:\"' + companyId + '\"\n';
+        }
+
+
+        var response = grecaptcha.getResponse(recaptchaCommon);
+        if (response.length == 0) {
+          //reCaptcha not verified
+          $('.captcha-message-common').show();
+          $('#updateInstitution').prop('disabled', false);
+          return false;
+        }
+        else {
+          $('.captcha-message-common').hide();
+          $('#updateInstitution').prop('disabled', false);
+        }   
+
+        var companyDesc = $('#companyDesc').val();
+        companyDescValue = companyDesc.replace(/%/g, "percentage");
+        companyDescEncoded = base64EncodeUnicode(companyDescValue);
+
+        console.log("mutation{\n  saveInstitutionalProfile(authorization:{\n    sessionID:\"" + sessionId + "\"\n  }\n  profile:{\n    companyId:\"" + instId + "\"\n    email:\"" + userEmail + "\"\n    ownerType:\"" + vendorType + "\"\n    ownerJobTitle:\"" + job + "\"\n   workEmail:\"" + workEmail + "\"\n   companyName:\"" + companyName + "\"\n    companyDescription:\"" + companyDescEncoded + "\"\n    incorporationDate:\"" + dateOfIncorpration + "\"\n    companyType:\"" + companyType + "\"\n    registrationNumber:\"" + registrationNumber + "\"\n    industry:\"" + industry + "\"\n    currency:\"" + currency + "\"\n    netWorth:\"" + netWorth + "\"\n    companySize:\"" + companySize + "\"\n    website:\"" + website + "\"\n    workPhone:\"" + workPhone + "\"\n    anotherPhone:\"" + alternatePhone + "\"\n    addressHouseBuilding:\"" + houseBuilding + "\"\n    addressTownCity:\"" + townCity + "\"\n    addressStateProvince:\"" + state + "\"\n    addressZipPostalCode:\"" + zip + "\"\n    addressCountryRegion:\"" + country + "\"\n  status:\"" + instStatus + "\"\n  },sourceOfInvitation:{\n    name:\"www.medigy.com\"\n    key:\"medigy\"\n  }\n){\n    status\n    message\n  }\n}");
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+     "query": "mutation{\n  saveInstitutionalProfile(authorization:{\n    sessionID:\"" + sessionId + "\"\n  }\n  profile:{\n    companyId:\"" + instId + "\"\n    email:\"" + userEmail + "\"\n    ownerType:\"" + vendorType + "\"\n    ownerJobTitle:\"" + job + "\"\n   workEmail:\"" + workEmail + "\"\n   companyName:\"" + companyName + "\"\n  companyDescription:\"" + companyDescEncoded + "\"\n    incorporationDate:\"" + dateOfIncorpration + "\"\n    companyType:\"" + companyType + "\"\n    registrationNumber:\"" + registrationNumber + "\"\n    industry:\"" + industry + "\"\n    currency:\"" + currency + "\"\n    netWorth:\"" + netWorth + "\"\n    companySize:\"" + companySize + "\"\n    website:\"" + website + "\"\n    workPhone:\"" + workPhone + "\"\n    anotherPhone:\"" + alternatePhone + "\"\n    addressHouseBuilding:\"" + houseBuilding + "\"\n    addressTownCity:\"" + townCity + "\"\n    addressStateProvince:\"" + state + "\"\n    addressZipPostalCode:\"" + zip + "\"\n    addressCountryRegion:\"" + country + "\"\n  status:\"" + instStatus + "\"\n  },sourceOfInvitation:{\n    name:\"www.medigy.com\"\n    key:\"medigy\"\n  }\n){\n    status\n    message\n  }\n}"
+          }
+        }
+
+        $.ajax(settings).done(function (response) {
+          if (response.data.saveInstitutionalProfile.status == "SUCCESS") {
+
+          	  console.log("instituteid-----",response);
+		      $("#responseId").val(response.data.saveInstitutionalProfile.message); 
+		      var logo_exist= $('#logo_media').prop('files')[0];  
+		      var projectdataId = $("#responseId").val(); 
+		      getInstituteProject(projectdataId).then((response)=>{
+		      console.log('New Function id ___________',response);
+		      projectdataId = response.data.id;
+
+		       if(typeof (logo_exist) != "undefined"){
+		                    if(projectdataId){
+		                      imgName= projectdataId+'-logo.png';
+		                      var content = $("#logo_img").val();
+		                      mediaUpload(imgName,content,projectdataId).then(function(logoResult){
+		                          console.log("success logo image");
+		                      })
+		                    } else{
+		                       imgName= addofferingName+'-logo.png';
+		                       var content = $("#logo_img").val();
+		                      mediaUpload(imgName,content,projectdataId).then(function(logoResult){
+		                          console.log("success logo image");
+		                      })
+		                    }                   
+		                    }
+
+		      }
+		      )
+
+            setCookie("companyId", response.data.saveInstitutionalProfile.message);
+            $('#institutionalProfileFormEditMessage').html("");
+            $('#institutionalProfileFormEditMessage').html("{{ $successMessage }}");
+            $('#institutionalProfileFormEditMessage').addClass('alert-success');
+            $('#institutionalProfileFormEditMessage').show();
+            $('#vendorType').focus();
+
+          }
+          else if (response.data.saveInstitutionalProfile.message == "Could not authenticate the session. Please try again.") {
+            $('#institutionalProfileFormEditMessage').html("");
+            $('#institutionalProfileFormEditMessage').removeClass('alert-success');
+            $('#institutionalProfileFormEditMessage').removeClass('alert-primary');
+            $('#institutionalProfileFormEditMessage').html("Your Institution's basic details are failed to save. Your session is expired. Please try again after login.");
+            $('#institutionalProfileFormEditMessage').addClass('alert-danger');
+            $('#institutionalProfileFormEditMessage').show();
+            $('#vendorType').focus();
+            $('#userlogout').hide();
+            $('#userlogin').show();
+            $(".addoffer-col").removeClass("loggedinoffer");
+            callLogin();
+          }
+          else {
+            response.data.saveInstitutionalProfile.message
+            $('#updateInstitution').prop("disabled", false);
+            $('#institutionalProfileFormEditMessage').html("");
+            $('#institutionalProfileFormEditMessage').removeClass('alert-success');
+            $('#institutionalProfileFormEditMessage').removeClass('alert-primary');
+            $('#institutionalProfileFormEditMessage').html("Your Institution's basic details are failed to save. " + response.data.saveInstitutionalProfile.message + ". Please try again.");
+            $('#institutionalProfileFormEditMessage').addClass('alert-danger');
+            $('#institutionalProfileFormEditMessage').show();
+            $('#vendorType').focus();
+          }
+          console.log(response);
+        });
+      }
+      else {
+        $('#institutionalProfileFormEditMessage').html("");
+        $('#institutionalProfileFormEditMessage').removeClass('alert-success');
+        $('#institutionalProfileFormEditMessage').removeClass('alert-primary');
+        $('#institutionalProfileFormEditMessage').html("Your Institution's basic details are failed to save. Your session is expired. Please try again after login.");
+        $('#institutionalProfileFormEditMessage').addClass('alert-danger');
+        $('#institutionalProfileForm1Message').show();
+        $('#vendorType').focus();
+
+        $('#userlogout').hide();
+        $('#userlogin').show();
+        $(".addoffer-col").removeClass("loggedinoffer");
+        $('#loginModalCenter').modal('toggle');
+      }
+
+    });
+
+  });
+</script>
+
+<body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "edit-institutional-profile-key"}}
+  <section class="about-wrapper">
+    <article class="container">
+    <main class="content side-text-padding container single-blog-card">
+      <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+        <div id="profileMessage" class="alert alert-success" style="display: none;"></div>
+        <header class="post-header">
+          <h1 class="post-title">Edit Institutional Profile</h1>
+
+        </header>
+
+
+        <div class="entry-content entry-content-2 page-content">
+          <div class="row">
+            <div class="col-sm-12">
+
+              <article class="add-new-product-row">
+
+                <div class="tab-content" id="myTabContent">
+                  <!-- Profile tab starts ::::::::::::::::::::::::::::::::::: -->
+
+                  <div class="tab-pane fade show active" id="productProfile" role="tabpanel">
+                    <div id="firstform">
+                      <form name="institutionalFormEdit" id="institutionalFormEdit" method="post">
+                        <div id="institutionalProfileFormEditMessage" class="alert alert-success" style="display:none;"></div>
+                        <h2>
+                          <span class="capital-case replace-it">Basic</span> Details</h2>
+
+                        <aside>
+                          <input type="hidden" name="tenantCreateStatus" id="tenantCreateStatus" />
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">You are a
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <select class="form-control" name="vendorType" id="vendorType" required>
+                                <option value="">Select</option>
+                                <option value="Vendor">Vendor</option>
+                                <option value="Buyer">Buyer</option>
+
+                              </select>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Your Job Title
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <select class="form-control" name="job" id="job" required>
+                                <option value="">Select</option>
+                                <option value="Accounting">Accounting</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Human Resources">Human Resources</option>
+                                <option value="Information Technology(IT) and Digital Media">Information Technology(IT) and Digital Media</option>
+                                <option value="Insurance Job Title">Insurance Job Title</option>
+
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Company Name
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="companyName" id="companyName" required/>
+                            </div>
+                          </div>
+
+                        <div class="form-group row col-md-12 ">
+                          <div class="col-md-4">Company Description
+                            <span class="label-required">(required)</span>
+                          </div>
+                          <div class="col-md-8">
+                            <textarea class="form-control feedback " type="textarea" name="companyDesc" id="companyDesc" required></textarea>
+                        
+                          </div>
+                        </div>
+                        
+                       
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Company Email
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="email" name="workEmail" id="workEmail" required/>
+                            </div>
+                          </div>                          
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Date of Incorporation
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <div class="input-group date" id="datetimepicker1">
+                                <input type="date" class="form-control feedback datepicker" name="dateOfIncorpration" id="dateOfIncorpration" required />
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Company Type
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <select class="form-control" name="companyType" id="companyType" required>
+                                <option value="">Select</option>
+                                <option value="Companies Limited By Guarantee">Companies Limited By Guarantee</option>
+                                <option value="Companies Limited By Shares">Companies Limited By Shares</option>
+                                <option value="One Person Company">One Person Company</option>
+                                <option value="Private Company (or Private Limited Company)">Private Company (or Private Limited Company)</option>
+                                <option value="Public Company (or Public Limited Company)">Public Company (or Public Limited Company)</option>
+                                <option value="Registered or Incorporated Companies">Registered or Incorporated Companies</option>
+                                <option value="Statutory Companies">Statutory Companies</option>
+                                <option value="Unlimited Companies">Unlimited Companies</option>
+                              </select>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Registration Number
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="registrationNumber" id="registrationNumber" required/>
+                            </div>
+                          </div>
+
+                             <div class="form-group row col-md-12">
+                          <div class="col-md-4">
+                            Please upload logo for your
+                            <span class="replace-it">company</span>
+                            <div class="arrow_box_addOffering" id="mediaInfoMessageBox">We prefer a decent quality image (Photos should be
+                              smaller than 1 MB and saved as JPG,
+                              PNG or GIF files) that is 590px wide and 300px tall so that it shows up good and
+                              consistent on listing and detail pages</div>
+                             
+                            <span class="label-optional">(Optional)</span>
+                        
+                          </div>
+                          <div class="col-md-8">
+                            <input id="logo_media" name="logo_media" type="file" class="form-control" placeholder="Enter Permalink" required>
+                            <input type="hidden" id="logo_img" />
+                            <input type="hidden" id="responseId">
+                        
+                          </div>
+ 
+                          <input type="hidden" name="file_details" id="file_details" />
+                        </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Industry</div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="industry" id="industry" />
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Currency</div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="currency" id="currency" />
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Net Worth</div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="netWorth" id="netWorth" />
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Company Size
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <select class="form-control" name="companySize" id="companySize" required>
+
+                                <option value="">Select</option>
+                                <option value="0-50">0-50</option>
+                                <option value="51-200">51-200</option>
+                                <option value="201-500">201-500</option>
+                                <option value="501-2000">501-2000</option>
+                                <option value="2000 +"> 2000 + </option>
+
+
+                              </select>
+                            </div>
+                          </div>
+
+                          <h2>
+                            <span class="capital-case replace-it">Contact</span> Details</h2>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Website
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="website" id="website" required/>
+                              <span class="errorMessage validLink"></span>
+                            </div>
+                          </div>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Work Phone
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="workPhone" id="workPhone" required/>
+                              <span id="errmsg" class="errorMessage"></span>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Another Phone</div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="alternatePhone" id="alternatePhone" />
+                              <span class="errorMessage" id="errmsgAnother"></span>
+                            </div>
+                          </div>
+
+                          <h2>Address Details</h2>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">House/Building
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="houseBuilding" id="houseBuilding" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Town/City
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="townCity" id="townCity" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">State/Province
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="state" id="state" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">ZIP/Postal Code
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="zip" id="zip" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4">Country/Region
+                              <span class="label-required">(required)</span>
+                            </div>
+                            <div class="col-md-8">
+                              <input class="form-control feedback " type="text" name="country" id="country" required/>
+                            </div>
+                          </div>
+
+                          <div class="form-group row col-md-12 ">
+                            <div class="col-md-4"> </div>
+                            <div class="col-md-8">
+
+                              <div id="recaptchaCommon"></div>
+                              <span class="captcha-message-common" style="margin-left:0px !important;">Please verify the Captcha</span>
+                            </div>
+
+                          </div>
+
+
+                          <div class="form-group row col-md-12 ">
+                            <label class="col-md-4"></label>
+                            <div class="col-md-8">
+                              <input value="Update" type="submit" class="btn btn-primary add-new-bt" name="updateInstitution" id="updateInstitution">
+
+                            </div>
+                          </div>
+                        </aside>
+                      </form>
+                    </div>
+
+                    <div>
+
+
+
+                    </div>
+                    <!-- profile tab ends ::::::::::::::::::::::::::::::::::: -->
+
+
+                  </div>
+                </div>
+              </article>
+
+            </div>
+          </div>
+
+
+
+
+
+        </div>
+
+      </article>
+
+    </main>
+  </article>
+  </section>
+{{ partialCached "footer.html" . }}
+</body>
+
+</html>

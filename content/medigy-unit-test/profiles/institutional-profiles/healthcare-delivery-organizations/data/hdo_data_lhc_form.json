@@ -1,0 +1,261 @@
+{
+  "shortName": "HDO Data",
+  "name": "HDO Data",
+  "status": "draft",
+  "version": "",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": true,
+          "question": "Claim Status Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "claimingHospitalArea",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Do you want to manage this HDO's profile?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "claimOffering",
+              "prefix": "new-ofer-btn-1 gray",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Yes, Claim this HDO",
+                  "code": "",
+                  "label": "Product_Claiming",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Invite Process Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "inviteHospitalArea",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Do you know anyone who's been to this HDO?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "inviteHDO",
+              "prefix": "new-ofer-btn-1 green inviteProcess",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Invite them to share their experience",
+                  "code": "Product_Owner_Invite",
+                  "label": "new-ofer-q-1-bt-l",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Activity Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "user-activity-area",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Watch",
+              "questionCodeSystem": "Custom",
+              "questionCode": "watcherclick",
+              "prefix": {
+                "anchorTagClass": "watcher",
+                "countDivId": "gitWatcherCountDiv",
+                "countSpanId": "gitWatcher",
+                "globalStatusVar": "WatcherClick",
+                "metricKeyId": "institutionId",
+                "metricKeyName": "institutionName",
+                "outerDivClass": "github-row fas fa-eye",
+                "spanId": "Product_Watch_Button",
+                "tooltip": "Watch",
+                "type": "HDO"
+              },
+              "localQuestionCode": "medigy_qual_exp_institution_watch",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Star",
+              "questionCodeSystem": "Custom",
+              "questionCode": "starclick",
+              "prefix": {
+                "anchorTagClass": "star",
+                "countDivId": "gitStarCountDiv",
+                "countSpanId": "gitStar",
+                "globalStatusVar": "StarClick",
+                "metricKeyId": "institutionId",
+                "metricKeyName": "institutionName",
+                "outerDivClass": "github-row fas fa-star",
+                "spanId": "Product_Star_Button",
+                "tooltip": "Star",
+                "type": "HDO"
+              },
+              "localQuestionCode": "medigy_qual_exp_institution_star",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Preferred HDO",
+              "questionCodeSystem": "Custom",
+              "questionCode": "preferredclick",
+              "prefix": {
+                "anchorTagClass": "preferred",
+                "countDivId": "gitPreferredCountDiv",
+                "countSpanId": "gitPreferred",
+                "globalStatusVar": "PreferredClick",
+                "metricKeyId": "institutionId",
+                "metricKeyName": "institutionName",
+                "outerDivClass": "github-row fas fa-heart",
+                "spanId": "Product_Preferred_Button",
+                "tooltip": "Preferred HDO",
+                "type": "HDO"
+              },
+              "localQuestionCode": "medigy_qual_exp_institution_preferred",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "Policy Based Messages",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "HDO policy based general messages comes here.",
+              "code": "hdo_data_lhc_policy_message",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

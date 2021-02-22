@@ -1,0 +1,235 @@
+{{ partial "communities-ccm-themeConfig.html" . }}
+<!DOCTYPE html> 
+<html   class=""   lang="{{ .Site.LanguageCode }}"   prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#" >
+{{ partial (print ($.Scratch.Get "head_community") ) . }}   
+  <body lang="{{ .Site.LanguageCode }}" class="sans-serif w-90 w-60-ns center center-ns mv2 mv5-ns" >
+	  <!-- Google Tag Manager (noscript) -->
+	<div id="g-tag-body">
+	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0"
+	style="display:none;visibility:hidden"></iframe></noscript>
+	</div>
+
+	<!-- End Google Tag Manager (noscript) -->
+	{{ $siteData := $.Site.Data.communities }}
+	{{ range $siteData }}
+		{{ $.Scratch.Set "mastHead" .mastHead }}
+	{{ end }}
+  {{ partial (print ($.Scratch.Get "nav-bar") ) . }}
+  <section class="about-wrapper">
+    <div id="content" class="femtech">
+      <div class="container">	
+
+		{{ $title := .Params.title }} 				
+		{{ $communityTopic := .Params.communityTopics }}		
+		{{ $context := . }}		
+		{{ $.Scratch.Set "communityTopic" " " }}
+		{{ $siteData := $.Site.Data.communities }}         
+          {{ range $siteData }}
+           {{ range .topicDetails }}               
+                {{ $topicTitle := print "Medigy: " .topicTitle }}  
+				{{ if in $communityTopic $topicTitle }}			
+				   {{ $.Scratch.Set "communityTopic" $topicTitle }}
+				    {{ $.Scratch.Set "communityUrl"  $topicTitle  }}
+				{{ end }}
+			{{ end }}
+			{{ end }}
+			{{ $topicTitle :=  $.Scratch.Get "communityTopic" }}
+			{{ $topicUrl :=  print "/communities/chronic-care-management/" $topicTitle | urlize }}	
+
+				{{ $pagePartial := ($.Scratch.Get "ccm-bread-crumb") }}        
+				{{ partial $pagePartial (dict  "pageStatus" "single" "topicTitle" $topicTitle "type" $title  "topicUrl" $topicUrl "context"  $context) }}   
+			
+	 </div>
+<div class="about-wrapper">
+    <main class="container search-result-row">
+		<picture class="post-figure m-b-15">
+			{{ if ne .Params.openProjectWorkPackageType "Curated Video"}}
+				<a href="{{ .Permalink }}" target="_blank">
+					{{ $fpath:=  .File.Dir }}
+					{{ $fileDir := replace $fpath "\\" "/"}}
+					{{ $urlPath := print (.Site.BaseURL) "/" (.Params.openProjectWorkPackageType | urlize) "/" }}
+					<img src="/{{$fileDir}}{{ .Params.featuredImage.href  }}" class="img-responsive" alt="{{ .Title }}" onerror="this.onerror=null; this.src='{{ print ( $.Scratch.Get "default-image" )  }}'" >
+				</a>
+			{{ else }}
+				<a href="{{ .Permalink }}" target="_blank">
+					<img src="{{ print ( $.Scratch.Get "staticPath" ) "images/featuredimage/videos.jpg"  }}" class="img-responsive" alt="{{ .Title }}"  >
+				</a>
+			{{ end }}
+		</picture>		
+		<article class="post dropcase">    
+			<div class="cover-content">                 
+				<header class="post-header">
+					<h1 itemprop="name" id="title">{{ .Title }}</h1>				
+					<ul class="list-inline d-block pb-0 border-bottom-0 mb-1" style="border-bottom:0px !important">
+						<li class="list-inline-item"> Posted {{ .Date.Format "Jan 2, 2006" }} {{ if .Params.link.brand }} via <span><a  style = "text-decoration: underline;" itemprop = "url" target = "_blank" href="{{ .Params.link.href }}"><span itemprop = "author">{{ .Params.link.brand }}</span></a></span> {{ end }}</li>							
+													
+					</ul>
+				</header>				
+				<div class="col-lg-12 pl-0">
+				{{ if .Params.communityTopics }}
+						{{ $taxo := "communityTopics" }}
+						{{ range .Param $taxo }}
+							{{ $name := . }}
+							{{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+							    {{ $.Scratch.Set "permalink" .Permalink }}
+							{{ end }}
+							{{ $name := replace $name "-hash-" "#" }}
+									<a class="tag-style-1 ccm-gtm-cat"  onclick="dataLayer.push({'event': 'ccmbuttonclick','gtmTitle': '{{ $name }}', 'gtmPersonid':getCookie('userEmail')})" id= "ccm-{{ $name | urlize }}" href="{{ $.Scratch.Get "permalink" }}">{{  $name }}</a>
+						{{ end }}
+					{{ end }}
+				</div>				
+				<br>
+				<!-- pdf viewer -->
+				{{ if .Params.featuredpdf.href }}
+				<!-- <object data="{{ .Params.pdfURL |}}" type="application/pdf" width="100%" height="500">				
+				 <embed src="{{ print "../"  .Params.pdfURL }}" type="application/pdf" />
+				 </object> -->
+				<iframe src="{{ print "../"  .Params.featuredpdf.href }}" width="100%" height="500">
+				</iframe>
+				{{ end }}
+				<!-- Video section starts here-->
+				{{ if eq .Params.contentCategories "medigy-chronic-care-management-curated-video"}}
+					<div class="image-post">
+						{{if eq .Params.link.brand "youtube.com" }}
+						{{ $Youtube :=  .Params.link.href }}
+						{{ $splitedData := split $Youtube "https://www.youtube.com/watch?v=" }}
+						{{ $splitedData:= delimit $splitedData "" }}
+						{{ $splitedData := split  $splitedData "&" }}						
+						{{ range first 1 $splitedData }}
+						{{  $.Scratch.Set "data" . }} 
+						{{ end }}
+						{{$Data :=  $.Scratch.Get "data" }} 
+						<iframe id="ytplayer" type="text/html" width="100%" height="360"
+						src="https://www.youtube.com/embed/{{ $Data }} "
+						frameborder="0"></iframe>
+						{{ else }}
+						{{ $Vimeo :=  .Params.openprojectcustomfields.videourl}}
+						{{ $splitedData := split $Vimeo "https://vimeo.com/" }}
+						{{ $splitedData:= delimit $splitedData ""}}
+						{{/* $splitedData */}}
+						{{if eq .Params.openprojectcustomfields.videosource "vimeo.com" }}
+						<iframe src="https://player.vimeo.com/video/{{ $splitedData }}?title=0&byline=0&portrait=0" width="100%" height="360"
+						frameborder="0" allowfullscreen allow="autoplay; encrypted-media">
+						</iframe>
+						{{ end }}
+						{{ end }}
+					</div>
+					{{ if eq .Params.contentcategories "medigy-chronic-care-management-infographics" }}
+					<article itemprop="articleBody" id="content" class="w-90 lh-copy" style="text-align: center;" >
+					{{ else }}
+					<article itemprop="articleBody" id="content" class="w-90 lh-copy" >
+					{{ end }}
+					{{ .Content | plainify }}
+					{{ if eq .Params.contentcategories "medigy-chronic-care-management-actionablecontent" }}
+					{{ range $elem_index, $sourceUrl := .Params.sourceUrl  }}
+						<span><strong>Source</strong> <a target="_blank" href="{{ $sourceUrl }}">{{ $sourceUrl }}</a> </span>
+					{{ end }}
+					{{ end }}
+				{{ else }}				
+					{{ .Content }}
+				{{ end }}
+				
+				<div class="row">
+					<div class="col-lg-8 pt-3 pb-3">
+					{{ if .Params.link.brand }}
+						Continue reading at &nbsp<span><a style = "text-decoration: underline;" target = "_blank" href="{{ .Params.link.href }}">{{ .Params.link.brand }}</a></span>
+					{{ end }}
+					</div>
+					<div class="col-lg-4 pt-3">
+					{{ partial (print ($.Scratch.Get "share") ) . }}
+					</div>
+				</div>
+				<div class="new-ofering-row-2-cell event-watch-list border-0 ccm-cadd">
+			    <span class="cadd-text-ccm">Did you find this useful?</span>
+					{{ $parentEventId := .Params.parent_id }}
+					{{ $eventId := $.Scratch.Get "productId" }}  
+					{{ $productId := .Params.id }}
+					{{ $productName := .Title }}
+
+					{{ $outerDivClass := "github-row fas fa-thumbs-up" }}
+					{{ $anchorTagId := print "ccm-thumbs-up-click-"  $productId  }}  
+					{{ $anchorTagClass := "thumbs-up" }}
+					{{ $spanId := "spanId" }}
+					{{ $countDivId := print "git-thumbs-up-div"  }}
+					{{ $countSpanId := print "git-thumbs-up"  }}
+					{{ $metricKeyName := "CCMIdName" }}
+					{{ $MetricName := "medigy_qual_exp_ccm_useful_thumbs_up_click" }}
+					{{ $globalStatusVar := "ThumbsUpClick" }}
+					{{ $metricKeyId := "CCMId" }}
+					{{ $tooltip := "like" }}
+					{{ $type := "" }}
+					{{ $countInFrontmatter := 0 }}
+					{{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+
+					{{ partialCached "cadds-common" (dict  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $productId "productName" $productName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $productId $productName $tooltip $anchorTagId}}  
+		
+                    {{ $outerDivClass := "github-row fas fa-thumbs-down" }}
+					{{ $anchorTagId := print "ccm-thumbs-down-click-" $productId }}  
+					{{ $anchorTagClass := "thumbs-down" }}
+					{{ $countDivId := print "git-thumbs-down-div-" $productId }}
+					{{ $countSpanId := print "git-thumbs-down-" $productId }}
+					{{ $MetricName := "medigy_qual_exp_ccm_useful_thumbs_down_click" }}
+					{{ $globalStatusVar := "ThumbsDownClick" }}
+					{{ $metricKeyId := "CCMId" }}
+					{{ $tooltip := "dislike" }}
+					{{ $metricKeyName := "CCMIdName" }}
+					{{ $type := "" }}
+					{{ $countInFrontmatter := 0 }}
+              		{{ partialCached "cadds-common" (dict  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $productId "productName" $productName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $productId $productName $tooltip $anchorTagId }}  
+				</div>
+
+				{{ $related := .Site.RegularPages.Related . | first 5 }}
+				<div class="row pt-3">
+					<div class="col-lg-7" >
+						{{ with $related }}
+						<h3>See Also</h3>
+						<ul class="community-related-article">
+							{{ range . }}
+							{{  $communityCategoriesString := "" }}
+							{{$title := .Title }}
+							{{$relPermalink := .RelPermalink }}				
+							<li><a href="{{ $relPermalink }}" onclick="dataLayer.push({'event': 'ccmbuttonclick','gtmTitle': '	{{ $title }}', 'gtmPersonid':getCookie('userEmail')})"  class = "ccm-see-also" id="ccm-{{ $title | urlize }}">								
+									<span class="special-text ccm-related-offering-name">
+									{{ $title }} 
+									{{ with .Params.communityTopics }}
+									{{  $communityCategoriesString :=  delimit . ", "}}
+									{{ $communityCategoriesString =   print "Matched with "  $communityCategoriesString  }}
+									<span  class="ccm-topic-name special-text__tooltip">{{ $communityCategoriesString}}</span>
+									{{ end }}    
+								</span>  </a>
+							</li>
+							{{ end }}
+						</ul>	
+					{{ end }}
+					</div>
+					<div class="col-lg-5 related-offerings-ccm" >
+						<h3>Related Offerings</h3>
+						<p class="no-related-ccm-offerings" style="display:none">No Related Offerings Found</p>
+						{{ $context := . }}
+						{{ partial (print ($.Scratch.Get "relatedOfferings")) (dict  "communityTopics"  .Params.communityTopics   "context"  $context )  }} 
+					</div>
+				</div>
+			</div>
+		</article>
+		<div class="top-10-most-list">
+      	<div class="fhir-list-row">  
+			{{ partial (print ($.Scratch.Get "pagination-new") ) . }} 
+		</div>
+    </div>
+    </main>
+	
+</div>
+
+</div>
+  </section>
+  {{ partialCached (print ($.Scratch.Get "footer") ) . }}
+  </body>
+</html>
+
+
+
+
+
+
+
+

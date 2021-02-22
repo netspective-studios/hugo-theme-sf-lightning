@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Connected Imaging Devices" 
+ classname:  "Connected_Imaging_Devices" 
+ label: "Connected Imaging Devices" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Connected Imaging Devices']
+ aliases:  "/topic/gartner-connected-imaging-devices"  
+ searchCategory: "topic" 
+---
+Q29ubmVjdGVkIGltYWdpbmcgZGV2aWNlcyBlbmFibGUgeW91IHRvIGluc3RhbnRseSBzaGFyZSBwaG90b3Mgb3IgdmlkZW9zIHdoZW4gdGhleSBhcmUgdGFrZW4gZGVzcGl0ZSB3YWl0aW5nIHVudGlsIHRoZXkgYXJlIGRvd25sb2FkZWQgdG8geW91ciBQQy4gVmFyaW91cyBjb25uZWN0ZWQgaW1hZ2luZyBkZXZpY2VzIG1heSBpbmNsdWRlIGRpZ2l0YWwgc3RpbGwgY2FtZXJhcywgZGlnaXRhbCBjYW1jb3JkZXJzIHdpdGggd2lyZWxlc3MgV0FOIGRpZ2l0YWwgY2VsbHVsYXIgY29ubmVjdGlvbnMsIG9yIGRpZ2l0YWwgY2FtY29yZGVycyBlbWJlZGRlZCB3aXRoIHdpcmVsZXNzIExBTiAoV0xBTikuIENvbm5lY3RlZCBpbWFnaW5nIGRldmljZXMgd2l0aCBhIHdpcmVsZXNzIGNvbm5lY3Rpb24gYXJlIHNwZWNpZmljYWxseSB1c2VkIGZvciBzaGFyaW5nIHBob3RvcyB0byB5b3VyIFBDLiAgQ29ubmVjdGVkIGltYWdpbmcgZGV2aWNlcyBpbiBoZWFsdGhjYXJlIGFyZSB1c2VkIHRvIGNvbGxlY3QsIGFuYWx5emUsIGFuZCB0cmFuc21pdCBpbWFnZXMgdG8gaW50ZXJuYWwgaG9zcGl0YWwgc2VydmVycyBvciBjbG91ZC1iYXNlZCBzdG9yYWdlLg==

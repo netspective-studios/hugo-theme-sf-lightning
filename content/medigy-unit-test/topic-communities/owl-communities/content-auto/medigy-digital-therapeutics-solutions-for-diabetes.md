@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Digital Therapeutics Solutions for Diabetes" 
+ classname:  "Digital_Therapeutics_Solutions_for_Diabetes" 
+ label: "Digital Therapeutics Solutions for Diabetes" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: Digital Therapeutics Solutions for Diabetes']
+ aliases:  "/topic/medigy-digital-therapeutics-solutions-for-diabetes"  
+ searchCategory: "topic" 
+---
+RGlnaXRhbCB0aGVyYXBldXRpY3Mgc29sdXRpb25zIGZvciBkaWFiZXRlcyBpbmNsdWRlIGVtcGxveWluZyBkaWdpdGFsIGhlYWx0aCB0b29scyBsaWtlIG1vYmlsZSBhcHBzLCB0ZWxlbWVkaWNpbmUsIHdlYXJhYmxlIGRldmljZXMsIGV0Yy4sIGZvciB0aGUgbWFuYWdlbWVudCBvZiBkaWFiZXRlcy4gVGhlc2UgdG9vbHMgaGF2ZSBiZWVuIGZvdW5kIHRvIGJlIHVzZWZ1bCBpbiBtYWtpbmcgZWZmZWN0aXZlLCBwb3NpdGl2ZSwgYW5kIHN1c3RhaW5hYmxlIGJlaGF2aW9yIGNoYW5nZXMgaW4gZGlhYmV0aWMgcGVvcGxlIHJhdGhlciB0aGFuIHRha2luZyBtZWRpY2F0aW9ucy4gRGlnaXRhbCB0aGVyYXBldXRpY3Mgc29sdXRpb25zIGZvciBkaWFiZXRlcyBoYXZlIGEgZ29vZCBlZmZpY2FjeSBhcyB0aGV5IHN1cHBvcnQgY29udGludW91cyBtb25pdG9yaW5nIG9mIHZpdGFscyBhbmQgZW5jb3VyYWdlIGhlYWx0aHkgbGlmZXN0eWxlIGJlaGF2aW9ycyBhbG9uZyB3aXRoIHByZXNjcmliZWQgbWVkaWNhdGlvbnMu

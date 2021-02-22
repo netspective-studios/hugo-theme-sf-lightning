@@ -1,0 +1,14 @@
+--- 
+ title: "McKinsey & Company: Corporate Finance" 
+ classname:  "Corporate_Finance" 
+ label: "Corporate Finance" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "McKinsey_&_Company" 
+ parentclasslabel: "McKinsey & Company" 
+ equalentCollections: [] 
+ collections: ['McKinsey & Company: Corporate Finance']
+ aliases:  "/topic/mckinsey-company-corporate-finance"  
+ searchCategory: "topic" 
+---
+Q29ycG9yYXRlIGZpbmFuY2UgaGVscHMgaW4gdGhlIG1hbmFnZW1lbnQgb2YgdGhlIHJlcXVpcmVkIGZpbmFuY2VzIGFuZCB0aGVpciByZXNvdXJjZXMuICBJdCBpcyByZXNwb25zaWJsZSBmb3IgZ292ZXJuaW5nIGFuZCBvdmVyc2VlaW5nIHRoZSBmaW5hbmNpYWwgYWN0aXZpdGllcyBhbmQgdGhlIGNhcGl0YWwgaW52ZXN0bWVudCBkZWNpc2lvbnMgd2l0aGluIGEgaGVhbHRoY2FyZSBvcmdhbml6YXRpb24uIFRoZSBjb3Jwb3JhdGUgZmluYW5jaWFsIG1hbmFnZW1lbnQgd2l0aGluIGEgaGVhbHRoY2FyZSBvcmdhbml6YXRpb24gaGVscHMgcGxhbiwgYWNxdWlyZSwgYW5kIHVzZSByZXNvdXJjZXMgdGhhdCB3aWxsIG1heGltaXplIHRoZSBvcmdhbml6YXRpb24ncyBlZmZpY2llbmN5LiBUaGUgZnVuZGFtZW50YWxzIG9mIGNvcnBvcmF0ZSBmaW5hbmNlIGFyZSBtYWlubHkgYmFzZWQgb24gZm91ciBjb3JlIGVsZW1lbnRzIC0gdGhlIGNvc3Qgb2YgY2FwaXRhbCwgb3BlcmF0aW5nIGZsb3dzLCBpbnZlc3RlZCBjYXBpdGFsLCBhbmQgdGhlIHJldHVybiBvbiBpbnZlc3RlZCBjYXBpdGFsLg==

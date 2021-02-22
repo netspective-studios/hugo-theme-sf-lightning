@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "collection-single-key" .Params.parentclsname}}
+  <link rel="stylesheet" href="/topic/style.css" />
+  <link rel="stylesheet" href="/css/new-style.css" />
+  <body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <div id="g-tag-body">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  </div>
+  <!-- End Google Tag Manager (noscript) -->   
+    {{ partialCached "nav-bar.html" . "collection-single-key" .Params.parentclsname}}
+    {{ $parentclsname := .Params.parentclsname }}
+    {{ $trademarkSymbol := .Params.trademarksymbol }}
+    {{ $logoimage := .Params.logoimage }}
+    {{ $externalLink := .Params.externalLink }}                           
+    <section class="about-wrapper">
+      <div id="content" class="femtech">
+      <div class="container">
+        <div itemscope itemtype = "https://schema.org/WebPage">
+        <div itemprop = "breadcrumb" itemscope itemtype = "https://schema.org/BreadcrumbList">
+        <div id="breadcrumbs" class="new-ofer-breadcrumbs">
+          <nav aria-label="breadcrumb mx-auto" role="navigation">
+            <ol class="breadcrumb"  itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+              <li class="breadcrumb-item">
+                <a itemprop="item" href="/"><span itemprop="name">Home</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="breadcrumb-item">
+                <a itemprop="item" href="/topics"><span itemprop="name">Topics</span></a>
+                <meta itemprop="position" content="1" />
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">{{ $parentclsname }}{{ if eq .Params.trademarkSymbol "TM" }}<sup class="sm-sup-4">TM</sup>{{ end}}{{ if eq .Params.trademarkSymbol "SM" }}<sup class="sm-sup-4">SM</sup>{{ else }}{{ if eq .Params.trademarkSymbol "R" }}<sup class="">&reg;</sup>{{ end }}{{ end }}</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      </div>
+      <article class="top-banner top-banner-2 topics-banner" style="background: url(/img/topic-collection/banner.jpg)">
+        <div class="container landing-top-bnr">
+          <div class="titles">
+            <h2>
+                {{ if $logoimage }}
+                <span class="m-topic-sm-logo">
+                  <img src="{{ $logoimage }}" alt="Topic Logo">                
+                </span>
+                {{ end }}
+                {{ $parentclsname }}{{ if eq .Params.trademarkSymbol "TM" }}<sup class="sm-sup-3">TM</sup>{{ end}}{{ if eq $trademarkSymbol "SM" }}<sup class="sm-sup-3">SM</sup>{{ else }}{{ if eq $trademarkSymbol "R" }}<sup class="">&reg;</sup>{{ end }}{{ end }}
+                {{ if .Params.externallink}}
+                <a href = "{{  .Params.externalLink }}" target="_blank">
+                  <span class="m-topic-ico-3"><i class="fas fa-external-link-alt"></i></span>
+                </a>
+                {{ end }}
+              </h2> 
+            <span>
+            </h2>
+            <br>
+            <p>Topic Communities</p>        
+          </div>
+          <div class="banner-cont"><p>{{ .Content }}</p></div>
+        </div>
+      </article>
+<div>
+      <div class="container">
+        
+          {{ $btnId := "AddTopic_Top" }}
+          {{ $label := "Add Topic" }}
+          {{ $value := "Topics" }}
+          {{ $tabId := "topics-tab" }}
+          {{ $tab := "topics" }}         
+          {{ partialCached "add-button.html" (dict  "btnId"  $btnId  "label" $label "value" $value "tab" $tab "tabId" $tabId) $label }}            
+          
+
+        
+        <article class="mb-4 {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+          <div class="entry-content entry-content-2 page-content">
+            {{ $collections := $parentclsname }}
+            {{/* $posts := (where (where $.Site.Pages "Params.searchcategory" "=" "topic" ) "Params.parentclasslabel" "=" $parentclsname ) */}}
+            {{/* $offeringPosts := where $.Site.Pages "Type" "post" */}}
+            {{/* $offeringPosts := .Site.RegularPages */}}
+            {{/* $offeringPosts := where $.Site.Pages "Section" "in" (slice "offering") */}}
+            {{ $dataid := $parentclsname | urlize}}
+            {{ $dataid = replace $dataid "." "-"}}
+
+            <div class=""> 
+              <div class="emptyTopics"><input class="emptyCollection" type="checkbox"  data-id="{{ $dataid }}_catgClass" /> Show empty topics</div>
+            </div>
+            <ul class="row" >
+            {{range $.Site.Data.category}}
+
+              {{ if eq .parentclasslabel $parentclsname }}
+
+                {{ if .topicInsightsTotal }} 
+                 {{ $.Scratch.Set "totalCount" .topicInsightsTotal }}
+                {{ else }}
+                {{ $.Scratch.Set "totalCount" 0 }}
+                {{ end }}
+                {{ $totalCount := int ($.Scratch.Get "totalCount") }}
+                {{ if .description }}
+                  {{ $.Scratch.Set "description" .description }}
+                  {{ $decription := .description }}
+                {{ else }}
+                {{ $.Scratch.Set "description" .subclassdescription }}
+                {{ end }}
+                {{ $contentDecoded := (($.Scratch.Get "description") | base64Decode) }} 
+                {{ $catName := print .parentclasslabel ": " .label }} 
+                {{ $categoryLink :=  $catName | urlize }}   
+                {{ $categoryLink := replace $categoryLink  "#" "hash-"  }}                                
+                {{ $categoryLink := replace $categoryLink  "+" ""  }}
+
+                <li class="col-lg-4 col-md-6 {{ if eq $totalCount 0 }} no-offerings {{ $dataid }}_catgClass {{ end }}">
+                  <a title="{{ $contentDecoded }}" href="/topic/{{ $categoryLink }}" onclick="setActiveTab()"; class="hamburger-menu-overlay-link topics-single-list">{{ .label }}
+                    <span class="category-count"> ({{ $totalCount }})</span>
+                  </a>
+                </li>
+
+              {{ end }}
+
+            {{ end }}
+            </ul>
+
+          </div>      
+      </article>   
+    </div>
+  </div>
+</section>
+  {{ partialCached "footer.html" . }}
+  </body>
+</html>
+<script>
+  $(document).ready(function(){
+    $(".emptyCollection").prop("checked", false);
+    $(".emptyTopics").show(); 
+
+    $('.emptyCollection').click(function () {
+      var dataId = $(this).attr("data-id");
+        if (this.checked) {
+          $('.'+dataId).show();
+        }
+        else{
+          $('.'+dataId).hide(); 
+        }
+    });
+  });
+  function setActiveTab(){
+    localStorage.setItem('activeTopicsTab',"#followed");
+  }
+</script>

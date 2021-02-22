@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Data Breach" 
+ classname:  "Data_breach" 
+ label: "Data Breach" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Data Breach']
+ aliases:  "/topic/healthcare-it-news-data-breach"  
+ searchCategory: "topic" 
+---
+QSBkYXRhIGJyZWFjaCBpcyBhbiBhY2NpZGVudGFsIGxlYWthZ2Ugb2YgeW91ciBjb25maWRlbnRpYWwgb3IgcHJvdGVjdGVkIHBlcnNvbmFsIGluZm9ybWF0aW9uLiBJdCBtYXkgaW5jbHVkZSBhY2Nlc3NpbmcgeW91ciBoZWFsdGggaW5mb3JtYXRpb24sIGVtYWlscywgcGFzc3dvcmRzLCBiYW5rIGFjY291bnRzLCBjcmVkaXQgY2FyZHMsIGV0Yy4gRGF0YSBicmVhY2hpbmcgaW52b2x2ZXMgYWNjZXNzaW5nIG9mIHBlcnNvbmFsIG9yIHByaXZhdGUgaW5mb3JtYXRpb24gd2l0aG91dCBhdXRob3JpemF0aW9uLiBJdCBjYW4gaGF2ZSBzZXZlcmUgY29uc2VxdWVuY2VzIG9uIHlvdXIgcHJvZmVzc2lvbmFsIGFuZCBwZXJzb25hbCBsaWZlLiBUaGUgbWFqb3JpdHkgb2YgZGF0YSBicmVhY2hlcyBhcmUgYXR0cmlidXRlZCB0byBoYWNraW5nIG9yIG1hbHdhcmUgYXR0YWNrcy4gSG93ZXZlciwgdGhlcmUgY2FuIGJlIHNvbWUgb3RoZXIgYnJlYWNoaW5nIG1ldGhvZHMgYXMgd2VsbCwgc3VjaCBhcyBwYXltZW50IGNhcmQgZnJhdWQsIGluc2lkZXIgbGVha2VyIHdpdGhpbiBhIGNvbXBhbnksIGxvc3Mgb3IgdGhlZnQgb2YgZGV2aWNlcywgdW5pbnRlbmRlZCBkaXNjbG9zdXJlIG9mIGluZm9ybWF0aW9uLCBjeWJlcmF0dGFja3MsIGV0Yy4=

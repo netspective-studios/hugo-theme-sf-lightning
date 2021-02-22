@@ -1,0 +1,44 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead class="border-top sentence-case">
+      <tr>
+        <th  width="55%">Measure Description </th>
+        <th  width="15%">{{ .facilityName }}</th>
+        <th  width="15%">{{ .state }} AVERAGE</th>
+        <th  width="15%">NATIONAL AVERAGE</th>
+      </tr>
+    </thead>
+      <tbody>
+      {{ $category := .category}}
+      {{ $valueFormat := .valueFormat }}
+      {{ range .patientSurveyObject}}              
+        {{ if eq .condition.condition $category }}                 
+          <tr >
+            <td >                                                      
+                {{ .hcahpsAnswerDescription }}                                                         
+            </td>
+            {{ if eq .hcahpsAnswerPercent "Not Applicable" }}
+            <td class="text-center text-fade"> {{ .hcahpsAnswerPercent }}</td>
+            {{ else}}
+             <td class="text-right"> {{ .hcahpsAnswerPercent }}</td>
+            {{ end }}      
+            {{ if (eq (.hcahpsNational | len) 0) }}
+              <td class="text-center text-fade"> Not Available </td>
+            {{ else }}
+              {{ range .hcahpsNational}}
+                  <td class="text-right">{{ .hcahpsState.hcahpsAnswerPercent }}</td>
+              {{ end }} 
+            {{ end }} 
+            {{ if (eq (.hcahpsNational | len) 0) }}
+              <td class="text-center text-fade"> Not Available </td>
+            {{ else }}
+              {{ range .hcahpsNational}}
+                  <td class="text-right">{{ .hcahpsAnswerPercent }}</td>
+              {{ end }}
+            {{ end }} 
+          </tr>
+        {{ end }} 
+      {{ end }}
+    </tbody>
+  </table>
+</div>

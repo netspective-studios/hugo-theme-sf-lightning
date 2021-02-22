@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Patient Empowerment" 
+ classname:  "OWLClass_bc09de97_c3c8_4c5f_96bd_6f8d3cdc4703" 
+ label: "Patient Empowerment" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Patient Empowerment']
+ aliases:  "/topic/healthcare-it-news-patient-empowerment"  
+ searchCategory: "topic" 
+---
+UGF0aWVudCBlbXBvd2VybWVudCBpcyBvbmUgb2YgdGhlIGNvcmUgZWxlbWVudHMgb2YgcGF0aWVudC1jZW50ZXJlZCBoZWFsdGhjYXJlLiBJdCBlbmFibGVzIHBhdGllbnRzIHRvIGhhdmUgZ3JlYXRlciBjb250cm9sIG92ZXIgdGhlaXIgaGVhbHRoY2FyZSBkZWNpc2lvbnMgYW5kIGFjdGlvbnMgKHRoYXQgYXJlIHJlc3BvbnNpYmxlIGZvciBhZmZlY3RpbmcgdGhlaXIgaGVhbHRoKS4gRW1wb3dlcm1lbnQgaW4gaGVhbHRoY2FyZSBwcm92aWRlcyBpbiBkaWZmZXJlbnQgd2F5cywgc3VjaCBhcyBkZWxpdmVyaW5nIHBhdGllbnQgbWF0ZXJpYWxzLCBpbnZvbHZpbmcgcGF0aWVudHMgaW4gdGhlaXIgdHJlYXRtZW50IHBsYW5zLCBlbnN1cmluZyBwYXRpZW50IGVuZ2FnZW1lbnQsIGFuZCBhbGxvd2luZyBwYXRpZW50cyB0byBzcGVhayBmcmVlbHkgYWJvdXQgdGhlaXIgY29uZGl0aW9ucywgZXRjLiBIZWFsdGggcG9saWN5IGluIGRpZmZlcmVudCBjb3VudHJpZXMgaXMgcHJpb3JpdGl6aW5nIHBhdGllbnQgZW1wb3dlcm1lbnQgYW5kIHBhdGllbnQgZXZhbHVhdGlvbnMgb2YgaGVhbHRoY2FyZSBmb3IgYmV0dGVyIHBhdGllbnQgb3V0Y29tZXMu

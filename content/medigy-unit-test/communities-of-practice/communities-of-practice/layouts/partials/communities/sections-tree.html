@@ -1,0 +1,27 @@
+<div>
+
+	{{ if gt (len .Sections) 0}}
+	{{ template "section-tree-nav" . }}
+	{{end}}
+</div>
+
+{{ define "section-tree-nav" }}
+	{{ range .Sections }}
+		<span class="total-count-1"><a href="{{.Permalink}}">{{ .LinkTitle }} <strong> {{ len .Pages }}</strong></a></h5> </span>
+		{{ template "section-tree-nav" . }}
+	{{ end }}
+{{ end }}
+
+
+
+{{ define "current-section_pages" }}
+<ul>
+	{{ len .Pages}}	
+	{{ range .Pages }}
+
+    <li><a href="{{ .Permalink}}"> {{ .LinkTitle }}   {{ len .Sections }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}
+
+

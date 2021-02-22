@@ -1,0 +1,570 @@
+{
+  "shortName": "about_your_innovation_center",
+  "name": "About Your Innovation Center",
+  "status": "draft",
+  "version": "far fa-calendar-alt",
+  "deriveFrom": [""],
+  "subjectType": [
+    "COOKIE: cookie_name",
+    "CLAIM: claimStatus",
+    "VENDOR: vendorId",
+    "METRIC_NAME_PREFIX: medigy_qual_exp_institution_inno_"
+  ],
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have a dedicated innovation department?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_innovator_department",
+          "prefix": "fas fa-microscope",
+          "localQuestionCode": "innovator_department",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have a dedicated innovation department",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have a dedicated innovation department",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have an innovation program that employees participate in?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_emp_participate",
+          "prefix": "fas fa-users-cog",
+          "localQuestionCode": "emp_participate",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have an innovation program that employees participate in",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have an innovation program that employees participate in",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have full time staff or equivalents (FTEs) in innovation roles?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_ftes_roles",
+          "prefix": "far fa-id-card",
+          "localQuestionCode": "ftes_roles",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have full time staff or equivalents (FTEs) in innovation roles",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have full time staff or equivalents (FTEs) in innovation roles",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have a chief innovation officer or equivalent role?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_chief_officer",
+          "prefix": "fas fa-id-card",
+          "localQuestionCode": "chief_officer",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have a chief innovation officer or equivalent role",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have a chief innovation officer or equivalent role",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have clinicians and researchers obtaining their own patents and building their own ideas for medical devices, diagnostics and mobile health platforms internally?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_own_patenrs",
+          "prefix": "fas fa-user-cog",
+          "localQuestionCode": "own_patenrs",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have clinicians and researchers obtaining their own patents and building their own ideas for medical devices, diagnostics and mobile health platforms internally",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have clinicians and researchers obtaining their own patents and building their own ideas for medical devices, diagnostics and mobile health platforms internally",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do You Make Investments?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_make_invest",
+          "prefix": "fas fa-hand-holding-usd",
+          "localQuestionCode": "make_invest",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We Make Investments",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not Make Investments",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do You Have an Innovation Center?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_innovationCenter",
+          "prefix": "far fa-handshake",
+          "localQuestionCode": "innovationCenter",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Yes (A Centralized Innovation Center)",
+              "code": "We have a Centralized Innovation Center",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Multiple (Decentralized Innovation Centers)",
+              "code": "We have Multiple Decentralized Innovation Centers",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "No",
+              "code": "We do not have an Innovation Center",
+              "label": null,
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": 1
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Innovation \"Center\" Title (if applicable)",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_centerTitle",
+          "prefix": "fas fa-vials",
+          "localQuestionCode": "centerTitle",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Title of our Innovation Center is"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Innovation \"Center\" Website",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_center",
+          "prefix": "fas fa-window-restore",
+          "localQuestionCode": "center",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Website of our Innovation Center is"
+        },
+        {
+          "header": false,
+          "dataType": "TX",
+          "question": "What is Your Innovation Mission or Vision?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_vision",
+          "prefix": "fas fa-binoculars",
+          "localQuestionCode": "vision",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Mission / Vision of our Innovation is"
+        },
+        {
+          "header": false,
+          "dataType": "TX",
+          "question": "What Lessons Have You Learned Related to Evidence?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_evidence",
+          "prefix": "fas fa-book-reader",
+          "localQuestionCode": "evidence",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Lessons we learned related to evidence is"
+        },
+        {
+          "header": false,
+          "dataType": "TX",
+          "question": "What Lessons Have You Learned Related to Transformation?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_transformation",
+          "prefix": "far fa-file-alt",
+          "localQuestionCode": "transformation",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "Lessons we learned related to transformation is"
+        },
+        {
+          "header": false,
+          "dataType": "TX",
+          "question": "Which topic do you believe to be your strength and why?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_strength",
+          "prefix": "fas fa-sort-amount-up",
+          "localQuestionCode": "strength",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "The topic that we believe to be our strength is"
+        },
+        {
+          "header": false,
+          "dataType": "TX",
+          "question": "Which topic do you believe to be your weakness and why?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_weakness",
+          "prefix": "fas fa-sort-amount-down",
+          "localQuestionCode": "weakness",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "defaultAnswer": "The topic that we believe to be our weakness is"
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Are you affiliated with Medigy Innovation Network?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "about_your_innovation_affiliation",
+          "prefix": "fas fa-dna",
+          "localQuestionCode": "affiliation",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Yes, I am a Medigy Innovation Network member",
+              "code": "We are a member of Medigy Innovation Network",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Yes, I am a Medigy Innovation Network Sponsor",
+              "code": "We are a Sponsor of Medigy Innovation Network",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Yes, I am affiliated with Medigy Innovation Network",
+              "code": "We are affiliated with Medigy Innovation Network",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "No, I have no affiliation with Medigy Innovation Network",
+              "code": "We have no affiliation with Medigy Innovation Network",
+              "label": null,
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX",
+              "columns": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Policy Based Message",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "<HDO Name> has not provided any information about their Innovation Center. If you own this HDO, you can claim this profile and share information about your Innovation Center. And if you do not own, but know the Innovator of this Profile, please invite them to claim and fill in the information.",
+              "code": "publicAboutYourInnovation",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "<HDO Name> has not provided any information about their Innovation Center. Once the Innovator self-reports about their Innovation Center, you can review their submissions.",
+              "code": "privateAboutYourInnovation-claimed-notAnswered",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Thanks for claiming your HDO Profile. The following section is meant to provide you with a way to self-report about your Innovation Center. Please fill this assessment form to stand out from your competition.",
+              "code": "privateAboutYourInnovation-innovator-notAnswered",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Information about your Innovation Program as seen by other members. Please review and make any edits, if you want to.",
+              "code": "privateAboutYourInnovation-innovator-answered",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "<HDO Name> has not provided any information about their Innovation Center. If you own this HDO, please login to share information about your Innovation Center.",
+              "code": "publicAboutYourInnovation-notAnswer",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "<HDO Name> has not provided any information about their Innovation Center. If you own this HDO, please login to share information about your Innovation Center.",
+              "code": "publicAboutYourInnovation-notAnswer-notClaimed",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "<HDO Name> has not provided any information about their Innovation Center. If you own this HDO, you can claim this profile and share information about your Innovation Center. And if you do not own, but know the Innovator of this Profile, please invite them to claim and fill in the information.",
+              "code": "privateAboutYourInnovation-notAnswered-notClaimed",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Please find what the Innovator has self-reported about their Innovation Program. You can endorse if you agree to what they say.",
+              "code": "privateAboutYourInnovation-answered-claimed",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Please login to review what <HDO Name> self-reported about their Innovation Center.",
+              "code": "publicAboutYourInnovation-answered",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

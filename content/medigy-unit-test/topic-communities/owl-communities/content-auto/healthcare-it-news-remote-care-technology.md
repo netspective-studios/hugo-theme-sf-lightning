@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Remote Care Technology" 
+ classname:  "Remote-care_technology" 
+ label: "Remote Care Technology" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Gartner: On-device Monitoring','Healthcare IT News: Remote Patient Monitoring','Healthcare IT News: Patient Monitoring','Gartner: Remote Diagnostics','KLAS: Remote Patient Monitoring','Gartner: Connected Home','Medigy: Remote Cardiac Monitoring','Medigy: Remote Patient Monitoring','U.S. Food and Drug Administration (FDA): Remote or Wearable Patient Monitoring Devices EUAs'] 
+ collections: ['Healthcare IT News: Remote Care Technology']
+ aliases:  "/topic/healthcare-it-news-remote-care-technology"  
+ searchCategory: "topic" 
+---
+UmVtb3RlIGNhcmUgdGVjaG5vbG9neSBpbnZvbHZlcyBhIHdpZGUgcmFuZ2Ugb2YgdGVjaG5pcXVlcyBhbmQgdGFjdGljcyB0byBkZWxpdmVyIGhlYWx0aCBjYXJlIG91dHNpZGUgb2YgdHJhZGl0aW9uYWwgaGVhbHRoY2FyZSBmYWNpbGl0aWVzLiBJdCBhbGxvd3MgaGVhbHRoY2FyZSBwcm9mZXNzaW9uYWxzIHRvIGNvbGxlY3QgYW5kIHRyYWNrIGEgdmFyaWV0eSBvZiBwYXRpZW50IGhlYWx0aCBkYXRhIHJlbW90ZWx5LCBzdWNoIGFzIGJsb29kIHByZXNzdXJlLCBoZWFydCByYXRlLCB3ZWlnaHQsIHZpdGFsIHNpZ25zLCBldGMuIFJlbW90ZSBtb25pdG9yaW5nIGRldmljZXMgaW4gaGVhbHRoY2FyZSBwbGF5IGFuIGVzc2VudGlhbCByb2xlIGluIGRlbGl2ZXJpbmcgaGVhbHRoIHNlcnZpY2VzIHJlbW90ZWx5LiBTdWNoIGRldmljZXMgaW5jbHVkZSB2aWRlb2NvbmZlcmVuY2luZywgdGhlIGludGVybmV0LCBzdG9yZS1hbmQtZm9yd2FyZCBpbWFnaW5nLCBzdHJlYW1pbmcgbWVkaWEsIGFuZCB0ZXJyZXN0cmlhbCAmIHdpcmVsZXNzIGNvbW11bmljYXRpb25zLgpIb21lIGhlYWx0aCBtb25pdG9yaW5nIGlzIG9uZSBvZiB0aGUgdHlwZXMgb2YgcmVtb3RlIGNhcmUgc2VydmljZXMgd2hpY2ggcHJvdmlkZSBoZWFsdGhjYXJlIHNlcnZpY2VzIHRvIHBhdGllbnRzIGF0IHRoZWlyIGhvbWUuIEl0IGlzIHVzdWFsbHkgcHJvdmlkZWQgdG8gcGF0aWVudHMgd2hvIGFyZSBvbGRlciwgd2hvIGhhdmUgY2hyb25pYyBpbGxuZXNzZXMsIHdobyBhcmUgcmVjb3ZlcmluZyBmcm9tIGEgbWVkaWNhbCBzZXRiYWNrLCBhbmQgd2hvIGhhdmUgc3BlY2lhbCBuZWVkcyBvciBzb21lIGRpc2FiaWxpdHku

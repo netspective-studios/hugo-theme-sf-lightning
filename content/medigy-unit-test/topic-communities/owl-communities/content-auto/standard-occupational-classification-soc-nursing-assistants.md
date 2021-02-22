@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Nursing Assistants" 
+ classname:  "Nursing_Assistants" 
+ label: "Nursing Assistants" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Nursing Assistants']
+ aliases:  "/topic/standard-occupational-classification-soc-nursing-assistants"  
+ searchCategory: "topic" 
+---
+J051cnNpbmcgYXNzaXN0YW50cyBhc3Npc3QgcGF0aWVudHMgd2l0aCBkYWlseSBsaXZpbmcgYWN0aXZpdGllcywgaW5jbHVkaW5nIGRyZXNzaW5nLCBiYXRoaW5nLCBmZWVkaW5nLCB0b2lsZXQgYXNzaXN0YW5jZSwgbW91dGggJiBoYWlyIGNhcmUsIGFuZCBvdGhlciBoZWFsdGhjYXJlIG5lZWRzLiBUaGV5IGFyZSBnZW5lcmFsbHkgc3VwZXJ2aXNlZCBieSAgUmVnaXN0ZXJlZCBOdXJzZXMgb3IgTGljZW5zZWQgUHJhY3RpY2FsIE51cnNlcy4gTnVyc2luZyBhc3Npc3RhbnRzIGhlbHAgcGF0aWVudHMgb2YgYWxsIGFnZXMgcGVyZm9ybSB0aGUgbW9zdCBiYXNpYyBkYWlseSB0YXNrcyB3aXRoaW4gZGlmZmVyZW50IGZhY2lsaXRpZXMgc3VjaCBhcyBob3NwaXRhbHMsIG51cnNpbmcgaG9tZXMsIGFzc2lzdGVkIGxpdmluZywgaG9zcGljZSwgcmVzaWRlbnRpYWwgaG9tZXMsIGNvbW11bml0eS1iYXNlZCBsb25nLXRlcm0gY2FyZSwgY29ycmVjdGlvbmFsIGluc3RpdHV0aW9ucywgYW5kIG90aGVyIGxvbmctdGVybSBjYXJlIHNldHRpbmdzLgoKJw==

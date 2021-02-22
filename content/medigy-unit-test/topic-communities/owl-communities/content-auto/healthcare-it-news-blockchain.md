@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Blockchain" 
+ classname:  "OWLClass_096d6783_13fd_4340_bdd4_6ef71e9c7e25" 
+ label: "Blockchain" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Blockchain']
+ aliases:  "/topic/healthcare-it-news-blockchain"  
+ searchCategory: "topic" 
+---
+QSBibG9ja2NoYWluIGlzIGEgaGlnaGx5IHNlY3VyZSwgdHJhbnNwYXJlbnQsIGFuZCBkZWNlbnRyYWxpemVkIGRhdGEgc3RydWN0dXJlIHVzZWQgZm9yIHN0b3JpbmcgdGhlIHRyYW5zYWN0aW9uYWwgcmVjb3Jkcy4gQmxvY2tjaGFpbiB0ZWNobm9sb2d5IGlzIGEgc3RydWN0dXJlIHVzZWQgZm9yIHN0b3JpbmcgdHJhbnNhY3Rpb25hbCBkb2N1bWVudHMgKGNhbGxlZCBhIGJsb2NrKSBvZiB0aGUgcHVibGljIGluIGRpZmZlcmVudCBkYXRhYmFzZXMgKGNhbGxlZCBjaGFpbikgaW4gYSBuZXR3b3JrIHVuaXRlZCB0aHJvdWdoIHBlZXItdG8tcGVlciBub2Rlcy4gVGhlIHdpZGVzcHJlYWQgYWRvcHRpb24gb2YgYmxvY2tjaGFpbiB0ZWNobm9sb2d5IGlzIG1hZGUgcG9zc2libGUgd2l0aCB0aGUgaGVscCBvZiBhIHByb2Nlc3MgY2FsbGVkIEJsb2NrY2hhaW4tYXMtYS1TZXJ2aWNlIChCYWFTKS4gQmFhUyBpcyBhbiBlc3NlbnRpYWwgcGFydCBvZiB0aGUgYmxvY2tjaGFpbiBlY29ub215IGFuZCBpcyBjb250cmlidXRpbmcgdG8gdGhlIGJsb2NrY2hhaW4gZGV2ZWxvcG1lbnQu

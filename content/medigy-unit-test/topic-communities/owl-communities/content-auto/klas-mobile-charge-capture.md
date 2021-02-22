@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Mobile Charge Capture" 
+ classname:  "Mobile_Charge_Capture" 
+ label: "Mobile Charge Capture" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['KLAS: Patient Self-Management'] 
+ collections: ['KLAS: Mobile Charge Capture']
+ aliases:  "/topic/klas-mobile-charge-capture"  
+ searchCategory: "topic" 
+---
+TW9iaWxlIENoYXJnZSBDYXB0dXJlIHNvZnR3YXJlIGFsbG93cyBwaHlzaWNpYW5zIHRvIHVzZSB0aGVpciBjb21tdW5pY2F0aW9uIGRldmljZXMgbGlrZSBtb2JpbGUsIGlwaG9uZSwgQW5kcm9pZCwgaXBhZCBmb3IgcXVpY2tseSBjYXB0dXJpbmcgY2hhcmdlcywgYWNjZXNzaW5nIHBhdGllbnQgaW5mb3JtYXRpb24sIGNvbW11bmljYXRpbmcgc2VjdXJlbHkgYW5kIGVmZmljaWVudGx5LiBJdCBhbHNvIGFsbG93cyB0aGVtIHRvIGVudGVyIG1lZGljYWwgYmlsbGluZyBjaGFyZ2VzIGFuZCBzZW5kIHRleHQgbWVzc2FnZXMgc2VjdXJlbHkgaW4gcmVhbCB0aW1lLiBJdCBoYXMgYW4gaW1wb3J0YW50IHJvbGUgdG8gcGxheSBpbiByZWR1Y2luZyBjaGFyZ2UgZW50cnkgbGFnIGZyb20gd2Vla3MgdG8gbGVzcyB0aGFuIGEgZGF5IGFuZCBhbHNvIGVsaW1pbmF0aW5nIHRoZSB0ZWRpb3VzIHBhcGVyIHByb2Nlc3MuIE1vYmlsZSBjaGFyZ2UgY2FwdHVyZSBzb2Z0d2FyZSBwcm9kdWN0cyBnaXZlIHBoeXNpY2lhbnMgYW4gYWNjZXNzIHRvIGNlbnN1cywgcmVzdWx0cywgYW5kIG90aGVyIHBhdGllbnQgaW5mb3JtYXRpb24gb24gYSBoYW5kaGVsZCBkZXZpY2Uu

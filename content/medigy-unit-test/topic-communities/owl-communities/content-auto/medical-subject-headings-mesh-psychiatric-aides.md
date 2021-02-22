@@ -1,0 +1,14 @@
+--- 
+ title: "Medical Subject Headings (MeSH): Psychiatric Aides" 
+ classname:  "OWLClass_970bad25_387b_4823_9d99_65fc4d6354b9" 
+ label: "Psychiatric Aides" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "MeSH" 
+ parentclasslabel: "Medical Subject Headings (MeSH)" 
+ equalentCollections: [] 
+ collections: ['Medical Subject Headings (MeSH): Psychiatric Aides']
+ aliases:  "/topic/medical-subject-headings-mesh-psychiatric-aides"  
+ searchCategory: "topic" 
+---
+UHN5Y2hpYXRyaWMgYWlkZXMgdW5kZXIgdGhlIHN1cGVydmlzaW9uIG9mIG51cnNlcyBvciBtZWRpY2FsIHN0YWZmIChwc3ljaGlhdHJpc3RzLCBwc3ljaG9sb2dpc3RzLCBhbmQgc29jaWFsIHdvcmtlcnMpIGFzc2lzdCBpbmRpdmlkdWFscyB3aG8gYXJlIGVtb3Rpb25hbGx5IG9yIG1lbnRhbGx5IHVud2VsbC4gVGhleSBoZWxwIHN1Y2ggcGF0aWVudHMgd2l0aCB0aGVpciBkYWlseSBsaXZpbmcgYWN0aXZpdGllcyBzdWNoIGFzIG1lYWxzLCBwZXJzb25hbCBoeWdpZW5lLCBiYXRoaW5nLCByZWNyZWF0aW9uLCB0cmFuc3BvcnRhdGlvbiwgYW5kIHNvY2lhbGl6YXRpb24uIFBzeWNoaWF0cmljIGFpZGVzIGFsc28gY2FsbGVkIG1lbnRhbCBoZWFsdGggYXNzaXN0YW50cyBvciBwc3ljaGlhdHJpYyBudXJzaW5nIGFzc2lzdGFudHMsIHNwZW5kIGEgZ3JlYXQgZGVhbCBvZiB0aW1lIHNvY2lhbGl6aW5nIHdpdGggcGF0aWVudHMuIFRoZXJlZm9yZSwgdGhlaXIgb2JzZXJ2YXRpb25zIG9uIHBhdGllbnQgYmVoYXZpb3IgYXJlIHZhbHVhYmxlIHRvIHRoZSByZXN0IG9mIHRoZSBtZWRpY2FsIHN0YWZmLg==

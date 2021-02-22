@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: FemTech: Care Professionals involved in Women and Children’s Health" 
+ classname:  "CoP_for_care_professionals_involved_in_Women_and_Children’s_health" 
+ label: "FemTech: Care Professionals involved in Women and Children’s Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: FemTech: Care Professionals involved in Women and Children’s Health']
+ aliases:  "/topic/medigy-femtech-care-professionals-involved-in-women-and-childrens-health"  
+ searchCategory: "topic" 
+---
+VGhpcyBDb1AgaXMgY29tbWl0dGVkIHRvIGhlbHBpbmcgY2FyZSBwcm9mZXNzaW9uYWxzIGludm9sdmVkIGluIHdvbWVuIGFuZCBjaGlsZHJlbiBoZWFsdGguIE9ic3RldHJpY3MvIEd5bmFlY29sb2dpc3RzIFBhZWRpYXRyaWNpYW5zLCBOZW9uYXRhbCBzdXJnZW9ucywgYW5kIG1pZC13aWZlIENOTXMgYnkgcHJvdmlkaW5nIHJlc291cmNlcyByZWxhdGVkIHRvOiAK4oCiIEd1aWRlbGluZXMgdG8gc3RhcnRpbmcgYSBwcm9maXRhYmxlIHByaXZhdGUgcHJhY3RpY2UgCuKAoiBSZWR1Y2luZyBwYXRpZW50IHdhaXQgdGltZSBhbmQgaW1wcm92aW5nIHBhdGllbnQgZW5nYWdlbWVudCB0byBoZWxwIGRlbGl2ZXIgcXVhbGl0eSBjYXJlCuKAoiBUb29scyBhbmQgdGVjaG5vbG9naWVzIHRvIGhlbHAgZ2VuZXJhdGUgYSBST0kgYnkgZW1icmFjaW5nIHRoZSBsYXRlc3QgdGVjaG5vbG9naWVzIGluIHRoZSBsaWdodCBvZiB0aGUgY3VycmVudCBwYW5kZW1pYy4gCuKAoiBTdGFmZiB0cmFpbmluZyB0byBnYWluIGFuIHVwcGVyIGhhbmQgaW4gdGhlIGxhdGVzdCB0ZWNobm9sb2d5IGVzcGVjaWFsbHkgZm9yIGNsaW5pY2FsIG51cnNlcyBhbmQgcHJpbWFyeSBjYXJlIHN0YWZmLiAK4oCiIFdvcmtmb3JjZSBhbmQgam9iIG9wcG9ydHVuaXRpZXMu

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Network Infrastructure" 
+ classname:  "Network_Infrastructure" 
+ label: "Network Infrastructure" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Network Infrastructure']
+ aliases:  "/topic/healthcare-it-news-network-infrastructure"  
+ searchCategory: "topic" 
+---
+TmV0d29yayBpbmZyYXN0cnVjdHVyZSBpcyB0aGUgYmFja2JvbmUgb2YgaGVhbHRoY2FyZSBJVC4gSXQgaXMgcmVzcG9uc2libGUgZm9yIGEgaGlnaGx5IGNvbm5lY3RlZCwgZGlnaXRhbGx5IGVuaGFuY2VkLCBwYXRpZW50LWRyaXZlbiBjYXJlLiBSb2J1c3QgYW5kIGludGVsbGlnZW50IHByaXZhdGUgbmV0d29yayBpbmZyYXN0cnVjdHVyZSBpcyBlc3NlbnRpYWwgZm9yIGNvbm5lY3RpbmcgaHVuZHJlZHMgb2YgZGV2aWNlcywgc2l0ZXMsIGFuZCBkYXRhIHNvdXJjZXMgaW4gaGVhbHRoY2FyZS4gSXQgZW5hYmxlcyBoZWFsdGhjYXJlIHN5c3RlbXMgdG8gc3RyZWFtbGluZSB0aGVpciB3b3JrZmxvdywgd2hpY2ggaXMgc2lnbmlmaWNhbnRseSBjcnVjaWFsIGZvciBpbXByb3ZpbmcgcGF0aWVudCBjYXJlLgpUaGUgcHJpbWFyeSBwdXJwb3NlIGJlaGluZCBkZXNpZ25pbmcgYSBuZXR3b3JrIGluZnJhc3RydWN0dXJlIGlzIHRvIGdhaW4gYW55d2hlcmUsIGFueXRpbWUgYWNjZXNzIHRvIGRhdGEgYW5kIGtub3dsZWRnZSwgd2hpY2gsIGluIHR1cm4sIGlzIHZpdGFsIGZvciBlbmhhbmNpbmcgaGVhbHRoY2FyZSBzZXJ2aWNlcyBwcm92aWRlZCB0byBwYXRpZW50cy4=

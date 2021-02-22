@@ -1,0 +1,17 @@
+<section class="container">
+	<article class="top-banner communitybnr" style="background: url({{ .bannerImage }})">
+    	<div class="bannerlft">
+            	<h1>{{ .bannerTitle }}</h1>
+                <h3>{{ .bannersubTitle }}</h3>
+		</div>
+            <div class="bannerrigt {{if eq .Params.herocolor "blue"}} bluebg {{ end}} ">
+				<h3>{{ replace .Title "Medigy: " "" }}</h3>
+                <p>{{ .bannerSubDescription }}</p>
+            </div>
+	</article>
+   {{ if .bannerDescription }}   	 
+	<div class="greyboxccm">	
+		{{ .bannerDescription  }}
+   </div>
+   {{ end }}
+</section>

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Clinical Communications Technology" 
+ classname:  "Clinical_communications_Technology" 
+ label: "Clinical Communications Technology" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Clinical Communications Technology']
+ aliases:  "/topic/healthcare-it-news-clinical-communications-technology"  
+ searchCategory: "topic" 
+---
+Q2xpbmljYWwgY29tbXVuaWNhdGlvbiB0ZWNobm9sb2d5IGlzIGEgbWVhbnMgb2YgZWZmZWN0aXZlIGNvbW11bmljYXRpb24gYmV0d2VlbiBoZWFsdGhjYXJlIHByb2Zlc3Npb25hbHMgYW5kIHBhdGllbnRzLiBSb2J1c3QgY2xpbmljYWwgdGVjaG5vbG9neSAoY2xpbmljYWwgdGVjaCkgY2FuIGhhdmUgYSBzaWduaWZpY2FudCBpbXBhY3Qgb24gcGF0aWVudCBjYXJlIGFuZCBjbGluaWNhbCBvdXRjb21lcy4gQ2xpbmljYWwgY29tbXVuaWNhdGlvbiB0ZWNobm9sb2d5IGhhcyBpbnRyb2R1Y2VkIG11bHRpLXVzZSBzbWFydHBob25lcyBhbmQgbW9iaWxlIGRldmljZXMgKGluY2x1ZGluZyBtb2JpbGUgYXBwcyBhbmQgcG9ydGFscykgaW50byB0aGUgaGVhbHRoIHNlY3Rvci4gSXQgb2ZmZXJzIGRvY3RvcnMgYW5kIG1lZGljYWwgc3RhZmYgYW4gZWFzeSBhbmQgZmFzdCB3YXkgb2YgY29tbXVuaWNhdGluZyB3aXRoIGVhY2ggb3RoZXIgYW5kIHRoZSBwYXRpZW50cy4gQWxsIHRoZXNlIHRoaW5ncyBoYXZlIHBsYXllZCBhbiBlc3NlbnRpYWwgcm9sZSBpbiB0aGUgaW1wcm92ZW1lbnQgb2YgaGVhbHRoY2FyZSBzZXJ2aWNlcyBhbmQgcGF0aWVudCBleHBlcmllbmNlcy4=

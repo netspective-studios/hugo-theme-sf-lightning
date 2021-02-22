@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Cloud Impacts" 
+ classname:  "Cloud_Impacts" 
+ label: "Cloud Impacts" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Cloud Impacts']
+ aliases:  "/topic/healthcare-it-news-cloud-impacts"  
+ searchCategory: "topic" 
+---
+Q2xvdWQgdGVjaG5vbG9neSBoYXMgYSBzaWduaWZpY2FudCBpbXBhY3QgKGJvdGggcG9zaXRpdmUgYW5kIG5lZ2F0aXZlKSBvbiB0aGUgbGl2ZXMgb2YgcGh5c2ljaWFucyBpbiBhIGhlYWx0aGNhcmUgb3JnYW5pemF0aW9uLiBPbmUgb2YgdGhlIGNvbnNpZGVyYWJsZSBlZmZlY3RzIG9mIGNsb3VkIHRlY2hub2xvZ3kgaW4gaGVhbHRoY2FyZSBpcyB0aGF0IGl0IGhlbHBzIHRoZSBwaHlzaWNpYW5zIGluIGRvaW5nIHRoZWlyIGpvYnMgaW4gYSBiZXR0ZXIgd2F5LiBUaGUgbXVsdGlwbGUgdG9vbHMgY2xvdWQtYmFzZWQgdGVjaG5vbG9neSBoYXMgYSByYWRpY2FsbHkgdHJhbnNmb3JtYXRpdmUgZWZmZWN0IG9uIGhlYWx0aGNhcmUgb3JnYW5pemF0aW9ucy4gSXQgaXMgYWZmZWN0aW5nIHRoZSBwaHlzaWNpYW5zIGluIG51bWVyb3VzIHdheXMsIG5vdCBuZWNlc3NhcmlseSBmb3IgZ29vZC4gV2hpbGUgY2xvdWQgdGVjaG5vbG9neSBpcyBpbXByb3ZpbmcgdGhlIGVmZmljaWVuY3kgYW5kIHN0cmVhbWxpbmluZyB0aGUgZm9ybWVybHkgdGltZS1jb25zdW1pbmcgdGFza3MgKGxpa2UgZGF0YSBlbnRyeSBvciBtZWRpY2FsIHJlc2VhcmNoKSwgdGhlIGNvbnN1bWVyLWZhY2luZyBhcHBsaWNhdGlvbnMgY2FuIGJyaW5nIGFkZGl0aW9uYWwgc3RyZXNzIHRvIGhlYWx0aGNhcmUgcHJvZmVzc2lvbmFscy4=

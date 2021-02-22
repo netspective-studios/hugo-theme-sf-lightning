@@ -1,0 +1,14 @@
+<div class="col-md-12 pagination-post">
+	<div class="float-left">
+		{{ if .PrevInSection }}
+		<a href="{{.PrevInSection.Permalink}}"><i class="fal fas fa-chevron-left"></i> previous </a>
+		<small>{{ .PrevInSection.Title }}</small>
+		{{ end }}
+	</div>
+	<div class="float-right" style="text-align: right;">
+		{{ if .NextInSection }}
+		<a href="{{.NextInSection.Permalink}}">Next <i class="fal fas fa-chevron-right"></i> </a>
+		<small>{{ .NextInSection.Title }}</small>
+		{{ end }}
+	</div>
+</div>

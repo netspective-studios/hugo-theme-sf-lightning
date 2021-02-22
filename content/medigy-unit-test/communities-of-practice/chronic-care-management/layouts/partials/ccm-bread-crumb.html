@@ -1,0 +1,51 @@
+<div itemscope itemtype = "https://schema.org/WebPage">
+<div itemprop = "breadcrumb" itemscope itemtype = "https://schema.org/BreadcrumbList">
+<div id="breadcrumbs" class="new-ofer-breadcrumbs">
+  <nav aria-label="breadcrumb mx-auto" role="navigation">
+    <ol class="breadcrumb"  itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+    {{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+ 
+    {{ if ne .pageStatus "" }}
+        {{ $siteData := $.context.Site.Data.communities }}     
+        {{ range $siteData }}
+        {{ range $elem_index, $breadcrumb := .innerBreadcrumb  }}
+           <li class="breadcrumb-item">
+            <a itemprop="item" href="{{ $breadcrumb.breadcrumbLink }}">
+            <span itemprop="name">{{ $breadcrumb.breadcrumbLabel }}</span></a>
+            <meta itemprop="position" content="1" />        
+           </li>
+        {{ end }}
+        {{ end }}
+         <li class="breadcrumb-item">
+            <a itemprop="item" href="{{ .topicUrl }}">
+            <span itemprop="name">{{ replace .topicTitle "Medigy: " ""}}</span></a>				
+            <meta itemprop="position" content="1" />        
+           </li>
+           <li class="breadcrumb-item">            
+            <span itemprop="name">{{ .type }}</span>
+            <meta itemprop="position" content="1" />        
+           </li>
+    {{ else }} 
+    {{ $siteData := $.context.Site.Data.communities }}     
+    {{ range $siteData }}
+    {{ $length := (len .breadcrumb ) }}     
+    {{ range $elem_index, $breadcrumb := .breadcrumb  }}
+    
+        {{ if ne $elem_index (sub $length 1) }}
+        <li class="breadcrumb-item">
+            <a itemprop="item" href="{{ $breadcrumb.breadcrumbLink }}">
+            <span itemprop="name">{{ $breadcrumb.breadcrumbLabel }}</span></a>
+            <meta itemprop="position" content="1" />        
+        </li>
+        {{else}}
+            <li class="breadcrumb-item active" aria-current="page">{{ $breadcrumb.breadcrumbLabel }}</li>
+        {{ end }}
+    {{ end }}
+    {{ end }}   
+    {{ end }}
+   
+  </nav>
+      <div id="es_total" class="pull-right" style="display:none"></div>
+</div>
+</div>
+</div>

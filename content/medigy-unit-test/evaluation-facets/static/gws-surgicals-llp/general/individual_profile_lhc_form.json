@@ -1,0 +1,229 @@
+{
+  "name": "Individual (Owner/Representative) Profile",
+  "items": [
+    {
+      "question": "Token",
+      "questionCodeSystem": "Custom",
+      "questionCode": "token-token",
+      "localQuestionCode": "token-token",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "0",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "ST",
+      "noEmptyValue": true
+    },
+    {
+      "question": "Your Name",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-01",
+      "localQuestionCode": "001-01-01",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "ST"
+    },
+    {
+      "question": "Are you a healthcare professional?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-02",
+      "localQuestionCode": "001-01-02",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "CNE",
+      "answers": [
+        {
+          "text": "Yes",
+          "code": "001-01-02-01"
+        },
+        {
+          "text": "No",
+          "code": "001-01-02-02"
+        }
+      ]
+    },
+    {
+      "question": "Profession and Identifier",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-03",
+      "localQuestionCode": "001-01-03",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "ST",
+      "skipLogic": {
+        "action": "show",
+        "logic": "ANY",
+        "conditions": [
+          {
+            "source": "001-01-02",
+            "trigger": {
+              "code": "001-01-02-01"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "question": "Profile Photo",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-04",
+      "localQuestionCode": "001-01-04",
+      "codingInstructions": "To attach a file to this question, select a file from the list of files shown in the drop down menu. To add a new document/file use Attach Files feature",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "CNE",
+      "FILEUPLOAD": true
+    },
+    {
+      "question": "Date of birth",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-05",
+      "localQuestionCode": "001-01-05",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "DT"
+    },
+    {
+      "question": "Language",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-06",
+      "localQuestionCode": "001-01-06",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "ST"
+    },
+    {
+      "question": "Email",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-07",
+      "localQuestionCode": "001-01-07",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "EMAIL"
+    },
+    {
+      "question": "Mobile",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-08",
+      "localQuestionCode": "001-01-08",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "PHONE"
+    },
+    {
+      "question": "Source of Invitation",
+      "questionCodeSystem": "Custom",
+      "questionCode": "Q002-10",
+      "localQuestionCode": "Q002-10",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "CNE",
+      "externallyDefined": "https://proxy.ontology.attest.cloud/api/v1/sourceofinvitation/search"
+    },
+    {
+      "question": "I agree with Terms and Conditions",
+      "questionCodeSystem": "Custom",
+      "questionCode": "001-01-10",
+      "localQuestionCode": "001-01-10",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "header": false,
+      "editable": "1",
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "dataType": "BL"
+    }
+  ],
+  "templateOptions": {
+                "obrHeader": false,
+                "hideUnits": true,
+                "hideHeader": true,
+                "allowHTMLInInstructions": true,
+                "allowMultipleEmptyRepeatingItems": false,
+                "showFormHeader": false,
+                "showColumnHeaders": false,
+                "hideFormControls": true
+            }
+
+}

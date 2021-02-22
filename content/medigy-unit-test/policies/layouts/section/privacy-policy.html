@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "privacy-policy"}}
+  <body class="single-body">
+
+<!-- Google Tag Manager (noscript) -->
+<div id="g-tag-body">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</div>
+    <!-- End Google Tag Manager (noscript) -->
+      
+    {{ partialCached "nav-bar.html" . "privacy-policy"}}
+    <section class="about-wrapper">
+<div class="container">
+    <main class="">
+      <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+        <header class="post-header">
+        {{ partialCached "bread-crumb.html" . "privacy-policy"}}
+        	<h1 class="post-title">{{ .Params.title }}</h1>
+         
+        </header>
+        {{ if ne .Params.featuredimage "Nil" }}
+          <!--  <div class=""><a href="https://thehcbiz.com/decision-support-for-selecting-digital-health-tools/" target="blank"><img src="/img/Medigy-Decision-Support-for-Selecting-Digital-Health-Tools-Podcast.png" class="img-responsive mb-2" /></a></div>-->
+        {{ end }}
+
+        {{  .Content  | safeHTML}}
+       
+      </article>
+    
+    </main>
+</div>
+  </section>
+ {{ partialCached "footer.html" . }}  
+  </body>
+</html>

@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Population Health" 
+ classname:  "OWLClass_5f0ef258_75ea_4a86_bf7f_9826ff92b6ce" 
+ label: "Population Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['KLAS: Value-Based Care Consulting','HIMSS: Population and Public Health','Healthcare IT News: Population Health','Symplur: -hash-PopulationHealth','KLAS: Clinical Surveillance','Healthcare IT News: Population Risk & Quality Management','Symplur: -hash-PopHealth','Medigy: Population Health Management','Medigy: Population Health','Frost & Sullivan: Population Health Management (PHM)'] 
+ collections: ['KLAS: Population Health']
+ aliases:  "/topic/klas-population-health"  
+ searchCategory: "topic" 
+---
+UG9wdWxhdGlvbiBIZWFsdGggTWFuYWdlbWVudCBjYW4gYmUgZGVmaW5lZCBhcyB0aGUgY29sbGVjdGlvbiBvZiBjbGluaWNhbCBkYXRhIG9mIHBhdGllbnRzIHRocm91Z2ggbXVsdGlwbGUgaGVhbHRoIGluZm9ybWF0aW9uIHRlY2hub2xvZ3kgcmVzb3VyY2VzLCBmb2xsb3dlZCBieSB0aGUgYW5hbHlzaXMgb2YgdGhhdCBkYXRhIGludG8gYSBzaW5nbGUsIGFjdGlvbmFibGUgcGF0aWVudCByZWNvcmQsIGFuZCB0aGUgYWN0aW9ucyB0aHJvdWdoIHdoaWNoIGhlYWx0aCBjYXJlIHByb3ZpZGVycyBjYW4gZGV2ZWxvcCBib3RoIGNsaW5pY2FsIGFuZCBmaW5hbmNpYWwgb3V0Y29tZXMuIFBvcHVsYXRpb24gSGVhbHRoIE1hbmFnZW1lbnQgc29sdXRpb25zIGhlbHAgaW4gYW5hbHl0aWNzIGFuZCBjYXJlIG1hbmFnZW1lbnQgZnVuY3Rpb25zIHdoaWNoIGluIHR1cm4gYXNzaXN0IGluIHVuZGVyc3RhbmRpbmcsIGFuYWx5emluZywgYW5kIHByb2FjdGl2ZWx5IG1hbmFnaW5nIHBhdGllbnQgcG9wdWxhdGlvbnMuIFBvcHVsYXRpb24gSGVhbHRoIGZhY2lsaXRhdGUgdGhlIGV4Y2hhbmdlIG9mIHBhdGllbnQgaW5mb3JtYXRpb24gZm9yIGFuYWx5emluZyBhbmQgYXNzZXNzaW5nIGEgcGF0aWVudOKAmXMgYWN1aXR5IGFuZCByaXNrIG9mIGhvc3BpdGFsIGFkbWlzc2lvbiBiZXNpZGVzIHRoZSBmaW5hbmNpYWwgcmlzayBhc3NvY2lhdGVkIHdpdGggb25nb2luZyBwYXllciBjb250cmFjdHMuIFBvcHVsYXRpb24gaGVhbHRoIHNvbHV0aW9ucyBpbmNsdWRlIHNlcnZpY2VzIHRoYXQgYXJlIG1vc3RseSBjZW50ZXJlZCBhcm91bmQgc2hpZnRpbmcgcGF5bWVudCBtb2RlbHMgYW5kIHZhbHVlIGJhc2VkIGNhcmUu

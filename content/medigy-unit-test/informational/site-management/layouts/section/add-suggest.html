@@ -1,0 +1,3056 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "add-suggest-key"}}
+<script>
+  
+  var personid = getCookie('personid');
+  if (personid == null) {
+    setCookie('prevPage','/add-suggest');
+      window.location.href = '/login';
+  }
+</script>
+<link rel="stylesheet" href="/css/select2.min.css" />
+<script type="text/javascript" src="/js/select2.min.js"></script>
+<script type="text/javascript" src="/js/validations/validate.js"></script>
+<script>
+  var delete_cookie = function (name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+  };
+  function base64EncodeUnicode(str) {
+    utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    });
+    return btoa(utf8Bytes);
+  }
+  function is_url(str) {
+    regexp = /^(?:(?:https?):\/\/)?(?:(?!(?:10|127)(?:\.\d{1,3}){3})(?!(?:169\.254|192\.168)(?:\.\d{1,3}){2})(?!172\.(?:1[6-9]|2\d|3[0-1])(?:\.\d{1,3}){2})(?:[1-9]\d?|1\d\d|2[01]\d|22[0-3])(?:\.(?:1?\d{1,2}|2[0-4]\d|25[0-5])){2}(?:\.(?:[1-9]\d?|1\d\d|2[0-4]\d|25[0-4]))|(?:(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]-*)*[a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})?(?:\/\S*)?$/;
+    if (regexp.test(str)) {
+
+      return true;
+    }
+    else
+      return false;
+  }
+ 
+  $(document).ready(function () {
+      
+     
+
+
+      $('a[data-toggle="tab"]').on('show.bs.tab', function(e) {
+          localStorage.setItem('activeaddTab', $(e.target).attr('href'));
+          var selected = $(e.target).attr('href');
+      });
+      var activeaddTab = localStorage.getItem('activeaddTab');
+      if(activeaddTab){
+          $('#myTab a[href="' + activeaddTab + '"]').tab('show');
+      }
+      else{
+          $('a[href="' + "#offering" + '"]').addClass( "active" );
+      }
+      $('.infoTooltip').on('click', function () {
+        var tooltipId = '#' + $(this).attr('data-id');
+        $(tooltipId).show();
+      });
+      $(document).on("click", function (event) {
+        if (!$(event.target).closest(".infoTooltip").length) {
+          $.each($(".infoTooltip"), function () {
+            var tooltipId = '#' + $(this).attr('data-id');
+            $(tooltipId).hide();
+          });
+        }
+        if (!$(event.target).closest(".hl7message").length) {
+          $('#hl7InfoMessageBox').hide();
+        }
+      });
+      $('.hl7message').on('click', function () {
+        $('#hl7InfoMessageBox').show()
+      });
+      $(document).on("click", function (event) {
+        if (!$(event.target).closest(".hl7message").length) {
+          $('#hl7InfoMessageBox').hide();
+        }
+      });
+      $('.submitButtonOverlay').click(function () {
+        if ($("#addProduct").attr("disabled"))
+          $('#submitInfoMessageBox').show();
+      });
+      $(document).on("click", function (event) {
+        if (!$(event.target).closest(".submitButtonOverlay").length) {
+          if ($("#addProduct").attr("disabled"))
+            $('#submitInfoMessageBox').hide();
+        }
+      });     
+      $('#link').on('focusout', function (e) {
+        if ( $('#link').val()!="") {
+           if (is_url($('#link').val()) && $('#link').val()!="") {
+          $('.validLink').hide();
+          }
+          else {
+            $('.validLink').show();
+          }
+        }
+      });
+      $('#addNewsUrl').on('focusout', function (e) {
+        if (is_url($('#addNewsUrl').val()) && $('#addNewsUrl').val()!='') {        
+          $('.validLinkNews').hide();       
+        }
+        else {       
+          $('.validLinkNews').show();       
+        }
+      });
+      $('#addEventUrl').on('focusout', function (e) {
+        if (is_url($('#addEventUrl').val()) && $('#addEventUrl').val()!='') {        
+          $('.validLinkEvent').hide();       
+        }
+        else {       
+          $('.validLinkEvent').show();       
+        }
+      });
+      $('#addAwardUrl').on('focusout', function (e) {
+        if (is_url($('#addAwardUrl').val()) && $('#addAwardUrl').val()!='') {        
+          $('.validLinkAward').hide();       
+        }
+        else {       
+          $('.validLinkAward').show();       
+        }
+      });
+      $('#addFeedUrl').on('focusout', function (e) {
+        if (is_url($('#addFeedUrl').val()) && $('#addFeedUrl').val()!='') {        
+          $('.validLinkFeed').hide();       
+        }
+        else {       
+          $('.validLinkFeed').show();       
+        }
+      });
+      $('#addTopicUrl').on('focusout', function (e) {
+        if (is_url($('#addTopicUrl').val()) && $('#addTopicUrl').val()!='' ) {        
+          $('.validLinkTopic').hide();       
+        }
+        else {       
+          $('.validLinkTopic').show();       
+        }
+      });
+      $('#addVideoUrl').on('focusout', function (e) {
+        if (is_url($('#addVideoUrl').val()) && $('#addVideoUrl').val()!='') {        
+          $('.validLinkVideo').hide();       
+        }
+        else {       
+          $('.validLinkVideo').show();       
+        }
+      });
+      $('#addInfographicsUrl').on('focusout', function (e) {
+        if (is_url($('#addInfographicsUrl').val())  && $('#addInfographicsUrl').val()!='') {        
+          $('.validLinkInfographics').hide();       
+        }
+        else {       
+          $('.validLinkInfographics').show();       
+        }
+      });
+      $('#addIdeaUrl').on('focusout', function (e) {
+        if (is_url($('#addIdeaUrl').val())  && $('#addIdeaUrl').val()!='') {        
+          $('.validLinkIdea').hide();       
+        }
+        else {       
+          $('.validLinkIdea').show();       
+        }
+      });
+      $('#facebook').on('focusout', function (e) {
+        if (is_url($('#facebook').val()) && $('#facebook').val()!='') {        
+          $('.validLinkFacebook').hide();       
+        }
+        else {       
+          $('.validLinkFacebook').show();       
+        }
+      });
+      $('#twitter').on('focusout', function (e) {
+        if (is_url($('#twitter').val()) && $('#twitter').val()!='') {        
+          $('.validLinkTwitter').hide();       
+        }
+        else {       
+          $('.validLinkTwitter').show();       
+        }
+      });
+      $('#linkedin').on('focusout', function (e) {
+        if (is_url($('#linkedin').val()) && $('#linkedin').val()!='') {        
+          $('.validLinkLinkedin').hide();       
+        }
+        else {       
+          $('.validLinkLinkedin').show();       
+        }
+      });
+      $('#instagram').on('focusout', function (e) {
+        if (is_url($('#instagram').val()) && $('#instagram').val()!='') {        
+          $('.validLinkInstagram').hide();       
+        }
+        else {       
+          $('.validLinkInstagram').show();       
+        }
+      });
+        $('#githubUrl').on('focusout', function (e) {
+        if (is_url($('#githubUrl').val()) && $('#githubUrl').val()!='') {        
+          $('.validLinkGit').hide();       
+        }
+        else {       
+          $('.validLinkGit').show();       
+        }
+      });
+      $('#category').select2();
+      $('#category-news').select2();
+      $('#category-events').select2();
+      $('#category-feeds').select2();
+      $('#category-awards').select2();
+      $('#category-videos').select2();
+      $('#category-infographics').select2();
+      $('#communityOffering').select2();
+      $('#ccm-news-topic').select2();
+      $('#ccm-events-topic').select2();
+      $('#ccm-feeds-topic').select2();
+      $('#ccm-awards-topic').select2();
+      $('#ccm-videos-topic').select2();
+      $('#ccm-infographics-topic').select2();
+      var sentence = '';
+      $('#description').click(function () {
+        var catSelectedValues = $("#category").val();
+        if (catSelectedValues.length > 0) {
+          var keyValue = '';
+          for (let i = 0; i < catSelectedValues.length; i++) {
+            var splittedOption = catSelectedValues[i].split('$,');
+            keyValue += '"' + splittedOption[1] + '",';
+            sentence = keyValue.replace(/(.+),$/, '$1');
+          }
+          console.log("{\"operationName\":\"getEqualentCollections\",\"variables\":{\"collectionName\":[" + sentence + "]},\"query\":\"query getEqualentCollections($collectionName: [String]!) {\\n  equalentCollections(collectionName: $collectionName) {\\n    classname\\n    label\\n    parentclassname\\n    parentclasslabel\\n  }\\n}\\n\"}");
+          var tagArrayRelatedCategory = '';
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.OWLApiUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/json",
+              "Accept": "*//*",
+              "Cache-Control": "no-cache",
+              "Host": "{{ $.Site.Params.OWLApiUrl }}",
+              "accept-encoding": "gzip, deflate",
+              "Connection": "keep-alive",
+              "cache-control": "no-cache"
+            },
+            "processData": false,
+            "data": "{\"operationName\":\"getEqualentCollections\",\"variables\":{\"collectionName\":[" + sentence + "]},\"query\":\"query getEqualentCollections($collectionName: [String]!) {\\n  equalentCollections(collectionName: $collectionName) {\\n    classname\\n    label\\n    parentclassname\\n    parentclasslabel\\n  }\\n}\\n\"}"
+          }
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+          let myArray = response.data.equalentCollections;
+          for (let i = 0; i < myArray.length; i++) {
+            tagArrayRelatedCategory += '\n { name:"' + myArray[i].parentclasslabel + ': ' + myArray[i].label + '", key:"' + myArray[i].classname + '"},\n ';
+          }
+          tagArrayRelatedCategory = tagArrayRelatedCategory.replace(/(.+),$/, '$1');
+          
+          $('#relatedCategories').val(tagArrayRelatedCategory);
+        });
+      }
+      else {
+        //alert("Please select the item");
+      }
+    });
+    // To remove nested line break from the description and add HTML single break tag('<br />') starts here    var tagArray = '';
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "{{ $.Site.Params.OWLApiUrl }}?query={getClassHierarchy%28rootClassName:%22Collection%22,searchParam:%22%22%29{parentclassname%20parentclasslabel%20%20classname%20%20%20%20label%20%20%20%20%20subclassname%20%20%20%20%20subclasslabel}}",
+      "method": "GET",
+      "headers": {
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Host": "{{ $.Site.Params.OWLApiUrl }}",
+        "accept-encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "cache-control": "no-cache"
+      }
+    }
+    $.ajax(settings).done(function (response) {
+      let myArray = response.data.getClassHierarchy;
+      var catOption = '';
+      for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i].subclassname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].subclasslabel;
+          var key = myArray[i].subclassname;
+        }
+        else if (myArray[i].classname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].label;
+          var key = myArray[i].classname;
+        }
+        else {
+          var label = myArray[i].parentclasslabel;
+          var key = '';//myArray[i].parentclassname;
+        }
+        catOption += '<option value="' + label + "$," + key + '">' + label + '</option>';
+      }
+      $('#category').html(catOption);
+      $('#category-news').html(catOption);
+      $('#category-events').html(catOption);
+      $('#category-feeds').html(catOption);
+      $('#category-awards').html(catOption); 
+      $('#category-videos').html(catOption);
+      $('#category-infographics').html(catOption);    
+    });
+    var tagArray = '';
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "{{ $.Site.Params.OWLApiUrl }}?query={getClassHierarchy%28rootClassName:%22License%22,searchParam:%22%22%29{parentclassname%20parentclasslabel%20%20classname%20%20%20%20label%20%20%20%20%20subclassname%20%20%20%20%20subclasslabel}}",
+      "method": "GET",
+      "headers": {
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Host": "{{ $.Site.Params.OWLApiUrl }}",
+        "accept-encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "cache-control": "no-cache"
+      }
+    }
+    $.ajax(settings).done(function (response) {
+      let myArray = response.data.getClassHierarchy;
+      var catLicenseOption = '<option value="">Select license</option>';
+      for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i].label != null)
+          catLicenseOption += '<option value="' + myArray[i].parentclasslabel + ': ' + myArray[i].label + '$,' + myArray[i].classname + '">' + myArray[i].parentclasslabel + ': ' + myArray[i].label + '</option>';
+        else if (myArray[i].parentclasslabel != null)
+          catLicenseOption += '<option value="' + myArray[i].parentclasslabel + '$,' + myArray[i].parentclassname + '">' + myArray[i].parentclasslabel + '</option>';
+      }
+      $('#openSourceLicense').html(catLicenseOption);
+    });
+
+    // To remove nested line break from the description and add HTML single break tag('<br />') ends here
+    // To show the hiden fileds in the product details page starts here
+    $('.product-info-details-link').on('click', function (e) {
+      var textDetls = $('.product-info-details-link').html();
+      if (textDetls.indexOf('More') != -1) {
+        $('.product-info-details').show();
+        $('.vendorInfo').show();
+        $('#contactNumber').removeAttr('disabled');
+        $('#organization').removeAttr('disabled');
+        var splittedtext = textDetls.split('More');
+        splittedtext[1] = '<h2><b>Less' + splittedtext[1];
+        $('.product-info-details-link').html('');
+        $('.product-info-details-link').html(splittedtext[1]);
+      }
+      else {
+        $('.product-info-details').hide();
+        if ($("input[name='checkOwner']:checked").val() != true)
+        {
+          $('#organization').val('');
+          $('#contact').val('');
+          $('#contactNumber').val('');
+          $('.vendorInfo').show();
+          $('#contactNumber').removeAttr('disabled');
+          $('#organization').removeAttr('disabled');
+        }
+        var splittedtext = textDetls.split('Less');
+        splittedtext[1] = '<h2><b>More' + splittedtext[1];
+        $('.product-info-details-link').html('');
+        $('.product-info-details-link').html(splittedtext[1]);
+      }
+    });
+    // To show the hiden fileds in the product details page ends here
+    // To show the hiden fileds in the interoperability details page starts here
+    $('.interoperabilityInfoLink').on('click', function (e) {
+      $('.interoperabilityInfo').toggle();
+    });
+    // To show the hiden fileds in the interoperability details page ends here
+    // To show the hiden fileds in the social details page starts here
+    $('.socialInfoLink').on('click', function (e) {
+      $('.socialInfo').toggle();
+    });
+    // To show the hiden fileds in the social details page ends here
+    $('#productFacets').on('submit', function (e) {
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      } else {
+        // everything looks good!
+        e.preventDefault();
+        var personid = getCookie('personid');
+      if (personid != null) {
+        $('#addProductName').removeClass('utf-valid-red');
+        $('#description').removeClass('utf-valid-red');
+        $('#shortDescription').removeClass('utf-valid-red');
+        var fieldname ="";
+        var nameStatus = containsNonLatinCodepoints($("#addProductName").val());
+        var descrStatus = containsNonLatinCodepoints($("#description").val());
+        var shortDescrStatus = containsNonLatinCodepoints($("#shortDescription").val());
+        if (nameStatus == false){
+          fieldname ="Offering name";
+          $('#addProductName').addClass('utf-valid-red');
+        }else if (descrStatus == false){
+          fieldname ="description";
+          $('#description').addClass('utf-valid-red');
+        }else if(shortDescrStatus == false){
+          fieldname ="one liner description";
+          $('#shortDescription').addClass('utf-valid-red');
+        }
+        if(fieldname !=""){
+          $('#productFacetsMessage').html("");
+          $('#productFacetsMessage').removeClass('alert-success');
+          $('#productFacetsMessage').removeClass('alert-primary');
+          $('#productFacetsMessage').html("We found few invalid characters in the " + fieldname + ". If you copy pasted the text directly from the offering website, chances are that few characters may not be in proper Unicode character format and so you will need to copy the text to a plain text or markdown editor, format it properly and then copy paste to the text box. If you use Grammarly, that would be even better to ensure that the description is correct in all aspects.");
+          $('#productFacetsMessage').addClass('alert-danger');
+          $('#productFacetsMessage').show();
+          //$('#addProductName').focus();
+          $('#offering-tab').focus();
+        }
+        else{
+          $('#productFacetsMessage').html("");
+          $('#productFacetsMessage').removeClass('alert-success');
+          $('#productFacetsMessage').removeClass('alert-danger');
+          $('#productFacetsMessage').addClass('alert-primary');
+          var offeringType = $("input[name='offeringItem']:checked").val().toUpperCase();//$('#offeringItem').val().toUpperCase();
+          var offeringTypeMessage = $("input[name='offeringItem']:checked").val();//$('#offeringItem').val();
+          var productName = $('#addProductName').val();
+          productName = productName.replace(/"/g, "'");
+          productName = $.trim(productName);
+          if ($("input[name='checkOwner']:checked").val() != true)
+            var msg_var = 'The ';
+          else
+            var msg_var = 'Your ';
+
+          {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+            {{ range .items }}
+              {{ if eq .questionCode "Add_offering_messages"}}
+                {{ range .answers }}  
+                  {{ if eq .code "waiting_for_submits_the_offering"}}
+                      var waiting_for_submits_the_offering = {{ .text }}
+                  {{ end }}
+                  {{ if eq .code "service_offering_success_message"}}
+                      var submits_the_product_in_add_offering = {{ .text }}
+                  {{ end }}                                          
+                {{ end }}  
+              {{ end }}
+            {{ end }}
+          {{ end }} 
+          var replaceText = waiting_for_submits_the_offering.substr(waiting_for_submits_the_offering.indexOf(" ") + 1);
+          
+          var displ_msg = msg_var + offeringTypeMessage + " <b><i>" + productName + "</i></b> "+replaceText;
+          $('#productFacetsMessage').html(displ_msg);
+          $('#productFacetsMessage').show();
+          $('#addProduct').attr("disabled", "disabled");
+          $('#productProfile').removeClass('active');
+          $('#loader-div').addClass('active');
+          var checkOwner = $("input[name='checkOwner']:checked").val();//$('#checkOwner').val();
+          if($('#category').val()!= null){
+          var categoryArray = $('#category').val();
+          var catCount = categoryArray.length;
+          var category = '';
+          for (i = 0; i < catCount; i++) {
+            var splittedCategory = categoryArray[i].split('$,');
+            category += '\n { name:"' + splittedCategory[0] + '", key:"' + splittedCategory[1] + '"},\n ';
+          }
+         }
+         else{
+            category = '\n { name:"", key:""},\n ';
+         } 
+          var shortDescription = $('#shortDescription').val();
+          shortDescription = shortDescription.replace(/%/g, "percentage");
+          shortDescription = base64EncodeUnicode(shortDescription);
+          var featureProduct = $('#featureProduct').val();
+          var createdOn = $('#createdOn').val() + 'T00:00:00+00:00';
+          var link = $('#link').val();
+          link = link.replace(/"/g, "'");
+          //var businessModel = $('#businessModel').val();         
+          var licenseArray = $('#openSourceLicense').val();
+           if (licenseArray.length > 0){
+             var splittedLicense = licenseArray.split('$,');
+             var license = '{ key:"' + splittedLicense[1] + '", name:"' + splittedLicense[0] + '"}';
+           }else{
+                var license = '{ key:"", name:""}';
+           }                
+          var githubUrl = $('#githubUrl').val();
+          githubUrl = githubUrl.replace(/"/g, "'");
+          var description = $('#description').val();
+          description = description.replace(/%/g, "percentage");
+          description = base64EncodeUnicode(description);
+          var organization = $('#organization').val();
+          organization = organization.replace(/"/g, "'");
+          if ($("input[name='checkOwner']:checked").val() != true){
+            var contact = $('#contact').val().trim();
+          contact = contact.replace(/"/g, "'");
+          }
+          else  
+          var contact = "";
+          var permalink = $('#permalink').val();
+          permalink = permalink.replace(/"/g, "'");
+          var mediaUrl = ''; //$('#mediaUrl').val();
+          var media = ''; //$('#media').val();
+          var facebook = '';
+          var twitter = '';
+          var linkedin = '';
+          var instagram = '';        
+          var facebook = $('#facebook').val();
+          facebook = facebook.replace(/"/g, "'");
+          var twitter = $('#twitter').val();
+          twitter = twitter.replace(/"/g, "'");
+          var linkedin = $('#linkedin').val();
+          linkedin = linkedin.replace(/"/g, "'");
+          var instagram = $('#instagram').val();
+          instagram = instagram.replace(/"/g, "'");
+          var sessionId = getCookie('sessionId');
+          var hitStandards = '';
+          $.each($("input[name='hitStandards']:checked"), function () {
+            hitStandards += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          var fhirVersion = '';
+          $.each($("input[name='fhirVersion']:checked"), function () {
+            fhirVersion += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          var fhriResourceSupport = '';
+          $.each($("input[name='fhriResourceSupport']:checked"), function () {
+            fhriResourceSupport += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          var hl7message = '';
+          $.each($("input[name='hl7message']:checked"), function () {
+            hl7message += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          var hl7version = '';
+          $.each($("input[name='hl7version']:checked"), function () {
+            hl7version += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          //var cdaversionArray = $('#cdaversion').val();
+          var cdaversion = '';
+          $.each($("input[name='cdaversion']:checked"), function () {
+            cdaversion += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          var ccowversion = '';
+          $.each($("input[name='ccowversion']:checked"), function () {
+            ccowversion += '\n { name:"' + $(this).val() + '"}\n ';
+          });
+          
+          
+          var vendorName = $('#vendorName').val();
+          var vendorContact = $('#contactNumber').val();
+          var vendorEmail = $('#contact').val();
+
+          
+          var offeringOrganizationContact = $('#contactNumber').val();
+          var offeringOrganizationEmail = $('#contact').val();
+
+          var ownerchck = $("input[name='checkOwner']:checked").val();      
+          if ( ownerchck == "true"){ // Yes Onwer
+            if(vendorEmail ==""){
+              var tenantId = $('#tenantId').val();
+              var offeringTenantDetails = '\n   offeringOwnerTenant:\"' + tenantId + '\"\n';
+             }
+             else{
+                var offeringTenantDetails = '\n   offeringTenantDetails:{\n      companyName:\"' + organization + '\"\n      workEmail:\"' + contact + '\"\n      ownerType:\"\"\n      companyType:\"\"\n      website:\"\"\n      workPhone:\"' + vendorContact + '\"\n    }\n'       
+             }           
+          }
+          else {
+               // var tenantId = $('#tenantId').val();
+               // if(tenantId == ""){
+                  var tenantId = 42;
+               // }                       
+                var offeringTenantDetails = '\n   offeringOwnerTenant:\"' + tenantId + '\"\n';
+          }
+
+        
+         
+          // if (vendorEmail == '')
+          //   vendorEmail = getCookie('userEmail');
+          var userEmail = getCookie('userEmail');
+          var firstName = getCookie('firstname');
+          var personid = getCookie('personid');
+          var file_details = $("#file_details").val();
+          var recognitionCount = $('#RecognitionCount').val();
+          var recognition = 'offeringRecognitionsAndAwards:[';
+          for (i = 0; i < recognitionCount; i++) {
+            recognition += '{'
+          }         
+          var response = grecaptcha.getResponse(recaptchaCommon);
+          console.log(response);
+          if (response.length == 0) {
+            $('.captcha-message-common').show();
+            $('#productFacetsMessage').removeClass('alert-success');
+            $('#productFacetsMessage').removeClass('alert-primary');
+            $('#productFacetsMessage').html("Please verify the captcha.");
+            $('#productFacetsMessage').addClass('alert-danger');
+            $('#addProduct').prop("disabled", false);
+            $('#productProfile').addClass('active');
+            $('#loader-div').removeClass('active');
+            return false;
+          }
+          else {
+            $('.captcha-message-common').hide();
+            $('#addProduct').prop('disabled', true);
+          }
+          var relatedCategory = $('#relatedCategories').val();
+          if (relatedCategory == null) {
+            var catSelectedValues = $("#category").val();
+            if (catSelectedValues.length > 0) {
+              var keyValue = '';
+              for (let i = 0; i < catSelectedValues.length; i++) {
+                var splittedOption = catSelectedValues[i].split('$,');
+                keyValue += '"' + splittedOption[1] + '",';
+                sentence = keyValue.replace(/(.+),$/, '$1');
+              }              
+              console.log("{\"operationName\":\"getEqualentCollections\",\"variables\":{\"collectionName\":[" + sentence + "]},\"query\":\"query getEqualentCollections($collectionName: [String]!) {\\n  equalentCollections(collectionName: $collectionName) {\\n    classname\\n    label\\n    parentclassname\\n    parentclasslabel\\n  }\\n}\\n\"}");
+              var tagArrayRelatedCategory = '';
+              var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "{{ $.Site.Params.OWLApiUrl }}",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/json",
+                  "Accept": "*//*",
+                  "Cache-Control": "no-cache",
+                  "Host": "{{ $.Site.Params.OWLApiUrl }}",
+                  "accept-encoding": "gzip, deflate",
+                  "Connection": "keep-alive",
+                  "cache-control": "no-cache"
+                },
+                "processData": false,
+                "data": "{\"operationName\":\"getEqualentCollections\",\"variables\":{\"collectionName\":[" + sentence + "]},\"query\":\"query getEqualentCollections($collectionName: [String]!) {\\n  equalentCollections(collectionName: $collectionName) {\\n    classname\\n    label\\n    parentclassname\\n    parentclasslabel\\n  }\\n}\\n\"}"
+              }
+              $.ajax(settings).done(function (response) {
+                console.log(response);
+                let myArray = response.data.equalentCollections;
+                for (let i = 0; i < myArray.length; i++) {
+                  tagArrayRelatedCategory += '\n { name:"' + myArray[i].parentclasslabel + ': ' + myArray[i].label + '", key:"' + myArray[i].classname + '"},\n ';
+                }
+                tagArrayRelatedCategory = tagArrayRelatedCategory.replace(/(.+),$/, '$1');
+                relatedCategory = tagArrayRelatedCategory;
+              });
+            }
+            else {
+              //alert("Please select the item");
+            }
+          }
+          var offeringCommunity = "";
+          var offeringProjectName = ""; 
+          var communityUrlArray = getUrlVars();
+          if("community" in communityUrlArray)
+          {
+              if(getUrlVars()['community'] != null)
+              {
+                var communityOfferingArray = $('#communityOffering').val().split(':');
+                offeringCommunity = communityOfferingArray[0];
+                offeringProjectName = communityOfferingArray[1];
+              }
+          }
+          console.log("mutation{\n  addOffering(offering:{" + offeringTenantDetails + "   offeringType:" + offeringType + "\n    offeringName:\"" + productName + "\"\n    offeringCommunity:\"" + offeringCommunity + "\"\n    offeringProjectName:\"" + offeringProjectName + "\"\n    offeringCreatedOn:\"" + createdOn + "\" \n    offeringOwnerCheck: " + checkOwner + "\n    offeringDescription:\"" + description + "\"\n    offeringShortDescription:\"" + shortDescription + "\"\n    offeringOrganization:\"" + organization + "\"\n  offeringOrganizationEmail:\"" + offeringOrganizationEmail + "\"\n offeringOrganizationContact:\"" + offeringOrganizationContact + "\"\n   offeringVendorEmail:\"" + vendorEmail + "\"\n  offeringVendorName:\"" + vendorName + "\"\n   offeringVendorContact:\"" + vendorContact + "\"\n offeringWebsite:\"" + link + "\"\n    offeringLicense:" + license + "\n    offeringGitRepoLink:\"" + githubUrl + "\"\n    offeringHealthItStandards:[ \n " + hitStandards + "\n    ]\n    offeringFhirVersions:[\n      " + fhirVersion + "\n]\n    offeringFhirSupportedResources:[\n" + fhriResourceSupport + "\n    ]\n     offeringHl7Versions:[\n" + hl7version + "\n    ]\n   offeringHl7SupportedMessages:[\n" + hl7message + "\n    ]\n       offeringCdaVersions:[\n" + cdaversion + "\n    ]\n       offeringCcowVersions:[\n" + ccowversion + "\n    ]\n    offeringCategories:[\n" + category + "\n    ]\n  offeringRelatedCategories:[\n" + relatedCategory + "\n    ]\n   offeringFacebookPage:\"" + facebook + "\"\n    offeringTwitterPage:\"" + twitter + "\"\n    offeringLinkedInPage:\"" + linkedin + "\"\n    offeringInstagramPage:\"" + instagram + "\"\n   },authorization:{\n    sessionID:\"" + sessionId + "\"\n  },sourceOfInvitation:{\n    name:\"Medigy: Website Invite\"\n    key:\"medigy\"\n  }\n){\n    status\n    message\n    errorCode\n  }\n}");
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "cache-control": "no-cache"
+            },
+            "data": {
+              "query": "mutation{\n  addOffering(offering:{" + offeringTenantDetails + "   offeringType:" + offeringType + "\n    offeringName:\"" + productName + "\"\n    offeringCommunity:\"" + offeringCommunity + "\"\n    offeringProjectName:\"" + offeringProjectName + "\"\n    offeringCreatedOn:\"" + createdOn + "\" \n    offeringOwnerCheck: " + checkOwner + "\n    offeringDescription:\"" + description + "\"\n    offeringShortDescription:\"" + shortDescription + "\"\n    offeringOrganization:\"" + organization + "\"\n  offeringOrganizationEmail:\"" + offeringOrganizationEmail + "\"\n offeringOrganizationContact:\"" + offeringOrganizationContact + "\"\n   offeringVendorEmail:\"" + vendorEmail + "\"\n  offeringVendorName:\"" + vendorName + "\"\n   offeringVendorContact:\"" + vendorContact + "\"\n offeringWebsite:\"" + link + "\"\n    offeringLicense:" + license + "\n    offeringGitRepoLink:\"" + githubUrl + "\"\n    offeringHealthItStandards:[ \n " + hitStandards + "\n    ]\n    offeringFhirVersions:[\n      " + fhirVersion + "\n]\n    offeringFhirSupportedResources:[\n" + fhriResourceSupport + "\n    ]\n     offeringHl7Versions:[\n" + hl7version + "\n    ]\n   offeringHl7SupportedMessages:[\n" + hl7message + "\n    ]\n       offeringCdaVersions:[\n" + cdaversion + "\n    ]\n       offeringCcowVersions:[\n" + ccowversion + "\n    ]\n    offeringCategories:[\n" + category + "\n    ]\n  offeringRelatedCategories:[\n" + relatedCategory + "\n    ]\n   offeringFacebookPage:\"" + facebook + "\"\n    offeringTwitterPage:\"" + twitter + "\"\n    offeringLinkedInPage:\"" + linkedin + "\"\n    offeringInstagramPage:\"" + instagram + "\"\n   },authorization:{\n    sessionID:\"" + sessionId + "\"\n  },sourceOfInvitation:{\n    name:\"Medigy: Website Invite\"\n    key:\"medigy\"\n  }\n){\n    status\n    message\n    errorCode\n  }\n}"
+            }
+          }
+          var status = "Failed";
+          $.ajax(settings).done(function (response) {
+            console.log(response);            
+            $("#responseId").val(response.data.addOffering.message);
+           
+           // $("#productFacets").append("<input type='hidden' id='responseId' value='"+response.data.addOffering.message+"'>");
+            if (response.data.addOffering.status == "SUCCESS") {
+             var media_exist= $('#media').prop('files')[0];    
+             var logo_exist= $('#logo_media').prop('files')[0];  
+             var addofferingName = $('#addProductName').val();       
+             addofferingName = addofferingName.replace(/[^a-z0-9\s]/gi, '').replace(/[_\s]/g, '-');
+             addofferingName = addofferingName.toLowerCase();  
+             var projectdataId = $("#responseId").val();  
+             var imgName='';
+             if(typeof (media_exist) != "undefined"){ 
+               if(projectdataId){
+                  imgName= projectdataId+'.png';  
+                  var content = $("#featured_img").val();
+                  mediaUpload(imgName,content).then(function(featuredResult){
+                    console.log("success featured image")
+                     if(typeof (logo_exist) != "undefined"){ 
+                    imgName= projectdataId+'-logo.png';
+                    var content = $("#logo_img").val();
+                    mediaUpload(imgName,content).then(function(logoResult){
+                      console.log("success logo image");
+                    })
+                     }
+                  })
+               }else{
+                  imgName= addofferingName+'.png';  
+                  var content = $("#featured_img").val();
+                  mediaUpload(imgName,content).then(function(featuredResult){
+                    console.log("success featured image")
+                     if(typeof (logo_exist) != "undefined"){ 
+                    imgName= addofferingName+'-logo.png';
+                    var content = $("#logo_img").val();
+                    mediaUpload(imgName,content).then(function(logoResult){
+                      console.log("success logo image");
+                    })
+                     }
+                  })
+              }
+             } 
+              else{
+                  if(typeof (logo_exist) != "undefined"){
+                    if(projectdataId){
+                      imgName= projectdataId+'-logo.png';
+                      var content = $("#logo_img").val();
+                      mediaUpload(imgName,content).then(function(logoResult){
+                          console.log("success logo image");
+                      })
+                    } else{
+                       imgName= addofferingName+'-logo.png';
+                       var content = $("#logo_img").val();
+                      mediaUpload(imgName,content).then(function(logoResult){
+                          console.log("success logo image");
+                      })
+                    }                   
+                    }
+              }
+              //$("#productFacets")[0].reset();
+              $('#productFacetsMessage').html("");
+              $('#productFacetsMessage').removeClass('alert-danger');
+              $('#productFacetsMessage').removeClass('alert-primary');            
+              
+              //submits_the_product_in_add_offering
+              text = submits_the_product_in_add_offering.replace("<loaderMsgPrefix>", msg_var + offeringTypeMessage + " <b><i>" + productName + "</i></b/>");
+              text = text.replace("<offering_name>", "<b><i>" + productName + "</i></b>");
+              text = text.replace("<mail_id>", "<b><i>" + userEmail + "</i></b>");
+              text = text.replace("<admin-email>", "<b><a href='mailto:admin@medigy.com?subject=[Netspective Medigy] Question about \"" + productName + "\" SID  \"<submissionid>\"' target='blank'>e-mail</a></b>");
+              text = text.replace("<admin-phone>", "<b>+1 202 660-1351</b>");
+              text = text.replace("<submission-id>", "<b>" + response.data.addOffering.message + "</b>");
+              text = text.replace("<submissionid>", response.data.addOffering.message );
+              text = text.replace("<line-break>", "<br /><br />");
+              //text = submits_the_product_in_add_offering.replace("<offeringNameType>", " <b><i> + productName + "</i></b>");
+              var displ_succ_msg = msg_var + offeringTypeMessage + " <b><i>" + productName + "</i></b/> has being submitted.<br /><br /> Our expert panel will review <b><i>" + productName + "</i></b> and notify you at <b><i>" + userEmail + "</i></b> when it's been published on the site. If you have questions in the meantime, please contact us via <b><a href='mailto:admin@medigy.com?subject=[Netspective Medigy] Question about \"" + productName + "\" SID  target='blank'>e-mail</a></b> or <b>+1 202 660-1351</b>. You can use Submission ID <b>n</b> as reference.";
+              //$('#productFacetsMessage').html("Your Offering is successfully saved. Our expert panel will review and publish your Offering and notify you when available on our site. Thank you..");
+              $('#category').select2();
+              $('#productFacetsMessage').html(text);
+              $('#productFacetsMessage').addClass('alert-success');
+              $('#addProduct').prop("disabled", false);
+              $('#productProfile').addClass('active');
+              $('#loader-div').removeClass('active');
+              $("#category").val('').trigger('change');  // Deselect "select2" plugin for categories
+              $('.select2').css("width", "100%"); // reset the select2 width 100%
+              grecaptcha.reset(recaptchaCommon); // to reset the reCaptcha
+              $('#offering-tab').focus();
+              status = "Success";
+              $("#productFacets")[0].reset();
+              $("#basicOffering").css("opacity", " 0.2");
+              $("#ownerDiv").css("opacity", " 0.2");
+              $("#moreAboutOffering").css("display", "none");
+              $("#socialPresence").css("display", "none");
+              $(".vendorInfo").css("display", "none");
+              $("#tenantDetailDiv").css("display", "none");
+              $('.captcha-message-common').hide();
+              $('#addProduct').prop('disabled', true);
+            }
+            else {
+              $('#productFacetsMessage').html("");
+              $('#productFacetsMessage').removeClass('alert-success');
+              $('#productFacetsMessage').removeClass('alert-primary');
+              $('#productFacetsMessage').html("This Offering is not created. " + response.data.addOffering.message);
+              $('#productFacetsMessage').addClass('alert-danger');
+              $('#addProduct').prop("disabled", false);
+              $('#productProfile').addClass('active');
+              $('#loader-div').removeClass('active');
+              $('#offering-tab').focus();
+              status = "Failure:{" + response.data.addOffering.message + "}";
+            }
+            var userName = getCookie('userEmail');
+            if (response.data.addOffering.message == "Could not authenticate the session. Please try again.") {
+              $('#productFacetsMessage').html("Unfortunately your session has expired and the offering could not be created. We require you to log in again and submit the offering.");
+              delete_cookie('firstname');
+              delete_cookie('personid');
+              $('#userlogout').hide();
+              $('#userlogin').show();
+              $("#sessionname").html('');
+              $("#sessionname").hide();
+              $(".addoffer-col").removeClass("loggedinoffer");
+              callLogin();
+            }
+            $('#productFacetsMessage').show();
+            gtmAddOffering(status, userName, productName);
+          });
+	      }     
+      }
+      else {
+          $('#productFacetsMessage').html("");
+          $('#productFacetsMessage').removeClass('alert-success');
+          $('#productFacetsMessage').removeClass('alert-primary');
+          $('#productFacetsMessage').html("This Offering is not created. Your session is expired.Please try again after login.");
+          $('#productFacetsMessage').addClass('alert-danger');
+          $('#addProduct').prop("disabled", false);
+          $('#productProfile').addClass('active');
+          $('#loader-div').removeClass('active');
+          $('#offering-tab').focus();
+          $('#userlogout').hide();
+          $('#userlogin').show();
+          $(".addoffer-col").removeClass("loggedinoffer");
+          var productName = $('#addProductName').val();
+          status = "Failure:{Cookie expired}";
+          var userName = getCookie('userEmail');
+          gtmAddOffering(status, userName, productName);
+          callLogin();
+        }
+      }
+    });
+    function gtmAddOffering(status, userName, productName) {
+      console.log(productName + '-' + userName + '-' + status);
+      window.dataLayer.push({
+        'gtmOfferingTitle': productName,
+        'gtmUserName': userName,
+        'gtmOfferingStatus': status,
+        'event': 'addOffering'
+      });
+    }
+    $("#media").change(function() {
+      var reader = new FileReader();
+      reader.readAsDataURL(this.files[0]);
+      reader.onload = function(e) {    
+        var content =e.target.result;         
+        const base64 = content.split('base64,').pop();
+        $("#featured_img").val(base64) ;   
+      }
+    });
+    $("#logo_media").change(function() {
+      var reader = new FileReader();
+      reader.readAsDataURL(this.files[0]);
+      reader.onload = function(e) {
+       var content =e.target.result;         
+       const base64 = content.split('base64,').pop();
+       $("#logo_img").val(base64) ;   
+      }
+    });
+    //media upload
+    // function mediaUpload(imgtype){
+    const convertToBase64= function (path) {
+      return new Promise((resolve, reject) => {
+          var reader = new FileReader();
+          reader.readAsDataURL(path);
+          reader.onload = function(e) {
+            resolve(e.target.result)      
+          }
+      });
+    }
+      
+    const mediaUpload= function (imgName,content) {
+      return new Promise((resolve, reject) => {        
+        gitlab_url = {{ $.Site.Params.gitlabUrl }} 
+        const base64= content;    
+        // const base64 = content.split('base64,').pop();
+        var sessionId = getCookie('sessionId');
+        var projectdataId = $("#responseId").val();
+        const filePath = 'uploads/' + imgName;        
+        
+        const uploadApi =gitlab_url +'/projects/' +projectdataId +'/repository/files/' +encodeURIComponent(filePath)+'?ref=draft&access_token='+sessionId;
+        getDataFromGit(uploadApi).then(function(imageResponse){
+          $("#productFacets")[0].reset();        
+          let method = 'create';
+          const userEmail = getCookie('userEmail');
+          const userFullName = getCookie('firstname');
+         
+          if (typeof imageResponse.message !== 'string') {
+            method = 'update';
+          }
+          const postData = {
+          id: projectdataId,
+          branch: 'draft',
+          author_email: userEmail,
+          author_name: userFullName,
+          file_name: imgName,
+          commit_message: 'attachment added',
+          actions: [
+          {
+          action: method,
+          file_path: filePath,
+          content: base64,
+          encoding: 'base64',
+          },
+          ],
+          };
+          const commitUrl =gitlab_url +'/projects/' +projectdataId +'/repository/commits';
+          postToGit(postData, commitUrl, 'POST').then((res) => {           
+          resolve(res);
+          });
+        });
+      });
+   }
+       
+    const getDataFromGit= function (apiUrl) {
+       return new Promise((resolve, reject) => {
+          fetch(apiUrl, {
+          method: 'GET',
+          headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          },
+        })
+        .then((res) => res.json())
+        .then((response) => {
+        resolve(response);
+        })
+        .catch((error) => {
+          resolve(null);
+        });
+      });
+    }
+   const postToGit= (postData, url, method) => {
+    return new Promise((resolve, reject) => {
+      const aceessToken = getCookie('sessionId');
+      fetch(url, {
+        method: method,
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + aceessToken,
+        },
+        body: JSON.stringify(postData),
+      })
+        .then((res) => res.json())
+        .then((response) => {
+          resolve(response);
+        })
+        .catch((error) => {
+          resolve(null);
+        });
+    });
+    }
+
+    $("input[name='checkOwner']").click(function (e) {
+      $('#socialPresence').show();
+      var currValue = $(this).val();
+      if (currValue == 'true') {
+        $('#tenantId').attr('required', 'required');
+        $('#tenantDetailDiv').show();
+        var tenantId = $('#tenantId').val()
+        $('#addInstitutionStatus').val(0);
+        $('#contactNumber').removeAttr('required');
+        $('#contact').removeAttr('required');
+        $('.vendorInfo').hide();
+        $('#contactNumber').attr('disabled',true);
+        $('#organization').attr('disabled',true);
+      }
+      else {
+        $('#addInstitutionStatus').val(1);
+        $('#organization').val('');
+        $('#vendorName').val('');
+        $('#tenantId').removeAttr('required');
+        //$('#contactNumber').removeAttr('required');
+        $('#contactNumber').val('');
+        //$('#contact').removeAttr('required');
+        $('#contact').val('');
+        $('#contactNumber').attr('required', 'required');
+        $('#contact').attr('required', 'required');
+        $('#tenantDetailDiv').hide();
+        $('.vendorInfo').show();
+        $('#contactNumber').removeAttr('disabled');
+        $('#organization').removeAttr('disabled');
+      }
+    });
+    $('.vendorInfoClick').on("click", function (e) {
+      $('#tenantId').removeAttr('required');
+      $('#addInstitutionStatus').val(1);
+      $('#tenantDetailDiv').hide();
+      $('.vendorInfo').show(); 
+      $('#contactNumber').removeAttr('disabled');
+      $('#organization').removeAttr('disabled');         
+    });
+    $('#openSourceLicense').on("change", function (e) {
+      if ($('#openSourceLicense').val() != 'Commercial$,Commercial')
+        $('.gitRepo').show();
+      else
+        $('.gitRepo').hide();
+    });
+    $(".radioOfferingItem").change(function () {
+      $('#basicOffering').css("opacity", "1");
+      $('#ownerDiv').css("opacity", "1");
+      if ($("input[name='offeringItem']:checked").val() != 'Service')
+        $('#opensourcelicenseCheck').show();
+      else {
+        $('#opensourcelicenseCheck').hide();
+      }
+    });
+    $(".radioCheckOpensourcelicense").change(function () {
+      if ($("input[name='checkOpensourcelicense']:checked").val() == 'true')
+        $('#opensourceDiv').show();
+      else
+        $('#opensourceDiv').hide();
+    });
+    $("#description").focus(function () {
+      $('#moreAboutOffering').show();
+      $('.select2').css("width", "100%");
+    });   
+    var maxDescriptionchars = 500;
+    $('#description').keyup(function () {
+        $('.remainDescrChar').show();
+        var tlength = $(this).val().length;
+        $(this).val($(this).val().substring(0, maxDescriptionchars));
+        var tlength = $(this).val().length;
+        remain = maxDescriptionchars - parseInt(tlength);
+        $('#remainDescrChar').text(remain);
+    });
+    var maxShortDescriptionchars = 140;
+    $('#shortDescription').keyup(function () {
+        $('.remainShortDescChar').show();        
+        var tlength = $(this).val().length;
+        $(this).val($(this).val().substring(0, maxShortDescriptionchars));
+        var tlength = $(this).val().length;
+        remain = maxShortDescriptionchars - parseInt(tlength);
+        $('#remainShortDescChar').text(remain);
+    });
+  });
+</script>
+<script>
+  $(document).ready(function () {
+    
+    // var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    // //alert(hashes);
+    //     if(hashes == 'community=ccm'){
+    //     $("#myTab > li > a").removeClass("active");
+    //     $('.main-tab.tab-pane fade').removeClass("active show");
+    //     $('#offering').removeClass("active show");
+    //     $("#news-tab").addClass("active");
+    //     $("#news").addClass("active show");
+    //     }
+
+    $("#contactNumber").keypress(function (e) {
+      //if the letter is not digit then display error and don't type anything
+      if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+        $("#errmsg").show();
+        return false;
+      }
+      else {
+        $("#errmsg").hide();
+      }
+    });
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#createdOn').val(today);
+    $('#businessModel').on("change", function () {
+      var businessModel = $('#businessModel').val();
+      if (businessModel != 'Open Source (Free)' && businessModel != 'Open Source (Freemium)')
+        $('#opensourceDiv').hide();
+        //$('#openSourceLicense').prop("disabled", true);
+      else
+        $('#opensourceDiv').show();
+      //$('#openSourceLicense').prop("disabled", false);
+    });
+    var personid = getCookie('personid');
+    if (personid == null) {
+      window.location.href = "/";
+    }
+    //$('#hitStandards').on("change", function () {
+    $("input[name='hitStandards']").click(function () {
+      var hitStandardsArray = [];//$("input[name='hitStandards']").val();
+      $.each($("input[name='hitStandards']:checked"), function () {
+        hitStandardsArray.push($(this).val());
+      });
+      var hitStandardsCount = hitStandardsArray.length;
+      $('#fhirDiv').hide();
+      $('#hl7Div').hide();
+      $('#cdaDiv').hide();
+      $('#ccowDiv').hide();
+      for (i = 0; i < hitStandardsCount; i++) {
+        if (hitStandardsArray[i] == 'FHIR')
+          $('#fhirDiv').show();
+        if (hitStandardsArray[i] == 'HL7')
+          $('#hl7Div').show();
+        if (hitStandardsArray[i] == 'CDA')
+          $('#cdaDiv').show();
+        if (hitStandardsArray[i] == 'CCOW')
+          $('#ccowDiv').show();
+      }
+    });
+
+    //$('#offeringItem').on("change", function () {
+    $("input[name='offeringItem']").click(function () {
+      var offeringItem = $("input[name='offeringItem']:checked").val(); //$('#offeringItem').val();
+      if (offeringItem == '')
+        offeringItem = 'Offering';
+      $('span.replace-it').html(offeringItem);
+      var titleCategoryValue = 'Please select the best suited topics for your ' + offeringItem;
+      $('#category').attr('title', titleCategoryValue);
+      var descriptionTitle = 'What problem does your ' + offeringItem + ' solve? What does your customer gain from using your ' + offeringItem + '? What separates your ' + offeringItem + ' from others on the market? Your brief description needs to answer these questions in a way that is easy to read.'
+      $('#descriptionTooltip').attr('title', descriptionTitle);
+    });
+  });
+  $(window).bind("load", function (e) {
+    $('.select2').css("width", "100%");
+     setTimeout(function() { 
+        if(getUrlVars()['collection'] != null){
+          $('#moreAboutOffering').show();
+          var selectedTopic = decodeURI(getUrlVars()['collection'])+": " + decodeURI(getUrlVars()['label']) + "$," + getUrlVars()['className'];
+          var arrOptions = [];   
+          arrOptions.push(selectedTopic);        
+          $('#category').val(arrOptions);    
+          $('#category').select2();   
+          $('#basicOffering').css("opacity", "1");        
+        }
+    }, 2000);
+  });
+</script>
+
+<body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <div id="g-tag-body">
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript> 
+  </div> 
+  <!-- End Google Tag Manager (noscript) -->
+  {{ partialCached "nav-bar.html" . "add-suggest-key"}}
+  <script>
+    //Set teant details starts here
+    function setTenantDetails(Id) {
+      var sessionId = getCookie('sessionId');
+      var Id = getCookie('tenantId');
+      if (sessionId != null && Id != null) {
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+            "query": "query{\n  getInstitutionalProfile(authorization:{\n    sessionID:\"" + sessionId + "\"\n  },institutionId:\"" + Id + "\"){\n    ownerType\n    ownerJobTitle\n    companyLogo\n    companyName\n    incorporationDate\n    companyType\n    registrationNumber\n    industry\n    currency\n    netWorth\n    companySize\n    website\n    workEmail\n    workPhone\n    anotherPhone\n    addressHouseBuilding\n    addressTownCity\n    addressStateProvince\n    addressZipPostalCode\n    addressCountryRegion\n  }\n}"
+          }
+        }
+        $.ajax(settings).done(function (response) {
+          console.log(response);
+          if (response.data.getInstitutionalProfile.companyName != null) {
+            // $('#website').val(response.data.getInstitutionalProfile.website);
+            if ($("input[name='checkOwner']:checked").val() != true){
+            $('#contact').val(response.data.getInstitutionalProfile.workEmail);
+            $('#contactNumber').val(response.data.getInstitutionalProfile.workPhone);
+            //$('#organization').val(response.data.getInstitutionalProfile.companyName);
+            }
+          }
+        });
+        $('#vendorName').val(getCookie('firstname'))
+      }
+    }
+    //Set teant details ends here
+    $(document).ready(function () {
+      var communityUrlArray = getUrlVars();
+      console.log(getUrlVars()['community']);
+      if("community" in communityUrlArray)
+      {
+        if(getUrlVars()['community'] != null)
+        {
+          if("ilm" in communityUrlArray)
+          {
+            if(getUrlVars()['ilm'] != null){
+              var communityToSelect = decodeURIComponent(getUrlVars()['community'])+":"+decodeURIComponent(getUrlVars()['ilm'])
+              $('select[id^="communityOffering"] option[value="'+communityToSelect+'"]').attr("selected","selected");
+              //$('#communityOffering').val(communityToSelect);
+              $('#communityOffering').val(communityToSelect).trigger('change')
+            }
+          }
+        } 
+        $('.community-tab-show').show();
+        $('.i-want-curate-holder').show();
+      } 
+      $("#recaptchaCommon").hide();
+      $("#addProduct").attr("disabled", "disabled");
+      /// Checking the required fields are filled:- starts here
+      $('.add-new-product-col').on('click', function () {
+        validateSubmitButton();
+      });
+      /// Checking the required fields are filled:- ends here
+      function validateSubmitButton(){
+        var enableStatus = 0;
+        if ($("input[name='offeringItem']:checked").val() != undefined) {
+          if ($("#addProductName").val() != '') {
+            if ($("#link").val() != '' && (is_url($('#link').val()))) {         
+              if ($("#description").val() != '') {
+                if ($("input[name='checkOwner']:checked").val() != undefined)
+                  enableStatus = 1;
+              }
+            }
+          }
+        }
+        if (enableStatus == 1) {
+          $("#recaptchaCommon").show();
+          $("#addProduct").removeAttr('disabled');
+          $(".submitButtonOverlay").hide();
+        }
+        else {
+          $("#recaptchaCommon").hide();
+          $("#addProduct").attr("disabled", "disabled");
+          $(".submitButtonOverlay").show();
+        }
+        if ( $('#link').val()!='') {
+          if (is_url($('#link').val()) && $("#link").val() != '') {
+            $('.validLink').hide();
+          }
+          else {
+            $('.validLink').show();
+          }
+        }
+      }
+      $('#link').on('input', function() {
+        //alert();
+        validateSubmitButton();
+      });
+      
+    });
+  </script>
+   {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}
+        {{ range .items }}
+          {{ if eq .questionCode "Events_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "Success_message_on_event_add"}}
+                  {{ $.Scratch.Set "displayEventMessage" .text }}
+              {{ end }}                          
+            {{ end }}
+          {{ end }}
+          {{ if eq .questionCode "News_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "Success_message_on_news_add"}}
+                  {{ $.Scratch.Set "displayNewsMessage" .text }}
+              {{ end }}                          
+            {{ end }}
+          {{ end }}
+          {{ if eq .questionCode "Topics_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "Success_message_on_topic_add"}}
+                  {{ $.Scratch.Set "displayTopicMessage" .text }}
+              {{ end }}                          
+            {{ end }}
+          {{ end }}
+          {{ if eq .questionCode "Awards_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "Success_message_on_awards_add"}}
+                  {{ $.Scratch.Set "displayAwardMessage" .text }}
+              {{ end }}                          
+            {{ end }}
+          {{ end }}
+          {{ if eq .questionCode "Feeds_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "Success_message_on_feed_add"}}
+                  {{ $.Scratch.Set "displayFeedMessage" .text }}
+              {{ end }}                         
+            {{ end }}
+          {{ end }}
+          {{ if eq .questionCode "Videos_message"}}
+            {{ range .answers }}
+              {{ if eq .code "success_message"}}
+                  {{ $.Scratch.Set "displayVideoMessage" .text }}
+              {{ end }}                         
+            {{ end }}
+          {{ end }}
+           {{ if eq .questionCode "Infographics_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "success_message"}}
+                  {{ $.Scratch.Set "displayGraphicsMessage" .text }}
+              {{ end }}                         
+            {{ end }}
+          {{ end }}  
+          {{ if eq .questionCode "Add_offering_messages"}}
+            {{ range .answers }}  
+              {{ if eq .code "website_of_the_product_message"}}
+                  {{ $.Scratch.Set "website_of_the_product_message"  .text }}
+              {{ end }} 
+              {{ if eq .code "invalid_contact_number_of_institution_message"}}
+                  {{ $.Scratch.Set "invalid_contact_number_of_institution_message"  .text }}
+              {{ end }}
+              {{ if eq .code "disabled_submit_message"}}
+                  {{ $.Scratch.Set "disabled_submit_message"  .text }}
+              {{ end }} 
+              {{ if eq .code "submit_without_recaptcha"}}
+                  {{ $.Scratch.Set "submit_without_recaptcha"  .text }}
+              {{ end }}                                        
+            {{ end }}  
+          {{ end }}      
+        {{ end }} 
+      {{ end }}
+
+     {{ $eventDisplay := $.Scratch.Get "displayEventMessage" }}
+     {{ $newsDisplay := $.Scratch.Get "displayNewsMessage" }} 
+     {{ $topicDisplay := $.Scratch.Get "displayTopicMessage" }} 
+     {{ $feedDisplay := $.Scratch.Get "displayFeedMessage" }} 
+     {{ $awardDisplay := $.Scratch.Get "displayAwardMessage" }}  
+     {{ $videoDisplay := $.Scratch.Get "displayVideoMessage" }} 
+     {{ $infographicsDisplay := $.Scratch.Get "displayGraphicsMessage" }} 
+     {{ $website_of_the_product_message:= $.Scratch.Get "website_of_the_product_message" }} 
+     {{ $invalid_contact_number_of_institution_message:= $.Scratch.Get "invalid_contact_number_of_institution_message" }} 
+     {{ $disabled_submit_message:= $.Scratch.Get "disabled_submit_message" }} 
+     {{ $submit_without_recaptcha:= $.Scratch.Get "submit_without_recaptcha" }} 
+     {{ $context := . }}
+
+      {{ $title := "addNewsTitle" }}
+      {{ $url := "addNewsUrl" }}
+      {{ $description := "newsDescription" }}
+      {{ $type := "News" }}
+      {{ $formId := "newsForm" }}
+      {{ $messageId := "sendMessage"}}
+      {{ $selectTopic := "category-news" }}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $ccmTopic := "ccm-news-topic"}}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $newsDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain ) $formId $type}}
+
+      {{ $title := "addEventTitle" }}
+      {{ $url := "addEventUrl" }}
+      {{ $description := "eventDescription" }}
+      {{ $type := "Event" }}
+      {{ $formId := "eventForm" }}
+      {{ $messageId := "sendMessage2"}}
+      {{ $selectTopic := "category-events" }}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ $ccmTopic := "ccm-events-topic"}}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $eventDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain )  $formId $type}}
+ 
+      {{ $title := "addAwardTitle" }}
+      {{ $url := "addAwardUrl" }}
+      {{ $description := "awardDescription" }}
+      {{ $type := "Awards" }}
+      {{ $formId := "awardForm" }}
+      {{ $messageId := "sendMessage4"}}
+      {{ $selectTopic := "category-awards" }}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ $ccmTopic := "ccm-awards-topic"}}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $awardDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain )  $formId $type}}
+
+      {{ $title := "addFeedTitle" }}
+      {{ $url := "addFeedUrl" }}
+      {{ $description := "feedDescription" }}
+      {{ $type := "Feeds" }}
+      {{ $formId := "feedForm" }}
+      {{ $messageId := "sendMessage3"}}
+      {{ $selectTopic := "category-feeds" }}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ $ccmTopic := "ccm-feeds-topic"}}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $feedDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain )  $formId $type}}
+
+      {{ $title := "addTopicTitle" }}
+      {{ $url := "addTopicUrl" }}
+      {{ $description := "topicDescription" }}
+      {{ $type := "Topics" }}
+      {{ $formId := "topicsForm" }}
+      {{ $messageId := "sendMessage5"}}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $topicDisplay)  $formId $type }}
+
+      {{ $title := "addVideoTitle" }}
+      {{ $url := "addVideoUrl" }}
+      {{ $description := "videoDescription" }}
+      {{ $type := "Videos" }}
+      {{ $formId := "videoForm" }}
+      {{ $messageId := "sendMessage6"}}
+      {{ $selectTopic := "category-videos" }}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ $ccmTopic := "ccm-videos-topic"}}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $videoDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain )  $formId $type}}
+
+      {{ $title := "addInfographicsTitle" }}
+      {{ $url := "addInfographicsUrl" }}
+      {{ $description := "infographicsDescription" }}
+      {{ $type := "Infographics" }}
+      {{ $formId := "infographicsForm" }}
+      {{ $messageId := "sendMessage7"}}
+      {{ $ajaxUrl := $.Site.Params.GraphQLUrl }}
+      {{ $domain := $.Site.Params.siteUrl }}
+      {{ $selectTopic := "category-infographics" }}
+      {{ $ccmTopic := "ccm-infographics-topic"}}
+      {{ partialCached "script-add-suggest-form.html" (dict "title" $title "url" $url "description" $description "type" $type "formId" $formId "messageId" $messageId "ajaxUrl" $ajaxUrl "displayMessage" $infographicsDisplay "selectTopic" $selectTopic "ccmTopic" $ccmTopic "context" $context "domain"  $domain )  $formId $type}}     
+      
+      {{ partial "script-add-suggest-idea-form.html" . "add-suggest-key"}}
+
+
+
+  <section class="about-wrapper">
+    <main class="container search-results-row pt-2">
+      <div id="breadcrumbs" class="new-ofer-breadcrumbs">
+        <nav aria-label="breadcrumb mx-auto" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item"><a href="/add-suggest">Suggest</a></li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="i-want-curate-holder curate-community" style="display: none;">
+        <div class="form-group row mb-0">
+          <label class="col-md-5">
+            <span class="i-want-curate-title-1">I want to curate this content to</span>
+            
+            <div class="arrow_box_addOffering arrow_box_category_addOffering" id="communityInfoMessageBox"> You can choose Community name from the list</div>
+            <a class="infoTooltip" data-id="communityInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip" title="">
+              <i class="fas fa-question-circle"></i>
+            </a>
+          </label>
+          <div class="col-md-7">
+            <select class="form-control" name="communityOffering" id="communityOffering" title="Please select the best suited topics for your offering">
+              <option>Select Any Community</option>
+              {{ range first 1 .Site.Data.community_data_lhc_form.items }}
+              
+                {{ range .items }}
+                {{ $community := .question}}
+                  {{ range .items}}
+                    <option value="{{print $community ":" .question }}">{{print $community " | " .question }}</option>
+                  {{ end }}
+                {{ end }}
+              {{ end }}
+            </select>  
+          </div>
+        </div> 
+      </div>
+        <div class="i-want-curate-holder ccm-community-name" style="display: none;">
+        <div class="form-group row mb-0">
+          <label class="col-md-5">
+            <span class="i-want-curate-title-1">I want to curate this content to</span>
+            
+            <div class="arrow_box_addOffering arrow_box_category_addOffering" id="communityInfoMessageBox"> You can choose Community name from the list</div>
+            <a class="infoTooltip" data-id="communityInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip" title="">
+              <i class="fas fa-question-circle"></i>
+            </a>
+          </label>
+          <div class="col-md-7">
+            <select class="form-control" name="ccmOffering" id="ccmOffering" title="Please select the best suited topics for your offering">         
+              {{ $siteData := $.Site.Data.communities }}                      
+              {{ range $siteData }}                
+                    <option value="{{ .communityName }}">{{ .communityName }}</option>               
+              {{ end }}
+            </select>  
+          </div>
+        </div> 
+      </div>
+      <!-- tab content starts -->
+      
+      <div class="top-10-most-row">
+        <div class="top-10-most-row-tab-ttl">
+          <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link show" id="offering-tab" data-toggle="tab" href="#offering" role="tab" aria-controls="offering"
+                aria-selected="true"><i class="far fa-calendar-alt"></i> Offerings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" id="news-tab" data-toggle="tab" href="#news" role="tab" aria-controls="news" aria-selected="false"><i class="far fa-file-alt"></i> News</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" id="events-tab" data-toggle="tab" href="#events" role="tab" aria-controls="events" aria-selected="false"><i class="fas fa-history"></i> Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link show" id="awards-tab" data-toggle="tab" href="#awards" role="tab" aria-controls="awards" aria-selected="false"><i class="fas fa-medal"></i> Awards</a>
+            </li> 
+            <li class="nav-item">
+              <a class="nav-link show" id="feeds-tab" data-toggle="tab" href="#feeds" role="tab" aria-controls="feeds" aria-selected="false"><i class="fas fa-rss"></i> Feeds</a>
+            </li>  
+            <li class="nav-item">
+              <a class="nav-link show" id="topics-tab" data-toggle="tab" href="#topics" role="tab" aria-controls="topics" aria-selected="false"><i class="fas fa-book-reader"></i> Topics</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link show community-tab-show" id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video" aria-selected="false" style="display: none;"><i class="fas fa-video"></i> Videos</a>
+            </li>   
+            <li class="nav-item">
+              <a class="nav-link show community-tab-show" id="infographics-tab" data-toggle="tab" href="#infographics" role="tab" aria-controls="infographics" aria-selected="false" style="display: none;"><i class="fas fa-file-invoice"></i> Infographics</a>
+            </li>  
+             <li class="nav-item">
+              <a class="nav-link show community-tab-show" id="idea-tab" data-toggle="tab" href="#idea" role="tab" aria-controls="idea" aria-selected="false" style="display: none;"><i class="fas fa-lightbulb"></i> Ideas</a>
+            </li>               
+          </ul>
+        </div>
+        <div class="tab-content" id="myTabContent">
+          <div class="main-tab tab-pane fade" id="offering" role="tabpanel" aria-labelledby="offering-tab">
+
+            <article class="post {{ if ne .Params.dropcap false }}dropcase{{ end }}">
+              <div id="productFacetsMessage" class="alert alert-success"></div>
+              <header class="post-header">
+                <h1 class="post-title">Add Offering</h1>
+              </header>            
+
+              <div class="entry-content entry-content-2 page-content">
+                <div class="row">
+                  <div class="col-sm-12">
+
+                    <article class="add-new-product-row">
+                      <!--
+      <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#profile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"  data-toggle="tab" href="#standards" role="tab" aria-controls="profile" aria-selected="false">Standards</a>
+        </li>
+      </ul>
+      -->
+                      <div class="tab-content" id="myTabContent">
+                        <!-- Profile tab starts ::::::::::::::::::::::::::::::::::: -->
+                        <div class="tab-pane fade show " id="loader-div" role="tabpanel">
+                          <div class="lds-roller">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <br />
+                            <br />
+                            <br />
+                            <span class="please-wait">Please wait.... </span>
+                          </div>
+
+                        </div>
+
+                        <div class="tab-pane fade show active" id="productProfile" role="tabpanel">
+                          <form name="productFacets" id="productFacets" action="#">
+                            <section class="add-new-product-col">
+                              <aside>
+                                
+
+                                <input type="hidden" id="responseId">
+                                <div class="form-group row">
+                                  <label class="col-md-5">Type of offering that you are submitting
+                                    <span class="label-required">(required)</span>
+                                    <div class="arrow_box_addOffering" id="offeringItemInfoMessageBox">
+                                      <h4>Product </h4>
+                                      <span>In marketing, a product is an object or system made available for consumer use; it is anything
+                                        that can be offered to a market to satisfy the desire or need of a customer.</span>
+                                      <br />
+                                      <h4>Solution</h4>
+                                      <span>A solution is the application of a product to solve a specific industry need or business
+                                        problem.</span>
+                                        <br />
+                                      <h4>Service</h4>
+                                      <span>A service is an intangible item, which arises from the output of one or more individuals.</span>
+                                    </div>
+                                    <a class="infoTooltip" data-id="offeringItemInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip" title="">
+                                      <i class="fas fa-question-circle"></i>
+                                    </a>
+                                  </label>
+                                  <div class="col-md-2">
+                                    <label class="input-container radioOfferingItem">Product
+                                      <input type="radio" name="offeringItem" value="Product" required/>
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <label class="input-container radioOfferingItem">Solution
+                                      <input type="radio" name="offeringItem" value="Solution" required/>
+                                      <span class="checkmark"></span>
+                                    </label>
+                                  </div>
+                                  <div class="col-md-2">
+                                    <label class="input-container radioOfferingItem">Service
+                                      <input type="radio" name="offeringItem" value="Service" required/>
+                                      <span class="checkmark"></span>
+                                    </label>
+
+                                  </div>
+                                </div>
+                                <!--- Replacing div for offering starts here-->
+                                <div class="replaceOffering">
+                                  <div id="basicOffering">
+                                    <fieldset>
+                                      <legend>Basic information about your
+                                        <span class="capital-case replace-it">Offering</span>
+                                      </legend>
+
+                                      <div class="form-group row">
+                                        <label class="col-md-5">
+                                          <span class="replace-it">Offering</span> name
+                                          <span class="label-required">(required)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input type="text" class="form-control" placeholder="Enter name" name="addProductName" id="addProductName" required>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                        <label class="col-md-5">Website of the
+                                          <span class="replace-it">offering</span>
+                                          <span class="label-required">(required)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input type="text" name="link" id="link" class="form-control" placeholder="Enter link" required>
+                                          <span class="errorCustomMessage validLink">{{ $website_of_the_product_message }}</span>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group row">
+
+                                        <div class="col-md-5">
+                                          <label>Describe the key benefits and unique value proposition of the
+                                            <span class="replace-it">offering</span>
+                                            <span class="label-required">(required)</span>
+                                            <div class="arrow_box_addOffering" id="descriptionInfoMessageBox">What problem does the offering solve?
+                                              <br />What does the customer gain from using the offering?
+                                              <br />What separates the offering from others on the market? </div>
+                                            <a class="infoTooltip" data-id="descriptionInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip" title="">
+                                              <i class="fas fa-question-circle"></i>
+                                            </a>
+                                          </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                          <textarea name="description" id="description" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                                          <div class="maxChar">
+                                            <span id="remainDescrChar" class="remainDescrChar errorCustomMessage error-utf-msg" style="display:none">500</span><span class="remainDescrChar errorCustomMessage " style="display:none"> characters remaining</span>
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                    </fieldset>
+                                  </div>
+
+                                  <div id="moreAboutOffering">
+                                    <fieldset>
+                                      <legend>Tell us more about your
+                                        <span class="capital-case replace-it">Offering</span>
+                                      </legend>
+                                      <div class="form-group row">
+                                          <label class="col-md-5">Select the topics that best describe the
+                                            <span class="replace-it">offering</span>
+                                            <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                                            <a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                                              <i class="fas fa-question-circle"></i>
+                                            </a>
+                                            <span class="label-optional">(Optional)</span>
+                                          </label>
+                                          <div class="col-md-7">
+                                            <select class="form-control" name="category" id="category" multiple title="Please select the best suited topics for your offering">
+        
+                                            </select>
+  
+                                            <input type="hidden" id="relatedCategories">
+                                            <span class="green"><a href="/add-suggest" class="green pull-right" id="AddTopic_Top" target ="_blank" title="Suggest more topics other than the available list">&nbsp;<b>Suggest Topics</b></a></span>                                      
+                                            <div class="clearfix"></div>
+                                          </div>
+                                        </div>
+                                      <div class="form-group row" >
+                                        <label class="col-md-5">A one liner describing the
+                                          <span class="replace-it">offering</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <textarea name="shortDescription" id="shortDescription" class="form-control" placeholder="Enter short description"></textarea>
+                                          <div class="maxChar">
+                                            <span id="remainShortDescChar" class="remainShortDescChar errorCustomMessage error-utf-msg" style="display:none">140</span><span class="remainShortDescChar errorCustomMessage" style="display:none"> characters remaining</span>
+                                          </div>
+                                        </div>
+                                       
+                                      </div>
+
+                                      <div class="form-group row" id="opensourcelicenseCheck">
+
+                                        <label class="col-md-5">Is this
+                                          <span class="replace-it">offering</span> Opensource?
+                                          <span class="label-optional">(Optional)</span>
+                                        </label>
+
+                                        <div class="col-md-2">
+                                          <label class="input-container radioCheckOpensourcelicense">Yes
+                                            <input type="radio" name="checkOpensourcelicense" value="true" />
+                                            <span class="checkmark"></span>
+                                          </label>
+                                        </div>
+                                        <div class="col-md-2">
+                                          <label class="input-container radioCheckOpensourcelicense">No
+                                            <input type="radio" name="checkOpensourcelicense" value="false" />
+                                            <span class="checkmark"></span>
+                                          </label>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group row " id="opensourceDiv" style="display: none;">
+
+                                        <label class="col-md-5">Open Source license of the
+                                          <span class="replace-it">offering</span>
+                                          <span class="label-optional">(Optional)</span>
+                                          <div class="arrow_box_addOffering" id="openSourceLicenseInfoMessageBox">What problem does the offering solve?
+                                            <br />What does the customer gain from using the offering?
+                                            <br />What separates the offering from others on the market? </div>
+                                          <a id="openSourceLicenseTooltip" href="#" data-toggle="tooltip" title="">
+                                            <i class="fas fa-question-circle"></i>
+                                          </a>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <select class="form-control" id="openSourceLicense" name="openSourceLicense[]" title="Select">
+                                          </select>
+                                        </div>
+                                      </div>
+                                      <div class="form-group row gitRepo" >
+                                        <label class="col-md-5">GIT repository link of the
+                                          <span class="replace-it">offering</span>
+                                          <span class="label-optional">(Optional)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input id="githubUrl" name="githubUrl" type="text" class="form-control" placeholder="Enter Github URL">
+                                          <span class="errorCustomMessage validLinkGit">{{ $website_of_the_product_message }}</span>
+
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                        <div class="col-md-5">
+                                          <label>Please upload a featured image for your
+                                            <span class="replace-it">offering</span>
+                                            <div class="arrow_box_addOffering" id="mediaInfoMessageBox">We prefer a decent quality image (Photos should be smaller than 1 MB and saved as JPG,
+                                              PNG or GIF files) that is 590px wide and 300px tall so that it shows up good and
+                                              consistent on listing and detail pages</div>
+                                            <a class="infoTooltip" data-id="mediaInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                                              <i class="fas fa-question-circle"></i>
+                                            </a>
+                                            <span class="label-optional">(Optional)</span>
+                                          </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                          <input id="media" name="media" type="file" class="form-control" placeholder="Enter Permalink">
+                                          <input type="hidden" id="featured_img"/>
+                                        </div>
+                                        <!--<div class="col-md-2">
+                                          <input id="media_upload" name="media_upload" type="button" value="Upload" class="btn btn-primary add-new-bt full-width">
+                                        </div>-->
+                                        <div class="col-md-5"></div>
+                                        <div class="col-md-7">
+                                          <span style="font-size: 12px;">(Photos should be smaller than 1 MB and saved as JPG, PNG or GIF files)</span>
+                                        </div>
+                                        <input type="hidden" name="file_details" id="file_details" />
+                                      </div>
+                                       <div class="form-group row">
+                                        <div class="col-md-5">
+                                          <label>Please upload a logo image for your
+                                            <span class="replace-it">offering</span>
+                                            <div class="arrow_box_addOffering" id="mediaInfoMessageBox">We prefer a decent quality image (Photos should be smaller than 1 MB and saved as JPG,
+                                              PNG or GIF files) that is 590px wide and 300px tall so that it shows up good and
+                                              consistent on listing and detail pages</div>
+                                            <a class="infoTooltip" data-id="mediaInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                                              <i class="fas fa-question-circle"></i>
+                                            </a>
+                                            <span class="label-optional">(Optional)</span>
+                                          </label>
+                                        </div>
+                                        <div class="col-md-7">
+                                          <input id="logo_media" name="logo_media" type="file" class="form-control" placeholder="Enter Permalink">
+                                          <input type="hidden" id="logo_img"/>
+
+                                        </div>
+                                        <!--<div class="col-md-2">
+                                          <input id="media_upload" name="media_upload" type="button" value="Upload" class="btn btn-primary add-new-bt full-width">
+                                        </div>-->
+                                        <div class="col-md-5"></div>
+                                        <div class="col-md-7">
+                                          <span style="font-size: 12px;">(Photos should be smaller than 1 MB and saved as JPG, PNG or GIF files)</span>
+                                        </div>
+                                        <input type="hidden" name="file_details" id="file_details" />
+                                      </div>
+
+                                      <aside>
+                                          <div class="form-group row">
+                                            <label class="col-md-5">Health IT Standards Supported by the
+                                              <span class="replace-it">offering</span>
+                                              <span class="label-optional">(Optional)</span>
+                                            </label>
+
+                                            <div class="col-md-7">
+                                              <div class="row">
+                                                <div class="form-check col-md-6">
+                                                  <input class="form-check-input" name="hitStandards" type="checkbox" value="FHIR">
+                                                  <label class="form-check-label" for="defaultCheck1"> FHIR </label>
+                                                </div>
+                                                <div class="form-check col-md-6">
+                                                  <input class="form-check-input" name="hitStandards" type="checkbox" value="HL7">
+                                                  <label class="form-check-label" for="defaultCheck2"> HL7 </label>
+                                                </div>
+                                                <div class="form-check col-md-6">
+                                                  <input class="form-check-input" name="hitStandards" type="checkbox" value="CDA">
+                                                  <label class="form-check-label" for="defaultCheck2"> CDA </label>
+                                                </div>
+                                                <div class="form-check col-md-6">
+                                                  <input class="form-check-input" name="hitStandards" type="checkbox" value="CCOW">
+                                                  <label class="form-check-label" for="defaultCheck2"> CCOW </label>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <!--
+                                          <div class="col-md-7">
+                                            <select id="hitStandards" name="hitStandards[]" class="form-control" multiple>
+                                              <option value="FHIR">FHIR</option>
+                                              <option value="HL7">HL7</option>
+                                              <option value="CDA">CDA</option>
+                                              <option value="CCOW">CCOW</option>
+                                              <option value="None of the Above">None of the above</option>
+                                            </select>
+                                          </div>
+                                        -->
+                                          </div>
+
+                                      </aside>
+
+                                      <div id="fhirDiv" style="display: none;">
+
+                                        <aside>
+
+                                            <div class="form-group row">
+                                              <label class="col-md-5">FHIR versions supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+                                              <div class="col-md-7">
+                                                <div class="row">
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhirVersion" id="fhirVersion1" type="checkbox" value="DSTU 1 (Official version)">
+                                                    <label class="form-check-label" for="defaultCheck1"> DSTU 1 (Official version) </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhirVersion" id="fhirVersion2" type="checkbox" value="DSTU 2 (Official version)">
+                                                    <label class="form-check-label" for="defaultCheck2"> DSTU 2 (Official version) </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhirVersion" id="fhirVersion3" type="checkbox" value="FHIR Release 3">
+                                                    <label class="form-check-label" for="defaultCheck2"> FHIR Release 3 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhirVersion" id="fhirVersion4" type="checkbox" value="FHIR Release 4 (Normative)">
+                                                    <label class="form-check-label" for="defaultCheck2"> FHIR Release 4 (Normative) </label>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+
+                                            <div class="form-group row">
+                                              <label class="col-md-5">FHIR Resources supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+                                              <div class="col-md-7">
+                                                <!--<select class="form-control" name="fhriResourceSupport" id="fhriResourceSupport" multiple>
+                                                <option value="Patient">Patient</option>
+                                                <option value="Diagnostic Report">Diagnostic Report</option>
+                                                <option value="Observations">Observations</option>
+                                                <option value="Allergy Intolerance">Allergy Intolerance</option>
+                                                <option value="Condition">Condition</option>
+                                                <option value="Adverse Event">Adverse Event</option>
+                                                <option value="Procedure">Procedure</option>
+                                                <option value="Medication Administration">Medication Administration</option>
+                                                <option value="Medication Statement">Medication Statement</option>
+                                                <option value="Family Member History">Family Member History</option>
+                                              </select>
+                                            -->
+                                                <div class="row">
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Patient">
+                                                    <label class="form-check-label" for="defaultCheck1"> Patient </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Diagnostic Report">
+                                                    <label class="form-check-label" for="defaultCheck2"> Diagnostic Report </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Observations">
+                                                    <label class="form-check-label" for="defaultCheck2"> Observations </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Allergy Intolerance">
+                                                    <label class="form-check-label" for="defaultCheck2"> Allergy Intolerance </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Condition">
+                                                    <label class="form-check-label" for="defaultCheck2"> Condition </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Adverse Event">
+                                                    <label class="form-check-label" for="defaultCheck2"> Adverse Event </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Procedure">
+                                                    <label class="form-check-label" for="defaultCheck2"> Procedure </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Allergy Intolerance">
+                                                    <label class="form-check-label" for="defaultCheck2"> Allergy Intolerance </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Medication Administration">
+                                                    <label class="form-check-label" for="defaultCheck2"> Medication Administration </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Medication Statement">
+                                                    <label class="form-check-label" for="defaultCheck2"> Medication Statement </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="fhriResourceSupport" type="checkbox" value="Family Member History">
+                                                    <label class="form-check-label" for="defaultCheck2"> Family Member History </label>
+                                                  </div>
+                                                </div>
+
+                                              </div>
+                                            </div>
+
+
+                                        </aside>
+                                      </div>
+                                      <div id="hl7Div" style="display: none;">
+                                        <hr>
+
+                                        <aside>
+                                            <div class="form-group row">
+                                              <label class="col-md-5">HL7 Versions Supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+
+                                              <div class="col-md-7">
+                                                <div class="row">
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="hl7version" type="checkbox" value="HL7 v2">
+                                                    <label class="form-check-label" for="defaultCheck1"> HL7 v2 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="hl7version" type="checkbox" value="HL7 v3">
+                                                    <label class="form-check-label" for="defaultCheck2"> HL7 v3 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="hl7version" type="checkbox" value="Clinical Document Architecture (CDA)">
+                                                    <label class="form-check-label" for="defaultCheck2"> Clinical Document Architecture (CDA) </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="hl7version" type="checkbox" value="Continuity of Care Document (CCD)">
+                                                    <label class="form-check-label" for="defaultCheck2"> Continuity of Care Document (CCD) </label>
+                                                  </div>
+                                                </div>
+                                              </div>
+
+                                              <!--
+                                            <div class="col-md-7">
+                                              <select id="hl7version" name="hl7version[]" class="form-control" multiple>
+                                                <option value="HL7 v2">HL7 v2</option>
+                                                <option value="HL7 v3">HL7 v3</option>
+                                                <option value="Clinical Document Architecture (CDA)">Clinical Document Architecture (CDA)</option>
+                                                <option value="Continuity of Care Document (CCD)">Continuity of Care Document (CCD)</option>
+                                              </select>
+                                            </div>
+                                            -->
+                                            </div>
+
+                                            <div class="form-group row">
+                                              <label class="col-md-5">HL7 Message Types Supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+                                              <div class="col-md-7">
+
+                                                <div class="row">
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="ACK">
+                                                    <label class="form-check-label" for="defaultCheck1"> ACK </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="ADT">
+                                                    <label class="form-check-label" for="defaultCheck2"> ADT </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="BAR">
+                                                    <label class="form-check-label" for="defaultCheck2"> BAR </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="DFT">
+                                                    <label class="form-check-label" for="defaultCheck2"> DFT </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="MDM">
+                                                    <label class="form-check-label" for="defaultCheck2"> MDM </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="MFN">
+                                                    <label class="form-check-label" for="defaultCheck2"> MFN </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="ORM">
+                                                    <label class="form-check-label" for="defaultCheck2"> ORM </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="ORU">
+                                                    <label class="form-check-label" for="defaultCheck2"> ORU </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="QRY">
+                                                    <label class="form-check-label" for="defaultCheck2"> QRY </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="RAS">
+                                                    <label class="form-check-label" for="defaultCheck2"> RAS </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="RDE">
+                                                    <label class="form-check-label" for="defaultCheck2"> RDE </label>
+                                                  </div>
+                                                  <div class="form-check col-md-3">
+                                                    <input class="form-check-input" name="hl7message" type="checkbox" value="SIU">
+                                                    <label class="form-check-label" for="defaultCheck2"> SIU </label>
+                                                  </div>
+                                                </div>
+
+                                                <!--
+                                                <div class="arrow_box" id="hl7InfoMessageBox">Control click to choose multiple values</div>
+                                                <select id="hl7message" name="hl7message[]" class="form-control" multiple>
+                                                  <option value="ACK">ACK</option>
+                                                  <option value="ADT">ADT</option>
+                                                  <option value="BAR">BAR</option>
+                                                  <option value="DFT">DFT</option>
+                                                  <option value="MDM">MDM</option>
+                                                  <option value="MFN">MFN</option>
+                                                  <option value="ORM">ORM</option>
+                                                  <option value="ORU">ORU</option>
+                                                  <option value="QRY">QRY</option>
+                                                  <option value="RAS">RAS</option>
+                                                  <option value="RDE">RDE</option>
+                                                  <option value="RGV">RGV</option>
+                                                  <option value="SIU">SIU</option>
+                                                </select>
+                                                -->
+                                              </div>
+                                            </div>
+                                        </aside>
+                                      </div>
+
+                                      <div id="cdaDiv" style="display: none;">
+                                        <hr>
+
+                                        <aside>
+                                            <div class="form-group row">
+                                              <label class="col-md-5">CDA Versions Supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+
+                                              <div class="col-md-7">
+                                                <div class="row">
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="cdaversion" type="checkbox" value="Release 1">
+                                                    <label class="form-check-label" for="defaultCheck1"> Release 1 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="cdaversion" type="checkbox" value="Release 2">
+                                                    <label class="form-check-label" for="defaultCheck2"> Release 2 </label>
+                                                  </div>
+
+                                                </div>
+                                              </div>
+                                              <!--
+                                            <div class="col-md-7">
+                                              <select id="cdaversion" name="cdaversion[]" class="form-control" multiple>
+                                                <option value="Release 1">Release 1</option>
+                                                <option value="Release 2">Release 2</option>
+                                                <option value="None of the Above">None of the above</option>
+                                              </select>
+                                            </div>
+                                            -->
+                                            </div>
+                                        </aside>
+                                      </div>
+
+                                      <div id="ccowDiv" style="display: none;">
+                                        <hr>
+
+                                        <aside>
+                                            <div class="form-group row">
+                                              <label class="col-md-5">CCOW Versions Supported by the
+                                                <span class="replace-it">offering</span>
+                                                <span class="label-optional">(Optional)</span>
+                                              </label>
+                                              <div class="col-md-7">
+                                                <!--
+                                              <select id="ccowversion" name="ccowversion[]" class="form-control" multiple>
+                                                <option value="1.0">1.0</option>
+                                                <option value="1.1">1.1</option>
+                                                <option value="1.2">1.2</option>
+                                                <option value="1.3">1.3</option>
+                                                <option value="1.4">1.4</option>
+                                                <option value="1.5">1.5</option>
+                                                <option value="1.6">1.6</option>
+                                              </select>
+                                            -->
+                                                <div class="row">
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.0">
+                                                    <label class="form-check-label" for="defaultCheck1"> 1.0 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.1">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.1 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.2">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.2 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.3">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.3 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.4">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.4 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.5">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.5 </label>
+                                                  </div>
+                                                  <div class="form-check col-md-6">
+                                                    <input class="form-check-input" name="ccowversion" type="checkbox" value="1.6">
+                                                    <label class="form-check-label" for="defaultCheck2"> 1.6 </label>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                        </aside>
+                                      </div>
+                                    </fieldset>
+                                  </div>
+                                  <fieldset>
+                                    <legend>Institution Providing the
+                                      <span class="capital-case replace-it">Offering</span>
+                                    </legend>
+                                    <div class="form-group row" id="ownerDiv">
+                                      <label class="col-md-5">Are you the owner or owner's representative of this
+                                        <span class="replace-it">offering</span>?
+                                        <span class="label-required">(required)</span>
+                                      </label>
+                                      <div class="col-md-2">
+                                        <label class="input-container radioCheckOwner">Yes
+                                          <input type="radio" name="checkOwner" value="true" required/>
+                                          <span class="checkmark"></span>
+                                        </label>
+                                      </div>
+                                      <div class="col-md-2">
+                                        <label class="input-container radioCheckOwner">No
+                                          <input type="radio" name="checkOwner" value="false" required/>
+                                          <span class="checkmark"></span>
+                                        </label>
+                                      </div>
+                                    </div>
+                                    <div class="form-group row" id="tenantDetailDiv" style="display:none">
+                                      <label class="col-md-5">Please select your institution</label>
+                                      <div class="col-md-7">
+                                        <select id="tenantId" name="tenantId" class="form-control">
+                                              <!--<option value="360">Default Institution</option>-->
+                                        </select>
+                                        <p class="institute"> Didn't find your Institution?
+                                          <span>
+                                            <a style="color:#00c3f3!important; cursor: pointer;" class="vendorInfoClick"> Add your Institution </a>
+                                          </span>
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <input type="hidden" name="addInstitutionStatus" id="addInstitutionStatus">
+                                    <div class="vendorInfo" style="display: none;">
+                                      <div class="form-group row">
+                                        <label class="col-md-5">Name of the institution providing this
+                                          <span class="replace-it">offering</span>
+                                          <span class="label-required">(required)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input name="organization" id="organization" type="text" class="form-control" placeholder="Enter institution name" required disabled>
+                                        </div>
+                                      </div>
+
+                                      <div class="form-group row">
+                                        <label class="col-md-5">Name of the contact person
+      
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input type="text" name="vendorName" id="vendorName" class="form-control vendorCheckDet" placeholder="Enter contact person name">
+                                        </div>
+                                      </div>
+                                       
+                                      <div class="form-group row">
+                                        <label class="col-md-5">Email address of institution
+                                          <span class="label-required">(required)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input type="email"  name="contact" id="contact" class="form-control vendorCheckDet" placeholder="Primary email address of institution" >
+                                        </div>
+                                      </div>
+                                      <div class="form-group row">
+                                        <label class="col-md-5">Contact number of institution
+                                          <span class="label-required">(required)</span>
+                                        </label>
+                                        <div class="col-md-7">
+                                          <input type="text" name="contactNumber" id="contactNumber" class="form-control vendorCheckDet" placeholder="Primary phone number of institution"  disabled>
+                                          <span id="errmsg" class="errorCustomMessage">{{ $invalid_contact_number_of_institution_message }}</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </fieldset>
+                                  <fieldset id="socialPresence" style="display: none;">
+
+                                        <legend>Social presence of the
+                                            <span class="capital-case replace-it">Offering</span>
+                                          </legend>                                        
+                                        <div class="form-group row">
+                                          <label class="col-md-5">Facebook page of the
+                                            <span class="replace-it">offering</span> / Institution
+                                          </label>
+                                          <div class="col-md-7">
+                                            <input id="facebook" name="facebook" type="text" class="form-control" placeholder="Facebook page">
+                                            <span class="errorCustomMessage validLinkFacebook">{{ $website_of_the_product_message }}</span>
+                                          </div>
+                                        </div>  
+                                        <div class="form-group row">
+                                          <label class="col-md-5">Twitter page of the
+                                            <span class="replace-it">offering</span> / Institution
+                                          </label>
+                                          <div class="col-md-7">
+                                            <input id="twitter" name="twitter" type="text" class="form-control" placeholder="Twitter page">
+                                            <span class="errorCustomMessage validLinkTwitter">{{ $website_of_the_product_message }}</span>
+                                          </div>
+                                        </div> 
+                                        <div class="form-group row">
+                                          <label class="col-md-5">LinkedIn page of the
+                                            <span class="replace-it">offering</span> / Institution
+                                          </label>
+                                          <div class="col-md-7">
+                                            <input id="linkedin" name="linkedin" type="text" class="form-control" placeholder="LinkedIn page">
+                                            <span class="errorCustomMessage validLinkLinkedin">{{ $website_of_the_product_message }}</span>
+                                          </div>
+                                        </div> 
+                                        <div class="form-group row">
+                                          <label class="col-md-5">Instagram page of the
+                                            <span class="replace-it">offering</span> / Institution
+                                          </label>
+                                          <div class="col-md-7">
+                                            <input id="instagram" name="instagram" type="text" class="form-control" placeholder="Instagram page">
+                                            <span class="errorCustomMessage validLinkInstagram">{{ $website_of_the_product_message }}</span>
+                                          </div>
+                                        </div>                                    
+                                  </fieldset>
+                                  <div class="row new-row-space">
+
+                                    <div class="product-info-details" style="display: none;">
+                                      <div class="form-group row d-none">
+                                        <fieldset style="display:none">
+
+                                          <label class="col-md-5">Feature product</label>
+                                          <div class="col-md-7">
+                                            <select id="featureProduct" name="featureProduct" class="form-control">
+                                              <option value="No" selected>No</option>
+                                              <option value="Yes">Yes</option>
+                                            </select>
+                                          </div>
+                                        </fieldset>
+                                      </div>
+
+
+                                      <div class="form-group row" style="display:none">
+                                        <label class="col-md-5">Created On</label>
+                                        <div class="col-md-7">
+                                          <input type="text" class="form-control" id="createdOn" name="createdOn">
+                                        </div>
+                                      </div>
+
+
+                                      <div class="form-group row d-none">
+                                        <fieldset style="display:none">
+                                          <label class="col-md-5">Permalink</label>
+                                          <div class="col-md-7">
+                                            <input id="permalink" name="permalink" type="text" class="form-control" placeholder="Enter permalink">
+                                          </div>
+                                        </fieldset>
+                                      </div>
+
+
+                                    </div>
+                                  </div>
+
+                                </div>
+                                <!--- Replacing div for <span class="replace-it">offering</span> end here-->
+                              </aside>
+
+                              <!--- Replacing div for <span class="replace-it">offering</span> starts here-->
+
+
+
+
+                              <div class="form-group row">
+                                <div class="col-md-5"> </div>
+                                <div class="col-md-7">
+                                  <div id="recaptchaCommon"></div>
+                                  <span class="captcha-message-common" style="margin-left:0px !important;">{{ $submit_without_recaptcha }}</span>
+                                </div>
+
+                              </div>
+
+
+                            </section>
+
+                            <div class="text-right submit-tooltip">
+
+                              <div class="arrow_box_addOffering arrow_box_submit_addOffering" id="submitInfoMessageBox">{{ $disabled_submit_message }}</div>
+                              <div class="submitButtonOverlay"></div>
+                              <button style="opacity: 1;" type="submit" class="btn btn-primary add-new-bt full-width" name="addProduct" id="addProduct">
+                                Submit </button>
+
+
+                            </div>
+
+                          </form>
+                        </div>
+                        <!-- profile tab ends ::::::::::::::::::::::::::::::::::: -->
+
+
+                      </div>
+
+                    </article>
+
+                  </div>
+                </div>
+
+
+
+
+
+              </div>
+
+            </article>
+
+          </div>
+          <!-- tab 1 ends here-->
+
+          <div class="tab-pane fade" id="news" role="tabpanel" aria-labelledby="news-tab">
+            <header class="post-header">
+              <h2 class="post-title">News</h2>
+            </header>
+            <!--News - Content come here -->
+            <div>
+              <div id="sendMessage" class="alert alert-success" style="display:none"></div>
+              <form name="newsForm" id="newsForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addNewsTitle" id="addNewsTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row ">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addNewsUrl" id="addNewsUrl" required>
+                    <span class="errorCustomMessage validLinkNews">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-news" id="category-news" multiple title="Please select the best suited topics for your offering">
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-news-topics" id="ccm-news-topic" title="Please select the best suited topics" multiple="multiple">
+                      {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="newsDescription" id="newsDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addNewsButton" id="addNewsButton"onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addNewsTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addNewsCancel" id="addNewsCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addNewsTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+                <!--<div class="text-right">    
+
+                <div class=""></div>
+                  <button type="submit" class="btn btn-primary add-new-bt" name="addNewsButton" id="addNewsButton">Submit </button>
+                  <button type="submit" class="btn btn-primary add-new-bt" name="addNewsCancel" id="addNewsCancel">Cancel </button>
+      
+           </div>-->
+
+              </form>
+            </div>
+
+          </div>
+          <!-- tab 2 ends here-->
+
+          <div class="tab-pane fade" id="events" role="tabpanel" aria-labelledby="events-tab">
+            <header class="post-header">
+              <h2 class="post-title">Events</h2>
+            </header>
+            <div>
+              <div id="sendMessage2" class="alert alert-success" style="display:none"></div>
+              <form name="eventForm" id="eventForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addEventTitle" id="addEventTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addEventUrl" id="addEventUrl" required>
+                  <span class="errorCustomMessage validLinkEvent">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-events" id="category-events" multiple title="Please select the best suited topics for your offering">
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-events-topics" id="ccm-events-topic" title="Please select the best suited topics."  multiple="multiple">
+                      {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle  }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="eventDescription" id="eventDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addEventButton" id="addEventButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addEventTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addEventCancel" id="addEventCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addEventTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 3 ends here-->
+
+          <div class="tab-pane fade" id="feeds" role="tabpanel" aria-labelledby="feeds-tab">
+            <header class="post-header">
+              <h2 class="post-title">Feeds</h2>
+            </header>
+            <div>
+              <div id="sendMessage3" class="alert alert-success" style="display:none"></div>
+              <form name="feedForm" id="feedForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addFeedTitle" id="addFeedTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addFeedUrl" id="addFeedUrl" required>
+                  <span class="errorCustomMessage validLinkFeed">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-feeds" id="category-feeds" multiple title="Please select the best suited topics for your offering">
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-feeds-topics" id="ccm-feeds-topic" title="Please select the best suited topics."  multiple="multiple">
+                      {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle  }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="feedDescription" id="feedDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addFeedButton" id="addFeedButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addFeedTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addFeedCancel" id="addFeedCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addFeedTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 4 ends here-->          
+
+          <div class="tab-pane fade" id="awards" role="tabpanel" aria-labelledby="awards-tab">
+            <header class="post-header">
+              <h2 class="post-title">Awards</h2>
+            </header>
+            <div>
+              <div id="sendMessage4" class="alert alert-success" style="display:none"></div>
+              <form name="awardForm" id="awardForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addAwardTitle" id="addAwardTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addAwardUrl" id="addAwardUrl" required>
+                  <span class="errorCustomMessage validLinkAward">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-awards" id="category-awards" multiple title="Please select the best suited topics for your offering" >
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-awards-topic" id="ccm-awards-topic" title="Please select the best suited topics."  multiple="multiple">
+                      {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="awardDescription" id="awardDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addAwardButton" id="addAwardButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addAwardTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addAwardCancel" id="addAwardCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addAwardTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 5 ends here--> 
+          
+          <div class="tab-pane fade" id="topics" role="tabpanel" aria-labelledby="topics-tab">
+            <header class="post-header">
+              <h2 class="post-title">Topics</h2>
+            </header>
+            <div>
+              <div id="sendMessage5" class="alert alert-success" style="display:none"></div>
+              <form name="topicsForm" id="topicsForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addTopicTitle" id="addTopicTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addTopicUrl" id="addTopicUrl" required>
+                  <span class="errorCustomMessage validLinkTopic">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="topicDescription" id="topicDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addTopicButton" id="addTopicButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addTopicTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addTopicButton" id="addTopicCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addTopicTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 6 ends here--> 
+          <div class="tab-pane fade" id="video" role="tabpanel" aria-labelledby="video-tab">
+            <header class="post-header">
+              <h2 class="post-title">Videos</h2>
+            </header>
+            <div>
+              <div id="sendMessage6" class="alert alert-success" style="display:none"></div>
+              <form name="videoForm" id="videoForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addVideoTitle" id="addVideoTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addVideoUrl" id="addVideoUrl" required>
+                  <span class="errorCustomMessage validLinkVideo">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-videos" id="category-videos" multiple title="Please select the best suited topics for your offering" >
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-videos-topics" id="ccm-videos-topic" title="Please select the best suited topics."  multiple="multiple">
+                     {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="videoDescription" id="videoDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addVideoButton" id="addVideoButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addVideoTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addVideoButton" id="addVideoCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addVideoTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 7 ends here-->
+           <div class="tab-pane fade" id="infographics" role="tabpanel" aria-labelledby="infographics-tab">
+            <header class="post-header">
+              <h2 class="post-title">Infographics</h2>
+            </header>
+            <div>
+              <div id="sendMessage7" class="alert alert-success" style="display:none"></div>
+              <form name="infographicsForm" id="infographicsForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addInfographicsTitle" id="addInfographicsTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addInfographicsUrl" id="addInfographicsUrl" required>
+                  <span class="errorCustomMessage validLinkInfographics">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row topics-add-suggest-show">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="category-infographics" id="category-infographics" multiple title="Please select the best suited topics for your offering" >
+
+                    </select>
+                   
+                  </div>
+                </div>
+                <div class="form-group row ccm-topics-add-suggest-show" style="display: none;">
+                  <label class="col-md-3">Select the Topics 
+                    <div class="arrow_box_addOffering arrow_box_category_addOffering" id="categoryInfoMessageBox"> You can choose multiple elements by Ctrl or Shift clicking items</div>
+                    <!--<a class="infoTooltip" data-id="categoryInfoMessageBox" href="javascript:void(0);" data-toggle="tooltip">
+                      <i class="fas fa-question-circle"></i>
+                    </a>-->
+                    <span class="label-optional">(Optional)</span>
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="ccm-infographics-topics" id="ccm-infographics-topic" title="Please select the best suited topics."  multiple="multiple">
+                      {{ $siteData := $.Site.Data.communities }}                      
+                      {{ range $siteData }}
+                        {{ range .topicDetails }}                      
+                            <option value="{{ .topicTitle  }}">{{ .topicTitle }}</option>                
+                        {{ end }}
+                      {{ end }}
+                    </select>  
+                   
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description <span class="label-required">(required)</span></span>                   
+              </label>
+                  <div class="col-md-9">
+                    <textarea name="infographicsDescription" id="infographicsDescription" class="form-control" placeholder="Enter description" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addInfographicsButton" id="addInfographicsButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addInfographicsTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addInfographicsButton" id="addInfographicsCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addInfographicsTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+                </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 8 ends here-->
+          <div class="tab-pane fade" id="idea" role="tabpanel" aria-labelledby="idea-tab">
+            <header class="post-header">
+              <h2 class="post-title">Ideas</h2>
+            </header>
+            <div>
+              <div id="sendMessage8" class="alert alert-success" style="display:none"></div>
+              <form name="ideaForm" id="ideaForm">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Title <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter title" name="addIdeaTitle" id="addIdeaTitle" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Link to the Resource <span class="label-required">(optional)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="text" class="form-control" placeholder="Enter URL" name="addIdeaUrl" id="addIdeaUrl" >
+                  <span class="errorCustomMessage validLinkIdea">Please enter a valid website link.</span>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                   <span>Pitch/Idea <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <textarea name="ideaDescription" id="ideaDescription" class="form-control" placeholder="Description of the pitch/idea in addressing COVID-19" required style="height:150px;"></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                   <span>Email Address <span class="label-required">(required)</span></span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <input type="email" class="form-control" placeholder="Enter Email" name="addIdeaEmail" id="addIdeaEmail" >
+                  </div>
+                </div>
+              <div class="form-group row">
+                  <label class="col-md-3">
+                   <span>To be developed for <span class="label-required">(required)</span></span>                   
+                 </label>
+                <div class="col-md-9">
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="developed-for" value="Clinicians" id="clinicians">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Clinicians
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="developed-for" value="Public Health/Goverment" id="public-health">
+                    <label class="form-check-label" for="defaultCheck2">
+                      Public Health/Goverment
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="developed-for" value="Assisted Living/Eiderly Care/Skiller Nursing Care" id="assisted-living">
+                    <label class="form-check-label" for="defaultCheck3">
+                      Assisted Living/Eiderly Care/Skiller Nursing Care
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="developed-for" value="Consumers" id="consumers">
+                    <label class="form-check-label" for="defaultCheck4">
+                      Consumers
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="developed-for" value="Others" id="others">
+                    <label class="form-check-label" for="defaultCheck5">
+                    Others
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group row">
+                  <label class="col-md-3">
+                   <span>Category</span>                   
+                 </label>
+                <div class="col-md-9">
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="category" value="clinical-diagnostic" id="clinical-diagnostic">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Clinical-Diagnostic
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="category" value="clinical-therapeutic" id="clinical-therapeutic">
+                    <label class="form-check-label" for="defaultCheck2">
+                       Clinical-Therapeutic
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="category" value="clinical-preventive" id="clinical-preventive">
+                    <label class="form-check-label" for="defaultCheck3">
+                       Clinical-Preventive
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="category" value="Consumers" id="consumers">
+                    <label class="form-check-label" for="defaultCheck4">
+                      Social
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label class="col-md-3">
+                   <span>Duration</span>                   
+                 </label>
+                <div class="col-md-9">
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="duration-term" value="short-term" id="short-term">
+                    <label class="form-check-label" for="defaultCheck1">
+                      Short-Term
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="duration-term" value="mid-term" id="mid-term">
+                    <label class="form-check-label" for="defaultCheck2">
+                       Mid-Term
+                    </label>
+                  </div>
+
+                  <div class="form-check idea-check">
+                    <input class="form-check-input idea-dev" type="checkbox" name="duration-term" value="long-term" id="long-term">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Long-Term
+                    </label>
+                  </div>
+                </div>
+              </div>
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <button type="submit" class="btn btn-primary add-new-bt" name="addIdeaButton" id="addIdeaButton" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addIdeaTitle').val(),'gtmPersonid':getCookie('userEmail')})">Submit </button>
+                    <button type="reset" class="btn btn-primary add-new-bt grey-bg-bt" name="addIdeaButton" id="addIdeaCancel" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmTab': $('.nav-tabs .active').text(),'gtmTitle': $('#addIdeaTitle').val(),'gtmPersonid':getCookie('userEmail')})">Cancel </button>
+                  </div>
+              </div>
+
+              </form>
+            </div>
+
+
+          </div>
+          <!-- tab 9 ends here-->
+        </div>
+      </div>
+      <!-- tab content ends -->
+
+
+
+
+    </main>
+  </section>
+  {{ partialCached "footer.html" . }}
+</body>
+
+</html>

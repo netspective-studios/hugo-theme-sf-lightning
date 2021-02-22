@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Manufacturing" 
+ classname:  "Manufacturing" 
+ label: "Manufacturing" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Manufacturing']
+ aliases:  "/topic/gartner-manufacturing"  
+ searchCategory: "topic" 
+---
+TWFudWZhY3R1cmluZyBvcmdhbml6YXRpb25zIGFyZSB1bmRlciBjb25zdGFudCBwcmVzc3VyZSB0byBpbXByb3ZlIHRoZSBjb25zdW1lciBleHBlcmllbmNlLCByZWR1Y2UgY29zdHMsIGFuZCBib29zdCBwcm9maXRhYmlsaXR5IGR1ZSB0byBncm93aW5nIGNvbXBldGl0aW9uIGluIHRoaXMgc2VjdG9yLiBUaGUgbWFudWZhY3R1cmluZyBpbmR1c3RyeSdzIENJT3Mgc2hvdWxkIGRldmVsb3AgaW5ub3ZhdGl2ZSBzdHJhdGVnaWVzIHRvIG1hbmFnZSB0aGUgY2hhbmdlcyBhbmQgdXRpbGl6ZSB0aGUgb3Bwb3J0dW5pdGllcyB0byBkcml2ZSBkaWdpdGFsIHRyYW5zZm9ybWF0aW9uLiBBcnRpZmljaWFsIGludGVsbGlnZW5jZSwgdGhlIEludGVybmV0IG9mIFRoaW5ncywgZGF0YSBhbmFseXRpY3MsIGFuZCBvdGhlciB0ZWNobm9sb2dpZXMgY2FuIGZhY2lsaXRhdGUgZ3Jvd3RoIGFuZCBwcm9maXRhYmlsaXR5IGluIHRoZSBtYW51ZmFjdHVyaW5nIGluZHVzdHJ5Lg==

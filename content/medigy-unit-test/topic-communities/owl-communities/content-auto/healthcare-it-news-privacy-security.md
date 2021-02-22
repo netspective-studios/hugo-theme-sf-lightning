@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Privacy & Security" 
+ classname:  "OWLClass_a7ddb52a_b1aa_4916_babb_e50457438244" 
+ label: "Privacy & Security" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Healthcare IT News: Security Risks','Healthcare IT Today: Security & Privacy'] 
+ collections: ['Healthcare IT News: Privacy & Security']
+ aliases:  "/topic/healthcare-it-news-privacy-security"  
+ searchCategory: "topic" 
+---
+UHJpdmFjeSAmIHNlY3VyaXR5IHNvbHV0aW9ucyBoYXZlIGEgc2lnbmlmaWNhbnQgaW1wYWN0IG9uIEN5YmVyc2VjdXJpdHkuIEJvdGggYXJlIGltcG9ydGFudCBmb3IgcHJvdGVjdGluZyBhbGwgdHlwZXMgb2YgaW5mb3JtYXRpb24gYXZhaWxhYmxlIGluIGFueSBmb3JtLiBQcml2YWN5IGFuZCBzZWN1cml0eSBzb2x1dGlvbnMgZW5zdXJlIHRoYXQgdGhlIGluZm9ybWF0aW9u4oCZcyBjb25maWRlbnRpYWxpdHksIGludGVncml0eSwgYW5kIGF2YWlsYWJpbGl0eSBhcmUgbWFpbnRhaW5lZC4KQWx0aG91Z2ggYm90aCBwcml2YWN5IGFuZCBzZWN1cml0eSBoYXZlIHRoZSBzYW1lIHB1cnBvc2Ugb2YgcHJvdGVjdGluZyBkYXRhLCBib3RoIGFyZSBkaWZmZXJlbnQuIFByaXZhY3kgZ2l2ZXMgeW91IHRoZSByaWdodCB0byBwcm90ZWN0IHlvdXIgaW5mb3JtYXRpb24gd2hpbGUgc2VjdXJpdHkgcmVmZXJzIHRvIGhvdyB5b3VyIHBlcnNvbmFsIGluZm9ybWF0aW9uIGlzIHByb3RlY3RlZC4gUHJpdmFjeSBhbmQgc2VjdXJpdHkgaW4gaGVhbHRoY2FyZSBhcmUgZXNzZW50aWFsIGZvciByZWR1Y2luZyB0aGUgcmlzayBvZiBjeWJlci1hdHRhY2tzIGFuZCB0aGVyZWZvcmUgbWFpbnRhaW4gdGhlIHByZXN0aWdlIG9mIGJvdGggZG9jdG9ycyBhbmQgdGhlaXIgcGF0aWVudHMu

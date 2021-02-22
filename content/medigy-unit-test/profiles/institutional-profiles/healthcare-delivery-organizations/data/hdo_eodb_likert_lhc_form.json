@@ -1,0 +1,2658 @@
+{
+  "shortName": "ease-doing-business-with",
+  "name": "Ease of Doing Business With",
+  "status": "draft",
+  "version": "fas fa-history",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": true,
+          "question": "Customer Support and Governance",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-customer-support-and-governance",
+          "prefix": {
+            "iconCss": "far fa-comments left-icon",
+            "tooltip": "This is a sample tool tip"
+          },
+          "localQuestionCode": "agreement_support",
+          "codingInstructions": "Prefix is used for font-awesome icon and local code is for metric name",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system support getting to a yes or no quickly?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-customer-support-and-governance-question-1",
+              "localQuestionCode": "agr_support_resource",
+              "codingInstructions": "local code is used for metric attribute",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide dedicated resources to support innovators",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-customer-support-and-governance-question-1-1",
+                  "localQuestionCode": "agr_support_resource",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide publicly available information to help innovators understand what we care about",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-customer-support-and-governance-question-1-2",
+                  "localQuestionCode": "agr_support_care",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide timely communications to express interest or discontinue discussions",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-customer-support-and-governance-question-1-3",
+                  "localQuestionCode": "agr_support_timely",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": "",
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We communicate and provide clear decision pathways",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-customer-support-and-governance-question-1-4",
+                  "localQuestionCode": "agr_support_clear",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have an established and efficient due diligence pathway",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-customer-support-and-governance-question-1-5",
+                  "localQuestionCode": "agr_support_due",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Contracting and Legal",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-contracting-and-legal",
+          "prefix": {
+            "iconCss": "fas fa-balance-scale left-icon"
+          },
+          "localQuestionCode": "agreement_legal",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system have contracting and legal processes that accommodate innovators?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-contracting-and-legal-question-1",
+              "localQuestionCode": "agreement_legal",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have financial 'light' policies geared toward innovators",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-1",
+                  "localQuestionCode": "agr_legal_light",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We create equitable and favorable terms share upside gains",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-2",
+                  "localQuestionCode": "agr_legal_share",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We create contracts with pathways to scale",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-3",
+                  "localQuestionCode": "agr_legal_scale",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have a timely contracting process",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-4",
+                  "localQuestionCode": "agr_legal_process",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have legal representatives familiar with working with innovators",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-5",
+                  "localQuestionCode": "agr_legal_legal",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have indemnity and insurance clauses that don't overly burden innovators",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-6",
+                  "localQuestionCode": "agr_legal_indemnity",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have legal departments willing to work with innovators with limited legal resources",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-contracting-and-legal-question-1-7",
+                  "localQuestionCode": "agr_legal_dep",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Patient Safety and Research",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-patient-safety-and-research",
+          "prefix": {
+            "iconCss": "fas fa-briefcase-medical left-icon"
+          },
+          "localQuestionCode": "agreement_research",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system have safety and research policies and processes that both protect patients, but encourage rapid discovery and evaluation?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-patient-safety-and-research-question-1",
+              "localQuestionCode": "agreement_research",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "I would consider my system to be a \"clinical research center of excellence for digital technologies",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-1",
+                  "localQuestionCode": "agr_research_excellence",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "Our IRB department has expertise supporting digital clinical trials",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-2",
+                  "localQuestionCode": "agr_research_expertise",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have clear policies articulating when IRB is needed for digital trials",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-3",
+                  "localQuestionCode": "agr_research_policies",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have an efficient start to finish time in IRB reviews",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-4",
+                  "localQuestionCode": "agr_research_efficient",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have attractive IRB pricing",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-5",
+                  "localQuestionCode": "agr_research_attractive",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "Our IRB is willing to work with other health systems for multi-site research",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-6",
+                  "localQuestionCode": "agr_research_willing",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have a research team that can support digital trials",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-patient-safety-and-research-question-1-7",
+                  "localQuestionCode": "agr_research_support",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Integration and Technology",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-integration-and-technology",
+          "prefix": {
+            "iconCss": "fas fa-laptop left-icon"
+          },
+          "localQuestionCode": "agreement_technology",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system make it easy to adopt an emerging health tech solution?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-integration-and-technology-question-1",
+              "localQuestionCode": "agreement_technology",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have clear access to data end points (API/HL7/FHIR)",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-1",
+                  "localQuestionCode": "agr_technology_access",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have an efficient integration process",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-2",
+                  "localQuestionCode": "agr_technology_integration",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide attracting integration pricing to innovators",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-3",
+                  "localQuestionCode": "agr_technology_attracting",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have onsite integration specialists",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-4",
+                  "localQuestionCode": "agr_technology_specialists",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We use standard integration pathways (network, SAML, data fields, configuration, testing, deployment)",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-5",
+                  "localQuestionCode": "agr_technology_pathways",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have accessible enterprise cloud and middleware integration solutions",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-integration-and-technology-question-1-6",
+                  "localQuestionCode": "agr_technology_enterprise",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Data Security and Availability",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-data-security-and-availability",
+          "prefix": {
+            "iconCss": "fas fa-folder-open left-icon"
+          },
+          "localQuestionCode": "agreement_security",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system make data available?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-data-security-and-availability-question-1",
+              "localQuestionCode": "agreement_security",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have a common set of data stewards",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-data-security-and-availability-question-1-1",
+                  "localQuestionCode": "agr_security_common",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have a standard data catalog",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-data-security-and-availability-question-1-2",
+                  "localQuestionCode": "agr_security_standard",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have policies related to data sharing for co-development and research",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-data-security-and-availability-question-1-3",
+                  "localQuestionCode": "agr_security_policies",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide access to data sandboxes",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-data-security-and-availability-question-1-4",
+                  "localQuestionCode": "agr_security_provide",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We can quickly extract and anonymize data sets",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-data-security-and-availability-question-1-5",
+                  "localQuestionCode": "agr_security_extract",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Clinical Support",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-clinical-support",
+          "prefix": {
+            "iconCss": "fas fa-vials left-icon"
+          },
+          "localQuestionCode": "agreement_clinical",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system have clinical champions to support innovators?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-clinical-support-question-1",
+              "localQuestionCode": "agreement_clinical",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide access to dedicated clinical champions",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-clinical-support-question-1-1",
+                  "localQuestionCode": "agr_clinical_champions",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have many principal investigators dedicated to digital tech",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-clinical-support-question-1-2",
+                  "localQuestionCode": "agr_clinical_digital",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Commercialization and Scaling Support",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-commercialization-and-scaling-support",
+          "prefix": {
+            "iconCss": "fas fa-hand-holding-usd left-icon"
+          },
+          "localQuestionCode": "agreement_scaling",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Does this healthcare system support business development beyond the trail/validation period?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1",
+              "localQuestionCode": "agreement_scaling",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have business development resources focused on digital tech",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-1",
+                  "localQuestionCode": "agr_scaling_digital",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide support and pathways to scale",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-2",
+                  "localQuestionCode": "agr_scaling_pathways",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We help refer working solutions to other systems",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-3",
+                  "localQuestionCode": "agr_scaling_solutions",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide access to growth capital",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-4",
+                  "localQuestionCode": "agr_scaling_growth",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We are willing to co-publish",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-5",
+                  "localQuestionCode": "agr_scaling_publish",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We have liberal branding and use of logo policies with partners",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-6",
+                  "localQuestionCode": "agr_scaling_branding",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide dedicated investment vehicles",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-7",
+                  "localQuestionCode": "agr_scaling_investment",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "We provide board advisors",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-commercialization-and-scaling-support-question-1-8",
+                  "localQuestionCode": "agr_scaling_advisors",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Industry Perceptions",
+          "questionCodeSystem": "Custom",
+          "questionCode": "hdo-eodb-industry-perceptions",
+          "prefix": {
+            "iconCss": "fas fa-briefcase left-icon"
+          },
+          "localQuestionCode": "agreement_perceptions",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Is the healthcare system perceived to be “easy to do business with”?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "hdo-eodb-industry-perceptions-question-1",
+              "localQuestionCode": "agreement_perceptions",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "items": [
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "Innovators perceive us as being easy to work with",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-industry-perceptions-question-1-1",
+                  "localQuestionCode": "agr_perceptions_easy",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                },
+                {
+                  "header": false,
+                  "dataType": "CNE",
+                  "question": "Other health systems perceive us as being easy to work with",
+                  "questionCodeSystem": "Custom",
+                  "questionCode": "hdo-eodb-industry-perceptions-question-1-2",
+                  "localQuestionCode": "agr_perceptions_perceive",
+                  "questionCardinality": {
+                    "min": "1",
+                    "max": "1"
+                  },
+                  "answerCardinality": {
+                    "min": "0",
+                    "max": "1"
+                  },
+                  "editable": "1",
+                  "answers": [
+                    {
+                      "text": "Strongly disagree",
+                      "code": "strongly_disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Disagree",
+                      "code": "disagree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Neutral",
+                      "code": "neutral",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Agree",
+                      "code": "agree",
+                      "label": null,
+                      "score": null
+                    },
+                    {
+                      "text": "Strongly agree",
+                      "code": "strongly_agree",
+                      "label": null,
+                      "score": null
+                    }
+                  ],
+                  "displayControl": {
+                    "answerLayout": {
+                      "type": "RADIO_CHECKBOX"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Policy Based Message",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Please login to evaluate how easy it is to do business with <HDO Name>",
+              "code": "publicEaseOfDoingBusiness",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "The following section allows your strategic partners to evaluate how easy your health system might be in “doing business with”. It is built on the belief that transforming the health system will come not from within, but from strategic partnerships with digital innovators",
+              "code": "innovatorHdoProfile",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Please evaluate how easy it is to do business with <HDO Name>. Your review will provide an unbiased feedback about <HDO Name> Innovation Center. So, please share your thoughts based on your experience of working together",
+              "code": "innovatorHdoAuthenticatedMembers",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

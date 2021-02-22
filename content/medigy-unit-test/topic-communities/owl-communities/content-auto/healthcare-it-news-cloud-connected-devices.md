@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Cloud-Connected Devices" 
+ classname:  "Cloud-connected_devices" 
+ label: "Cloud-Connected Devices" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Cloud-Connected Devices']
+ aliases:  "/topic/healthcare-it-news-cloud-connected-devices"  
+ searchCategory: "topic" 
+---
+SW4gbW9kZXJuIGhlYWx0aGNhcmUsIG1lZGljYWwgZGV2aWNlcyB0cmFuc2ZlciB0aGVpciBkYXRhIGRpcmVjdGx5IHRvIHRoZSBjbG91ZC4gQ2xvdWQtY29ubmVjdGVkIGRldmljZXMgYXJlIGNhcGFibGUgb2YgdHJhbnNmZXJyaW5nIGRhdGEgZGlyZWN0bHkgdG8gZWxlY3Ryb25pYyBoZWFsdGggcmVjb3Jkcywgb3IgYSByZW1vdGUtaG9zdGVkIHN0b3JhZ2UgYXJlYSBzbyB0aGF0IGl0IGNhbiBiZSBzaGFyZWQgd2l0aCBvdGhlciBoZWFsdGhjYXJlIGRlbGl2ZXJ5IG9yZ2FuaXphdGlvbnMuIFRoZSBleHRlbnNpdmUgYWRvcHRpb24gb2YgY2xvdWQgY29tcHV0aW5nIGluIGhlYWx0aGNhcmUgc2VydmVzIG1hbnkgcHVycG9zZXMgYmVzaWRlcyBqdXN0IHN0b3JpbmcgZGF0YSBvbiBjbG91ZCBhcmNoaXRlY3R1cmUuCkhlYWx0aGNhcmUgcHJvdmlkZXJzIGFyZSBub3cgbGV2ZXJhZ2luZyB0aGUgY2xvdWQgY29tcHV0aW5nIHRlY2hub2xvZ3kgdG8gZ2FpbiBlZmZpY2llbmNpZXMsIG9wdGltaXplIHdvcmtmbG93cywgbG93ZXIgdGhlIGhlYWx0aGNhcmUgY29zdHMsIGFuZCBvZmZlciBwZXJzb25hbGl6YXRpb24gaW4gY2FyZSBwbGFucyB0byBpbXByb3ZlIG91dGNvbWVzLg==

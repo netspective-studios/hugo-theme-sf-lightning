@@ -1,0 +1,122 @@
+<div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" 
+  class="card blog-card" rel="bookmark" >
+  {{ if .Params.logo}}
+    <div class="card-img-container">
+      {{ if ne .Params.logo "Nil" }}
+        <a href="{{ .Permalink }}"><img src="{{.Params.logo }}" alt="{{ .Params.title }}" class="card-img" onerror="this.onerror=null; this.src='/img/noimage-200x200.png'"/></a>
+      {{else}}
+        <a href="{{ .Permalink }}"><img src="/img/noimage-200x200.png" alt="{{ .Params.title }}" class="card-img" onerror="this.onerror=null; this.src='/img/noimage-200x200.png'"/></a> 
+      {{end}} 
+    </div>  
+  {{ else }}
+    <div class="card-img-container">
+    <a href="{{ .Permalink }}"><img src="/img/noimage-200x200.png" alt="{{ .Params.title }}" class="card-img" /></a>
+    </div>
+  {{ end }}
+  <article class="card-body">
+
+    <h2 class="card-title"><a href="{{ .Permalink }}">{{.Title}}</a></h2>
+  
+    
+  {{ if (not ( .Params.companydescription)) | or (eq .Params.companydescription "") }}
+
+                               
+     
+  <p class="card-text ch-limit"> Description about this institution is not provided. </p>
+
+
+  {{ else }}
+
+  <p class="card-text ch-limit"> {{ .Params.companydescription | safeHTML | truncate 200 }} </p>
+
+ 
+ 
+  {{ end }}
+
+
+  <div class="metrix row count-bt-area">
+  
+    <div class="col-lg-9 col-md-9">
+      <p class="card-subtext muted-text insti-contact-tags">
+      {{ $industry := .Params.industry }}    
+      {{ $industryValue := substr $industry  0 9}} 
+      {{ if or ( .Params.industry) (and  (ne .Params.industry "Nil") (ne .Params.industry "") (ne $industryValue "undefined"))}}
+        <span class="institute-sm-ico"> <i class="fas fa-building"></i> </span>
+        {{ .Params.industry }}
+        {{ end }}
+
+        {{ $company := .Params.companySize }}    
+        {{ $companyValue := substr $company  0 9}} 
+        {{ if or ( .Params.companySize) (and  (ne .Params.companySize "Nil") (ne .Params.companySize "") (ne $companyValue "undefined"))}}
+        <span class="institute-sm-ico"> <i class="fas fa-user-friends"></i> </span>
+        
+        {{ .Params.companySize }}
+        {{ end }}
+        
+         {{ $address := .Params.addressHouseBuilding }}    
+         {{ $addressHousevalue := substr $address  0 9}} 
+        {{ if or ( .Params.addressHouseBuilding) (and  (ne .Params.addressHouseBuilding "Nil") (ne .Params.addressHouseBuilding "") (ne $addressHousevalue "undefined"))}}
+        <span class="institute-sm-ico"> <i class="fas fa-map-marker-alt"></i> </span> {{ .Params.addressHouseBuilding }}
+        {{if and ( .Params.addressTownCity) (and (ne .Params.addressTownCity "Nil") (ne .Params.addressTownCity "undefined")) }},
+        {{ .Params.addressTownCity }} {{ end }}
+        {{ if  and ( .Params.addressStateProvince) (and (ne .Params.addressStateProvince "Nil")  (ne .Params.addressStateProvince "undefined")) }},
+        {{ .Params.addressStateProvince }}{{ end }}{{ if  and ( .Params.addressCountryRegion) (and (ne .Params.addressCountryRegion "Nil") (ne .Params.addressCountryRegion "undefined")) }},
+        {{ .Params.addressCountryRegion}}{{ end }}{{ if  and ( .Params.addressZipPostalCode) (and (ne .Params.addressZipPostalCode "Nil") (ne .Params.addressZipPostalCode "undefined")) }},
+        {{ .Params.addressZipPostalCode}} {{ end }}
+        {{ end }}
+  
+      </p>
+    </div>
+    <div class="col-lg-3 col-md-3">
+      
+  
+      <div class="social-share social-count-display">
+
+
+       {{ $permaLink := .Permalink | safeURL}}
+
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "https://www.facebook.com/sharer/sharer.php?u="  $safeUrl .RelPermalink }}
+          {{ $class := "fb-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Facebook" }}
+          {{ $icon := "fab fa-facebook-square cl-f" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+
+          {{ $permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl .RelPermalink }}
+          {{ $class := "twitter-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Twitter" }}
+          {{ $icon := "fab fa-twitter-square cl-t" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+
+          {{$permaLink := .Permalink | safeURL}}
+          {{ $safeUrl := $.Site.Params.siteUrl }}
+          {{ $href := print "http://www.linkedin.com/shareArticle?url="  $safeUrl .RelPermalink }}
+          {{ $class := "linkedin-share-push fb-share" }}
+          {{ $dataApp := .Params.id }}
+          {{ $dataSlug := .Permalink }}
+          {{ $dataName := .Title }}
+          {{ $tooltip := "Linkedin" }}
+          {{ $icon := "fab fa-linkedin cl-in" }}
+          {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip $dataName}}
+         
+       
+   
+  
+      </div>
+  
+  
+    </div>
+  
+  
+  </div>
+
+  </article>
+</div>

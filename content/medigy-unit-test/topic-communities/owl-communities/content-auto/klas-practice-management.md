@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Practice Management" 
+ classname:  "PracticeManagement" 
+ label: "Practice Management" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Practice Management']
+ aliases:  "/topic/klas-practice-management"  
+ searchCategory: "topic" 
+---
+UHJhY3RpY2UgTWFuYWdlbWVudCBTb2Z0d2FyZSAoUE1TKSB1c2VkIGluIG1lZGljYWwgb2ZmaWNlcyBtb3N0bHkgZm9jdXNlcyBvbiBwYXRpZW50IHJlZ2lzdHJhdGlvbiwgc2NoZWR1bGluZyBhcHBvaW50bWVudHMsIGFuZCBiaWxsaW5nLiBQTVMgYXJlIG1lYW50IHRvIGF2b2lkIHRoZSBhcmR1b3VzIGFuZCB0aW1lIGNvbnN1bWluZyBwYXRpZW50LXJlbGF0ZWQgdGFza3MgaW4gdGhlIGhlYWx0aGNhcmUgcHJhY3RpY2UuIFNvZnR3YXJlIGxpa2UgUE1TIHByb3ZpZGUgcGh5c2ljaWFucyBhbmQgb3RoZXIgbWVkaWNhbCBzdGFmZiBhIHF1aWNrIGFjY2VzcyB0byBiYXNpYyBwYXRpZW50IGluZm9ybWF0aW9uIGxpa2UgYSBwYXRpZW504oCZcyBwZXJzb25hbCBoaXN0b3J5IChuYW1lLCBwaG9uZSBudW1iZXIsIGFkZHJlc3MpIGJlc2lkZXMgZXh0ZW5zaXZlIGNsaW5pY2FsIGRhdGEgaW5jbHVkaW5nIG1lZGljYWwgaGlzdG9yeSBhbmQgcmVhc29ucyBmb3IgcGFzdCBob3NwaXRhbCB2aXNpdHMu

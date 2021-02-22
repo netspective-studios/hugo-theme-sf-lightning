@@ -1,0 +1,14 @@
+--- 
+ title: "U.S. Food and Drug Administration (FDA): Device Software Functions Including Mobile Medical Applications" 
+ classname:  "Device_Software_Functions_Including_Mobile_Medical_Applications" 
+ label: "Device Software Functions Including Mobile Medical Applications" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "U.S._Food_and_Drug_Administration" 
+ parentclasslabel: "U.S. Food and Drug Administration (FDA)" 
+ equalentCollections: ['KLAS: Application Hosting','HIMSS: Informatics','Frost & Sullivan: Applications'] 
+ collections: ['U.S. Food and Drug Administration (FDA): Device Software Functions Including Mobile Medical Applications']
+ aliases:  "/topic/u.s.food-and-drug-administration-fda-device-software-functions-including-mobile-medical-applications"  
+ searchCategory: "topic" 
+---
+U29mdHdhcmUgZnVuY3Rpb25zIGluY2x1ZGUgbW9iaWxlIGFwcGxpY2F0aW9ucyB0aGF0IGZ1bGZpbGwgdGhlIGNyaXRlcmlhIG9mIGJlaW5nIGEgZGV2aWNlIHRoYXQgbWF5IGJlIHV0aWxpemVkIG9uIG1vYmlsZSBwbGF0Zm9ybXMsIHRoZSBmdW5jdGlvbmluZyBvZiBhIGhhcmR3YXJlIGRldmljZSwgb3Igb3RoZXIgZ2VuZXJhbC1wdXJwb3NlIGNvbXB1dGluZyBwbGF0Zm9ybXMuIE1vYmlsZSBtZWRpY2FsIGFwcHMgYXJlIG1vYmlsZSBhcHBsaWNhdGlvbnMgdGhhdCBtZWV0IHRoZSBjcml0ZXJpYSBvZiBiZWluZyBhIG1lZGljYWwgZGV2aWNlIGFuZCBhcmUgYSBwYXJ0IG9mIGEgcmVndWxhdGVkIG1lZGljYWwgZGV2aWNlIG9yIGhhdmUgdGhlIGFiaWxpdHkgdG8gbW9kaWZ5IGEgbW9iaWxlIHBsYXRmb3JtIGludG8gYSByZWd1bGF0ZWQgbWVkaWNhbCBkZXZpY2UuIFRoZXNlIGFwcGxpY2F0aW9ucyBoZWxwIHBlb3BsZSBpbiB0aGVpciBoZWFsdGggbWFuYWdlbWVudCwgcmV0cmlldmUgdXNlZnVsIGluZm9ybWF0aW9uIGF0IHRoZWlyIGNvbWZvcnQsIGFuZCBlbmNvdXJhZ2UgaGVhbHRoeSBsaXZpbmcuIE1vYmlsZSBtZWRpY2FsIGFwcHMgYWxzbyBoZWxwIGhlYWx0aGNhcmUgcHJvdmlkZXJzIGFjaGlldmUgYmV0dGVyIHBhdGllbnQgY2FyZSBieSBwcm92aWRpbmcgZ3VpZGFuY2UgZm9yIGRpYWdub3NpbmcgYW5kIHRyZWF0aW5nIHZhcmlvdXMgZGlzZWFzZXMu

@@ -1,0 +1,14 @@
+--- 
+ title: "McKinsey & Company: Operations" 
+ classname:  "OWLClass_aa506a50_a436_4346_bdb4_877f7b9282d1" 
+ label: "Operations" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "McKinsey_&_Company" 
+ parentclasslabel: "McKinsey & Company" 
+ equalentCollections: [] 
+ collections: ['McKinsey & Company: Operations']
+ aliases:  "/topic/mckinsey-company-operations"  
+ searchCategory: "topic" 
+---
+T3BlcmF0aW9ucyBpbiBoZWFsdGhjYXJlIG9yIGhlYWx0aGNhcmUgb3BlcmF0aW9ucyBhaW0gYXQgdGhlIGVmZmljaWVudCBmdW5jdGlvbmluZyBvZiBoZWFsdGhjYXJlIHN5c3RlbXMgd2hpbGUgZGVsaXZlcmluZyBoaWdoLXF1YWxpdHksIGFwcHJvcHJpYXRlIGNhcmUuIFRoZSBoZWFsdGggb3BlcmF0aW9ucyBpbnZvbHZlIGFsbCB0aGUgbGVnYWwsIGZpbmFuY2lhbCwgYW5kIGNsaW5pY2FsIGFjdGl2aXRpZXMgdGhhdCBrZWVwIGhlYWx0aCBzeXN0ZW1zIGNhcmluZyBmb3IgcGF0aWVudHMuIEhlYWx0aGNhcmUgb3BlcmF0aW9ucyBtYW5hZ2VtZW50IGluY2x1ZGVzIGFsbCB0aGUgaW1wb3J0YW50IHByb2Nlc3NlcyBmb3IgdGhlIGNyZWF0aW9uIGFuZCBkaXN0cmlidXRpb24gb2YgcHJvZHVjdHMgYW5kIHNlcnZpY2VzLiBJdCBpcyByZXNwb25zaWJsZSBmb3IgdGhlIG1hbmFnZW1lbnQgb2YgaGVhbHRoY2FyZSBjb3N0cyB3aGlsZSBlbnN1cmluZyBoaWdoLXF1YWxpdHksIHBhdGllbnQtY2VudHJpYyBjYXJlLg==

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Self-Scheduling" 
+ classname:  "Self-scheduling" 
+ label: "Self-Scheduling" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Self-Scheduling']
+ aliases:  "/topic/healthcare-it-news-self-scheduling"  
+ searchCategory: "topic" 
+---
+U2VsZi1zY2hlZHVsaW5nIHByb3ZpZGVzIGVtcGxveWVlcyB0aGUgb3Bwb3J0dW5pdHkgdG8gc2NoZWR1bGUgdGhlaXIgd29yayBzaGlmdHMgYW5kIGVuYWJsZXMgdGhlIHN0YWZmIHRvIGZpbmQgYW4gaWRlYWwgd29yay1saWZlIGJhbGFuY2UuIEF0IHRoZSBzYW1lIHRpbWUsIGVtcGxveWVycyBoYXZlIHRoZWlyIHNoaWZ0cyBlYXNpbHkgZmlsbGVkLCBzYXZpbmcgdGltZSBmb3IgZXZlcnlvbmUgaW52b2x2ZWQuIFNlbGYtc2NoZWR1bGluZyBpbnZvbHZlcyB0aGUgcGFydGljaXBhdGlvbiBvZiBlbXBsb3llZXMgaW4gdGhlaXIgc2NoZWR1bGluZyBwcm9jZXNzIHVzaW5nIGRpZmZlcmVudCBtZXRob2RzIHN1Y2ggYXMgc2hpZnQgYmlkZGluZywgdXNpbmcgYXJ0aWZpY2lhbCBpbnRlbGxpZ2VuY2UgdG9vbHMsIGFuZCBhdXRvLWZpbGwgc2hpZnRzLCBldGMuClNlbGYtc2NoZWR1bGluZyBmb3IgbnVyc2VzIGlzIGFuIGlkZWFsIHdheSBvZiBjb250cm9sbGluZyB0aGVpciB3b3JrIHNjaGVkdWxlcy4gRW1wb3dlcmluZyBudXJzZXMgd2l0aCBzZWxmLXNjaGVkdWxpbmcgYnVpbGRzIG1vcmFsZSBhbmQgaXMgbW9yZSBlZmZpY2llbnQgdGhhbiBhIG51cnNpbmcgbWFuYWdlciBvciBkaXJlY3RvciBzcGVuZGluZyBob3VycyBmaWxsaW5nIHRoZSBzY2hlZHVsZS4=

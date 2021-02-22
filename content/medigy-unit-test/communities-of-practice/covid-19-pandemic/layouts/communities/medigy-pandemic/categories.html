@@ -1,0 +1,15 @@
+{{ partial "communities-pandemic-themeConfig.html" . }}  
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partial (print ($.Scratch.Get "head") ) . }}  
+  <body class="single-body">
+    {{ partial (print ($.Scratch.Get "nav-bar") ) . }}
+    <!-- community category strats here -->
+    <section class="detail-wrapper">
+      <h2 id="category-title" style="display:none">{{ .Title }}</h2>
+    <hr>
+    </section>
+    {{ partialCached (print ($.Scratch.Get "footer") ) . }}
+    
+  </body>
+</html>

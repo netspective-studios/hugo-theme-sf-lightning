@@ -1,0 +1,14 @@
+--- 
+ title: "McKinsey & Company: Hospitals" 
+ classname:  "OWLClass_e67c9e6c_36de_430f_a8f4_45e707c54c01" 
+ label: "Hospitals" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "McKinsey_&_Company" 
+ parentclasslabel: "McKinsey & Company" 
+ equalentCollections: [] 
+ collections: ['McKinsey & Company: Hospitals']
+ aliases:  "/topic/mckinsey-company-hospitals"  
+ searchCategory: "topic" 
+---
+SG9zcGl0YWxzIGFyZSBoZWFsdGhjYXJlIG9yZ2FuaXphdGlvbnMgYnVpbHQsIHN0YWZmZWQsIGFuZCBlcXVpcHBlZCB0byBkaWFnbm9zZSBhbmQgdHJlYXQgZGlzZWFzZXMuIEhvc3BpdGFscyBhcmUgcmVzcG9uc2libGUgZm9yIGRlbGl2ZXJpbmcgaGlnaC1xdWFsaXR5IGhlYWx0aGNhcmUgc2VydmljZXMgdG8gdGhlIHBhdGllbnRzLCBwbGFjaW5nIHBlb3BsZSBpbiB0aGUgY2VudGVyLiBUaGVyZSBhcmUgZGlmZmVyZW50IHR5cGVzIG9mIGhvc3BpdGFscyBhdmFpbGFibGUgdG8gdHJlYXQgcGF0aWVudHMsIGluY2x1ZGluZyBhY3V0ZSBjYXJlIGhvc3BpdGFscywgcnVyYWwgaG9zcGl0YWxzLCBlbWVyZ2VuY3kgaG9zcGl0YWxzLCB1cmJhbiBob3NwaXRhbHMsIGNvbW11bml0eSBob3NwaXRhbHMsIGxvbmctdGVybSBjYXJlIGhvc3BpdGFscywgZXRjLiAgQSBjb21tdW5pdHkgaG9zcGl0YWwgb3IgY29tbXVuaXR5IGhlYWx0aGNhcmUgc3lzdGVtIGlzIGEgc21hbGwgbG9jYWwgaG9zcGl0YWwgdGhhdCBvZmZlcnMgYSByYW5nZSBvZiBzZXJ2aWNlcyB3aXRoaW4gYSBjb21tdW5pdHku

@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Referrals" 
+ classname:  "Referrals" 
+ label: "Referrals" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: ['KLAS: Healthcare Management Consulting'] 
+ collections: ['Medigy: Referrals']
+ aliases:  "/topic/medigy-referrals"  
+ searchCategory: "topic" 
+---
+UmVmZXJyYWxzIGluIGhlYWx0aGNhcmUgaW5jbHVkZSBzZW5kaW5nIGEgcGF0aWVudCAoYnkgb25lIGhlYWx0aGNhcmUgc3BlY2lhbGlzdCkgdG8gYW5vdGhlciBoZWFsdGhjYXJlIHNwZWNpYWxpc3Qgd2hvIGlzIG1vcmUga25vd2xlZGdlYWJsZSBhbmQgZXhwZXJpZW5jZWQgYWJvdXQgdGhlIHVuZGVybHlpbmcgY29uZGl0aW9uIG9mIHRoZSBwYXRpZW50LiBBIHJlZmVycmFsIG1heSBoZWxwIGEgcGF0aWVudCBpbiBhdHRhaW5pbmcgcHJvcGVyIGNhcmUgc2VydmljZSwgZGlhZ25vc2lzLCBhbmQgdHJlYXRtZW50LgpBIHJlZmVycmFsIGlzIGVzc2VudGlhbCBpbiB0aGUgY2FzZSBvZiBoZWFsdGggbWFpbnRlbmFuY2Ugb3JnYW5pemF0aW9ucyAoSE1PcykgZm9yIHZpc2l0aW5nIGFueSBwcmFjdGl0aW9uZXIgb3Igc3BlY2lhbGlzdCBvdGhlciB0aGFuIGEgcHJpbWFyeSBjYXJlIHBoeXNpY2lhbiAoUENQKS4gUGF0aWVudHMgbWF5IHJlcXVpcmUgYSByZWZlcnJhbCBsZXR0ZXIgY29udGFpbmluZyBhbGwgaGlzL2hlciBwcmV2aW91cyBoZWFsdGggZGV0YWlscyBmb3IgZW5zdXJpbmcgYSBzbW9vdGggdHJhbnNpdGlvbiBvZiBjYXJlLg==

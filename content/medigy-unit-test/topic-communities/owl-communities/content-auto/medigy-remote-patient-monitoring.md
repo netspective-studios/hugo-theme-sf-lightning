@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Remote Patient Monitoring" 
+ classname:  "OWLClass_b332cd09_eaae_404b_ad40_63bef6ce1957" 
+ label: "Remote Patient Monitoring" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: ['Gartner: On-device Monitoring','Healthcare IT News: Remote Patient Monitoring','Healthcare IT News: Remote Care Technology','Healthcare IT News: Patient Monitoring','Gartner: Remote Diagnostics','KLAS: Remote Patient Monitoring','Gartner: Connected Home','Medigy: Remote Cardiac Monitoring','U.S. Food and Drug Administration (FDA): Remote or Wearable Patient Monitoring Devices EUAs'] 
+ collections: ['Medigy: Remote Patient Monitoring']
+ aliases:  "/topic/medigy-remote-patient-monitoring"  
+ searchCategory: "topic" 
+---
+UmVtb3RlIFBhdGllbnQgTW9uaXRvcmluZyAoUlBNKSBlbmFibGVzIHBhdGllbnRzIHRvIG1hbmFnZSB0aGVpciBoZWFsdGggYW5kIGFjdGl2ZWx5IHBhcnRpY2lwYXRlIGluIHRoZWlyIGhlYWx0aGNhcmUuIEl0IHVzZXMgZGlnaXRhbCB0ZWNobm9sb2d5IHRvIGNvbGxlY3QgcGF0aWVudCBoZWFsdGggZGF0YSBhbmQgc2VjdXJlbHkgc2hhcmVkIHdpdGggaGVhbHRoY2FyZSBwcm92aWRlcnMuIEEgcmVtb3RlIHBhdGllbnQgY2FyZSB0ZWNobm9sb2d5IGhlbHBzIHBhdGllbnRzIGluIG1hbmFnaW5nIHRoZWlyIGNocm9uaWMgZGlzZWFzZXMgbGlrZSBkaWFiZXRlcywgY2FyZGlhYyBjb25kaXRpb25zLCBhc3RobWEsIGV0Yy4gcmVtb3RlbHkuIFJQTSB0ZWxlaGVhbHRoIHBsYXlzIGFuIGVzc2VudGlhbCByb2xlIGluIHJlZHVjaW5nIGhlYWx0aGNhcmUgY29zdHMgYW5kIHByZXZlbnRpbmcgaG9zcGl0YWwgcmVhZG1pc3Npb25zLgpSZW1vdGUgcGF0aWVudCBtb25pdG9yaW5nIGFsbG93cyBwYXRpZW50cyB0byBwcm9kdWNlIHRoZWlyIGhlYWx0aCBkYXRhIChoZWFsdGggaGlzdG9yeSwgc3ltcHRvbXMsIGxpZmVzdHlsZSkgY2FsbGVkIHBhdGllbnQtZ2VuZXJhdGVkIGhlYWx0aCBkYXRhIChQR0hEKS4gUEdIRCBpcyBnZW5lcmF0ZWQgYnkgcGF0aWVudHMgb3IgdGhlaXIgZmFtaWx5IG1lbWJlcnMgYW5kIGNhcmVnaXZlcnMgYW5kIGlzIGVzc2VudGlhbCBmb3IgcGVyc29uYWxpemluZyB0aGUgdmlydHVhbCBtYW5hZ2VtZW50IG9mIHRoZSBwYXRpZW50cy4=

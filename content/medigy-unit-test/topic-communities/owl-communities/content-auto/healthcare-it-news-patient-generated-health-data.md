@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Patient-Generated Health Data" 
+ classname:  "Patient-Generated_Health_Data" 
+ label: "Patient-Generated Health Data" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['KLAS: Knowing The Patient','Symplur: -hash-PopHealth'] 
+ collections: ['Healthcare IT News: Patient-Generated Health Data']
+ aliases:  "/topic/healthcare-it-news-patient-generated-health-data"  
+ searchCategory: "topic" 
+---
+UGF0aWVudC1nZW5lcmF0ZWQgaGVhbHRoIGRhdGEgKFBHSEQpIHJlcHJlc2VudHMgdGhlIGNvbGxlY3Rpb24gb2YgaGVhbHRoLXJlbGF0ZWQgZGF0YSBvZiBwYXRpZW50cyAoZWl0aGVyIGJ5IHBhdGllbnRzIHRoZW1zZWx2ZXMgb3IgdGhlaXIgZmFtaWx5IG1lbWJlcnMgb3IgY2FyZWdpdmVycykgZm9yIGFkZHJlc3NpbmcgYSBoZWFsdGggY29uY2Vybi4gUEdIRCBpcyBhIHByb21pc2luZyBzb3VyY2Ugb2YgcHJlY2lzZSwgcGVyc29uYWxpemVkIGRhdGEsIGVuY291cmFnZWQgYnkgZXhwYW5kaW5nIGdyb3d0aCBpbiB0aGUgaGVhbHRoIHRlY2hub2xvZ2llcyBtYXJrZXQuIFRoZSBoZWFsdGgtcmVsYXRlZCBkYXRhIGNvbGxlY3RlZCBpbiBQR0hEIG1haW5seSBpbmNsdWRlcyB0aGUgZm9sbG93aW5nOgog4oCiIFBlcnNvbmFsIGhlYWx0aCByZWNvcmRzCiDigKIgSGVhbHRoIGhpc3RvcnkKIOKAoiBUcmVhdG1lbnQgaGlzdG9yeQog4oCiIFBhdGllbnQgaGVhbHRoIHJlY29yZAog4oCiIEJpb21ldHJpYyBkYXRhCiDigKIgU3ltcHRvbXMKIOKAoiBwYXRpZW50LXJlcG9ydGVkIG91dGNvbWUgbWVhc3VyZXMKIFBHSEQsIGFsb25nIHdpdGggZXhpc3RpbmcgY2xpbmljYWwgZGF0YSwgY2FuIHByb3ZpZGUgYWRkaXRpb25hbCBpbnNpZ2h0IGludG8gYW4gaW5kaXZpZHVhbOKAmXMgb3ZlcmFsbCBoZWFsdGggYW5kIGJldHRlciBpbmZvcm0gZGVjaXNpb25zIG1hZGUgYnkgY2FyZSBwcm92aWRlcnMu

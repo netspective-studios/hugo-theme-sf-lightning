@@ -1,0 +1,119 @@
+{
+  "shortName": "payment-and-value-of-care",
+  "name": "Payment & Value of Care",
+  "status": "draft",
+  "version": "far fa-calendar-alt",
+  "deriveFrom": [
+    ""
+  ],
+  "subjectType": {
+    "extraClass": "tooltip-hdo-descr",
+    "imagePath": "/img/hospital_compare.jpg",
+    "referenceLink": "https://www.medicare.gov/hospitalcompare/profile.html#profTab=6&ID=",
+    "toolTipText": "Description courtesy of Medicare.gov | Hospital Compare"
+  },
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Payment",
+          "questionCodeSystem": "Custom",
+          "questionCode": "Payment",
+          "prefix": {
+            "category": "Payment",
+            "iconClass": "fa-money-check-alt",
+            "valueFormat": ""
+          },
+          "localQuestionCode": "paymentAndValueOfCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Value of Care",
+          "questionCodeSystem": "Custom",
+          "questionCode": "ValueCare",
+          "prefix": {
+            "category": "ValueCare",
+            "iconClass": "fa-file-invoice",
+            "valueFormat": ""
+          },
+          "localQuestionCode": "paymentAndValueOfCare",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "General Description",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "<p>The Medicare Spending Per Beneficiary (MSPB or “Medicare hospital spending per patient”) measure shows whether Medicare spends more, less, or about the same on an episode of care for a Medicare patient treated in a specific inpatient hospital compared to how much Medicare spends on an episode of care across all inpatient hospitals nationally. This measure includes all Medicare Part A and Part B payments made for services provided to a patient during an episode of care, which includes the 3 days prior to the hospital stay, the inpatient hospital stay, and the 30 days after discharge from the hospital.</p>                 <p>The MSPB measure score is a ratio calculated by dividing the amount Medicare spent per patient for an episode of care initiated at this hospital by the median (or middle) amount Medicare spent per episode of care nationally. A lower ratio means that Medicare spent less per patient.</p>                                   <p><b>A ratio equal to the national average means</b> that Medicare spends ABOUT THE SAME per patient for an episode of care initiated at this hospital as it does per episode of care across all inpatient hospitals nationally.</p>                 <p><b>A ratio that is more than the national average means</b> that Medicare spends MORE per patient for an episode of care initiated at this hospital than it does per episode of care across all inpatient hospitals nationally.</p>                 <p><b>A ratio that is less than the national average means</b> that Medicare spends LESS per patient for an episode of care initiated at this hospital than it does per episode of care across all inpatient hospitals nationally.</p>",
+              "code": "",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+--- 
+ title: "HIMSS: Cybersecurity and Privacy" 
+ classname:  "OWLClass_b35c0cee_1ad2_467f_8c2e_fb5251bebd4c" 
+ label: "Cybersecurity and Privacy" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "HIMSS" 
+ parentclasslabel: "HIMSS" 
+ equalentCollections: ['Healthcare IT News: Cybersecurity','Gartner: Cybersecurity'] 
+ collections: ['HIMSS: Cybersecurity and Privacy']
+ aliases:  "/topic/himss-cybersecurity-and-privacy"  
+ searchCategory: "topic" 
+---
+SGVhbHRoY2FyZSBoYXMgYmVlbiBmb3VuZCB0byBiZSB0aGUgdG9wIG1vc3Qgc2VjdG9yIHRhcmdldGVkIGJ5IGN5YmVyY3JpbWluYWxzLiBJdCBpcyB0aGVyZWZvcmUgaW1wb3J0YW50IHRoYXQgaGVhbHRoY2FyZSBvcmdhbml6YXRpb25zIHNob3VsZCBiZSBwcm90ZWN0ZWQgYWdhaW5zdCBpbmNyZWFzaW5nIGN5YmVyIHRocmVhdHMuIEN5YmVyc2VjdXJpdHkgaW4gaGVhbHRoY2FyZSBlbnN1cmVzIHRoZSBwcm90ZWN0aW9uIG9mIGhlYWx0aGNhcmUgcGF0aWVudCBpbmZvcm1hdGlvbi9kYXRhIGZyb20gY3liZXIgYXR0YWNrcy4gQ3liZXJzZWN1cml0eSwgUHJpdmFjeSAmIFNlY3VyaXR5IGFyZSBjcml0aWNhbCBlbGVtZW50cyBpbiBoZWFsdGhjYXJlIG9yZ2FuaXphdGlvbnMgZm9yIHByZXZlbnRpbmcgdGhlIGhlYWx0aGNhcmUgZGF0YSB0aGVmdCBhbmQgbGVha2luZyBvZiBjb25maWRlbnRpYWwgcGF0aWVudCBpbmZvcm1hdGlvbi4gVGhlc2UgZGF5cyBoZWFsdGhjYXJlIGluZHVzdHJpZXMgYXJlIGtlZXBpbmcgdGhlc2UgcHJpdmFjeSBzb2x1dGlvbnMgYXQgdG9wIHByaW9yaXR5IGZvciBlbnN1cmluZyBwYXRpZW50IHByaXZhY3kgYW5kIHNhZmV0eS4=

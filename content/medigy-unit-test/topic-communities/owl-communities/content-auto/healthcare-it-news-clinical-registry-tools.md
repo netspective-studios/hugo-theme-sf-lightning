@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Clinical Registry Tools" 
+ classname:  "Clinical_registry_tools" 
+ label: "Clinical Registry Tools" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Clinical Registry Tools']
+ aliases:  "/topic/healthcare-it-news-clinical-registry-tools"  
+ searchCategory: "topic" 
+---
+QSBjbGluaWNhbCByZWdpc3RyeSBpcyBhIGNvbXB1dGVyIGRhdGFiYXNlIGRlc2lnbmVkIGZvciBjb2xsZWN0aW5nIGFuZCBzdG9yaW5nIHBhdGllbnQgaW5mb3JtYXRpb24gYW5kIHRoZSBoZWFsdGggY2FyZSB0aGV5IHJlY2VpdmUgYXMgcGF0aWVudHMuIEl0IGlzIGNyZWF0ZWQgZm9yIHBhdGllbnRzIHdobyBzaGFyZSBjb21tb24gaGVhbHRoIHByb2JsZW1zLiBDbGluaWNhbCByZWdpc3RyeSB0b29scyBhbGxvdyBoZWFsdGhjYXJlIHByb2Zlc3Npb25hbHMgdG8gZGlzY292ZXIgZGlmZmVyZW50IGF2YWlsYWJsZSB0cmVhdG1lbnRzIGFuZCB1bmRlcnN0YW5kIGhvdyBwYXRpZW50cyB3aXRoIGRpdmVyc2UgY2hhcmFjdGVyaXN0aWNzIHJlc3BvbmQgdG8gc2V2ZXJhbCB0cmVhdG1lbnRzLgpBIGNsaW5pY2FsIHJlZ2lzdHJ5IGlzIGEgcmVwb3NpdG9yeSBvZiBwYXRpZW50IGluZm9ybWF0aW9uLiBJdCBjb2xsZWN0cyBpbmZvcm1hdGlvbiBhYm91dCBwYXRpZW50cyB3aXRoIHNpbWlsYXIgaGVhbHRoIGNvbmRpdGlvbnMsIHdoaWNoIG1haW5seSBpbmNsdWRlcyBhIHBhdGllbnQncyByZWFzb25zIGZvciBzZWVraW5nIGNhcmUsIHR5cGVzIG9mIHRyZWF0bWVudCBwYXRpZW50cyBhcmUgcmVjZWl2aW5nLCB0aGUgaW1wcm92ZW1lbnQgb2YgcGF0aWVudHMgb3ZlciB0aW1lLCBldGMu

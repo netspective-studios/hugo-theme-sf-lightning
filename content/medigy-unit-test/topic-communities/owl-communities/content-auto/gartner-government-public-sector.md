@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Government & Public Sector" 
+ classname:  "Government_&_Public_Sector" 
+ label: "Government & Public Sector" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Government & Public Sector']
+ aliases:  "/topic/gartner-government-public-sector"  
+ searchCategory: "topic" 
+---
+RGlnaXRhbCB0cmFuc2Zvcm1hdGlvbiBpcyBhbiBlc3NlbnRpYWwgYXNzZXQgZm9yIHRoZSBnb3Zlcm5tZW50IGFuZCBwdWJsaWMgc2VjdG9ycy4gR292ZXJubWVudCBDSU9zIG5lZWQgdG8gYmUgcmVzcG9uc2l2ZSBlbm91Z2ggdG8gZGV2ZWxvcCBhbmQgaW1wbGVtZW50IGRpZ2l0YWwgaW5pdGlhdGl2ZXMgc3VjY2Vzc2Z1bGx5LiBHb3Zlcm5tZW50IGFnZW5jaWVzIHJlcXVpcmUgYSBkaWdpdGFsIHBhcnRuZXIgdG8gaGVscCB0aGVtIHV0aWxpemUgdGhlIHBvd2VyIG9mIGRhdGEgYW5kIGluY3JlYXNlIHByb2R1Y3Rpdml0eS5EYXRhIGlzIHRoZSBjb3JlIG9mIHRoZSBkaWdpdGFsIHRyYW5zZm9ybWF0aW9uIHByb2Nlc3MuIFRoZSBnb3Zlcm5tZW50IENJT3MgbmVlZCB0byBmb2N1cyBvbiBkYXRhIHV0aWxpemF0aW9uIHRvIG92ZXJjb21lIHRoZSBzdHJhdGVnaWMgYW5kIHRhY3RpY2FsIGNoYWxsZW5nZXMgaW4gdGhlaXIgZGlnaXRhbCB0cmFuc2Zvcm1hdGlvbiBqb3VybmV5IHRoYXQgd291bGQgaGVscCB0aGUgZ292ZXJubWVudCBzZXJ2aWNlcyBiZWNvbWUgbW9yZSBlZmZpY2llbnQgaW4gaXRzIG9wZXJhdGlvbnMu

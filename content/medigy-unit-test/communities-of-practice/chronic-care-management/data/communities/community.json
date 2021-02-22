@@ -1,0 +1,104 @@
+{
+    "communityName": "Chronic Care Management",
+    "shortName": "CCM CoP",
+    "featuredImage": "ccm-featured-image.jpg",
+    "bannerImage": "/communities/medigy-chronic-care-management-ccm/images/ccm-banner.jpg",
+    "bannerTitle": "Community of Practice",
+    "mastHead": "Chronic Care Management CoP",
+    "metaTitle": "Chronic Care Management (CCM) Services Community of Practice",
+    "metaDesc": "The Chronic Care Management (CCM) Services  community will give you background on payable CCM service codes, identifies eligible practitioners and patients, and details the Medicare PFS billing requirements.",
+    "ogUrl": "/communities/medigy-chronic-care-management-ccm",
+    "ogImage": "communities/chronic-care-management/ccm.png",
+    "breadcrumb": [
+        {
+            "breadcrumbLabel": "Home",
+            "breadcrumbLink": "/"
+        },
+        {
+            "breadcrumbLabel": "Communities",
+            "breadcrumbLink": "/communities/"
+        },
+        {
+            "breadcrumbLabel": "Chronic Care Management"
+        }
+    ],
+    "innerBreadcrumb": [
+        {
+            "breadcrumbLabel": "Home",
+            "breadcrumbLink": "/"
+        },
+        {
+            "breadcrumbLabel": "Communities",
+            "breadcrumbLink": "/communities/"
+        },
+        {
+            "breadcrumbLabel": "Chronic Care Management",
+            "breadcrumbLink": "/communities/chronic-care-management/"
+        }
+    ],
+    "topicDetails": [
+        {
+            "topicTitle": "Barriers & Guidelines",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/infographics.jpg",
+            "topicDescription": "Although the knowledge on chronic diseases has significantly improved, the person-centred care that patients receive has still not kept pace. This perhaps is largely because most traditional chronic care models fail to adequately address the needs of patients. \nThis section aims to address such barriers to care in chronic diseases and eventually provide  actionable steps that a healthcare professional and associated allied healthcare staff can confidently follow to bridge the treatment gap and effectively improve interactions with the patients through adequate communication channels. The elaborated strategies discussed in the articles will provide a helpful starting point for care providers to recognise and consequently remove any such barriers that may exist.  The barriers and guidelines thus identified in this CoP can be used to build knowledge on how to adapt the strategies to various care settings.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 6
+        },
+        {
+            "topicTitle": "Business Survival & Continuity",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/vaccine-drugs-in-the-pipeline.jpg",
+            "topicDescription": "COVID 19 has raised several significant issues for business continuity and survival especially in the primary care sector. With the pandemic, in-person visits have steeply dropped in chronic care practices. The primary care providers have been particularly affected due to this precipitous fall off affecting their practice revenues.\nThis section aims to address the above concern through articles that provide strategies and guidelines, insights on government policies and regulations that help address this issue and generate a sustainable ROI.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 1
+        },
+        {
+            "topicTitle": "Fundamental Technologies",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/contributed-content.jpg",
+            "topicDescription": "Unlike acute, chronic conditions last for better part of the lifetime of an individual. With the recent availability of wearable technologies, big data and healthcare apps that have proven to be promising to support chronic conditions, providing personalized care has become much easy.\nThis section aims at providing information and insights on the various health devices and home-based wearables that health professionals and patients could effectively use for supporting patients and self-management, respectively. The information provided in this section will help care providers explore an existing plethora of fundamental technologies in relation to CCM already curated as part of the innovation platform that provide a framework for effective patient engagement.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 3
+        },
+        {
+            "topicTitle": "Patient Acquisition",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/curated-offering.jpg",
+            "topicDescription": "Today’s healthcare consumer has choices than those a decade ago. A couple of years ago patients simply asked their primary care providers for better referrals. However, today’s highly health literatepatients also consider providing online reviews for physicians and go about shopping for the best care and patient experience. This has certainly increased the pressure on the provider side, and it is even more essential to device innovative strategies to acquire and more so to retain existing patient flow to sustain a decent revenue. \nThis section aims at providing valuable insights and guidelines to primary care providers and hospital administrators on innovating their growth strategies to drive patient acquisition and retention. With consumers ready to switch care providers wise investment in patient retention to gain ROI has become equally compelling. The tools and techniques, RPM strategies such as Telemedicine to achieve such patient acquisition and retention goals is exactly what this section addresses.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 4
+        },
+        {
+            "topicTitle": "Workforce Education",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/curated-news.jpg",
+            "topicDescription": "The increased demand inlong term care for chronic illnesses mandate regular intervention of evidence-based training and skill upgrades to reconfirm the primary care knowledge base. In addition to the primary care physician and consultants the nursing contribution to chronic diseases management is but unimaginably difficult to overlook. How does then one ensure that care is provided with the latest evidence- based model? With the healthcare sector booming and particularly CCM showing a potential to become a $50 billion industry by 2030, how can one get involved? \nAll these questions are answered as part of the articles that contain information on the latest e-learning courses for clinical nurses, consultants and physicians to update their skills andobtain the adequate CME/CPD points as well through listing of the latest job opportunities in the chronic sector.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 5
+        },
+        {
+            "topicTitle": "Increase Profitability",
+            "topicFeaturedImage": "/communities/medigy-chronic-care-management-ccm/images/featuredimage/increase-profitability.jpg",
+            "topicDescription": "The challenge for any care provider running their own practice is to focus on keeping their current patient base satisfied whilst working towards attracting new patients to ensure probability of business. \nThis section aims at proving actionable insights and best practices to primary care providers and hospitals wishing to increase their profitability by reducing costs, increasing revenue and reimbursements.The guidelines described in this section will help practices put mechanisms in place to improve efficiency for physicians, nurses, and support staffto deliver person-centred care whilst making initial investments in technology to support these initiatives and reducing unnecessary costs that can help generate greater profitability and enhance patient acquisition.\nTo summarise, the aim of this CoP is to provide adequate and evidence-based information and case studies that can help chronic care providers to find creative solutions to problems that plague their care businesses.",
+            "innerBannerImage": "/communities/medigy-chronic-care-management-ccm/images/contributedcontent.jpg",
+            "innerBannerTitle": "",
+            "innerbannerSubTtile": "",
+            "representationOrder": 2
+        }
+    ],
+    "description": "TW9zdCBjYXJlIHByb3ZpZGVycyBzdHJ1Z2dsZSB0byBydW4gYSBwcm9maXRhYmxlIENocm9uaWMgQ2FyZSBNYW5hZ2VtZW50IHByYWN0aWNlLiBEbyB5b3UgdG9vPwpJZiB5b3XigJlyZSBsaWtlIG1vc3QgcHJhY3RpY2VzIHJ1bm5pbmcgYSBDQ00gcHJhY3RpY2UgYW5kIHN0cnVnZ2xpbmcgdG8ga2VlcCB1cCB3aXRoIHRoZSBvcGVyYXRpb25hbCBjb21wbGV4aXRpZXMgYW5kIHJlc291cmNlIHJlcXVpcmVtZW50cyBpdCB0YWtlcyB0byBydW4gYSBwcm9maXRhYmxlIGJ1c2luZXNzIHRvIGVuc3VyZSB5b3VyIHBhdGllbnRzIGdldCBhY2Nlc3MgdG8gaGlnaC1xdWFsaXR5IGNhcmUsIHRoZW4geW91IGFyZSB0aGUgcmlnaHQgcGxhY2UhCkNocm9uaWMgY2FyZSBtYW5hZ2VtZW50IChDQ00pIGhhcyBhbiBhbGwtZW1icmFjaW5nIGNsaW5pY2FsIGdvYWwgb2YgaW1wcm92aW5nIHRoZSBoZWFsdGggb2YgTWVkaWNhcmUgcGF0aWVudHMgd2l0aCBtdWx0aXBsZSBjaHJvbmljIGNvbmRpdGlvbnMuIFRoZSBNZWRpZ3kgQ0NNIENvUCBwcm92aWRlcyByZWxldmFudCByZXNvdXJjZXMgYW5kIHRvb2xzIHRoYXQgaGVscCBoZWFsdGggY2FyZSBwcm9mZXNzaW9uYWxzIGxlYXJuIGhvdyB0byBzdWNjZXNzZnVsbHkgaW1wbGVtZW50IENDTSBwcm9ncmFtIGFuZCBydW4gYSBwcm9maXRhYmxlIGJ1c2luZXNzIGZvciBwcm92aWRpbmcgc3VjaCBzZXJ2aWNlcy4=",
+    "shortDescription": "",
+    "gitUrl": "https://gl.infra.medigy.com/community/chronic-care-management-ccm/chronic-care-management-ccm",
+    "gitlabPageUrl": "https://community.pages.gl.infra.medigy.com/chronic-care-management-ccm/chronic-care-management-ccm/",
+    "opProjectName": "medigy-chronic-care-management-ccm",
+    "opProjectId": 411,
+    "opProjectLabel": "Medigy | Chronic Care Management (CCM)",
+    "ccmGroupId": 845,
+    "ccmProjectId": 8217
+}

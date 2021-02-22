@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Government & Policy" 
+ classname:  "Government_&_Policy" 
+ label: "Government & Policy" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Government & Policy']
+ aliases:  "/topic/healthcare-it-news-government-policy"  
+ searchCategory: "topic" 
+---
+R292ZXJubWVudCBwb2xpY2llcyBpbiBoZWFsdGhjYXJlIGluY2x1ZGUgZGVjaXNpb25zLCBhY3Rpb25zLCBwbGFucywgc3RyYXRlZ2llcywgcHJvY2Vzc2VzLCBldGMuIHRoYXQgYXJlIGZvbGxvd2VkIGJ5IGhlYWx0aGNhcmUgaW5kdXN0cmllcyBhbmQgb3JnYW5pemF0aW9ucyBmb3IgbWVldGluZyB0aGUgaGVhbHRoY2FyZSBnb2FscyB3aXRoaW4gYSBjb21tdW5pdHkuIEEgaGVhbHRoY2FyZSBnb3Zlcm5tZW50IHBvbGljeSBpcyBkZXNpZ25lZCBmb3IgaW1wcm92aW5nIHRoZSBoZWFsdGhjYXJlIHByb2Nlc3NlcyB3aXRoaW4gc29jaWV0aWVzLiBEaWZmZXJlbnQgdHlwZXMgb2YgZ292ZXJubWVudCBwb2xpY2llcyBhcmUgbWFkZSBpbiB0aGUgaGVhbHRoY2FyZSBzZWN0b3IgdG8gbWFrZSBoZWFsdGhjYXJlIHNlcnZpY2VzIGVhc2lseSBhY2Nlc3NpYmxlIHRvIHBhdGllbnRzLiBVbmRlciBzZXZlcmFsIGdvdmVybm1lbnQgcG9saWNpZXMsIHRoZSBoZWFsdGhjYXJlIHN5c3RlbXMgYXJlIGVuZm9yY2VkIGJ5IHRoZSBhZG1pbmlzdHJhdGlvbiBmb3Igc2hhcmluZyB0aGVpciBkYWlseSBpbi1ob3VzZSBsYWIgdXBkYXRlcyB3aXRoIHRoZSBmZWRlcmFsIGFnZW5jaWVzLg==

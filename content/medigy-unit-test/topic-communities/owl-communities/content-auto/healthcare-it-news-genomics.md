@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Genomics" 
+ classname:  "OWLClass_3ce12fb5_c780_49ff_ac56_51e9c242c35e" 
+ label: "Genomics" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Healthcare IT Today: Genomics & Precision Medicine','Symplur: -hash-CRISPR'] 
+ collections: ['Healthcare IT News: Genomics']
+ aliases:  "/topic/healthcare-it-news-genomics"  
+ searchCategory: "topic" 
+---
+R2Vub21pY3MgaXMgdGhlIHN0dWR5IG9mIHRoZSB3aG9sZSBnZW5vbWUgb2YgYW4gb3JnYW5pc20uIEhlYWx0aCBhbmQgcmVzZWFyY2ggb3JnYW5pemF0aW9ucyBhcmUgcGxhbm5pbmcgdG8gZW1wbG95IGdlbm9tZSBzZXF1ZW5jaW5nIGZvciB0aGUgZGlhZ25vc2lzIG9mIHZhcmlvdXMgZGlzZWFzZXMuIFRoaXMgaW5pdGlhdGl2ZSB3aWxsIGhlbHAgaW4gcHJvdmlkaW5nIGFjY2VzcyB0byBjbGluaWNhbCB3aG9sZSBnZW5vbWUgc2VxdWVuY2luZyAoY1dHUykgYW5kIHdpbGwgaGVscCBpbiB0aGUgZGlhZ25vc2lzIG9mIGdlbmV0aWMgZGlzZWFzZXMuCkV2aWRlbmNlIHN1Z2dlc3RzIHRoYXQgZWFybHkgZXhwbG9pdGF0aW9uIG9mIGNXR1MgY291bGQgYmUgdXNlZnVsIGluIGRlbGl2ZXJpbmcgYSBwcmVjaXNlIG1vbGVjdWxhciBkaWFnbm9zaXMsIHdoaWNoIHdpbGwsIGluIHR1cm4sIGNoYW5nZSBtZWRpY2FsIG1hbmFnZW1lbnQgYW5kIHdpbGwgaGVscCBpbiBkZWNsaW5pbmcgdGhlIGNhc2VzIG9mIGNvbXBsZXggYW5kIGNocm9uaWMgZ2VuZXRpYyBkaXNlYXNlcyBzcGVjaWZpY2FsbHkgZm9yIG5ld2Jvcm5zIGFuZCBjaGlsZHJlbi4=

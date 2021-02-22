@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Customer Relationship Management (CRM)" 
+ classname:  "Customer_Relationship_Management_(CRM)_software" 
+ label: "Customer Relationship Management (CRM)" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: ['KLAS: Customer Relationship Management (CRM)','KLAS: Customer Relationship Management (CRM)'] 
+ collections: ['Gartner: Customer Relationship Management (CRM)']
+ aliases:  "/topic/gartner-customer-relationship-management-crm"  
+ searchCategory: "topic" 
+---
+Q3VzdG9tZXIgcmVsYXRpb25zaGlwIG1hbmFnZW1lbnQgaXMgYSB3aWRlbHkgaW1wbGVtZW50ZWQgYW5kIGJyb2FkbHkgcmVjb2duaXplZCAgc3RyYXRlZ3kgdG93YXJkcyBtYWludGFpbmluZyBhbmQgbnVydHVyaW5nIGFuIG9yZ2FuaXphdGlvbidzIGludGVyYWN0aW9uIHdpdGggY3VzdG9tZXJzIGFuZCBzYWxlcyBwcm9zcGVjdHMuIE9uZSBvZiBDUk0ncyBpbXBvcnRhbnQgZ29hbHMgaXMgdG8gZmluZCwgb2J0YWluLCByZXRhaW4sIGFuZCBudXJ0dXJlIG5ldyBjdXN0b21lcnMgYmVzaWRlcyBlbnRpY2luZyBmb3JtZXIgY2xpZW50cyBiYWNrIGludG8gdGhlIGZvbGQuICBBbiBlZmZpY2llbnQgQ1JNIHN0cmF0ZWd5IGluIGhlYWx0aGNhcmUgb3JnYW5pemF0aW9ucyBhbGxvd3MgdGhlbSB0byB0YXJnZXQgdGhlaXIgZWZmb3J0cyBvbiB0aGVpciBtb3N0IHByb2ZpdGFibGUgY3VzdG9tZXJzLiBJdCBhbHNvIGltcHJvdmVzIHRoZWlyIGJvdHRvbSBsaW5lIGJ5IGxvd2VyaW5nIG1hcmtldGluZyBleHBlbnNlcy4gQ1JNIGlzIHRoZSByaWdodCB3YXkgb2YgdHJhY2tpbmcgdGhlIFJPSSAocmV0dXJuIG9uIGludmVzdG1lbnQpIG9mIHlvdXIgcHJvZ3JhbXMu

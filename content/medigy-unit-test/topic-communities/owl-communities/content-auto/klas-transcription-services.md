@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Transcription Services" 
+ classname:  "OWLClass_6f71ad52_c3c7_45fe_b187_794f7b2e38ec" 
+ label: "Transcription Services" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Transcription Services']
+ aliases:  "/topic/klas-transcription-services"  
+ searchCategory: "topic" 
+---
+VHJhbnNjcmlwdGlvbiBTZXJ2aWNlcyByZWZlciB0byBvdXRzb3VyY2luZyBvZiBtZWRpY2FsIGluZm9ybWF0aW9uL3RyYW5zY3JpcHRpb24gaW4gdGhlIGZvcm0gb2YgYXVkaW8gdG8gYSBtZWRpY2FsIHRyYW5zY3JpcHRpb24gc2VydmljZXMgb3JnYW5pemF0aW9uIChNVFNPKSB3aG8gaGFzIGV4cGVydCBwcm9mZXNzaW9uYWxzIHRvIGVuc3VyZSB0aGF0IHBhdGllbnQgY2FyZSBpcyBhZGVxdWF0ZSBhbmQgbm8gaW1wb3J0YW50IHBhdGllbnQgaW5mb3JtYXRpb24gaXMgbWlzc2VkLiBUaGUgdHJhbnNjcmlwdHMgY3JlYXRlZCBieSBvdXRzb3VyY2luZyBjb21wYW5pZXMgYXJlIGluIHRoZSBmb3JtIG9mIHdyaXR0ZW4gdGV4dCBkb2N1bWVudHMgdGhhdCBjYW4gZWFzaWx5IGJlIHNhdmVkLCBzaGFyZWQgd2l0aCBvdGhlciBwaHlzaWNpYW5zLCBhbmQgcmV2aWV3ZWQgcXVpY2tseS4gVHJhbnNjcmlwdGlvbiBzZXJ2aWNlcyBhcmUgbW9zdGx5IGF2YWlsZWQgYnkgcGh5c2ljaWFucywgbnVyc2UgcHJhY3RpdGlvbmVycywgYW5kIG90aGVyIGhlYWx0aGNhcmUgcHJhY3RpdGlvbmVycy4=

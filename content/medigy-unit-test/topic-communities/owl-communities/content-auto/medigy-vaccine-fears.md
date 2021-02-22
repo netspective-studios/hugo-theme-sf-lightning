@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Vaccine Fears" 
+ classname:  "Vaccine_Fears" 
+ label: "Vaccine Fears" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: [] 
+ collections: ['Medigy: Vaccine Fears']
+ aliases:  "/topic/medigy-vaccine-fears"  
+ searchCategory: "topic" 
+---
+VmFjY2luZSBmZWFycyByZWZlciB0byBhcHByZWhlbnNpb24gYWJvdXQgdGhlIGRlY2lzaW9uIHRvIGdldCBvbmVzZWxmIHZhY2NpbmF0ZWQuIE1hbnkgZmFjdG9ycyBtYXkgY29udHJpYnV0ZSB0byB2YWNjaW5lIGZlYXJzLCBzdWNoIGFzIHRoZSBjb21wdWxzb3J5IG5hdHVyZSBvZiB2YWNjaW5lcywgYWR2ZXJzZSBoZWFsdGggb3V0Y29tZXMgb2YgdmFjY2luZXMsIGxhY2sgb2YgdHJ1c3QgaW4gcHVibGljIGhlYWx0aCBhZ2VuY2llcyAmIGNvcnBvcmF0aW9ucywgbGFjayBvZiBrbm93bGVkZ2UgYWJvdXQgdmFjY2luZS1wcmV2ZW50YWJsZSBkaXNlYXNlcywgZXRjLiBQZW9wbGUgYXJlIGFmcmFpZCBvZiB2YWNjaW5lcyBsaWtlIENPVklELTE5IHZhY2NpbmUsIGRlc3BpdGUgbW9yZSB0aGFuIDkwJSBlZmZpY2FjeS4gVGhlIHJlYXNvbiBpcyBzb21lIHBlb3BsZSBiZWxpZXZlIHRoZSB2YWNjaW5lcyBhcmUgbm90IG5hdHVyYWwgd2hpbGUgb3RoZXJzIGZlYXIgdGhlIG5ld25lc3Mu

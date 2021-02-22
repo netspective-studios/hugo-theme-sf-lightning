@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Consent Management" 
+ classname:  "Consent_Management" 
+ label: "Consent Management" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Consent Management']
+ aliases:  "/topic/gartner-consent-management"  
+ searchCategory: "topic" 
+---
+Q29uc2VudCBNYW5hZ2VtZW50IGlzIHRoZSBzeXN0ZW0gb2YgcHJhY3RpY2VzIHRoYXQgZ2l2ZXMgdGhlIHBhdGllbnRzIHRoZSByaWdodCB0byBjb250cm9sIHdoYXQgaGVhbHRoIGluZm9ybWF0aW9uIHRoZSBwcm92aWRlcnMgY2FuIGFjY2Vzcy4gSXQgaGVscHMgdGhlIHBhdGllbnRzIHRvIGFmZmlybSB0aGVpciBwYXJ0YWtpbmcgaW4gdGhlIGUtaGVhbHRoIGluaXRpYXRpdmVzIHN1Y2ggYXMgaGVhbHRoIGluZm9ybWF0aW9uIGV4Y2hhbmdlLCBwYXRpZW50IHBvcnRhbCwgcGVyc29uYWwgaGVhbHRoIHJlY29yZHMsIGV0Yy4gVGhleSBjYW4gYWxzbyBzZXQgcHJpdmFjeSBwcmVmZXJlbmNlcyBhcyB0byB3aG8gd291bGQgaGF2ZSBhY2Nlc3MgdG8gdGhlaXIgcHJvdGVjdGVkIGhlYWx0aCBpbmZvcm1hdGlvbiBvciBQSEkgYW5kIGZvciB3aGF0IHB1cnBvc2UuIENvbnNlbnQgbWFuYWdlbWVudCBmYWNpbGl0YXRlcyBvcmdhbml6YXRpb25hbCBhbmQganVyaXNkaWN0aW9uYWwgcHJpdmFjeSBwb2xpY2llcy4=

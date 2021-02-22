@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Home Health Aides" 
+ classname:  "Home_Health_Aides" 
+ label: "Home Health Aides" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Home Health Aides']
+ aliases:  "/topic/standard-occupational-classification-soc-home-health-aides"  
+ searchCategory: "topic" 
+---
+J0hvbWUgaGVhbHRoIGFpZGVzIHByb3ZpZGUgaGVhbHRoIHNlcnZpY2VzIHRvIHBhdGllbnRzIGluIHRoZWlyIGhvbWVzIGJ5IHJlY29yZGluZyBhbmQgbW9uaXRvcmluZyB0aGVpciBkYWlseSBoZWFsdGggY29uZGl0aW9ucy4gQmVzaWRlcywgdGhleSBwcm92aWRlIHN1cHBvcnQgJiBwZXJzb25hbCBzZXJ2aWNlcyB0byB0aGUgcGF0aWVudHMgYW5kIGFsc28gZWR1Y2F0ZSB0aGVpciBmYW1pbGllcy4gUGF0aWVudHMgcmVxdWlyZSBob21lIGhlYWx0aCBhaWRlcyB3aGVuIHRoZXkgYXJlIG5vIGxvbmdlciBjYXBhYmxlIG9mIHRha2luZyBjYXJlIG9mIHRoZW1zZWx2ZXMuIFRoZSBmb2xsb3dpbmcgYXJlIHNvbWUgY29uZGl0aW9ucyB3aGVuIGEgcGF0aWVudCBtYXkgcmVxdWlyZSBhIGhvbWUgaGVhbHRoIGFpZDoKSWYgYSBwYXRpZW50IGlzIHdhbmRlcmluZyBhd2F5IGZyb20gaG9tZS4KSWYgYSBwYXRpZW50IGlzdW5hYmxlIHRvIGVhdCBieSBoaW1zZWxmL2hlcnNlbGYuCklmIGEgcGF0aWVudCBpcyB1bmFibGUgdG8gd2Fsay4KSWYgYSBwYXRpZW50IGZhbGxzIGZyZXF1ZW50bHkuCic=

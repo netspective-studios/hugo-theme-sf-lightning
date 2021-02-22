@@ -1,0 +1,14 @@
+--- 
+ title: "Frost & Sullivan: Enterprise Digital Transformation" 
+ classname:  "OWLClass_383e3d4b_5bcd_4cc7_b788_1ad540c16375" 
+ label: "Enterprise Digital Transformation" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Frost_&_Sullivan" 
+ parentclasslabel: "Frost & Sullivan" 
+ equalentCollections: [] 
+ collections: ['Frost & Sullivan: Enterprise Digital Transformation']
+ aliases:  "/topic/frost-sullivan-enterprise-digital-transformation"  
+ searchCategory: "topic" 
+---
+RGlnaXRhbCB0cmFuc2Zvcm1hdGlvbiBpbnZvbHZlcyBpbmNvcnBvcmF0aW5nIGRpZ2l0YWwgdGVjaG5vbG9naWVzIGluIGV4aXN0aW5nIHN5c3RlbXMgb3IgdGhlIGNyZWF0aW9uIG9mIGEgbmV3IGRpZ2l0YWwgc3lzdGVtLiBDaGFuZ2Ugb2YgdGhlIHRyYWRpdGlvbmFsIG1ldGhvZCB0byBhIGRpZ2l0YWwgc3lzdGVtIGhlbHBzIGJ1c2luZXNzIG9yZ2FuaXphdGlvbnMgdG8gZ3JvdyBhbmQgaW5jcmVhc2UgdGhlaXIgdGhyb3VnaHB1dCBhbmQgcHJvZHVjdGlvbiBjYXBhY2l0eS4gRGlnaXRhbCB0cmFuc2Zvcm1hdGlvbiBzb2x1dGlvbnMgaGVscCBpbiB0aGUgb3B0aW1pemF0aW9uIG9mIHByb2Nlc3NlcyBhbmQgb3BlcmF0aW9ucyB0aHJvdWdoIHRoZSBhc3NpbWlsYXRpb24gb2YgdGVjaG5vbG9neSBhbmQgZGF0YS4gIFNvbWUgb2YgdGhlIGV4YW1wbGVzIG9mIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gdGVjaG5vbG9naWVzIGFyZSBkaWdpdGFsIGVsZWN0cm9uaWNzLCBJVCwgY2xvdWQgY29tcHV0aW5nLCBzb2NpYWwgbWVkaWEsIG9ubGluZSBnYW1pbmcsIGV0Yy4=

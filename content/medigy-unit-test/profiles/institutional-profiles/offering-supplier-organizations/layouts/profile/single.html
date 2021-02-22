@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . .Title}}
+<!--<link href="/css/lforms.min.css" media="screen" rel="stylesheet" />-->
+<link href="/css/bootstrap-slider.css" media="screen" rel="stylesheet" />
+<style>
+  .lf-form-body .ng-scope .lf-form-table>div:first-child {
+    display: none !important;
+  }
+</style>
+<body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  {{ partialCached "nav-bar.html" . .Title }}
+<script>
+  $(document).ready(function () {
+      // coming soon modal poup starts here
+      $('#claimingHospitalArea').click(function(e){
+        e.preventDefault();
+        $('#exampleModalCenter').modal('toggle');
+      });
+     
+    var personid = getCookie('personid');
+      
+    $(".inviteProcess").on("click", function () {            
+        if (getCookie('personid') != null) {
+          $('#inviteMessage').hide();
+          $('#inviteModalCenter').modal('toggle');
+          $('#facetName').val($(this).attr('facetName'));
+          $('#productName').val($(this).attr('productName'));
+          $('#facetsSlug').val($(this).attr('data-app'));
+        }
+        else {
+          $('#loginModalCenter').modal('toggle');
+        }
+      });
+      $('#inviteform').on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+          alert('form is not valid');
+        }
+        else {
+          e.preventDefault();
+          $('#inviteButton').prop("disabled", true);
+          var session = getCookie('sessionId');
+          var inviteeEmail = $('#inviteEmail').val();
+          var fullUrl = window.location.href;
+          var splitedUrl = fullUrl.split('?');
+          if (typeof (splitedUrl) == 'undefined')
+            var url = window.location.href + '?invite=' + getCookie('activeTab') + '&facets=' + $('#facetsSlug').val();
+          else
+          var url = splitedUrl[0] + '?invite=' + getCookie('activeTab') + '&facets=' + $('#facetsSlug').val();
+          var fromName = getCookie('firstname');
+          var inviteeName = $('#inviteFirstName').val() + ' ' + $('#inviteLastName').val();
+          var facetName = $('#facetName').val();
+          var institutionName = $('#productName').val();
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "cache-control": "no-cache"
+            },
+            "data": {
+              "query": `mutation{
+                  sendInstitutionInviteEmail(
+                    email:{
+                        displayName:"`+inviteeName+`"
+                        email:"` + inviteeEmail + `"
+                    },
+                    url:"` + url + `",
+                    fromName:"` + fromName + `",
+                    toName:"` + inviteeName + `",
+                    institutionName:"` + institutionName + `"
+                    authorization:{
+                      sessionID:"`+session+`"
+                    }
+                    ){
+                      status
+                      message
+                    }
+                  }`
+            }
+          }     
+          $.ajax(settings).done(function (response) {
+            $('#inviteButton').prop("disabled", false);
+            $('#inviteMessage').html("");
+            if (response.data.sendInstitutionInviteEmail.status != "SUCCESS") {
+              $('#inviteMessage').html(response.data.sendInstitutionInviteEmail.message);
+              $('#inviteMessage').addClass('alert-danger');
+              $('#inviteMessage').show();
+            }
+            else {
+              $('#inviteMessage').html(response.data.sendInstitutionInviteEmail.message);
+              $('#inviteMessage').addClass('alert-success');
+              $('#inviteMessage').show();
+              $('#inviteform')[0].reset();
+            }
+          });
+        }
+     });
+  });
+  </script>
+  <section class="detail-wrapper">
+    <div class="container"> {{ partialCached "bread-crumb.html" . .Title}} </div>
+    <article class="institute-top-banner" style="background: url(/img/institute-cover-image.jpg)">
+      <div class="container institute-banner-fix">
+        <div class="institute-banner-box">       
+            <div class="institute-banner-left"> 
+              {{ if (not ( .Params.logo)) | or (eq .Params.logo "") }}
+                <img class="img-responsive" src="/img/no-image.png" alt="{{ .Params.title }}" class="card-img" onerror="this.onerror=null; this.src='/img/no-image.png'"/>           
+              {{else}}  
+                <img class="img-responsive" src="{{.Params.logo }}" alt="{{ .Params.title }}" onerror="this.onerror=null; this.src='/img/no-image.png'"> 
+              {{end}}          
+            </div>
+            <div class="institute-banner-right">
+              <p class="institute-post-title" itemprop="Headline">{{ .Title }}  
+                {{ $website := .Params.website }}    
+                {{ $websiteValue := substr $website  0 9}} 
+                {{ if or ( .Params.website) (and  (ne .Params.website "Nil") (ne .Params.website "") (ne $websiteValue "undefined"))}}
+                <a href="{{.Params.website }}" target="_blank"><span class="m-topic-ico-2">
+                <i class="fas fa-external-link-alt"></i></span>
+                 </a>
+                {{ end }}
+              </p>
+              <p class="institue-sub-title1">
+                {{ $industry := .Params.industry }}    
+                {{ $industryValue := substr $industry  0 9}} 
+                {{ if or ( .Params.industry) (and  (ne .Params.industry "Nil") (ne .Params.industry "") (ne $industryValue "undefined"))}}
+                <span class="institute-sm-ico-1 special-text ccm-related-offering-name"> <i class="fas fa-building"></i> <span class="ccm-topic-name special-text__tooltip">Industry</span> </span>
+                <span id="industry">{{ .Params.industry }}</span>
+                {{ end }}
+                {{ $company := .Params.companySize }}    
+                {{ $companyValue := substr $company  0 9}} 
+                {{ if or ( .Params.companySize) (and  (ne .Params.companySize "Nil") (ne .Params.companySize "") (ne $companyValue "undefined"))}}
+                <span class="institute-sm-ico-1 special-text ccm-related-offering-name"> <i class="fas fa-user-friends"></i> <span class="ccm-topic-name special-text__tooltip">Company size</span>
+               </span>
+                <span id="company-size">{{ .Params.companySize }}</span> 
+                {{ end }}
+                {{ $address := .Params.addressHouseBuilding }}    
+                {{ $addressHousevalue := substr $address  0 9}} 
+                {{ if or ( .Params.addressHouseBuilding) (and  (ne .Params.addressHouseBuilding "Nil") (ne .Params.addressHouseBuilding "") (ne $addressHousevalue "undefined"))}}
+                <br><span class="institute-sm-ico-1 special-text ccm-related-offering-name"> <i class="fas fa-map-marker-alt"></i> <span class="ccm-topic-name special-text__tooltip">Location</span> </span>
+                <span id="innovator-address">{{ .Params.addressHouseBuilding }}</span> {{ end }}
+                {{ $founded := .Params.founded }}    
+                {{ $foundedValue := substr $founded  0 9}} 
+                {{ if or ( .Params.founded) (and  (ne .Params.founded "Nil") (ne .Params.founded "") (ne $foundedValue "undefined"))}}
+                <span class="institute-sm-ico-1 special-text ccm-related-offering-name"> <i class="fas fa-calendar"></i> <span class="ccm-topic-name special-text__tooltip">Founded</span> </span>         
+                 <span id ="innovator-founded">{{ .Params.founded }}</span>
+                 {{ end }}
+                </p>              
+              <article class="new-ofering-row-2 institute-vote">             
+              <div class="new-ofering-row-2-cell">
+              {{ $institutionID := .Params.id }}
+              {{ $institutionName := .Params.title }}
+              {{ $countInFrontmatter := 0 }}
+               {{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+              {{ $label := "Ease of Doing Business" }}
+              {{ $outerDivClass := "github-row fas fa-handshake" }}
+              {{ $anchorTagId := "used_by" }}
+              {{ $anchorTagClass := "used_by" }}
+              {{ $spanId := "Product_Used_By_Button" }}
+              {{ $countDivId := "gitUsedByCountDiv" }}
+              {{ $countSpanId := "gitUsedBy" }}
+              {{ $MetricName := "medigy_qual_exp_institution_easeOfDoingBusiness" }}
+              {{ $globalStatusVar := "easeOfDoingBusiness" }}
+              {{ $metricKeyId := "instituteID" }}
+              {{ $tooltip := "Ease of Doing Business" }}
+              {{ $metricKeyName := "medigy_qual_exp_institution_easeOfDoingBusiness" }}
+              {{ $type := "institution" }}
+              {{ partialCached "cadds-common" (dict  "label"  $label  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $institutionID "productName" $institutionName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $institutionID $tooltip}}  
+              {{ $institutionID := .Params.id }}
+              {{ $institutionName := .Params.title }}
+              {{ $countInFrontmatter := 0 }}
+              {{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+              {{ $label := "Watch" }}
+              {{ $outerDivClass := "github-row fas fa-eye" }}
+              {{ $anchorTagId := "watcherclick" }}
+              {{ $anchorTagClass := "watcherclick" }}
+              {{ $spanId := "Product_Watch_Button" }}
+              {{ $countDivId := "gitWatcherCountDiv" }}
+              {{ $countSpanId := "gitWatcher" }}
+              {{ $MetricName := "medigy_qual_exp_institution_watch" }}
+              {{ $globalStatusVar := "watch" }}
+              {{ $metricKeyId := "instituteID" }}
+              {{ $tooltip := "Watch" }}
+              {{ $metricKeyName := "medigy_qual_exp_institution_watch" }}
+              {{ $type := "institution" }}
+              {{ partialCached "cadds-common" (dict  "label"  $label  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $institutionID "productName" $institutionName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $institutionID $tooltip}}  
+              {{ $institutionID := .Params.id }}
+              {{ $institutionName := .Params.title }}
+              {{ $countInFrontmatter := 0 }}
+              {{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+              {{ $label := "Star" }}
+              {{ $outerDivClass := "github-row fas fa-star" }}
+              {{ $anchorTagId := "starclick" }}
+              {{ $anchorTagClass := "" }}
+              {{ $spanId := "Product_Star_Button" }}
+              {{ $countDivId := "gitStarCountDiv" }}
+              {{ $countSpanId := "gitStar" }}
+              {{ $MetricName := "medigy_qual_exp_institution_star" }}
+              {{ $globalStatusVar := "star" }}
+              {{ $metricKeyId := "instituteID" }}
+              {{ $tooltip := "Star" }}
+              {{ $metricKeyName := "medigy_qual_exp_institution_star" }}
+              {{ $type := "institution" }}
+              {{ partialCached "cadds-common" (dict  "label"  $label  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $institutionID "productName" $institutionName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $institutionID $tooltip }}  
+              {{ $institutionID := .Params.id }}
+              {{ $institutionName := .Params.title }}
+              {{ $countInFrontmatter := 0 }}
+              {{ $urlAjax  := $.Site.Params.GraphQLUrl }}
+              {{ $label := "On Wishlist" }}
+              {{ $outerDivClass := "github-row fas fa-heart" }}
+              {{ $anchorTagId := "wishclick" }}
+              {{ $anchorTagClass := "" }}
+              {{ $spanId := "Product_Wishlist_Button" }}
+              {{ $countDivId := "gitWishCountDiv" }}
+              {{ $countSpanId := "gitWish" }}
+              {{ $MetricName := "medigy_qual_exp_institution_wish" }}
+              {{ $globalStatusVar := "wish" }}
+              {{ $metricKeyId := "instituteID" }}
+              {{ $tooltip := "On Wishlist" }}
+              {{ $metricKeyName := "medigy_qual_exp_institution_wish" }}
+              {{ $type := "institution" }}
+              {{ partialCached "cadds-common" (dict  "label"  $label  "outerDivClass" $outerDivClass  "anchorTagId" $anchorTagId  "anchorTagClass" $anchorTagClass   "productId" $institutionID "productName" $institutionName "spanId" $spanId "countDivId" $countDivId  "countSpanId" $countSpanId "countInFrontmatter" $countInFrontmatter "MetricName" $MetricName "urlAjax" $urlAjax "globalStatusVar" $globalStatusVar "metricKeyId" $metricKeyId "metricKeyName" $metricKeyName "tooltip" $tooltip "type" $type) $institutionID $tooltip }}  
+              <div class="clearfix"></div>
+              </div>
+            </article>
+            </div>
+          <div class="clearfix"> </div>
+        </div>
+      </div>
+    </article>
+    <article class="new-ofering-row-1 institute-content-block">
+      <div class="container"> 
+        <div class="new-ofer-header row">
+          <div class="col-lg-8">
+            <div class="institute-about-description">             
+                <h2 class="institute-f-1"> About Us </h2>                    
+                  {{ if (not ( .Params.companydescription)) | or (eq .Params.companydescription "") }}
+                      <p> Description about this institution is not provided. </p>
+                  {{ else }}                        
+                  <p>{{ .Params.companydescription }} </p>                       
+                  {{ end }}
+              </div>
+            </div>            
+            <div class="col-lg-4">
+              <div class="new-ofer-header-right">       
+                  <div class="new-ofer-header-right-col-2 row">
+                    <div class="col-lg-12">
+                      <div id="tenantIdForClaimDiv">
+                        <div id="claimProductMessage" class="alert alert-success" style="display: none;"></div>
+                          <form name="claimimgForm" id="claimimgForm" style="display:none;">
+                            <div class="form-group row">
+                              <label for="email" class="col-sm-12">Organization</label>
+                              <div class="col-sm-12">
+                                <select class="form-control" name="tenantIdForClaim" id="tenantIdForClaim">                      
+                                </select>
+                              </div>
+                            </div>
+                          <div class="text-left">
+                            <input type="submit" value="Claim Offering" id="claimOfferingButton" class="btn btn-primary"
+                              productName="{{ .Title }}" productId="{{ .Params.id }}">
+                            <input type="button" value="Cancel" id="claimOfferingCancel" class="btn btn-primary">
+                          </div>
+                          </form>
+                      </div>
+                      {{ if ne .Params.status "Approved" }}
+                      <div class="new-ofer-q-1" id="claimingHospitalArea">
+                      <p>Are you owner of this institution?</p>
+                      <a href="#" class="new-ofer-btn-1 gray" productName="{{ .Title }}" productId="{{ .Params.id }}" id="claimOffering">
+                        <div class="new-ofer-q-1-bt-l Product_Claiming">Yes, claim this institution</div>
+                        <div class="new-ofer-q-1-bt-r">
+                          <i class="fas fa-chevron-right"></i>
+                          </div>
+                          <div class="clearfix"></div>
+                          </a>
+                      </div>
+                    </div>
+                    {{ end }}
+                    <div class="col-lg-12" id="inviteHospitalArea">
+                      <div class="new-ofer-q-1">
+                        <p>Do you know anyone working in this institution?</p>                   
+                        <a href="#" class="new-ofer-btn-1 green inviteProcess" productName="{{ .Title }}" productId="{{ .Params.id }}">
+                          <div class="new-ofer-q-1-bt-l" id="Product_Owner_Invite">Invite them to share their experience</div>
+                          <div class="new-ofer-q-1-bt-r">
+                            <i class="fas fa-chevron-right"></i>
+                          </div>
+                          <div class="clearfix"></div>
+                          </a>
+                      </div>
+                    </div>              
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+  {{ $id :=  .Params.id }}
+  {{ $posts := (where (where $.Site.RegularPages ".Params.type" "==" "post")  ".Params.tenantid" "==" $id ) }}
+  {{ $productPost := (where (where (where $.Site.RegularPages ".Params.type" "==" "post")  ".Params.tenantid" "==" $id) ".Params.offeringtype" "==" "Product")}}
+  {{ $servicePost := (where (where (where $.Site.RegularPages ".Params.type" "==" "post")  ".Params.tenantid" "==" $id) ".Params.offeringtype" "==" "Service")}}
+  {{ $solutionPost := (where (where (where $.Site.RegularPages ".Params.type" "==" "post")  ".Params.tenantid" "==" $id) ".Params.offeringtype" "==" "Solution")}}
+  
+  {{ $totalPost := len $posts }}
+  {{ $productPosts := len $productPost }}
+  {{ $solutionPosts := len $solutionPost }}
+  {{ $servicePosts := len $servicePost }}
+    
+  {{  $.Scratch.Set "totalCounter" $totalPost}}
+  {{  $.Scratch.Set "productCounter" $productPosts}}
+  {{  $.Scratch.Set "serviceCounter" $servicePosts}}
+  {{  $.Scratch.Set "solutionCounter" $solutionPosts}}
+  
+    <article class="new-ofering-row-3 commun-content-row-3">
+      <div class="container">
+        <div class="top-10-most-row">
+          <div class="top-10-most-row-tab-ttl">
+            <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link show active" id="all-tab" data-toggle="tab" href="#all" role="tab"
+                  aria-controls="all" aria-selected="true">All ( {{ $.Scratch.Get "totalCounter" }} )</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link show" id="solutions-tab" data-toggle="tab" href="#solutions" role="tab"
+                  aria-controls="solutions" aria-selected="false">Solutions ( {{ $.Scratch.Get "solutionCounter" }} )</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link show" id="products-tab" data-toggle="tab" href="#products" role="tab"
+                  aria-controls="products" aria-selected="false">Products ( {{ $.Scratch.Get "productCounter" }} )</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link show" id="services-tab" data-toggle="tab" href="#services" role="tab"
+                  aria-controls="services" aria-selected="false">Services ( {{ $.Scratch.Get "serviceCounter" }} )</a>
+              </li>
+            </ul>
+          </div>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade active show" id="all" role="tabpanel" aria-labelledby="all-tab">
+              <main class="fhir-list-row">
+                {{ $.Scratch.Set "offeringValue" 0 }}
+                {{ range  $posts }} 
+                        {{ $.Scratch.Add "offeringValue" 1 }}
+                {{ .Render "li" }}                
+                {{ end }}
+                {{ $offeringValue := $.Scratch.Get "offeringValue" }}
+                {{ if eq $offeringValue 0 }}
+                <div class="topic-click-add-suggest"> No offerings assigned to this institution</div>
+                {{ end }}
+              </main>
+            </div>
+            <div class="tab-pane fade" id="solutions" role="tabpanel" aria-labelledby="solutions-tab">
+              <main class="fhir-list-row">
+                <!-- <div class="topic-click-add-suggest">Are there any solutions that should be added for evaluation? <a class="add-suggest-for-topic" href="/add-suggest/" title="Click here to add/suggest">Click here to add/suggest</a>.</div>                           -->
+                {{ $.Scratch.Set "offeringValue" 0 }}
+                {{ range  $solutionPost }}                
+               {{ $.Scratch.Add "offeringValue" 1 }}
+                {{ .Render "li" }}
+                {{ end }}               
+                {{ $offeringValue := $.Scratch.Get "offeringValue" }}
+                {{ if eq $offeringValue 0 }}
+                <div class="topic-click-add-suggest"> No offerings assigned to this institution</div>
+                {{ end }}
+              </main>
+            </div>
+            <div class="tab-pane fade" id="products" role="tabpanel" aria-labelledby="products-tab">
+              <main class="fhir-list-row">
+                <!-- <div class="topic-click-add-suggest">Are there any products that should be added for evaluation? <a class="add-suggest-for-topic" href="/add-suggest/" title="Click here to add/suggest">Click here to add/suggest</a>.</div>                                 -->
+                {{ $.Scratch.Set "offeringValue" 0 }}
+                {{ range  $productPost}}                
+                       {{ $.Scratch.Add "offeringValue" 1 }}
+                {{ .Render "li" }}
+                {{ end }}                
+                {{ $offeringValue := $.Scratch.Get "offeringValue" }}
+                {{ if eq $offeringValue 0 }}
+                <div class="topic-click-add-suggest"> No offerings assigned to this institution</div>
+                {{ end }}
+              </main>
+            </div>
+            <div class="tab-pane fade" id="services" role="tabpanel" aria-labelledby="services-tab">
+              <main class="fhir-list-row">
+                <!-- <div class="topic-click-add-suggest">Are there any services that should be added for evaluation? <a class="add-suggest-for-topic" href="/add-suggest/" title="Click here to add/suggest">Click here to add/suggest</a>.</div>                           -->
+                {{ $.Scratch.Set "offeringValue" 0 }}
+                {{ range  $servicePost }} 
+                        {{ $.Scratch.Add "offeringValue" 1 }}
+                {{ .Render "li" }}                
+                {{ end }}
+                {{ $offeringValue := $.Scratch.Get "offeringValue" }}
+                {{ if eq $offeringValue 0 }}
+                <div class="topic-click-add-suggest"> No offerings assigned to this institution</div>
+                {{ end }}
+              </main>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+   
+   </section>
+  <!-- NEW OFFERING HTML ends here -->
+<script type="text/javascript" src="/js/bootstrap-slider.js"></script> 
+  {{ partialCached "footer.html" . }}
+</body>
+</html>

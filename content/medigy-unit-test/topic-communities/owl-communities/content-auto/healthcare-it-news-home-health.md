@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Home Health" 
+ classname:  "OWLClass_47e98103_a6cb_406a_9a96_f60ee8e396aa" 
+ label: "Home Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['KLAS: Home Health'] 
+ collections: ['Healthcare IT News: Home Health']
+ aliases:  "/topic/healthcare-it-news-home-health"  
+ searchCategory: "topic" 
+---
+SG9tZSBoZWFsdGggb3IgaG9tZSBoZWFsdGggY2FyZSBpbmNsdWRlcyBoZWFsdGhjYXJlIHNlcnZpY2VzIHRoYXQgYXJlIGRlbGl2ZXJlZCB0byBwYXRpZW50cyBhdCBob21lLiBJdCBpcyB1c3VhbGx5IHByb3ZpZGVkIHRvIHBhdGllbnRzIHdobyBhcmUgb2xkZXIsIHdobyBoYXZlIGNocm9uaWMgaWxsbmVzc2VzLCB3aG8gYXJlIHJlY292ZXJpbmcgZnJvbSBhIG1lZGljYWwgc2V0YmFjaywgYW5kIHdobyBoYXZlIHNwZWNpYWwgbmVlZHMgb3Igc29tZSBkaXNhYmlsaXR5LiBIb21lIGhlYWx0aCBjYXJlIHNlcnZpY2VzIGFyZSBhbHNvIGNhbGxlZCBob21lIGhlYWx0aCBhaWRlIGFuZCBhcmUgdXN1YWxseSBkZWxpdmVyZWQgYnkgbnVyc2VzLCBhaWRlcywgdGhlcmFwaXN0cywgY2FyZWdpdmVycywgZXRjLgpIb21lIGhlYWx0aCBpcyBhIHVuaXF1ZSBhcHByb2FjaCB0b3dhcmRzIHBhdGllbnQgY2FyZSBiZWNhdXNlIGl0IGlzIGxlc3MgZXhwZW5zaXZlLCBtb3JlIGNvbnZlbmllbnQsIGNvbWZvcnRhYmxlLCBhbmQgYXMgZWZmaWNpZW50IGFzIGNhcmUgZ2l2ZW4gaW4gYSBob3NwaXRhbCBvciBudXJzaW5nIGZhY2lsaXR5LiBJdCBoZWxwcyBwYXRpZW50cyBpbiBsaXZpbmcgdGhlaXIgbGlmZSBpbmRlcGVuZGVudGx5IGFuZCBhbHNvIGtlZXBzIHRoZW0gbWVudGFsbHkgYW5kIGVtb3Rpb25hbGx5IGZpdC4=

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Enterprise Service Management" 
+ classname:  "Enterprise_service_management" 
+ label: "Enterprise Service Management" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Enterprise Service Management']
+ aliases:  "/topic/healthcare-it-news-enterprise-service-management"  
+ searchCategory: "topic" 
+---
+RW50ZXJwcmlzZSBzZXJ2aWNlIG1hbmFnZW1lbnQgKEVTTSkgaXMgYSBzZXJ2aWNlIGRvbWFpbiB0aGF0IGlzIHJlc3BvbnNpYmxlIGZvciBvZmZlcmluZyBzZXJ2aWNlcyB0byBwZW9wbGUgd2l0aGluIGFuIG9yZ2FuaXphdGlvbi4gSXQgaXMgYWJvdXQgZW1wbG95aW5nIGEgc2VydmljZS1vcmllbnRlZCBidXNpbmVzcyBtb2RlbCB0byB0aGUgd2F5IGFuIG9yZ2FuaXphdGlvbiBmdW5jdGlvbnMgaW50ZXJuYWxseS4gCkVTTSBpcyBhbiBvcGVyYXRpb25hbCBhcmNoaXRlY3R1cmUgdGhhdCBjb25zaWRlcnMgZWFjaCBzZXJ2aWNlIHByb3ZpZGVyIHdpdGhpbiBhbiBvcmdhbml6YXRpb24gYXMgYSBzZXJ2aWNlIGRvbWFpbi4gU3VjaCBhIHNlcnZpY2UgZG9tYWluIGlzIHJlc3BvbnNpYmxlIGZvciBvZmZlcmluZyBzZXJ2aWNlcyB0byBwZW9wbGUgd2l0aGluIGFuIG9yZ2FuaXphdGlvbi4gSXQga2VlcHMgYWxsIHRoZSBidXNpbmVzcyBhc3NldHMgc3VjaCBhcyBwcm9jZXNzZXMsIHBlb3BsZSwgYW5kIHRlY2hub2xvZ3kgaW4gcGxhY2Ugc28gdGhhdCB0aGUgb3JnYW5pemF0aW9uIGNhbiBhY2hpZXZlIGl0cyBidXNpbmVzcyBnb2Fscy4=

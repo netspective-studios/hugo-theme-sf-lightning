@@ -1,0 +1,30 @@
+{{ $posts := where $.Site.Pages "Type" "post" }}
+
+{{ $.Scratch.Set "jsonData" "" }}
+
+{{ range .Site.Data.categories }}
+
+    {{ range . }}
+        {{ $catName := print .parentclasslabel ": " .label }}
+        {{ $.Scratch.Set "tagCounter" 0 }}
+        {{ range $posts }}
+          {{ if in .Params.categories $catName }}
+            {{ $.Scratch.Add "tagCounter" 1 }}
+          {{ end }}
+        {{ end }}    
+        {{ $offeringCount := $.Scratch.Get "tagCounter" }}
+        {{ $jsonData := print " { \"classname\" : \"" .classname  "\", \"label\" : \"" .label "\", \"parentclassname\" : \"" .parentclassname "\", \"parentclasslabel\" : \"" .parentclasslabel "\", \"offeringCount\": \"" $offeringCount "\", \"description\" : \"" .description "\", \"subclassname\" : \"" .subclassname "\", \"subclasslabel\" : \"" .subclasslabel "\", \"subclassdescription\" : \"" .subclassdescription "\", \"equalentCollections\": \"" .equalentCollections "\"  }," }}
+        {{ $setData := $.Scratch.Get "jsonData" }}
+        {{  $jsonData := print $setData  $jsonData }}
+        {{ $.Scratch.Set "jsonData" $jsonData }}
+
+    {{ end }}
+
+{{ end }}
+{{ $jsonData :=$.Scratch.Get "jsonData" }}
+
+{{ $jsonData := print "[ " $jsonData "]" }}
+{{ $jsonData := replace $jsonData ",]" " ]"}}
+{{ $jsonData | jsonify }}
+
+

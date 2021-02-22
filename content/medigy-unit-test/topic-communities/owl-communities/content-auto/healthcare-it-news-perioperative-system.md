@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Perioperative System" 
+ classname:  "Perioperative_system" 
+ label: "Perioperative System" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Perioperative System']
+ aliases:  "/topic/healthcare-it-news-perioperative-system"  
+ searchCategory: "topic" 
+---
+VGhlIHBlcmlvcGVyYXRpdmUgY2FyZSBwcm9jZXNzIGlzIHVuaXF1ZSBhbmQgY2hhbGxlbmdpbmcsIHdoZXJlaW4gdGhlIGNsaW5pY2lhbnMgcHJpbWFyaWx5IGZvY3VzIG9uIGhvdyB0byBpbXByb3ZlIHBhdGllbnQgc2FmZXR5LiBQZXJpb3BlcmF0aXZlIHN5c3RlbSBpcyBhIHdheSBvZiBpbXByb3Zpbmcgc3VyZ2ljYWwgYmxvY2sgc2NoZWR1bGluZyBhbmQgdXRpbGl6YXRpb24uIEl0IGFsbG93cyBoZWFsdGhjYXJlIHByb2Zlc3Npb25hbHMgdG8gcHVsbCBkYXRhIGZyb20gZXhpc3Rpbmcgc3lzdGVtcyBhbmQgYW5hbHl6ZSB0aGUgZGF0YSBpbiByZWFsLXRpbWUuIFRoZSBhZHZhbmNlZCBhbmFseXRpY3MgY2FwYWJpbGl0aWVzIG9mIHRoZSBwZXJpb3BlcmF0aXZlIHN5c3RlbSBlbmFibGUgZG9jdG9ycyB0byBmb3JlY2FzdCB0aGUgb3BlcmF0aW5nIHJvb20gKE9SKSB1c2FnZSBhY2N1cmF0ZWx5LgpQZXJpb3BlcmF0aXZlIHNlcnZpY2VzIGhlbHAgaGVhbHRoY2FyZSBwcm92aWRlcnMgdG8gY3JlYXRlIHN1cmdlb24gc2NvcmVjYXJkcy4gVGhpcyBkZW1vY3JhdGl6ZXMga2V5IG1ldHJpY3MgZm9yIGVhY2ggc3VyZ2VvbiwgaW5jbHVkaW5nIGJsb2NrIHV0aWxpemF0aW9uLCBjYW5jZWxsYXRpb24gcmF0ZXMsIGFuZCBsYXRlIGZpcnN0LWNhc2UsIHN0YXJ0cy4=

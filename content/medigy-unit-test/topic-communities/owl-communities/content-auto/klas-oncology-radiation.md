@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Oncology Radiation" 
+ classname:  "Oncology_Radiation" 
+ label: "Oncology Radiation" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['KLAS: Radiation Therapy','Healthcare IT News: Radiology'] 
+ collections: ['KLAS: Oncology Radiation']
+ aliases:  "/topic/klas-oncology-radiation"  
+ searchCategory: "topic" 
+---
+UmFkaWF0aW9uIE9uY29sb2d5IHN5c3RlbXMgYXJlIHVzZWQgZm9yIG1haW50YWluaW5nIHBhdGllbnQgb3JkZXJzIGFuZCBkYXRhIGluIHJlZ2FyZCB0byByYWRpYXRpb24gb25jb2xvZ3kgY2FyZS4gUmFkaWF0aW9uIG9uY29sb2d5IHNvbHV0aW9ucyBpbnZvbHZlIGNvbnRyb2xsZWQgdXNlIG9mIHJhZGlhdGlvbnMgZm9yIG92ZXJjb21pbmcgdmFyaW91cyBzeW1wdG9tcyBvZiBjYW5jZXIuIFdpdGggdGhlIGhlbHAgb2YgbGF0ZXN0IHRlY2hub2xvZ2llcyB1c2VkIGluIHJhZGlhdGlvbiBvbmNvbG9neSwgcGF0aWVudHMgYXJlIGdldHRpbmcgYmVuZWZpdHMgaW4gZGlmZmVyZW50IHdheXMuIFJhZGlhdGlvbiBvbmNvbG9neSBoYXMgYnJvdWdodCBvdXQgc3VjY2Vzc2Z1bCBvdXRjb21lcyBmb3IgbWFqb3JpdHkgb2YgcGF0aWVudHMgYW5kIGhhcyBhbHNvIHJlc3VsdGVkIGluIGhpZ2hlciBjdXJlIHJhdGVzIHdpdGhvdXQgZGFtYWdpbmcgaGVhbHRoeSB0aXNzdWVzLiBJdCBoYXMgbGltaXRlZCB0aGUgdHJlYXRtZW50IHRpbWUgYW5kIGltcHJvdmVkIHF1YWxpdHkgb2YgbGlmZS4=

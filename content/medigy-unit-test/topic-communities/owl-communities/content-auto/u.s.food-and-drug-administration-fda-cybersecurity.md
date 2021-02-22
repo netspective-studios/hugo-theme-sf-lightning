@@ -1,0 +1,14 @@
+--- 
+ title: "U.S. Food and Drug Administration (FDA): Cybersecurity" 
+ classname:  "Cybersecurity" 
+ label: "Cybersecurity" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "U.S._Food_and_Drug_Administration" 
+ parentclasslabel: "U.S. Food and Drug Administration (FDA)" 
+ equalentCollections: [] 
+ collections: ['U.S. Food and Drug Administration (FDA): Cybersecurity']
+ aliases:  "/topic/u.s.food-and-drug-administration-fda-cybersecurity"  
+ searchCategory: "topic" 
+---
+RW1lcmdpbmcgdGVjaG5vbG9naWVzIGRyaXZlIG1lZGljYWwgZGV2aWNlcyB0byBiZSBjb25uZWN0ZWQgdG8gb3RoZXIgZGV2aWNlcyB2aWEgdGhlIGludGVybmV0IHRvIGVuYWJsZSBmZWF0dXJlcyB0aGF0IGltcHJvdmUgaGVhbHRoY2FyZSBhbmQgaW5jcmVhc2UgdGhlIHByb3ZpZGVy4oCZcyBhYmlsaXR5IHRvIHRyZWF0IHBhdGllbnRzLiBUaGVzZSBzYW1lIGJlbmVmaXRzIGNvdWxkIGFsc28gaW52b2x2ZSB0aGUgcmlzayBvZiBjeWJlcnNlY3VyaXR5IGJyZWFjaGVzLiBMaWtlIGFueSBvdGhlciBkZXZpY2UsIG1lZGljYWwgZGV2aWNlcyBhcmUgYWxzbyBwcm9uZSB0byBzZWN1cml0eSB0aHJlYXRzIHRoYXQgaW1wYWN0IHRoZSBkZXZpY2UncyBlZmZlY3RpdmVuZXNzLiBUaGUgaG9zcGl0YWxzLCBtYW51ZmFjdHVyZXJzLCBhbmQgZmFjaWxpdGllcyBuZWVkIHRvIHdvcmsgdG9nZXRoZXIgdG8gbWl0aWdhdGUgY3liZXJzZWN1cml0eSB0aHJlYXRzLiBDeWJlcnNlY3VyaXR5IHNlcnZpY2VzIG9mZmVyZWQgYnkgdGhlc2Ugb3JnYW5pemF0aW9ucyBvZmZlciBwcm90ZWN0aW9uIGFnYWluc3QgZGlmZmVyZW50IHNlY3VyaXR5IHJlbGF0ZWQgaXNzdWVzIHN1Y2ggYXMgcmFuc29td2FyZSwgbWFsaWNpb3VzIGF0dGFja3MsIGRhdGEgYnJlYWNoZXMsIGV0Yy4gT25seSB0aG9zZSBkZXZpY2VzIGFyZSBhbGxvd2VkIHRvIGJlIG1hcmtldGVkIGJ5IHRoZSBGREEsIHdob3NlIGJlbmVmaXRzIHRvIHBhdGllbnRzIG91dHdlaWdoIHRoZSByaXNrcy4=

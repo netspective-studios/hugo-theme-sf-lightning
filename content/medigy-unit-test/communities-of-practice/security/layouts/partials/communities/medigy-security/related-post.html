@@ -1,0 +1,85 @@
+{{ range first 2 (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+  {{ $.Scratch.Set "has_related" true }}
+{{ end }}
+
+<div class="col-md-12 px-0 related-posts">
+
+<div class="post-list blue">	
+	<div class="header">
+		<span class="post-icon"> <img src="{{ print ( $.Scratch.Get "related-image" ) }}" alt="latest"></span> Related Articles
+	</div>	
+	<div class="subContent">
+		{{ if $.Scratch.Get "has_related" }}		
+			<ul class="row">
+			  {{ $num_to_show := .Site.Params.related_content_limit | default 2 }}
+			  {{ range first $num_to_show (where (where .Site.Pages ".Params.tags" "intersect" .Params.tags) "Permalink" "!=" .Permalink) }}
+				<li class="col-md-6 col-sm-12">
+					<div >
+						<div class="post-header">
+							<h1 itemprop="name" id="title"><a href="{{ .RelPermalink }}">{{ .Title }} </a></h1>
+						  <ul class="list-inline d-block pb-4  mb-3">
+								{{if  .Params.Author }}<li class="list-inline-item "><i class="fa fa-user-circle"></i> <em>{{ .Params.Author }}</em></li> {{ end }}
+								<li class="list-inline-item"><i class="fa fa-calendar"></i> <em>{{ .Date.Format "January 2, 2006" }} </em></li>
+								
+							</ul>
+						</div>
+						<div class="subContent row">
+							{{if  .Params.image }}
+								<div class="col-4">
+									{{ $fpath:=  .File.Dir }}
+								{{ $fileDir := replace $fpath "\\" "/"}}
+								<img src="/{{$fileDir}}img/{{ .Params.image  }}"  alt="{{ .Title }}" class="img-fluid">
+								</div>
+							{{ end }}
+							<div class="{{if  .Params.image }} col-8 {{ else }} col-12 {{ end}}">
+								{{if gt (len .Summary) 200}}
+									{{slicestr .Summary 0 200 | safeHTML }}
+								{{ else }}
+									{{ .Summary }}
+								{{ end }}
+							</div>
+							
+						</div>
+						
+					</div>
+				</li>
+			  {{ end }}
+			</ul>
+{{ end }}
+	</div>
+	
+	
+</div>
+
+<!--
+	      {{ if and (.Site.Taxonomies.series) ( .Params.series) }}
+        <section class="mt4">
+          {{ $readMore := ":wave:" }}
+          {{ $series := .Params.series | urlize}}
+          <h3>{{ $readMore | emojify }} Related posts in the <a href="/series/{{ $series }}" class="b bb bw1 pb1 no-underline black">{{ .Params.Series }}</a> series...</h3>
+      
+          {{ $posts := index .Site.Taxonomies.series $series }}
+         
+          {{ if (gt ($posts | len) 1)}}
+            <ul class="list pl0">
+              {{ range where $posts "Title" "!=" .Title }}
+                <li class="list pl0 lh-copy">
+                  <a
+                    class="f4 b dib black no-underline"
+                    href="{{ .Permalink}}"
+                    >{{ .Title }}</a
+                  >
+                  <span class="f6 gray">{{ .Date.Format "January 2, 2006" }}</span>
+                </li>
+              {{ end }}
+            </ul>  
+          {{ else }}
+            <div class="ph2 i">
+              No follow up posts yet. Check back soon!
+            </div>    
+          {{ end }}
+        </section>
+      {{ end }}
+	  
+	  -->
+</div>

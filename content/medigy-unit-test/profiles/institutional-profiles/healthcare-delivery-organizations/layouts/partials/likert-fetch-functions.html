@@ -1,0 +1,162 @@
+<script>
+  /// Likert scale function call to fetch total counts and user counts starts
+  var institutionId = "{{ .Params.facilityId }}";
+  {{ range first 1 .Site.Data.hdo_eodb_likert_lhc_form.items }}
+  {{ range .items }}
+  {{ $.Scratch.Set "likertTitle" "" }}
+  {{ $.Scratch.Set "likertScore" "" }}
+  {{ $.Scratch.Set "likertLabel" "" }}
+    {{ $metricId :=  print "medigy_qual_exp_institution_" .localQuestionCode }}
+        {{ range first 1 .items }}
+          {{ range  .items }}
+          {{ $tempLabel :=  $.Scratch.Get "likertLabel" }}
+          {{ $setlabel := print $tempLabel .localQuestionCode "," }}
+          {{ $.Scratch.Set "likertLabel"  $setlabel }}
+            {{ range .answers }}
+              {{ $tempTitle :=  $.Scratch.Get "likertTitle" }}
+              {{ $tempScore :=  $.Scratch.Get "likertScore" }}
+              {{ $setTitle := print $tempTitle .text "," }} 
+              {{ $setScore := print $tempScore .code "," }} 
+              {{ $.Scratch.Set "likertTitle"  $setTitle }}
+              {{ $.Scratch.Set "likertScore"  $setScore }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+    {{ $labelId :=   $.Scratch.Get "likertLabel" }}
+    {{ $score :=   $.Scratch.Get "likertScore" }}
+
+    fetchLikertCounts({{ $score }}, {{ $labelId }}, {{ $metricId }}, institutionId);
+  
+  {{ end }}
+  {{ end }}
+  /*
+  var labelIds_support = ["agr_support_resource", "agr_support_care", "agr_support_timely", "agr_support_clear", "agr_support_due"];
+  var metric_support = "medigy_qual_exp_institution_agreement_support";
+  fetchLikertCounts(scores, labelIds_support, metric_support, institutionId);
+
+  var labelIds_legal = ["agr_legal_light", "agr_legal_terms", "agr_legal_scale", "agr_legal_process", "agr_legal_legal", "agr_legal_indemnity", "agr_legal_dep"];
+  var metric_legal = "medigy_qual_exp_institution_agreement_legal";
+  fetchLikertCounts(scores, labelIds_legal, metric_legal, institutionId);
+
+  var labelIds_research = ["agr_research_excellence", "agr_research_expertise", "agr_research_policies", "agr_research_efficient", "agr_research_attractive", "agr_research_willing", "agr_research_support"];
+  var metric_research = "medigy_qual_exp_institution_agreement_research";
+  fetchLikertCounts(scores, labelIds_research, metric_research, institutionId);
+
+  var labelIds_technology = ["agr_technology_access", "agr_technology_integration", "agr_technology_attracting", "agr_technology_specialists", "agr_technology_pathways", "agr_technology_enterprise"];
+  var metric_technology = "medigy_qual_exp_institution_agreement_technology";
+  fetchLikertCounts(scores, labelIds_technology, metric_technology, institutionId);
+
+  var labelIds_security = ["agr_security_common", "agr_security_standard", "agr_security_policies", "agr_security_provide", "agr_security_extract"];
+  var metric_security = "medigy_qual_exp_institution_agreement_security";
+  fetchLikertCounts(scores, labelIds_security, metric_security, institutionId);
+
+  var labelIds_clinical = ["agr_clinical_champions", "agr_clinical_digital"];
+  var metric_clinical = "medigy_qual_exp_institution_agreement_clinical";
+  fetchLikertCounts(scores, labelIds_clinical, metric_clinical, institutionId);
+
+  var labelIds_scaling = ["agr_scaling_digital", "agr_scaling_pathways", "agr_scaling_solutions", "agr_scaling_growth", "agr_scaling_publish", "agr_scaling_branding", "agr_scaling_investment", "agr_scaling_advisors"];
+  var metric_scaling = "medigy_qual_exp_institution_agreement_scaling";
+  fetchLikertCounts(scores, labelIds_scaling, metric_scaling, institutionId);
+
+  var labelIds_perceptions = ["agr_perceptions_easy", "agr_perceptions_perceive"];
+  var metric_perceptions = "medigy_qual_exp_institution_agreement_perceptions";
+  fetchLikertCounts(scores, labelIds_perceptions, metric_perceptions, institutionId);
+*/
+  /// Likert scale function call to fetch total counts and user counts ends
+
+  var total_score = 0;
+  var distinct_users = 0;
+
+  function fetchLikertCounts(score, labelId, metric, institutionId) {
+    var labelIds = labelId.split(",");
+    var scores = score.split(",");
+    scores.pop();
+    labelIds.pop();
+    var personId = getCookie('personid');
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "{{ $.Site.Params.GraphQLUrl }}",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded",
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Connection": "keep-alive"
+      },
+      "data": {
+        "query": `query{
+                        getPromData(
+                          metricName:\"`+ metric + `\",
+                          metricQuery:\"{institutionId=\\\"`+ institutionId + `\\\"}[1y]\",
+                            groupByParam:[\"userId\",\"institutionId\",\"labelId\"]
+                            ){
+                              prometheusData    
+                              status
+                            }
+                          }`
+      }
+    }
+    var catId = metric.split("_").splice(-2).join("_");
+    setTimeout(function(){
+      $.ajax(settings).done(function (response) {
+        if (response.data.getPromData.status == "success") {
+          var JSONData = JSON.parse(response.data.getPromData.prometheusData);
+          var uniqueUsers = [];
+          for(i = 0; i< JSONData.length; i++){    
+              if(uniqueUsers.indexOf(JSONData[i].userId) === -1){
+                  uniqueUsers.push(JSONData[i].userId);        
+              }        
+          }   
+          if(JSONData.length > 1)   
+            $(".weight_"+catId).html(JSONData.length+' ratings ');
+          else if (JSONData.length == 0)
+            $(".weight_"+catId).html('');
+          else
+          $(".weight_"+catId).html(JSONData.length+' rating ');  
+          if(uniqueUsers.length > 1)   
+            $(".users_"+catId).html(uniqueUsers.length+' reviewers ');
+          else if (uniqueUsers.length == 0)
+            $(".users_"+catId).html('');
+          else
+            $(".users_"+catId).html(uniqueUsers.length+' reviewer ');
+          total_score += JSONData.length;
+          distinct_users += uniqueUsers.length;        
+          if(total_score > 1)
+            $(".weight_total").html(total_score+' ratings');
+          else if (total_score == 0)
+            $(".weight_total").html('');
+          else
+          $(".weight_total").html(total_score+' rating');
+          
+          if(distinct_users > 1)
+            $(".user_total").html(distinct_users+' reviewers');
+          else if (distinct_users == 0)
+            $(".user_total").html('');
+          else
+            $(".user_total").html(distinct_users+' reviewer');
+
+          if (JSONData.length > 0) {
+            for (j = 0; j < (labelIds.length); j++) {
+              for (k = 0; k < (scores.length); k++) {
+                var newArray = JSONData.filter(function (el) {
+                  return el.inputscore == scores[k] &&
+                    el.labelId == labelIds[j]
+                });
+                $('#' + labelIds[j] + "_" + scores[k]).html(newArray.length);
+                // To keep the logged in user previous selected values
+                for (l = 0; l < newArray.length; l++) {
+                  if (personId == newArray[l]['userId']) {
+                    $('#' + labelIds[j] + "_" + scores[k] + scores[k]).prop('checked', true);
+                    $(".reviewLabel"+catId).html("Review your submission:");          
+                  }
+                }
+              }
+            }
+          }      
+        }
+      });
+    }, 400);
+  }
+
+</script>

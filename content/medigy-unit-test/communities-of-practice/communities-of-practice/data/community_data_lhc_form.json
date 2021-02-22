@@ -1,0 +1,387 @@
+{
+  "shortName": "Medigy Community",
+  "name": "Medigy Community",
+  "status": "draft",
+  "version": "",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": true,
+          "question": "FemTech",
+          "questionCodeSystem": "Custom",
+          "questionCode": "femTech",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Contributed Content",
+              "questionCodeSystem": "Custom",
+              "questionCode": "contributedContent",
+              "prefix": "far fa-file-alt",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Infographics",
+              "questionCodeSystem": "Custom",
+              "questionCode": "infographics",
+              "prefix": "fas fa-info-circle",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Curated Content",
+              "questionCodeSystem": "Custom",
+              "questionCode": "curatedContent",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Curated Offering",
+              "questionCodeSystem": "Custom",
+              "questionCode": "curatedOffering",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Curated Recognition",
+              "questionCodeSystem": "Custom",
+              "questionCode": "curatedRecognition",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Events",
+              "questionCodeSystem": "Custom",
+              "questionCode": "events",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Risk and Compliance",
+          "questionCodeSystem": "Custom",
+          "questionCode": "risk-and-compliance",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Contributed Content",
+              "questionCodeSystem": "Custom",
+              "questionCode": "contributedContent",
+              "prefix": "far fa-file-alt",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Infographics",
+              "questionCodeSystem": "Custom",
+              "questionCode": "infographics",
+              "prefix": "fas fa-info-circle",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Curated News",
+              "questionCodeSystem": "Custom",
+              "questionCode": "curatedNews",
+              "prefix": "fas fa-poll-h",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Security",
+          "questionCodeSystem": "Custom",
+          "questionCode": "security",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Contributed Content",
+              "questionCodeSystem": "Custom",
+              "questionCode": "contributedContent",
+              "prefix": "far fa-file-alt",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Infographics",
+              "questionCodeSystem": "Custom",
+              "questionCode": "infographics",
+              "prefix": "fas fa-info-circle",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Actionable Content",
+              "questionCodeSystem": "Custom",
+              "questionCode": "curatedNews",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Pandemic Diseases",
+          "questionCodeSystem": "Custom",
+          "questionCode": "pandemic-diseases",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "COVID-19 Dignostics",
+              "questionCodeSystem": "Custom",
+              "questionCode": "covid-19-dignostics",
+              "prefix": "far fa-file-alt",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "COVID-19 Therapuetics",
+              "questionCodeSystem": "Custom",
+              "questionCode": "covid-19-therapuetics",
+              "prefix": "fas fa-info-circle",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "COVID-19 Burden Relief",
+              "questionCodeSystem": "Custom",
+              "questionCode": "covid-19-burden-relief",
+              "prefix": "far fa-folder-open",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "Policy Based Messages",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Community Based policy message.",
+              "code": "policy-message",
+              "system": null,
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partial "head.html" . }}
+
+<body class="single-body">
+
+
+  {{ partial "nav-bar.html" . }}
+  <!-- community category strats here -->
+  <section class="detail-wrapper">
+    <h2 id="category-title" style="display:none">{{ .Title }} </h2>
+		{{ $currentCat:= .Title }}
+    <hr>
+		{{$currentCat}}
+		
+		
+		
+		<section>
+  
+        <ul>
+          {{ range $key, $value := .Site.Taxonomies.categories }}
+         
+						{{if eq $key $currentCat }}
+                <ul>
+									{{ range $value.Pages }}
+											<li hugo-nav="{{ .RelPermalink}}"><a href="{{ .Permalink}}"> {{ .LinkTitle }} </a> </li>
+									{{ end }}
+                </ul>
+						{{end }}
+          {{ end }}
+        </ul>
+</section>
+		
+		
+
+
+  </section>
+
+  {{ partial "footer.html" . }}
+
+    
+</body>
+
+</html>

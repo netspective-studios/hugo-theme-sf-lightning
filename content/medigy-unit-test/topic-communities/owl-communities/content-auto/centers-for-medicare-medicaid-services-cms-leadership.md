@@ -1,0 +1,14 @@
+--- 
+ title: "Centers for Medicare & Medicaid Services (CMS): Leadership" 
+ classname:  "OWLClass_c5dc0a00_0e91_4941_9a74_733f604495eb" 
+ label: "Leadership" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Centers_for_Medicare_&_Medicaid_Services_(CMS)" 
+ parentclasslabel: "Centers for Medicare & Medicaid Services (CMS)" 
+ equalentCollections: ['HIMSS: Leadership'] 
+ collections: ['Centers for Medicare & Medicaid Services (CMS): Leadership']
+ aliases:  "/topic/centers-for-medicare-medicaid-services-cms-leadership"  
+ searchCategory: "topic" 
+---
+SGVhbHRoY2FyZSBsZWFkZXJzIGFyZSByZXNwb25zaWJsZSBmb3IgdHJhbnNmb3JtaW5nIHRoZSBoZWFsdGhjYXJlIHN5c3RlbS4gVGhlIGlkZWEgYmVoaW5kIGFueSBsZWFkZXJzaGlwIGluIHRoZSBoZWFsdGhjYXJlIHN5c3RlbSBpcyB0byBkZWxpdmVyIGJldHRlciB2YWx1ZSBhbmQgcmVzdWx0cyBmb3IgcGF0aWVudHMgdGhyb3VnaCBjb21wZXRpdGlvbiBhbmQgaW5ub3ZhdGlvbi4gVW5kZXIgdGhlIHN0cm9uZyBsZWFkZXJzaGlwIG9mIFNlZW1hIFZlcm1hLCBDTVMgaGFzIGxlZCB0byB0aGUgZm9sbG93aW5nIGFjY29tcGxpc2htZW50czoK4oCiIFN0YWJpbGl6ZWQgdGhlIGluZGl2aWR1YWwgaGVhbHRoY2FyZSBpbnN1cmFuY2UgbWFya2V0LgrigKIgUmVzdG9yZWQgdGhlIHN0YXRlIGFuZCBmZWRlcmFsIHBhcnRuZXJzaGlwcyBmb3IgTWVkaWNhaWQgdG8gcHJvbW90ZSB3b3JrIGFuZCBmaW5hbmNpYWwgaW5kZXBlbmRlbmNlLgrigKIgVG9vayBhY3Rpb24gYWNyb3NzIGFsbCBwcm9ncmFtcyB0byBsb3dlciB0aGUgY29zdCBvZiBwcmVzY3JpcHRpb24gZHJ1Z3MuCuKAoiBDcmVhdGVkIG5vdmVsIGFjY2VzcyB0byB2aXJ0dWFsIGNoZWNrLWlucyBmb3IgTWVkaWNhcmUgYmVuZWZpY2lhcmllcy4=

@@ -1,0 +1,14 @@
+--- 
+ title: "Frost & Sullivan: Cybersecurity Risk Indexing" 
+ classname:  "Cybersecurity_Risk_Indexing" 
+ label: "Cybersecurity Risk Indexing" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Frost_&_Sullivan" 
+ parentclasslabel: "Frost & Sullivan" 
+ equalentCollections: [] 
+ collections: ['Frost & Sullivan: Cybersecurity Risk Indexing']
+ aliases:  "/topic/frost-sullivan-cybersecurity-risk-indexing"  
+ searchCategory: "topic" 
+---
+V2l0aCBwZW9wbGUgYmVjb21pbmcgbW9yZSBkZXBlbmRlbnQgb24gZGlnaXRhbCBwbGF0Zm9ybXMgc3VjaCBhcyBjb21wdXRlcnMsIHNvY2lhbCBtZWRpYSwgcHJvZ3JhbXMsIGFuZCBkYXRhLCBvcmdhbml6YXRpb25zIGFyZSBkZXZlbG9waW5nIGEgcmlzayBvZiBiZWNvbWluZyB2dWxuZXJhYmxlIHRvIGN5YmVyIHRocmVhdHMuIERhdGEgYnJlYWNoZXMgYW5kIGN5YmVyIGF0dGFja3MgY2FuIGhhdmUgYSBtYXNzaXZlIG5lZ2F0aXZlIGltcGFjdCBvbiBidXNpbmVzcyBvcmdhbml6YXRpb25zIHRoYXQgYXJlIG5vdCBjYXBhYmxlIG9mIHNlY3VyaW5nIGFuZCBwcm90ZWN0aW5nIHRoZWlyIGRhdGEuCkN5YmVyc2VjdXJpdHkgcmlzayBpcyB0aGUgcG9zc2liaWxpdHkgb2YgZXhwb3N1cmUgb3IgbG9zcyB0aGF0IG1heSByZXN1bHQgZnJvbSBhIGN5YmVyIGF0dGFjayBvbiBhIGJ1c2luZXNzIG9yZ2FuaXphdGlvbi4gQ3liZXJzZWN1cml0eSByaXNrIGluZGV4aW5nIChDUkkpIGhlbHBzIGluIGludmVzdGlnYXRpbmcgdGhlIGxldmVsIG9mIGN5YmVyIHJpc2sgYWNyb3NzIGRpZmZlcmVudCBvcmdhbml6YXRpb25zLg==

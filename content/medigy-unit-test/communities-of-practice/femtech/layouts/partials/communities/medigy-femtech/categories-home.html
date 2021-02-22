@@ -1,0 +1,123 @@
+{{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+<section class="container-fluid categories categories-new">
+	<div class="container">
+		<div class="row"> 
+            <div class="col-md-12">
+                <div class="femtech-quick-links">
+                    <strong>Quick Links:</strong> 
+                      <a href="{{ print "/" ($.Scratch.Get "contentPath") "contributed-content/" }}" onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Contributed Content', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Contributed Content</a> <span class="space-line">|</span>                         
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "infographics/" }}"  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Infographics', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Infographics</a> <span class="space-line">|</span> 
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "curated-content/" }}"  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Curated Content', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Curated Content</a> <span class="space-line">|</span>
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "curated-offering/" }}"  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Offerings', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Offerings</a> <span class="space-line">|</span> 
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "curated-recognition/" }}"  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Recognition', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Recognition</a> <span class="space-line">|</span>      
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "curated-event/" }}"  onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Curated Event', 'gtmTab': $('.nav-tabs .active').text(),'gtmPersonid':getCookie('userEmail')})">Curated Event</a> <span class="space-line">|</span>                                            
+                        <!-- <a href="#trending-tweets">#trending on twitter</a> <span class="space-line">|</span>  -->
+                    <div class="clearfix"></div>
+                </div>
+			</div>
+		 </div><!-- row -->
+		 <div class="row"> 
+			<div class="col-md-12">
+               <div class="femtech-content-left-secion" >
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Contributed Content" "href" ( print "/" ($.Scratch.Get "contentPath") "contributed-content" ) "contentcategories" "medigy-femtech-contributed-content" "featuredImage" "/communities/medigy-femtech/images/featuredimage/contributed-content.png" "descptText" "This section helps you access original contributed articles by our eminent guest authors. The insights and opinionated posts help educate the community members with recent trends in the digital health space and help them get actionable advice about the various innovations that empower women to enhance their wellbeing." "context" .  ) . $  }}                               
+                </div>                
+                <div class="femtech-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Infographics" "href" ( print "/" ($.Scratch.Get "contentPath") "infographics" ) "contentcategories" "medigy-femtech-infographics" "featuredImage" "/communities/medigy-femtech/images/featuredimage/infographics.png" "descptText" "This section within the momtech community serves as a visual treat and represents a collection of imagery to understand complex topics revolving around the use of health technology for new born, children and for new moms-to-be to enrich their physical and mental wellbeing." "context" .  ) . $  }}              
+                </div>
+                <div class="femtech-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated Content" "href" ( print "/" ($.Scratch.Get "contentPath") "curated-content" ) "contentcategories" "medigy-femtech-curated-content" "featuredImage" "/communities/medigy-femtech/images/featuredimage/curated-content.png" "descptText" "This section within the momtech community will give you access to a wide range of knowledge base including videos, podcasts and inspiring stories about women who are creating an embarking journey in the digital health space as entrepreneurs and contributing towards healthcare technology that empower women and kids across the world. Employment opportunities for women seeking to dive in the digital health space is also another feature of this section."  "context" .  ) . $  }}              
+                </div>
+                <div class="femtech-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated Offering" "href" ( print "/" ($.Scratch.Get "contentPath") "curated-offering" ) "contentcategories" "medigy-femtech-curated-offering" "featuredImage" "/communities/medigy-femtech/images/featuredimage/curated-offering.png" "descptText" "The section enlists a collection of various software’s, apps and tools available for new moms to-be, new born and children, that are peer reviewed."  "context" .  ) . $  }}              
+                </div>
+                <div class="femtech-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated Recognition" "href" ( print "/" ($.Scratch.Get "contentPath") "curated-recognition" ) "contentcategories" "medigy-femtech-curated-recognition" "featuredImage" "/communities/medigy-femtech/images/featuredimage/curated-recognition.png" "descptText" "This section celebrates the achievements of women entrepreneurs in the health tech space."  "context" .  ) . $  }}              
+                </div>
+                <div class="femtech-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated Event" "href" ( print "/" ($.Scratch.Get "contentPath") "curated-event" ) "contentcategories" "medigy-femtech-curated-event" "featuredImage" "/communities/medigy-femtech/images/featuredimage/curated-event.png" "descptText" "Events around women tech, pregnancy, child birth and topics around ObGyn, paediatrics and neonatal care and many more that take place across the globe are all sought out on this platform."  "context" .  ) . $  }}              
+                </div>
+			</div>
+		</div><!-- row -->
+		      
+        <!-- <div class="femtech-twitter-widget-row" id="trending-tweets">
+            <div class="femtech-content-left-secion">
+                <div class="femtech-content-left-secion-header">
+                    <div class="row">
+                        <div class="col-lg-4 col-8">
+                            <span class="femtech-content-left-secion-header-title">
+                                <a href="">#trending on twitter</a>
+                            </span>
+                        </div>
+                        <div class="col-lg-8 col-4 femtech-content-left-secion-header-more">
+                            
+                        </div>
+                    </div>
+                </div>            
+                <div class="femtech-content-left-secion-content-row">
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <div class="femtech-twitter-widget-scroll"id="tweets-femtech"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="femtech-twitter-widget-scroll"id="tweets-femtech-cl-1"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="femtech-twitter-widget-scroll"id="tweets-femtech-cl-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> -->
+	</div>
+</section>
+<!-- <script>
+$(document).ready(function () {
+    
+    var ws = new WebSocket('wss://twitter-scraper.medigy.com:8090');
+    let count = 0;
+    ws.onmessage = function (medigycl1Tweets) {
+        const tweets = medigycl1Tweets.data;
+        const tweetId = tweets.split(' ')[0];
+        const tweetDivId = 'tweets-femtech';
+        if (count < 50) {
+            createTweet(tweetId,tweetDivId);
+        }
+        count = count + 1;
+    };
+
+    var ws_cl_1 = new WebSocket('wss://twitter-scraper.medigy.com:8091');
+    let count_cl_1 = 0;
+    ws_cl_1.onmessage = function (medigycl1Tweets) {
+        const tweetscl1 = medigycl1Tweets.data;
+        const tweetIdcl1 = tweetscl1.split(' ')[0];
+        const tweetDivIdcl1 = 'tweets-femtech-cl-1';
+        if (count_cl_1 < 50) {
+            createTweet(tweetIdcl1,tweetDivIdcl1);
+        }
+        count_cl_1 = count_cl_1 + 1;
+    };
+
+    var ws_cl_2 = new WebSocket('wss://twitter-scraper.medigy.com:8092');
+    let count_cl_2 = 0;
+    ws_cl_2.onmessage = function (medigycl2Tweets) {
+        const tweetscl2 = medigycl2Tweets.data;
+        const tweetIdcl2 = tweetscl2.split(' ')[0];
+        const tweetDivIdcl2 = 'tweets-femtech-cl-2';
+        if (count_cl_2 < 50) {
+            createTweet(tweetIdcl2,tweetDivIdcl2);
+        }
+        count_cl_2 = count_cl_2 + 1;
+    };
+
+});
+createTweet = (tweetId,tweetDivId) => {
+    twttr.widgets.createTweet(tweetId,
+        document.getElementById(tweetDivId),
+        {
+            align: 'left'
+        })
+        .then(function (el) {
+            // console.log("Tweet displayed..")
+        });
+}
+</script> -->

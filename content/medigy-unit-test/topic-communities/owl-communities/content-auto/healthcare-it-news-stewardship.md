@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Stewardship" 
+ classname:  "Stewardship" 
+ label: "Stewardship" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Stewardship']
+ aliases:  "/topic/healthcare-it-news-stewardship"  
+ searchCategory: "topic" 
+---
+QW50aW1pY3JvYmlhbCBzdGV3YXJkc2hpcCBlbmNvbXBhc3NlcyBhIHNldCBvZiBjb29yZGluYXRlZCBzdHJhdGVnaWVzIGRlc2lnbmVkIHRvIHByb21vdGUgdGhlIGp1ZGljaW91cyB1c2Ugb2YgYW50aW1pY3JvYmlhbCBhZ2VudHMuIEl0IGhhcyBwcmFjdGljYWxseSBkZXZpc2VkIGZvciBwcmV2ZW50aW5nIHRoZSBtaXN1c2UgYW5kIG92ZXJkb3NlIG9mIGFudGltaWNyb2JpYWxzLiBUaGVyZSBhcmUgbWFueSBhZHZhbnRhZ2VzIG9mIGFudGltaWNyb2JpYWwgc3Rld2FyZHNoaXAgcHJvZ3JhbXMsIHN1Y2ggYXMgaW1wcm92aW5nIHBhdGllbnQgb3V0Y29tZXMsIHJlZHVjaW5nIG1pY3JvYmlhbCByZXNpc3RhbmNlIGNhdXNlZCBieSBtdWx0aWRydWctcmVzaXN0YW50IG9yZ2FuaXNtcywgZGVjcmVhc2luZyB1bm5lY2Vzc2FyeSBjb3N0cywgYW5kIHByZXZlbnRpbmcgdGhlIHNwcmVhZCBvZiBpbmZlY3Rpb25zIGNhdXNlZCBieSBtaWNyb2Jlcy4gQW50aW1pY3JvYmlhbCBzdGV3YXJkc2hpcCBwcm9ncmFtIGlzIGEgd2F5IG9mIG9wdGltaXppbmcgdGhlIHVzZSBvZiBhbnRpbWljcm9iaWFscyB0byBwcmV2ZW50IHRoZSBkZXZlbG9wbWVudCBvZiByZXNpc3RhbmNlLg==

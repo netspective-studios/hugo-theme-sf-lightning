@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Digital Innovation" 
+ classname:  "Digital_Innovation" 
+ label: "Digital Innovation" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Digital Innovation']
+ aliases:  "/topic/healthcare-it-news-digital-innovation"  
+ searchCategory: "topic" 
+---
+RGlnaXRhbCBpbm5vdmF0aW9uIG1lYW5zIHRoZSBhcHBsaWNhdGlvbiBvZiBkaWdpdGFsIHRlY2hub2xvZ3kgdG8gYW4gZXhpc3RpbmcgYnVzaW5lc3MgZm9yIGVuaGFuY2luZyB0aGUgcHJvY2Vzc2VzLiBDb21wYW5pZXMgdGhhdCB1bmRlcmdvIGRpZ2l0YWwgdHJhbnNmb3JtYXRpb24gaW5ub3ZhdGlvbiBjYW4gcmVkdWNlIGNvc3RzLCBpbXByb3ZlIHJldHVybiBvbiBpbnZlc3RtZW50IChST0kpLCBhbmQgaW5jcmVhc2UgcmV2ZW51ZS4KRGlnaXRhbCBpbm5vdmF0aW9uIGluIGhlYWx0aGNhcmUgaGVscHMgaW4gaW1wcm92aW5nIHBhdGllbnQgYW5kIHBvcHVsYXRpb24gb3V0Y29tZXMgYW5kIGV4cGVyaWVuY2VzLiBJdCBzdXBwb3J0cyBwYXRpZW50IGluZGVwZW5kZW5jZSBhbmQgbWFuYWdlbWVudC4gSGVhbHRoY2FyZSBvcmdhbml6YXRpb25zIHNob3VsZCBlbXBsb3kgZGlnaXRhbCBpbm5vdmF0aW9uIHNvbHV0aW9ucyBmb3IgYmV0dGVyIGludGVncmF0aW9uIGFuZCBjb250aW51aXR5IG9mIGNhcmUu

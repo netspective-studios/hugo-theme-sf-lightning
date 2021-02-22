@@ -1,0 +1,317 @@
+{
+            "code": "Q-Title",
+            "name": "FDA MITRE ATT and CK for Mobile",
+            "units": null,
+            "templateOptions": {
+                "obrHeader": false,
+                "hideUnits": true,
+                "hideHeader": true,
+                "allowHTMLInInstructions": true,
+                "allowMultipleEmptyRepeatingItems": false,
+                "showFormHeader": false,
+                "showColumnHeaders": false,
+                "hideFormControls": true
+            },
+            "items": [
+                {
+                    "question": "Initial Access ",
+                    "header": true,
+                    "hideUnits": true,
+                    "questionCode": "Q0022",
+                    "localQuestionCode": "Q0022",
+                    "units": null,
+                    "codingInstructions": "",
+                    "copyrightNotice": null,
+
+
+                    "items": [
+
+                        {
+                            "question": "Do you allow application installation only from an authorized app store (e.g., Google Play Store or Apple App Store)?",
+                            "hideUnits": true,
+                            "questionCode": "Q0022-01",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q0022-01",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        },
+                        {
+                            "question": "Are you preventing installing a malicious application on targeted mobile devices without involving an authorized app store?",
+                            "hideUnits": true,
+                            "questionCode": "Q0022-02",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q0022-02",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        },
+                        {
+                            "question": "Are you allowing exploitation through its interface to cellular networks or other radio interfaces?",
+                            "hideUnits": true,
+                            "questionCode": "Q0022-03",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q0022-03",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        }
+
+
+
+                    ]
+                },
+                {
+                    "question": "Persisitence",
+                    "header": true,
+                    "hideUnits": true,
+                    "questionCode": "Q003",
+                    "localQuestionCode": "Q003",
+                    "units": null,
+                    "codingInstructions": "",
+                    "copyrightNotice": null,
+
+
+                    "items": [{
+                            "question": "Are you allowing Device Administrator privileges to malicious applications?",
+                            "hideUnits": true,
+                            "questionCode": "Q003-01",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q003-01",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        },
+                        {
+                            "question": "Are you preventing App Auto-Start at Device Boot?",
+                            "questionCode": "Q003-02",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "hideUnits": false,
+                            "noEmptyValue": true,
+                            "localQuestionCode": "Q003-02",
+                            "dataType": "CNE",
+
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "answerCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            }
+                        }
+                        
+
+                    ]
+                },
+                {
+                    "question": "Privilege Escalation",
+                    "header": true,
+                    "hideUnits": true,
+                    "questionCode": "Q004",
+                    "localQuestionCode": "Q004",
+                    "units": null,
+                    "codingInstructions": "",
+                    "copyrightNotice": null,
+
+
+                    "items": [{
+                            "question": "Do you allow higher level of permissions on the mobile device?",
+                            "hideUnits": true,
+                            "questionCode": "Q004-01",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q004-01",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        }
+                        
+
+                    ]
+                },
+                {
+                    "question": "Defense Evasion",
+                    "header": true,
+                    "hideUnits": true,
+                    "questionCode": "Q005",
+                    "localQuestionCode": "Q005",
+                    "units": null,
+                    "codingInstructions": "",
+                    "copyrightNotice": null,
+
+
+                    "items": [{
+                            "question": "Does your system allow Modify System Partition?",
+                            "hideUnits": true,
+                            "questionCode": "Q005-01",
+                            "extensions" : {
+                                "qe3" : {
+                                    "publication": {
+                                        "qe3_visualization": {
+                                            "type": "Choice",
+                                            "options": ["Yes","No"]
+                                        }
+                                    }
+                                }
+                            },
+                            "localQuestionCode": "Q005-01",
+                            "units": null,
+                            "dataType": "CNE",
+                            "answers": [{
+                                    "text": "Yes",
+                                    "code": "Y"
+                                },
+                                {
+                                    "text": "No",
+                                    "code": "N"
+                                }
+                            ],
+                            "questionCardinality": {
+                                "min": "1",
+                                "max": "1"
+                            },
+                            "codingInstructions": "",
+                            "copyrightNotice": null
+
+                        }
+                        
+
+                    ]
+                }
+                
+            ]
+        }

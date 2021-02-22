@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Healthcare Support Workers, All Other" 
+ classname:  "Healthcare_Support_Workers,_All_Other" 
+ label: "Healthcare Support Workers, All Other" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Healthcare Support Workers, All Other']
+ aliases:  "/topic/standard-occupational-classification-soc-healthcare-support-workers-all-other"  
+ searchCategory: "topic" 
+---
+J0hlYWx0aGNhcmUgc3VwcG9ydCB3b3JrZXJzIHdvcmsgd2l0aCBkaWZmZXJlbnQgaGVhbHRoY2FyZSBwcm9mZXNzaW9uYWxzIChudXJzZXMsIG1pZHdpdmVzLCBkb2N0b3JzLCBhbmQgYWxsaWVkIGhlYWx0aCBwcm9mZXNzaW9uYWxzKSB0byBzdXBwb3J0IHRoZW0gd2l0aCBkYXktdG8tZGF5IG9wZXJhdGlvbmFsIHRhc2tzIGFuZCwgdGhlcmVmb3JlLCBkZWxpdmVyIGhpZ2gtcXVhbGl0eSBjYXJlLiBUaGV5IGFyZSBtb3N0bHkgaW52b2x2ZWQgaW4gbG9va2luZyBmb3IgdGhlIHBhdGllbnRzJyBnZW5lcmFsIHdlbGwtYmVpbmcgaW4gYSBmYXN0LXBhY2VkIGFuZCBkeW5hbWljIGNsaW5pY2FsIGVudmlyb25tZW50LiBIZWFsdGhjYXJlIHN1cHBvcnQgd29ya2VycyBwbGF5IHRoZSBmb2xsb3dpbmcgaW1wb3J0YW50IHJvbGVzOgpUYWtlIHZpdGFsIHNpZ25zIGFuZCBvdGhlciBwYXJhbWV0ZXJzIG9mIHBhdGllbnRzLgpLZWVwIGhvc3BpdGFsIHN1cHBsaWVzIHByb3Blcmx5IHN0b2NrZWQgJiBvcmdhbml6ZWQuCkFkbWluaXN0ZXIgbWVkaWNhdGlvbnMgdG8gcGF0aWVudHMuCkFzc2lzdCBwYXRpZW50cyB3aXRoIGJhc2ljIGh5Z2llbmUgYWN0aXZpdGllcy4KJw==

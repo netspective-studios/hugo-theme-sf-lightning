@@ -1,0 +1,14 @@
+--- 
+ title: "HIMSS: Leadership" 
+ classname:  "OWLClass_9d1733c8_eeeb_44de_a01a_5dffaf75996a" 
+ label: "Leadership" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "HIMSS" 
+ parentclasslabel: "HIMSS" 
+ equalentCollections: ['Centers for Medicare & Medicaid Services (CMS): Leadership'] 
+ collections: ['HIMSS: Leadership']
+ aliases:  "/topic/himss-leadership"  
+ searchCategory: "topic" 
+---
+TGVhZGVyc2hpcCBvciBHb3Zlcm5hbmNlIGFyZSBtZWFudCBmb3Igc3RyZW5ndGhlbmluZyB0aGUgaGVhbHRoIHN5c3RlbXMgc28gdGhhdCB0aGV5IGNhbiBkZWxpdmVyIG1vcmUgcmVzcG9uc2l2ZSBzZXJ2aWNlcyB0byBtb3JlIHBlb3BsZS4gVGhlc2UgcXVhbGl0aWVzIGFyZSBkZXZlbG9wZWQgYnkgZW5zdXJpbmcgYXZhaWxhYmlsaXR5IG9mIGRldmVsb3BpbmcgaW5zcGlyZWQgbGVhZGVycywgc291bmQgbWFuYWdlbWVudCBzeXN0ZW1zLCBhbmQgdHJhbnNwYXJlbnQgZ292ZXJuYW5jZSBwcmFjdGljZXMgYXQgdGhlIGluZGl2aWR1YWwsIG5ldHdvcmssIG9yZ2FuaXphdGlvbmFsLCBhbmQgZ292ZXJubWVudCBsZXZlbHMuIExlYWRlcnMgaW4gdG9kYXnigJlzIGRpZ2l0YWwgaGVhbHRoIGVudmlyb25tZW50IG11c3QgY29uc3RhbnRseSBhZGFwdCBpbiBvcmRlciB0byB1bmRlcnN0YW5kIGFuZCBsZXZlcmFnZSB0aGUgaW50ZXJkZXBlbmRlbmNpZXMgb2YgcGVvcGxlLCBjdWx0dXJlIGFuZCB0ZWNobm9sb2d5IHRvIGRyaXZlIG9wdGltYWwgdmFsdWUgZnJvbSBkYXRhIGFuZCB3aGF0IGl0IHJldmVhbHMgYWJvdXQgZGVsaXZlcmluZyBiZXR0ZXIsIGNvc3QtZWZmZWN0aXZlIGNhcmUgdG8gYWxsLg==

@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Additive Manufacturing" 
+ classname:  "Additive_Manufacturing" 
+ label: "Additive Manufacturing" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Additive Manufacturing']
+ aliases:  "/topic/gartner-additive-manufacturing"  
+ searchCategory: "topic" 
+---
+QWRkaXRpdmUgbWFudWZhY3R1cmluZyByZWZlcnMgdG8gY3JlYXRpbmcgYSBwaHlzaWNhbCBvYmplY3QgZnJvbSBhIGRpZ2l0YWxseSBlbmNvZGVkIGRlc2lnbiB0aHJvdWdoIG1hdGVyaWFsIGRlcG9zaXRpb24gdmlhIDNEIHByaW50aW5nLiBJdCBoZWxwcyBvdmVyY29tZSB0aGUgY29uc3RyYWludHMgb3RoZXJ3aXNlIHNlZW4gaW4gdGhlIHRyYWRpdGlvbmFsIG1hbnVmYWN0dXJpbmcgcHJvY2Vzc2VzIHN1Y2ggYXMgY2FzdGluZywgbWlsbGluZywgZXRjLiBNYXNzIGN1c3RvbWl6YXRpb24gYW5kIGNvbXBsZXggZ2VvbWV0cmllcyBjYW4gYmUgZGVzaWduZWQgdXNpbmcgdGhpcyB0ZWNobmlxdWUgdGhhdCB3YXMgdW5mZWFzaWJsZSBiZWZvcmUuIEl0IGFsc28gZmFjaWxpdGF0ZXMgYWRkaW5nIG5ldyBmZWF0dXJlcyB0byBtZWRpY2FsIGRldmljZXMgZm9yIGJldHRlciBwYXRpZW50IGNhcmUgaW4gZGVudGlzdHJ5LCBvcnRob3BlZGljcywgYW5kIG90aGVyIGltcGxhbnRpbmcgcHJvY2VkdXJlcy4=

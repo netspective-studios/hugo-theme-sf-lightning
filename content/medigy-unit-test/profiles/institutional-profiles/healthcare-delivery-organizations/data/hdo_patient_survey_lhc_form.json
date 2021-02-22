@@ -1,0 +1,74 @@
+{
+  "shortName": "survey-of-patients-experiences",
+  "name": "Survey of patients' experiences",
+  "status": "draft",
+  "version": "",
+  "deriveFrom": [
+    ""
+  ],
+  "subjectType": {
+    "extraClass": "tooltip-hdo-descr",
+    "imagePath": "/img/hospital_compare.jpg",
+    "referenceLink": "https://www.medicare.gov/hospitalcompare/profile.html#profTab=1&ID=",
+    "toolTipText": "Description courtesy of Medicare.gov | Hospital Compare"
+  },
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "General Description",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "HCAHPS (Hospital Consumer Assessment of Healthcare Providers and Systems) is a national survey that asks patients about their experiences during a recent hospital stay. Use the results shown here to compare hospitals based on 10 important hospital quality topics.",
+              "code": "",
+              "system": null,
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

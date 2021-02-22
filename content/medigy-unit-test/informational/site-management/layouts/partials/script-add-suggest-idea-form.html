@@ -1,0 +1,150 @@
+{{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}
+        {{ range .items }}
+          {{ if eq .questionCode "Ideas_messages"}}
+            {{ range .answers }}
+              {{ if eq .code "success_message"}}
+                  {{ $.Scratch.Set "displayMessage" .text }}
+              {{ end }}                          
+            {{ end }}
+          {{ end }}
+        {{ end }}
+{{ end }}
+{{ $messageDisplay := $.Scratch.Get "displayMessage" }}
+<script>
+  function base64EncodeUnicode(str) {
+    // First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+    // then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+    utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    });
+
+    return btoa(utf8Bytes);
+  }
+
+  $(document).ready(function () {
+    function recurringCharacterValidate(string) {
+      let isEmpty=true;
+      var alphabet = 'abcdefghijklmnopqrstuvwxyz0123456789'.split('');
+      alphabet.forEach((key,val)=>{
+            if(string.indexOf(key) > -1) isEmpty=false;
+          });
+      
+      return isEmpty;
+    }
+    $('#ideaForm').on('submit', function (e) {
+        e.preventDefault();      
+        var session = getCookie('sessionId');
+        var personId = getCookie('personid');
+        var userEmail = getCookie('userEmail');
+        var userFname = getCookie('firstname');
+        var userLname = getCookie('lastname');
+        var userName = userFname;
+      if (getCookie('personid') != null && getCookie('sessionId')!= null && getCookie('sessionId')!= '' ) {            
+          var ideaTitle = $('#addIdeaTitle').val();
+          var ideaUrl = $('#addIdeaUrl').val();
+          var ideaDes = $('#ideaDescription').val();
+      if(recurringCharacterValidate(ideaTitle)==true || recurringCharacterValidate(ideaUrl)==true || recurringCharacterValidate(ideaDes)==true || is_url($('#addIdeaUrl').val())== false)  {
+              alert("Please fill up the fields with proper inputs.");
+              return false;
+          }  
+          var emailAdd = $('#addIdeaEmail').val();
+          ideaDes = ideaDes.replace(/%/g, "percentage");
+          ideaDes = base64EncodeUnicode(ideaDes);   
+          var checkDeveloped = [];    
+          var checkCategory = [];
+          var checkDuration =[];
+          $("input:checkbox[name=developed-for]:checked").each(function(){
+           checkDeveloped.push($(this).val());
+          }); 
+          $("input:checkbox[name=category]:checked").each(function(){
+           checkCategory.push($(this).val());
+          }); 
+          $("input:checkbox[name=duration-term]:checked").each(function(){
+           checkDuration.push($(this).val());
+          });          
+
+          // if(recurringCharacterValidate(ideaTitle)==true || recurringCharacterValidate(ideaUrl)==true || recurringCharacterValidate(ideaDes)==true || is_url($('#ideaUrl').val())== false)  {
+          //     alert("Fill this field");
+          //     return false;
+          // }  
+          var offeringCommunity = "";
+            var offeringProjectName = ""; 
+          var communityUrlArray = getUrlVars();
+            if("community" in communityUrlArray)
+            {
+                if(getUrlVars()['community'] != null)
+                {
+                  var communityOfferingArray = $('#communityOffering').val().split(':');
+                  offeringCommunity = communityOfferingArray[0];
+                  offeringProjectName = communityOfferingArray[1];
+                }
+            }        
+          
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "cache-control": "no-cache"
+            },
+            "data": {
+              "query": `mutation{
+                    sendEventsNewsLeadMail(
+                      dataInput:{
+                          title:"`+ ideaTitle + `"
+                          type:"Idea",
+                          community:"`+ offeringCommunity + `",
+                          projectName:"`+ offeringProjectName + `"
+                          description:"` + ideaDes + `"
+                          url:"`+ ideaUrl + `"                          
+                          ideaDevelopedFor:"`+ checkDeveloped + `"   
+                          ideaCategory:"`+ checkCategory + `"
+                          ideaDuration:"`+ checkDuration + `"
+                          ideaEmail:"`+ emailAdd + `"                      
+                      },
+                      email:{
+                        email:"`+ userEmail + `"
+                        displayName:"`+ userName + `"                      
+                        }
+                        domain: "{{ $.Site.Params.siteUrl }}"
+                        ){
+                          status
+                          message
+                          errorCode
+                          }
+                    }`
+            }
+          }
+
+          $.ajax(settings).done(function (response) {        
+            $('#sendMessage8').html("");
+            if (response.data.sendEventsNewsLeadMail.status != "SUCCESS") {
+              $('#sendMessage8').html(response.data.sendEventsNewsLeadMail.message);
+              $('#sendMessage8').addClass('alert-danger');
+              $('#sendMessage8').html("Failed to send email...");
+              $('#sendMessage8').show();
+              $('#idea-tab').focus();
+            }
+            else {
+              $('#sendMessage8').html(response.data.sendEventsNewsLeadMail.message);
+              $('#sendMessage8').addClass('alert-success');
+              $('#sendMessage8').html("{{ $messageDisplay }}");
+              $('#sendMessage8').show();
+              $('#idea-tab').focus();
+              $('#ideaForm')[0].reset();
+            }
+          });
+
+        } else {
+          if (getCookie('personid') == null)
+            $('#loginModalCenter').modal('toggle');
+            else
+            $('#reLoginModalCenter').modal('toggle');
+        }
+      
+       
+    });
+  });
+  </script>

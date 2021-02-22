@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  {{ partialCached "head.html" . "pending-review-key"}}
+  <body class="single-body">
+
+<!-- Google Tag Manager (noscript) -->
+<div id="g-tag-body">
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+</div>
+    <!-- End Google Tag Manager (noscript) -->
+      
+    {{ partialCached "nav-bar.html" . "pending-review-key"}}
+   <section class="about-wrapper">
+    <main class="container ">
+      {{ partialCached "bread-crumb.html" . "pending-review-key"}}
+       
+        <div class = "clearfix"> </div>
+        <div id="my-offering" class="search-results-row">
+
+        <main><div id="myOfferingWarning"><div class="modal-header"> <a href="#" class="close" data-dismiss="modal" aria-label="close"> </a></div><div class="alert-info" id="alert-info"><p>If you recently claimed your institution and is not showing up here means it maybe under evaluation by our reviewers. When the review is completed your institution will show on this page. It may take anywhere between 24 hrs. to 48 hrs. and so please bear with us. Please check back some time later.<br> <br>And if your institution did not show up even after a long wait, please check your email or contact our team at <b>admin@medigy.com</b> to get it resolved.</p></div></div></main>
+		<div>
+                    <h6><a href="/my-institutions">Back to My Institutions</a></h6>
+           </div>
+
+
+        </div>
+    </main>
+  </section>
+ {{ partialCached "footer.html" . }}  
+  </body>
+</html>

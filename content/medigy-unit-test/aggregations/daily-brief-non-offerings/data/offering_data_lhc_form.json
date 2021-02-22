@@ -1,0 +1,314 @@
+{
+  "shortName": "Offering Data",
+  "name": "Offering Data",
+  "status": "draft",
+  "version": "",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": true,
+          "question": "Claim Status Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "claimingProductArea",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Do you work for or represent <organization>?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "claimOffering",
+              "prefix": "new-ofer-btn-1 gray",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Yes, claim this <offeringType>",
+                  "code": "",
+                  "label": "Product_Claiming",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Invite Process Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "inviteOfferingArea",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Do you know anyone using <offeringType>?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "offeringInvite",
+              "prefix": "new-ofer-btn-1 green offeringinviteProcess",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Invite them to share their experience",
+                  "code": "Product_Owner_Invite",
+                  "label": "new-ofer-q-1-bt-l",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Activity Data",
+          "questionCodeSystem": "Custom",
+          "questionCode": "user-activity-area",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Watch",
+              "questionCodeSystem": "Custom",
+              "questionCode": "watcherclick",
+              "prefix": {
+                "anchorTagClass": "watcher",
+                "countDivId": "gitWatcherCountDiv",
+                "countSpanId": "gitWatcher",
+                "globalStatusVar": "WatcherClick",
+                "metricKeyId": "institutionId",
+                "metricKeyName": "institutionName",
+                "outerDivClass": "github-row fas fa-eye",
+                "spanId": "Product_Watch_Button",
+                "tooltip": "Watch",
+                "type": "offering"
+              },
+              "localQuestionCode": "medigy_qual_exp_institution_watch",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Used By",
+              "questionCodeSystem": "Custom",
+              "questionCode": "usedbyclick",
+              "prefix": {
+                "anchorTagClass": "watcher",
+                "countDivId": "gitUsedByCountDiv",
+                "countSpanId": "gitUsedBy",
+                "globalStatusVar": "UsedByClick",
+                "metricKeyId": "offeringId",
+                "metricKeyName": "offeringName",
+                "outerDivClass": "github-row fas fa-archive",
+                "spanId": "Product_Used_By_Button",
+                "tooltip": "Used By",
+                "type": "offering"
+              },
+              "localQuestionCode": "medigy_qual_exp_usedby",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Star",
+              "questionCodeSystem": "Custom",
+              "questionCode": "starclick",
+              "prefix": {
+                "anchorTagClass": "star",
+                "countDivId": "gitStarCountDiv",
+                "countSpanId": "gitStar",
+                "globalStatusVar": "StarClick",
+                "metricKeyId": "offeringId",
+                "metricKeyName": "offeringName",
+                "outerDivClass": "github-row fas fa-star",
+                "spanId": "Product_Star_Button",
+                "tooltip": "Star",
+                "type": "offering"
+              },
+              "localQuestionCode": "medigy_qual_exp_institution_star",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "On Wishlist",
+              "questionCodeSystem": "Custom",
+              "questionCode": "wishclick",
+              "prefix": {
+                "anchorTagClass": "wish",
+                "countDivId": "gitWishCountDiv",
+                "countSpanId": "gitWish",
+                "globalStatusVar": "WishlistClick",
+                "metricKeyId": "offeringId",
+                "metricKeyName": "offeringName",
+                "outerDivClass": "github-row fas fa-heart",
+                "spanId": "Product_Wishlist_Button",
+                "tooltip": "On Wishlist",
+                "type": "offering"
+              },
+              "localQuestionCode": "medigy_qual_exp_wish",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "ST",
+              "question": "Questions Asked",
+              "questionCodeSystem": "Custom",
+              "questionCode": "questionsAsked",
+              "prefix": {
+                "countDivClass": "github-count",
+                "countDivId": "gitAskQuestionCountDiv",
+                "countSpanId": "gitAskQuestion",
+                "innerDivClass": "github-count ofer-ttl-1 askQuestion",
+                "outerDivClass": "github-row fas fa-question-circle",
+                "tooltip": "Questions Asked"
+              },
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "Policy Based Messages",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "HDO policy based general messages comes here.",
+              "code": "hdo_policy_message",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

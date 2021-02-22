@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Mobility" 
+ classname:  "Mobility" 
+ label: "Mobility" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Mobility']
+ aliases:  "/topic/healthcare-it-news-mobility"  
+ searchCategory: "topic" 
+---
+TW9iaWxpdHkgaW4gaGVhbHRoY2FyZSByZWZlcnMgdG8gdGhlIHVzZSBvZiBkaWdpdGFsIGRldmljZXMsIGluY2x1ZGluZyBtb2JpbGUgZGV2aWNlcyBhbmQgbW9iaWxlIGVudGVycHJpc2UgYXBwbGljYXRpb25zIGZvciBwYXRpZW50IGRpYWdub3NpcyBhbmQgZG9jdW1lbnRhdGlvbi4gVXNpbmcgaGVhbHRoY2FyZSBtb2JpbGl0eSBhcHBsaWNhdGlvbnMgYW5kIHRvb2xzIGFsbG93cyBoZWFsdGhjYXJlIHByb2Zlc3Npb25hbHMgdG8gZmluZCBiZXR0ZXIgd2F5cyBvZiBpbXByb3ZpbmcgaGVhbHRoY2FyZSBzZXJ2aWNlcy4gU3VjaCBzZXJ2aWNlcyBtYXkgaW5jbHVkZSBtb25pdG9yaW5nIG9mIHZpdGFsIHNpZ25zLCBkZWxpdmVyaW5nIHBhdGllbnQgZWR1Y2F0aW9uLCBzZWN1cmluZyBwYXRpZW50IHJlY29yZHMsIGFjY2Vzc2luZyBwYXRpZW50IHJlY29yZHMsIGFuZCBwcm92aWRpbmcgYWxlcnQgbm90aWZpY2F0aW9ucyBhbmQgdXBkYXRlcy4gSGVhbHRoY2FyZSBtb2JpbGl0eSBoYXMgbWFueSBhZHZhbnRhZ2VzLCBzdWNoIGFzIGl0IGVuaGFuY2VzIGNsaW5pY2FsIHdvcmtmbG93LCBpbXByb3ZlcyBwYXRpZW50IHByaXZhY3ksIGluY3JlYXNlcyBwYXRpZW50IGVuZ2FnZW1lbnQsIGV0Yy4=

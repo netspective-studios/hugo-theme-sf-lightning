@@ -1,0 +1,14 @@
+--- 
+ title: "Medigy: Appointment scheduling" 
+ classname:  "Appointment_Scheduling" 
+ label: "Appointment scheduling" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "StandardMedigyCategories" 
+ parentclasslabel: "Medigy" 
+ equalentCollections: ['Healthcare IT News: Appointment scheduling','Healthcare IT News: Patient Appointments'] 
+ collections: ['Medigy: Appointment scheduling']
+ aliases:  "/topic/medigy-appointment-scheduling"  
+ searchCategory: "topic" 
+---
+QXBwb2ludG1lbnQgc2NoZWR1bGluZyBhcHBsaWNhdGlvbnMgYXJlIHRvb2xzIHRoYXQgYWxsb3cgcGVvcGxlIHRvIGJvb2ssIHJlc2NoZWR1bGUsIGFuZCBjYW5jZWwgYXBwb2ludG1lbnRzIHRocm91Z2ggYSB3ZWIgaW50ZXJmYWNlLiBBbiBleGNlbGxlbnQgdG9vbCBjYW4gaGVscCBpbiBpbmNyZWFzaW5nIHJldmVudWUgYW5kIGFsc28gaW1wcm92aW5nIHBhdGllbnQgc2F0aXNmYWN0aW9uIGJ5IG1hbmFnaW5nIHRoZSBmbG93IG9mIHBhdGllbnRzIHRocm91Z2ggY2xpbmljYWwgcHJhY3RpY2UuClNjaGVkdWxpbmcgYXBwb2ludG1lbnRzIGZvciBwYXRpZW50cyBoYXMgbm93IGJlY29tZSB2ZXJ5IGNvbnZlbmllbnQgdmlhICdvbmxpbmUgYXBwb2ludG1lbnQgc2NoZWR1bGluZycgb3Igb25saW5lIHNjaGVkdWxpbmcgcG9ydGFscywgd2hlcmUgb25lIGNhbiBjbGljayBhICdzY2hlZHVsZSBhcHBvaW50bWVudCcgYnV0dG9uLCBhbmQgdGhlIHBhdGllbnQgaXMgZGlyZWN0ZWQgdG8gYSB3ZWIgYXBwb2ludG1lbnQgcGFnZS4gVGhlIHBhdGllbnQgc3VibWl0cyBoaXMvaGVyIGRldGFpbHMgb24gdGhlIHBhZ2UsIGFuZCBhbiBhcHBvaW50bWVudCBpcyBhdXRvbWF0aWNhbGx5IHNjaGVkdWxlZCBpbiB0aGUgY2FsZW5kYXIu

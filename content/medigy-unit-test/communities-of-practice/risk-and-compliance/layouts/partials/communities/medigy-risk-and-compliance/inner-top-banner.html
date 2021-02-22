@@ -1,0 +1,13 @@
+<section class="container">
+	<article class="top-banner communitybnr" style="background: url({{.Params.image}})">
+    	<div class="bannerlft">
+            	<h1>{{ .Params.MastHead }}</h1>
+                <h3>{{ .Params.subTitle }}</h3>
+            </div>
+            
+            <div class="bannerrigt {{if eq .Params.herocolor "blue"}} bluebg {{ end}} ">
+            	<h3>{{ .Title }}</h3>
+                <p>{{ .Description }}</p>
+            </div>
+	</article>
+	</section>

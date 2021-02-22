@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Clinical Information Modeling Initiative (CIMI)" 
+ classname:  "Clinical_Information_Modeling_Initiative_(CIMI)" 
+ label: "Clinical Information Modeling Initiative (CIMI)" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Clinical Information Modeling Initiative (CIMI)']
+ aliases:  "/topic/gartner-clinical-information-modeling-initiative-cimi"  
+ searchCategory: "topic" 
+---
+Q2xpbmljYWwgSW5mb3JtYXRpb24gTW9kZWxpbmcgSW5pdGlhdGl2ZSBvciBDSU1JIHJlZmVycyB0byBhIGdyb3VwIG9mIGRhdGEgbW9kZWxlcnMgd2hvc2UgYWltIGlzIHRvIHByb3ZpZGUgYSBsaXN0IG9mIGNvbXByZWhlbnNpdmUgbW9kZWxzIG9mIG1lZGljYWwgaWRlYXMgdG8gYnJpbmcgY29uc2Vuc3VzIGFtb25nIHRoZSBjbGluaWNpYW5zLiBXaXRoIHRoZSBoZWxwIG9mIENJTUksIHRoZXNlIGNsaW5pY2FsIG1vZGVscyB3b3VsZCBiZSBmcmVlbHkgYXZhaWxhYmxlIHdpdGhvdXQgYW55IHJlc3RyaWN0aW9ucy4gVGhlc2UgbW9kZWxzIGNhbiBkZWZpbmUgYSBzdGFuZGFyZCBmb3JtYXQgb2Ygc3RhbmRhcmQgbWVzc2FnZXMgb3Igc3RydWN0dXJlZCBjbGluaWNhbCBkb2N1bWVudHMgdG8gYnJpbmcgaW50ZXJvcGVyYWJpbGl0eSBhbW9uZyB0aGUgaGVhbHRoY2FyZSBpbmZvcm1hdGlvbiBzeXN0ZW1zLiBBdXRvbWF0aW9uIG9mIGRhdGEgZW50cnkgY2FuIGFsc28gYmUgYWNoaWV2ZWQgd2l0aCB0aGUgaGVscCBvZiB0aGlzIGluaXRpYXRpdmUu

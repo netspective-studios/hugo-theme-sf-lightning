@@ -1,0 +1,347 @@
+{
+  "shortName": "Billing Evaluation",
+  "name": "BillingEvaluation",
+  "status": "draft",
+  "version": "fas fa-history",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": true,
+          "question": "Itemized bills",
+          "questionCodeSystem": "Custom",
+          "questionCode": "payment_care_itemized_bills",
+          "prefix": "fas fa-file-invoice-dollar",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": true,
+              "question": "Persistence",
+              "questionCodeSystem": "Custom",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1"
+            },
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Are patients routinely provided an itemized bill with items explained in plain English?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "payment_care_itemized_bills_explanation",
+              "localQuestionCode": "explanation",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Patients  are routinely provided an itemized bill with items explained in plain English",
+                  "code": "Yes",
+                  "label": "Yes",
+                  "score": null
+                },
+                {
+                  "text": "Patients  are routinely not provided an itemized bill with items explained in plain English",
+                  "code": "No",
+                  "label": "No",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Price transparency",
+          "questionCodeSystem": "Custom",
+          "questionCode": "payment_care_price_transparency",
+          "prefix": "fas fa-hand-holding-usd",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Are patients provided real prices for common \"shoppable\" services when they ask?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "payment_care_price_transparency_shoppable",
+              "localQuestionCode": "shoppable",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Patients are provided real prices for common shoppable services when they ask",
+                  "code": "Yes",
+                  "label": "Yes",
+                  "score": null
+                },
+                {
+                  "text": "Patients are not provided real prices for common shoppable services when they ask",
+                  "code": "No",
+                  "label": "No",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Service quality",
+          "questionCodeSystem": "Custom",
+          "questionCode": "payment_care_service_quality",
+          "prefix": "fas fa-comment-dots",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Can patients speak with a billing representative promptly about a concern they have about their bill and be informed of a transparent review process?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "payment_care_service_quality_concern",
+              "localQuestionCode": "concern",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "Patients can speak with a billing representative promptly about a concern they have about their bill and they are informed of a transparent review process",
+                  "code": "Yes",
+                  "label": "Yes",
+                  "score": null
+                },
+                {
+                  "text": "Patients can not speak with a billing representative promptly about a concern they have about their bill and they are not informed of a transparent review process",
+                  "code": "No",
+                  "label": "No",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Suing patients",
+          "questionCodeSystem": "Custom",
+          "questionCode": "payment_care_suing_patients",
+          "prefix": "fas fa-percent",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "For patients who have not entered into a written agreement specifying a price for a medical service, does the institution sue patients to garnish their wages, place a lien on their home or involuntarily withdraw money from a patient's income tax return?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "payment_care_suing_patients_sue_patients",
+              "localQuestionCode": "sue_patients",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "For patients who have not entered into a written agreement specifying a price for a medical service, the institution sues patients to garnish their wages, place a lien on their home or involuntarily withdraw money from a patient's income tax return",
+                  "code": "Yes",
+                  "label": "Yes",
+                  "score": null
+                },
+                {
+                  "text": "For patients who have not entered into a written agreement specifying a price for a medical service, the institution does not sue patients to garnish their wages, place a lien on their home or involuntarily withdraw money from a patient's income tax return",
+                  "code": "No",
+                  "label": "No",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "header": true,
+          "question": "Surprise bills",
+          "questionCodeSystem": "Custom",
+          "questionCode": "payment_care_surprise_bills",
+          "prefix": "fas fa-file-invoice",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "items": [
+            {
+              "header": false,
+              "dataType": "CNE",
+              "question": "Are out-of-network patients paying out of pocket expected to pay more than the region-specific, reference-based price [a price outside of that set by traditional insurance carriers]?",
+              "questionCodeSystem": "Custom",
+              "questionCode": "payment_care_surprise_bills_pay_more",
+              "localQuestionCode": "pay_more",
+              "questionCardinality": {
+                "min": "1",
+                "max": "1"
+              },
+              "answerCardinality": {
+                "min": "0",
+                "max": "1"
+              },
+              "editable": "1",
+              "answers": [
+                {
+                  "text": "The out-of-network patients paying out of pocket are expected to pay more than the region-specific, reference-based price [a price outside of that set by traditional insurance carriers]",
+                  "code": "Yes",
+                  "label": "Yes",
+                  "score": null
+                },
+                {
+                  "text": "The out-of-network patients paying out of pocket are not expected to pay more than the region-specific, reference-based price [a price outside of that set by traditional insurance carriers]",
+                  "code": "No",
+                  "label": "No",
+                  "score": null
+                }
+              ],
+              "displayControl": {
+                "answerLayout": {
+                  "type": "RADIO_CHECKBOX"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "General Description",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "<p>\"Given the wide variation in both pricing and collection practices by hospitals, measures of billing practices are needed,\" the authors stated in the <a href=\"https://jamanetwork.com/journals/jama/fullarticle/2760397\" target=\"_blank\">JAMA article</a>. \"Billing quality is a type of medical quality.\"</p>               <p>In the same way that medical complication rates are collected for improvement purposes and some are available to the public, metrics of billing quality could be used to create public accoundability for US hospitals.</p>",
+              "code": "medical_billing",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: IV Robots" 
+ classname:  "IV_Robots" 
+ label: "IV Robots" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: IV Robots']
+ aliases:  "/topic/klas-iv-robots"  
+ searchCategory: "topic" 
+---
+SVYgUm9ib3Qgc3lzdGVtcyBhcmUgZGVzaWduZWQgdG8gYXV0b21hdGUgYW5kIGNvbnRyb2wgdGhlIHByZXBhcmF0aW9uIGFuZCBwcm9jZXNzaW5nIG9mIGludHJhdmVub3VzIG1lZGljYXRpb25zLiBTdGVyaWxlIElWIGNvbXBvdW5kaW5nIGNhbiBiZSBjb3N0bHkgYW5kIHJpc2t5IGFzIHdlbGwgYXMgaXQgcmVxdWlyZXMgc2lnbmlmaWNhbnQgcmVzb3VyY2VzIGFuZCBkZXRhaWxlZCBwcmVwYXJhdGlvbiBwb2xpY2llcyBhbmQgcHJvY2VkdXJlcyAoUCZQcykuIFRoZXJlZm9yZSwgc29tZSBoZWFsdGhjYXJlIHN5c3RlbXMgZWl0aGVyIG91dHNvdXJjZSB0aGVpciBzdGVyaWxlIGNvbXBvdW5kaW5nIG9wZXJhdGlvbnMgb3IgYnJpbmcgdGhlIHByb2Nlc3MgaW4taG91c2UgdXNpbmcgSVYgY29tcG91bmRpbmcgcm9ib3RpY3MuIE9tbmljZWxsJ3MgYXV0b21hdGVkIHJvYm90aWMgc3RlcmlsZSBjb21wb3VuZGluZyBzb2x1dGlvbnMgcHJvdmlkZSBzcGVjaWZpYyB0b29scyB0byBwaGFybWFjaXN0cyBhbmQgdGVjaG5pY2lhbnMgdGhhdCBjYW4gbWFrZSB0aGVpciBjb21wb3VuZGluZyBwcm9jZXNzIHNhZmVyIGFuZCB0aGVyYXB5IG1vcmUgZWZmZWN0aXZlLiBNZWFud2hpbGUsIGl0IHJlZHVjZXMgdGhlIGNvc3RzIGFuZCBlbmFibGVzIGNvbXBsaWFuY2Uu

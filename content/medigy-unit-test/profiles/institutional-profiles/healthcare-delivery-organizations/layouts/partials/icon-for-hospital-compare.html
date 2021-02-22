@@ -1,0 +1,12 @@
+
+                                  {{ if eq .faIconValue 4 }}
+                                  <i class="fas fa-angle-double-up green"></i>
+                                  {{ else }}
+                                  {{ if eq .faIconValue 2 }}
+                                    <i class="fas fa-equals fa-icon-color-blue"></i>
+                                  {{ else }} 
+                                   {{ if eq .faIconValue 1 }} 
+                                   <i class="fas fa-angle-double-down fa-icon-color-red"></i>
+                                   {{ end }}
+                                  {{ end }}
+                                  {{ end }}

@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Automated Business Process Discovery (ABPD)" 
+ classname:  "Automated_Business_Process_Discovery" 
+ label: "Automated Business Process Discovery (ABPD)" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Automated Business Process Discovery (ABPD)']
+ aliases:  "/topic/gartner-automated-business-process-discovery-abpd"  
+ searchCategory: "topic" 
+---
+QXV0b21hdGVkIEJ1c2luZXNzIFByb2Nlc3MgRGlzY292ZXJ5IChBQlBEKSBpcyBhIHNwZWNpZmljIGtpbmQgb2YgYnVzaW5lc3MgcHJvY2VzcyBhbmFseXNpcyB0aGF0IGlzIGhpZ2hseSBhdXRvbWF0ZWQgYW5kIGxhcmdlbHkgZGVwZW5kcyBvbiB0aGUgYWxnb3JpdGhtaWMgYW5kIGNvbXB1dGF0aW9uYWwgbG9naWMgYnVpbGRpbmcuIEFCUEQgaXMgYmFzZWQgdXBvbiBhIHByaW5jaXBsZSB0aGF0IHNpbWlsYXIgdHlwZXMgb2YgYnVzaW5lc3MgYW5hbHlzaXMgdG9vbHMgYXJlIGNhcGFibGUgb2YgY29sbGVjdGluZyB0aGUgZGF0YSBhdXRvbWF0aWNhbGx5IGZyb20gZG9jdW1lbnRzIChhdWRpdHMgYW5kIGV2ZW50IGxvZ3MpLCBhbmQgY29tcGlsaW5nIGl0IGludG8gdXNlZnVsIGluZm9ybWF0aW9uIHRoYXQgbm90IG9ubHkgcmVjb2duaXplcyBwcm9jZXNzIG1vZGVscyBidXQgYWxzbyBkaXNjb3ZlcnMgY2hhbmdlcy4gSXQgaGVscHMgdXNlcnMgaW4gdW5kZXJzdGFuZGluZyB0aGUgYWN0dWFsIHBpY3R1cmUgb2Ygd2hhdCBhIHNwZWNpZmljIGJ1c2luZXNzIHByb2Nlc3Mgc2hvdWxkIGxvb2sgbGlrZSwgYW5kIGhvdyBjaGFuZ2VzIGNhbiBoYXZlIGFuIGltcGFjdCBvbiBhIGJ1c2luZXNzIGFzIGEgd2hvbGUu

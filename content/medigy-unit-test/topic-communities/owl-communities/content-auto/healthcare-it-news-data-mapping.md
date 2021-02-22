@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Data Mapping" 
+ classname:  "Data_mapping" 
+ label: "Data Mapping" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Data Mapping']
+ aliases:  "/topic/healthcare-it-news-data-mapping"  
+ searchCategory: "topic" 
+---
+RGF0YSBtYXBwaW5nIGlzIG9uZSBvZiB0aGUgZXNzZW50aWFsIGNvbXBvbmVudHMgb2YgaGVhbHRoIElUIGludGVyb3BlcmFiaWxpdHkuIEl0IGlzIGNhcGFibGUgb2YgbWF0Y2hpbmcgdHdvIGRpZmZlcmVudCBkYXRhYmFzZXMgd2l0aCB0aGUgc2FtZSBkYXRhIGVsZW1lbnRzIGluIGEgZGlmZmVyZW50IGZvcm0uIFRoaXMgbWF0Y2hpbmcgZW5hYmxlcyBzb2Z0d2FyZSBhbmQgc3lzdGVtcyB0byBleGNoYW5nZSBwYXRpZW50IGluZm9ybWF0aW9uIGFuZCBvdGhlciByZWxhdGVkIGRhdGEgbWVhbmluZ2Z1bGx5LiBBIGRhdGEgbWFwcGluZyB0b29sIGhlbHBzIGluIGNyZWF0aW5nIGRhdGEgbWFwcyB0aGF0IHNlcnZlIG1hbnkgcHVycG9zZXMsIHN1Y2ggYXMgZXhjaGFuZ2Ugb2YgcGF0aWVudCBkYXRhLCByZWltYnVyc2VtZW50LCBlcGlkZW1pb2xvZ3ksIHJlcG9ydGluZyBvZiBwdWJsaWMgaGVhbHRoIGRhdGEsIGV0Yy4KRGF0YSBtYXBwaW5nIGZvcm1zIGFuIGVzc2VudGlhbCBjb21wb25lbnQgb2YgZGF0YSBtaWdyYXRpb24gYW5kIGRhdGEgaW50ZWdyYXRpb24uIEl0IHVzZXMgZm9yIGNvbGxlY3RpbmcgaGVhbHRoY2FyZSBpbmZvcm1hdGlvbiBmcm9tIG11bHRpcGxlIHNvdXJjZXMgbGlrZSBlbGVjdHJvbmljIG1lZGljYWwgcmVjb3JkcywgZWxlY3Ryb25pYyBoZWFsdGggcmVjb3JkcywgYW5kIG90aGVyIGRhdGEgc291cmNlcy4=

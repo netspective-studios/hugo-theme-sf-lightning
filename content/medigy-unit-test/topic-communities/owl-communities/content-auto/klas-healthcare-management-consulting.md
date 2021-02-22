@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Healthcare Management Consulting" 
+ classname:  "OWLClass_c587f7f0_a75f_4d10_8c94_85e316fe61b4" 
+ label: "Healthcare Management Consulting" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['Medigy: Referrals'] 
+ collections: ['KLAS: Healthcare Management Consulting']
+ aliases:  "/topic/klas-healthcare-management-consulting"  
+ searchCategory: "topic" 
+---
+SGVhbHRoY2FyZSBNYW5hZ2VtZW50IENvbnN1bHRpbmcgaW5jbHVkZSBtYW5hZ2VtZW50IG9mIGNvbnN1bHRpbmcgc2VydmljZXMgcmVzcG9uc2libGUgZm9yIGV4YW1pbmluZyB0aGUgZWZmaWNpZW5jeSwgcHJvZml0cyBhbmQgc3RydWN0dXJlIG9mIHRoZSBoZWFsdGhjYXJlIG9yZ2FuaXphdGlvbiwgYW5kIHN1Z2dlc3RpbmcgdmFyaW91cyBtZXRob2RzIG9mIGltcHJvdmVtZW50LiBUaGVzZSBjb25zdWx0aW5nIHNlcnZpY2VzIGFpbSBhdCB0YWNrbGluZyBtb3N0IGNvbXBsZXggcHJvYmxlbXMgb2YgaGVhbHRoY2FyZSBvcmdhbml6YXRpb25zIGJ5IHByb3ZpZGluZyBzZXJ2aWNlcyBsaWtlIHZhbHVlLWJhc2UgY2FyZSwgZmluYW5jaWFsIGltcHJvdmVtZW50LCBncm93dGggJiBjb25zb2xpZGF0aW9uLCBjb25zdW1lciBlbmdhZ2VtZW50LCBodW1hbiBjYXBpdGFsLiBIZWFsdGhjYXJlIE1hbmFnZW1lbnQgQ29uc3VsdGluZyBzZXJ2aWNlcyBoZWxwIG9yZ2FuaXphdGlvbnMgaW4gaW1wcm92aW5nIHRoZWlyIHBlcmZvcm1hbmNlcyBieSBleGVjdXRpbmcgdmFyaW91cyBpbXByb3ZlbWVudCBwbGFucy4=

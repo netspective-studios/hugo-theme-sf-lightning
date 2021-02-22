@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Phlebotomists" 
+ classname:  "Phlebotomists" 
+ label: "Phlebotomists" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Phlebotomists']
+ aliases:  "/topic/standard-occupational-classification-soc-phlebotomists"  
+ searchCategory: "topic" 
+---
+UGhsZWJvdG9taXN0cyBjb2xsZWN0IGJsb29kIHNhbXBsZXMgZnJvbSBibG9vZCBkb25vcnMgb3IgcGF0aWVudHMgYW5kIHRoZW4gcHJlcGFyZSBzYW1wbGVzIGZvciB0ZXN0aW5nIGluIGEgY2xpbmljYWwgbGFib3JhdG9yeS4gUGhsZWJvdG9taXN0cyB3aXRoZHJhdyBibG9vZCBzYW1wbGVzIGZyb20gdGhlIHBhdGllbnTigJlzIHZlaW5zIHRocm91Z2ggYSBwcm9jZXNzIGNhbGxlZCB2ZW5pcHVuY3R1cmUgYW5kIGVuc3VyZSB0aGF0IGFsbCB0aGUgdHlwZXMgb2YgZXF1aXBtZW50IHVzZWQgZm9yIHdpdGhkcmF3aW5nIGJsb29kIHNhbXBsZXMgYXJlIHByb3Blcmx5IHN0ZXJpbGl6ZWQuIFBobGVib3RvbWlzdHMgY2FuIGFsc28gdXNlIHNraW4gcHVuY3R1cmUgZm9yIHdpdGhkcmF3aW5nIHRoZSBibG9vZCBzYW1wbGVzLiBUaGlzIGlzIHVzdWFsbHkgZG9uZSBpbiBjYXNlIG9mIGRldGVybWluaW5nIGJsb29kIHN1Z2FyIGxldmVscyBhbmQgZGV0ZXJtaW5pbmcgYmxvb2QgZ3JvdXAgdHlwZXMu

@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Interactive Patient Systems" 
+ classname:  "OWLClass_d3a7bb3c_6278_48f8_8747_410fb9c61e9b" 
+ label: "Interactive Patient Systems" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Interactive Patient Systems']
+ aliases:  "/topic/klas-interactive-patient-systems"  
+ searchCategory: "topic" 
+---
+SW50ZXJhY3RpdmUgUGF0aWVudCBTeXN0ZW0gKElQUykgc29sdXRpb25zIGFyZSBtZWFudCBmb3IgZWR1Y2F0aW9uIGFuZCBlbnRlcnRhaW5tZW50IHB1cnBvc2VzIGluIGhlYWx0aCBzZXR0aW5ncyBhbmQgYXJlIHVzdWFsbHkgcHJvdmlkZWQgb24gYSBwYXRpZW504oCZcyBpbi1yb29tIG1vbml0b3IuIElQUyBpcyBhIGdyb3dpbmcgc2VnbWVudCBvZiBoZWFsdGggY2FyZSBJVC4gSVBTIG1haW5seSBpbmNsdWRlcyBUViBzY3JlZW5zIGluc3RhbGxlZCBwcmltYXJpbHkgaW4gaG9zcGl0YWxzLCBidXQgdGhleSBjYW4gYmUgcHJlc2VudCBpbiBvdGhlciBpbi1wYXRpZW50IHNldHRpbmdzIGFzIHdlbGwuIElQUyBpcyBhIHBhcnQgb2YgcGF0aWVudCBjYXJlIGFuZCB1c2VzIFRWIHNjcmVlbnMgZm9yIGRpc3BsYXlpbmcgaW1wb3J0YW50IHBhdGllbnQgaW5mb3JtYXRpb24gbGlrZSBwYXRpZW50IGVkdWNhdGlvbiwgZmFjaWxpdHkgaW5mb3JtYXRpb24sIGFuZCBvdGhlciBpbnRlcmFjdGl2ZSBwcm9tcHRzIHRoYXQga2VlcHMgcGF0aWVudHMgZW5nYWdlZC4gU29tZSB0aW1lcyBJUFMgdG9vbHMgY2FuIGFsc28gYmUgZGVwbG95ZWQgYXQgdGhlIHBhdGllbnQgYmVkc2lkZSB0byBlbnRlcnRhaW4gcGF0aWVudHMu

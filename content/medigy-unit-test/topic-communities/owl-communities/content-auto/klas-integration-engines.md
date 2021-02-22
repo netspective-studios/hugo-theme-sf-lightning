@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Integration Engines" 
+ classname:  "Integration_Engines" 
+ label: "Integration Engines" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['Healthcare IT News: Data Integration'] 
+ collections: ['KLAS: Integration Engines']
+ aliases:  "/topic/klas-integration-engines"  
+ searchCategory: "topic" 
+---
+SW50ZWdyYXRpb24gRW5naW5lcyBhcmUgcHJvZHVjdHMgdGhhdCBjYW4gYmUgdXNlZCB0byBpbnRlcmZhY2UgcHJvZHVjdHMgYW1vbmcgZGlmZmVyZW50IHJldGFpbGVycy4gVGhlc2UgZW5naW5lcyBhcmUgbWVhbnQgZm9yIHN0YW5kYXJkaXppbmcgZmxvdyBvZiBkYXRhIGFjcm9zcyB2YXJpb3VzIGNsaW5pY2FsIGRhdGEgc3lzdGVtcyBsaWtlIEVIUnMgYW5kIHJldmVudWUgY3ljbGUgbWFuYWdlbWVudCBzb2Z0d2FyZSBzbyB0aGF0IHRoZXkgY2FuIGltcHJvdmUgd29ya2Zsb3dzLCBvcHRpbWl6ZSB0aGUgZGVsaXZlcnkgb2YgY2FyZSwgYW5kIHN0cmVhbWxpbmUgdGhlIGludGVncmF0aW9uIGFuZCBhZG9wdGlvbiBvZiBuZXcgdGVjaG5vbG9naWVzLiBIZWFsdGhjYXJlIGludGVncmF0aW9uIGVuZ2luZXMgYXJlIHZlcnkgdXNlZnVsIGluIGFzc2lzdGluZyB0aGUgZXhjaGFuZ2Ugb2YgYWxsIGtpbmRzIG9mIGRhdGEgbGlrZSBjbGluaWNhbCwgZmluYW5jaWFsLCBhbmQgb3BlcmF0aW9uYWwgZGF0YSB3aGljaCBwbGF5cyBhbiBpbXBvcnRhbnQgcm9sZSBpbiBjcmVhdGluZyB0cmFuc3BhcmVuY3kgYW5kIHZpc2liaWxpdHkgYWNyb3NzIGhlYWx0aCBjYXJlIHN5c3RlbXMgYW5kIGhvc3BpdGFsIElUIGFwcGxpY2F0aW9ucy4=

@@ -1,0 +1,14 @@
+--- 
+ title: "Standard Occupational Classification (SOC): Surgical Assistants" 
+ classname:  "Surgical_Assistants" 
+ label: "Surgical Assistants" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Standard_Occupational_Classification_(SOC)" 
+ parentclasslabel: "Standard Occupational Classification (SOC)" 
+ equalentCollections: [] 
+ collections: ['Standard Occupational Classification (SOC): Surgical Assistants']
+ aliases:  "/topic/standard-occupational-classification-soc-surgical-assistants"  
+ searchCategory: "topic" 
+---
+U3VyZ2ljYWwgYXNzaXN0YW50cyBhcmUgbWVkaWNhbCBwcm9mZXNzaW9uYWxzIHdobyBjb25zdGl0dXRlIGltcG9ydGFudCBvcGVyYXRpbmcgcm9vbSB0ZWFtIG1lbWJlcnMgZHVlIHRvIHRoZWlyIGFjdGl2ZSByb2xlIGluIGFzc2lzdGluZyB0aGUgc3VyZ2VvbnMgJiBudXJzZXMgZHVyaW5nIG9wZXJhdGlvbnMgYW5kIG90aGVyIG1lZGljYWwgcHJvY2VkdXJlcy4gQWx0aG91Z2ggdGhleSBjYW4gZG8gYW55IHdvcmsgZG9uZSBieSBzdXJnaWNhbCB0ZWNobm9sb2dpc3RzLCB0aGV5IGhhdmUgYSBtb3JlIGhhbmRzLW9uIHJvbGUgZHVyaW5nIHRoZSBzdXJnaWNhbCBwcm9jZWR1cmUuIFN1cmdpY2FsIGFzc2lzdGFudHMgaGF2ZSBzcGVjaWZpYyByZXNwb25zaWJpbGl0aWVzIGJvdGggYmVmb3JlIGFuZCBhZnRlciB0aGUgc3VyZ2VyeS4gU29tZSBvZiB0aGVtIG1heSBpbmNsdWRlIGFzc2VtYmxpbmcgYW5kIG1vbml0b3JpbmcgYW55IG9mIHRoZSB0b29scyByZXF1aXJlZCBmb3IgdGhlIHN1cmdpY2FsIHByb2NlZHVyZS4=

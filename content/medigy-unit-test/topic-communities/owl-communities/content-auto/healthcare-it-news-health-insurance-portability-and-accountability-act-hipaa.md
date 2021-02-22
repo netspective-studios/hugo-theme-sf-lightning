@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Health Insurance Portability and Accountability Act (HIPAA)" 
+ classname:  "Health_Insurance_Portability_and_Accountability_Act_(HIPAA)" 
+ label: "Health Insurance Portability and Accountability Act (HIPAA)" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Health Insurance Portability and Accountability Act (HIPAA)']
+ aliases:  "/topic/healthcare-it-news-health-insurance-portability-and-accountability-act-hipaa"  
+ searchCategory: "topic" 
+---
+SGVhbHRoIEluc3VyYW5jZSBQb3J0YWJpbGl0eSBhbmQgQWNjb3VudGFiaWxpdHkgQWN0IGlzIGEgbmF0aW9uYWwgZmVkZXJhbCBsYXcgYWdhaW5zdCBleHBvc2luZyBzZW5zaXRpdmUgcGF0aWVudCBoZWFsdGggaW5mb3JtYXRpb24gd2l0aG91dCB0aGUgcGF0aWVudOKAmXMgY29uc2VudCBvciBrbm93bGVkZ2UuIEhJUEFBIGlzIGVzc2VudGlhbCBpbiB0aGUgaGVhbHRoY2FyZSBzZWN0b3IgYmVjYXVzZSBpdCBlbnN1cmVzIHRoYXQgYWxsIGhlYWx0aGNhcmUgb2ZmaWNpYWxzLCBpbmNsdWRpbmcgZG9jdG9ycyBhbmQgYnVzaW5lc3MgYXNzb2NpYXRlcyBvZiBISVBBQS1jb3ZlcmVkIGVudGl0aWVzLCBtdXN0IGVtcGxveSBtdWx0aXBsZSBzYWZlZ3VhcmRzIHRvIHByZXZlbnQgdGhlIGV4cG9zdXJlIG9mIHNlbnNpdGl2ZSBwZXJzb25hbCBhbmQgaGVhbHRoIGluZm9ybWF0aW9uIG9mIHBhdGllbnRzLiBISVBBQSBDeWJlcnNlY3VyaXR5IGVuc3VyZXMgdGhhdCBjb25maWRlbnRpYWwgcGF0aWVudCBkYXRhIGlzIHByb3RlY3RlZCBhZ2FpbnN0IHByaXZhY3kgYnJlYWNoIGF0dGFja3MgYnkgaGFja2VycywgaWRlbnRpdHkgdGhpZXZlcywgc3BhbW1lcnMsIGFuZCBvdGhlciBtYWxlZmFjdG9ycy4=

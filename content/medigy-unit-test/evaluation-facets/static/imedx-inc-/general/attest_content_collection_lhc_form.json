@@ -1,0 +1,360 @@
+{
+    "name": "Attest Data Collection",
+    "templateOptions": {
+        "obrHeader": false,
+        "hideUnits": true,
+        "hideHeader": true,
+        "allowHTMLInInstructions":true,
+        "allowMultipleEmptyRepeatingItems": false,
+        "showFormHeader": false,
+        "showColumnHeaders": false,
+        "hideFormControls": true
+  
+    },
+    "items": [
+    
+      {
+        "question": "Source",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-01",
+        "prefix": "Q001-01",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+    
+       {
+          "question": "Type of Data",
+          "questionCode": "Q001-02",
+          "hideUnits": false,
+          "noEmptyValue": true,
+          "prefix": "Q001-02",
+          "dataType": "CNE",
+          "answers": [
+            {
+              "text": "Awards",
+              "code": "01"
+           
+            },
+            {
+              "text": "Events",
+              "code": "02"
+             
+            },
+            {
+              "text": "News",
+              "code": "03"
+              
+            },
+            {
+              "text": "Topics",
+              "code": "04"
+              
+            },
+            {
+              "text": "Feeds",
+              "code": "04"
+              
+            }
+          ]
+        },
+  
+      {
+        "question": "Title",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-03",
+        "prefix": "Q001-03",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "question": "Unique Identifier",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-04",
+        "prefix": "Q001-04",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "question": "Description",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-05",
+        "prefix": "Q001-05",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "TX"
+      },
+      {
+        "question": "Start Date",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-06",
+        "prefix": "Q001-06",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "DT"
+      },
+      {
+        "question": "End Date",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-07",
+        "prefix": "Q001-07",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "DT"
+      },
+      {
+        "question": "Posted Date",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-08",
+        "prefix": "Q001-08",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "DT"
+      },
+      {
+        "question": "Source URL",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-09",
+        "prefix": "Q001-09",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "question": "Image URL",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-10",
+        "prefix": "Q001-10",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "header": false,
+        "dataType": "CNE",
+        "question": "Developed for",
+        "questionCode": "Q001-11",
+        "prefix": "Q001-11",
+        "questionCodeSystem": "Custom",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "answerCardinality": {
+          "min": "0",
+          "max": "*"
+        },
+        "editable": "1",
+        "answers": [
+          {
+            "text": "Clinicians",
+            "code": "1"
+           
+          },
+          {
+            "text": "Public Health/Goverment",
+            "code": "2"
+            
+          },
+          {
+            "text": "Assisted Living/Eiderly Care/Skiller Nursing Care",
+            "code": "3"
+           
+          },
+          {
+            "text": "Consumers",
+            "code": "4"
+            
+          },
+          {
+            "text": "Others",
+            "code": "5"
+            
+          }
+        ],
+        "displayControl": {
+          "answerLayout": {
+            "type": "RADIO_CHECKBOX",
+            "columns": 1
+          }
+        }
+      },
+        {
+        "question": "Email",
+        "questionCodeSystem": "Custom",
+        "questionCode": "Q001-12",
+        "prefix": "Q001-12",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "header": false,
+        "editable": "1",
+        "answerCardinality": {
+          "min": "0",
+          "max": "1"
+        },
+        "dataType": "ST"
+      },
+      {
+        "header": false,
+        "dataType": "CNE",
+        "question": "Category",
+        "questionCode": "Q001-13",
+        "prefix": "Q001-13",
+        "questionCodeSystem": "Custom",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "answerCardinality": {
+          "min": "0",
+          "max": "*"
+        },
+        "editable": "1",
+        "answers": [
+          {
+            "text": "Clinical-Diagnostic",
+            "code": "1"
+           
+          },
+          {
+            "text": "Clinical-Therapeutic",
+            "code": "2"
+            
+          },
+          {
+            "text": "Clinical-Preventive",
+            "code": "3"
+           
+          },
+          {
+            "text": "Social",
+            "code": "4"
+            
+          }
+        ],
+        "displayControl": {
+          "answerLayout": {
+            "type": "RADIO_CHECKBOX",
+            "columns": 1
+          }
+        }
+      },
+      {
+        "header": false,
+        "dataType": "CNE",
+        "question": "Duration",
+        "questionCode": "Q001-14",
+        "prefix": "Q001-14",
+        "questionCodeSystem": "Custom",
+        "questionCardinality": {
+          "min": "1",
+          "max": "1"
+        },
+        "answerCardinality": {
+          "min": "0",
+          "max": "*"
+        },
+        "editable": "1",
+        "answers": [
+          {
+            "text": "Short-Term",
+            "code": "1"
+           
+          },
+          {
+            "text": "Mid-Term",
+            "code": "2"
+            
+          },
+          {
+            "text": "Long-Term",
+            "code": "3"
+           
+          }
+        ],
+        "displayControl": {
+          "answerLayout": {
+            "type": "RADIO_CHECKBOX",
+            "columns": 1
+          }
+        }
+      }
+    ]
+   
+  }

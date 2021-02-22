@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Compliance & Legal" 
+ classname:  "Compliance_&_Legal" 
+ label: "Compliance & Legal" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Gartner: Regulatory Compliance','Gartner: Legal & Compliance'] 
+ collections: ['Healthcare IT News: Compliance & Legal']
+ aliases:  "/topic/healthcare-it-news-compliance-legal"  
+ searchCategory: "topic" 
+---
+Q29tcGxpYW5jZSBpbiBoZWFsdGhjYXJlIGludm9sdmVzIG9yZ2FuaXphdGlvbmFsIGFkaGVyZW5jZSB0byBhcHBsaWNhYmxlIGZlZGVyYWwgYW5kIHN0YXRlIGxhdyBhbmQgcHJpdmF0ZSBwYXllciBoZWFsdGhjYXJlIHJlcXVpcmVtZW50cy4gQW4gZWZmaWNpZW50IGNvbXBsaWFuY2UgcHJvZ3JhbSBjYW4gcHJvdGVjdCBwcmFjdGljZXMgYWdhaW5zdCBkZWNlcHRpb24sIGV4cGxvaXRhdGlvbiwgbWlzdXNlLCBhbmQgb3RoZXIgcG90ZW50aWFsIGxpYWJpbGl0eSBhcmVhcy4gSGVhbHRoY2FyZSBjb21wbGlhbmNlIGluY2x1ZGVzIG1hbnkgYXJlYXMsIGluY2x1ZGluZyByZWltYnVyc2VtZW50LCBwYXRpZW50IGNhcmUsIGJpbGxpbmcsIG1hbmFnZWQgY2FyZSwgT1NIQSwgYW5kIEhJUEFBIHByaXZhY3kgYW5kIHNlY3VyaXR5LgpBIGNvbXBsaWFuY2UgcHJvZ3JhbSBzaG91bGQgYmUgY2FwYWJsZSBvZiBhcnRpY3VsYXRpbmcgYW5kIGRlbW9uc3RyYXRpbmcgdGhlIG9yZ2FuaXphdGlvbidzIGNvbW1pdG1lbnQgdG8gYWRoZXJlbmNlIHRvIHRoZSBsYXcgYW5kIG1vcmFsIHN0YW5kYXJkcy4gQ29tcGxpYW5jZSBpbiBoZWFsdGhjYXJlIG1lYW5zIHRoYXQgdGhlIHBlcnNvbmFsIGhlYWx0aCBpbmZvcm1hdGlvbiBvZiBlYWNoIHBhdGllbnQgaXMgcHJvdGVjdGVkIGFuZCBpcyBhY2Nlc3NpYmxlIHRvIHRoZSByaWdodCBhdWRpZW5jZSBvbmx5Lg==

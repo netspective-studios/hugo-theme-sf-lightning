@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "my-inst-key" }}
+<script>
+  
+  var personid = getCookie('personid');
+  if (personid == null) {
+    setCookie('prevPage','/my-institutions');
+      window.location.href = '/login';
+  }
+</script>
+
+<body class="single-body">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "my-inst-key" }}
+
+ 
+
+ 
+  <script>
+
+
+  function doesFileExist(urlToFile) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('HEAD', urlToFile, false);
+    xhr.send();
+     
+    if (xhr.status == "404") {
+        return false;
+    } else {
+        return true;
+    }
+   }
+var personid = getCookie('personid');
+
+if (personid == null) {
+window.location.href = "/";
+}
+$(document).ready(function(){
+      $('#tenantDetails').show();
+
+     //$('.editInstitutionProfile').on("click", function(){
+      $(document).on("click", '.editInstitutionProfile', function(){
+
+        var tenantId = $(this).attr('data-app');
+        var instId = $(this).attr('data-id');
+        setCookie('tenantId',tenantId);
+        setCookie('instId',instId);
+      
+        //window.location.href = "/edit-institutional-profile/";
+        window.open('/edit-institutional-profile/', '_blank');
+      });
+
+// Load my Institution details
+var sessionId = getCookie('sessionId');
+$('#myInstitutionList').html('');
+var set = 1;
+setTimeout(function (){  
+  if($('#tenantDetails > option').length < 2  && $('#tenantDetails').val() == '7822da54-c0ba-11e8-85c1-6301a0c839d6')
+    window.location.href = "/search-institution/";
+     console.log("query{\n  getAllInstitutions(authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    id\n    institutionSupportId\n    name\n    email\n    contactPhone\n    ownerType\n    ownerJobTitle\n    companyLogo\n    companyName\n  companyDescription\n   incorporationDate\n    companySize\n    companyType\n    registrationNumber\n    industry\n    currency\n    netWorth\n    website\n    workEmail\n    workPhone\n    addressHouseBuilding\n    addressTownCity\n    addressStateProvince\n  addressZipPostalCode\n    addressCountryRegion\n  institutionPath\n    githubDetails{\n    githubUsername\n    githubPassword\n    githubClientId\n    githubClientSecret\n    githubOwner\n    githubRepo\n}\n}\n}");   
+      var settings = {
+                "async": true,
+                "crossDomain": true,
+                "url": "{{ $.Site.Params.GraphQLUrl }}",
+                "method": "POST",
+                "headers": {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                  "cache-control": "no-cache"
+                },
+                "data": {
+                  "query": "query{\n  getAllInstitutions(authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    id\n    institutionSupportId\n    name\n    email\n    contactPhone\n    ownerType\n    ownerJobTitle\n    companyLogo\n    companyName\n  companyDescription\n   incorporationDate\n    companySize\n    companyType\n    registrationNumber\n    industry\n    currency\n    netWorth\n    website\n    workEmail\n    workPhone\n    addressHouseBuilding\n    addressTownCity\n    addressStateProvince\n  addressZipPostalCode\n    addressCountryRegion\n  institutionPath\n   githubDetails{\n    githubUsername\n    githubPassword\n    githubClientId\n    githubClientSecret\n    githubOwner\n    githubRepo\n}\n}\n}"
+                }
+    }
+   
+    $.ajax(settings).done(function (response) {  
+
+    	   $('#myinsitutionloading').hide();
+  
+        
+          if(set == 1)
+          $('#myInstitutionList').html('');
+          set = 2;
+          count = response.data.getAllInstitutions.length;
+          for(i=0;i<count;i++){           
+            var searchResult ='';
+
+
+            
+             searchResult += '<div  ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" class="card blog-card" rel="bookmark">'
+             searchResult += '<div class="card-img-container">'
+             searchResult += '<a href="#"><img src="/img/no-image.png" class="card-img"></a>'
+             searchResult += '</div>'
+             searchResult += '<article class="card-body">'; 
+             searchResult += '<a href="#." class="d-block"><button data-id="'+response.data.getAllInstitutions[i].id+'" data-app="'+response.data.getAllInstitutions[i].institutionSupportId+'" class="small-bt-row deleteItem editInstitutionProfile instituteButton"><span class="col a"><i class="fas fa-pencil-alt"></i></span><span class="col b">Edit</span> </button></a>'; 
+             
+             var result = doesFileExist('/profile/offeror/institution/'+response.data.getAllInstitutions[i].institutionPath+'/');
+
+			 if (result == true) {
+			 searchResult += '<h2 class="card-title"><a href="/profile/offeror/institution/'+response.data.getAllInstitutions[i].institutionPath+'/">'+response.data.getAllInstitutions[i].name+'</a></h2>';
+			    
+			  }
+			  else 
+			  {
+			  searchResult += '<h2 class="card-title"><a href="/pending-review/">'+response.data.getAllInstitutions[i].name+'</a></h2>';
+			  }
+
+             if(response.data.getAllInstitutions[i].companyDescription != null)
+              {
+                            
+              searchResult += '<p class="card-text ch-limit">' +response.data.getAllInstitutions[i].companyDescription+'</p>';
+
+              }
+              else
+              {
+
+              searchResult += '<p class="card-text ch-limit"> Description about this institution is not provided. </p>';
+
+              }
+
+             
+             searchResult += '<div class="metrix row count-bt-area">';
+             searchResult += '<div class="col-lg-12 col-md-12">';
+             searchResult += '<p class="card-subtext muted-text insti-contact-tags">';
+             
+
+             if(response.data.getAllInstitutions[i].industry != null)
+              {              
+              searchResult += '<span class="institute-sm-ico"> <i class="fas fa-building"></i> </span> ' +response.data.getAllInstitutions[i].industry+'';
+              }
+
+              else
+
+              {
+
+              	searchResult += '';
+              	
+              }
+
+              if(response.data.getAllInstitutions[i].companySize != null)
+              {              
+              searchResult += '<span class="institute-sm-ico"> <i class="fas fa-user-friends"></i> </span> ' +response.data.getAllInstitutions[i].companySize+'';
+
+              }
+
+              else
+              {
+              	searchResult += '';
+              }
+              
+
+                var address = '';
+                    if(response.data.getAllInstitutions[i].addressHouseBuilding != null)
+                      address += response.data.getAllInstitutions[i].addressHouseBuilding+', ';
+                    if(response.data.getAllInstitutions[i].addressTownCity != null)
+                      address += response.data.getAllInstitutions[i].addressTownCity+', '; 
+                    if(response.data.getAllInstitutions[i].addressStateProvince != null)
+                      address += response.data.getAllInstitutions[i].addressStateProvince+', '; 
+                    if(response.data.getAllInstitutions[i].addressZipPostalCode != null)
+                      address += response.data.getAllInstitutions[i].addressZipPostalCode+', ';  
+                    if(response.data.getAllInstitutions[i].addressCountryRegion != null)
+                      address += response.data.getAllInstitutions[i].addressCountryRegion;
+                      
+                      if(address == "") 
+
+                      {
+                      	searchResult+= '';
+                      }
+
+                      else
+                      {
+                      	searchResult+= '<span class="institute-sm-ico"> <i class="fas fa-map-marker-alt"></i> </span> ' +address+'';
+                      	
+                      }
+                                                                                       
+                      
+                   
+                  
+ 
+      
+             searchResult += '</p>';  
+             searchResult += '</div>';        
+             searchResult += '</div>'; 
+             searchResult += '</div>'; 
+             searchResult += '</article>'; 
+             searchResult += '</div>'; 
+              
+ 
+             //alert(searchResult);   
+             
+            $('#myInstitutionList').append(searchResult);
+        }
+      });
+
+   },1500);
+
+// Load My Institution details
+
+  $('.addAnotherInstitution').on("click", function(){
+    window.location.href = "/search-institution";
+  });
+
+});
+
+    </script>
+  <section class="about-wrapper">
+  <main class="container">
+    {{ partialCached "bread-crumb.html" . "my-inst-key" }}
+
+
+
+   <a style="" href="/search-institution/" class="new-ofer-btn-1 pull-right" id="createILMbutton"> <i class="fas fa-plus-circle"></i> Add Another </a>
+   <div class="clearfix"></div>
+
+   <div id="myinsitutionloading" role="status">
+    <div> <span class="ph-load-default text-center pt-4 card-loading-box">Loading
+     
+    <div class="spinner-grow spinner-grow-sm" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow spinner-grow-sm" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-grow spinner-grow-sm" role="status">
+      <span class="sr-only">Loading...</span>
+    </div></span> </div>
+    </div>
+    
+    </div>
+    <div class="row">
+                <div class="col-lg-12">
+
+
+
+                  
+                    <div class="tab-content" id="myTabContent">
+                      <div class="tab-pane fade active show" id="followed" role="tabpanel" aria-labelledby="followed-tab">
+                        <div class="top-10-most-list">
+                          <div class="fhir-list-row" id = "myInstitutionList">
+                             
+  
+ 
+  
+   
+                                
+
+                               
+                              <div class="custom-pagination-block"> 
+                                    
+
+
+                              </div>                                                       
+                        </div>
+                      </div>  
+                         
+                                                              
+                    </div>
+     
+                  </div>
+                </div> 
+              </div>
+             
+
+
+              </div>
+            </div>
+   
+
+  </main>
+  </section>
+{{ partialCached "footer.html" . }}
+</body>
+
+</html>

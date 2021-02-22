@@ -1,0 +1,14 @@
+--- 
+ title: "McKinsey & Company: Commercial Group Insurance" 
+ classname:  "Commercial_Group_Insurance" 
+ label: "Commercial Group Insurance" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "McKinsey_&_Company" 
+ parentclasslabel: "McKinsey & Company" 
+ equalentCollections: [] 
+ collections: ['McKinsey & Company: Commercial Group Insurance']
+ aliases:  "/topic/mckinsey-company-commercial-group-insurance"  
+ searchCategory: "topic" 
+---
+Q29tbWVyY2lhbCBpbnN1cmFuY2UgaW4gaGVhbHRoY2FyZSBvciBjb21tZXJjaWFsIGhlYWx0aCBpbnN1cmFuY2UgcmVmZXJzIHRvIGFueSBoZWFsdGggYmVuZWZpdCBvYnRhaW5lZCBmcm9tIGFuIGVtcGxveWVyLXNwb25zb3JlZCBvciBwcml2YXRlbHkgcHVyY2hhc2VkIGNvbXBhbnkgYW5kIG5vdCBmcm9tIE1lZGljYXJlIG9yIFdpc2NvbnNpbiBNZWRpY2FpZCBhbmQgQmFkZ2VyQ2FyZSBQbHVzLiBDb21tZXJjaWFsIGdyb3VwIGluc3VyYW5jZSBvciBjb21tZXJjaWFsIGdyb3VwIGhlYWx0aCBpbnN1cmFuY2UgaXMgaW5zdXJhbmNlIHNwb25zb3JlZCBieSBhIHByaXZhdGUgb3JnYW5pemF0aW9uIGZvciBhIGdyb3VwIG9mIHBlb3BsZS4gVGhlIGdvdmVybm1lbnQgZG9lcyBub3QgYWRtaW5pc3RlciBjb21tZXJjaWFsIGhlYWx0aCBwbGFucy4gVGhlcmVmb3JlIHlvdSBoYXZlIHRvIHB1cmNoYXNlIHRoZSBoZWFsdGggaW5zdXJhbmNlIHBvbGljeSBkaXJlY3RseSBmcm9tIGEgZmVkZXJhbCBtYXJrZXRwbGFjZSBvciBhbiBpbnN1cmFuY2UgYnJva2VyLg==

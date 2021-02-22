@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Sutter Health" 
+ classname:  "Sutter_Health" 
+ label: "Sutter Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Sutter Health']
+ aliases:  "/topic/healthcare-it-news-sutter-health"  
+ searchCategory: "topic" 
+---
+U3V0dGVyIEhlYWx0aCBpcyBhIG5vbi1wcm9maXQgaGVhbHRoIHN5c3RlbSBpbiBDYWxpZm9ybmlhIHRoYXQgcHJvdmlkZXMgY29vcmRpbmF0ZWQgY2FyZSB0byB0aGUgcGVvcGxlIG9mIENhbGlmb3JuaWEuIEl0IGlzIGFuIGludGVncmF0ZWQgbmV0d29yayB0aGF0IGhhcyBjcmVhdGVkIGEgY29ubmVjdGVkIG1vZGVsIG9mIGNhcmUgZm9yIHBlb3BsZSB3aGVuZXZlciB0aGV5IG5lZWQgaXQuIFN1dHRlciBoZWFsdGggb25saW5lIHNlcnZpY2VzIGVuc3VyZSB0aGF0IHRoZWlyIGhlYWx0aGNhcmUgc2VydmljZXMgYXJlIGFjY2Vzc2libGUgdG8gYWxsLCBhbmQgb2ZmZXIgaGVhbHRoY2FyZSBzZXJ2aWNlcyB0byBkaXZlcnNlIGNvbW11bml0aWVzIHZpYSB0aGVpciBjb21wcmVoZW5zaXZlIHNlcnZpY2VzIGFuZCBxdWFsaXR5IGhlYWx0aCBwcm9ncmFtcy4gU3V0dGVyIEhlYWx0aCBoYXMgbWFkZSBpbnZlc3RtZW50cyBpbiBtYW55IGRpZmZlcmVudCB0ZWNobm9sb2dpZXMsIHJlc2VhcmNoIHByb2plY3RzLCBhbmQgbWVkaWNhbCBhZHZhbmNlbWVudHMgdG8gaW1wcm92ZSB0aGUgcGF0aWVudCBleHBlcmllbmNlIGFuZCBwYXRpZW50IG91dGNvbWVzLg==

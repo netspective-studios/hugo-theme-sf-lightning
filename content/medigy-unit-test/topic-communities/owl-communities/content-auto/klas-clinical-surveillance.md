@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Clinical Surveillance" 
+ classname:  "Clinical_Surveillance" 
+ label: "Clinical Surveillance" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['KLAS: Population Health'] 
+ collections: ['KLAS: Clinical Surveillance']
+ aliases:  "/topic/klas-clinical-surveillance"  
+ searchCategory: "topic" 
+---
+Q2xpbmljYWwgU3VydmVpbGxhbmNlIHNvbHV0aW9ucyBpbmNvcnBvcmF0ZSBydWxlcyBsb2dpYyBvbiBwYXRpZW50LXNwZWNpZmljIGRhdGEgaW5zaWdodHMuIEl0IGluY2x1ZGVzIHBhdGllbnQgc3RhdHVzIG1vbml0b3Jpbmcgc29sdXRpb25zIHRoYXQgY3JlYXRlIGNsaW5pY2FsbHkgcmVsZXZhbnQgbm90aWZpY2F0aW9ucyBtZWFudCBmb3IgaW5kaXZpZHVhbHMgYW5kIHRhcmdldGVkIGNhcmVnaXZlciB0ZWFtcy4gQ2xpbmljYWwgc3VydmVpbGxhbmNlIHNvbHV0aW9ucyBtYWlubHkgcmVseSBvbiByZWFsLXRpbWUgcGF0aWVudCBkYXRhIGFuZCBhbHNvIHNvbWUgaGlzdG9yaWNhbCBkYXRhLiBCeSBhbmFseXppbmcgdGhlIHBhdGllbnQgaW5mb3JtYXRpb24sIHRoZSB0b29scyBhcmUgY2FwYWJsZSBvZiBwaW5wb2ludGluZyB0aGUgZWFybHkgb25zZXQgb2YgZGV0ZXJpb3JhdGluZyBjb25kaXRpb25zLiBUaGVzZSBzb2x1dGlvbnMgYXJlIGZvdW5kIGluIGhlYWx0aCBjYXJlIHNldHRpbmdzIGxpa2UgZW1lcmdlbmN5IHJvb21zLCBvcGVyYXRpbmcgcm9vbXMgYW5kIElDVXMu

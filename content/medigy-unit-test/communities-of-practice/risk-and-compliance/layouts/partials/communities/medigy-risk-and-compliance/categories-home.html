@@ -1,0 +1,110 @@
+{{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+<section class="container-fluid categories categories-new">
+	<div class="container">
+		<div class="row"> 
+            <div class="col-md-12">
+                <div class="risk-and-compliance-new-quick-links">
+                    <strong>Quick Links:</strong> 
+                      <a href="{{ print "/" ($.Scratch.Get "contentPath") "contributed-content/" }}" onclick="dataLayer.push({'event': 'riskandcompquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Contributed Content','gtmPersonid':getCookie('userEmail')})">Contributed Content</a> <span class="space-line">|</span> 
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "curated-news/" }}" onclick="dataLayer.push({'event': 'riskandcompquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Curated News','gtmPersonid':getCookie('userEmail')})">Curated News</a> <span class="space-line">|</span> 
+                        <a href="{{ print "/" ($.Scratch.Get "contentPath") "infographics/" }}" onclick="dataLayer.push({'event': 'riskandcompquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Infographics','gtmPersonid':getCookie('userEmail')})">Infographics</a> <span class="space-line">|</span> 
+                        <!-- <a href="#trending-tweets">#trending on twitter</a> <span class="space-line">|</span>  -->
+                    <div class="clearfix"></div>
+                </div>
+			</div>
+		 </div><!-- row -->
+		 <div class="row"> 
+			<div class="col-md-12">
+               <div class="risk-and-compliance-new-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Contributed Content" "currentTag" $currentTag "href" ( print "/" ($.Scratch.Get "contentPath") "contributed-content" ) "contentcategories" "medigy-risk-and-compliance-contributed-content" "featuredImage" "/communities/medigy-risk-and-compliance/images/featuredimage/contributed-content.png" "descptText" "A compilation of articles from thought leaders and subject matter experts in the Risk and Compliance space, who are part of our community. These articles contain their thoughts, views, and knowledge that they have accrued over the years." "context" .  ) . $  }}                               
+                </div>
+                <div class="risk-and-compliance-new-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated News" "currentTag" $currentTag "href" ( print "/" ($.Scratch.Get "contentPath") "curated-news" ) "contentcategories" "medigy-risk-and-compliance-curated-news" "featuredImage" "/communities/medigy-risk-and-compliance/images/featuredimage/curated-news.png" "descptText" "This section brings community members the latest news and trends in the Risk and Compliance space. The news is handpicked and curated to highlight the most important stories you need to know how to do your job."  "context" .  ) . $  }}              
+                </div>
+                <div class="risk-and-compliance-new-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Infographics" "currentTag" $currentTag "href" ( print "/" ($.Scratch.Get "contentPath") "infographics" ) "contentcategories" "medigy-risk-and-compliance-infographics" "featuredImage" "/communities/medigy-risk-and-compliance/images/featuredimage/infographics.png" "descptText" "A unique collection of hand-drawn and curated infographics that focuses on risk and compliance, third-party risk management, mitigation strategies, and much more." "context" .  ) . $  }}              
+                </div>
+			</div>
+		</div><!-- row -->
+		      
+        <!-- <div class="risk-and-compliance-new-twitter-widget-row" id="trending-tweets">
+            <div class="risk-and-compliance-new-content-left-secion">
+                <div class="risk-and-compliance-new-content-left-secion-header">
+                    <div class="row">
+                        <div class="col-lg-4 col-8">
+                            <span class="risk-and-compliance-new-content-left-secion-header-title">
+                                <a href="#">#trending on twitter</a>
+                            </span>
+                        </div>
+                        <div class="col-lg-8 col-4 risk-and-compliance-new-content-left-secion-header-more">
+                        </div>
+                    </div>
+                </div>            
+                <div class="risk-and-compliance-new-content-left-secion-content-row">
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <div class="risk-and-compliance-new-twitter-widget-scroll"id="tweets-risk-and-compliance-new"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="risk-and-compliance-new-twitter-widget-scroll"id="tweets-risk-and-compliance-new-cl-1"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="risk-and-compliance-new-twitter-widget-scroll"id="tweets-risk-and-compliance-new-cl-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> -->
+	</div>
+</section>
+<!-- <script>
+$(document).ready(function () {
+    
+    var ws = new WebSocket('wss://twitter-scraper.medigy.com:8090');
+    let count = 0;
+    ws.onmessage = function (medigycl1Tweets) {
+        const tweets = medigycl1Tweets.data;
+        const tweetId = tweets.split(' ')[0];
+        const tweetDivId = 'tweets-risk-and-compliance-new';
+        if (count < 50) {
+            createTweet(tweetId,tweetDivId);
+        }
+        count = count + 1;
+    };
+
+    var ws_cl_1 = new WebSocket('wss://twitter-scraper.medigy.com:8091');
+    let count_cl_1 = 0;
+    ws_cl_1.onmessage = function (medigycl1Tweets) {
+        const tweetscl1 = medigycl1Tweets.data;
+        const tweetIdcl1 = tweetscl1.split(' ')[0];
+        const tweetDivIdcl1 = 'tweets-risk-and-compliance-new-cl-1';
+        if (count_cl_1 < 50) {
+            createTweet(tweetIdcl1,tweetDivIdcl1);
+        }
+        count_cl_1 = count_cl_1 + 1;
+    };
+
+    var ws_cl_2 = new WebSocket('wss://twitter-scraper.medigy.com:8092');
+    let count_cl_2 = 0;
+    ws_cl_2.onmessage = function (medigycl2Tweets) {
+        const tweetscl2 = medigycl2Tweets.data;
+        const tweetIdcl2 = tweetscl2.split(' ')[0];
+        const tweetDivIdcl2 = 'tweets-risk-and-compliance-new-cl-2';
+        if (count_cl_2 < 50) {
+            createTweet(tweetIdcl2,tweetDivIdcl2);
+        }
+        count_cl_2 = count_cl_2 + 1;
+    };
+
+});
+createTweet = (tweetId,tweetDivId) => {
+    twttr.widgets.createTweet(tweetId,
+        document.getElementById(tweetDivId),
+        {
+            align: 'left'
+        })
+        .then(function (el) {
+            // console.log("Tweet displayed..")
+        });
+}
+</script> -->

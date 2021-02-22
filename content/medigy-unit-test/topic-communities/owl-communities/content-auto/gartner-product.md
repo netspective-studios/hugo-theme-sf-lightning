@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Product" 
+ classname:  "Product" 
+ label: "Product" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Product']
+ aliases:  "/topic/gartner-product"  
+ searchCategory: "topic" 
+---
+UHJvZHVjdCB0ZWFtcyBhcmUgZXhwZXJpZW5jaW5nIGNvbXBldGl0aXZlIHByZXNzdXJlcyBpbiB0aGlzIGNoYW5naW5nIGRpZ2l0YWwgZW52aXJvbm1lbnQuIFRoZXkgbmVlZCB0byB0cmFuc2Zvcm0gdGhlaXIgcHJvZHVjdCBtYW5hZ2VtZW50IHByYWN0aWNlcywgbWFya2V0aW5nIHN0cmF0ZWdpZXMsIGFuZCBtYWtlIGNyaXRpY2FsIGRlY2lzaW9ucyB0byBzdGF5IGRpZmZlcmVudGlhdGVkIGFuZCBhaGVhZCBvZiB0aGUgY29tcGV0aXRpb24gd2hpbGUgaGVscGluZyB0aGVpciBidXNpbmVzc2VzIGdyb3cu

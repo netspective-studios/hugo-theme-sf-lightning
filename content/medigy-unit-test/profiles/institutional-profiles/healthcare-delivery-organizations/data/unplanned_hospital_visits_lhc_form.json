@@ -1,0 +1,141 @@
+{
+  "shortName": "unplanned-hospital-visits",
+  "name": "Unplanned Hospital Visits",
+  "status": "draft",
+  "version": "fa-briefcase-medical",
+  "deriveFrom": [
+    ""
+  ],
+  "subjectType": {
+    "extraClass": "tooltip-hdo-descr",
+    "imagePath": "/img/hospital_compare.jpg",
+    "referenceLink": "https://www.medicare.gov/hospitalcompare/profile.html#profTab=4&ID=",
+    "toolTipText": "Description courtesy of Medicare.gov | Hospital Compare"
+  },
+  "publisher": "Medigy",
+  "purpose": "qualitative_evaluation",
+  "copyright": "Courtesy of NODE Health",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Unplanned Re-admission",
+          "questionCodeSystem": "Custom",
+          "questionCode": "UnplannedReadmission",
+          "prefix": {
+            "category": "UnplannedRe-admission",
+            "iconClass": "fa-bed",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "unplannedHospitalVisits",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Unplanned readmissions & hospital return days by medical condition",
+          "questionCodeSystem": "Custom",
+          "questionCode": "UnplannedReadmissionMedicalCondition",
+          "prefix": {
+            "category": "UnplannedReadmissionMedicalCondition",
+            "iconClass": "fa-diagnoses",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "unplannedHospitalVisits",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Unplanned readmission and hospital visits by procedure",
+          "questionCodeSystem": "Custom",
+          "questionCode": "UnplannedReadmissionByProcedure",
+          "prefix": {
+            "category": "UnplannedReadmissionByProcedure",
+            "iconClass": "fa-procedures",
+            "valueFormat": "%"
+          },
+          "localQuestionCode": "complicationsAndDeaths",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "General Description",
+          "questionCodeSystem": "Custom",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Returning to the hospital for unplanned care disrupts patients’ lives, increases their risk of harmful events like healthcare-associated infections, and costs more money. Hospitals that give high quality care can keep patients from returning to the hospital and reduce their stay if they have to come back.",
+              "code": "",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

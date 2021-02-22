@@ -1,0 +1,14 @@
+--- 
+ title: "HIMSS: Academic Education" 
+ classname:  "Academic_Education" 
+ label: "Academic Education" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "HIMSS" 
+ parentclasslabel: "HIMSS" 
+ equalentCollections: ['Gartner: Education'] 
+ collections: ['HIMSS: Academic Education']
+ aliases:  "/topic/himss-academic-education"  
+ searchCategory: "topic" 
+---
+QWNhZGVtaWMgZWR1Y2F0aW9uIHJlZmVycyB0byB0aGUgcHJvZ3JhbXMgYW5kIHRyYWluaW5nIGZvciBlZHVjYXRpbmcgcHJlc2VudCBhbmQgZnV0dXJlIGhlYWx0aCBpbmZvcm1hdGlvbiBhbmQgdGVjaG5vbG9neSBwcm9mZXNzaW9uYWxzLiBUaGVzZSBwcm9ncmFtcyBvZmZlciBjb3Vyc2VzIHRoYXQgYWRkcmVzcyBzZXZlcmFsIGRvbWFpbnMgc3VjaCBhcyBkYXRhIHNjaWVuY2UsIGhlYWx0aCBkYXRhIGFuYWx5dGljcywgaW50ZXItcHJvZmVzc2lvbmFsIGNvbGxhYm9yYXRpdmUgcHJhY3RpY2UsIGNvbXB1dGVyIG5ldHdvcmtpbmcgdGVjaG5vbG9naWVzLCBoZWFsdGggaW5mb3JtYXRpY3MsIGhlYWx0aGNhcmUgbGF3IGFuZCBjb21wbGlhbmNlLCBoZWFsdGggZGF0YSByZXRyaWV2YWwsIHByaXZhY3kgYW5kIHNlY3VyaXR5LCBoZWFsdGhjYXJlIGRlbGl2ZXJ5IHN5c3RlbXMsIGV0Yy4gVGhlc2UgcHJvZ3JhbXMgaGVscCBwcm9mZXNzaW9uYWxzIGRldmVsb3AgdGhlIG5lY2Vzc2FyeSBza2lsbHMgdG8gZWZmaWNpZW50bHkgYW5hbHl6ZSwgbWFuYWdlLCBhbmQgdXNlIGhlYWx0aCBpbmZvcm1hdGlvbiBhbmQgdGVjaG5vbG9neS4=

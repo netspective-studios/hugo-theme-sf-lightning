@@ -1,0 +1,213 @@
+{
+  "shortName": "Patient_Access",
+  "name": "Patient Access",
+  "status": "draft",
+  "items": [
+    {
+      "header": true,
+      "question": "Persistence",
+      "questionCodeSystem": "Custom",
+      "questionCode": "persistence",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you provide a way for patients to request their Patient Generated Health Data?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "patient_access_health_data",
+          "prefix": "far fa-id-card",
+          "localQuestionCode": "health_data",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We provide a way for patients to request their Patient Generated Health Data",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not provide a way for patients to request their Patient Generated Health Data",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have a means to provide patients with an itemized list of all the places and entities that their health data may have been shared or sold for commercial profit?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "patient_access_commercial_profit",
+          "prefix": "far fa-file-alt",
+          "localQuestionCode": "commercial_profit",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have a means to provide patients with an itemized list of all the places and entities that their health data may have been shared or sold for commercial profit",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have a means to provide patients with an itemized list of all the places and entities that their health data may have been shared or sold for commercial profit",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Do you have a process in place for patient record addendums?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "patient_access_record_addendums",
+          "prefix": "fas fa-book-reader",
+          "localQuestionCode": "record_addendums",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "We have a process in place for patient record addendums",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "We do not have a process in place for patient record addendums",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Are your patients able to make informed, educated decisions about their care since all their data is available to them?",
+          "questionCodeSystem": "Custom",
+          "questionCode": "patient_access_informed",
+          "prefix": "fas fa-id-card",
+          "localQuestionCode": "informed",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Our patients are able to make informed, educated decisions about their care since all their data is available to them",
+              "code": "Yes",
+              "label": "Yes",
+              "score": null
+            },
+            {
+              "text": "Our patients are not able to make informed, educated decisions about their care since all their data is available to them",
+              "code": "No",
+              "label": "No",
+              "score": null
+            }
+          ],
+          "displayControl": {
+            "answerLayout": {
+              "type": "RADIO_CHECKBOX"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Interaction",
+      "questionCodeSystem": "Custom",
+      "questionCode": "interaction",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CWE",
+          "question": "Policy messages",
+          "questionCodeSystem": "Custom",
+          "questionCode": "policy_messages",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Patient data access is indeed a ‘right’ patients have always had under HIPAA. The HIPAA privacy rule states that healthcare organizations must grant patients access to their own medical records in a reasonable amount of time for a reasonable, labor-based fee. Interoperable EHRs and patient portals have streamlined this process, making patient data access almost entirely digital and opening up opportunities in the patient engagement space. About 90 percent of clinicians and hospitals offer patient portal access, and although subpar patient  adoption presents a challenge, industry leaders are eagerly working on what’s next for patient data access.",
+              "code": "hdo_patient_access",
+              "label": null,
+              "score": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

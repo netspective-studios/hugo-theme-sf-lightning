@@ -1,0 +1,711 @@
+{
+  "shortName": "",
+  "name": "Offerings_CADDs",
+  "status": "draft",
+  "items": [
+    {
+      "header": false,
+      "dataType": "ST",
+      "question": "Do you know of any alternative product for offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "know_alternative",
+      "prefix": {
+        "iconClass": "fa fa-address-card left-icon",
+        "itemClass": "offering-share-alternative-decision"
+      },
+      "localQuestionCode": "seen_alternatives",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Add Others",
+          "questionCodeSystem": "Custom",
+          "questionCode": "add_Others",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Enter the Title",
+          "questionCodeSystem": "Custom",
+          "questionCode": "enter_title",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Enter the URL",
+          "questionCodeSystem": "Custom",
+          "questionCode": "enter_URL",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "ST",
+      "question": "Have you tried any alternative product similar to offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "tried_alternative",
+      "prefix": {
+        "iconClass": "fa fa-id-badge left-icon",
+        "itemClass": "offering-share-alternative-decision"
+      },
+      "localQuestionCode": "tried_alternatives",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Add Others",
+          "questionCodeSystem": "Custom",
+          "questionCode": "addOthers",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Enter the Title",
+          "questionCodeSystem": "Custom",
+          "questionCode": "enterTitle",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Enter the URL",
+          "questionCodeSystem": "Custom",
+          "questionCode": "enterURL",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Share why you chose offeringName over another offering",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering-share-chose-decision",
+      "prefix": {
+        "iconClass": "fa fa-history left-icon",
+        "itemClass": "offering-share-migration-decision"
+      },
+      "localQuestionCode": "decision_chose",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Offering you didn't choose",
+          "questionCodeSystem": "Custom",
+          "questionCode": "placeholder_selection",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Describe your situation and the context for this decision",
+          "questionCodeSystem": "Custom",
+          "questionCode": "description_selection",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "Share why you migrated from an existing offering to offeringName",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering-share-migration-decision",
+      "prefix": {
+        "iconClass": "fa fa-h-square left-icon",
+        "itemClass": "offering-share-migration-decision"
+      },
+      "localQuestionCode": "decision_migration",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "From this tool",
+          "questionCodeSystem": "Custom",
+          "questionCode": "placeholder_migration",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Describe your situation and what led you to switch",
+          "questionCodeSystem": "Custom",
+          "questionCode": "description_migration",
+          "prefix": "fa fa-h-square left-icon",
+          "localQuestionCode": "decision_migration",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": true,
+      "question": "What do users think about offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering_pros_and_cons",
+      "prefix": {
+        "iconClass": "fa  fa-plus-square left-icon",
+        "itemClass": "pros-cons-offering-name"
+      },
+      "localQuestionCode": "offering_pros_and_cons",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "What do you like about offeringName?",
+          "questionCodeSystem": "Custom",
+          "localQuestionCode": "pros",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "What do you not like about offeringName?",
+          "questionCodeSystem": "Custom",
+          "localQuestionCode": "cons",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "ST",
+      "question": "What questions do users have about offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering_questions_asked",
+      "prefix": {
+        "iconClass": "fa fa-thumbs-up left-icon",
+        "itemClass": "questions-asked-about-offering"
+      },
+      "localQuestionCode": "offering_questions",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1"
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "Do you have BlueButton feature for offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering_bluebutton",
+      "prefix": {
+        "iconClass": "fa fa-check-square left-icon",
+        "itemClass": "radio-button-choice-type"
+      },
+      "localQuestionCode": "bluebutton",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Yes",
+          "code": "Yes",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "No",
+          "code": "No",
+          "label": null,
+          "score": null
+        }
+      ],
+      "displayControl": {
+        "answerLayout": {
+          "type": "RADIO_CHECKBOX"
+        }
+      }
+    },
+    {
+      "header": true,
+      "question": "Where did you learn about  offeringName?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "online-offline-other-lead-sources",
+      "prefix": {
+        "iconClass": "fa fa-medkit left-icon",
+        "itemClass": "online-offline-source"
+      },
+      "localQuestionCode": "online-offline-other-lead-sources",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "1"
+      },
+      "editable": "1",
+      "items": [
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Online Lead Sources",
+          "questionCodeSystem": "Custom",
+          "questionCode": "online",
+          "localQuestionCode": "offering_online_source",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Blogging",
+              "code": "blog",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Digital Advertising",
+              "code": "da",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Email Marketing",
+              "code": "em",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Media Coverage",
+              "code": "mc",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Organic Search",
+              "code": "os",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Premium Content",
+              "code": "pc",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Social Media",
+              "code": "sm",
+              "label": null,
+              "score": null
+            }
+          ]
+        },
+        {
+          "header": false,
+          "dataType": "CNE",
+          "question": "Offline Lead Sources",
+          "questionCodeSystem": "Custom",
+          "questionCode": "offline",
+          "localQuestionCode": "offering_offline_source",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1",
+          "answers": [
+            {
+              "text": "Affiliate / Partner Programs",
+              "code": "app",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Direct Marketing",
+              "code": "dm",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Events / Shows",
+              "code": "es",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Inbound Phone Calls",
+              "code": "ipc",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Outbound Sales",
+              "code": "out_sale",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Referals",
+              "code": "refer",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Speaking Engagements",
+              "code": "se",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Sponsorships",
+              "code": "sponsor",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Traditional / Offline Networking",
+              "code": "ton",
+              "label": null,
+              "score": null
+            },
+            {
+              "text": "Traditional Advertising",
+              "code": "ta",
+              "label": null,
+              "score": null
+            }
+          ]
+        },
+        {
+          "header": false,
+          "dataType": "ST",
+          "question": "Other Lead Sources",
+          "questionCodeSystem": "Custom",
+          "questionCode": "others",
+          "localQuestionCode": "offering_other_source",
+          "questionCardinality": {
+            "min": "1",
+            "max": "1"
+          },
+          "answerCardinality": {
+            "min": "0",
+            "max": "1"
+          },
+          "editable": "1"
+        }
+      ]
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "How many confirmed devices does the offering offeringName work on?",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering_confirmed_devices",
+      "prefix": {
+        "iconClass": "fa fa-mobile left-icon",
+        "itemClass": "radio-button-choice-type"
+      },
+      "localQuestionCode": "confirmed_devices_supported",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "*"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "Web-based",
+          "code": "web-based",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Mac",
+          "code": "mac",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "IPhone/IPad",
+          "code": "iPhone-iPad",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Windows",
+          "code": "windows",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Linux",
+          "code": "linux",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Android",
+          "code": "android",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "Windows Mobile",
+          "code": "windows_mobile",
+          "label": null,
+          "score": null
+        }
+      ],
+      "displayControl": {
+        "answerLayout": {
+          "type": "RADIO_CHECKBOX"
+        }
+      }
+    },
+    {
+      "header": false,
+      "dataType": "CNE",
+      "question": "Terminologies Supported",
+      "questionCodeSystem": "Custom",
+      "questionCode": "offering_terminologies",
+      "prefix": {
+        "iconClass": "fa fa-search-plus left-icon",
+        "itemClass": "radio-button-choice-type"
+      },
+      "localQuestionCode": "supported_terminologies",
+      "questionCardinality": {
+        "min": "1",
+        "max": "1"
+      },
+      "answerCardinality": {
+        "min": "0",
+        "max": "*"
+      },
+      "editable": "1",
+      "answers": [
+        {
+          "text": "ICD9",
+          "code": "icd9",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "ICD10",
+          "code": "icd10",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "LOINC",
+          "code": "loinc",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "SNOMED CT",
+          "code": "snomed_ct",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "NDC",
+          "code": "ndc",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "RxNorm",
+          "code": "rxnorm",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "RadLex",
+          "code": "radlex",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "CPT",
+          "code": "cpt",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "HCPCS",
+          "code": "hcpcs",
+          "label": null,
+          "score": null
+        },
+        {
+          "text": "MEDCIN",
+          "code": "medcin",
+          "label": null,
+          "score": null
+        }
+      ],
+      "displayControl": {
+        "answerLayout": {
+          "type": "RADIO_CHECKBOX"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+--- 
+ title: "Frost & Sullivan: Regenerative Medicine" 
+ classname:  "Regenerative_Medicine" 
+ label: "Regenerative Medicine" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Frost_&_Sullivan" 
+ parentclasslabel: "Frost & Sullivan" 
+ equalentCollections: [] 
+ collections: ['Frost & Sullivan: Regenerative Medicine']
+ aliases:  "/topic/frost-sullivan-regenerative-medicine"  
+ searchCategory: "topic" 
+---
+UmVnZW5lcmF0aXZlIG1lZGljaW5lIGlzIGFuIGludGVyZGlzY2lwbGluYXJ5IGZpZWxkIGJhc2VkIHVwb24gdGhlIHByaW5jaXBsZXMgb2YgZW5naW5lZXJpbmcgYW5kIGxpZmUgc2NpZW5jZSB0byBwcm9tb3RlIHJlZ2VuZXJhdGlvbi4gSXQgaG9sZHMgdGhlIHBvdGVudGlhbCB0byBoZWFsIG9yIHJlcGxhY2UgdGlzc3VlcyBhbmQgb3JnYW5zIGRhbWFnZWQgYnkgY2VydGFpbiBmYWN0b3JzIChhZ2UsIGRpc2Vhc2UsIG9yIHRyYXVtYSwgZXRjLikuIEl0IGNhbiBhbHNvIHByb2R1Y2UgYXJ0aWZpY2lhbCBvcmdhbnMgdmlhIHJlZ2VuZXJhdGl2ZSB0aGVyYXB5ICh0aGVyYXBldXRpYyBzdGVtIGNlbGxzLCB0aXNzdWUgZW5naW5lZXJpbmcsIGV0Yy4pLiBSZWdlbmVyYXRpdmUgaGVhbHRoIGVuY29tcGFzc2VzIG1hbnkgZGlzY2lwbGluZXMgb2Ygc2NpZW5jZSBhbmQgY2xpbmljYWwgcHJhY3RpY2UuIEl0IGludm9sdmVzIGdyb3dpbmcgdGlzc3VlcyBhbmQgb3JnYW5zIGFydGlmaWNpYWxseSBpbiB0aGUgbGFib3JhdG9yeSBhbmQgaW1wbGFudGluZyB0aGVtIGludG8gdGhlIGJvZHkgd2hlbiBpdCBmYWlscyB0byBoZWFsIGl0c2VsZi4=

@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Precision Health" 
+ classname:  "OWLClass_04b44f23_f90e_4083_9610_38fb3993441e" 
+ label: "Precision Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Healthcare IT News: Precision Medicine','Healthcare IT Today: Genomics & Precision Medicine','Medigy: Precision Medicine'] 
+ collections: ['Healthcare IT News: Precision Health']
+ aliases:  "/topic/healthcare-it-news-precision-health"  
+ searchCategory: "topic" 
+---
+UHJlY2lzaW9uIGhlYWx0aCBpcyB0aGUgY3VzdG9taXphdGlvbiBvZiBoZWFsdGhjYXJlIHNlcnZpY2VzIGJhc2VkIHVwb24gdGhlIGluZGl2aWR1YWwgbmVlZHMgb2YgcGF0aWVudHMuIEl0IGZvY3VzZXMgb24gdGFpbG9yaW5nIGhlYWx0aGNhcmUgc2VydmljZXMgb24gYW4gaW5kaXZpZHVhbCBiYXNpcyBpbnN0ZWFkIG9mIGEgb25l4oCQc2VydmljZeKAkGZpdHPigJBhbGwgbW9kZWwuIFByZWNpc2lvbiBoZWFsdGggc29sdXRpb25zIHByb3ZpZGUgdHJlYXRtZW50IHRvIHBhdGllbnRzIGFjY29yZGluZyB0byB0aGVpciBnZW5ldGljIGNoYXJhY3RlcmlzdGljcywgaW5jbHVkaW5nIG1vbGVjdWxhciBvciBjZWxsdWxhciBhbmFseXNpcy4KUHJlY2lzaW9uIGZvciBoZWFsdGggZGVwZW5kcyBvbiB0aGUgcHJpbmNpcGxlIHRoYXQgYSBwYXJ0aWN1bGFyIGRpc2Vhc2UgZ2l2ZXMgcmlzZSB0byBkaWZmZXJlbnQgcGh5c2ljYWwgc3ltcHRvbXMgaW4gZGlmZmVyZW50IGluZGl2aWR1YWxzLiBGb3IgZXhhbXBsZSwgcGVvcGxlIGJlbG9uZ2luZyB0byBkaWZmZXJlbnQgZXRobmljaXRpZXMgd2lsbCByZXNwb25kIGRpZmZlcmVudGx5IHRvIGRydWcgdHJlYXRtZW50Lg==

@@ -1,0 +1,50 @@
+{
+  "communityMetaDescription": "Medigy Communities of Practice are communities built to provide its members with valuable information such as the latest trends, news as well as thoughts and ideas from fellow members.",
+  "communityMetaTitle": "Communities of Practice | Pandemic | Femtech | Risk and Compliance | Security",
+  "communityMastHead": "Communities",
+  "communityOgUrl": "/communities",
+  "communityOgImage": "images/home-graphic-1.png",
+  "communityHomeTitle": "Medigy | Community",
+  "breadcrumbs":[
+    {"breadcrumbLabel": "Home","breadcrumbLink":"/"},
+    {"breadcrumbLabel": "Communities","breadcrumbLink":""}
+    
+  ],
+  "communityDetails": [
+    {
+      "communityTitle": "Chronic Care Management",
+      "communityDescription": "Welcome to the Chronic Care Management community. This platform will give you background on payable CCM service codes, identifies eligible practitioners and patients, and details the Medicare PFS billing requirements.",
+      "communityShortDescription": "",
+      "communityFeaturedImage": "/communities/chronic-care-management/ccm.png",
+      "communityListingOrder": 1
+    },
+    {
+      "communityTitle": "FemTech",
+      "communityDescription": "Welcome to the FemTech community. This platform will keep you abreast with the latest technologies for millennial moms.",
+      "communityShortDescription": "",
+      "communityFeaturedImage": "/communities/femtech/femtech.jpg",
+      "communityListingOrder": 2
+    },
+    {
+      "communityTitle": "COVID-19 Pandemic",
+      "communityDescription": "The Pandemic CoP focuses on helping healthcare delivery professionals get their jobs done in times of stress. We connect you to experts, highlight best practices, let you submit ideas and requests for donations, identify high-quality products/services, and much more.",
+      "communityShortDescription": "",
+      "communityFeaturedImage": "/communities/covid-19-pandemic/pandemic.jpg",
+      "communityListingOrder": 3
+    },
+    {
+      "communityTitle": "Security",
+      "communityDescription": "Built by cybersecurity practitioners, the Security CoP contains valuable resources such as curated articles, original contributions, news and events from the cybersecurity space.",
+      "communityShortDescription": "",
+      "communityFeaturedImage": "/communities/security/security.jpg",
+      "communityListingOrder": 4
+    },
+    {
+      "communityTitle": "Risk and Compliance",
+      "communityDescription": "The Risk & Compliance CoP contains comprehensive information about operational, administrative, technical, privacy and other risks.",
+      "communityShortDescription": "",
+      "communityFeaturedImage": "/communities/risk-and-compliance/risk-and-compliance.jpg",
+      "communityListingOrder": 5
+    }
+  ]
+}

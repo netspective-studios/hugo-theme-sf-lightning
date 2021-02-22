@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Data Protection" 
+ classname:  "Data_Protection" 
+ label: "Data Protection" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Data Protection']
+ aliases:  "/topic/healthcare-it-news-data-protection"  
+ searchCategory: "topic" 
+---
+UGVyc29uYWwgZGF0YSBpcyBhbnkgaW5mb3JtYXRpb24gcmVsYXRlZCB0byB5b3VyIHByaXZhdGUsIHByb2Zlc3Npb25hbCwgb3IgcHVibGljIGxpZmUuIFVzaW5nIG9ubGluZSBwbGF0Zm9ybXMgbWVhbnMgeW91IGFyZSBzaGFyaW5nIHZhc3QgYW1vdW50cyBvZiB5b3VyIGRhdGEgYXJvdW5kIHRoZSBnbG9iZSwgd2hpY2ggbWFrZXMgaXQgaW1wb3NzaWJsZSBmb3IgeW91IHRvIHByb3RlY3QgeW91ciBwZXJzb25hbCBpbmZvcm1hdGlvbi4KRGF0YSBwcm90ZWN0aW9uIGludm9sdmVzIGFsbCB0aGUgcHJhY3RpY2VzLCBzYWZlZ3VhcmRzLCBhbmQgYmluZGluZyBydWxlcyB0aGF0IGNhbiBwcm90ZWN0IHlvdXIgcGVyc29uYWwgaW5mb3JtYXRpb24gYWdhaW5zdCB1bmF1dGhvcml6ZWQgYWNjZXNzLiBJdCBlbmFibGVzIHlvdSB0byBkZWNpZGUgd2hldGhlciB0byBzaGFyZSB5b3VyIHBlcnNvbmFsIGluZm9ybWF0aW9uLCB3aG8gaGFzIGFjY2VzcyB0byB5b3VyIGRhdGEsIHdoaWNoIGRhdGEgeW91IHNob3VsZCBzaGFyZSwgZXRjLiBCb3RoIGRhdGEgcHJvdGVjdGlvbiBhbmQgZGF0YSBwcml2YWN5IHNvbHV0aW9ucyBhcmUgZm9yIHlvdXIgcGVyc29uYWwgZGF0YSBwcm90ZWN0aW9uLg==

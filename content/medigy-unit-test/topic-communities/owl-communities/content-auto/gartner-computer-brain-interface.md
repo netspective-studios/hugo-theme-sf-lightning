@@ -1,0 +1,14 @@
+--- 
+ title: "Gartner: Computer-Brain Interface" 
+ classname:  "Computer-brain_Interface" 
+ label: "Computer-Brain Interface" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Gartner" 
+ parentclasslabel: "Gartner" 
+ equalentCollections: [] 
+ collections: ['Gartner: Computer-Brain Interface']
+ aliases:  "/topic/gartner-computer-brain-interface"  
+ searchCategory: "topic" 
+---
+Q29tcHV0ZXItYnJhaW4gaW50ZXJmYWNlIGNhbiBiZSByZWZlcnJlZCB0byBhcyBhIHN5c3RlbSB0aGF0IG1lYXN1cmVzIHRoZSBjZW50cmFsIG5lcnZvdXMgc3lzdGVtIGFjdGl2aXR5IGFuZCBnZW5lcmF0ZSBhcnRpZmljaWFsIG91dHB1dCwgZW5oYW5jaW5nIHRoZSBuYXR1cmFsIENOUyBvdXRwdXQuIEl0IGlzIGEga2luZCBvZiB1c2VyLWludGVyZmFjZSB3aGVyZSBhIHVzZXIncyBicmFpbiBwYXR0ZXJucyBhcmUgaW50ZXJwcmV0ZWQgYnkgdGhlIGNvbXB1dGVyIGFzIGNvbW1hbmRzIHRvIGNvbnRyb2wgYSBkZXZpY2Ugb3IgYW4gYXBwbGljYXRpb24uIEVsZWN0cm9kZXMgbWF5IGJlIGltcGxhbnRlZCBpbnRvIHRoZSBicmFpbiB0byBkZXRlY3Qgc2lnbmFscyBhbmQgZ2VuZXJhdGUgaW1wdWxzZXMgdG8gY29udHJvbCB0aGUgYnJhaW4ncyBhYm5vcm1hbCBhY3Rpdml0eS4gTm9uLWludmFzaXZlIHRlY2huaXF1ZXMgdXRpbGl6ZSBhIGhlbG1ldCBvciBhIGNhcCB0byBkZXRlY3QgYnJhaW4gc2lnbmFscyB2aWEgZXh0ZXJuYWwgZWxlY3Ryb2Rlcy4=

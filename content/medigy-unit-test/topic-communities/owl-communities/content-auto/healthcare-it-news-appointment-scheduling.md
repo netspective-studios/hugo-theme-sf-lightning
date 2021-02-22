@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Appointment scheduling" 
+ classname:  "Appointment_scheduling" 
+ label: "Appointment scheduling" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Healthcare IT News: Patient Appointments','Medigy: Appointment scheduling'] 
+ collections: ['Healthcare IT News: Appointment scheduling']
+ aliases:  "/topic/healthcare-it-news-appointment-scheduling"  
+ searchCategory: "topic" 
+---
+QXBwb2ludG1lbnQgc2NoZWR1bGluZyBpbiBoZWFsdGhjYXJlIGlzIGVzc2VudGlhbCBmb3IgaW1wcm92aW5nIGhlYWx0aGNhcmUgcHJhY3RpY2UgYW5kIHdvcmtmbG93LiBJdCBhbGxvd3MgcGF0aWVudHMgdG8gYm9vayB0aGVpciBhcHBvaW50bWVudHMgY29udmVuaWVudGx5IHZpYSB3ZWItY29ubmVjdGVkIGRldmljZXMgc3VjaCBhcyBjb21wdXRlcnMsIGxhcHRvcHMsIHNtYXJ0IG1vYmlsZSBwaG9uZXMsIG9yIHRhYmxldHMuIEl0IGdpdmVzIG1vcmUgZnJlZWRvbSB0byBwYXRpZW50cyBpbiBkZWNpc2lvbiBtYWtpbmcgYWJvdXQgdGhlaXIgcHJlZmVyZW5jZXMgZm9yIHRoZSBhcHBvaW50bWVudHMgYW5kIGhhcyBpbXByb3ZlZCBhY2Nlc3MuCk9ubGluZSBhcHBvaW50bWVudCBzY2hlZHVsaW5nIGRvZXMgdGhyb3VnaCBvbmxpbmUgc3lzdGVtcywgd2hpY2ggYXJlIHdlYi1iYXNlZCBhcHBsaWNhdGlvbnMgdGhhdCBhbGxvdyBwYXRpZW50cyB0byBzY2hlZHVsZSB0aGVpciBib29raW5ncyBhcyBwZXIgdGhlaXIgcmVxdWlyZW1lbnRzIGNvbnZlbmllbnRseS4gSXQgbWFrZXMgdGhlIGJvb2tpbmcgcHJvY2VkdXJlIG1vcmUgZWZmaWNpZW50IGFuZCBlZmZlY3RpdmUgdGhyb3VnaCBhdXRvbWF0aW9uIHRvIGtlZXAgZXZlcnl0aGluZyBmbG93aW5nIHNtb290aGx5Lg==

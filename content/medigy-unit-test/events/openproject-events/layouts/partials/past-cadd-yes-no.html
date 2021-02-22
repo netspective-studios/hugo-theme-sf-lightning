@@ -1,0 +1,432 @@
+{{ $dataId:= .Params.id }}
+{{ $dataName:= trim .Title "\n " }} 
+{{ $Cancelled := $.Scratch.Get "Cancelled" }}
+
+  {{ range first 1 .Site.Data.past_events_lhc_forms.items }}
+  {{ range .items }}
+    {{ range .answers | first 1 }}   
+    {{ $.Scratch.Set "text1"  .text }}
+    {{ end }}
+    {{ range .answers | last 1 }}    
+    {{ $.Scratch.Set "text2"  .text }}
+    {{ end }}   
+    {{ $text1:= $.Scratch.Get "text1" }}
+    {{ $text2:= $.Scratch.Get "text2" }}     
+   <div class="new-ofering-row-5 row mb-1">
+    <h4 class="col-sm-4">{{ .question }}</h4>      
+    <div class="col-sm-3 graph-section">
+      <span class="yes-no-btn"><button class="new-ofer-btn-1 yes btn white" id="yes-{{ .questionCode }}" type="button" data-id="{{ $dataId }}" data-name="{{  $dataName }}"><i class="fas fa-thumbs-up"></i> {{ $text1 }} </button></span>
+      <span class="yes-no-btn"><button class="new-ofer-btn-1 no btn white" id="no-{{ .questionCode }}" type="button" data-id="{{ $dataId }}" data-name="{{  $dataName }}"><i class="fas fa-thumbs-down"></i> {{ $text2 }} </button></span>      
+    </div>  
+     <div class="col-sm-2 vote-count-sec">
+   (<span class="vote-count" id="{{ .questionCode }}-total-count">0</span> votes)
+    </div>  
+    <div class="col-sm-3 graph-section">      
+      <span class="graph-right">
+        <div class="">
+          <div class="count">
+            <span class="yes" id="{{ .questionCode }}-yes-count-width">
+                <!--<span class="hunt-comm-count" id="{{ .questionCode }}-yes-count-percent">0 <i class="hunt-comm-count yes-normal-count" id="{{ .questionCode }}-yes-count">0</i></span>-->
+                <div class="yes-inner">
+                  <span class="{{ .questionCode }}-yes">&nbsp;</span>
+                  <span class="hunt-comm-count" id="{{ .questionCode }}-yes-count-percent">0</span>
+                  <span class="yes-span-brace" id="{{ .questionCode }}-yes-brace">&nbsp;(</span>
+                  <span class=" hunt-comm-count yes-normal-count" id="{{ .questionCode }}-yes-count">0</span>
+                 <span class="yes-span-brace" id="{{ .questionCode }}-yes-brace-close">)&nbsp;</span>
+                </div>
+                
+            </span>
+            <span class="no" id="{{ .questionCode }}-no-count-width">
+              <div class="no-inner">
+                <span class="{{ .questionCode }}-yes">&nbsp;</span>
+                <span class="hunt-comm-count" id="{{ .questionCode }}-no-count-percent">0</span>
+                <span class="yes-span-brace" id="{{ .questionCode }}-no-brace">&nbsp;(</span>
+                <span class="hunt-comm-count" id="{{ .questionCode }}-no-count">0</span>
+                <span class="yes-span-brace" id="{{ .questionCode }}-no-brace-close">)&nbsp;</span>
+              </div>
+            </span>
+          </div>
+        </div>
+      </span>
+    </div> 
+  </div>
+
+<script>           
+
+    /// Yes Push data starts here ////
+      $("#yes-{{ .questionCode }}").on("click", function (e) {   
+        var timestamp = Date.now();       
+        var metricName = "medigy_qual_exp_events_{{ .localQuestionCode }}";
+        var personid = getCookie('personid');
+        if( personid != '' && personid != null && getCookie('sessionId')!= null && getCookie('sessionId')!= '' ) {
+          $(this).addClass("checked");
+          $(this).css('cursor', 'default');
+          var eventId = $(this).attr('data-id');
+          var source = "OpenProject-"+eventId;
+          var eventName = $(this).attr('data-name');
+          var selectedvalue = "Yes";
+          var session = getCookie('sessionId');
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*",
+              "Cache-Control": "no-cache",
+              "Connection": "keep-alive"
+            },
+            "data": {
+              "query": "mutation {\n  addPrometheusData(\n    metricData: [\n    \t{\n        key: \"eventId\", \n        value: \""+eventId+"\"\n      }, \n      {\n        key: \"selectedvalue\", \n        value: \""+selectedvalue+"\"\n      }, \n      {\n        key: \"source\", \n        value: \""+source+"\"\n      }, \n      {\n        key: \"createdat\", \n        value: \""+timestamp+"\"\n      }, \n      {\n        key: \"eventName\", \n        value: \""+eventName+"\"\n      }, \n      {\n        key: \"userId\", \n        value: \""+personid+"\"\n      }\n    ], \n    pushGatewayPort: \"\", \n    prometheusJobName: \""+ metricName +"\", \n    metricName: \""+metricName+"\") {\n    status\n    message\n    errorCode\n  }\n}"
+            }
+          }
+          console.log("mutation {\n  addPrometheusData(\n    metricData: [\n    \t{\n        key: \"eventId\", \n        value: \""+eventId+"\"\n      }, \n      {\n        key: \"selectedvalue\", \n        value: \""+selectedvalue+"\"\n      }, \n      {\n        key: \"source\", \n        value: \""+source+"\"\n      }, \n      {\n        key: \"createdat\", \n        value: \""+timestamp+"\"\n      }, \n      {\n        key: \"eventName\", \n        value: \""+eventName+"\"\n      }, \n      {\n        key: \"userId\", \n        value: \""+personid+"\"\n      }\n    ], \n    pushGatewayPort: \"\", \n    prometheusJobName: \""+ metricName +"\", \n    metricName: \""+metricName+"\") {\n    status\n    message\n    errorCode\n  }\n}");
+          $.ajax(settings).done(function (response) {
+          if(response.data.addPrometheusData.status == "SUCCESS")
+          {
+              $('#yes-{{ .questionCode }}').css("background", "#fff"); 
+              $("#yes-{{ .questionCode }}" ).addClass("activebtn");
+              $("#no-{{ .questionCode }}").removeClass("blackText"); 
+              $("#no-{{ .questionCode }}").removeAttr("style");
+              /// Get data starts here ////   
+                setTimeout(function(){
+                var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "{{ $.Site.Params.GraphQLUrl }}",
+                  "method": "POST",
+                  "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "*/*",
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive"
+                  },
+                  "data": {
+                    "query": "query{\n  getPromData(metricName:\""+ metricName +"\",metricQuery:\"{eventId=\\\""+eventId+"\\\"}[1y]\",groupByParam:[\"userId\",\"eventId\"]){\n    prometheusData\n    status\n  }\n}"
+                  }
+                }
+                $.ajax(settings).done(function (response) {
+                if(response.data.getPromData.status == "success")
+                  {
+                  var JSONData = JSON.parse(response.data.getPromData.prometheusData);
+                  if(JSONData.length > 0)
+                  {
+                      var count=0;
+                      var nocount=0;
+                      for(i =0; i< (JSONData.length);i++)
+                      {
+                          if(JSONData[i]['selectedvalue'] == "Yes")
+                              count++;  
+                          else if(JSONData[i]['selectedvalue'] == "No")
+                              nocount++;                   
+                      }  
+                      $('#{{ .questionCode }}-yes-count').html(count);
+                      $('#{{ .questionCode }}-no-count').html(nocount);
+                      var totalCount = count + nocount;
+                      var yesPercent = (count*100)/totalCount;
+                      var noPercent = (nocount*100)/totalCount;
+                      $('#{{ .questionCode }}-yes-count').html(count);
+                      $('#{{ .questionCode }}-no-count').html(nocount); 
+                      $('#{{ .questionCode }}-total-count').html(totalCount);
+                      $('#{{ .questionCode }}-yes-count-percent').html(Math.floor(yesPercent)+'%');
+                      $('#{{ .questionCode }}-no-count-percent').html(Math.floor(noPercent)+'%');                
+                      document.getElementById("{{ .questionCode }}-yes-count-width").style.width = Math.floor(yesPercent)+"%";
+                      document.getElementById("{{ .questionCode }}-no-count-width").style.width = Math.floor(noPercent)+"%";  
+                        $('#{{ .questionCode }}-no-count-percent').show();
+                        $('#{{ .questionCode }}-no-count').show();
+                        $("#{{ .questionCode }}-no-brace").show();
+                        $("#{{ .questionCode }}-no-brace-close").show();
+                        $('#{{ .questionCode }}-yes-count-percent').show();
+                        $('#{{ .questionCode }}-yes-count').show();
+                        $("#{{ .questionCode }}-yes-brace").show();
+                        $("#{{ .questionCode }}-yes-brace-close").show();
+                      if (noPercent == 0){
+                        $('#{{ .questionCode }}-no-count-percent').hide();
+                        $('#{{ .questionCode }}-no-count').hide();
+                        $("#{{ .questionCode }}-no-brace").hide();
+                        $("#{{ .questionCode }}-no-brace-close").hide();                        
+                      }
+                      if (yesPercent == 0){
+                        $('#{{ .questionCode }}-yes-count-percent').hide();
+                        $('#{{ .questionCode }}-yes-count').hide();
+                        $("#{{ .questionCode }}-yes-brace").hide();
+                        $("#{{ .questionCode }}-yes-brace-close").hide();                     
+                      }          
+                  } else {              
+                      $('#{{ .questionCode }}-yes-count-percent').hide();                
+                      $('#{{ .questionCode }}-no-count-percent').hide();
+                      $('#{{ .questionCode }}-yes-count').hide();                
+                      $('#{{ .questionCode }}-no-count').hide(); 
+                      $("#{{ .questionCode }}-yes-brace").hide();
+                      $("#{{ .questionCode }}-yes-brace-close").hide();
+                      $("#{{ .questionCode }}-no-brace").hide();
+                      $("#{{ .questionCode }}-no-brace-close").hide();
+                      $(".{{ .questionCode }}-yes").hide();
+                  }
+                }
+              });
+      /// Get data ends here ////    
+ }, 5000);       
+          }
+        });
+        }
+        else
+        {
+          if (getCookie('personid') == null)
+          $('#loginModalCenter').modal('toggle');
+          else
+          $('#reLoginModalCenter').modal('toggle');
+        }
+        });
+/// Yes Push data ends here ////
+/// No Push data starts here ////
+      $("#no-{{ .questionCode }}").on("click", function (e) { 
+        var timestamp = Date.now();           
+        var metricName = "medigy_qual_exp_events_{{ .localQuestionCode }}";
+        var personid = getCookie('personid');
+        if( personid != '' && personid != null&& getCookie('sessionId')!= null && getCookie('sessionId')!= '' ) {
+          $(this).addClass("checked");
+          $(this).css('cursor', 'default');
+          var eventId = $(this).attr('data-id');
+          var source = "OpenProject-"+eventId;
+          var eventName = $(this).attr('data-name');
+          var selectedvalue = "No";
+          var session = getCookie('sessionId');
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*",
+              "Cache-Control": "no-cache",
+              "Connection": "keep-alive"
+            },
+            "data": {
+              "query": "mutation {\n  addPrometheusData(\n    metricData: [\n    \t{\n        key: \"eventId\", \n        value: \""+eventId+"\"\n      }, \n      {\n        key: \"eventName\", \n        value: \""+eventName+"\"\n      }, \n      {\n        key: \"createdat\", \n        value: \""+timestamp+"\"\n      }, \n      {\n        key: \"source\", \n        value: \""+source+"\"\n      }, \n      {\n        key: \"selectedvalue\", \n        value: \""+selectedvalue+"\"\n      }, \n      {\n        key: \"userId\", \n        value: \""+personid+"\"\n      }\n    ], \n    pushGatewayPort: \"\", \n    prometheusJobName: \""+ metricName +"\", \n    metricName: \""+ metricName +"\") {\n    status\n    message\n    errorCode\n  }\n}"
+            }
+          }
+          $.ajax(settings).done(function (response) {
+          if(response.data.addPrometheusData.status == "SUCCESS")
+          {
+              $('#no-{{ .questionCode }}').css("background", "#fff");
+              $("#no-{{ .questionCode }}" ).addClass("activebtn");
+              $("#yes-{{ .questionCode }}").removeAttr("style");
+              /// Get data starts here ////   
+                setTimeout(function(){
+                var settings = {
+                  "async": true,
+                  "crossDomain": true,
+                  "url": "{{ $.Site.Params.GraphQLUrl }}",
+                  "method": "POST",
+                  "headers": {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "*/*",
+                    "Cache-Control": "no-cache",
+                    "Connection": "keep-alive"
+                  },
+                  "data": {
+                    "query": "query{\n  getPromData(metricName:\""+ metricName +"\",metricQuery:\"{eventId=\\\""+eventId+"\\\"}[1y]\",groupByParam:[\"userId\",\"eventId\"]){\n    prometheusData\n    status\n  }\n}"
+                  }
+                }
+                $.ajax(settings).done(function (response) {
+                if(response.data.getPromData.status == "success")
+                  {
+                  var JSONData = JSON.parse(response.data.getPromData.prometheusData);
+                  if(JSONData.length > 0)
+                  {
+                      var count=0;
+                      var nocount=0;
+                      for(i =0; i< (JSONData.length);i++)
+                      {
+                          if(JSONData[i]['selectedvalue'] == "Yes")
+                              count++;  
+                          else if(JSONData[i]['selectedvalue'] == "No")
+                              nocount++;                   
+                      }  
+                      $('#{{ .questionCode }}-yes-count').html(count);
+                      $('#{{ .questionCode }}-no-count').html(nocount);
+                      var totalCount = count + nocount;
+                      var yesPercent = (count*100)/totalCount;
+                      var noPercent = (nocount*100)/totalCount;
+                      $('#{{ .questionCode }}-yes-count').html(count);
+                      $('#{{ .questionCode }}-no-count').html(nocount); 
+                      $('#{{ .questionCode }}-total-count').html(totalCount);
+                      $('#{{ .questionCode }}-yes-count-percent').html(Math.floor(yesPercent)+'%');
+                      $('#{{ .questionCode }}-no-count-percent').html(Math.floor(noPercent)+'%');                
+                      document.getElementById("{{ .questionCode }}-yes-count-width").style.width = Math.floor(yesPercent)+"%";
+                      document.getElementById("{{ .questionCode }}-no-count-width").style.width = Math.floor(noPercent)+"%";  
+                        $('#{{ .questionCode }}-no-count-percent').show();
+                        $('#{{ .questionCode }}-no-count').show();
+                        $("#{{ .questionCode }}-no-brace").show();
+                        $("#{{ .questionCode }}-no-brace-close").show();
+                        $('#{{ .questionCode }}-yes-count-percent').show();
+                        $('#{{ .questionCode }}-yes-count').show();
+                        $("#{{ .questionCode }}-yes-brace").show();
+                        $("#{{ .questionCode }}-yes-brace-close").show();
+                      if (noPercent == 0){
+                        $('#{{ .questionCode }}-no-count-percent').hide();
+                        $('#{{ .questionCode }}-no-count').hide();
+                        $("#{{ .questionCode }}-no-brace").hide();
+                        $("#{{ .questionCode }}-no-brace-close").hide();                        
+                      }
+                      if (yesPercent == 0){
+                        $('#{{ .questionCode }}-yes-count-percent').hide();
+                        $('#{{ .questionCode }}-yes-count').hide();
+                        $("#{{ .questionCode }}-yes-brace").hide();
+                        $("#{{ .questionCode }}-yes-brace-close").hide();                     
+                      }          
+                  } else {              
+                      $('#{{ .questionCode }}-yes-count-percent').hide();                
+                      $('#{{ .questionCode }}-no-count-percent').hide();
+                      $('#{{ .questionCode }}-yes-count').hide();                
+                      $('#{{ .questionCode }}-no-count').hide(); 
+                      $("#{{ .questionCode }}-yes-brace").hide();
+                      $("#{{ .questionCode }}-yes-brace-close").hide();
+                      $("#{{ .questionCode }}-no-brace").hide();
+                      $("#{{ .questionCode }}-no-brace-close").hide();
+                      $(".{{ .questionCode }}-yes").hide();
+                  }
+                }
+              });
+      /// Get data ends here ////
+ }, 5000);
+          }
+        });
+        }
+          else
+          {
+            if (getCookie('personid') == null)
+            $('#loginModalCenter').modal('toggle');
+            else
+            $('#reLoginModalCenter').modal('toggle');
+          }
+      });
+/// No Push data ends here ////
+/// Get data starts here ////   
+          var metricName = "medigy_qual_exp_events_{{ .localQuestionCode }}";
+          var eventId = "{{ $dataId }}";
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*",
+              "Cache-Control": "no-cache",
+              "Connection": "keep-alive"
+            },
+            "data": {
+              "query": "query{\n  getPromData(metricName:\""+ metricName +"\",metricQuery:\"{eventId=\\\""+eventId+"\\\"}[1y]\",groupByParam:[\"userId\",\"eventId\"]){\n    prometheusData\n    status\n  }\n}"
+            }
+          }
+          console.log("query{\n  getPromData(metricName:\""+ metricName +"\",metricQuery:\"{eventId=\\\""+eventId+"\\\"}[1y]\",groupByParam:[\"userId\",\"eventId\"]){\n    prometheusData\n    status\n  }\n}");
+          $.ajax(settings).done(function (response) {
+          if(response.data.getPromData.status == "success")
+            {
+            var JSONData = JSON.parse(response.data.getPromData.prometheusData);
+            if(JSONData.length > 0)
+            {
+                var count=0;
+                var nocount=0;
+                for(i =0; i< (JSONData.length);i++)
+                {
+                    if(JSONData[i]['selectedvalue'] == "Yes")
+                        count++;  
+                    else if(JSONData[i]['selectedvalue'] == "No")
+                        nocount++;                   
+                }  
+                $('#{{ .questionCode }}-yes-count').html(count);
+                $('#{{ .questionCode }}-no-count').html(nocount);
+                var totalCount = count + nocount;
+                var yesPercent = (count*100)/totalCount;
+                var noPercent = (nocount*100)/totalCount;
+                $('#{{ .questionCode }}-yes-count').html(count);
+                $('#{{ .questionCode }}-no-count').html(nocount); 
+                $('#{{ .questionCode }}-total-count').html(totalCount);
+                $('#{{ .questionCode }}-yes-count-percent').html(Math.floor(yesPercent)+'%');
+                $('#{{ .questionCode }}-no-count-percent').html(Math.floor(noPercent)+'%');                
+                document.getElementById("{{ .questionCode }}-yes-count-width").style.width = Math.floor(yesPercent)+"%";
+                document.getElementById("{{ .questionCode }}-no-count-width").style.width = Math.floor(noPercent)+"%";  
+                if (noPercent == 0){
+                  $('#{{ .questionCode }}-no-count-percent').hide();
+                  $('#{{ .questionCode }}-no-count').hide();
+                  $("#{{ .questionCode }}-no-brace").hide();
+                  $("#{{ .questionCode }}-no-brace-close").hide();                 
+                }
+                if (yesPercent == 0){
+                  $('#{{ .questionCode }}-yes-count-percent').hide();
+                  $('#{{ .questionCode }}-yes-count').hide();
+                  $("#{{ .questionCode }}-yes-brace").hide();
+                  $("#{{ .questionCode }}-yes-brace-close").hide();                
+                }          
+            } else {              
+                $('#{{ .questionCode }}-yes-count-percent').hide();                
+                $('#{{ .questionCode }}-no-count-percent').hide();
+                $('#{{ .questionCode }}-yes-count').hide();                
+                $('#{{ .questionCode }}-no-count').hide(); 
+                $("#{{ .questionCode }}-yes-brace").hide();
+                $("#{{ .questionCode }}-yes-brace-close").hide();
+                $("#{{ .questionCode }}-no-brace").hide();
+                $("#{{ .questionCode }}-no-brace-close").hide();
+                $(".{{ .questionCode }}-yes").hide();
+            }
+          }
+        });
+/// Get data ends here ////
+/// Button status starts here //// 
+        var metricName = "medigy_qual_exp_events_{{ .questionCode }}";
+        var personid = getCookie('personid');  
+        if( personid != '' && personid != null)
+        {                 
+          var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "{{ $.Site.Params.GraphQLUrl }}",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "Accept": "*/*",
+              "Cache-Control": "no-cache",
+              "Connection": "keep-alive"
+            },
+            "data": {
+              "query": "query{\n  getPromData(metricName:\""+ metricName +"\",metricQuery:\"{userId=\\\""+personid+"\\\",eventId=\\\""+eventId+"\\\"}[2y]\"){\n    prometheusData\n    status\n  }\n}"
+            }
+          }  
+          $.ajax(settings).done(function (response) {
+            if(response.data.getPromData.status == "success"){
+              var JSONData = JSON.parse(response.data.getPromData.prometheusData);
+              if(JSONData.length > 0)
+              {
+                  for(i =0; i< (JSONData.length);i++)
+                  {
+                      var selectedvalue = JSONData[0]['selectedvalue'];
+                      var eventid = JSONData[0]['eventId'];                  
+                  } 
+              if(eventid == eventId){
+                  if(selectedvalue == "Yes"){
+                    $('#yes-{{ .questionCode }}').css("background", "#fff");
+                    $("#yes-{{ .questionCode }}" ).addClass("blackText");                
+                  }
+                  else if(selectedvalue == "No"){
+                    $('#no-{{ .questionCode }}').css("background", "#fff");
+                    $("#no-{{ .questionCode }}" ).addClass("blackText");             
+                  }
+              }
+              }
+            }
+          });
+          var cancelledStatus = {{ $Cancelled }};
+          if(cancelledStatus == "True"){
+            $("#yes-{{ .questionCode }}").attr("disabled", true);
+            $("#no-{{ .questionCode }}").attr("disabled", true);
+          }
+        }
+/// button status ends here ////
+</script>
+{{ end }}
+{{ end }}

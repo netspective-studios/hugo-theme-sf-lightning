@@ -1,0 +1,113 @@
+{{ define "main" }}
+<section class="blog-post">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="post-header">
+					<h1 itemprop="name" id="title">{{ .Title }} </h1>
+					<ul class="list-inline d-block pb-0 border-bottom-0 mb-1" style="border-bottom:0px !important">
+						<li class="list-inline-item"><i class="fa fa-user-circle"></i> <em>{{ .Params.Author }}</em>
+						</li>
+						<li class="list-inline-item"><i class="fa fa-calendar"></i>
+							<em>{{ .Date.Format "January 2, 2006" }} </em></li>
+					</ul>
+					{{ if .Params.categories }}
+					<ul class="list-inline d-block pb-3 border-bottom mb-3">
+						<li class="list-inline-item"><i class="fa fa-tags"></i> Topics :</li>
+						{{ $taxo := "categories" }}
+						{{ range .Param $taxo }}
+						{{ $name := . }}
+						{{ with $.Site.GetPage (printf "/%s/%s" $taxo ($name | urlize)) }}
+						<li class="list-inline-item"><a href="{{ .Permalink  }}">{{ $name }} </a></li>
+						<!--<li class="list-inline-item"><a href="/communities/security-new/categories/{{ lower  (replaceRE "(\\s)" "" $name)  }}">{{ $name }}</a></li>-->
+						{{ end }}
+						{{ end }}
+					</ul>
+					{{ end }}
+
+				</div>
+
+				{{if .Params.featuredimage}}
+				{{ if ne .Params.contentcategories "security-new-infographics" }}
+				<div class="image-post">
+					{{ if .Params.featuredimage.href }}
+					{{ $fpath:=  .File.Dir }}
+					{{ $fileDir := replace $fpath "\\" "/"}}
+					<img src="/{{$fileDir}}{{ .Params.featuredImage.href  }}" alt="{{ .Title }}"
+						onerror="this.onerror=null; this.src='{{ print ( $.Scratch.Get "default-image" )  }}'">
+					{{ else if  .Params.featuredimage }}
+					{{ $fpath:=  .File.Dir }}
+					{{ $fileDir := replace $fpath "\\" "/"}}
+					<img src="/{{$fileDir}}{{ .Params.featuredImage  }}" alt="{{ .Title }}"
+						onerror="this.onerror=null; this.src='{{ print ( $.Scratch.Get "default-image" )  }}'">
+					{{ else }}
+					<img src="{{ print ( $.Scratch.Get "default-image" )  }}" alt="{{ .Title }}">
+					{{ end }}
+
+				</div>
+				{{ end }}
+				{{ end }}
+				{{ if eq .Params.contentcategories "security-new-infographics" }}
+				<article itemprop="articleBody" id="content" class="w-90 lh-copy" style="text-align: center;">
+					{{ else }}
+					<article itemprop="articleBody" id="content" class="w-90 lh-copy">
+						{{ end }}
+						{{ if ne .Params.contentcategories "medigy-security-infographics" }}
+						{{ .Content }}
+						{{ end }}
+						{{ if eq .Params.contentcategories "security-new-actionablecontent" }}
+						{{ range $elem_index, $sourceUrl := .Params.sourceUrl  }}
+						<span><strong>Source</strong> <a target="_blank" href="{{ $sourceUrl }}">{{ $sourceUrl }}</a>
+						</span>
+						{{ end }}
+						{{ end }}
+						{{ if eq .Params.contentcategories "medigy-security-infographics" }}
+						{{ if .Params.cleanUrl  }}
+						{{ range $elem_index, $cleanUrl := .Params.cleanUrl  }}
+						<span><strong>Source</strong> <a target="_blank" href="{{ $cleanUrl }}">{{ $cleanUrl }}</a>
+						</span>
+						{{ end }}
+						{{else if .Params.sourceUrl  }}
+
+						{{ range $elem_index, $sourceUrl := .Params.sourceUrl  }}
+						<span><strong>Source</strong> <a target="_blank" href="{{ $sourceUrl }}">{{ $sourceUrl }}</a>
+						</span>
+						{{ end }}
+						{{ end }}
+						{{ end }}
+
+					</article>
+			</div>
+
+
+			{{ partial (print ($.Scratch.Get "share") ) . }}
+			{{ partial (print ($.Scratch.Get "pagination-np") ) . }}
+			<!-- {{ partial (print ($.Scratch.Get "related-post") ) . }}  -->
+
+		</div>
+
+		<section id="main" class="mt5">
+
+
+
+
+			<!-- last modified note -->
+			<span class="f6 gray mv3"
+				title="Lastmod: {{ .Lastmod.Format "January 2, 2006" }}. Published at: {{ .PublishDate.Format "2006-01-02" }}.">
+				{{ if ne .Lastmod .PublishDate }}
+				<span class="i">last modified</span> {{ dateFormat "January 2, 2006" .Lastmod }}
+				{{ end }}
+			</span>
+
+
+
+		</section>
+
+	</div>
+</section>
+<script>
+	window.addEventListener('load', (event) => {
+		$("#content p a").attr({ "target": "_blank" });
+	});
+</script>
+{{ end }}

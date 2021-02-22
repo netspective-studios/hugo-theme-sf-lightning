@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partialCached "head.html" . "create-ilm-project-key"}}
+<script>
+  
+  var personid = getCookie('personid');
+  //var tenantId = getCookie('tenantId');
+
+   
+  if (personid == null) {
+    setCookie('prevPage','/create-ilm-project/');
+      window.location.href = '/login';
+  }
+</script>
+<link rel="stylesheet" href="/css/select2.min.css" />
+<script type="text/javascript" src="/js/select2.min.js"></script>
+ 
+
+<body class="single-body">
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partialCached "nav-bar.html" . "create-ilm-project-key" }}
+  <script type="text/javascript" src="/js/tenant.js"></script>
+
+   <script>
+     
+  function base64EncodeUnicode(str) {
+    // First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+    // then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+    utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    });
+
+    return btoa(utf8Bytes);
+  }
+
+var personid = getCookie('personid');
+var firstName = getCookie('firstname');
+var useremail = getCookie('userEmail');
+var deleteproject = getCookie('deleteprojectlist');
+var deleteName = getCookie('deleteprojectname');
+
+
+//alert(personid);
+var sessionId = getCookie('sessionId');
+ 
+ 
+  $(document).ready(function () {
+
+      $("#createproject .form-control").on("keypress", function(e) {
+      if (e.which === 32 && !this.value.length)
+        e.preventDefault();
+     });
+
+    
+
+    if(getCookie('projectId')) {  
+     document.cookie = 'projectId=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+    }
+    if (sessionId == '') {
+       window.location.href = "/";
+     }
+
+
+    if (deleteproject == 'true')  
+{ 
+
+    var notifyMessage = 'ILM Project <b>'+deleteName+'</b> Deleted Successfully'; 
+    $('#deletesucess').html(notifyMessage);
+    $("#deletesucess").addClass('alert alert-success');
+    $('#deletesucess').fadeOut(7300);
+    setCookie('deleteprojectlist', '');
+    setCookie('deleteprojectname', '');
+}
+      $("#clearcreateproject").click(function(){
+
+       
+  
+        $('#projectName').val('');
+        $('#projectDesc').val('');
+        $('#topicsName').val('');
+        $('#searchKeyword').val(''); 
+        $('#communityOffering').val(''); 
+        $('#communityOffering').val('');   
+
+          
+         
+
+      });
+ 
+       
+
+         $(document).ready(function(){
+
+            $('input[type="checkbox"]').click(function(){
+
+              if($("#personalILM").is(':checked')){
+
+                $("#communitySelection").hide();
+                $("#accessibilitySelection").hide();
+
+                
+
+              }
+
+              else
+              {
+
+                $("#communitySelection").show();
+                $("#accessibilitySelection").show();
+
+
+              }
+
+               
+
+            });
+
+            });
+      
+          
+
+    $(".Form_Login_Button").click(function(){
+
+     
+
+      var projectName = $('#projectName').val();
+      var ilmProjectDescr = base64EncodeUnicode($('#projectDesc').val());
+
+      //var ilmProjectDescr = ilmProjectInitialDescr.replace(/   /g,'');
+       
+      //var ilmProjectDescr = $.trim(ilmProjectInitialDescr);
+
+      //console.log('trim data',ilmProjectDescr);
+      //return false;
+       //ilmProjectDesc = projectDesc.replace(/%/g, "percentage");
+       //ilmProjectDescr = base64EncodeUnicode(ilmProjectDesc);
+
+       if($("#personalILM").is(':checked')){
+
+         var projDisplay = 0;
+         var personalIlmProject = "true";
+         var offeringCommunity = '';
+         var institutaionType = "";
+         var tenantId = 0;
+
+       }
+
+       else{
+
+        var projDisplay = $('input[name="optradio"]:checked').val();
+        var offeringCommunity  = $('#communityOffering').val();
+        var personalIlmProject = "false";
+        var institutaionType = "MEDIGY_PROJECT";
+
+        var communityTenant = $( "#communityOffering" ).val();
+               //alert(communityTenant);
+               //return false;
+                
+               if(communityTenant == 'FemTech' )
+               {
+                tenantId = femTechTenantID;
+ 
+
+               }
+               else if(communityTenant == 'Risk and Compliance')
+               {
+                tenantId = riskandComplianceTenantID;
+               }
+
+               else if(communityTenant == 'Security')
+               {
+                tenantId = securityTenantID;
+               }
+
+               else if(communityTenant == 'Pandemic Diseases')
+               {
+                tenantId = pandemicDiseasesTenantID;
+                 
+                setCookie('pandemictenent',tenantId); 
+               }
+               else
+               {
+                tenantId = defaultTenent;
+               }
+
+
+       }
+        
+
+         // var offeringCommunity = "";
+          //var offeringProjectName = ""; 
+          //var communityUrlArray = getUrlVars();
+          
+             
+               
+                //offeringCommunity = communityOfferingArray[0];
+                //offeringProjectName = communityOfferingArray[1];
+ 
+           
+      
+       var categoryArray = $('#topicsName').val();
+          //var catCount = categoryArray.length;
+          //console.log('catarray.....',categoryArray);
+
+          if(categoryArray !== null){ 
+          
+          var category = '';
+
+          for (i = 0; i < categoryArray.length; i++) {
+            var splittedCategory = categoryArray[i].split('$,');
+            category += '\n { type:"topic"\n keyword:"' + splittedCategory[0] + '"}\n ';
+          } 
+          } 
+
+       /*    if (categoryArray.length > 0) {
+          var keyValue = '';
+          for (let i = 0; i < categoryArray.length; i++) {
+            var splittedOption = categoryArray[i].split('$,');
+            keyValue += '"' + splittedOption[1] + '",';
+            sentence = keyValue.replace(/(.+),$/, '$1');
+          } */
+
+        searchKeywordArray = $('#searchKeyword').val().split(',');
+
+          var keyCount = searchKeywordArray.length;
+          var searchKey = '';
+
+          for (i = 0; i < keyCount; i++) {
+            searchKey += '\n { type:"search"\n keyword:"' + searchKeywordArray[i] + '"}\n ';
+          }
+      var subscription = 'subscription:['+searchKey+category+'] \n';
+      console.log("mutation{\n  createProject(projectDetails:{\n    name:\""+projectName+"\"\n    description:\""+ilmProjectDescr+"\"\n    tenantId:\""+tenantId+"\"\n  ilmNature:\""+offeringCommunity+"\"\n createdBy:\""+firstName+"\"\n isPublic:"+projDisplay+" "+subscription+" \n isPersonal:"+personalIlmProject+"}\n email:{\n displayName:\""+firstName+"\"\n, \n email:\""+useremail+"\"\n} authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    status\n    message\n    errorCode\n  }\n}"); //return false;
+     var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "{{ $.Site.Params.GraphQLUrl }}",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": "mutation{\n  createProject(projectDetails:{\n    name:\""+projectName+"\"\n    description:\""+ilmProjectDescr+"\"\n    tenantId:\""+tenantId+"\"\n  ilmNature:\""+offeringCommunity+"\"\n createdBy:\""+firstName+"\"\n isPublic:"+projDisplay+" "+subscription+" \n isPersonal:"+personalIlmProject+"}\n email:{\n displayName:\""+firstName+"\"\n, \n email:\""+useremail+"\"\n}  authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    status\n    message\n    errorCode\n  }\n}"
+  }
+}
+if($('#projectName')[0].reportValidity() && $('#projectDesc')[0].reportValidity() && $('#topicsName')[0].reportValidity()   ){
+    $(this).val("Please wait");
+    $(this).attr('disabled',true);
+    $.ajax(settings).done(function (response) {
+    responseStatus = response.data.createProject.status;
+    responseMessage = response.data.createProject.message;
+
+    if(responseStatus=="Success") {
+
+      {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                        {{ range .items }}
+                            {{ if eq .questionCode "ILM_msgs"}}
+                                {{ range .answers }}
+
+                                    {{ if eq .code "create_ILM_msg"}}
+                                        var displayProjectAdded = {{ .text }}
+                                    {{ end }} 
+                                    
+ 
+                                                                              
+                                {{ end }}  
+                            {{ end }}
+                        {{ end }}
+        {{ end }}
+
+    
+
+    
+    $(".Form_Login_Button").attr('disabled',true);
+    $("#canccel").attr('disabled',true);
+    var notifyMessage = displayProjectAdded; 
+    $('#projectAddedMessage').html(notifyMessage);
+    $('#projectAddedMessage').addClass('pull-right alert alert-success pt-2 pb-2 m-0');
+    $(".Form_Login_Button").val("SAVE");
+    $('#projectAddedMessage').fadeOut(8300);
+    window.setTimeout(function(){$('#addnewproject .close').click();},9400)
+    window.setTimeout(function(){window.location.href = "/modules/innovation-lifecycle-management/"},3900);
+}
+
+else if(responseMessage=="A project with this name already exists. Please try with another name."){
+
+  {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                        {{ range .items }}
+                            {{ if eq .questionCode "ILM_msgs"}}
+                                {{ range .answers }}
+ 
+
+                                    {{ if eq .code "same_project_saving_message"}}
+                                    
+                                        var projectAlreadyExists = {{ .text }}
+                                         
+                                    {{ end }} 
+                                                                              
+                                {{ end }}  
+                            {{ end }}
+                        {{ end }}
+        {{ end }}
+
+  var notifyMessage = projectAlreadyExists;
+  $('#projectAddedMessage').html(notifyMessage);
+  $('#projectAddedMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+  $(".Form_Login_Button").val("SAVE");
+  $('#projectAddedMessage').fadeOut(8300);
+
+
+}
+
+else{
+
+  {{ range last 1 .Site.Data.on_screen_messages_lhc_form.items }}                              
+                        {{ range .items }}
+                            {{ if eq .questionCode "ILM_msgs"}}
+                                {{ range .answers }}
+ 
+
+                                    {{ if eq .code "no_permission_to_create_ilm_message"}}
+                                    
+                                        var projectPermission = {{ .text }}
+                                         
+                                    {{ end }} 
+                                                                              
+                                {{ end }}  
+                            {{ end }}
+                        {{ end }}
+        {{ end }}
+
+  var notifyMessage = projectPermission;
+  $('#projectAddedMessage').html(notifyMessage);
+  $('#projectAddedMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+  $(".Form_Login_Button").val("SAVE");
+  $('#projectAddedMessage').fadeOut(8300);
+  //window.setTimeout(function(){window.location.href=window.location.href},9400);
+  
+   
+   
+   }
+     
+  });
+}
+});
+   
+  
+
+    var tagArray = '';
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "{{ $.Site.Params.OWLApiUrl }}?query={getClassHierarchy%28rootClassName:%22Collection%22,searchParam:%22%22%29{parentclassname%20parentclasslabel%20%20classname%20%20%20%20label%20%20%20%20%20subclassname%20%20%20%20%20subclasslabel}}",
+      "method": "GET",
+      "headers": {
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Host": "{{ $.Site.Params.OWLApiUrl }}",
+        "accept-encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+
+      //console.log(response);
+      let myArray = response.data.getClassHierarchy;
+      var catOption = '';
+      for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i].subclassname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].subclasslabel;
+          var key = myArray[i].subclassname;
+        }
+        else if (myArray[i].classname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].label;
+          var key = myArray[i].classname;
+        }
+        else {
+          var label = myArray[i].parentclasslabel;
+          var key = '';//myArray[i].parentclassname;
+        }
+
+        catOption += '<option value="' + label + "$," + key + '">' + label + '</option>';
+
+      }
+      $('#topicsName').html(catOption);
+
+    });
+
+$('#topicsName').select2();
+
+  
+
+  $('#createILMbutton').click(function(){
+    $('.select2').css("width", "100%"); 
+
+  });
+
+   
+ 
+
+
+});
+</script>
+ 
+
+  <section class="about-wrapper">
+    <main class="container search-results-row pt-2">
+      <div id="breadcrumbs" class="new-ofer-breadcrumbs">
+        <nav aria-label="breadcrumb mx-auto" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="/">Home</a>
+            </li>
+              <li class="breadcrumb-item"><a href="/modules/innovation-lifecycle-management/">Innovation Lifecycle Management (ILM) Project</a></li>
+            <li class="breadcrumb-item"><a href="/create-ilm-project">Create Innovation Lifecycle Management (ILM) Project</a></li>
+          </ol>
+        </nav>
+      </div>
+      
+ 
+ 
+    <div class="top-10-most-row">
+      
+        <div class="tab-content">
+   
+
+          <div class="tab-pane fade active show" id="awards" role="tabpanel" aria-labelledby="awards-tab">
+            <header class="post-header">
+         <h2 class="post-title">Create Innovation Lifecycle Management (ILM) Project </h2>
+  
+            </header>
+            <div>
+              <div id="sendMessage4" class="alert alert-success" style="display:none"></div>
+              <div  id="createproject">
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Project Name</span> 
+                  <span class="label-required">(required)</span>                  
+                  </label>
+                  <div class="col-md-9">
+                       <input name = "projectName" id = "projectName" type="text" class="form-control" placeholder="Enter Project Name" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Description</span>
+                  <span class="label-required">(required)</span>                   
+                  </label>
+                  <div class="col-md-9">
+                   <textarea rows="4" cols="50"  name = "projectDesc" id = "projectDesc" class="form-control" required></textarea>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Topics</span> <a href="javascript:void(0);" data-toggle="tooltip" title="Please select the best suited topics for your project">
+                      <i class="fas fa-question-circle"></i></a>
+                      <span class="label-required">(required)</span>                   
+              </label>
+                  <div class="col-md-9">
+                    <select required class="form-control"  name="topicsName" id="topicsName" multiple title="Please select the best suited topics for your project">
+                      </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Search Keyword</span>                   
+                  </label>
+                  <div class="col-md-9">
+                 <input name="searchKeyword" id="searchKeyword" type="text" class="form-control" title="Enter each search keyword with comma(,) seperation"
+                        placeholder="Enter Search Keyword with comma(,) seperated">
+                  </div>
+                </div>
+                <div class="form-group row"></div>
+
+                <div class="form-group row">
+                  <label class="col-md-3">
+                  <span>Do you want to make it personal ILM?</span>                   
+                  </label>
+                  <div class="col-md-9">
+
+                    <label class="radio-holder-col"><input id = "personalILM" name = "personalILM" type="checkbox" value="personalILM"> Personal</label>
+
+                     
+
+                 </div>
+                </div>
+
+                <div class="form-group row" id = "communitySelection">
+                  <label class="col-md-3">
+                  <span>Select Community</span>                   
+                  </label>
+                  <div class="col-md-9">
+                    <select class="form-control" name="communityOffering" id="communityOffering" title="Please select the best suited topics for your offering">
+                      <option>Select Any Community</option>
+                      {{ range first 1 .Site.Data.community_data_lhc_form.items }}
+                      
+                        {{ range .items }}
+                         
+                           
+                            <option value="{{.question }}">{{ .question }}</option>
+                           
+                        {{ end }}
+                      {{ end }}
+                    </select> 
+                  </div>
+                </div>
+              
+                
+                  <div class="form-group row" id = "accessibilitySelection">
+                  <label class="col-md-3">
+                  <span>Accessibility</span>                   
+                  </label>
+                  <div class="col-md-9">
+
+                  <label class="radio-holder-col"><input type="radio" name="optradio" checked="" value="1"> Public</label>
+                  <label class="radio-holder-col"><input type="radio" name="optradio" value="0"> Private</label>
+
+                 </div>
+                </div>
+                <input type="hidden" name="formentry" id="formentry" value="true">
+                <div class="form-group row">
+                  <label class="col-md-3"></label>
+                  <div class="col-md-9">
+                    <input type="submit" value="SAVE" class="btn btn-primary add-new-bt Form_Login_Button">
+                    <input id = "clearcreateproject" type="reset" value="Cancel" class="btn btn-primary add-new-bt grey-bg-bt">
+                    <span id = "projectAddedMessage"  class="text-center green" role="alert"></span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+           
+          
+        
+           
+        </div>
+      </div>
+                    
+  
+         
+          
+         
+
+
+
+
+    </main>
+  </section>
+  {{ partialCached "footer.html" . }}
+</body>
+
+</html>

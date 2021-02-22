@@ -1,0 +1,60 @@
+# This is a [Just command runner](https://github.com/casey/just) file.
+# Since we are using `psql` CLI and this Justfile uses only a single database, the 
+# `.env` file in this directory uses `psql`'s environment variables for credentials.
+#
+# The following parameters are expected to come from `.env`
+# - PG* PostgreSQL arguments for `psql`
+# - MIGRATIONS_HOME path to the numbered SQL migration files
+#
+# None of the `psql` commands below have any credentials supplied because the .env
+# file supplies them.
+
+inspect-entries: _validate-env
+    #!/usr/bin/env bash
+    set -euo pipefail
+    psql -c "select entry_link_slug, entry_title from medigy_pca_industry_feeds_mf_entries_health_it limit 25"
+
+inspect-feed-icons: _validate-env
+    #!/usr/bin/env bash
+    set -euo pipefail
+    psql -c "select feed_icon_file_name from medigy_pca_industry_feeds_mf_feed_icons_health_it"    
+
+describe: _validate-env
+    #!/usr/bin/env bash
+    set -euo pipefail
+    for object in "medigy_pca_industry_feeds_mf_entries_health_it" "medigy_pca_industry_feeds_mf_feed_icons_health_it"; do 
+    echo $object
+        psql -c "SELECT column_name, data_type FROM information_schema.columns WHERE table_name = '$object';"
+    done;
+
+# Remove all PostgreSQL objects from the database that were created by this project
+db-clean: _validate-env
+    @psql -f $MIGRATIONS_HOME/clean.destructive.sql
+
+# Create all PostgreSQL objects required by this project
+db-migrate: _validate-env
+    #!/usr/bin/env bash
+    set -euo pipefail
+    for recipe in `ls $MIGRATIONS_HOME/*.sql | egrep "^$MIGRATIONS_HOME/[0-9]+" | sort -V`; do 
+        psql -f $recipe
+    done;
+
+# Show all dependencies
+doctor:
+    @psql -V
+
+# Make sure credentails are available    
+_validate-env:
+    #!/usr/bin/env bash
+    set -euo pipefail
+    if [ -f .env ]; then
+        echo "Found .env"
+    else 
+        echo ".env does not exist, run 'cp sample.env .env' and add credentials"
+        exit 1
+    fi
+
+# Setup all dependencies
+setup-dependencies:
+    sudo apt-get update
+    sudo apt-get -y install postgresql-client

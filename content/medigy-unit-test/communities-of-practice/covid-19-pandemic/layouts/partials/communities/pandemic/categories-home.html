@@ -1,0 +1,133 @@
+{{ $currentTag := index (last 1 (split (delimit (split .Permalink "/") "," "") ",")) 0 }}
+<section class="container-fluid categories categories-new">
+	<div class="container">
+		<div class="row"> 
+            <div class="col-md-8">
+                <div class="pandemic-quick-links">
+                    <strong>Quick Links:</strong> 
+                    <span class="q-links-right">
+                        <a href="/communities/covid-19-pandemic/curated-news" onclick="dataLayer.push({'event': 'pandemicquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Curated News','gtmPersonid':getCookie('userEmail')})">Curated News</a> <span class="space-line">|</span> 
+                        <a href="/communities/covid-19-pandemic/vaccine-drugs-in-the-pipeline" onclick="dataLayer.push({'event': 'pandemicquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Vaccines/Drugs in the Pipeline','gtmPersonid':getCookie('userEmail')})">Vaccines/Drugs in the Pipeline</a> <span class="space-line">|</span> 
+                        <a href="/communities/covid-19-pandemic/recent-updates-reports" onclick="dataLayer.push({'event': 'pandemicquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Recent Updates and Reports','gtmPersonid':getCookie('userEmail')})">Recent Updates and Reports</a> <span class="space-line">|</span> 
+                        <a href="/communities/covid-19-pandemic/curated-video" onclick="dataLayer.push({'event': 'pandemicquicklink','gtmPage': 'communities-{{ $currentTag }}','gtmTitle': 'Curated Videos','gtmPersonid':getCookie('userEmail')})">Curated Videos</a> <span class="space-line">|</span> 
+                        <!-- <a href="#trending-tweets">#trending on twitter</a> <span class="space-line">|</span>  -->
+                        
+                        
+                    </span>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="pandemic-content-left-secion">   
+			        {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated News" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/curated-news/" "contentcategories" "medigy-pandemic-curated-news" "featuredImage" "/communities/pandemic/images/featuredimage/curated-news.png" "descptText" "A well researched and compiled collection of curated articles that contain information about COVID-19 such as guidelines from CDC," "context" .  ) . $  }}              
+                </div>
+                <div class="pandemic-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Vaccines/Drugs in the Pipeline" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/vaccine-drugs-in-the-pipeline/" "contentcategories" "medigy-pandemic-vaccine-drugs-in-the-pipeline" "featuredImage" "/communities/pandemic/images/featuredimage/vaccine-drugs-in-the-pipeline.png" "descptText" "This section of the community focuses on news about the potential vaccinesa and other medications for COVID-19 that are" "context" .  ) . $  }}                               
+                </div>
+                <div class="pandemic-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Recent Updates and Reports" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/recent-updates-reports/" "contentcategories" "medigy-pandemic-recent-updates-and-reports" "featuredImage" "/communities/pandemic/images/featuredimage/recent-updates.png" "descptText" "The Recent Updates and Reports section puts together reports, fact sheet and other similar data so that visitors can view summaries"  "context" .  ) . $  }}              
+                </div>
+                <div class="pandemic-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Infographics" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/infographics/" "contentcategories" "medigy-pandemic-infographics" "featuredImage" "/communities/pandemic/images/featuredimage/infographics.png" "descptText" "The infographic section of the Pandemic community intends to present complex information around COVID-19" "context" .  ) . $  }}              
+                </div>
+                <div class="pandemic-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Offerings" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/curated-offering/" "contentcategories" "medigy-pandemic-curated-offering" "featuredImage" "/communities/pandemic/images/featuredimage/offerings.png" "descptText" "With people dying by tens of thousands, there isn't time to review all the products, solutions, and services that help out with COVID-19." "context" .  ) . $  }} 
+                </div>
+                <div class="pandemic-content-left-secion">
+                    {{ partial (print ($.Scratch.Get "bundle") ) (dict "headText" "Curated Videos" "currentTag" $currentTag "href" "/communities/covid-19-pandemic/curated-video/" "contentcategories" "medigy-pandemic-curated-video" "featuredImage" "/communities/pandemic/images/featuredimage/videos.png" "descptText" "This section consists of hand-picked select videos. These storyteller videos make information about the COVID-19 Pandemic" "context" .  ) . $  }}              			
+                </div>
+            </div>
+            <div class="col-md-4 pandemic-content-right-secion">
+                <div class="pandemic-content-right-secion-ad">
+                    <div class="pandemic-content-right-secion-buttons">
+                        <a target="_blank" id="req_ppe_donataion" href="https://getusppe.org/" class="pandemic-content-right-secion-btn-1">Request for PPE Donation</a>
+                        <a href="https://www.cdc.gov/coronavirus/2019-ncov/symptoms-testing/testing.html" target="_blank" class="pandemic-content-right-secion-btn-2">Testing for COVID-19</a>
+                    </div>
+                </div>
+                {{ if eq $.Site.Params.modules.ilmProject.enabled true }}
+
+                {{ partial (print ($.Scratch.Get "ilm-projects")) }} 
+
+                {{ end }}
+            </div>
+		</div>
+		      
+        <!-- <div class="pandemic-twitter-widget-row" id="trending-tweets">
+            <div class="pandemic-content-left-secion">
+                <div class="pandemic-content-left-secion-header">
+                    <div class="row">
+                        <div class="col-lg-4 col-8">
+                            <span class="pandemic-content-left-secion-header-title">
+                                <a href="#">#trending on twitter</a>
+                            </span>
+                        </div>
+                        <div class="col-lg-8 col-4 pandemic-content-left-secion-header-more">
+                        </div>
+                    </div>
+                </div>            
+                <div class="pandemic-content-left-secion-content-row">
+                    <div class="row">
+                        <div class="col-md-4" >
+                            <div class="pandemic-twitter-widget-scroll"id="tweets-pandemic"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="pandemic-twitter-widget-scroll"id="tweets-pandemic-cl-1"></div>
+                        </div>
+                        <div class="col-md-4" >
+                            <div class="pandemic-twitter-widget-scroll"id="tweets-pandemic-cl-2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div> -->
+	</div>
+</section>
+<!-- <script>
+$(document).ready(function () {
+    
+    var ws = new WebSocket('wss://twitter-scraper.medigy.com:8090');
+    let count = 0;
+    ws.onmessage = function (medigycl1Tweets) {
+        const tweets = medigycl1Tweets.data;
+        const tweetId = tweets.split(' ')[0];
+        const tweetDivId = 'tweets-pandemic';
+        if (count < 50) {
+            createTweet(tweetId,tweetDivId);
+        }
+        count = count + 1;
+    };
+
+    var ws_cl_1 = new WebSocket('wss://twitter-scraper.medigy.com:8091');
+    let count_cl_1 = 0;
+    ws_cl_1.onmessage = function (medigycl1Tweets) {
+        const tweetscl1 = medigycl1Tweets.data;
+        const tweetIdcl1 = tweetscl1.split(' ')[0];
+        const tweetDivIdcl1 = 'tweets-pandemic-cl-1';
+        if (count_cl_1 < 50) {
+            createTweet(tweetIdcl1,tweetDivIdcl1);
+        }
+        count_cl_1 = count_cl_1 + 1;
+    };
+
+    var ws_cl_2 = new WebSocket('wss://twitter-scraper.medigy.com:8092');
+    let count_cl_2 = 0;
+    ws_cl_2.onmessage = function (medigycl2Tweets) {
+        const tweetscl2 = medigycl2Tweets.data;
+        const tweetIdcl2 = tweetscl2.split(' ')[0];
+        const tweetDivIdcl2 = 'tweets-pandemic-cl-2';
+        if (count_cl_2 < 50) {
+            createTweet(tweetIdcl2,tweetDivIdcl2);
+        }
+        count_cl_2 = count_cl_2 + 1;
+    };
+
+});
+createTweet = (tweetId,tweetDivId) => {
+    twttr.widgets.createTweet(tweetId,
+        document.getElementById(tweetDivId),
+        {
+            align: 'left'
+        })
+        .then(function (el) {
+            // console.log("Tweet displayed..")
+        });
+}
+</script> -->

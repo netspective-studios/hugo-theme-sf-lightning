@@ -1,0 +1,14 @@
+--- 
+ title: "Frost & Sullivan: OTT" 
+ classname:  "OTT" 
+ label: "OTT" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Frost_&_Sullivan" 
+ parentclasslabel: "Frost & Sullivan" 
+ equalentCollections: [] 
+ collections: ['Frost & Sullivan: OTT']
+ aliases:  "/topic/frost-sullivan-ott"  
+ searchCategory: "topic" 
+---
+T3ZlciB0aGUgdG9wIChPVFQpIGlzIHRoZSBzdHJlYW1pbmcgbWVkaWEgb3IgdHYgY29udGVudCBwcm92aWRlZCB3aXRoIGEgaGlnaC1zcGVlZCBJbnRlcm5ldCBjb25uZWN0aW9uLiBUaGUgT1RUIHBsYXRmb3JtcyB1c2UgaW50ZXJuZXQtYmFzZWQgZGVsaXZlcnkgc3lzdGVtcyBhbmQgYXZvaWQgdGhpcmQtcGFydHkgbmV0d29ya3MgdGhhdCBlYXJsaWVyIGNvbnZlbnRpb25hbGx5IG1hbmFnZWQgdGhlIG9ubGluZSBjb250ZW50LiAgCkFzIE9UVCBwbGF0Zm9ybXMgbGVhZCB0byB0aWVyZWQgbW9uZXRpemF0aW9uLCBidXNpbmVzcyBkZXZlbG9wZXJzIHNob3VsZCBmb2N1cyBvbiBkeW5hbWljLCBmbGV4aWJsZSBjb3N0LXBsdXMgcHJpY2luZyBzdHJhdGVneSwgdW5kZXJzdGFuZGluZyBjb25zdW1wdGlvbiBhbmQgdXNhZ2UgcGF0dGVybnMsIHVuZGVyc3RhbmRpbmcgZGVlcGVyIGRpZ2l0YWwgY3VzdG9tZXIgcmVsYXRpb25zaGlwcyB2ZXJzdXMgZ2VuZXJhdGluZyBpbnZvaWNlcyBmb3IgdHJhbnNhY3Rpb25zLCBwcmVkaWN0aW5nIHJldmVudWVzIGZvciBmdXR1cmUgYW5kIG1ha2UgZGVjaXNpb25zIGJhc2VkIG9uIHBhc3Qgc3RyYXRlZ2llcywgZXRjLg==

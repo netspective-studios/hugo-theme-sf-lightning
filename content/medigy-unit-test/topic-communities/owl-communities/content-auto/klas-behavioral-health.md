@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Behavioral Health" 
+ classname:  "Behavioral_Health" 
+ label: "Behavioral Health" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: ['KLAS: Behavioral Health','Healthcare IT News: Behavioral Health'] 
+ collections: ['KLAS: Behavioral Health']
+ aliases:  "/topic/klas-behavioral-health"  
+ searchCategory: "topic" 
+---
+QmVoYXZpb3JhbCBIZWFsdGggb3IgaGVhbHRoIGJlaGF2aW9yIGlzIG9mdGVuIGFuIG92ZXJsb29rZWQgY29tcG9uZW50IG9mIHBhdGllbnQgY2FyZS4gSXQgaXMgZGVzY3JpYmVkIGFzIG1lbnRhbCBoZWFsdGgsIHdoaWNoIGludm9sdmVzIGEgcGVyc29u4oCZcyBtZW50YWwgd2VsbC1iZWluZywgaGlzIGNvbmNlcHQgb2Ygc2VsZiwgYW5kIGhpcyBhYmlsaXR5IHRvIHBlcmZvcm0gaW4gZXZlcnlkYXkgbGlmZS4gTWVudGFsIGhlYWx0aCBpcyBiZWluZyBpZ25vcmVkIGluIG91ciBzb2NpZXR5IGR1ZSB0byBtYW55IGJhcnJpZXJzIGxpa2UgbGFjayBvZiBhY2Nlc3MgdG8gbWVudGFsIGhlYWx0aCBjbGluaWNzLCBzaG9ydGFnZSBvZiBjbGluaWNpYW5zLCBzb2NpYWwgc3RpZ21hLCBsaW1pdGVkIGhlYWx0aCBpbnN1cmFuY2UsIGFuZCBmcmFnbWVudGVkIGNhcmUuCkhlYWx0aGNhcmUgc3lzdGVtcyBhcmUgbm93IGxvb2tpbmcgdG8gYWRkcmVzcyBtZW50YWwgaGVhbHRoIGJ5IGludGVncmF0aW5nIGJvdGggbWVudGFsIGFuZCBiZWhhdmlvcmFsIGhlYWx0aGNhcmUgaW50byBwcmltYXJ5IGNhcmUgdXNpbmcgYSBkaWdpdGFsIGNvbW11bmljYXRpb24gcGxhdGZvcm0gYW5kIGEgdGVhbS1iYXNlZCBjYXJlIG1vZGVsLg==

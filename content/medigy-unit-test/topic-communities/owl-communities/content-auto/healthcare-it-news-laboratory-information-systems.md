@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Laboratory Information Systems" 
+ classname:  "Laboratory_Information_Systems" 
+ label: "Laboratory Information Systems" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: ['Gartner: Advanced Clinical Research Information Systems (ACRIS)'] 
+ collections: ['Healthcare IT News: Laboratory Information Systems']
+ aliases:  "/topic/healthcare-it-news-laboratory-information-systems"  
+ searchCategory: "topic" 
+---
+QSBsYWIgaW5mb3JtYXRpb24gc3lzdGVtIGlzIGFuIGF1dG9tYXRlZCBzeXN0ZW0gdGhhdCBoZWxwcyBpbiBtYW5hZ2luZyBkaWZmZXJlbnQgYXNwZWN0cyBvZiBhIG1lZGljYWwgbGFib3JhdG9yeSBzdWNoIGFzIGRhdGEgcHJvY2Vzc2luZywgaW5wdXR0aW5nLCBzdG9yaW5nIGRhdGEsIHN0b3JpbmcgdGhlIGluZm9ybWF0aW9uIG9mIGEgbGFiLCBldGMuIERpZmZlcmVudCBsYWJvcmF0b3J5IGluZm9ybWF0aW9uIHN5c3RlbXMgYXJlIGNyaXRpY2FsIHRvIGhpZ2gtcXVhbGl0eSBoZWFsdGhjYXJlIHNlcnZpY2UgcHJvdmlzaW9uLgpBIGxhYm9yYXRvcnkgaW5mb3JtYXRpb24gbWFuYWdlbWVudCBzeXN0ZW0gKExJTVMpIGlzIGVzc2VudGlhbCBmb3Igc3VwcG9ydGluZyB0aGUgZnVuY3Rpb25pbmcgb2YgYSBtb2Rlcm4gbGFib3JhdG9yeSwgc3BlY2lmaWNhbGx5IGhpZ2gtdGhyb3VnaHB1dCBsYWJvcmF0b3JpZXMsIHdoZXJlaW4gdGhlIG51bWJlciBvZiBzYW1wbGVzIGlzIHZhc3QsIGFuZCB0aGUgcHJvY2Vzc2luZyByZXF1aXJlcyBhdXRvbWF0aW9uLg==

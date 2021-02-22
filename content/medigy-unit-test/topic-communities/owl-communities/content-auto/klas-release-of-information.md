@@ -1,0 +1,14 @@
+--- 
+ title: "KLAS: Release of Information" 
+ classname:  "OWLClass_1c6b8aa8_0671_4ef4_9913_88824596ca10" 
+ label: "Release of Information" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "KlasresearchCategories" 
+ parentclasslabel: "KLAS" 
+ equalentCollections: [] 
+ collections: ['KLAS: Release of Information']
+ aliases:  "/topic/klas-release-of-information"  
+ searchCategory: "topic" 
+---
+UmVsZWFzZSBvZiBJbmZvcm1hdGlvbiBpbnZvbHZlcyBkaXNjbG9zdXJlIG9mIHBhdGllbnQgaW5mb3JtYXRpb24gYW5kIGFzc29jaWF0ZWQgdGFza3MgYXMgcGVyIGluZGl2aWR1YWwgb3JnYW5pemF0aW9uYWwgcmVxdWlyZW1lbnRzIGFzIHdlbGwgYXMgSElQQUEgc3RhbmRhcmRzLiBSZWxlYXNlIG9mIGluZm9ybWF0aW9uIChST0kpIGluIGhlYWx0aGNhcmUgaXMgaW1wb3J0YW50IHRvIHRoZSBxdWFsaXR5IG9mIHRoZSBjb250aW51aXR5IG9mIGNhcmUgcHJvdmlkZWQgdG8gdGhlIHBhdGllbnQuIEl0IGhhcyBhbiBpbXBvcnRhbnQgY29udHJpYnV0aW9uIGluIGJpbGxpbmcsIHJlcG9ydGluZywgcmVzZWFyY2gsIGFuZCBvdGhlciBmdW5jdGlvbnMuIFJPSSBzaG91bGQgYmUgZG9uZSBhY2NvcmRpbmcgdG8gdGhlIGZlZGVyYWwgYW5kIHN0YXRlIHJlZ3VsYXRpb25zIHRvIGVuc3VyZSBzYWZldHkgYW5kIHByaXZhY3kgb2YgcGF0aWVudCBpbmZvcm1hdGlvbi4=

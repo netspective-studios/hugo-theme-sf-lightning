@@ -1,0 +1,14 @@
+--- 
+ title: "Healthcare IT News: Record Locator Service" 
+ classname:  "Record_locator_service" 
+ label: "Record Locator Service" 
+ subclassname: "null" 
+ subclasslabel: "null" 
+ parentclassname: "Healthcare_IT_News" 
+ parentclasslabel: "Healthcare IT News" 
+ equalentCollections: [] 
+ collections: ['Healthcare IT News: Record Locator Service']
+ aliases:  "/topic/healthcare-it-news-record-locator-service"  
+ searchCategory: "topic" 
+---
+VGhlIHJlY29yZCBsb2NhdG9yIHNlcnZpY2UgKFJMUykgaXMgYSBwYXJ0IG9mIEhJRSAoaGVhbHRoIGluZm9ybWF0aW9uIGV4Y2hhbmdlKSB0aGF0IGhlbHBzIGluIG9idGFpbmluZyB0aGUgZWxlY3Ryb25pYyBoZWFsdGggcmVjb3JkcyBvZiBwYXRpZW50cyBmcm9tIGFsbCB0aGUgaGVhbHRoY2FyZSBvcmdhbml6YXRpb25zIHdoZXJlIHRoZSBwYXRpZW50cyBoYXZlIHByZXZpb3VzbHkgcmVjZWl2ZWQgY2FyZS4gUkxTIHN5c3RlbXMgY2FuIGhlbHAgYm90aCBwYXRpZW50cyBhbmQgcHJvdmlkZXJzIGluIGFjY2Vzc2luZyB0aGUgcmVjZW50bHkgdXBkYXRlZCBwYXRpZW50IGluZm9ybWF0aW9uIGFuZCB0aGVyZWZvcmUgaGVscHMgaW4gcHJvdmlkaW5nIGFjY3VyYXRlIGRpYWdub3NpcyBvZiB0aGUgZGlzZWFzZS4gVGhlIE5hdGlvbmFsIHJlY29yZCBsb2NhdG9yIHNlcnZpY2UgZW5hYmxlcyBwcm92aWRlcnMgdG8gc2VlIHdoZXJlIHBhdGllbnRzIGhhdmUgcHJldmlvdXNseSByZWNlaXZlZCBjYXJlIGFuZCBhbHNvIGhlbHBzIGluIHJldHJpZXZpbmcgY2xpbmljYWwgcmVjb3JkcyBpcnJlc3BlY3RpdmUgb2YgZ2VvZ3JhcGh5Lg==
