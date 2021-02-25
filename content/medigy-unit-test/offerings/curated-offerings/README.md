@@ -1,2 +1,0 @@
-# Curated Offerings
-

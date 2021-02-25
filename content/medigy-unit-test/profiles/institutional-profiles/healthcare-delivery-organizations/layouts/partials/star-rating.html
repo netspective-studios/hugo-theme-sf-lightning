@@ -1,8 +1,0 @@
-                              {{ $rating := int .rating }}
-                                {{ range $i, $sequence :=  (seq .totalStar) }}
-                                  {{ if le $sequence $rating }}
-                                  <span class="fa fa-star star-rating-checked"></span>
-                                  {{ else }}
-                                  <span class="fa fa-star"></span>
-                                  {{ end }}
-                                {{ end }}

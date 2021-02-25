@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+  <head>  
+ 
+
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+  <!-- Title tag -->
+  
+  <title>   </title>
+  
+  <meta name="description" content=" " />
+   
+ <!-- Meta Description End -->
+ <meta property="og:title" content=" " />
+ <meta property="og:url" content=" " />
+ <meta property="og:image" content=" " />
+ <meta property="og:type" content="website" />
+<!-- start opengraph data -->
+ 
+   <meta property="og:description" content=" ">
+  <meta property="og:locale" content="en_US" />
+   
+ 
+<!-- end opengraph data  -->
+ 
+
+ 
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@Medigy" />
+    <meta name="twitter:title" content=" " />
+    <meta name="twitter:description" content=" " />
+    <meta property="twitter:image" content=" "/>
+ 
+ 
+<!-- end Twitter data -->
+  <!-- Standard favicon -->
+  <link rel="icon" type="image/x-icon" href="/img/media.ico">
+  <!-- Recommended favicon format -->
+  <link rel="icon" type="image/png" href="/img/favicon.png">
+  <link rel="stylesheet" href="/css/normalize.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/xcode.css" />
+  <!-- bootstrap & responsive css -->
+  <!--<link href="https://clin-table-search.lhc.nlm.nih.gov/lforms-versions/13.1.0/styles/lforms.min.css" media="screen" rel="stylesheet"
+    />-->
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />  
+  <link rel="stylesheet" href="/css/fhir-theme.css" />
+  <link rel="stylesheet" href="/css/responsive.css" />
+  <link rel="stylesheet" href="/css/fontawesome_v5.6.3_all.css">
+  <!-- bootstrap & jquery js -->
+  <script type="text/javascript" src="/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.min.js" ></script>  
+  <script type="text/javascript" src="/js/sourcebuster.min.js"></script>
+ 
+ 
+ 
+  
+  <script>
+/* $( window ).on( "load", function() {
+        console.log( "window loaded" );
+        $('.tag-style-1').css("display","inline-block");
+    }); */
+      $(document).ready(function() {
+        console.log( "dom loaded" );
+        
+      $('.fb-share').click(function(e) {
+        e.preventDefault();
+        window.open($(this).attr('href'), 'fbShareWindow', 'height=450, width=550, top=' + ($(window).height() / 2 - 275) + ', left=' + ($(window).width() / 2 - 225) + ', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+        return false;
+      });
+
+
+      /// To remove "Medigy:" from category starts here
+      /*
+      $('.tag-style-1').each( function(){
+      var category = $(this).find('a').html();
+      if(category.indexOf("Medigy: ") != -1){
+        var splitedCategory = category.split(':');
+        $(this).find('a').html(splitedCategory[1]);
+      }
+      });
+      */
+   
+      /// To remove "Medigy:" from category ends here
+      });
+
+      /*
+      $(document).ready(function(){
+        $('.hamburger-menu > span ').hide();
+        $('.hamburger-menu').on("click", function(){
+          if ( $( 'body' ).hasClass( 'hurb-menu-custom' ))
+          {
+            $('body').removeClass('hurb-menu-custom');
+
+          }
+          else
+          { 
+            $('.hamburger-menu > span ').show();  
+            $('body').addClass('hurb-menu-custom');
+          }
+       });
+
+      });
+      hamburger-menu
+      */
+  </script>
+
+<!-- Google Tag Manager -->
+ 
+  <!-- End Google Tag Manager -->
+
+<!-- Site schema starts here-->
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "headline": "Medigy",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ $.Site.Params.siteUrl }}"
+      },
+    "genre": "Digital Health IT Softwares & Applications",
+    "url": "{{ $.Site.Params.siteUrl }}",
+     "publisher": {
+      "@type": "Organization",
+      "name": "Medigy",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ $.Site.Params.siteUrl }}img/Medigy Logo with caption.png",
+        "width": 127,
+        "height": 40
+      }
+    },
+    "author": {
+      "@type": "Person",
+      "name": "Shahid Shah"
+    },
+    "description": "Discovering Solutions....... Together"
+  }
+  </script>
+  <!-- Site schema ends here-->
+ 
+<script>
+    function setCookie(key, value) {
+    var expires = new Date();
+    if (key != 'cookie-agree')
+      expires.setTime(expires.getTime() + (30 * 24 * 60 * 60 * 1000));
+    else
+      expires.setTime(expires.getTime() + (5 * 24 * 60 * 60 * 1000));
+    document.cookie = key + '=' + value + ';expires=' + expires.toUTCString() + ';path=/';
+  }
+
+  function getCookie(key) {
+    var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
+    return keyValue ? keyValue[2] : null;
+  }
+</script>
+</head>
+  <script>
+      var personid = getCookie('personid');
+      if (personid == null) {
+        setCookie('prevPage','/innovation-lifecycle-management/projects/');
+          window.location.href = '/login';
+      }    
+  </script>  
+<link rel="stylesheet" href="/css/select2.min.css" />
+<script type="text/javascript" src="/js/select2.min.js"></script>
+
+  <body class="list-body">
+ 
+  <script>
+ 
+  var newpath = $(location).attr('pathname');
+
+  if (newpath == '/categories/') {
+    window.location.href = "/category/";
+
+  }
+ 
+  function callLogin() {
+    $('#reLoginModalCenter').modal('toggle');
+    $('#userEmail').val(getCookie('userEmail'));
+  }
+  function getUrlVars() {
+    var vars = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+    for (var i = 0; i < hashes.length; i++) {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+      if (typeof (hash[1]) != 'string')
+        vars[hash[0]] = null;
+    }
+    return vars;
+  }
+ 
+
+  $(document).ready(function () {
+
+    var cookieQueryStatus = window.location.href.indexOf("cookie-policy");
+    console.log(cookieQueryStatus);
+    if (getCookie('personid') == null && getCookie('cookie-agree') != 'true' && cookieQueryStatus < 0) {
+      $('.cookie-bottom').show();
+    }
+    //cookieMessageModalCenter
+  
+
+    $('.cookie-agree, .cookie-disagree').on("click", function (e) {
+      var expires = new Date();
+      expires.setTime(expires.getTime() + (365 * 24 * 60 * 60 * 1000));
+      document.cookie = 'cookie-agree=true;expires=' + expires.toUTCString() + ';path=/';
+      location.reload(true);
+    });
+    /*
+    $('.cookie-disagree').on("click", function () {
+      //$('#reLoginModalCenter').modal('toggle');
+      delete_cookie('firstname');
+      delete_cookie('personid');
+      delete_cookie('userEmail');
+      delete_cookie('tenantId');
+      delete_cookie('sessionId');
+      delete_cookie('companyId');
+      delete_cookie('cookie-agree');
+      // window.location.reload();
+      $('.cookie-bottom').hide();
+    });
+    */
+
+
+
+    // Checking Session value starts here
+    var sessionId = getCookie('sessionId');
+    if (sessionId != null) {
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "{{ $.Site.Params.GraphQLUrl }}",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache"
+        },
+        "data": {
+          //"query": "query{\n  getAuthentication(username:\""+username+"\",password:\""+password+"\"){\n    personId\n    firstName\n    lastName\n    displayName\n    sessionId\n}\n}"
+          "query": "query{\n  checkAuthentication(authorization:{\n    sessionID:\"" + sessionId + "\"\n    \n  }){\n    valid\n    displayName\n    userName\n    mail\n    personId\n  }\n}"
+        }
+      }
+      $.ajax(settings).done(function (response) {
+        if (response.data.checkAuthentication.valid != true && getCookie('userEmail') != null)
+          callLogin();
+
+      });
+    }
+
+    // Checking Session value ends here    
+
+    // addOffering button margin-top issue fixes starts here
+
+    if (getCookie('personid') !== null) {
+
+      $('.admin-area').addClass('space-top');
+
+      if (getCookie('personid') == '7eea82e6-c0bd-11e8-85c1-e1894e45cc6e')
+        $('#claimDashboardMenu').show();
+      else
+        $('#claimDashboardMenu').hide();
+    }
+    else {
+      $('.admin-area').removeClass('space-top');
+      $('#claimDashboardMenu').hide();
+    }
+
+    // addOffering button margin-top issue fixes ends here
+
+    // Collect all tenant of an user starts here
+    var sessionId = getCookie('sessionId');
+    if (sessionId != null) {
+      //console.log("query{\n  getMyTenants(authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    tenantId\n    name\n    displayName\n  }\n}");
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "{{ $.Site.Params.GraphQLUrl }}",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache"
+        },
+        "data": {
+          //"query": "query{\n  getAuthentication(username:\""+username+"\",password:\""+password+"\"){\n    personId\n    firstName\n    lastName\n    displayName\n    sessionId\n}\n}"
+          "query": "query{\n  getMyTenants(authorization:{\n    sessionID:\"" + sessionId + "\"\n  }){\n    tenantId\n    name\n    displayName\n  }\n}"
+        }
+      }
+      $.ajax(settings).done(function (response) {
+        var options = '';
+        var selectStatus = 0;
+        for (var i = 0; i < response.data.getMyTenants.length; i++) {
+
+          var opt = '';
+          if (response.data.getMyTenants[i].tenantId != 'cb39d53a-1ef0-11e9-9d28-bb451ba91f54' && response.data.getMyTenants[i].tenantId != 'e8d7b61e-4f8b-11e9-b5be-c51857ed28a4' && response.data.getMyTenants[i].tenantId != 'e7dfc497-707f-11e9-8c9d-33682264df93' && response.data.getMyTenants[i].tenantId != null) {
+            if (getCookie('tenantId') !== null && getCookie('tenantId') == response.data.getMyTenants[i].tenantId) {
+              var opt = 'selected="selected"';
+              selectStatus = 1;
+
+            } $('#tenantDetails').val() == getCookie('tenantId')
+            /*
+            else if(response.data.getMyTenants[i].tenantId == '7822da54-c0ba-11e8-85c1-6301a0c839d6')
+                var opt = 'selected="selected"';
+              */
+            options += '<option value ="' + response.data.getMyTenants[i].tenantId + '" ' + opt + '>' + response.data.getMyTenants[i].displayName + '</option>';
+          }
+        }
+        if (options != '') {
+          // if(selectStatus == 0)
+
+          $('#tenantDetails').html(options);
+          $('#tenantIdForClaim').html(options);
+          $('#tenantId').html(options);
+          return false;
+          // $('#tenantDetails').show();
+        }
+        //console.log(options);
+      });
+    }
+    // Collect all tenant of an user ends here    
+
+    $("#tenantDetails").on("change", function () {
+
+      setCookie('tenantId', $("#tenantDetails").val());
+      location.reload(true);
+
+    });
+
+
+
+    $('#loginform').on('submit', function (e) {
+
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      }
+
+      else {
+
+        $('#loginButton').prop("disabled", true);
+        e.preventDefault();
+        $('#errorcode').html('');
+        $('#errorcode').html('<span class="text-primary">Authentication is in progress.</span>');
+        var username = document.loginform.username2.value;
+        username = username.trim();
+        var password = document.loginform.password2.value;
+        console.log("mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      profileImageUrl\n      memberOrganization{\n        tenantId\n        name\n        default\n        displayName\n      }\n    }\n    status\n  }\n}");
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+            //"query": "query{\n  getAuthentication(username:\""+username+"\",password:\""+password+"\"){\n    personId\n    firstName\n    lastName\n    displayName\n    sessionId\n}\n}"
+            "query": "mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      profileImageUrl\n      memberOrganization{\n        tenantId\n        name\n        default\n        displayName\n      }\n    }\n    status\n  }\n}"
+          }
+        }
+        if (getCookie('cookie-agree') != 'false') {
+          $.ajax(settings).done(function (response) {
+            //console.log();return ;
+            if (response.data.establishSession.userDetails != null) {
+              var firstname = response.data.establishSession.userDetails.firstName;
+              var lastname = response.data.establishSession.userDetails.lastName;
+              var personid = response.data.establishSession.userDetails.personId;
+              var sessionId = response.data.establishSession.sessionID;
+              var memberOrganizationDetails = response.data.establishSession.userDetails.memberOrganization
+              var profileImage = response.data.establishSession.userDetails.profileImageUrl;
+              var tenantId = '';
+              var status = 0; // Checking for default teanant details...
+              for (i = 0; i < memberOrganizationDetails.length; i++) {
+                if (memberOrganizationDetails[i].default == true) {
+                  tenantId = memberOrganizationDetails[i].tenantId;
+                  status = 1;
+                  break;
+                }
+              }
+              // Set for fist tenant details ad default teanant if there is no default tenant Id...
+              if (status == 0)
+                tenantId = memberOrganizationDetails[0].tenantId;
+
+              setCookie('profileImage', profileImage);
+              setCookie('firstname', firstname);
+              setCookie('lastname', lastname);
+              setCookie('personid', personid);
+              setCookie('sessionId', sessionId);
+              setCookie('userEmail', username);
+              setCookie('tenantId', tenantId);
+              setCookie('cookie-agree', 'true');
+              /* tracking login activity of user in GA */
+              var dimensionValue = username;
+              if (dimensionValue.length > 150) {
+                dimensionValue = firstname;
+              }
+              //gtag('set', {'user_id': dimensionValue}); // Set the user ID using signed-in user_id.
+
+              //gtag('set', {'dimension1': dimensionValue});
+              // gtag('config', 'UA-93818-14', {  'custom_map': {'dimension1': dimensionValue}});
+              //ga('set', 'dimension1', dimensionValue);
+              //var dimensionValue = 'Yes';
+              gtag('event', 'Login', { 'dimension2': dimensionValue });
+
+              var status = "Success";
+              gtmSignIn(status, username);
+
+              // ga('set', 'dimension2', dimensionValue);
+              /* tracking login activity of user in GA */
+
+              setTimeout(function () {
+              
+
+                 var addtoILM = getCookie('addtoilmbutton');  
+
+                  if (addtoILM == 'true') {
+                      setCookie('addtoilmbutton', 'reload'); 
+                    }
+               // window.location.href = "/add-suggest/";
+
+               /// 09-12-19 addevent and news
+                  var addSugestNews = getCookie('suggestNewsEventPage');  
+
+                  if (addSugestNews != '' && addSugestNews != null) {  
+                     setCookie('suggestNewsEventPage', "");                                  
+                        window.location.href = "/add-suggest/";
+                    }else{
+                  // window.location.href = "/add-suggest/";
+                  location.reload();
+                  }
+
+                var postbttnvalue = $("#formentry").val();
+                if (postbttnvalue == 'true') {
+                  postbttnvalue = '';
+                  window.location.href = "/add-suggest/";
+                }
+
+                var ilmbttnvalue = getCookie('ilmLoginCheck');  
+                if (ilmbttnvalue == 'true') {
+                  setCookie('ilmLoginCheck', '');  
+                  window.location.href = "/innovation-lifecycle-management/projects/";
+                }
+
+
+
+
+
+              }, 5);
+
+            }
+            else {
+              $('#errorcode').html('');
+              $('#errorcode').append('<span class="text-danger">Invalid Username or Password</span>');
+              $('#loginButton').prop("disabled", false);
+              var status = "Invalid Username or Password";
+              gtmSignIn(status, username);
+            }
+
+          });
+        }
+      }
+
+    });
+// 31-12-19
+// $('#Innovation_Lifecycle_Top_Menu').on("click", function (e) {
+//       e.preventDefault();
+//       if (getCookie('personid') == null) {        
+//         $( "#userlogin" ).trigger( "click" );
+//       }
+//     });
+
+    $('#reLoginform').on('submit', function (e) {
+
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      }
+
+      else {
+
+        $('#reLoginButton').prop("disabled", true);
+        e.preventDefault();
+        $('#reLoginErrorcode').html('');
+        $('#reLoginErrorcode').html('<span class="text-primary">Authentication is in progress.</span>');
+        var username = document.reLoginform.username2.value;
+        var password = document.reLoginform.password2.value;
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "{{ $.Site.Params.GraphQLUrl }}",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+            //"query": "query{\n  getAuthentication(username:\""+username+"\",password:\""+password+"\"){\n    personId\n    firstName\n    lastName\n    displayName\n    sessionId\n}\n}"
+            "query": "mutation{\n  establishSession(authentication:{\n    userName:\"" + username + "\"\n    password:\"" + password + "\"\n  }){\n    sessionID\n    userDetails{\n      personId\n      firstName\n      lastName\n      memberOrganization{\n        tenantId\n        name\n        default\n        displayName\n      }\n    }\n    status\n  }\n}"
+          }
+        }
+        $.ajax(settings).done(function (response) {
+          //console.log();return ;
+          if (response.data.establishSession.userDetails != null) {
+            var firstname = response.data.establishSession.userDetails.firstName;
+            var personid = response.data.establishSession.userDetails.personId;
+            var sessionId = response.data.establishSession.sessionID;
+            var memberOrganizationDetails = response.data.establishSession.userDetails.memberOrganization
+            var tenantId = '';
+            var status = 0; // Checking for default teanant details...
+            for (i = 0; i < memberOrganizationDetails.length; i++) {
+              if (memberOrganizationDetails[i].default == true) {
+                tenantId = memberOrganizationDetails[i].tenantId;
+                status = 1;
+                break;
+              }
+            }
+            // Set for fist tenant details ad default teanant if there is no default tenant Id...
+            if (status == 0) {
+              for (i = 0; i < memberOrganizationDetails.length; i++) {
+                if (memberOrganizationDetails[i].tenantId == "7822da54-c0ba-11e8-85c1-6301a0c839d6") {
+                  tenantId = memberOrganizationDetails[i].tenantId;
+                  status = 1;
+                  break;
+                }
+              }
+            }
+            if (status == 0)
+              tenantId = memberOrganizationDetails[0].tenantId;
+
+            setCookie('firstname', firstname);
+            setCookie('personid', personid);
+            setCookie('sessionId', sessionId);
+            setCookie('userEmail', username);
+            setCookie('tenantId', tenantId);
+            /* tracking login activity of user in GA */
+            var dimensionValue = username;
+            if (dimensionValue.length > 150) {
+              dimensionValue = firstname;
+            }
+            //gtag('set', {'user_id': dimensionValue}); // Set the user ID using signed-in user_id.
+
+            //gtag('set', {'dimension1': dimensionValue});
+            // gtag('config', 'UA-93818-14', {  'custom_map': {'dimension1': dimensionValue}});
+            //ga('set', 'dimension1', dimensionValue);
+            //var dimensionValue = 'Yes';
+            gtag('event', 'Login', { 'dimension2': dimensionValue });
+            var status = "Relogin:Success";
+            gtmSignIn(status, username);
+            $('#reLoginModalCenter').modal('toggle');
+            $('#productFacetsMessage').removeClass('alert-success');
+            $('#productFacetsMessage').hide();
+            // ga('set', 'dimension2', dimensionValue);
+            /* tracking login activity of user in GA */
+            $('.btn-primary').prop("disabled", false);
+            var pathname = window.location.pathname;
+            if (pathname.search("my-institution") > 0)
+              location.reload();
+          }
+          else {
+            $('#reLoginErrorcode').html('');
+            $('#reLoginErrorcode').append('<span class="text-danger">Invalid Username or Password</span>');
+            $('#reLoginButton').prop("disabled", false);
+            var status = "Relogin:Invalid Username or Password";
+            gtmSignIn(status, username);
+          }
+
+        });
+      }
+
+    });
+
+    //Re-login ends here
+
+
+
+
+    var delete_cookie = function (name) {
+      document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+    };
+
+    $("#userlogout").on("click", function (e) {
+
+      delete_cookie('firstname');
+      delete_cookie('personid');
+
+      delete_cookie('userEmail');
+      delete_cookie('tenantId');
+      delete_cookie('sessionId');
+      delete_cookie('companyId');
+      /// Signout process for graphQL starts here /////
+      var sessionId = getCookie('sessionId');
+      var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "{{ $.Site.Params.GraphQLUrl }}",
+        "method": "POST",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded",
+          "cache-control": "no-cache"
+        },
+        "data": {
+          "query": "      mutation{\n  logoutSession(sessionId:\"" + sessionId + "\")\n}"
+        }
+      }
+
+      $.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+      /// Signout process for graphQL ends here /////
+
+      delete_cookie('sessionId');
+      location.reload();
+
+
+    });
+
+  });
+  $(document).ready(function () {
+
+
+      var addtoILM = getCookie('addtoilmbutton');  
+      if (addtoILM == 'reload') {
+      $('#addNewsIlm').modal('toggle');
+      //alert(2323);
+      setCookie('addtoilmbutton', ''); 
+
+      }
+
+    if (getCookie('personid') != null) {
+      $('.dropdown').show();
+    }
+    var searchQuery = getUrlVars()["s"];
+    if (typeof (getUrlVars()["s"]) != 'undefined') {
+      searchQuery = decodeURIComponent((location.search.split(name + '=')[1] || '').split('&')[0]).replace(/\+/g, ' ');
+      $('#search-query').val(searchQuery);
+    }
+    if (getCookie('personid') != null) {
+
+      var firstname = getCookie('firstname');
+
+      if (firstname == 'null') {
+
+        $('#sessionname').val('');
+      }
+      else {
+
+        $("#sessionname").append(firstname);
+
+      }
+
+      $('#userlogout').show();
+      $('#userlogin').hide();
+      $(".addoffer-col").addClass("loggedinoffer");
+
+    }
+
+    else {
+      $('#logoutmedigy').hide();
+      $('.dropdown').hide();
+    }
+    $(".login-bt").on("click", function () {
+      document.loginform.username2.value = '';
+      document.loginform.password2.value = '';
+      $('#sessionname').val('');
+    });
+
+
+    $("#postform").on("click", function () {
+
+      var query = '';
+      if( $(this).data('query') != undefined){ 
+        query = $(this).data('query');
+      }
+      if (getCookie('personid') !== null) {
+
+        window.location.href = "/add-suggest/"+query;
+
+      }
+
+      else {
+        $("#formentry").val("true");
+        $('#loginModalCenter').modal('toggle');
+
+      }
+
+
+    });
+
+    //ILM section login check
+
+    $("#Innovation_Lifecycle_Top_Menu").on("click", function (e) {
+
+        e.preventDefault();
+
+      if (getCookie('personid') !== null) {
+
+        window.location.href = "/innovation-lifecycle-management/projects/";
+
+      }
+
+      else {
+        
+        setCookie('ilmLoginCheck', 'true');
+        $('#loginModalCenter').modal('toggle');
+
+      }
+
+
+    });
+   //ILM section login check End
+
+    $("#register").on("click", function () {
+      $('#loginModalCenter').modal('toggle');
+      $('#registerModalCenter').modal('toggle');
+      $("#userSignup")[0].reset();
+      $('#signupMessage').hide();
+      $('#signupMessage').html('');
+    });
+
+
+    $("#userlogin").on("click", function () {
+      $('#loginModalCenter').modal('toggle');
+      $("#loginform")[0].reset();
+      $('#errorcode').html('');
+
+    });
+
+
+    $("#registerlogin").on("click", function () {
+
+      $('#registerModalCenter').modal('toggle');
+      $('#loginModalCenter').modal('toggle');
+      $("#userSignup")[0].reset();
+      $('#signupMessage').hide();
+      $('#signupMessage').html('');
+
+
+    });
+
+
+    $(document).mouseup(function (e) {
+
+      if (!event.target.matches('.dropbtn, .user-ttl')) {
+        $('#myDropdown').removeClass('show');
+      }
+
+
+    });
+    //user-ttl
+
+    $(".dropbtn,.user-ttl").on("click", function () {
+
+
+      document.getElementById("myDropdown").classList.toggle("show");
+
+
+      // Close the dropdown if the user clicks outside of it
+      /*
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+      */
+
+    });
+
+  });
+
+</script>
+
+
+<script>
+  /*
+  var user_id = getCookie('userEmail');
+  var ga_tracking_code = 'UA-93818-14';
+  ga('create', ga_tracking_code, 'auto');
+
+  if( user_id != null ){
+    ga('set', '&uid', user_id); // Set the user ID using signed-in user_id.
+  
+  }
+  */
+
+  function gtmSignUp(status, userName) {
+    // GTM for signup
+
+    window.dataLayer.push({
+      'gtmUserName': userName,
+      'gtmSignupStatus': status,
+      'event': 'signUp'
+    });
+    // console.log(status);
+    // GTM for signup 
+  }
+  function gtmSignIn(status, userName) {
+    // GTM for signin
+
+    window.dataLayer.push({
+      'gtmUserName': userName,
+      'gtmSigninStatus': status,
+      'url': window.location.href,
+      'event': 'signIn'
+    });
+    console.log(userName + '-' + status + '-' + window.location.href);
+    return;
+    // console.log(status);
+    // GTM for signin
+  }
+  function getGraphQlUrl() {
+    return "{{ $.Site.Params.GraphQLUrl }}";
+  }
+</script>
+ 
+<script type="text/javascript" src="/js/feedback/html2canvas.js"></script>
+<script type="text/javascript" src="/js/feedback/feedback.js"></script>
+ 
+<div id="feedback-widget-container"></div>
+<article class="top-row">
+  <!-- Cookie disclaimer div starts here-->
+
+  <div class="cookie-bottom">
+    <div class="container">
+      <button class="close-button cookie-disagree" aria-label="Dismiss alert" type="button" data-close="">
+        <!--<span aria-hidden="true">×</span>-->
+      </button>
+      <div class="row">
+        <div class="column small-12">
+          <strong class="h4">This website uses cookies</strong>
+          <p>These cookies are used to collect information about how you interact with our website and allow us to
+            remember
+            you. We use this information in order to improve and customize your browsing experience, and for analytics
+            and
+            metrics about our visitors both on this website and other media. To find out more about the cookies we use,
+            see
+            our
+            <strong>
+              <a href="/cookie-policy/" target="_blank" title="Cookie Policy">Cookie Policy</a>
+            </strong>.</p>
+        </div>
+        <div class="column small-12">
+          <strong class="text-uppercase">
+            <small>Please consent to the use of cookies before continuing to browse our site.</small>
+          </strong>
+          <div class="small stacked-for-medium button-group gdpr-container">
+            <form class="gdpr_form" method="get">
+              <button type="button" title="Consent the use of cookies" class="cookie-agree"
+                data-close="">Accept cookies</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Cookie disclaimer div ends here-->
+  <div class="container">
+  <div itemscope itemtype = "http://schema.org/WebSite"><!-- Open schema website outer div -->
+    <div class="row mb-1">
+      <!-- medigy logo area starts -->
+      <div class="col-lg-6 col-md-12 col-sm-12 logo-align medigy-logo-row">
+        <div class="medigy-logo">
+          <div itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+          <a href="/" title="Medigy" itemprop = "url">
+           </a>
+          </div>
+        </div>
+ 
+        <div class="medigy-highlight">
+          <h1> </h1>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <!-- medigy logo area ends -->
+      <div class="col-lg-6 col-md-12 col-sm-12 col-12">
+        <div id="custom-search-input">
+
+          <div class="row">
+            <!-- <div class="col-lg-4 col-sm-12">
+              
+            </div> -->
+            <div class="col-lg-12 col-sm-12">
+
+              <div class="row add-offer-zone">
+                <div class="admin-area">
+                  <div class="offerings-col">
+                    <span class="addoffer-col">
+                      <a id="postform" href="#">
+                        <button class="post-bt" id="Top_Add_Offering_Button">Add / Suggest...</button>
+                      </a>
+                    </span>
+                  </div>
+                  <div class="member-col">
+                    <span class="log-bt-col">
+                      <a id="userlogin" href="#" class="login-bt Top_Login_Button">Login</a>
+                    </span>
+                    <span id="sessionname" class="user-ttl"></span>
+                    <span class="set-list user-ico" style="display:none;">
+                      <div class="dropdown">
+
+
+                        <script>
+                          $(document).ready(function () {
+                            var profileImage = getCookie('profileImage');
+                            if (profileImage == 'null' || profileImage == 'undefined') {
+
+                              // $.noConflict();
+
+                              var email = getCookie('userEmail');
+
+
+                              if (email.length > 0) {
+
+                                var md5 = $.md5(email);
+
+
+                                var gravatar = 'https://gravatar.com/avatar/' + md5 + '?&d=404';
+                                $.ajax({
+                                  url: gravatar,
+                                  type: "HEAD",
+                                  crossDomain: true,
+                                  error: function () {
+                                    $(".member-thumb").attr("src", "/img/member-thumb.jpg");
+                                  },
+                                  success: function () {
+
+                                    $(".member-thumb").attr("src", gravatar);
+                                  }
+                                });
+                              }
+
+                              // $(".member-thumb").attr("src","/img/member-thumb.jpg");
+                            }
+                            else {
+                              $('.member-thumb').attr('src', profileImage);
+                            }
+
+                          });
+                        </script>
+                        <a href="#">
+                          <img class="dropbtn member-thumb"> </a>
+                        <div id="myDropdown" class="dropdown-content">
+                          <a href="/feedback/" class="login-bt">Looking for Something?</a>
+                          <a href="/my-profile/" class="login-bt">My Profile</a>
+                          <a href="/my-institutions/" class="login-bt">My Institutions</a>
+                          <a href="/my-offerings/" class="login-bt">My Offerings</a>
+                          <a href="/my-claims/" class="login-bt">My Claims</a>
+                          <a id="claimDashboardMenu" href="/claiming-dashboard/" class="login-bt"
+                            style="display:none">Claiming Dashboard</a>
+                          <a id="userlogout" style="display:none;" href="#" class="login-bt">logout</a>
+                        </div>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+                     <form id="searchsubmit" action="/search/" class="companies-lists mr-4 search-align">
+                  <div class="input-group">
+                    <input type="text" id="search-query" name="s" class="  search-query form-control"
+                      placeholder="Search" />
+                      <input type="hidden" id="es-page" name="page" value="1"/>
+
+                    <span class="input-group-btn">
+                      <button id="zoomsearch" class="btn btn-danger" type="submit">
+                        <i class="fas fa-search Top_Search_Bar"></i>
+                      </button>
+                    </span>
+                  </div>
+                </form>
+                <!-- <div class="companies-lists">
+                  <select name="tenantDetails" id="tenantDetails" class="form-control company-select"
+                    style="display: none;"></select>
+                </div> -->
+              </div>
+
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row b-t-1">
+      <div class="col-lg-9 col-md-8 col-sm-7 col">
+        <nav class="navbar navbar-light navbar-expand-lg top-nav mt-1">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+            aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a id="Home_Top_Menu" class="nav-link" href="/">Home</a>
+               
+              </li>
+
+              <li class="nav-item">
+                <a id="Daily_Brief_Top_Menu"  class="nav-link" href="/brief/daily/offerings/discovered/">Daily Brief</a>
+              </li>   
+               
+              <li class="nav-item">
+                <a id="Innovation_Lifecycle_Top_Menu"  class="nav-link menu-selected"   class="nav-link"
+                   href="/innovation-lifecycle-management/projects/">Innovation Lifecycle
+                </a> 
+               
+              </li>
+              <li class="nav-item">
+                <a id="Categories_Top_Menu"  
+                    class="nav-link"   href="/topics">Topics</a>
+              </li>
+              <li class="nav-item">
+                <a id="Profiles_Top_Menu" 
+                     class="nav-link"  
+                  href="/profile/regulated/institution/us-dhhs-cms/hospital/" title="Healthcare Delivery Organizations (HDOs)">HDOs</a>
+              </li>
+              
+              <li class="nav-item">
+                <a id="News_Top_Menu" class="nav-link"     href="/news">News
+                </a>
+              </li>
+              <li class="nav-item ">
+                <a id="Events_Top_Menu"  
+                    class="nav-link"   href="/events">Events
+                </a>
+              </li>
+               <li class="nav-item">
+                <a id="Feeds_Top_Menu"  
+                  class="nav-link"   href="/feed/latest">Feeds
+                </a>
+              </li>
+              
+              <li class="nav-item">
+                <a id="Awards_Top_Menu"    
+                  class="nav-link"   href="/recognition/awards/">Awards
+                </a>
+              </li>
+              
+
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col-lg-3 col-md-4 col-sm-5 col">
+        <div class="float-right owned">
+          <div class="float-right text-left" itemprop = "about">Published by
+            <br>
+            <a href="http://shahidshah.com/" target="blank">@ShahidNShah</a>
+          </div>
+          <div class="float-right">
+            <img itemprop = "image" src="/img/shahid-sha.png" width="40">
+          </div>
+          <div class="clear-fix"></div>
+        </div>
+      </div>  
+    </div>
+
+  </div> <!-- Close schema website outer div -->
+</article>
+
+<!-- 
+    <nav class="nav-bar side-padding">
+      <h1 class="nav-header"><a href="/" class="nav-text"> {{ if isset $.Site.Params "brand"}}
+        {{- $.Site.Params.brand -}}
+        {{ else }}
+        {{- $.Site.Title -}}
+        {{ end }} </a></h1>
+      <div class="hamburger-menu">
+        <input type="checkbox" onclick="hamburgerMenuPressed()"/>
+        <span></span> <span></span>
+        <ul class="hamburger-menu-overlay">
+          <li><a href="/" class="hamburger-menu-overlay-link">Home</a></li>
+          {{ range where .Site.Pages "Params.displayinmenu" true }}
+          <li><a href="{{ .Permalink }}" class="hamburger-menu-overlay-link">{{ .Title }}</a></li>
+          {{ end }}
+          {{ range $key, $value := .Site.Taxonomies.categories }}
+          <li><a href="/categories/{{ $key | urlize  }}" class="hamburger-menu-overlay-link">{{ $key | humanize }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </nav>
+  </div>
+  -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-center mod-content">
+        <b>Coming Soon</b>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Login Modal -->
+<div class="modal fade" id="loginModalCenter" tabindex="-1" role="dialog" aria-labelledby="loginModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" id="Login_Form_Close_Button">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <article class="post-login">
+          <form name="loginform" id="loginform">
+            <h2>Please Login</h2>
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">Username</label>
+              <div class="col-sm-12">
+                <input class="form-control" name="username2" type="email" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="pwd" class="col-sm-12">Password</label>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="password2" placeholder="Password" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <a href="/reset-password" class="btn btn-link">Forgot Your Password?</a>
+            </div>
+
+            <input type="hidden" name="formentry" id="formentry" value="">
+            <div class="text-left">
+              <input type="submit" value="LOGIN" id="loginButton" class="btn btn-primary Form_Login_Button">
+              <a href="#" id="register" class="btn btn-link">
+                <strong class="Form_Register_Button">Register Now</strong>
+              </a>
+            </div>
+
+          </form>
+
+        </article>
+
+
+        <span id="errorcode"> </span>
+
+      </div>
+      <!--<div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>-->
+    </div>
+  </div>
+</div>
+<!-- Login Modal Ends-->
+
+
+
+<!-- Re-login Modal -->
+<div class="modal fade" id="reLoginModalCenter" tabindex="-1" role="dialog" aria-labelledby="loginModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button id="Login_Form_Close_Button" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <article class="post-login">
+          <form name="reLoginform" id="reLoginform">
+            <h2>Please Login</h2>
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">Your session has been expired. Please login to continue.</label>
+              <div class="col-sm-12">
+                <input class="form-control" name="username2" id="userEmail" type="hidden" placeholder="Email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="pwd" class="col-sm-12">Password</label>
+              <div class="col-sm-12">
+                <input type="password" class="form-control" name="password2" placeholder="Password" required>
+              </div>
+            </div>
+            <input type="hidden" name="reLoginStatus" id="reLoginStatus" value="1">
+            <input type="hidden" name="formentry" id="reformentry" value="">
+            <div class="text-left">
+              <input type="submit" value="LOGIN" id="reLoginButton" class="btn btn-primary">
+            </div>
+
+          </form>
+
+        </article>
+
+
+        <span id="reLoginErrorcode"> </span>
+
+      </div>
+      <!--<div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>-->
+    </div>
+  </div>
+</div>
+<!-- Re-login Modal Ends-->
+
+
+
+
+
+<!-- Register Modal -->
+<div class="modal fade" id="registerModalCenter" tabindex="-1" role="dialog" aria-labelledby="registerModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div id="signupMessage" class="alert alert-success"></div>
+        <article class="post-login">
+          <form name="userSignup" id="userSignup" action="#">
+            <h2>Sign Up</h2>
+
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">First Name</label>
+              <div class="col-sm-12">
+                <input class="form-control" name="register-firstname" id="register-firstname" placeholder="First name"
+                  required maxlength="44">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">Last Name</label>
+              <div class="col-sm-12">
+                <input class="form-control" id="register-lastname" name="register-lastname" placeholder="Last name"
+                  required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">Email</label>
+              <div class="col-sm-12">
+                <input type="email" class="form-control" id="register-email" name="register-email" placeholder="Email"
+                  required>
+              </div>
+              <span class="signup-note">To complete your sign up process, an email will be sent to your email that you
+                gave above from the address
+                called no-reply-attest@netspective.support, please make sure you allow us through your Spam</span>
+            </div>
+
+            <div class="form-group row">
+              <label for="email" class="col-sm-12"> </label>
+              <div class="col-sm-12">
+                <div id="recaptchaSignUp"></div>
+              </div>
+              <span class="captcha-message">Please verify the Captcha</span>
+            </div>
+
+            <div class="text-left">
+              <input type="submit" value="Sign Up" id="signupButton" name="signupButton" class="btn btn-primary">
+
+              <a href="#" id="registerlogin" class="btn btn-link">
+                <strong>Login</strong>
+              </a>
+
+            </div>
+
+          </form>
+
+        </article>
+
+
+        <span id="errorcode"> </span>
+
+      </div>
+      <!--<div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>-->
+    </div>
+  </div>
+</div>
+<!-- Register Modal Ends-->
+
+<!-- Invite Modal -->
+<div class="modal fade" id="inviteModalCenter" tabindex="-1" role="dialog" aria-labelledby="inviteModalCenterTitle"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+          id="Quantitative_Evaluation_Invitation_Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+        <div id="inviteMessage" class="alert alert-success"></div>
+        <article class="post-login">
+          <form name="inviteform" id="inviteform">
+            <h2>Invite to Medigy</h2>
+            <div class="form-group row">
+              <label for="firstName" class="col-sm-12">First Name</label>
+              <div class="col-sm-12">
+                <input class="form-control" id="inviteFirstName" name="inviteFirstName" type="text" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="lastName" class="col-sm-12">Last Name</label>
+              <div class="col-sm-12">
+                <input class="form-control" id="inviteLastName" name="inviteLastName" type="text" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-sm-12">Email id to invite</label>
+              <div class="col-sm-12">
+                <input class="form-control" id="inviteEmail" name="inviteEmail" type="email" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-12">
+              </div>
+            </div>
+            <input type="hidden" name="inviteformentry" id="inviteformentry" value="">
+            <input type="hidden" name="facetName" id="facetName" value="">
+            <input type="hidden" name="productName" id="productName" value="">
+            <input type="hidden" name="facetsSlug" id="facetsSlug" value="">
+            <div class="text-left">
+              <input type="submit" value="SEND" id="inviteButton"
+                class="btn btn-primary Quantitative_Evaluation_Invitation_Send">
+            </div>
+            <br />
+          </form>
+
+        </article>
+
+
+
+      </div>
+
+    </div>
+  </div>
+</div>
+<!-- Invite modal-->
+
+
+<!-- Modal for message handling start here-->
+<div class="modal fade" id="cookieMessageModalCenter" tabindex="-1" role="dialog"
+  aria-labelledby="inviteModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <article class="post-login">
+        <div class="modal-body text-center mod-content" id="cookieMessageModal">
+          <article class="post-login">
+            <br />
+            <h2>This website uses cookies</h2>
+          </article>
+        </div>
+        <p>This website uses cookies to improve user experience. By using our website you consent to all cookies in
+          accordance
+          with our Cookie Policy.</p>
+
+        <div class="text-left">
+          <button type="button" class="btn btn-primary cookie-agree" data-dismiss="modal">I agree</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-secondary cookie-disagree" data-dismiss="modal">I
+            disagree</button>&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary cookie-readmore" data-dismiss="modal">Read more</button>
+        </div>
+      </article>
+      <br />
+    </div>
+  </div>
+</div>
+
+
+<!--- Modal for message handling ends here -->
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    $('#zoomsearch').click(function () {
+      if ($('#search-query').val() != '')
+        $("#searchsubmit").submit();
+
+    });
+  });
+  $(document).on('keyup', function (e) {
+    e.preventDefault();
+
+    /* 
+     if(e.which == 13 && $("#loginModalCenter").is(":visible")){
+       submitentry();
+     }
+     */
+    //  if(e.which == 13 && ('#search-query').val()!='' && ('#search-query').is(":focus")) {
+    //$("#searchsubmit").submit();
+    //  }
+  });
+  $(document).ready(function () {
+
+
+    $('#loginModalCenter').on('shown.bs.modal', function (e) {
+      $('html').addClass('freezeforIpad');
+      $('body').addClass('freezeforIpad');
+    });
+    $('#loginModalCenter').on('hidden.bs.modal', function (e) {
+      $('html').removeClass('freezeforIpad');
+      $('body').removeClass('freezeforIpad');
+    });
+
+    /*
+      $('#loginform').on('submit', function (e) { 
+    
+      if (e.isDefaultPrevented()) {
+              alert('form is not valid');
+          } else {
+              // everything looks good!
+              e.preventDefault();
+              submitentry();
+    }
+    
+    });
+     */
+
+
+    /// Signup mutation starts here
+
+    $('#userSignup').on('submit', function (e) {
+      if (e.isDefaultPrevented()) {
+        alert('form is not valid');
+      } else {
+        e.preventDefault();
+        //$('#signupButton').attr('disabled','disabled');
+        $('#signupButton').prop('disabled', true);
+        $('.captcha-message').hide();
+        //console.log("mutation{\n  signupUser(userDetails:{\n    firstName:\""+registerFirstname+"\"\n    lastName:\""+registerLastname+"\"\n    displayName:\""+registerFirstname+"\"\n    email:\""+registerEmail+"\"\n    tenantId:\"cb39d53a-1ef0-11e9-9d28-bb451ba91f54\"    \n    tenantName:\"Netspective\"\n  }){\n    status\n    message\n    errorCode\n  }\n}");
+        var registerFirstname = $('#register-firstname').val();
+        var registerLastname = $('#register-lastname').val();
+        var registerEmail = $('#register-email').val().trim();
+
+        var response = grecaptcha.getResponse();
+        if (response.length == 0) {
+          //reCaptcha not verified
+          $('.captcha-message').show();
+          $('#signupButton').prop('disabled', false);
+          return false;
+        }
+        else {
+          $('.captcha-message').hide();
+          $('#signupButton').prop('disabled', false);
+        }    //reCaptch verified
+
+        var settings = {
+          "async": true,
+          "crossDomain": true,
+          "url": "https://test-graphql.medigy.com/graphql",
+          "method": "POST",
+          "headers": {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "cache-control": "no-cache"
+          },
+          "data": {
+
+            "query": "mutation{\n  signupUser(userDetails:{\n    firstName:\"" + registerFirstname + "\"\n    lastName:\"" + registerLastname + "\"\n    displayName:\"" + registerFirstname + "\"\n    email:\"" + registerEmail + "\"\n    tenantId:\"7822da54-c0ba-11e8-85c1-6301a0c839d6\"    \n    tenantName:\"Netspective\"\n  }){\n    status\n    message\n    errorCode\n  }\n}"
+          }
+        }
+
+        $.ajax(settings).done(function (response) {
+          $("#userSignup")[0].reset();
+          console.log(response);
+          if (response.data.signupUser.status != "ERROR") {
+            $('#signupMessage').html("Your account has been successfully created. Please check your email to sign-in.");
+            $("#userSignup")[0].reset();
+            $('#signupButton').prop('disabled', false);
+            gtmSignUp("Success", registerEmail);
+          }
+          else {
+            $('#signupMessage').html(response.data.signupUser.message);
+            $('#signupMessage').addClass('alert-danger');
+            gtmSignUp("Failed:{ " + response.data.signupUser.message + " }", registerEmail);
+          }
+          $('#signupMessage').show();
+          $('#signupButton').prop('disabled', false);
+        });
+
+      }
+
+    });
+
+
+    //// Signup mutation ends here
+
+    /// bread-crumb starts here /////
+
+    /*
+                String.prototype.capitalizeFirstLetter = function () {
+                  return this.charAt(0).toUpperCase() + this.slice(1);
+                }
+          
+                //Bread crumb script - Kevin Lynn Brown
+                //Duplicate directory names bug fix by JavaScriptKit.com
+                //Visit JavaScript Kit (http://javascriptkit.com) for script
+          
+                var path = "<a href='/'>Home</a>";
+                var href = document.location.href;
+                var questionSplittedhref = href.split('?');
+                href = questionSplittedhref[0];
+                var s =href.split("/");
+                for (var i = 3; i < (s.length - 2); i++) {
+                  if(s[i] == 'page' || s[i] == 'post' || s[i] == '#' || s[i] == '?')
+                    break; 
+                  else if(s[i] == 'topic')   
+                  {
+                    path += " &gt;  <a href=\"" + "/topics" + "/\">" + s[i].capitalizeFirstLetter() + "</a> ";
+                  }  
+                  else if(s[i] == 'event')   
+                  {
+                    path += " &gt;  <a href=\"" + "/events" + "/\">" + s[i].capitalizeFirstLetter() + "</a> ";
+                    break;
+                  }       
+                  else if(s[i] == 'news')   
+                  {
+                    path += " &gt;  <a href=\"" + "/news" + "/\">" + s[i].capitalizeFirstLetter() + "</a> ";
+                    break;
+                  }                                              
+                  else
+                  path += " &gt;  <a href=\"" + href.substring(0, href.indexOf("/" + s[i]) + s[i].length + 1) + "/\">" + s[i].capitalizeFirstLetter() + "</a> ";
+                }
+                i = s.length - 1;
+                path += "<a href=\"" + href.substring(0, href.indexOf(s[i]) + s[i].length) + "\">" + s[i] + "</a>";
+                var last_string_path = "  &gt;   {{.Title}}";
+                last_string_path = last_string_path.replace('Offerings',"Daily Brief");
+                last_string_path = last_string_path.replace('Medigy:','');
+                path += last_string_path;
+                //document.writeln(path);
+                $("#bread-crumbs").html(path);
+    
+    /// bread-crumb ends here /////
+    */
+  });
+
+</script>
+  <script>
+
+  function base64EncodeUnicode(str) {
+    // First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+    // then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+    utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+      return String.fromCharCode('0x' + p1);
+    });
+
+    return btoa(utf8Bytes);
+  }
+
+var personid = getCookie('personid');
+var deleteproject = getCookie('deleteprojectlist');
+var deleteName = getCookie('deleteprojectname');
+
+
+if (personid == null) {
+window.location.href = "/";
+}
+//alert(personid);
+var sessionId = getCookie('sessionId');
+ 
+ 
+  $(document).ready(function () {
+    if(getCookie('projectId')) {  
+     document.cookie = 'projectId=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/';
+    }
+    if (sessionId == '') {
+       window.location.href = "/";
+     }
+
+
+    if (deleteproject == 'true')  
+{ 
+
+    var notifyMessage = 'ILM Project <b>'+deleteName+'</b> Deleted Successfully'; 
+    $('#deletesucess').html(notifyMessage);
+    $("#deletesucess").addClass('alert alert-success');
+    $('#deletesucess').fadeOut(7300);
+    setCookie('deleteprojectlist', '');
+    setCookie('deleteprojectname', '');
+}
+
+
+
+    $(".Form_Login_Button").click(function(){
+
+      var projectName = $('#projectName').val();
+      var projectDesc = $('#projectDesc').val();
+       ilmProjectDesc = projectDesc.replace(/%/g, "percentage");
+       ilmProjectDescr = base64EncodeUnicode(ilmProjectDesc);
+       var categoryArray = $('#topicsName').val();
+          var catCount = categoryArray.length;
+          var category = '';
+
+          for (i = 0; i < catCount; i++) {
+            var splittedCategory = categoryArray[i].split('$,');
+            category += '\n { type:"topic"\n keyword:"' + splittedCategory[0] + '"}\n ';
+          }
+
+        searchKeywordArray = $('#searchKeyword').val().split(',');
+
+          var keyCount = searchKeywordArray.length;
+          var searchKey = '';
+
+          for (i = 0; i < keyCount; i++) {
+            searchKey += '\n { type:"search"\n keyword:"' + searchKeywordArray[i] + '"}\n ';
+          }
+      var subscription = 'subscription:['+searchKey+category+'] \n';
+      console.log("mutation{\n  createProject(projectDetails:{\n    name:\""+projectName+"\"\n    description:\""+ilmProjectDescr+"\"\n    tenantId:\"7822da54-c0ba-11e8-85c1-6301a0c839d6\"\n    campaignType:\"MEDIGY_PROJECT\"\n  "+subscription+"}\n  authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    status\n    message\n    errorCode\n  }\n}"); //return false;
+     var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://test-graphql.medigy.com/graphql",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": "mutation{\n  createProject(projectDetails:{\n    name:\""+projectName+"\"\n    description:\""+ilmProjectDescr+"\"\n    tenantId:\"7822da54-c0ba-11e8-85c1-6301a0c839d6\"\n    campaignType:\"MEDIGY_PROJECT\"\n  "+subscription+"}\n  authorization:{\n    sessionID:\""+sessionId+"\"\n  }){\n    status\n    message\n    errorCode\n  }\n}"
+  }
+}
+if($('#projectName')[0].reportValidity() && $('#projectDesc')[0].reportValidity() ){
+  $(this).val("Please wait");
+    $(this).attr('disabled',true);
+  $.ajax(settings).done(function (response) {
+    $(".Form_Login_Button").attr('disabled',true);
+    $("#canccel").attr('disabled',true);
+    var notifyMessage = 'Project Added'; 
+    $('#projectAddedMessage').html(notifyMessage);
+    $('#projectAddedMessage').addClass('pull-right alert alert-success pt-2 pb-2 m-0');
+    $(".Form_Login_Button").val("SAVE");
+    $('#projectAddedMessage').fadeOut(8300);
+    window.setTimeout(function(){$('#addnewproject .close').click();},9300)
+    window.setTimeout(function(){location.reload()},3000)
+     
+  });
+}
+});
+   
+
+//console.log(sessionId);
+
+/*if (personid == null) {
+window.location.href = "/";
+}*/
+
+var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://test-graphql.medigy.com/graphql",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": " query{\n  getAllProjects(authorization:{\n    sessionID:\""+sessionId+"\"\n  }\n  tenantId:\"7822da54-c0ba-11e8-85c1-6301a0c839d6\",getAnalytics:false){\n    id\n    name\n    slug\n  description\n createdOn\n    analytics{\n      offeringTotalCount\n      eventsTotalCount\n      newsTotalCount\n      offeringProductCount\n      offeringSolutionCount\n      offeringServiceCount\n    }\n  }\n}"
+  }
+
+
+
+  
+}
+
+$.ajax(settings).done(function (response) {
+  
+  console.log(response);
+  var settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://test-graphql.medigy.com/graphql",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "keep-alive",
+    "cache-control": "no-cache"
+  },
+  "data": {
+    "query": " query{\n  getAllProjects(authorization:{\n    sessionID:\""+sessionId+"\"\n  }\n  tenantId:\"7822da54-c0ba-11e8-85c1-6301a0c839d6\",getAnalytics:true){\n    id\n    name\n    slug\n  description\n createdOn\n    analytics{\n      offeringTotalCount\n      eventsTotalCount\n      newsTotalCount\n      offeringProductCount\n      offeringSolutionCount\n      offeringServiceCount\n    }\n  }\n}"
+  }
+
+
+
+  
+}
+
+$.ajax(settings).done(function (response) {
+  
+  console.log(response);
+  $('#ilmprojectsloading').hide();
+  var html = "";
+  for (key in response.data.getAllProjects) {
+
+    var analytics = response.data.getAllProjects[key].analytics;
+
+     
+ 
+    var create_date = response.data.getAllProjects[key].createdOn; 
+    var createdOndt = new Date(create_date * 1000);
+    var createdOndate =  createdOndt.toLocaleString();
+    var arr = createdOndate.split(',');
+    var split_createdOndate = arr[0];
+
+    const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+ 
+    let formatted_date =  months[createdOndt.getMonth()]  + " " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+      
+    console.log(response.data.getAllProjects[key].description);
+   html += '<div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" class="card blog-card" rel="bookmark"><article  class="card-body"><h2 class="card-title"><a href="/ilm/project.html/?ilm='+response.data.getAllProjects[key].slug+'">'+response.data.getAllProjects[key].name+'</a></h2><p class="card-text ch-limit"> '+response.data.getAllProjects[key].description+' </p><span class="card-subtext muted-text post-tags post-align"><b>Created <time datetime="2019-11-07">'+formatted_date+'</time></b></span><span class="total-count-1">Total: <strong> '+analytics.offeringTotalCount+'</strong> </span>  <span class="total-count-1">Product: <strong>'+analytics.offeringProductCount+'</strong> </span> <span class="total-count-1">Solution: <strong>'+analytics.offeringSolutionCount+'</strong> </span> <span class="total-count-1">Service: <strong>'+analytics.offeringServiceCount+'</strong> </span>   <span class="total-count-1">News: <strong>'+analytics.newsTotalCount+'</strong> </span> <span class="total-count-1">Event: <strong>'+analytics.eventsTotalCount+'</strong> </span> </span></article></div>';
+
+  }
+ $('#getallprojects').hide();
+ $('#getallprojectsfinal').html(html);
+});
+
+  var html = "";
+  for (key in response.data.getAllProjects) {
+
+    var analytics = response.data.getAllProjects[key].analytics;
+
+     if(analytics == null){
+      
+       
+     var totalOfferingsCount = '0';
+     var totalNewsCount = '0';
+     var totalEventsCount = '0';
+     var totalcount = '0';
+    }
+    else{
+      
+        var totalOfferingsCount = parseInt(analytics.offeringTotalCount);
+        var totalNewsCount = parseInt(analytics.newsTotalCount);
+        var totalEventsCount = parseInt(analytics.eventsTotalCount);
+        var totalcount = (totalOfferingsCount + totalNewsCount +  totalEventsCount); 
+
+     }
+ 
+    var create_date = response.data.getAllProjects[key].createdOn; 
+    var createdOndt = new Date(create_date * 1000);
+    var createdOndate =  createdOndt.toLocaleString();
+    var arr = createdOndate.split(',');
+    var split_createdOndate = arr[0];
+
+    const months = ["Jan", "Feb", "Mar","Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+ 
+    let formatted_date =  months[createdOndt.getMonth()]  + " " + createdOndt.getDate() + ", " + createdOndt.getFullYear()
+      
+    console.log(response.data.getAllProjects[key].description);
+    html += '<div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" class="card blog-card" rel="bookmark"><article  class="card-body"><h2 class="card-title"><a href="/ilm/project.html/?ilm='+response.data.getAllProjects[key].slug+'">'+response.data.getAllProjects[key].name+'</a></h2><p class="card-text ch-limit"> '+response.data.getAllProjects[key].description+' </p><span class="card-subtext muted-text post-tags post-align"><b>Created <time datetime="2019-11-07">'+formatted_date+'</time></b></span><span class="total-count-1">Total: <strong> '+totalcount+'</strong> </span>  <span class="total-count-1">Products: <strong> </strong> </span> <span class="total-count-1">Solutions: <strong> </strong> </span> <span class="total-count-1">Services: <strong> </strong> </span>   <span class="total-count-1">News: <strong> </strong> </span> <span class="total-count-1">Events: <strong> </strong> </span> </span></article></div>';
+
+  }
+ $('#getallprojects').html(html);
+});
+
+
+    var tagArray = '';
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://service.ontology.attest.cloud/?query={getClassHierarchy%28rootClassName:%22Collection%22,searchParam:%22%22%29{parentclassname%20parentclasslabel%20%20classname%20%20%20%20label%20%20%20%20%20subclassname%20%20%20%20%20subclasslabel}}",
+      "method": "GET",
+      "headers": {
+        "Accept": "*/*",
+        "Cache-Control": "no-cache",
+        "Host": "https://service.ontology.attest.cloud/",
+        "accept-encoding": "gzip, deflate",
+        "Connection": "keep-alive",
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+
+      //console.log(response);
+      let myArray = response.data.getClassHierarchy;
+      var catOption = '';
+      for (let i = 0; i < myArray.length; i++) {
+        if (myArray[i].subclassname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].subclasslabel;
+          var key = myArray[i].subclassname;
+        }
+        else if (myArray[i].classname) {
+          var label = myArray[i].parentclasslabel + ": " + myArray[i].label;
+          var key = myArray[i].classname;
+        }
+        else {
+          var label = myArray[i].parentclasslabel;
+          var key = '';//myArray[i].parentclassname;
+        }
+
+        catOption += '<option value="' + label + "$," + key + '">' + label + '</option>';
+
+      }
+      $('#topicsName').html(catOption);
+
+    });
+
+$('#topicsName').select2();
+
+  
+
+  $('#createILMbutton').click(function(){
+    $('.select2').css("width", "100%"); 
+
+  });
+});
+</script>
+ 
+<section class="about-wrapper">
+  
+<div id="my-offering" class="container">
+   
+
+  
+
+   <main class="fhir-list-row search-results-row pt-1">
+   
+      <div class="modal fade" id="addnewproject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body text-left">
+          <article class="post-login">
+            
+              <div class="form-group row">
+                  <label class="col-sm-12">Project Name</label>
+                  <div class="col-sm-12">
+               <input name = "projectName" id = "projectName" type="text" class="form-control" placeholder="Enter Project Name" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-sm-12">Description</label>
+                    <div class="col-sm-12">
+                      <textarea name = "projectDesc" id = "projectDesc" class="form-control" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-sm-12"> Topics<a href="javascript:void(0);" data-toggle="tooltip" title="Please select the best suited topics for your project">
+                      <i class="fas fa-question-circle"></i></a></label>
+                    <div class="col-sm-12">
+                      <select class="form-control" name="topicsName" id="topicsName" multiple title="Please select the best suited topics for your project">
+                      </select>
+                  
+                  
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-sm-12"> Search Keyword</label>
+                    <div class="col-sm-12">
+                      <input name="searchKeyword" id="searchKeyword" type="text" class="form-control" title="Enter each search keyword with comma(,) seperation"
+                        placeholder="Enter Search Keyword with comma(,) seperated" required>
+                    </div>
+                  </div>
+          
+              <input type="hidden" name="formentry" id="formentry" value="true">
+              <div class="text-left">
+                <input type="submit" value="SAVE" class="btn btn-primary Form_Login_Button">
+                <a href="#" id="canccel" class="btn btn-light" data-dismiss="modal">
+                  <strong>Cancel</strong>
+                </a>
+                <span id = "projectAddedMessage"  class="text-center green" role="alert"></span>
+              </div>
+    
+             
+          
+          </article>
+    
+    
+          <span id="errorcode"></span>
+    
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <div id = "deletesucess"  class="text-center w-100" role="alert">
+       
+    </div>
+    <div class = "clearfix"></div>
+
+     
+
+    <div class = "clearfix"></div>
+
+    
+                  
+
+   
+   <div id = "getallprojects">
+
+   </div>
+
+    <div id = "getallprojectsfinal">
+
+   </div>   </main>
+   
+</div>
+
+</section>
+     
+    <script type="text/javascript" src="/js/bootstrap.min.js" /></script> 
+    
+    <!--<script src="https://clin-table-search.lhc.nlm.nih.gov/lforms-versions/13.1.0/lforms.min.js"></script>-->
+ 
+ 
+<section class = "footer-wrapper">
+  <div itemscope itemtype = "http://schema.org/WebSite"><!--open schema website div -->
+  <article class="landing-footer-wrapper">
+    
+      <div class="container">
+        <div class="row footer-skin-row-1">
+
+            <div class="col-md-4 footer-skin-row-1-col-1">
+              <h5>Medigy Innovation Network</h5>
+              <p>Connecting innovation decision makers to authoritative information, institutions, people and insights.</p>
+             <ul>
+                    <li><a id = "About_Us_Footer" href="/about-us">About Us</a></li>
+                    <li> <a id = "Contact_Us_Footer" target="_blank" href="https://www.netspective.media/#contact-us">Contact Us</a></li>
+                </ul>
+              <span class="footer-skin-logo"><a href="/" title="Medigy"><img class = "footer-logo-style img-responsive" src="/images/Medigy- Innovation- Network-footer.svg"></a></span>
+            </div>
+
+            <div class="col-md-4 footer-skin-row-1-col-1">
+              <h5>The latest News, Insights & Events</h5>
+                <p>Medigy accurately delivers healthcare and technology information, news and insight from around the world.</p>
+              <ul>
+                  <li><span class="foot-menu-width"><a id = "News_Footer" href="/news">News</a></span> <span class="foot-menu-width cap"><a id = "AddNews_Footer" href="/add-suggest">Curate News</a></span></li>
+                  <li><span class="foot-menu-width"><a id = "Events_Footer" href="/events">Events</a></span> <span class="foot-menu-width cap"><a id = "AddEvents_Footer" href="/add-suggest">Add Event</a></span></li>
+                  <li><span class="foot-menu-width"><a id = "Awards_Footer" href="/recognition/awards/">Awards</a></span> <span class="foot-menu-width cap"><a id = "AddAwards_Footer" href="/add-suggest">Add Recognition</a></span></li>
+                  <li><span class="foot-menu-width"><a id = "Feeds_Footer" href="/feed/latest">Feeds</a></span> <span class="foot-menu-width cap"><a id = "AddFeeds_Footer" href="/add-suggest">Suggest Feed</a></span></li>
+              </ul>
+            </div>
+
+            <div class="col-md-4 footer-skin-row-1-col-1">
+              <h5>The best products, services & solutions</h5>
+              <p>Medigy surfaces the world’s best crowdsourced health tech offerings with social interactions and peer reviews.</p>
+            <ul>
+                    <li><a id = "Daily_Brief_Footer" href="/brief/daily/offerings/discovered/">Daily Brief</a></li>
+                    <!--<li><a id = "Trending_Footer" href="/trending">Trending</a></li>-->
+                    <li><a id = "Categories_Footer" href="/topics">Topics</a></li>
+                    <li><a id = "Evaluation_Facets_Footer" href="/evaluation-facets">Evaluation Facets</a></li>
+                </ul>
+            </div>
+
+        </div>
+        </div>
+      <div class="footer-skin-row-2">
+        <div class="container">
+       <div class="row">
+                  <div class="col-lg-6 col-md-6">
+    
+                  ©   Netspective Media LLC. All Rights Reserved.<br> 
+                  
+
+              </div>
+              <div class="col-lg-6 col-md-6 footer-skin-social">
+                <span>
+                  <a id = "Twitter_Social_Footer" target = "blank" href="https://twitter.com/Medigy1" itemprop = "sameAs">
+                  <img src="/images/icon-twitter.png" ></a>
+                </span> 
+                <span>
+                  <a id = "LinkedIn_Social_Footer" target = "blank" href="https://www.linkedin.com/company/14692561/" itemprop = "sameAs">
+                  <img src="/images/icon-linkedin.png"></a>
+                </span> 
+                <span>
+                  <a  id = "Facebook_Social_Footer"  target = "blank" href="https://www.facebook.com/Medigy-348891592466008/" itemprop = "sameAs">
+                  <img src="/images/icon-facebook.png"></a>
+                </span>
+              </div>
+            </div>
+          </div>   
+      </div>
+
+  </article>
+
+  <script type="text/javascript" src="/js/jquery.md5.js"></script>
+  </div><!--close schema website div -->
+</section>
+
+<script>
+  $(document).ready(function () {
+    if (getCookie('suggestNewsEvent') == 'Offerings') {
+        setCookie('suggestNewsEventPage', "");
+        setCookie('suggestNewsEvent', "");
+        $("#myTab > li > a").removeClass("active");
+        $('.main-tab.tab-pane').removeClass("active show");
+        $("#offering-tab").addClass("active");
+        $("#offering").addClass("active show");
+        localStorage.setItem('activeaddTab', '#offering');
+    }
+    $('#AddNews_Footer').on("click", function (e) {
+    localStorage.removeItem("activeaddTab");
+    $('#myTab a[href="' + "#news" + '"]').tab('show');
+     
+      setCookie('suggestNewsEventPage', "News");
+      setCookie('suggestNewsEvent', "News");
+  if (getCookie('personid') == null) {
+    
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+  }
+    });
+    if (getCookie('personid') !== null) {
+
+      if (getCookie('suggestNewsEvent') == 'News') {
+        setCookie('suggestNewsEventPage', "");
+        setCookie('suggestNewsEvent', "");
+        var data = $("#myTab > li > a").attr("class");
+        $("#myTab > li > a").removeClass("active");
+        $('.main-tab.tab-pane').removeClass("active show");
+        $("#news-tab").addClass("active");
+        $("#news").addClass("active show");
+        localStorage.setItem('activeaddTab', '#news');
+
+      }
+    }
+
+   
+
+    $('#AddEvents_Footer').on("click", function (e) {
+    localStorage.removeItem("activeaddTab");
+    $('#myTab a[href="' + "#events" + '"]').tab('show');
+    setCookie('suggestNewsEventPage', "Event");
+    setCookie('suggestNewsEvent', "Event");
+    if (getCookie('personid') == null) {
+      
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+    }
+    });
+     if (getCookie('personid') !== null) {
+
+    if (getCookie('suggestNewsEvent') == 'Event') {
+      setCookie('suggestNewsEventPage', "");
+      setCookie('suggestNewsEvent', "");
+      var data = $("#myTab > li > a").attr("class");
+      $("#myTab > li > a").removeClass("active");
+      $('.main-tab.tab-pane').removeClass("active show");
+      $("#events-tab").addClass("active");
+      $("#events").addClass("active show");
+      localStorage.setItem('activeaddTab', '#events');
+    }
+     }
+
+// 18-12-19
+    $('#AddAwards_Footer').on("click", function (e) {
+    localStorage.removeItem("activeaddTab");
+    $('#myTab a[href="' + "#awards" + '"]').tab('show');
+    setCookie('suggestNewsEventPage', "Awards");
+    setCookie('suggestNewsEvent', "Awards");
+    if (getCookie('personid') == null) {
+      
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+    }
+    });
+     if (getCookie('personid') !== null) {
+
+    if (getCookie('suggestNewsEvent') == 'Awards') {
+      setCookie('suggestNewsEventPage', "");
+      setCookie('suggestNewsEvent', "");
+      var data = $("#myTab > li > a").attr("class");
+      $("#myTab > li > a").removeClass("active");
+      $('.main-tab.tab-pane').removeClass("active show");
+      $("#awards-tab").addClass("active");
+      $("#awards").addClass("active show");
+      localStorage.setItem('activeaddTab', '#awards');
+    }
+     }
+
+$('#AddFeeds_Footer').on("click", function (e) {
+    localStorage.removeItem("activeaddTab");
+    $('#myTab a[href="' + "#feeds" + '"]').tab('show');
+    setCookie('suggestNewsEventPage', "Feeds");
+    setCookie('suggestNewsEvent', "Feeds");
+    if (getCookie('personid') == null) {
+      
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+    }
+    });
+     if (getCookie('personid') !== null) {
+
+    if (getCookie('suggestNewsEvent') == 'Feeds') {
+      setCookie('suggestNewsEventPage', "");
+      setCookie('suggestNewsEvent', "");
+      var data = $("#myTab > li > a").attr("class");
+      $("#myTab > li > a").removeClass("active");
+      $('.main-tab.tab-pane').removeClass("active show");
+      $("#feeds-tab").addClass("active");
+      $("#feeds").addClass("active show");
+      localStorage.setItem('activeaddTab', '#feeds');
+    }
+     } 
+
+       $('#AddTopic_Top').on("click", function (e) {
+       setCookie('suggestNewsEventPage', "Topic");
+       setCookie('suggestNewsEvent', "Topic");
+  if (getCookie('personid') == null) {
+    
+     e.preventDefault();
+     
+      $('#loginModalCenter').modal('toggle');
+      return false;
+  }
+    });  
+    if (getCookie('personid') !== null) {
+
+      if (getCookie('suggestNewsEvent') == 'Topic') {
+        setCookie('suggestNewsEventPage', "");
+        setCookie('suggestNewsEvent', "");
+        var data = $("#myTab > li > a").attr("class");
+        $("#myTab > li > a").removeClass("active");
+        $('.main-tab.tab-pane').removeClass("active show");
+        $("#topics-tab").addClass("active");
+        $("#topics").addClass("active show");
+        localStorage.setItem('activeaddTab', '#topics');
+      }
+      
+    } 
+
+// 18-12-19
+
+    $('#Top_Add_Offering_Button').on("click", function () {
+      localStorage.removeItem("activeaddTab");
+      setCookie('suggestNewsEventPage', "Offerings");
+      setCookie('suggestNewsEvent', "Offerings");
+    });
+  });
+  // data layer variable 23-01-2020
+  function gtmAddBrief(title,tab,userEmail){
+  window.dataLayer = window.dataLayer || [];
+         window.dataLayer.push({
+       'gtmTitle': title,
+       'gtmTab':tab,
+       'gtmPersonid': userEmail  
+       
+      }); 
+    return;
+  }
+  function gtmAddBriefCategory(title,tab,userEmail,category){
+  window.dataLayer = window.dataLayer || [];
+         window.dataLayer.push({
+       'gtmTitle': title,
+       'gtmTab':tab,
+       'gtmPersonid': userEmail,
+       'gtmCategory':category  
+       
+      }); 
+     return;
+  }
+  </script>     
+  </body>
+</html>
