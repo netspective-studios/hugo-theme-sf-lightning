@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partial "head.html" . }}
+<style>
+  .lf-form-body .ng-scope .lf-form-table>div:first-child {
+    display: none !important;
+  }
+</style>
+<body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <div id="g-tag-body">
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  </div>
+  <!-- End Google Tag Manager (noscript) -->
+{{ partial "nav-bar.html" . }}
+
+<section class="about-wrapper">
+  <div id="awards-landing" class="container">
+    {{ partial "bread-crumb.html" . }}
+    {{ $btnId := "AddAward_Top" }}
+    {{ $label := "Add Award" }}
+    {{ $value := "Awards" }}
+    {{ $tabId := "awards-tab" }}
+    {{ $tab := "awards" }}
+    {{ partialCached "add-button.html" (dict  "btnId"  $btnId  "label" $label "value" $value "tab" $tab "tabId" $tabId) $label }}
+    <main class="fhir-list-row search-results-row pt-1">
+      <div class="modal fade" id="addnewproject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+          <div class="modal-body text-left">
+          <article class="post-login">          
+            <div class="form-group row">
+              <label class="col-sm-12">Enter Project Name</label>
+              <div class="col-sm-12">
+                <input name = "projectName" id = "projectName" type="text" class="form-control" placeholder="Enter Project Name" required>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-12">Enter Description</label>
+              <div class="col-sm-12">
+                <textarea name = "projectDesc" id = "projectDesc" class="form-control" required></textarea>
+              </div>
+            </div>         
+            <input type="hidden" name="formentry" id="formentry" value="true">
+            <div class="text-left">
+              <input type="submit" value="SAVE" class="btn btn-primary Form_Login_Button">
+              <a href="#" id="canccel" class="btn btn-light" data-dismiss="modal"><strong>Cancel</strong></a>
+            </div>        
+          </article>    
+          <span id="errorcode"></span>    
+        </div>      
+      </div>
+    </div>
+  </div>
+  <div id = "deletesucess"  class="text-center w-100" role="alert"></div>
+  <div class = "clearfix"></div>
+    {{ range where $.Site.Pages.ByWeight.Reverse "Params.sub" "grouping"   }}      
+      <div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)"
+        class="card blog-card" rel="bookmark">{{ if .Params.featuredimage}}<div class="card-img-container award-card-height"> <img
+            src="{{ .Params.featuredimage }}" class="card-img card-img-award" alt = "medigy-awards"
+            onerror="this.onerror=null; this.src='/img/featured/default.png'"> </div>{{ else }} {{ end }}<article
+          class="card-body">        
+          {{ if eq .Params.award  "hhs"}}
+            <h2 class="card-title"><a href="/recognition/challenges/{{.Params.award}}" class="gtm-award"
+              onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': $('.nav-link.menu-selected').text(),'gtmTitle': '{{ .Params.Title }}','gtmPersonid':getCookie('userEmail')})">{{ .Params.Title }}</a>
+            </h2>
+          {{ else }}
+          <h2 class="card-title"><a href="/recognition/award/{{.Params.award}}" class="gtm-award"
+            onclick="dataLayer.push({'event': 'sharebuttonclick','gtmPage': $('.nav-link.menu-selected').text(),'gtmTitle': '{{ .Params.Title }}','gtmPersonid':getCookie('userEmail')})">{{ .Params.Title }}</a>
+          </h2>
+          {{ end }}
+          <p class="card-text ch-limit">{{ .Summary }}</p>
+          <div class="metrix row count-bt-area">    
+            <div class="col-lg-3 count-col-1"></div> 
+            <div class="col-lg-5 count-col-2"></div>    
+            <div class="col-lg-4 count-col-3">
+              <div class="social-share social-count-display">  
+                {{ $permaLink := .Permalink | safeURL}}
+                {{ $safeUrl := $.Site.Params.siteUrl }}       
+                {{ $href := print "https://www.facebook.com/sharer/sharer.php?u=" $safeUrl "recognition/award/" .Params.award }}
+                {{ $class := "fb-share-push fb-share" }}
+                {{ $dataApp := .Params.id }}
+                {{ $dataSlug := .Permalink }}
+                {{ $dataName := .Title }}
+                {{ $tooltip := "Facebook" }}
+                {{ $icon := "fab fa-facebook-square cl-f" }}
+                {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip .Title }}
+                
+                {{ $permaLink := .Permalink | safeURL}}
+                {{ $safeUrl := $.Site.Params.siteUrl }}       
+                {{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl "recognition/award/" .Params.award }}
+                {{ $class := "twitter-share-push fb-share" }}
+                {{ $dataApp := .Params.id }}
+                {{ $dataSlug := .Permalink }}
+                {{ $dataName := .Title }}
+                {{ $tooltip := "Twitter" }}
+                {{ $icon := "fab fa-twitter-square cl-t" }}
+                {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip .Title}}
+
+                {{ $permaLink := .Permalink | safeURL}}
+                {{ $safeUrl := $.Site.Params.siteUrl }}       
+                {{ $href := print "http://www.linkedin.com/shareArticle?url=" $safeUrl "recognition/award/" .Params.award }}
+                {{ $class := "linkedin-share-push fb-share" }}
+                {{ $dataApp := .Params.id }}
+                {{ $dataSlug := .Permalink }}
+                {{ $dataName := .Title }}
+                {{ $tooltip := "Linkedin" }}
+                {{ $icon := "fab fa-linkedin cl-in" }}
+                {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip .Title}}
+
+                {{ $permaLink := .Permalink | safeURL}}
+                {{ $safeUrl := $.Site.Params.siteUrl }}       
+                {{ $href := print "mailto:?subject=Check out the post, '" .Params.title "' in medigy.com!&body=" .Params.title "\n" $safeUrl "recognition/award/" .Params.award }}
+                {{ $class := "email-share-push"}}
+                {{ $dataApp := .Params.id }}
+                {{ $dataSlug := .Permalink }}
+                {{ $dataName := .Title }}
+                {{ $tooltip := "Email" }}
+                {{ $icon := "fas fa-envelope cl-m" }}
+                {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip .Title}} 
+                <div class="clearfix"></div>                 
+                <div class="clearfix"></div>   
+              </div>
+            </div>
+          </div>  
+        </article>
+      </div>      
+    {{ end }}
+   </main>
+  </div>
+</section>
+  {{ partialCached "footer.html" . }}
+</body>
+</html>

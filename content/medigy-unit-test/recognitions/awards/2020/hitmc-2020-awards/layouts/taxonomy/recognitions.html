@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}" dir="ltr">
+{{ partial "award-hitmc-2020-themeConfig.html" . }}
+
+{{ partial "head-award.html" . }}
+
+<body class="single-body">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ $.Site.Params.GTMCode }}" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  {{ partial "nav-bar.html" . }}
+  {{ $taxdata := .Title }}
+
+  {{ range (where (where .Site.Pages ".Params.sub" "grouping" ) ".Params.award" $taxdata)  }}
+
+  <script>
+  
+// Project listing 
+var usersession = getCookie('sessionId');
+var personid = getCookie('personid');
+var tenantId = getCookie('tenantId');
+
+
+
+var settings = {
+"async": true,
+"crossDomain": true,
+"url": "{{ $.Site.Params.GraphQLUrl }}",
+"method": "POST",
+"headers": {
+"Content-Type": "application/x-www-form-urlencoded",
+"Accept": "*/*",
+"Accept-Encoding": "gzip, deflate",
+"Connection": "keep-alive",
+"cache-control": "no-cache"
+},
+"data": {
+"query": " query{\n  getAllIlmProjects(authorization:{\n    sessionID:\""+usersession+"\"\n  },getAnalytics:false){\n    id\n    name\n    description\n    created_at\n     }\n}"
+}
+}
+
+$.ajax(settings).done(function (response) {
+console.log(response);
+html = '<option selected disabled value="">Select</option>';
+for (key in response.data.getAllIlmProjects) {
+
+html += '<option value = "'+response.data.getAllIlmProjects[key].id+'">'+response.data.getAllIlmProjects[key].name+'</option>'
+
+}
+$('#projectlistforawards').html(html);
+});
+
+function base64EncodeUnicode(str) {
+// First we escape the string using encodeURIComponent to get the UTF-8 encoding of the characters, 
+// then we convert the percent encodings into raw bytes, and finally feed it to btoa() function.
+utf8Bytes = encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (match, p1) {
+return String.fromCharCode('0x' + p1);
+});
+
+return btoa(utf8Bytes);
+}
+$(document).ready(function () {
+$("#awardrelationbtn").click(function(){
+
+    
+ 
+   var imagePath = "{{.Params.featuredimage}}";
+   console.log('my image',imagePath);
+   var urlPermalink = window.location.pathname;
+   console.log("my url permalink",urlPermalink);
+
+   var description = "{{ .Summary }}";
+   description = description.replace(/%/g, "percentage");
+   description = base64EncodeUnicode(description);
+
+   var notes = $('#awardsProjectcmnts').val();
+   notes = notes.replace(/%/g, "percentage");
+   notes = base64EncodeUnicode(notes);
+
+   var usersession = getCookie('sessionId');
+   var newsDate =  "{{ .Date.Format "2006-01-02" }}";
+
+console.log("mutation{\n\n  createIlmProjectItem(\n  \n  authorization:{sessionID:\""+usersession+"\"}\n  projectId:\""+$('#projectlistforawards').val()+"\"\n  \trelationId:\""+$('#projectlistforawards').val()+"\"\n    \ndescription : \""+notes+"\"\n  \n  DataCollection:{\n  \n  dataType:\"Awards\",\n  \n  source:\"Medigy\",\n  \n  title:\"{{ .Title }}\",\n  \n  imageURL:\""+imagePath+"\",\n  \n  uniqueIdentifier:\""+urlPermalink+"\",\n  \n  description:\""+description+"\",\n  \n  postedDate:\""+newsDate+"\",\n  \n  sourceURL:\"{{ .Params.source_url }}\",\n  \n  offeringId:\""+$('#projectlistforawards').val()+"\"\n  \n  })\n  {\n    status\n    message\n    errorCode\n  }\n}"); //return false;
+
+var settings = {
+"async": true,
+"crossDomain": true,
+"url": "{{ $.Site.Params.GraphQLUrl }}",
+"method": "POST",
+"headers": {
+"Content-Type": "application/x-www-form-urlencoded",
+"Accept": "*/*",
+"Accept-Encoding": "gzip, deflate",
+"Connection": "keep-alive",
+"cache-control": "no-cache"
+},
+"data": {
+  "query": "mutation{\n\n  createIlmProjectItem(\n  \n  authorization:{sessionID:\""+usersession+"\"}\n  projectId:\""+$('#projectlistforawards').val()+"\"\n  \trelationId:\""+$('#projectlistforawards').val()+"\"\n relationType:\"MEDIGY_AWARDS\"\n  \n description : \""+notes+"\"\n  \n  DataCollection:{\n  \n  dataType:\"Awards\",\n  \n  source:\"Medigy\",\n  \n  title:\"{{ .Title }}\",\n  \n  imageURL:\""+imagePath+"\",\n  \n  uniqueIdentifier:\""+urlPermalink+"\",\n  \n  description:\""+description+"\",\n  \n  postedDate:\""+newsDate+"\",\n  \n  sourceURL:\"{{ .Params.source_url }}\",\n  \n  offeringId:\""+$('#projectlistforawards').val()+"\"\n  \n  })\n  {\n    status\n    message\n    errorCode\n  }\n}"
+}
+
+}
+if($('#projectlistforawards')[0].reportValidity() && $('#awardsProjectcmnts')[0].reportValidity()){ 
+$(this).val("Please wait");
+$(this).attr('disabled',true); 
+$.ajax(settings).done(function (response) {
+
+responseStatus = response.data.createIlmProjectItem.status;
+responseMessage = response.data.createIlmProjectItem.message;
+
+if(responseStatus == "Success")
+{
+         
+
+ $("#awardrelationbtn").attr('disabled',true);
+ $("#canccel").attr('disabled',true);
+ var notifyMessage = "Award added"; 
+ $('#offerAddedMessage').html(notifyMessage);
+ $('#offerAddedMessage').addClass('pull-right alert alert-success pt-2 pb-2 m-0');
+ $("#awardrelationbtn").val("SAVE");
+ $('#offerAddedMessage').fadeOut(8300);
+ //$("#toEventIm").trigger('reset');
+ window.setTimeout(function(){$('#addNewsIlm .close').click();},9000)
+ window.setTimeout(function () { location.reload() }, 3000)
+ $('#awardsProjectcmnts').val("");
+}
+else if (responseMessage == "Issue with this title already exists") {
+
+  var notifyMessage = "Selected news already exists";
+   $('#offerAddedMessage').html(notifyMessage);
+   $('#offerAddedMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+   $("#awardrelationbtn").val("SAVE");
+   $('#offerAddedMessage').fadeOut(8300);
+
+}
+else
+{
+ 
+
+  var notifyMessage = "Invalid contents, please contact administrator";
+   $('#offerAddedMessage').html(notifyMessage);
+   $('#offerAddedMessage').addClass('pull-right alert alert-warning pt-2 pb-2 m-0');
+   $("#awardrelationbtn").val("SAVE");
+   $('#offerAddedMessage').fadeOut(8300);
+}
+ 
+});
+}  
+
+});
+
+
+
+  $('.awardmore').click(function(event){
+ if ( $(this).html() == 'Show more')
+  { 
+    $(event.target).prev('.card-text').removeClass('ch-limit');
+    $(event.target).prev('.card-text').addClass('awardsummary');
+    $(this).html('Show less');
+   } 
+   else{
+    $(event.target).prev('.card-text').addClass('ch-limit');
+    $(event.target).prev('.card-text').removeClass('awardsummary');
+    $(this).html('Show more');
+
+   } 
+   
+    
+  });
+
+  $(".loginCheckforIlm").click(function(){
+
+     
+
+var personid = getCookie('personid');
+
+
+ if(personid==null)
+  { 
+    setCookie('addtoilmbutton', 'true');  
+    $('#addNewsIlm').modal('hide'); 
+    $("#addtoilm").attr("data-toggle", 'modal');
+    $("#addtoilm").attr("data-target", '#loginModalCenter'); 
+  }
+   
+
+
+});
+
+
+ });
+ </script>
+
+{{ end }}
+  
+  <!-- community category strats here -->
+  <section class="detail-wrapper">
+    <h2 id="category-title" style="display:none">{{ .Title }} </h2>
+     
+    <article class="new-ofering-row-3 commun-content-row-3">
+      <div class="container">
+
+
+        <div class="row">
+          <div class="col-lg-12">
+            {{ range (where (where .Site.Pages ".Params.sub" "grouping" ) ".Params.award" $taxdata)  }}            
+            {{ $.Scratch.Set "awardlink" .Params.award }}
+            <div class="new-ofering-row-3-left-cell-1 no-border">
+              <header class="post-header">
+
+                 <h2 class="category-heading" itemprop="Headline">{{ .Title }} </h2>    
+              </header>
+               {{.Content}} 
+              Continue reading at <a class = "grey-link" target="_blank" href="{{.Params.source_url}}">{{.Params.source_text}} </a>               
+            </div>
+            {{ end }}  
+          </div>
+        </div>
+      </div>
+    </article>
+    <hr>
+    <article class="new-ofering-row-3 commun-content-row-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="category-what-new-row">
+              <h3> <span id="whatsNewCategory">The winners include:</span> </h3>
+
+
+            <div class="border-center-1"></div>
+              <!-- product listings starts -->
+            <div class="top-10-most-list "><div>
+    {{ $data := .Data }}
+    {{ range $key, $value := (where .Data.recognitions "Params.sub" "!=" "grouping") }}       
+    {{ $img := strings.TrimLeft "/awards/hitmc-2020-awards" (.Params.featuredimage) }} 
+     {{ $img:= print "/" $img }}
+    {{ $strl := len ("/awards/hitmc-2020-awards/")}}
+    {{ $path := len (.Params.featuredimage)}}
+    {{ $slices := slicestr .Params.featuredimage $strl $path }}
+    {{ $slices := print "/" $slices }}
+      <main class="fhir-list-row">
+       <div ontouchstart="cardPressed.call(this)" ontouchend="cardReleased.call(this)" ontouchmove="cardReleased.call(this)" class="card blog-card" rel="bookmark"> {{ if isset .Params "featuredimage" }}<div class="card-img-container"> <img src="{{ $.Scratch.Get "staticPath" }}{{ $slices }}" class="card-img card-img-award" alt ="2020-medigy-hitmc-awards" onerror="this.onerror=null; this.src='{{ $.Scratch.Get "staticPath" }}/img/featured/default.png'"> </div>{{ else }}   {{ end }}<article class="card-body"><h2 class="card-title"> {{ if isset .Params "sub" }}<h2> {{ else }}<strong> {{ end }} {{ if and (isset .Params "recognized_profile") (ne .Params.recognized_profile "NIL")}} <a href = "{{ $.Scratch.Get "staticPath" }}{{.Params.recognized_profile }}"> {{.Title}} </a> {{else}} {{.Title}}   {{ end }} {{ if isset .Params "sub" }}</h2> {{ else }}</strong> {{ end }} {{ if isset .Params "recognized" }}  {{ if and (isset .Params "recognized_profile") (ne .Params.recognized_profile "NIL") }} <a href = "{{ $.Scratch.Get "staticPath" }}{{.Params.recognized_profile }}" target = "blank"> - </a> {{else}} -  {{ end }} {{ else }}  {{ end }}{{ if ne .Params.recognized_profile "NIL" }}<a href = "{{ $.Scratch.Get "staticPath" }}{{.Params.recognized_profile }}" target = "blank"><strong>{{.Params.recognized}}</strong></a> {{else}} <strong>{{.Params.recognized}}</strong> {{ end }} </h2><p class="card-text ch-limit">{{ .Summary }}</p> {{ if (eq .Params.recognizer "HHS") }} <div class = "awardmore">Show more</div> {{ end }}  <div class="metrix row count-bt-area"> 
+       <div class="col-lg-3 count-col-1"></div>
+       <div class="col-lg-5 count-col-2"></div>    
+      <div class="col-lg-4 count-col-3">
+      <div class="social-share social-count-display">  
+
+      {{ $awardLink := $.Scratch.Get "awardlink" }}     
+      {{$permaLink := .Permalink | safeURL}}
+      {{ $safeUrl := $.Site.Params.siteUrl }}       
+      {{ $href := print "https://www.facebook.com/sharer/sharer.php?u=" $safeUrl "recognition/award/" $awardLink }}
+      {{ $class := "fb-share-push fb-share" }}
+      {{ $dataApp := .Params.id }}
+      {{ $dataSlug := .Permalink }}
+      {{ $dataName := .Title }}
+      {{ $tooltip := "Facebook" }}
+      {{ $icon := "fab fa-facebook-square cl-f" }}
+      {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+       
+      {{$permaLink := .Permalink | safeURL}}
+      {{ $safeUrl := $.Site.Params.siteUrl }}       
+      {{ $href := print "https://twitter.com/intent/tweet?url=" $safeUrl "recognition/award/" $awardLink }}
+      {{ $class := "twitter-share-push fb-share" }}
+      {{ $dataApp := .Params.id }}
+      {{ $dataSlug := .Permalink }}
+      {{ $dataName := .Title }}
+      {{ $tooltip := "Twitter" }}
+      {{ $icon := "fab fa-twitter-square cl-t" }}
+      {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+
+      {{$permaLink := .Permalink | safeURL}}
+      {{ $safeUrl := $.Site.Params.siteUrl }}       
+      {{ $href := print "http://www.linkedin.com/shareArticle?url=" $safeUrl "recognition/award/" $awardLink }}
+      {{ $class := "linkedin-share-push fb-share" }}
+      {{ $dataApp := .Params.id }}
+      {{ $dataSlug := .Permalink }}
+      {{ $dataName := .Title }}
+      {{ $tooltip := "Linkedin" }}
+      {{ $icon := "fab fa-linkedin cl-in" }}
+      {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}
+
+      {{$permaLink := .Permalink | safeURL}}
+      {{ $safeUrl := $.Site.Params.siteUrl }}       
+      {{ $href := print "mailto:?subject=Check out the post, '" .Params.title "' in medigy.com!&body=" .Params.title "\n" $safeUrl "recognition/award/" $awardLink }}
+      {{ $class := "email-share-push"}}
+      {{ $dataApp := .Params.id }}
+      {{ $dataSlug := .Permalink }}
+      {{ $dataName := .Title }}
+      {{ $tooltip := "Email" }}
+      {{ $icon := "fas fa-envelope cl-m" }}
+      {{ partialCached "social-share-button.html" (dict "href" $href "class" $class "dataApp" $dataApp "dataSlug" $dataSlug "dataName" $dataName "icon" $icon "tooltip" $tooltip) $dataApp $tooltip }}   
+     <div class="clearfix"></div>                 
+     <div class="clearfix"></div> 
+    </div>
+    </div>
+     </div> 
+     </article></div> 
+    </main>
+    {{ end }}       
+    </div>
+    </div>
+              <!-- product listings ends -->
+
+            </div><!-- category-what-new-row ends -->
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+  </section>
+  {{ partialCached "footer.html" . }}  
+</body>
+</html>
