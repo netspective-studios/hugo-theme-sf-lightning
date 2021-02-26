@@ -21,25 +21,25 @@ Integer placerat libero sit amet lorem egestas pulvinar. Proin maximus vestibulu
 ## Hints
 
 {{< alert title="Success" variant="success" >}}
-This is an alert box using Adobe Spectrum style.
+This is an alert box using SDLS style.
 {{< /alert >}}
 
 {{< alert title="Info" variant="info" >}}
-This is an alert box using Adobe Spectrum style.
+This is an alert box using SDLS style.
 {{< /alert >}}
 
 {{< alert title="Help" variant="help" >}}
-This is an alert box using Adobe Spectrum style.
+This is an alert box using SDLS style.
 {{< /alert >}}
 
 
 {{< alert title="Warning" variant="warning" >}}
-This is an alert box using Adobe Spectrum style.
+This is an alert box using SDLS style.
 {{< /alert >}}
 
 
 {{< alert title="Error" variant="error" >}}
-This is an alert box using Adobe Spectrum style.
+This is an alert box using SDLS style.
 {{< /alert >}}
 
 

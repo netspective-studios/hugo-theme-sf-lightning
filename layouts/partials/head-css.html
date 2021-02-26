@@ -1,8 +1,5 @@
 
 <link rel="stylesheet" href="{{ .Site.BaseURL }}/styles/salesforce-lightning-design-system.min.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/salesforce-lightning-design-system-legacy.min.css">
-<link rel="stylesheet" href="{{ .Site.BaseURL }}styles/salesforce-lightning-design-system_touch.min.css">
-
 {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}

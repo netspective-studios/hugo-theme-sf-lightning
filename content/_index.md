@@ -1,4 +1,4 @@
 ---
-title: Adobe Coral Spectrum
+title: Medigy - SDLS
 subtitle: Hugo Theme
 ---
