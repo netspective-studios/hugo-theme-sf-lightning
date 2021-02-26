@@ -1,12 +1,10 @@
 ---
-title: Medigy Unit Test
-linkTitle: medigy-unit-test
+title: Medigy Content
+linkTitle: medigy-content
 menu:
   main:
-    name: "Medigy Unit Test"
-    weight: 4
+    name: "Medigy Content"
+    weight: 2
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.  
-Etiam dapibus eu sem eu euismod.    
-Nullam vitae leo vehicula, hendrerit velit non, venenatis massa.
+Medigy Content
