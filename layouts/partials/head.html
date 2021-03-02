@@ -10,6 +10,9 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{ end -}}
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-{{ partialCached "head-css.html" . "asdf" }}
+{{ partial  "head-css.html"  }}
+{{ range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL }}">
+{{- end }}
 
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico">

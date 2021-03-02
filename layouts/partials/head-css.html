@@ -1,5 +1,14 @@
 
-<link rel="stylesheet" href="{{ .Site.BaseURL }}/styles/salesforce-lightning-design-system.min.css">
-{{ range .Site.Params.custom_css -}}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-{{- end }}
+<!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}/styles/salesforce-lightning-design-system.min.css"> -->
+
+
+{{ $cssBase := resources.Get "styles/salesforce-lightning-design-system.min.css" }}
+{{ $css := (slice $cssBase ) | resources.Concat "styles/main.css" }}
+{{ if .Site.IsServer }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ else }}
+{{ $css := $css | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}"  integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+{{ end }}
+
+

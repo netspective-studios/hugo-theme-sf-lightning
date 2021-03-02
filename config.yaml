@@ -3,8 +3,14 @@ title: Medigy
 params:
   logo: "images/logo-icon-100x100.png"
   custom_css : 
-   - "styles/style.css" 
+   - "css/style.css" 
 
   time_format_blog: "Monday, January 02, 2006"
   time_format_default: "January 2, 2006"
   fuseSearch: true
+
+outputFormats:
+    html:
+        minify: true
+    json:
+        minify: true
