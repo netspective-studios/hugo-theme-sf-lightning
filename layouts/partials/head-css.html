@@ -1,14 +1,3 @@
 
 <!-- <link rel="stylesheet" href="{{ .Site.BaseURL }}/styles/salesforce-lightning-design-system.min.css"> -->
-
-
-{{ $cssBase := resources.Get "styles/salesforce-lightning-design-system.min.css" }}
-{{ $css := (slice $cssBase ) | resources.Concat "styles/main.css" }}
-{{ if .Site.IsServer }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
-{{ else }}
-{{ $css := $css | minify | fingerprint }}
-    <link rel="stylesheet" href="{{ $css.RelPermalink }}"  integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
-{{ end }}
-
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/design-system/2.14.2/styles/salesforce-lightning-design-system.min.css" integrity="sha512-v9eTZELqSZcRlIRltjIbpM55zkTQ9azkDAjI0IByyjHLWty1U2+CSPtnNxGpC3FFkpsKwAOfciCv4PWhW/pQGw==" crossorigin="anonymous" />
