@@ -10,7 +10,8 @@ params:
   fuseSearch: true
 
 outputFormats:
-    html:
-        minify: true
-    json:
-        minify: true
+  html:
+    minify: true
+  json:
+    minify: true
+
