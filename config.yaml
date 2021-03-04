@@ -1,7 +1,7 @@
 baseURL: "/"
 title: Medigy
 params:
-  logo: "images/logo-icon-100x100.png"
+  logo: "/images/logo-icon-100x100.png"
   custom_css : 
    - "css/style.css" 
 
