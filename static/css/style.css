@@ -12,10 +12,26 @@ h2 {
     font-size: 1.5em;
     margin: .57em 0;
 }
+
 ol, ul {
     list-style: revert;
     padding: revert;
 }
+li.slds-m-left_x-small, li.slds-tree__branch {
+    list-style: none;
+}
+.slds-text-align--left, .slds-text-align_left {
+    padding:0 !important;
+}
+nav#TableOfContents ul li {
+    list-style: none;
+}
+nav#TableOfContents ul li ul {
+    padding: 0 0 0 10px;
+}
+
+
+
 .logo{
     max-width: 50px;
 }
