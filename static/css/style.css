@@ -26,6 +26,9 @@ li.slds-m-left_x-small, li.slds-tree__branch {
 nav#TableOfContents ul li {
     list-style: none;
 }
+nav#TableOfContents ul {
+    padding: 0;
+}
 nav#TableOfContents ul li ul {
     padding: 0 0 0 10px;
 }
