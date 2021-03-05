@@ -13,8 +13,8 @@ h2 {
     margin: .57em 0;
 }
 ol, ul {
-    list-style: revert !important;
-    padding: revert !important;
+    list-style: revert;
+    padding: revert;
 }
 .logo{
     max-width: 50px;
