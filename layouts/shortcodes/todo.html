@@ -1,0 +1,7 @@
+<span class="slds-badge slds-theme_error">TODO</span>
+{{ if .Get "for" }}
+<span class="slds-badge">{{ .Get "for" }}</span>
+<mark data-role="TODO" data-todo-for="{{ .Get "for" }}">{{ markdownify .Inner }}</mark>
+{{else}}
+<mark data-role="TODO">{{ markdownify .Inner }}</mark>
+{{end}}

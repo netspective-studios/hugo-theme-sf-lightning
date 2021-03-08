@@ -1,0 +1,49 @@
+{{/* inspired by: https://discourse.gohugo.io/t/add-visual-reminder-on-pages-with-todo-shortcode/11724 */}}
+
+{{ .Scratch.Set "todos" slice }}
+{{ range .Site.RegularPages }}
+{{ if .HasShortcode "todo" }}
+{{ $.Scratch.Add "todos" . }}
+{{ end }}
+{{ end }}
+<table class="slds-table slds-table_cell-buffer slds-table_bordered">
+    <thead>
+        <tr class="slds-line-height_reset">
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Opportunity Name">Last Modified</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Account Name">Title</div>
+            </th>
+            <th class="" scope="col">
+                <div class="slds-truncate" title="Close Date">TODOs</div>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{ range (.Scratch.Get "todos") }}
+        <tr class="slds-hint-parent">
+            <th data-label="Opportunity Name" scope="row" style="vertical-align:top">
+                {{ .Lastmod.Format "02 Jan 2006" }}
+            </th>
+            <td data-label="Account Name">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </td>
+            <td data-label="Close Date">
+                <ol>
+                    {{ $_x := (findRE "<mark data-role=\"TODO\">.*?</mark>" .Content) }}
+                    {{ range $_x }}
+                    <li>{{ . | replaceRE "<mark data-role=\"TODO\">(.*?)</mark>" "$1" | markdownify }} [unassigned]
+                    </li>
+                    {{ end }}
+                    {{ $_x := (findRE "<mark data-role=\"TODO\" data-todo-for=\".*?\">.*?</mark>" .Content) }}
+                    {{ range $_x }}
+                    <li>{{ . | replaceRE "<mark data-role=\"TODO\" data-todo-for=\"(.*?)\">(.*?)</mark>" "$2 [$1]" | markdownify }}
+                    </li>
+                    {{ end }}
+                </ol>
+            </td>
+        </tr>
+        {{ end }}
+    </tbody>
+</table>
