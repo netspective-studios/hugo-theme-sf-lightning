@@ -2,14 +2,14 @@
 <!doctype html>
 <html lang="{{ .Site.Language.Lang }}" class="no-js">
 <head>
-  {{ partial "head.html" . }}
+  {{ partialCached "head.html" . }}
   <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
 </head>
 
 <body class="">
   {{ if not .Site.Params.ui.navbar_disable }}
     <header>  
-      {{ partial "navbar.html" . }}  
+      {{ partial "navbar.html" . }}
     </header>
   {{ end }}
 <main class="container flex slds-m-vertical_small"> 
@@ -58,80 +58,9 @@
   
 </main>
 
+{{ partialCached "scripts.html" . }}
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
-<script>
-  /*SLDS Tabs JS*/
-$('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
-  $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('aria-selected','false');
-  $(this).attr('aria-selected','true');
-  $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('tabindex','-1');
-  $(this).attr('tabindex','0');
-  $(this).parent().addClass('slds-active').siblings().removeClass('slds-active');
-  $(this).parent().parent().parent().find('.'+$(this).parent().parent().parent().find('.slds-tabs--default__content,.slds-tabs--scoped__content')[0].classList[0]).removeClass('slds-show').addClass('slds-hide');
-  $(this).parent().parent().parent().find('#'+$(this).attr('aria-controls')).removeClass('slds-hide').addClass('slds-show');
-}); 
-/*SLDS Tabs JS*/
-
-
-  /*SLDS Tabs JS*/
-  $('.slds-tree .slds-button.slds-button_icon').click(function(){
-    $(this).parent().parent().parent().find('.slds-tree__branch').attr('aria-expanded','false');
-    $(this).parent().parent('.slds-tree__branch').attr('aria-expanded','true');
-    $(this).attr('aria-expanded','true');
-  }); 
-
-  $(document).ready(function () {
-
-     yourFunction();
-    
-   // var anchorElement = $(".slds-tree").find("li").attr('aria-selected','true');
-    
-  
-
-    // (anchorElement.attr("aria-selected") == "true") {
-         //$(this).parent('li').css("background-color", '#061544');
-        //$(this).parent().find('.slds-tree__branch').css("background-color", '#061544');
-
-        // $(anchorElement).parent(ul).css("background-color", '#061544');
-
-    // } else {
-    //     $(this).css("background-color", '#ff00ff');
-    //     $(anchorElement).parent(ul).css("background-color", '#061544')
-    // }
-
-    // if ( $(".slds-tree > li[aria-selected =='true']") ){
-    //      $(this).parent('.slds-tree__branch').css("background-color", '#061544')
-
-    //     alert("yes");
-    // }
-
-    // if ($('.pdp-accord-toggle').attr('aria-expanded') === "true") {
-    // }
-
-    
-    
-    function yourFunction(){
-     
-        if  ( $(".slds-tree").find("li").hasClass('is-selected')  ){
-          
-          $(this).css("background-color", '#061544');
-          // $(this).parent().find("li.slds-tree__branch").css("background-color", '#061544');
-
-          $(this).closest('.slds-tree__branch').css("background-color", 'red')
-          console.log($(this));
-      }
-    }
-
-});
-
-
-
-
-
-</script>
 </body>
 </html>
 

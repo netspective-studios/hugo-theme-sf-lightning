@@ -1,4 +1,48 @@
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+<script>
+  /*SLDS Tabs JS*/
+$('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
+  $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('aria-selected','false');
+  $(this).attr('aria-selected','true');
+  $(this).parent().parent().find('.slds-tabs--default__link,.slds-tabs--scoped__link').attr('tabindex','-1');
+  $(this).attr('tabindex','0');
+  $(this).parent().addClass('slds-active').siblings().removeClass('slds-active');
+  $(this).parent().parent().parent().find('.'+$(this).parent().parent().parent().find('.slds-tabs--default__content,.slds-tabs--scoped__content')[0].classList[0]).removeClass('slds-show').addClass('slds-hide');
+  $(this).parent().parent().parent().find('#'+$(this).attr('aria-controls')).removeClass('slds-hide').addClass('slds-show');
+}); 
+/*SLDS Tabs JS*/
+
+
+  /*SLDS Tabs JS*/
+  $('.slds-tree .slds-button.slds-button_icon').click(function(){
+    $(this).parent().parent().parent().find('.slds-tree__branch').attr('aria-expanded','false');
+    $(this).parent().parent('.slds-tree__branch').attr('aria-expanded','true');
+    $(this).attr('aria-expanded','true');
+  }); 
+
+  $(document).ready(function () {
+
+     yourFunction();    
+    
+    function yourFunction(){
+     
+        if  ( $(".slds-tree").find("li").hasClass('is-selected')  ){
+          
+          $(this).css("background-color", '#061544');
+          // $(this).parent().find("li.slds-tree__branch").css("background-color", '#061544');
+
+          $(this).closest('.slds-tree__branch').css("background-color", 'red')
+          console.log($(this));
+      }
+    }
+
+});
+
+</script>
+
+
 {{ $jsBase := resources.Get "js/base.js" }}
 {{ $js := (slice $jsBase ) | resources.Concat "js/main.js" }}
 {{ if .Site.IsServer }}
