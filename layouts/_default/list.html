@@ -5,7 +5,7 @@
   <h1 class="slds-page-header__title slds-truncate slds-m-bottom_medium">{{ .Title }}</h1>
   {{ with .Params.description }}<div class="slds-text-body_regular">{{ . | markdownify }}</div>{{ end }}
   {{ .Content }}
-  {{ partialCached "section-index.html" . }}
+  {{ partial "section-index.html" . }}
   <div class="">{{ partial "page-meta-lastmod.html" . }}</div>
 </div>
 {{ end }}
