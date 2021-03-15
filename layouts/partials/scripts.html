@@ -1,6 +1,8 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
-
+<link rel="dns-prefetch preconnect" href="https://cdnjs.cloudflare.com/">
+<!-- <script src="{{ .Site.BaseURL }}js/tree.js"></script> -->
+<!-- <script src="{{ .Site.BaseURL }}js/treeitemLinks.js"></script> -->
 <script>
   /*SLDS Tabs JS*/
 $('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
@@ -27,15 +29,18 @@ $('.slds-tabs--default__link,.slds-tabs--scoped__link').click(function(){
      yourFunction();    
     
     function yourFunction(){
-     
-        if  ( $(".slds-tree").find("li").hasClass('is-selected')  ){
-          
-          $(this).css("background-color", '#061544');
-          // $(this).parent().find("li.slds-tree__branch").css("background-color", '#061544');
 
-          $(this).closest('.slds-tree__branch').css("background-color", 'red')
-          console.log($(this));
-      }
+      console.log("inside form");
+
+      
+      $(".mainList").parent().parent().attr('aria-expanded','true');
+
+
+      $(".slds-tree li").find("[aria-selected=true]").parent().addClass("currentUl");
+      //$(".slds-tree li").find("[aria-selected=true]").parent(".slds-tree__branch").addClass("liActive"));
+      $(".currentUl").parent(".slds-tree__branch").addClass("currentLlww");
+      $(".currentUl").parent(".slds-tree__branch").attr('aria-expanded','true');
+      $(".currentLlww").parent("ul").parent(".slds-tree__branch").attr('aria-expanded','true');
     }
 
 });

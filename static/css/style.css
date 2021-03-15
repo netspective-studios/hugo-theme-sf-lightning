@@ -14,8 +14,8 @@ h2 {
 }
 
 ol, ul {
-    list-style: revert;
-    padding: revert;
+    list-style: none;
+    padding: 0px;
 }
 li.slds-m-left_x-small, li.slds-tree__branch {
     list-style: none;
@@ -91,4 +91,8 @@ pre {
 .page-toc {
     flex: 0 0 16rem;
     font-size: .85rem;
+}
+
+.mainList > .slds-tree__item span.slds-truncate {
+    font-weight: 600;
 }
