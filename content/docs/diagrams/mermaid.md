@@ -3,6 +3,7 @@ title: Mermaid examples
 tags:
   - diagram
   - mermaid
+mermaid: true
 ---
 
 # Graph
