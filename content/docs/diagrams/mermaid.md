@@ -13,12 +13,12 @@ graph TD;
     A-->D;
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 graph TD;
     A-->B;
     A-->C;
     A-->D;
-{{</ mermaid >}}
+{{</mermaid>}}
 
 ```
 graph LR
@@ -28,13 +28,13 @@ graph LR
     C -->|Two| E[Result two]
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 graph LR
     A[Hard edge] -->|Link text| B(Round edge)
     B --> C{Decision}
     C -->|One| D[Result one]
     C -->|Two| E[Result two]
-{{</ mermaid >}}
+{{</mermaid>}}
 
 # Sequence diagram
 ```
@@ -50,7 +50,7 @@ sequenceDiagram
     Bob-->>John: Jolly good!
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 sequenceDiagram
     autonumber
     Alice->>John: Hello John, how are you?
@@ -61,7 +61,7 @@ sequenceDiagram
     John-->>Alice: Great!
     John->>Bob: How about you?
     Bob-->>John: Jolly good!
-{{</ mermaid >}}
+{{</mermaid>}}
 
 # Class diagram
 ```
@@ -71,12 +71,12 @@ classDiagram
     Galaxy --> "many" Star : Contains
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 classDiagram
     Customer "1" --> "*" Ticket
     Student "1" --> "1..*" Course
     Galaxy --> "many" Star : Contains
-{{</ mermaid >}}
+{{</mermaid>}}
 
 # State diagram
 ```
@@ -98,7 +98,7 @@ stateDiagram
         }
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 stateDiagram
         [*] --> Active
 
@@ -148,7 +148,7 @@ gantt
        Add another diagram to demo page    :48h
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 gantt
        dateFormat  YYYY-MM-DD
        title Adding GANTT diagram functionality to mermaid
@@ -176,7 +176,7 @@ gantt
        Describe gantt syntax               :after doc1, 3d
        Add gantt diagram to demo page      :20h
        Add another diagram to demo page    :48h
-{{</ mermaid >}}
+{{</mermaid>}}
 
 # Pie diagram
 ```
@@ -188,11 +188,11 @@ pie
     "Iron" :  5
 ```
 
-{{< mermaid >}}
+{{<mermaid>}}
 pie
     title Key elements in Product X
     "Calcium" : 42.96
     "Potassium" : 50.05
     "Magnesium" : 10.01
     "Iron" :  5
-{{</ mermaid >}}
+{{</mermaid>}}
