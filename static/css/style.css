@@ -17,6 +17,10 @@ ol, ul {
     list-style: none;
     padding: 0px;
 }
+article ol, article ul {
+    list-style: revert !important;
+    padding: revert !important;
+}
 li.slds-m-left_x-small, li.slds-tree__branch {
     list-style: none;
 }
