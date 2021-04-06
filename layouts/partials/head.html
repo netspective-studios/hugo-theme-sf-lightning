@@ -15,7 +15,8 @@
 {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
 {{- end }}
-<meta name="description" content="{{ if .IsHome }}{{ if(.Site.Params.metaDescription) }}{{ .Site.Params.metaDescription }} {{ else }} {{ .Site.Title }} {{ end }} {{ else }} {{ if .metaDescription }}{{ .metaDescription }} {{ else }} {{ .Title }} {{ end }} {{ end }}"/>
+<!--<meta name="description" content="{{ if .IsHome }}{{ if(.Site.Params.metaDescription) }}{{ .Site.Params.metaDescription }} {{ else }} {{ .Site.Title }} {{ end }} {{ else }} {{ if .metaDescription }}{{ .metaDescription }} {{ else }} {{ .Title }} {{ end }} {{ end }}"/> -->
+<meta name="description" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}"/>
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico">
 {{ if (.Params.mermaid) }}
 <!-- MermaidJS support -->
