@@ -100,3 +100,8 @@ pre {
 .mainList > .slds-tree__item span.slds-truncate {
     font-weight: 600;
 }
+
+.slds-table td, .slds-table th {
+    white-space: break-spaces !important;
+
+}
