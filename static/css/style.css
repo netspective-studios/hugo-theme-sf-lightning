@@ -102,6 +102,6 @@ pre {
 }
 
 .slds-table td, .slds-table th {
-    white-space: break-spaces !important;
+    white-space: revert !important;
 
 }
