@@ -2,6 +2,6 @@
 {{ define "main" }}
 {{ .Render "content" }}
 {{ end }}
-{{- if ne isVssueCommentEnabled "false" -}}
+{{- if ne .Params.isVssueCommentEnabled "false" -}}
     {{ partial "comment" "pageIdentifier" .Permalink }}
 {{- end -}}
