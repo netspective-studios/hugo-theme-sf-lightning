@@ -2,6 +2,3 @@
 {{ define "main" }}
 {{ .Render "content" }}
 {{ end }}
-{{- if ne .Params.isVssueCommentEnabled "false" -}}
-    {{ partial "comment" (dict "pageIdentifier" .Permalink) }}
-{{- end -}}
