@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://unpkg.com/vssue/dist/vssue.min.css">
+
+<div id="vssue"> </div>
+<script src="https://unpkg.com/vue/dist/vue.runtime.min.js"></script>
+<script src="https://unpkg.com/vssue/dist/vssue.gitlab.min.js"></script>
+<script>
+  new Vue({
+      el: '#vssue',
+      render: h => h('Vssue', {
+        props: {
+          title: {{ .pageIdentifier }},
+          options: {
+            owner: 's-medigy-gpm-vssue-app-medigy.com',
+            baseURL:'https://gl.infra.medigy.com/',
+            repo: 'vssue-gpm-medigy',
+            autoCreateIssue:true,
+            clientId: 'cbbc1f82763554f8259efe622204a11a0989bebb7591424a0e39ad3392e3dccd',
+            clientSecret: '2e9c57774ffb5b76f51783611b40795075a509e8d976ed17f5f77689f555e124'
+          },
+        }
+      })
+  })
+</script>
