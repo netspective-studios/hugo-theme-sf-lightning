@@ -60,9 +60,9 @@
 
 {{ partialCached "scripts.html" . }}
 
-{{/* - if ne .Params.isVssueCommentEnabled "false" -*/}}
-    {{/* partial "comment" (dict "pageIdentifier" .Permalink) */}}
-{{/*- end -*/}}
+{{- if ne .Params.isVssueCommentEnabled "false" -}}
+    {{ partial "comment" (dict "pageIdentifier" .Permalink) }}
+{{- end -}}
 </body>
 </html>
 
