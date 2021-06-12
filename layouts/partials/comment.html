@@ -8,7 +8,7 @@
       el: '#vssue',
       render: h => h('Vssue', {
         props: {
-          title: {{ replace .pageIdentifier "/" "-" }},
+          title: {{ (replace ( strings.TrimRight "/" ( strings.TrimLeft "/" .pageIdentifier) ) "/" "-") }},
           options: {
             owner: 's-medigy-gpm-vssue-app-medigy.com',
             baseURL:'https://gl.infra.medigy.com/',
