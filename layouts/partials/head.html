@@ -1,28 +1,28 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="Cache-control" content="public">
-{{ hugo.Generator }}
-{{ if eq (getenv "HUGO_ENV") "production" }}
+{{- hugo.Generator -}}
+{{- if eq (getenv "HUGO_ENV") "production" -}}
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-{{ else }}
+{{- else -}}
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-{{ end }}
-{{ range .AlternativeOutputFormats -}}
+{{- end -}}
+{{- range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
-{{ end -}}
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}</title>
-{{ partialCached  "head-css.html"  . }}
-{{ range .Site.Params.custom_css -}}
-    <link rel="stylesheet" href="{{ . | absURL }}">
-{{- end }}
+{{- end -}}
+<title>{{- if .IsHome -}}{{- .Site.Title -}}{{- else -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}</title>
+{{- partialCached  "head-css.html"  . -}}
+{{- range .Site.Params.custom_css -}}
+    <link rel="stylesheet" href="{{ . | absURL -}}">
+{{- end -}}
 <!--<meta name="description" content="{{/* {{ if .IsHome }}{{ if(.Site.Params.metaDescription) }}{{ .Site.Params.metaDescription }} {{ else }} {{ .Site.Title }} {{ end }} {{ else }} {{ if .metaDescription }}{{ .metaDescription }} {{ else }} {{ .Title }} {{ end }} {{ end }} */}}"/> -->
-<meta name="description" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}"/>
+<meta name="description" content="{{- if .IsHome -}}{{- .Site.Title -}}{{- else -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}"/>
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico">
-{{ if (.Params.mermaid) }}
+{{- if (.Params.mermaid) -}}
 <!-- MermaidJS support -->
 <script async src="https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js"></script>
-{{ end }}
-{{ if ($.Site.Params.gtmEnabled) }}
+{{- end -}}
+{{- if ($.Site.Params.gtmEnabled) -}}
 <!-- Google Tag Manager --> 
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -30,4 +30,4 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;j.rel='preconnect'; j.crossorigin='anonymous';f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','{{ $.Site.Params.GTMCode }}');</script>
     <!-- End Google Tag Manager -->
-{{ end }}
+{{- end -}}
