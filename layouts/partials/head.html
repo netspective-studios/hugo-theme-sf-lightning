@@ -18,6 +18,9 @@
 <!--<meta name="description" content="{{/* {{ if .IsHome }}{{ if(.Site.Params.metaDescription) }}{{ .Site.Params.metaDescription }} {{ else }} {{ .Site.Title }} {{ end }} {{ else }} {{ if .metaDescription }}{{ .metaDescription }} {{ else }} {{ .Title }} {{ end }} {{ end }} */}}"/> -->
 <meta name="description" content="{{- if .IsHome -}}{{- .Site.Title -}}{{- else -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}"/>
 <link rel="shortcut icon" type="image/x-icon" href="{{ .Site.BaseURL }}/favicons/favicon.ico">
+<script>
+    var postLoadInitFunctions = [];
+</script>
 {{- if (.Params.mermaid) -}}
 <!-- MermaidJS support -->
 <script async src="https://unpkg.com/mermaid@8.9.2/dist/mermaid.min.js"></script>
@@ -31,3 +34,21 @@
     })(window,document,'script','dataLayer','{{ $.Site.Params.GTMCode }}');</script>
     <!-- End Google Tag Manager -->
 {{- end -}}
+<script>
+    var recaptchaSignUp;
+    var recaptchaCommon;
+    var onloadCallback = function () {
+      //Render the recaptcha1 on the element with ID "recaptchaSignUp"
+      if ($('#recaptchaSignUp').length) {
+        recaptchaSignUp = grecaptcha.render('recaptchaSignUp', {
+          'sitekey': '{{ $.Site.Params.GoogleCaptchaSite }}' //Replace this with your Site key
+        });
+      }
+      //Render the recaptcha2 on the element with ID "recaptchaCommon"
+      if ($('#recaptchaCommon').length) {
+        recaptchaCommon = grecaptcha.render('recaptchaCommon', {
+          'sitekey': '{{ $.Site.Params.GoogleCaptchaSite }}' //Replace this with your Site key
+        });
+      }
+    };
+  </script>
