@@ -34,21 +34,3 @@
     })(window,document,'script','dataLayer','{{ $.Site.Params.GTMCode }}');</script>
     <!-- End Google Tag Manager -->
 {{- end -}}
-<script>
-    var recaptchaSignUp;
-    var recaptchaCommon;
-    var onloadCallback = function () {
-      //Render the recaptcha1 on the element with ID "recaptchaSignUp"
-      if ($('#recaptchaSignUp').length) {
-        recaptchaSignUp = grecaptcha.render('recaptchaSignUp', {
-          'sitekey': '{{ $.Site.Params.GoogleCaptchaSite }}' //Replace this with your Site key
-        });
-      }
-      //Render the recaptcha2 on the element with ID "recaptchaCommon"
-      if ($('#recaptchaCommon').length) {
-        recaptchaCommon = grecaptcha.render('recaptchaCommon', {
-          'sitekey': '{{ $.Site.Params.GoogleCaptchaSite }}' //Replace this with your Site key
-        });
-      }
-    };
-  </script>
