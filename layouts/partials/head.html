@@ -35,3 +35,19 @@
     })(window,document,'script','dataLayer','{{ $.Site.Params.GTMCode }}');</script>
     <!-- End Google Tag Manager -->
 {{- end -}}
+<!-- Site schema starts here-->
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://www.medigy.com/",
+    "name": "Medigy",
+    "url": "https://www.medigy.com/",
+    "logo": "{{ $.Site.Params.siteUrl }}images/favicon.png",
+    "sameAs": [
+    "https://www.facebook.com/Medigy/",
+    "https://twitter.com/Medigy1",
+    "https://www.linkedin.com/company/14692561"
+    ]
+    }
+    </script>
