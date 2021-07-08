@@ -11,7 +11,9 @@
 {{- range .AlternativeOutputFormats -}}
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{- end -}}
-<title>{{- if .IsHome -}}{{- .Site.Title -}}{{- else -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}</title>
+{{- if ne .IsHome -}}
+<title>{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}</title>
+{{- end -}}
 {{- partialCached  "head-css.html"  . -}}
 {{- range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL -}}">
