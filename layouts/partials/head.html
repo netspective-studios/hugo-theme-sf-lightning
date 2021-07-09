@@ -12,7 +12,7 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{- end -}}
 {{ if not .IsHome }}
-<title>{{ if .Params.metatitle}}{{ .Params.metaTitle | safeHTML }}{{ else }}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{ end }}</title>
+<title>{{ if eq .Params.layout "topics-single" }} {{ .Params.metaTitle | markdownify | plainify | base64Decode }} {{ else }}{{ if .Params.metatitle}}{{ .Params.metaTitle | safeHTML }}{{ else }}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{ end }}{{ end }}</title>
 {{ end }}
 {{- partialCached  "head-css.html"  . -}}
 {{- range .Site.Params.custom_css -}}
