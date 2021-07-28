@@ -17,6 +17,9 @@ ol, ul {
     list-style: none;
     padding: 0px;
 }
+p {
+    margin: 10px 0 !important;
+}
 article ol, article ul {
     list-style: revert !important;
     padding: revert !important;
