@@ -3,7 +3,7 @@
 <meta http-equiv="Cache-control" content="public">
 {{- hugo.Generator -}}
 {{/*- if eq (getenv "HUGO_ENV") "production" -*/}}
-{{- if eq .Site.Params.siteUrl "https://medigy.com/" -}}
+{{- if eq .Site.BaseURL "https://www.medigy.com/" -}}
     <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
 {{- else -}}
     <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
