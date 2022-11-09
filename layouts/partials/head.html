@@ -20,7 +20,11 @@
 {{- end -}}
 {{ $lastUrlElement := index (last 1 (split (delimit (split .RelPermalink "/") "," "") ",")) 0 }}
 {{ if ne $lastUrlElement "404.html"}}
+{{ if eq .Params.archetype "press-release" }}
+<link rel="canonical" href="{{ .Params.href }}"/>
+{{ else }}
 <link rel="canonical" href="{{ .Permalink }}"/>
+{{ end }}
 {{ end }}
 <!--<meta name="description" content="{{/* {{ if .IsHome }}{{ if(.Site.Params.metaDescription) }}{{ .Site.Params.metaDescription }} {{ else }} {{ .Site.Title }} {{ end }} {{ else }} {{ if .metaDescription }}{{ .metaDescription }} {{ else }} {{ .Title }} {{ end }} {{ end }} */}}"/> -->
 {{/*<meta name="description" content="{{- if .IsHome -}}{{- .Site.Title -}}{{- else -}}{{- with .Title -}}{{- . -}} | {{- end -}}{{- .Site.Title -}}{{- end -}}"/>*/}}
