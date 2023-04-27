@@ -12,7 +12,7 @@
     <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .Permalink | safeURL }}">
 {{- end -}}
 {{ if not .IsHome }}
-<title>{{ if or (eq .Params.layout "topics-single") (eq .Params.layout "topic-collection-single") }}{{ .Params.metaTitle | markdownify | plainify | base64Decode }}{{ else if eq .Params.layout "offering-single" }}{{ .Params.seo.metaTitle | safeHTML }}{{ else }}{{ if .Params.htmlMetaData.ogtitle }} {{ .Params.htmlMetaData.ogtitle }} {{ else }}{{ if .Params.metatitle}}{{ .Params.metaTitle | safeHTML }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}{{ end }}{{ end }}</title>
+<title>{{ if($.Scratch.Get "metaTitle")}} {{($.Scratch.Get "metaTitle")}} {{else}} {{ if or (eq .Params.layout "topics-single") (eq .Params.layout "topic-collection-single") }}{{ .Params.metaTitle | markdownify | plainify | base64Decode }}{{ else if eq .Params.layout "offering-single" }}{{ .Params.seo.metaTitle | safeHTML }}{{ else }}{{ if .Params.htmlMetaData.ogtitle }} {{ .Params.htmlMetaData.ogtitle }} {{ else }}{{ if .Params.metatitle}}{{ .Params.metaTitle | safeHTML }}{{ else }}{{ with .Title }}{{ . }} | {{ end }}{{ .Site.Title }}{{ end }}{{ end }}{{ end }}{{ end }}</title>
 {{ end }}
 {{- partialCached  "head-css.html"  . -}}
 {{- range .Site.Params.custom_css -}}
